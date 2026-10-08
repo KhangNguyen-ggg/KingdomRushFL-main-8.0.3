@@ -1,0 +1,177 @@
+#	COMANDOS					1 - Derecha Arriba a Izquierda Arriba
+(MR y Rápidos)					2 - Abajo a Izquierda Abajo
+(ARMOR)					3 - Derecha Arriba a Izquierda Abajo
+(MR y Rápidos)					4 - Abajo a Izquierda Arriba (Armor y Rápidos)					5 - Arriba a Izquierda Arriba (Orc Wildlings y Orcs en general)
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3		5:*	5:2	5:1	5:3
+#	level properties
+	description	blitz Rodri
+	lives	20
+	gold	1000
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	2539
+#	stage gold curve
+#	WAVE 1					Goblin x32
+O. Shaman x2					O. Warrior x12
+Blackguard x12										S. Blade x20
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg	orc_shaman		orc_wildling	rider_goblin	ogre_g6
+#	cant.					0	0	20	0		0	0	0	33		0	0	0	2		0	0	0
+#	gold	323				0	0	200	0		0	0	0	99		0	0	0	24		0	0	0
+	wave		1		-1
+					0	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					0.6	orc_shaman
+					0.6	goblin_g6
+					0.6	goblin_g6
+
+					3	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					1.5	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					0.6	goblin_g6
+					0.6
+					0
+					5	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					3	orc_shaman															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+
+					6																shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6															shadow_blades
+					0.6	goblin_g6
+					0.6
+					5	goblin_g6																		shadow_blades
+					0.6	goblin_g6																	shadow_blades
+					0.6	goblin_g6
+					0.6	goblin_g6																shadow_blades		shadow_blades
+					0.6	goblin_g6
+					0.6	goblin_g6																	shadow_blades
+					0.6																	shadow_blades
+
+
+#	42.7
+
+#	WAVE 2					Goblin x32
+O. Shaman x2					Wulf x15					Wulf x15					Worg x10
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg	orc_shaman		orc_wildling	rider_goblin	ogre_g6
+#	cant.					0	0	0	0		0	0	0	0		0	30	30	0		0	0	0
+#	gold	420				0	0	0	0		0	0	0	0		0	120	300	0		0	0	0
+	wave		2		21
+					0	worg
+					1	worg
+					1	worg
+					1	worg
+					1						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf							wulf
+					0.6						wulf						wulf
+					0.6													wulf
+					0.6													wulf
+					1.2												wulf
+					0.6												wulf
+					0.6													wulf
+					0.6												wulf
+					1	worg
+					1	worg
+					1	worg
+					1	worg
+					1	worg
+					2						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf
+					0.6						wulf						wulf
+					0.6						wulf							wulf
+					0.6												wulf
+					0.6													wulf
+					0.6												wulf
+					0.6												wulf
+					0.6													wulf
+					1	worg
+					1	worg
+					1	worg															worg
+					1	worg															worg
+					1	worg															worg
+					1																worg
+					1																worg
+					1	worg
+					1	worg
+					1	worg
+					1	worg															worg
+					1	worg															worg
+					1	worg															worg
+					1																worg
+					1																worg
+
+
+#	41
+
+
+
+
+
+#	WAVE 3					Worg x10
+O. Wildling x8																				O. Wildling x3
+Worg x15
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg	orc_shaman		orc_wildling	rider_goblin	ogre_g6
+#	cant.					0	12	0	0		0	0	0	0		20	0	22	0		9	0	0
+#	gold	796				0	96	0	0		0	0	0	0		300	0	220	0		180	0	0
+	wave		3		24
+					0	orc_wildling						blackguard		blackguard													worg
+					1								blackguard
+					1							blackguard		blackguard														worg
+
+					2																								worg
+					1	orc_wildling						blackguard		blackguard
+					1							blackguard		blackguard														worg
+					1							blackguard		blackguard
+					1								blackguard
+					0
+					0
+					8		orc_wildling						orc_warrior
+					2							orc_warrior		orc_warrior
+					1				orc_wildling																	worg
+					1			worg					orc_warrior													worg
+					1		worg																			worg
+					1			worg				orc_warrior		orc_warrior												worg
+					1				worg																	worg
+					8								orc_warrior
+
+					2							orc_warrior		orc_warrior
+					2								orc_warrior
+					2								orc_warrior
+					2							orc_warrior		orc_warrior
+					7							orc_warrior		orc_warrior													orc_wildling
+					2				orc_wildling			orc_warrior		orc_warrior															orc_wildling
+					2		orc_wildling						orc_warrior
+					1																							orc_wildling
+					1			worg				orc_warrior		orc_warrior													worg
+					1				worg																				worg
+					1		worg																				worg
+					1			worg																					worg
+					1				worg
+
+
+#	56
+

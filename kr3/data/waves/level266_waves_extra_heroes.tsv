@@ -1,0 +1,339 @@
+#	COMANDOS					1 - Izquierda a Izquierda Arriba					2 - Derecha Arriba a Izquierda Arriba (POR TUNEL)					3 - Derecha Arriba a Derecha Centro					4 - Derecha Abajo a Derecha Centro					5 - Derecha Arriba a Izquierda Arriba (NO TUNEL)					6 - Izquierda Abajo a Abajo Centro					7 - TUNEL!					8 - LAGO / SWAMP a Arriba Izquierda					9 - LAGO / SWAMP a Abajo Derecha Centro
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3		5:*	5:2	5:1	5:3		6:*	6:2	6:1	6:3		7:*	7:2	7:1	7:3		8:*	8:2	8:1	8:3		9:*	9:2	9:1	9:3
+#	level properties
+	description	HP Rodri
+	lives	20
+	gold	1450
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	2461
+#	stage gold curve
+#	WAVE 2															Necromancer x2					Sapper x1					T. Wolf x12
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	0	0		1	0	0	0		0	0	0	0		0	0	14
+#	gold	204				0	0	0	0		8	0	0	0		0	0	0	0		0	0	196
+	wave		1		-1
+					0														necromancer_g6
+					6																					tainted_wolf
+					1.3																					tainted_wolf
+					1.1																					tainted_wolf
+					1.2											tainted_wolf
+					1.2											tainted_wolf
+					0
+					7																						tainted_wolf
+					1.1																							tainted_wolf
+					1.2												tainted_wolf
+					1.3												tainted_wolf
+					5												necromancer_g6
+					7																							tainted_wolf
+					1.1																		dark_sapper					tainted_wolf
+					1.3																								tainted_wolf
+					1.2													tainted_wolf
+					1.2												tainted_wolf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 5																									D. Rider x2															S. Thing x1 S. Husk x18
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	0	0		0	0	0	1		0	0	0	0		0	0	0
+#	gold	30				0	0	0	0		0	0	0	30		0	0	0	0		0	0	0
+	wave		2		23
+					0																												dark_disciple
+	event	start_bubbles	7		0
+	event	spawn_swamp_husks	7	6	2
+	event	tirar_treants	tree_1	2	8
+	event	spawn_swamp_husks	7	6	6
+					3																		dark_disciple
+	event	spawn_swamp_husks	7	6	9
+	event	end_bubbles	7		8
+	wait				1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 6															D. Rider x1					Sapper x1 S. Archer x																									S. Thing x1
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	0	9		1	0	0	0		0	0	1	0		0	0	0
+#	gold	263				0	0	0	135		8	0	0	0		0	0	120	0		0		0
+	flags
+	wave		3		20
+	event	start_bubbles	8		0
+	event	spawn_swamp_thing	8	1	3
+					4																		dark_sapper
+	event	end_bubbles	8		0
+					3																	shadow_archer_g6
+					1.2																			shadow_archer_g6
+					2																	shadow_archer_g6
+					1.2																			shadow_archer_g6
+					1.2																	shadow_archer_g6
+					8																shadow_archer_g6
+					1.2																shadow_archer_g6
+					1.2																shadow_archer_g6
+					1.2																shadow_archer_g6
+	event	tirar_treants	tree_1	1	4
+					8																							death_rider
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 8										T. Wolf x6					T. Wolf x8 D. Disciple x1										D. Rider x1
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	0	0		0	0	0	1		0	0	1	0		0	0	13
+#	gold	514				0	0	0	0		0	0	0	30		0	0	120	0		0	0	364
+	flags
+	wave		4		18
+					0									tainted_wolf
+					1.2								tainted_wolf
+					1.3									tainted_wolf			tainted_wolf
+					1.3													tainted_wolf
+					1.2													tainted_wolf
+					1.1												tainted_wolf
+					3								tainted_wolf
+					1.1									tainted_wolf
+					1.3								tainted_wolf
+					3														dark_disciple
+					4												tainted_wolf
+					1.3													tainted_wolf
+					1.2												tainted_wolf
+					1.3													tainted_wolf
+					6																					death_rider
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 11					Treant x					Treant x					Necromancer x D. Disciple x					Treant x
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	6	0		2	0	0	3		0	0	0	1		0	0	0
+#	gold	276				0	0	120	0		16	0	0	90		0	0	0	50		0	0	0
+	wave		5		15
+					0														dark_disciple
+					2												dark_disciple
+	event	tirar_treants	tree_1	2	3
+	event	tirar_treants	tree_2	1	7
+					1								brigand_g6
+					1.2							brigand_g6
+					1.3									brigand_g6
+					1.2							brigand_g6
+					1.2								brigand_g6
+					1.3									brigand_g6
+					1																dark_sapper
+					2																dark_sapper
+					6													necromancer_g6
+					6																			dark_disciple
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 15					T. Treant x6					D. Disciple x4					Necromancer x2					Sapper x3 Treant x3					D. Rider x3															S. Thing x2
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf			skeleton_big_g6
+#	cant.					0	0	0	0		1	0	0	3		0	0	1	1		0	0	0			0
+#	gold	268				0	0	0	0		8	0	0	90		0	0	120	50		0	0	0			0
+	wave		6		27
+	event	start_bubbles	7		0
+	event	spawn_swamp_thing	7	1	2
+	event	tirar_treants	tree_2	1	5
+	event	end_bubbles	7		1
+					8													necromancer_g6
+					2								dark_disciple
+					4																		dark_sapper
+					4																			dark_disciple
+					4														dark_disciple
+	event	tirar_treants	tree_2	1	13
+	event	tirar_treants	tree_1	3	10
+					18																							death_rider
+

@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'boss_stage_08_fly_shadow_asst_boss_shadow',0,0},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,0,-1.8,0.541321,0.647034,0,0,0}},
+}},
+},
+}

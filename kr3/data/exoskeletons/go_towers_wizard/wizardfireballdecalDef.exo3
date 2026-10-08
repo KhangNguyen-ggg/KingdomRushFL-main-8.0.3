@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{'wizardfireballdecal_asst_wizard_ray_grow_mark',40.05,21.8},
+},
+attach_points={
+},
+animations={
+{name='run',frames={
+{{1,1,0.160,41.55,26.5,1.039108,1.117188,3.141593,-0,0}},
+}},
+},
+}

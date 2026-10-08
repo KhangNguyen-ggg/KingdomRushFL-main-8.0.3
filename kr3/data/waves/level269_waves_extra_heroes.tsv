@@ -1,0 +1,346 @@
+#	COMANDOS					1 - Izquierda a Abajo Derecha ()					2 - Izquierda a Arriba Derecha					3 - Abajo a Arriba Derecha					4 - Abajo a Abajo Derecha					5 - Arriba Izquierda a Arriba Derecha
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3		5:*	5:2	5:1	5:3
+#	level properties
+	description	Custom level 19 extra_heroes (level 14 pattern)
+# Three exalted elites reinforce the original level 14 challenge lineup.
+	lives	20
+	gold	1200
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	1616
+#	stage gold curve
+#	WAVE 4										Brigand x8					Archer x8
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	0	8	8		0	0	0	0		0	0	0	0		0	0	0	0
+#	gold	232				0	0	120	112		0	0	0	0		0	0	0	0		0	0	0	0
+	wave		1		-1
+					0											shadow_archer_g6
+					1.2											shadow_archer_g6
+					1.2											shadow_archer_g6
+					1.2											shadow_archer_g6
+					0		brigand_g6
+					1.2				brigand_g6
+					1.2			brigand_g6
+					1.2		brigand_g6
+					10			brigand_g6
+					1.2		brigand_g6		brigand_g6
+					1.2			brigand_g6
+					2											shadow_archer_g6
+					1.2											shadow_archer_g6
+					1.2											shadow_archer_g6
+					1.2											shadow_archer_g6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 6					Sapper x1 Archer x4															Brigand x8
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	0	8	4		1	0	0	0		0	0	0	0		0	0	0	0
+#	gold	184				0	0	120	56		8	0	0	0		0	0	0	0		0		0	0
+	flags
+	wave		2		18
+					0			dark_sapper
+					3																	brigand_g6
+					1.2		shadow_archer_g6		shadow_archer_g6													exalted_shadow_archer		brigand_g6
+					3			shadow_archer_g6															brigand_g6
+					1.2				shadow_archer_g6													brigand_g6		brigand_g6
+					4																		brigand_g6
+					1.2																	brigand_g6
+					1.2																			brigand_g6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 9					Brigand x8 S. Archer x6					Brigand x6 Sapper x1
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	0	14	6		1	0	0	0		0	0	0	0		0	0	0	0
+#	gold	302				0	0	210	84		8	0	0	0		0	0	0	0		0	0	0	0
+	wave		3		16
+					0							brigand_g6
+					1.2									brigand_g6
+					1.2								brigand_g6
+					2								dark_sapper
+					7		brigand_g6		brigand_g6
+					1.5		brigand_g6		brigand_g6
+					3			shadow_archer_g6
+					1.2		shadow_archer_g6
+					1.2				shadow_archer_g6
+					5							brigand_g6		brigand_g6
+					1.2								brigand_g6
+					8		shadow_archer_g6
+					1.2			shadow_archer_g6
+					1.2				shadow_archer_g6
+					3			brigand_g6
+					1.5		brigand_g6		brigand_g6
+					1.5			brigand_g6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 10					T. Wolf x8															Brigand x12 Archer x4
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	0	12	4		0	0	0	0		0	0	0	0		0	0	0	0
+#	gold	236				0	0	180	56		0	0	0	0		0	0	0	0		0	0	0	0
+	wave		4		25
+					0																		brigand_g6
+					1.5																	brigand_g6		brigand_g6
+					1.5																	brigand_g6		brigand_g6
+					1.5																		brigand_g6
+					3																	shadow_archer_g6		shadow_archer_g6
+					8	tainted_wolf
+					0.9	tainted_wolf
+					1	tainted_wolf
+					5	tainted_wolf
+					1	tainted_wolf
+					1.2	tainted_wolf							exalted_shadow_blades
+					0.8	tainted_wolf
+					7																	brigand_g6
+					1.2																			brigand_g6
+					1.8																			brigand_g6
+					1.1																	brigand_g6
+					1.5																	brigand_g6
+					1.1																			brigand_g6
+					1.7																	shadow_archer_g6
+					1.3																		shadow_archer_g6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 14					T. Wolf x13															T. Wolf x13
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	0	0	0		0	0	0	0		0	0	0	0		0	0	0	0
+#	gold	0				0	0	0	0		0	0	0	0		0	0	0	0		0	0	0	0
+	wave		5		19
+					0																tainted_wolf
+					1.1																tainted_wolf
+					0.9																tainted_wolf
+					2																tainted_wolf
+					1.2																tainted_wolf
+					0	tainted_wolf
+					0.9	tainted_wolf
+					1	tainted_wolf
+					1.1	tainted_wolf
+					6	tainted_wolf
+					1.1	tainted_wolf
+					0.9	tainted_wolf
+					1	tainted_wolf
+					3																tainted_wolf
+					0.9																tainted_wolf
+					1																tainted_wolf
+					1.1																tainted_wolf
+					3																tainted_wolf
+					1.1																tainted_wolf
+					1																tainted_wolf
+					0.9																tainted_wolf
+					0	tainted_wolf
+					0.9	tainted_wolf
+					1	tainted_wolf
+					1.2	tainted_wolf
+					1.1	tainted_wolf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 15					Brigand x12					Sapper x2					Gargoyle x8					Sapper x2 Brigand x12
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	nercromancer		dark_construct	darkling	cloud_of_crows_shadow_archer	cloud_of_crows_dark_sapper
+#	cant.					0	8	24	0		4	0	0	0		0	0	0	0		0	0	0	0
+#	gold	632				0	240	360	0		32	0	0	0		0	0	0	0		0	0	0	0
+	wave		6		18
+					0																		brigand_g6
+					1.2																	brigand_g6		brigand_g6
+					1																		dark_sapper
+					2.5																	brigand_g6		brigand_g6
+					3		brigand_g6
+					1.2			brigand_g6
+					1.2				brigand_g6
+					2			brigand_g6
+					1.2		brigand_g6
+					1.2				brigand_g6				dark_sapper
+					6											gargoyle_g6
+
+					1.7											gargoyle_g6
+
+					7								dark_sapper			gargoyle_g6
+					1.2											gargoyle_g6
+					1.2
+					6		brigand_g6		brigand_g6							gargoyle_g6
+					1			brigand_g6								gargoyle_g6
+					0
+					1.4		brigand_g6		brigand_g6							gargoyle_g6						exalted_shadow_archer	dark_sapper
+					1			brigand_g6								gargoyle_g6
+					8																	brigand_g6
+					1.2																			brigand_g6
+					1.2																	brigand_g6
+					1.2																			brigand_g6
+					1.2																	brigand_g6
+					1.2																			brigand_g6
+					1.2																		brigand_g6
+

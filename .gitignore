@@ -1,0 +1,8 @@
+.vscode/
+.idea/
+/custom/
+
+# Exclude large/unwanted directories and files
+/kr3-desktop/assets/
+/BACKUP/
+*.docx

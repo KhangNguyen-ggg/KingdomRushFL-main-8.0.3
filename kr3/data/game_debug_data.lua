@@ -1,0 +1,155 @@
+﻿-- chunkname: @./kr3/data/game_debug_data.lua
+
+return {
+	default_page_for_terrain = {
+		[TERRAIN_STYLE_ELVEN_WOODS] = 1,
+		[TERRAIN_STYLE_FAERIE_GROVE] = 2,
+		[TERRAIN_STYLE_ANCIENT_METROPOLIS] = 4,
+		[TERRAIN_STYLE_HULKING_RAGE] = 6,
+		[TERRAIN_STYLE_BITTERING_RANCOR] = 7
+	},
+	default_page_for_level = {
+		[81] = 9,
+		[18] = 6,
+		[16] = 6,
+		[17] = 6,
+		[19] = 7,
+		[20] = 7,
+		[21] = 8,
+		[22] = 8,
+		[82] = 10
+	},
+	enemy_pages = {
+		{
+			"enemy_ettin",
+			"enemy_gnoll_blighter",
+			"enemy_gnoll_burner",
+			"enemy_gnoll_gnawer",
+			"enemy_gnoll_reaver",
+			"enemy_hyena",
+			"enemy_perython",
+			"enemy_perython_gnoll_gnawer",
+			"enemy_twilight_elf_harasser",
+			"enemy_gnoll_warleader"
+		},
+		{
+			"enemy_bandersnatch",
+			"enemy_boomshrooms",
+			"enemy_gloomy",
+			"enemy_munchshrooms",
+			"enemy_rabbit",
+			"enemy_redcap",
+			"enemy_satyr_cutthroat",
+			"enemy_satyr_hoplite",
+			"enemy_shroom_breeder",
+			"enemy_sword_spider"
+		},
+		{
+			"enemy_twilight_avenger",
+			"enemy_twilight_elf_harasser",
+			"enemy_twilight_scourger",
+			"enemy_webspitting_spider"
+		},
+		{
+			"enemy_arachnomancer",
+			"enemy_drider",
+			"enemy_mantaray",
+			"enemy_razorboar",
+			"enemy_spider_arachnomancer",
+			"enemy_spider_son_of_mactans",
+			"enemy_sword_spider",
+			"enemy_twilight_avenger",
+			"enemy_twilight_elf_harasser",
+			"enemy_twilight_evoker"
+		},
+		{
+			"enemy_twilight_golem",
+			"enemy_twilight_heretic",
+			"enemy_twilight_scourger"
+		},
+		{
+			"enemy_gnoll_reaver",
+			"enemy_gnoll_burner",
+			"enemy_gnoll_gnawer",
+			"enemy_gnoll_bloodsydian",
+			"enemy_bloodsydian_warlock",
+			"enemy_perython_rock_thrower",
+			"enemy_ogre_magi"
+		},
+		{
+			"enemy_twilight_elf_harasser",
+			"enemy_twilight_avenger",
+			"enemy_twilight_scourger",
+			"enemy_twilight_evoker",
+			"enemy_twilight_golem",
+			"enemy_twilight_heretic",
+			"enemy_blood_servant",
+			"enemy_mounted_avenger",
+			"enemy_screecher_bat",
+			"eb_bajnimen"
+		},
+		{
+			"enemy_webspitting_spider",
+			"enemy_sword_spider",
+			"enemy_spider_arachnomancer",
+			"enemy_spider_son_of_mactans",
+			"enemy_screecher_bat",
+			"enemy_dark_spitters",
+			"enemy_grim_devourers",
+			"enemy_shadow_champion",
+			"enemy_shadows_spawns",
+			"eb_balrog"
+		},
+		{
+			"enemy_gnoll_warleader",
+			"enemy_razorboar",
+			"enemy_spider_arachnomancer",
+			"enemy_sword_spider",
+			"enemy_twilight_elf_harasser",
+			"enemy_webspitting_spider"
+		},
+		{
+			"enemy_blood_servant",
+			"enemy_mounted_avenger",
+			"enemy_screecher_bat",
+			"enemy_twilight_avenger",
+			"enemy_twilight_brute",
+			"enemy_twilight_elf_harasser",
+			"enemy_twilight_evoker",
+			"enemy_twilight_golem",
+			"enemy_twilight_heretic",
+			"enemy_twilight_scourger"
+		},
+		{
+			"mod_teleport_mage",
+			"mod_arrow_silver_mark",
+			"mod_timelapse",
+			"mod_ward",
+			"mod_eldritch",
+			"mod_arrow_arcane_slumber",
+			"mod_blood_elves",
+			"mod_faerie_dragon_l2"
+		},
+		{
+			"mod_arivan_freeze",
+			"mod_veznan_shackles_stun",
+			"mod_lynn_weakening",
+			"mod_lynn_despair",
+			"mod_phoenix_flaming_path"
+		},
+		{
+			"mod_twilight_scourger_banshee",
+			"mod_drider_poison",
+			"mod_bloodsydian_warlock",
+			"mod_twilight_heretic_servant",
+			"mod_dark_spitters",
+			"mod_drow_queen_tower_block"
+		},
+		{
+			"mod_crystal_arcane_freeze",
+			"mod_crystal_unstable_teleport",
+			"mod_crystal_unstable_heal",
+			"mod_crystal_unstable_infuse"
+		}
+	}
+}

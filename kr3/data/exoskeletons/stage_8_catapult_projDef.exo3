@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'stage_8_catapult_proj_asst_stage8_catapult_rock_projectile',0.9,-0.1},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-0.9,0.15,0.999985,0.999985,0,0,0}},
+}},
+},
+}

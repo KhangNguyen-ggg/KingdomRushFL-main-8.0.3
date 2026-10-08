@@ -1,0 +1,158 @@
+#	COMANDOS					1 - Izquierda a Izquierda Arriba					2 - Derecha Arriba a Izquierda Arriba (POR TUNEL)					3 - Derecha Arriba a Derecha Centro					4 - Derecha Abajo a Derecha Centro					5 - Derecha Arriba a Izquierda Arriba (Por medio)					6 - Izquierda Derecha Abajo Centro					7 - TUNEL!					8 - LAGO / SWAMP a Arriba Izquierda					9 - LAGO / SWAMP a Abajo Derecha Centro
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3		5:*	5:2	5:1	5:3		6:*	6:2	6:1	6:3		7:*	7:2	7:1	7:3		8:*	8:2	8:1	8:3		9:*	9:2	9:1	9:3
+#	level properties
+	description	Blitz Rodri
+	lives	20
+	gold	700
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	2695
+#	stage gold curve
+#	WAVE 1																																													S. Thing x1
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	11	9		2	0	0	0		0	0	0	0		0	0	0
+#	gold	415				0	0	220	135		60	0	0	0		0	0	0	0		0		0
+	wave		1		-1
+					0			brigand_g6
+					3		brigand_g6
+					3				brigand_g6
+					4			dark_sapper
+					8																											brigand_g6		brigand_g6
+					1																											brigand_g6		brigand_g6
+					1																											brigand_g6		brigand_g6
+					1																											brigand_g6		brigand_g6
+					4																		dark_sapper
+					3																	shadow_archer_g6
+					1.2																			shadow_archer_g6
+					2																	shadow_archer_g6
+					1.2																			shadow_archer_g6
+					1.2																	shadow_archer_g6
+					8																shadow_archer_g6
+					1.2																shadow_archer_g6
+					1.2																shadow_archer_g6
+					1.2																shadow_archer_g6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 2										T. Wolf x6
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf
+#	cant.					0	0	6	0		0	0	0	2		0	0	1	0		0	0	14
+#	gold	692				0	0	120	0		0	0	0	60		0	0	120	0		0	0	392
+	flags
+	wave		2		15
+					0													death_rider
+					3								tainted_wolf
+					1.3							tainted_wolf		tainted_wolf
+					1.3								tainted_wolf
+					1.2								tainted_wolf
+					1.1							tainted_wolf
+					3												tainted_wolf							dark_disciple
+					1.1													tainted_wolf
+					1.3												tainted_wolf		tainted_wolf
+					3																	dark_disciple
+					4												tainted_wolf
+					1.3													tainted_wolf
+					1.2												tainted_wolf
+					1.3													tainted_wolf
+
+					4							brigand_g6
+					1.2									brigand_g6
+					1.2									brigand_g6
+					1.2								brigand_g6
+					1.2							brigand_g6
+					1.2								brigand_g6
+					8			death_rider
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#	WAVE 3																									Gargoyle x10
+#	enemies					skeleton_g6	gargoyle_g6	brigand_g6	shadow_archer_g6		dark_sapper	exalted_crowcaller	exalted_crow	dark_disciple		dark_knight_g6	dark_slayer	death_rider	necromancer_g6		dark_construct	darkling	tainted_wolf			skeleton_big_g6
+#	cant.					0	8	9	0		1	0	0	4		0	0	2	2		0	0	0			0
+#	gold	888				0	240	180	0		8	0	0	120		0	0	240	100		0	0	0			0
+	wave		3		21
+					0	brigand_g6
+					1	brigand_g6
+					1	brigand_g6						necromancer_g6
+					3				dark_disciple
+					1		dark_disciple
+					3																					gargoyle_g6
+					2																					gargoyle_g6
+					2																					gargoyle_g6
+					2																					gargoyle_g6
+					8													necromancer_g6
+					3						brigand_g6
+					2	gargoyle_g6					brigand_g6													dark_disciple
+					2						brigand_g6											dark_disciple
+					2	gargoyle_g6
+					4						brigand_g6
+					2	gargoyle_g6					brigand_g6
+					2						brigand_g6
+					2	gargoyle_g6																	dark_sapper
+					8																												death_rider
+					13														death_rider
+

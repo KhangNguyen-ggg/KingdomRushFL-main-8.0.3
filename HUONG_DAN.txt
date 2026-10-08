@@ -1,0 +1,50 @@
+﻿VIỆT HÓA GIAO DIỆN — KINGDOM RUSH FL 8.0.1
+Dựa trên all-desktop.zip, strings.zip và font bạn gửi.
+
+CÁCH CÀI GÓI NHỎ FL_8.0.1_Viet_Hoa_Font.zip
+1. Thoát hoàn toàn game. Sao lưu các file sẽ ghi đè.
+2. Giải nén gói này vào thư mục gốc game (nơi có EXE mod).
+   Hai thư mục all-desktop và kr3-desktop phải ghép vào thư mục tương ứng.
+3. Đồng ý ghi đè. Không xóa các file khác trong thư mục game.
+4. Mở lại game; chọn 中文 (简体) / Chinese (Simplified).
+
+THAY ĐỔI
+- Dịch 212 đoạn giao diện ngoài strings, tại 267 vị trí.
+- Đổi bản đồ, Chọn phép, Chọn tháp và các hướng dẫn bộ tháp/anh hùng.
+- Dịch công nghệ, thống kê sát thương/thu nhập, công cụ phát triển,
+  cài đặt phím tắt, cài đặt di động và trình sửa đợt quái trong file đã gửi.
+- Nhãn hàng nút bản đồ: chữ đậm, màu kem sáng, viền và bóng tối.
+- Nhãn menu bản đồ co chữ trong một dòng; giữ nguyên khung và vị trí nút.
+- Các nút cài đặt dùng chữ đậm và tự co trong khung hiện có.
+- Dùng HarmonyOS Sans đầy đủ dấu tiếng Việt; giảm hệ số phóng đại chữ.
+- Các nhánh tiếng Nhật/Trung phồn thể khai báo riêng vẫn được giữ lại.
+- Giữ cơ chế chơi, sự kiện nút, lưu game và giá trị thông số.
+
+KIỂM TRA
+- Biên dịch kiểm tra cú pháp 17 file Lua gốc và 6 file Lua đã chỉnh.
+- 267 chuỗi đã dịch giữ nguyên biến printf và thứ tự tham số.
+- Kiểm tra phần dịch chuỗi không làm thay đổi mã ngoài chuỗi.
+- Kiểm tra hàm tạo kiểu gọi co chữ một dòng và chỉ áp dụng cho zh-Hans.
+- Kiểm tra các dấu tiếng Việt đang dùng có trong hai font HarmonyOS.
+- CHƯA chạy bản Windows của game. Chưa xác nhận xuống dòng, vị trí dấu,
+  trạng thái rê chuột và mọi độ phân giải thực tế.
+
+PHẠM VI
+Gói này kèm 12 file strings đã dịch trước đó. Mô tả trong strings phần lớn
+vẫn là bản dịch máy thử nghiệm. Các chuỗi giao diện trực tiếp bổ sung lần này
+được dịch và rà riêng. Chữ trong các file khác hoặc ảnh chưa gửi có thể vẫn
+còn tiếng Trung; cần đúng file chứa chúng để dịch tiếp.
+
+KHÔI PHỤC
+BACKUP/all-desktop/ chứa nguyên byte các file trước lần sửa này.
+Chép các file đó vào all-desktop tương ứng để phục hồi giao diện.
+BACKUP/strings_truoc_chinh_giao_dien.zip chứa gói strings trước lần sửa.
+Thư mục BACKUP chỉ để sao lưu, game không cần sử dụng thư mục này.
+
+SÁU FILE GIAO DIỆN ĐÃ CHỈNH
+- all-desktop/data/font_subst.lua
+- all-desktop/game_gui.lua
+- all-desktop/gg_views_custom.lua
+- all-desktop/screen_map.lua
+- all-desktop/screen_map_classes.lua
+- all-desktop/wave_editor_view.lua

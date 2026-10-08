@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'preview_asst_preview',0,0},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-2.4,-13.7,1,1,0,0,0}},
+}},
+},
+}

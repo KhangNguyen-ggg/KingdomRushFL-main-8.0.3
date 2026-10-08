@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'archer3_torre_asst_archer_tower3',-2.35,-26.05},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-0.4,-0.6,1,1,0,0,0}},
+}},
+},
+}

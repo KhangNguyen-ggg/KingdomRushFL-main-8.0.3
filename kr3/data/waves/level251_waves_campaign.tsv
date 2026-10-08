@@ -1,0 +1,101 @@
+#	COMANDOS									1 - Derecha a Izquierda
+	column_names								inc	1:*	1:2	1:1	1:3
+#	level properties
+	description	main JC
+	lives	20
+	gold	175
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	561
+#	stage gold curve
+#	WAVE 1
+#	enemies									bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.									8	0	0	0
+#	gold	40								40	0	0	0
+	wave		1						-1
+									2		bandit_g6
+									0.8			bandit_g6
+									0.8				bandit_g6
+									0.4		bandit_g6
+									0.4			bandit_g6
+									12				bandit_g6
+									0.8			bandit_g6
+									0.8		bandit_g6
+	wait								1
+
+#	WAVE 2
+#	enemies									bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.									14	0	0	0
+#	gold	112								112	0	0	0
+	wave		2						22
+									0		bandit_g6		bandit_g6
+									0.6			bandit_g6
+									0.6		bandit_g6		bandit_g6
+									0.6			bandit_g6
+									0.6		bandit_g6		bandit_g6
+									12		bandit_g6
+									0.6				bandit_g6
+									0.6			bandit_g6
+									1.2		bandit_g6
+									0.6				bandit_g6
+									0.6			bandit_g6
+
+
+
+
+
+#	WAVE 3
+#	enemies									bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.									16	0	0	0
+#	gold	80								80	0	0	0
+	wave		3						35
+									0		bandit_g6		bandit_g6
+									0.8			bandit_g6
+									6			bandit_g6
+									0.6		bandit_g6		bandit_g6
+									0.8			bandit_g6
+									12		bandit_g6		bandit_g6
+									1.2		bandit_g6		bandit_g6
+									1.2		bandit_g6		bandit_g6
+									6		bandit_g6
+									0.6				bandit_g6
+									0.6			bandit_g6
+
+#	WAVE 4
+#	enemies									bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.									8	4	0	0
+#	gold	72								40	32	0	0
+	wave		4						25
+									0	bandit_g6
+									0.6	bandit_g6
+									0.6	bandit_g6
+									0.6	bandit_g6
+									12		blackguard
+									1				blackguard
+									6	bandit_g6
+									0.6	bandit_g6
+									0.6	bandit_g6
+									0.6	bandit_g6
+									10				blackguard
+									1		blackguard
+
+#	WAVE 5
+#	enemies									bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.									10	4	0	0
+#	gold	82								50	32	0	0
+	wave		5						25
+									0		blackguard
+									1			blackguard
+									6		bandit_g6		bandit_g6
+									0.6		bandit_g6		bandit_g6
+									10		blackguard
+									1				blackguard
+									8		bandit_g6
+									0.6				bandit_g6
+									0.6		bandit_g6
+									0.6				bandit_g6
+									0.6		bandit_g6
+									0.6				bandit_g6

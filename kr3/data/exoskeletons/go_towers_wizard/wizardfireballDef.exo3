@@ -1,0 +1,25 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{'wizardfireball_asst_wizard_fireball1',0,0},
+{'wizardfireball_asst_wizard_fireball2',0,0},
+{'wizardfireball_asst_wizard_fireball3',0,0},
+{'wizardfireball_asst_wizard_fireball4',0,0},
+},
+attach_points={
+},
+animations={
+{name='run',frames={
+{{1,1,1,-9.15,0.2,1,1,0,0,0}},
+{{1,1,1,-9.15,0.2,1,1,0,0,0}},
+{{1,2,1,-10.25,0.85,1,1,0,0,0}},
+{{1,2,1,-10.25,0.85,1,1,0,0,0}},
+{{1,3,1,-10.55,0.15,1,1,0,0,0}},
+{{1,3,1,-10.55,0.15,1,1,0,0,0}},
+{{1,4,1,-11.15,0.45,1,1,0,0,0}},
+{{1,4,1,-11.15,0.45,1,1,0,0,0}},
+}},
+},
+}

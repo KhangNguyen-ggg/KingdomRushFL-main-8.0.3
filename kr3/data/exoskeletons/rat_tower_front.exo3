@@ -1,0 +1,19 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{"asst_rat_tower_light_tube",8.7,5.2},
+{"asst_rat_tower_subway_sign",16,16.25},
+{"asst_rat_tower_trash_02",17.7,8.1},
+{"asst_rat_tower_subway_handles",8.4,9.25},
+{"asst_rat_tower_subway_entry_front",28.45,29.7},
+},
+attach_points={
+},
+animations={
+{name="idle",frames={
+{{1,5,1,-30,-53.5,1,1,0,0,0},{1,4,1,-19.7,-7.3,1.10049438699,1.05979179447,-0.0197040008774,-0.0197040008774,0},{1,3,1,-1.4,-9.95,1.04647827148,1.04647827148,0,0,0},{1,2,1,-32.75,-53.5,1.03222998212,1.02892988631,0.0565726759374,0.0565726759374,0},{1,1,1,2.85,-31.3,1,1,0,0,0}},
+}},
+}
+}

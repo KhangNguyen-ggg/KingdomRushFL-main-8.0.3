@@ -1,0 +1,136 @@
+#	COMANDOS					1 - Arriba a Izquierda (pasa al 6)					2 - Arriba a la Derecha (pasa al 3)					3 - Derecha a Derecha Abajo (viene del 2)					4 - Centro a Abajo Izquierda (Viene del 6)					5 - Izquierda Medio a Abajo Izquierda					6 - Izquierda a Centro (Viene del 1)					7 - Derecha Medio a Abajo Derecha					8 - Centro a Abajo Derecha (Elevador)					9 - Centro a Abajo Izquierda (Elevador)					10 - Izquierda a Abajo Izquierda (Voladores)					11 - Derecha a Abajo Derecha (Voladores)
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3		5:*	5:2	5:1	5:3		6:*	6:2	6:1	6:3		7:*	7:2	7:1	7:3		8:*	8:2	8:1	8:3		9:*	9:2	9:1	9:3		10:*	10:2	10:1	10:3		11:*	11:2	11:1	11:3
+#	level properties
+	description	Blitz Rodri
+	lives	20
+	gold	1400
+	gems	150
+	enemy_prefix	enemy_
+	default_increment	1
+	default_interval	20
+#	expected gold	1200
+#	stage total gold	1722
+#	stage gold curve
+#	WAVE 1 (5)					T. Crusher x1 T. Warrior x12																				T. Champion x6										T. Warrior x4 T. Warrior x4 (Rappel)										T. Warrior x4										T. Glider x4
+#	enemies					troll_warrior	troll_champion_g6	troll_glider	troll_crusher		frost_icecaller	troll_pathfinder	frost_baiter	frost_brute		troll_chieftain_g6	spiderling_g6	giant_spider	leaper_spider		spider_matriarch	son_of_sarelgaz
+#	cant.					22	0	4	1		0	0	0	0		0	0	0	0		0	0
+#	gold	322				176	0	16	130		0	0	0	0		0	0	0	0		0	0
+	flags																																													n	n	n	n
+	wave		1		-1
+					0			troll_crusher
+					2		troll_warrior
+					0.6				troll_warrior
+					0.5		troll_warrior
+					0.7		troll_warrior		troll_warrior
+					0.5				troll_warrior
+					2																							troll_champion_jumper_stage_12
+					2																						troll_champion_jumper_stage_12
+					2																								troll_champion_jumper_stage_12
+	event	troll_rappel	2	3	4	4
+					0																																	troll_warrior
+					1																																troll_warrior
+					1																																		troll_warrior
+	event	lower_elevator	l		0	4
+					1																																	troll_warrior
+					1																																troll_warrior
+					1																																		troll_warrior
+					3.5																																											troll_warrior
+					0.6																																										troll_warrior
+					0.7																																											troll_warrior
+					0.5																																										troll_warrior
+					4
+	event	rise_elevator			3
+					1																																																						troll_glider
+					3.5																																																					troll_glider
+					3.5																								troll_champion_jumper_stage_12																														troll_glider
+					3.5	troll_warrior																					troll_champion_jumper_stage_12																															troll_glider
+					0.6	troll_warrior
+					0.8	troll_warrior
+					0.6	troll_warrior																						troll_champion_jumper_stage_12
+					0.8	troll_warrior
+					0.6	troll_warrior
+
+
+
+
+#	46.5
+
+
+
+
+#	WAVE 2 (10)					T. Crusher x1					F. Brute x1 T. Warrior x8																									T. Warrior x12															T. Glider x12
+#	enemies					troll_warrior	troll_champion_g6	troll_glider	troll_crusher		frost_icecaller	troll_pathfinder	frost_baiter	frost_brute		troll_chieftain_g6	spiderling_g6	giant_spider	leaper_spider		spider_matriarch	son_of_sarelgaz
+#	cant.					26	0	9	1		0	0	0	1		0	0	0	0		0	0
+#	gold	634				208	0	36	130		0	0	0	260		0	0	0	0		0	0
+	wave		2		25
+					0.5																																														troll_glider
+					2.5								frost_brute																																						troll_glider
+					2.5																																														troll_glider
+					1			troll_crusher
+
+					5									troll_warrior																																					troll_glider
+					0.3							troll_warrior
+					0.4									troll_warrior
+					0.5							troll_warrior
+					2									troll_warrior																																					troll_glider
+					0.3							troll_warrior
+					0.4									troll_warrior
+					0.6							troll_warrior																																							troll_glider
+					5		troll_warrior																														troll_warrior
+					1				troll_warrior																														troll_warrior
+					1		troll_warrior																															troll_warrior
+					1				troll_warrior																												troll_warrior
+					1		troll_warrior																																troll_warrior
+					1				troll_warrior																													troll_warrior
+					5																																	troll_warrior														troll_glider
+					1.5																																		troll_warrior
+					1.5																																troll_warrior																	troll_glider
+					1.5																																	troll_warrior
+					1.5																																		troll_warrior														troll_glider
+					1.5																																troll_warrior
+
+
+#	38.5
+
+
+#	WAVE 3 (15)					T. Crusher x1 T. Chieftain x1					T. Warrior x12 (Rappel)															T. Champion x12										T. Warrior x12					T. Chieftain x2
+#	enemies					troll_warrior	troll_champion_g6	troll_glider	troll_crusher		frost_icecaller	troll_pathfinder	frost_baiter	frost_brute		troll_chieftain_g6	spiderling_g6	giant_spider	leaper_spider		spider_matriarch	son_of_sarelgaz
+#	cant.					10	0	0	1		0	0	0	1		3	0	0	0		0	0
+#	gold	650				80	0	0	130		0	0	0	260		180	0	0	0		0	0
+	wave		3		19
+					0			troll_crusher
+					2								frost_brute
+					2		troll_chieftain_g6																													troll_warrior
+					0.8																															troll_warrior
+	wait				0.8
+					0.8																															troll_warrior
+					0.8																															troll_warrior
+					0.8																															troll_warrior
+	event	lower_elevator	r		0
+	event	troll_rappel	2	3	3	4
+					3.5																																						troll_chieftain_g6
+					0																							troll_champion_jumper_stage_12
+					3																						troll_champion_jumper_stage_12
+					3																								troll_champion_jumper_stage_12
+	event	rise_elevator			0
+					5																						troll_champion_jumper_stage_12
+					3																							troll_champion_jumper_stage_12
+					3																								troll_champion_jumper_stage_12
+					3																															troll_warrior
+					0.8																															troll_warrior
+	event	lower_elevator	r		0
+	wait				0.8
+					0.8																															troll_warrior
+					1																							troll_champion_jumper_stage_12								troll_warrior
+					1																															troll_warrior
+					1																						troll_champion_jumper_stage_12
+	event	troll_rappel	2	3	5	4
+					0																																						troll_chieftain_g6
+					1																								troll_champion_jumper_stage_12
+
+
+
+
+	event	rise_elevator			4
+#	49.9
+

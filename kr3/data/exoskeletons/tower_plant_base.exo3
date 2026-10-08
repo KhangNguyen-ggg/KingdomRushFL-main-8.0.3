@@ -1,0 +1,16 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{"asst_eggs_mechanic_back",-2,0},
+},
+attach_points={
+},
+animations={
+{name="idle",frames={
+{{1,1,1,0,0,1.09997558594,1.09997558594,0,0,0}},
+{{1,1,1,0,0,1.09997558594,1.09997558594,0,0,0}},
+}},
+}
+}

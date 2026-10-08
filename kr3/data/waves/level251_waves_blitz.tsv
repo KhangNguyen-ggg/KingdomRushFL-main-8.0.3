@@ -1,0 +1,67 @@
+#	COMANDOS						1 - Derecha a Izquierda			
+	column_names					inc	1:*	1:2	1:1	1:3
+#	level properties									
+	description	Blitz Rodri								
+	lives	20								
+	gold	175								
+	gems	150								
+	enemy_prefix	enemy_								
+	default_increment	1								
+	default_interval	20								
+#	expected gold	1200								
+#	stage total gold	175								
+#	stage gold curve									
+#	WAVE 1 (3)									
+#	enemies						bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.						0	0	0	0
+#	gold	0					0	0	0	0
+	wave		1			-1				
+						0		bandit_g6		bandit_g6
+						0.8			bandit_g6	
+						2		bandit_g6		bandit_g6
+						0.6		bandit_g6		bandit_g6
+						0.8			bandit_g6	
+						5		bandit_g6		bandit_g6
+						0.6		bandit_g6		bandit_g6
+						0.6		bandit_g6		bandit_g6
+						4		bandit_g6		bandit_g6
+						0.6		bandit_g6		bandit_g6
+						0.6			bandit_g6	
+#	15.6									
+#	WAVE 1 (4)									
+#	enemies						bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.						0	0	0	0
+#	gold	0					0	0	0	0
+	wave		2			15				
+						0			bandit_g6	
+						0.6		bandit_g6		
+						0.6			bandit_g6	bandit_g6
+						0.6		bandit_g6		bandit_g6
+						3.5		blackguard		
+						1				blackguard
+						5		bandit_g6		bandit_g6
+						0.6			bandit_g6	
+						0.6		bandit_g6		bandit_g6
+						0.6			bandit_g6	bandit_g6
+						5			blackguard	
+						1		blackguard		blackguard
+#	19.1									
+#	WAVE 1 (5)									
+#	enemies						bandit_g6	blackguard	shadow_blades	shadow_archer_g6
+#	cant.						0	0	0	0
+#	gold	0					0	0	0	0
+	wave		3			18				
+						0		blackguard		blackguard
+						1			blackguard	
+						5		bandit_g6		bandit_g6
+						0.6		bandit_g6		bandit_g6
+						3			blackguard	
+						1		blackguard		blackguard
+						5			blackguard	
+						0.6		bandit_g6		bandit_g6
+						0.6		bandit_g6		
+						0.6		blackguard		bandit_g6
+						0.6			bandit_g6	blackguard
+						0.6			blackguard	
+										
+#	18.6									

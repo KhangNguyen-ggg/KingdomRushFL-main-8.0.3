@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{'cloud_map_asst_cloud_01',-93.95,-51.95},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,94,51.95,1,1,0,0,0}},
+}},
+},
+}

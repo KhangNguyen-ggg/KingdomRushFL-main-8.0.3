@@ -1,0 +1,120 @@
+#	COMANDOS					1 - Derecha-Arriba a Arriba (ARMOR)					2 - Derecha-Abajo a Izquierda (MR)					3 - Derecha-Arriba a Izquierda (ARMOR)					4 - Derecha-Abajo a Arriba (MR)			
+	column_names				inc	1:*	1:2	1:1	1:3		2:*	2:2	2:1	2:3		3:*	3:2	3:1	3:3		4:*	4:2	4:1	4:3
+#	level properties																							
+	description	Blitz Rodri																						
+	lives	3																						
+	gold	400																						
+	gems	150																						
+	enemy_prefix	enemy_																						
+	default_increment	1																						
+	default_interval	20																						
+#	expected gold	1200																						
+#	stage total gold	906																						
+#	stage gold curve																							
+#	WAVE 1					Blackguard x															Bandit x			
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg						
+#	cant.					17	12	0	0		0	0	0	0		0	0	0	0					
+#	gold	181				85	96	0	0		0	0	0	0		0	0	0						
+	wave		1		-1																			
+					0																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					3		blackguard		blackguard															
+					1			blackguard																
+					1		blackguard		blackguard															
+					1			blackguard																
+					5																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					3		blackguard		blackguard															
+					1			blackguard																
+					1		blackguard		blackguard															
+					1			blackguard																
+					3.5																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+					0.6																bandit_g6			
+																								
+#	28.9																							
+																								
+																								
+#	WAVE 2										S. Archer x					S. Blade x								
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg						
+#	cant.					0	0	16	11		0	0	0	0		0	0	0	0					
+#	gold	325				0	0	160	165		0	0	0	0		0	0	0						
+	wave		2		20																			
+					0							shadow_archer_g6												
+					1									shadow_archer_g6										
+					1								shadow_archer_g6											
+					5											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+																								
+					1.5	shadow_blades																		
+					0.6	shadow_blades																		
+					0.6	shadow_blades																		
+					4								shadow_archer_g6											
+					1							shadow_archer_g6												
+					1									shadow_archer_g6										
+					5											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+					0.6											shadow_blades								
+																								
+					1.5	shadow_blades																		
+					0.6	shadow_blades																		
+					0.6	shadow_blades																		
+					3							shadow_archer_g6		shadow_archer_g6										
+					1.2								shadow_archer_g6											
+					1.2							shadow_archer_g6		shadow_archer_g6										
+#	33.6																							
+																								
+#	WAVE 3					Blackguard x					Crow x S. Archer x													
+#	enemies					bandit_g6	blackguard	shadow_blades	shadow_archer_g6		crow	crowcaller	headhunter	goblin_g6		orc_warrior	wulf	worg						
+#	cant.					0	16	0	18		16	0	0	0		0	0	0	0					
+#	gold	430				0	128	0	270		32	0	0	0		0	0	0						
+	wave		3		25																			
+					0			blackguard			crow													
+					0.6						crow													
+					0.6		blackguard		blackguard		crow													
+					0.6						crow													
+					0.6			shadow_archer_g6			crow													
+					0.6						crow													
+					3		blackguard		blackguard															
+					1			blackguard																
+					2		shadow_archer_g6		shadow_archer_g6				shadow_archer_g6											
+					2		blackguard		blackguard			shadow_archer_g6												
+					2									shadow_archer_g6										
+					4						crow	shadow_archer_g6												
+					0.6						crow													
+					0.6						crow		shadow_archer_g6											
+					0.6						crow													
+					0.6						crow	shadow_archer_g6												
+					5						crow													
+					0.6						crow													
+					0.6						crow													
+					0.6						crow													
+					0.6						crow													
+					0																			
+					2		blackguard		blackguard			shadow_archer_g6												
+					1			shadow_archer_g6					shadow_archer_g6											
+					1		blackguard		blackguard					shadow_archer_g6										
+					3			blackguard																
+					1		blackguard		blackguard				shadow_archer_g6											
+					1			blackguard				shadow_archer_g6												
+					1		shadow_archer_g6		shadow_archer_g6					shadow_archer_g6										
+																								
+																								
+																								
+																								
+#	36.8																							

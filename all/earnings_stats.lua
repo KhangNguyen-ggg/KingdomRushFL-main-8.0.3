@@ -1,0 +1,82 @@
+local M = {}
+
+M.sources = {
+	{id = "early_wave", label = "跳波"},
+	{id = "hero_pirate", label = "英雄-黑棘船长"},
+	{id = "hero_lucerna", label = "英雄-卢塞尔娜"},
+	{id = "hero_beresad", label = "英雄-贝雷萨德"},
+	{id = "hero_dianyun", label = "英雄-电云"},
+	{id = "hero_deadeye", label = "英雄-神枪手强尼"},
+	{id = "tower_sand", label = "防御塔-沙丘哨兵"},
+	{id = "tower_assassin", label = "防御塔-刺客"},
+	{id = "tower_shaolin", label = "防御塔-少林寺"},
+	{id = "tower_miners", label = "防御塔-淘金矮人"},
+	{id = "tower_alchemist", label = "防御塔-炼金术士小屋"},
+	{id = "spell_fateful_bond", label = "法术-因缘际会"},
+	{id = "spell_hand_midas", label = "法术-迈达斯之手"},
+	{id = "spell_royal_edict", label = "法术-国王号令"}
+}
+
+function M.record(store, source, amount)
+	if not store or not source or type(amount) ~= "number" or amount <= 0 then
+		return
+	end
+
+	local stats = store.earnings_stats
+
+	if not stats then
+		stats = {by_source = {}, total = 0}
+		store.earnings_stats = stats
+	end
+
+	stats.by_source[source] = (stats.by_source[source] or 0) + amount
+	stats.total = stats.total + amount
+end
+
+function M.adjust_enemy_bonus(enemy, source, delta)
+	if not enemy or not source or type(delta) ~= "number" or delta == 0 then
+		return
+	end
+
+	local bonuses = enemy.earnings_bonuses
+
+	if not bonuses then
+		if delta < 0 then
+			return
+		end
+
+		bonuses = {}
+		enemy.earnings_bonuses = bonuses
+	end
+
+	bonuses[source] = math.max(0, (bonuses[source] or 0) + delta)
+end
+
+function M.record_enemy_payout(store, enemy, amount)
+	local bonuses = enemy and enemy.earnings_bonuses
+
+	if not bonuses or type(amount) ~= "number" or amount <= 0 then
+		return
+	end
+
+	local enemy_data = enemy.enemy or enemy._original_enemy
+	local raw_gold = enemy_data and enemy_data.gold or 0
+	local factor = raw_gold > 0 and amount / raw_gold or 1
+	local bonus_total = 0
+
+	for _, source in ipairs(M.sources) do
+		bonus_total = bonus_total + (bonuses[source.id] or 0)
+	end
+
+	if bonus_total > 0 then
+		factor = math.min(factor, amount / bonus_total)
+
+		for _, source in ipairs(M.sources) do
+			M.record(store, source.id, (bonuses[source.id] or 0) * factor)
+		end
+	end
+
+	enemy.earnings_bonuses = nil
+end
+
+return M

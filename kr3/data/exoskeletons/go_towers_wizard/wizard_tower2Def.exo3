@@ -1,0 +1,16 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'wizard_tower2_asst_wizard1_shad',9.1,2.1},
+{'wizard_tower2_asst_wizard2_base',-0.15,7.15},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-9,-35.05,0.976547,0.976547,0,0,0},{1,2,1,-5.35,-16.5,1,1,0,0,0},{1,1,1,-8.3,-38.45,0.976547,0.976547,0,0,0}},
+}},
+},
+}

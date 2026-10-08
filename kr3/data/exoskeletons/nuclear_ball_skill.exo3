@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{"Asst_nucleartower_ball",0,-14.55},
+},
+attach_points={
+},
+animations={
+{name="idle",frames={
+{{1,1,1,0,20.35,1.39994812012,1.39994812012,0,0,0}},
+}},
+}
+}

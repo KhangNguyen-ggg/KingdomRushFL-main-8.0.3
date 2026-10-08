@@ -1,0 +1,24 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'tower_priestess_preview_asst_priestess_base_lvl1',0,13.6},
+{'tower_priestess_preview_asst_priestess_lvl1_arm1',0,0},
+{'tower_priestess_preview_asst_priestess_lvl1_arm2',0,0.05},
+{'tower_priestess_preview_asst_priestess_lvl1_body',0,0},
+{'tower_priestess_preview_asst_priestess_lvl1_head',0,2.2},
+{'tower_priestess_preview_asst_priestess_lvl1_leg1',0,0},
+{'tower_priestess_preview_asst_priestess_lvl1_leg2',0,0},
+{'tower_priestess_preview_asst_priestess_lvl1_skirt',0,0},
+{'tower_priestess_preview_asst_priestess_lvl1_staff',-0.8,1.7},
+{'tower_priestess_preview_asst_priestess_shadow',0,0},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-4.1,-31.85,1,1,0,0,0},{1,10,1,-0.55,-31.45,1,1,0,0,0},{1,9,1,14.4,-48.7,1,1,0,0,0},{1,7,1,3.7,-34.95,1,1,0,0,0},{1,6,1,-6.1,-34.85,1,1,0,0,0},{1,3,1,8.15,-45.6,1,1,0,0,0},{1,2,1,-8.1,-43,1,1,0,0,0},{1,8,1,-2.7,-36,1,1,0,0,0},{1,4,1,-1.2,-41.95,1,1,0,0,0},{1,5,1,-1.45,-55.2,1,1,0,0,0}},
+}},
+},
+}

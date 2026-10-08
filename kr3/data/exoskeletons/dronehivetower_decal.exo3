@@ -1,0 +1,19 @@
+return {
+version=3,
+partScaleCompensation=1,
+fps=30,
+parts={
+{"asst_dronehive_circle",0,-46.3},
+{"asst_dronehive_circle_red",0,-46.3},
+},
+attach_points={
+},
+animations={
+{name="green",frames={
+{{1,1,1,2.2,2,1,1,0,0,0}},
+}},
+{name="red",frames={
+{{1,2,1,2.2,2,1,1,0,0,0}},
+}},
+}
+}

@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'wizard_build_asst_wizard1_towerbuild',36.45,28.7},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-39.25,-40.7,1,1,0,0,0}},
+}},
+},
+}

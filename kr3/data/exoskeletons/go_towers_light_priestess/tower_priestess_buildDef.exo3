@@ -1,0 +1,15 @@
+return {
+version=3,
+partScaleCompensation=1.40625,
+fps=30,
+parts={
+{'tower_priestess_build_asst_priestess_build',0,0},
+},
+attach_points={
+},
+animations={
+{name='idle',frames={
+{{1,1,1,-4.25,-9.05,1,1,0,0,0}},
+}},
+},
+}
