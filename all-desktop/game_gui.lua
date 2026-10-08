@@ -68,6 +68,7 @@ local function CJK(default, zh, ja, kr)
 	return i18n.cjk(i18n, default, zh, ja, kr)
 end
 
+local infinite_heroes = require("infinite_heroes")
 local IS_KR3 = KR_GAME == "kr3"
 local IS_KR2 = KR_GAME == "kr2"
 local IS_KR1 = KR_GAME == "kr1"
@@ -636,6 +637,7 @@ local function using_double_heroes()
 end
 
 local function hero_control_limit()
+	if infinite_heroes.active(game_gui.game and game_gui.game.store) then return #(game_gui.heroes or {}) end
 	if using_hero_rally() then
 		return 4
 	elseif KR_GAME == "kr5" or using_double_heroes() then
@@ -663,6 +665,7 @@ local function selected_hero_ultimate_by_rank(rank)
 end
 
 local function hero_ultimate_assignments()
+	if infinite_heroes.active(game_gui.game and game_gui.game.store) then return {}, {} end
 	if using_spell_raid() or using_hero_rally() then
 		return {}, {}
 	end
@@ -2201,6 +2204,7 @@ function game_gui:init(w, h, game)
 	self.layer_gui_top = layer_gui_top
 	self.item_fx_container = item_fx_container
 	self.heroes = {}
+	self.infinite_ultimate_button = nil
 	self.text_balloon_views = {}
 	self.heroes_space_state_machine = 0
 
@@ -3464,6 +3468,11 @@ function game_gui:deselect_heroes()
 end
 
 function game_gui:select_hero(id)
+	if infinite_heroes.active(self.game and self.game.store) then
+		for n, portrait in ipairs(self.heroes or {}) do
+			if portrait.hero_id == id then self.hud_bottom:update_infinite_hero_page(math.ceil(n / 2)); break end
+		end
+	end
 	for _, h in pairs(self.heroes) do
 		if h.hero_id == id then
 			h:select()
@@ -4475,6 +4484,7 @@ function PowerButton:on_click(button, x, y)
 end
 
 function PowerButton:toggle_selection(keep_hover)
+	if not self.infinite_hero_id then game_gui.infinite_ultimate_button = nil end
 	if game_gui.mode == self.selected_gui_mode then
 		game_gui:set_mode()
 
@@ -5843,6 +5853,48 @@ function HeroUltimateButton:fire(wx, wy)
 	return fire_selected_hero_ultimate(self, self.hero_slot, hero, hero_entity, wx, wy)
 end
 
+-- Each copy owns its own skill button and cooldown; no fixed spell-slot ceiling.
+InfiniteHeroUltimateButton = class("InfiniteHeroUltimateButton", PowerButton)
+
+function InfiniteHeroUltimateButton:initialize(hero_entity)
+	local ht = E:get_template(hero_entity.template_name)
+	PowerButton.initialize(self, power_hero_button_icon(ht) or "power_button_icons_0017", "power_button_mask_0001")
+	self.animations = standard_power_button_animations()
+	self.infinite_hero_id = hero_entity.id
+	self.selected_gui_mode = GUI_MODE_POWER_S
+	local ultimate = hero_entity.hero.skills.ultimate
+	self.cooldown_time = power_hero_ultimate_cooldown(ht, hero_entity, E:get_template(ultimate.controller_name)) or 60
+	self:set_mode("ready")
+end
+
+function InfiniteHeroUltimateButton:toggle_selection(keep_hover)
+	local previous = game_gui.infinite_ultimate_button
+	if previous and previous ~= self and game_gui.mode == GUI_MODE_POWER_S then
+		previous:set_mode("default"); game_gui:set_mode()
+	end
+	game_gui.infinite_ultimate_button = self
+	PowerButton.toggle_selection(self, keep_hover)
+end
+
+function InfiniteHeroUltimateButton:can_fire(wx, wy)
+	local hero = game_gui:entity_by_id(self.infinite_hero_id)
+	local ultimate = hero and hero.hero.skills.ultimate
+	if not ultimate or (ultimate.level or 0) < 1 or self.mode == "cooldown" or (hero.health and hero.health.dead) then return false end
+	local controller = E:get_template(ultimate.controller_name)
+	return controller and (not controller.can_fire_fn or controller.can_fire_fn(controller, wx, wy, game_gui.game.store))
+end
+
+function InfiniteHeroUltimateButton:fire(wx, wy)
+	local hero = game_gui:entity_by_id(self.infinite_hero_id)
+	if hero then return fire_selected_hero_ultimate(self, "s", E:get_template(hero.template_name), hero, wx, wy) end
+	return false
+end
+
+function InfiniteHeroUltimateButton:update(dt)
+	if self.mode == "selected" and (game_gui.infinite_ultimate_button ~= self or game_gui.mode ~= GUI_MODE_POWER_S) then self:set_mode("default") end
+	PowerButton.update(self, dt)
+end
+
 function Power1Button:initialize()
 	configure_selected_power_button(self, 1)
 end
@@ -6904,6 +6956,51 @@ function HudBottomView:show()
 	tween_hud_position(self, 0)
 end
 
+function HudBottomView:update_infinite_hero_page(page)
+	local portraits = self.hero_portraits or {}
+	local pages = math.max(1, math.ceil(#portraits / 2))
+	self.infinite_hero_page = math.max(1, math.min(page or 1, pages))
+	for n, portrait in ipairs(portraits) do
+		portrait.hidden = math.ceil(n / 2) ~= self.infinite_hero_page
+		portrait.pos = v(8 + ((n - 1) % 2) * (portrait.size.x - 18), 0)
+		portrait:set_style(nil)
+	end
+	self.powers.pos.x = 175
+	if not self.infinite_pager then
+		local pager = KView:new(v(130, 24))
+		pager.pos = v(8, -145)
+		pager.colors.background = {37, 31, 22, 245}
+		self.herobar:add_child(pager)
+		self.infinite_pager = pager
+		local label = GGLabel:new(v(66, 24))
+		label.pos = v(32, 0); label.font_name = "hud"; label.font_size = 12
+		label.text_align = "center"; label.vertical_align = "middle"; label.fit_size = true
+		label.colors.text = {255, 239, 202, 255}
+		pager:add_child(label); self.infinite_page_label = label
+		for _, direction in ipairs({-1, 1}) do
+			local step = direction
+			local button = KView:new(v(30, 24))
+			button.pos = v(step < 0 and 0 or 100, 0)
+			button.colors.background = {70, 80, 40, 255}
+			local arrow = GGLabel:new(v(30, 24))
+			arrow.text = step < 0 and "<" or ">"; arrow.font_name = "hud"; arrow.font_size = 15
+			arrow.text_align = "center"; arrow.vertical_align = "middle"
+			arrow.colors.text = {255, 239, 202, 255}; arrow.propagate_on_click = true
+			button:add_child(arrow)
+			function button.on_click(_, mouse_button)
+				if mouse_button ~= nil and mouse_button ~= 1 then return end
+				game_gui:deselect_all()
+				local count = math.max(1, math.ceil(#self.hero_portraits / 2))
+				self:update_infinite_hero_page((self.infinite_hero_page - 1 + step) % count + 1)
+			end
+			pager:add_child(button)
+		end
+	end
+	self.infinite_pager.hidden = pages <= 1
+	self.infinite_page_label.text = tostring(self.infinite_hero_page) .. "/" .. pages
+	self.herobar:order_to_front()
+end
+
 function HudBottomView:add_hero(hero_entity)
 	local hero = HeroPortrait:new(hero_entity)
 	local rally = using_hero_rally()
@@ -6920,6 +7017,17 @@ function HudBottomView:add_hero(hero_entity)
 	table.insert(self.hero_portraits, hero)
 
 	local hero_count = #self.hero_portraits
+	if infinite_heroes.active(game_gui.game and game_gui.game.store) then
+		local ultimate = hero_entity.hero and hero_entity.hero.skills and hero_entity.hero.skills.ultimate
+		if ultimate and ultimate.controller_name then
+			local skill = InfiniteHeroUltimateButton:new(hero_entity)
+			skill.pos = v(hero.size.x / 2, -21)
+			skill.scale = v(0.55, 0.55)
+			hero:add_child(skill)
+		end
+		self:update_infinite_hero_page(self.infinite_hero_page or 1)
+		return hero
+	end
 	local visible_limit = rally and 4 or 2
 
 	if hero_count > visible_limit then
@@ -10530,6 +10638,11 @@ function PickView:on_down(button, x, y)
 		elseif game_gui.mode == GUI_MODE_POWER_A or game_gui.mode == GUI_MODE_POWER_S then
 			local slot = game_gui.mode == GUI_MODE_POWER_A and "a" or "s"
 			local button_view = slot == "a" and game_gui.power_a or game_gui.power_s
+			if slot == "s" and game_gui.infinite_ultimate_button then
+				local custom = game_gui.infinite_ultimate_button
+				if custom:can_fire(wx, wy) then custom:fire(wx, wy) else game_gui:show_invalid_point_cross(x, y) end
+				return false
+			end
 
 			if button_view and hero_ultimate_slot_can_fire(slot, wx, wy, game_gui.game.store) then
 				button_view:fire(wx, wy)

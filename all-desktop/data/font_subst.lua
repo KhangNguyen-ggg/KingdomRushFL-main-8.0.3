@@ -92,25 +92,25 @@ return {
 			}
 		}
 	},
-	-- Vietnamese labels use upright fonts with complete diacritic coverage.
+	-- Vietnamese: Soup of Justice for display, EB Garamond for reading.
 	["zh-Hans"] = {
-		{ "body", NOTO_REGULAR, { size = 1 } },
-		{ "body_bold", NOTO_BOLD, { size = 1 } },
-		{ "body_slides", NOTO_REGULAR, { size = 1 } },
-		{ "button", NOTO_BOLD, { size = 0.95 } },
-		{ "capitals", NOTO_BOLD, { size = 1 } },
-		{ "h", NOTO_BOLD, { size = 1 } },
-		{ "h_book", NOTO_BOLD, { size = 1 } },
-		{ "h_noti", NOTO_BOLD, { size = 1 } },
-		{ "h_popup", NOTO_BOLD, { size = 1 } },
-		{ "hero_name_label_kr1", NOTO_BOLD, { size = 0.95 } },
-		{ "hero_name_label", NOTO_BOLD, { size = 0.95 } },
-		{ "hud", NOTO_BOLD, { size = 1.15 } },
-		{ "infobar_name", NOTO_BOLD, { size = 1 } },
-		{ "infobar_stats", NOTO_REGULAR, { size = 1 } },
-		{ "sans", NOTO_REGULAR, { size = 1 } },
-		{ "sans_bold", NOTO_BOLD, { size = 1 } },
-		{ "taunts", NOTO_BOLD, { size = 1.05 } },
+		{ "body", "EBGaramond-Regular", { size = 1.1 } },
+		{ "body_bold", "EBGaramond-Bold", { size = 1.1 } },
+		{ "body_slides", "EBGaramond-Regular", { size = 1.1 } },
+		{ "button", "FL-SoupOfJustice", { size = 1 } },
+		{ "capitals", "EBGaramond-Italic", { size = 1.1 } },
+		{ "h", "FL-SoupOfJustice", { size = 1 } },
+		{ "h_book", "EBGaramond-Italic", { size = 1.1 } },
+		{ "h_noti", "FL-SoupOfJustice", { size = 1 } },
+		{ "h_popup", "FL-SoupOfJustice", { size = 1 } },
+		{ "hero_name_label_kr1", "FL-SoupOfJustice", { size = 1 } },
+		{ "hero_name_label", "FL-SoupOfJustice", { size = 1 } },
+		{ "hud", "EBGaramond-Bold", { size = 1.1 } },
+		{ "infobar_name", "FL-SoupOfJustice", { size = 1 } },
+		{ "infobar_stats", "EBGaramond-Regular", { size = 1.1 } },
+		{ "sans", "EBGaramond-Regular", { size = 1.1 } },
+		{ "sans_bold", "EBGaramond-Bold", { size = 1.1 } },
+		{ "taunts", "EBGaramond-Bold", { size = 1.1 } },
 	},
 	["zh-Hant"] = {
 		{

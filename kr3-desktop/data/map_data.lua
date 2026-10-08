@@ -6353,357 +6353,357 @@ local map_data = {
 		{
 			icon = 601,
 			name = "tower_elf",
-			display_name = "森林精灵"
+			display_name = "Tinh linh rừng"
 		},
 		{
 			icon = 602,
 			name = "tower_sasquash",
-			display_name = "大脚怪"
+			display_name = "Sasquatch"
 		},
 		{
 			icon = 603,
 			name = "tower_sunray",
-			display_name = "日光之塔"
+			display_name = "Tháp Nhật Quang"
 		},
 		{
 			icon = 604,
 			name = "tower_time_wizard",
-			display_name = "时光巫师"
+			display_name = "Pháp sư thời gian"
 		},
 		{
 			icon = 605,
 			name = "tower_steam_troop",
-			display_name = "蒸汽机兵"
+			display_name = "Chiến binh hơi nước"
 		},
 		{
 			icon = 606,
 			name = "tower_imperialguard",
-			display_name = "帝国卫兵"
+			display_name = "Vệ binh đế quốc"
 		},
 		{
 			icon = 607,
 			name = "tower_imperial_patrol",
-			display_name = "皇家骑士团"
+			display_name = "Đoàn kỵ sĩ hoàng gia"
 		},
 		{
 			icon = 608,
 			name = "tower_imperial_patrol_2",
-			display_name = "皇家近卫队"
+			display_name = "Cận vệ hoàng gia"
 		},
 		{
 			icon = 609,
 			name = "tower_paladin_rider",
-			display_name = "圣骑兵殿堂"
+			display_name = "Đại sảnh thánh kỵ binh"
 		},
 		{
 			icon = 610,
 			name = "tower_sasquash_rework",
-			display_name = "大脚怪洞穴"
+			display_name = "Hang Sasquatch"
 		},
 		{
 			icon = 611,
 			name = "tower_elf_1",
-			display_name = "森林精灵殿堂"
+			display_name = "Đại sảnh tinh linh rừng"
 		},
 		{
 			icon = 612,
 			name = "tower_archer_hammerhold",
-			display_name = "军团弓兵哨站"
+			display_name = "Tiền đồn cung thủ quân đoàn"
 		},
 		{
 			icon = 613,
 			name = "tower_hammerhold_elite",
-			display_name = "沙漠弓手"
+			display_name = "Cung thủ sa mạc"
 		},
 		{
 			icon = 614,
 			name = "tower_barrack_pirates",
-			display_name = "海盗酒馆"
+			display_name = "Quán rượu hải tặc"
 		},
 		{
 			icon = 615,
 			name = "tower_barrack_pirate_captain",
-			display_name = "海盗酒馆重制分支"
+			display_name = "Quán rượu hải tặc (nhánh làm lại)"
 		},
 		{
 			icon = 616,
 			name = "tower_barrack_amazonas",
-			display_name = "长矛女战士小屋"
+			display_name = "Lều nữ chiến binh cầm giáo"
 		},
 		{
 			icon = 617,
 			name = "tower_barrack_mercenaries",
-			display_name = "佣兵营地"
+			display_name = "Trại lính đánh thuê"
 		},
 		{
 			icon = 618,
 			name = "tower_neptune",
-			display_name = "雷神圣殿"
+			display_name = "Đền Thần Sấm"
 		},
 		{
 			icon = 619,
 			name = "tower_pirate_camp",
-			display_name = "海盗营地"
+			display_name = "Trại hải tặc"
 		},
 		{
 			icon = 620,
 			name = "tower_archer_dwarf",
-			display_name = "矮人堡垒"
+			display_name = "Pháo đài người lùn"
 		},
 		{
 			icon = 621,
 			name = "tower_barrack_dwarf",
-			display_name = "矮人大厅"
+			display_name = "Đại sảnh người lùn"
 		},
 		{
 			icon = 622,
 			name = "tower_barrack_dwarfshooter",
-			display_name = "矮人大厅（枪）"
+			display_name = "Đại sảnh người lùn (lính súng)"
 		},
 		{
 			icon = 623,
 			name = "tower_pirate_watchtower",
-			display_name = "海盗瞭望塔"
+			display_name = "Tháp canh hải tặc"
 		},
 		{
 			icon = 624,
 			name = "tower_frankenstein",
-			display_name = "黑暗锻造炉"
+			display_name = "Lò rèn hắc ám"
 		},
 		{
 			icon = 625,
 			name = "tower_aladdin_lamp",
-			display_name = "神灯许愿台"
+			display_name = "Đài ước nguyện thần đèn"
 		},
 		{
 			icon = 626,
 			name = "tower_barrack_canibal",
-			display_name = "野蛮人巢穴"
+			display_name = "Ổ thổ dân"
 		},
 		{
 			icon = 627,
 			name = "tower_hammerhold_guard",
-			display_name = "哈默霍尔德卫队"
+			display_name = "Vệ binh Hammerhold"
 		},
 		{
 			icon = 628,
 			name = "tower_sandmystic",
-			display_name = "沙漠秘术师"
+			display_name = "Pháp sư sa mạc"
 		},
 		{
 			icon = 629,
 			name = "tower_drow",
-			display_name = "变节者岗哨"
+			display_name = "Tiền đồn ly khai"
 		},
 		{
 			icon = 630,
 			name = "tower_bastion",
-			display_name = "加拉德林堡垒"
+			display_name = "Pháo đài Galadrian"
 		},
 		{
 			icon = 631,
 			name = "tower_ewok",
-			display_name = "阿渥克小屋"
+			display_name = "Lều Awok"
 		},
 		{
 			icon = 632,
 			name = "tower_ewok_rework",
-			display_name = "阿渥克小屋（重制）"
+			display_name = "Lều Awok (làm lại)"
 		},
 		{
 			icon = 633,
 			name = "tower_ground_archer",
-			display_name = "游侠阵地"
+			display_name = "Trận địa cung thủ"
 		},
 		{
 			icon = 634,
 			name = "tower_green_archer",
-			display_name = "叶脉弓手"
+			display_name = "Cung thủ lá xanh"
 		},
 		{
 			icon = 635,
 			name = "tower_ewok_archer",
-			display_name = "阿渥克投矛手"
+			display_name = "Awok ném giáo"
 		},
 		{
 			icon = 636,
 			name = "tower_ewok_archer_re",
-			display_name = "阿渥克军团"
+			display_name = "Quân đoàn Awok"
 		},
 		{
 			icon = 637,
 			name = "tower_faerie_dragon",
-			display_name = "仙女龙巢穴"
+			display_name = "Tổ rồng tiên"
 		},
 		{
 			icon = 638,
 			name = "tower_pixie",
-			display_name = "侏儒花园"
+			display_name = "Vườn tiên nhỏ"
 		},
 		{
 			icon = 639,
 			name = "tower_black_baby_dragon",
-			display_name = "幼龙贝莱赛德"
+			display_name = "Rồng con Beresad"
 		},
 		{
 			icon = 640,
 			name = "tower_baby_ashbite",
-			display_name = "龙巢（幼龙阿什比特）"
+			display_name = "Tổ rồng (Ashbite con)"
 		},
 		{
 			icon = 641,
 			name = "mercenary_troll_hut",
-			display_name = "巨魔雇佣兵"
+			display_name = "Lính đánh thuê troll"
 		},
 		{
 			icon = 642,
 			name = "spider_nest",
-			display_name = "蜘蛛巢"
+			display_name = "Tổ nhện"
 		},
 		{
 			icon = 643,
 			name = "linirea_caravan",
-			display_name = "商队"
+			display_name = "Đoàn thương nhân"
 		},
 		{
 			icon = 644,
 			name = "sarcophagus_build_2",
-			display_name = "古老的石棺"
+			display_name = "Quan tài đá cổ"
 		},
 		{
 			icon = 645,
 			name = "decal_stage_11_veznan",
-			display_name = "维兹南援助"
+			display_name = "Viện trợ của Vez'nan"
 		},
 		{
 			icon = 646,
 			name = "tower_stage_13_sunray_lvl4",
-			display_name = "暗光高塔"
+			display_name = "Tháp Hắc Quang"
 		},
 		{
 			icon = 647,
 			name = "tower_stage_17_weirdwood",
-			display_name = "怪异树木"
+			display_name = "Thụ nhân kỳ dị"
 		},
 		{
 			icon = 648,
 			name = "tower_stage_18_elven_barrack",
-			display_name = "精灵雇佣兵"
+			display_name = "Lính đánh thuê tinh linh"
 		},
 		{
 			icon = 649,
 			name = "tower_stage_20_arborean_oldtree",
-			display_name = "古树"
+			display_name = "Cổ thụ"
 		},
 		{
 			icon = 650,
 			name = "tower_stage_20_arborean_honey",
-			display_name = "树灵养蜂人"
+			display_name = "Người nuôi ong Arborean"
 		},
 		{
 			icon = 651,
 			name = "tower_stage_20_arborean_barrack",
-			display_name = "树灵卫队"
+			display_name = "Vệ binh Arborean"
 		},
 		{
 			icon = 652,
 			name = "tower_stage_20_arborean_watchtower_3",
-			display_name = "树灵瞭望塔"
+			display_name = "Tháp canh Arborean"
 		},
 		{
 			icon = 653,
 			name = "tower_stage_22_arborean_mages",
-			display_name = "树灵法师"
+			display_name = "Pháp sư Arborean"
 		},
 		{
 			icon = 654,
 			name = "tower_stage_28_priests_barrack",
-			display_name = "无明教团"
+			display_name = "Giáo phái Không Mắt"
 		},
 		{
 			icon = 655,
 			name = "tower_arborean_sentinels",
-			display_name = "树灵荆棘矛兵"
+			display_name = "Lính giáo gai Arborean"
 		},
 		{
 			icon = 656,
 			name = "tower_dragons_warden",
-			display_name = "守望者大法师"
+			display_name = "Đại pháp sư Vệ binh"
 		},
 		{
 			icon = 657,
 			name = "stage_37_barrack_dragon_wardens",
-			display_name = "守望者勇士传送阵"
+			display_name = "Cổng triệu hồi Chiến binh Vệ binh"
 		},
 		{
 			icon = 658,
 			name = "tower_stage_38_dragon_wardens",
-			display_name = "龙骑兵岗哨"
+			display_name = "Tiền đồn Long kỵ binh"
 		},
 		{
 			icon = 659,
 			name = "g1_tower_barrack_soldier_warden_stage_40",
-			display_name = "守望者学士传送阵"
+			display_name = "Cổng triệu hồi Học giả Vệ binh"
 		},
 		{
 			icon = 660,
 			name = "tower_deathcoil",
-			display_name = "蜥蜴人狙击塔"
+			display_name = "Tháp bắn tỉa người thằn lằn"
 		},
 		{
 			icon = 661,
 			name = "tower_rotshroom",
-			display_name = "腐烂魔菇"
+			display_name = "Nấm mục rữa"
 		},
 		{
 			icon = 662,
 			name = "tower_redcap",
-			display_name = "红帽居所"
+			display_name = "Nơi trú ẩn Redcap"
 		},
 		{
 			icon = 663,
 			name = "tower_shaman",
-			display_name = "哥布林萨满"
+			display_name = "Pháp sư goblin"
 		},
 		{
 			icon = 664,
 			name = "tower_sc_rat_tower",
-			display_name = "地下战士"
+			display_name = "Chiến binh dưới lòng đất"
 		},
 		{
 			icon = 665,
 			name = "tower_sc_twilight_avenger",
-			display_name = "暮光复仇者"
+			display_name = "Chiến binh báo thù Chạng vạng"
 		},
 		{
 			icon = 666,
 			name = "tower_sc_nuclear_tower",
-			display_name = "核废料处理站"
+			display_name = "Trạm xử lý chất thải hạt nhân"
 		},
 		{
 			icon = 667,
 			name = "tower_sc_drone_hive",
-			display_name = "无人机蜂巢"
+			display_name = "Tổ máy bay không người lái"
 		},
 		{
 			icon = 668,
 			name = "tower_sc_thermalblast_spa",
-			display_name = "相扑温泉"
+			display_name = "Suối nóng sumo"
 		},
 		{
 			icon = 669,
 			name = "tower_sc_fuhai_temple",
-			display_name = "抚海寺"
+			display_name = "Phù Hải Tự"
 		},
 		{
 			icon = 670,
 			name = "winter_level4",
-			display_name = "寒冰女巫"
+			display_name = "Phù thủy băng"
 		},
 		{
 			icon = 671,
 			name = "frost_gem_level4",
-			display_name = "寒冰宝石 IV"
+			display_name = "Ngọc băng IV"
 		},
 	},
 	tower_3_data = {

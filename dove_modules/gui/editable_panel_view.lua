@@ -588,7 +588,7 @@ function EditablePanelView:initialize(sw, sh, title, keyboard, controller)
 	self.back:add_child(self.data_group)
 
 	-- 底部按钮（无分页，改为滚动列表）
-	local cancel_btn = GGOptionsButton:new(CJK("Cancel", "取消"))
+	local cancel_btn = GGOptionsButton:new(CJK("Cancel", "Hủy"))
 	cancel_btn.scale = V.v(0.62, 0.62)
 	cancel_btn.anchor = V.v(cancel_btn.size.x / 2, cancel_btn.size.y / 2)
 	cancel_btn.pos = V.v(self.back.size.x / 2 - 110, controls_y)

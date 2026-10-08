@@ -86,7 +86,7 @@ local function write_editor_file(fn, out)
 	if not f then
 		log.error("Could not open editor output %s: %s", fn, tostring(open_err))
 
-		return false, "无法打开关卡文件"
+		return false, "Không thể mở file màn chơi"
 	end
 
 	local ok, result, write_err = pcall(f.write, f, out)
@@ -96,7 +96,7 @@ local function write_editor_file(fn, out)
 		write_err = ok and write_err or result
 		log.error("Could not write editor output %s: %s", fn, tostring(write_err))
 
-		return false, "无法写入关卡文件"
+		return false, "Không thể ghi file màn chơi"
 	end
 
 	local flush_ok, flush_result, flush_err = pcall(f.flush, f)
@@ -106,7 +106,7 @@ local function write_editor_file(fn, out)
 		flush_err = flush_ok and flush_err or flush_result
 		log.error("Could not flush editor output %s: %s", fn, tostring(flush_err))
 
-		return false, "无法写入关卡文件"
+		return false, "Không thể ghi file màn chơi"
 	end
 
 	local close_ok, close_result, close_err = pcall(f.close, f)
@@ -115,7 +115,7 @@ local function write_editor_file(fn, out)
 		close_err = close_ok and close_err or close_result
 		log.error("Could not close editor output %s: %s", fn, tostring(close_err))
 
-		return false, "无法完成关卡文件写入"
+		return false, "Không thể hoàn tất việc ghi file màn chơi"
 	end
 
 	return true
@@ -762,11 +762,11 @@ function editor:level_save(idx, mode)
 	mode = tonumber(mode) or GAME_MODE_CAMPAIGN
 
 	if not idx then
-		return false, "关卡编号无效"
+		return false, "Số hiệu màn chơi không hợp lệ"
 	end
 
 	if not self.store or not self.store.level or not self.store.level.data then
-		return false, "请先加载关卡"
+		return false, "Hãy nạp màn chơi trước"
 	end
 
 	local s = self.store

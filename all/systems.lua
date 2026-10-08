@@ -877,6 +877,8 @@ function sys.level:init(store)
 	store.main1_hero = nil
 	store.main_heroes = nil
 	store._campaign_heroes_initialized = nil
+	store._infinite_heroes_initialized = nil
+	store._inserting_infinite_heroes = nil
 
 	log.info("level_idx:%02d, level_mode:%d, level_difficulty:%d", store.level_idx, store.level_mode, store.level_difficulty)
 end
@@ -960,6 +962,8 @@ function sys.level:on_update(dt, ts, store)
 			-- Spell raid intentionally has no heroes.
 		elseif campaign_variant == CAMPAIGN_VARIANT_NOSTALGIC_CLASSIC then
 			LU.insert_hero(store)
+		elseif require("infinite_heroes").active(store) then
+			require("infinite_heroes").spawn(store, LU.insert_hero)
 		elseif (not user_data.liuhui_hero) or (not user_data.liuhui_hero.usedoublehero) then
 			LU.insert_hero(store)
 		else

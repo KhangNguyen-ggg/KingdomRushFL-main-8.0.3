@@ -166,7 +166,7 @@ function NumericKeyboardView:initialize(sw, sh)
 	self.back = back
 
 	-- ── 标题 ──────────────────────────────────────────────────
-	local title_lbl = GGPanelHeader:new("数字输入", PANEL_W - 40)
+	local title_lbl = GGPanelHeader:new("Nhập số", PANEL_W - 40)
 	title_lbl.pos = V.v(20, 6)
 	back:add_child(title_lbl)
 	self._title_lbl = title_lbl
@@ -293,7 +293,7 @@ function NumericKeyboardView:initialize(sw, sh)
 	-- ── 操作行：取消 | 确认 ─────────────────────────────────────
 	local act_y = ROWS_Y + 5 * ROW_DY
 
-	local btn_cancel = NumKeyButton:new("取消", BTN_W2, BTN_H, C.btn_no, C.btn_no_h)
+	local btn_cancel = NumKeyButton:new("Hủy", BTN_W2, BTN_H, C.btn_no, C.btn_no_h)
 	btn_cancel.pos = V.v(PAD, act_y)
 	function btn_cancel.on_click()
 		S:queue("GUIButtonCommon")
@@ -301,7 +301,7 @@ function NumericKeyboardView:initialize(sw, sh)
 	end
 	back:add_child(btn_cancel)
 
-	local btn_ok = NumKeyButton:new("确认", BTN_W2, BTN_H, C.btn_ok, C.btn_ok_h)
+	local btn_ok = NumKeyButton:new("Xác nhận", BTN_W2, BTN_H, C.btn_ok, C.btn_ok_h)
 	btn_ok.pos = V.v(PAD + BTN_W2 + GAP, act_y)
 	function btn_ok.on_click()
 		S:queue("GUIButtonCommon")
@@ -344,7 +344,7 @@ function NumericKeyboardView:open(initial_value, callback, opts)
 	if opts.title then
 		self._title_lbl.text = opts.title
 	else
-		self._title_lbl.text = "数字输入"
+		self._title_lbl.text = "Nhập số"
 	end
 
 	-- 更新 ± 按钮状态

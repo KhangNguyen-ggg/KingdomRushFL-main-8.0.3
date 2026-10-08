@@ -26,7 +26,7 @@ i18n.locale_names = {
 	fr = "Français",
 	en = "English",
 	ja = "日本語",
-	["zh-Hans"] = "中文 (简体)",
+	["zh-Hans"] = "Tiếng Việt",
 	es = "Español"
 }
 

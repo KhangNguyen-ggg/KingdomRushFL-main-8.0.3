@@ -32,36 +32,36 @@ local STORE_PAGE_SIZE = 20
 local STORE_BACKUP_SITES = {"https://krdovedownload6.crazyspotteddove.top:52000/", "https://krdovedownload4.crazyspotteddove.top/"}
 
 local CATEGORY_OPTIONS = {{
-	label = "全部",
+	label = "Tất cả",
 	value = "all"
 }, {
-	label = "玩法",
+	label = "Lối chơi",
 	value = "gameplay"
 }, {
-	label = "防御塔",
+	label = "Tháp",
 	value = "tower"
 }, {
-	label = "英雄",
+	label = "Anh hùng",
 	value = "hero"
 }, {
-	label = "显示",
+	label = "Hiển thị",
 	value = "display"
 }, {
-	label = "敌人",
+	label = "Kẻ địch",
 	value = "enemy"
 }, {
-	label = "其它",
+	label = "Khác",
 	value = "other"
 }}
 
 local SORT_OPTIONS = {{
-	label = "最热门",
+	label = "Phổ biến nhất",
 	value = "hot"
 }, {
-	label = "下载最多",
+	label = "Tải nhiều nhất",
 	value = "downloads"
 }, {
-	label = "最新",
+	label = "Mới nhất",
 	value = "newest"
 }}
 local invalid_utf8_fix_count = 0
@@ -470,8 +470,8 @@ function ModToggleButton:initialize(initial_value, size)
 	self._label.text_align = "center"
 	self._label.vertical_align = "middle"
 	self._label.propagate_on_click = true
-	self._enable_text = "已启用"
-	self._disable_text = "已禁用"
+	self._enable_text = "Đã bật"
+	self._disable_text = "Đã tắt"
 	self:add_child(self._label)
 	self:_refresh()
 end
@@ -630,8 +630,8 @@ function ModItemRow:initialize(opts, row_w)
 			local config_button = ModToggleButton:new(true, V.v(toggle_w, clamp(toggle_h, 36, 44)))
 			config_button.pos = V.v(row_w - 2 * right_pad - toggle_w * 3 / 2, toggle_top + toggle.size.y / 2)
 			config_button.anchor = V.v(toggle.size.x / 2, toggle.size.y / 2)
-			config_button._label.text = "配置"
-			config_button._enable_text = "配置"
+			config_button._label.text = "Cấu hình"
+			config_button._enable_text = "Cấu hình"
 			function config_button:on_click()
 				S:queue("GUIButtonCommon")
 				local config_view = editable_panel_view:new(_sw, _sh, opts.title, _keyboard, _controller)
@@ -781,7 +781,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self._mod_rows = {}
 	self._progress_target = 0
 	self._progress_value = 0
-	self._status_text = "点击“刷新商店”加载插件列表"
+	self._status_text = "Nhấp “Làm mới cửa hàng” để tải danh sách tiện ích."
 	self._cancel_requested = false
 	self._request_id = 0
 	self._active_task = nil
@@ -821,12 +821,12 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	}
 	self:add_child(self.back)
 
-	local header = GGPanelHeader:new("插件管理器", panel_w - 40)
+	local header = GGPanelHeader:new("Quản lý tiện ích", panel_w - 40)
 	header.pos = V.v(20, 14)
 	self.back:add_child(header)
 
 	local global_lbl = GGOptionsLabel:new(V.v(300, global_label_h))
-	global_lbl.text = "插件管理器总开关"
+	global_lbl.text = "Bật trình quản lý tiện ích"
 	global_lbl.text_align = "left"
 	global_lbl.vertical_align = "middle"
 	global_lbl.pos = V.v(20, global_label_y)
@@ -837,7 +837,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self.global_toggle.pos = V.v(panel_w - 24 - self.global_toggle.size.x / 2, global_toggle_center_y)
 	self.back:add_child(self.global_toggle)
 
-	self.mode_btn = ModActionButton:new("前往商店", V.v(header_btn_w, header_btn_h))
+	self.mode_btn = ModActionButton:new("Mở cửa hàng", V.v(header_btn_w, header_btn_h))
 	self.mode_btn.pos = V.v(header_group_x, header_top_y)
 	self.mode_btn.on_press = function()
 		local prev_mode = self.mode
@@ -846,35 +846,35 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 		self:_render_current_list()
 		if prev_mode ~= "store" and self.mode == "store" and #self.store_items == 0 and not self._active_task then
 			self.store_page = 1
-			self:_start_task("刷新商店列表", function()
+			self:_start_task("Làm mới danh sách cửa hàng", function()
 				return self:_fetch_store_list()
 			end)
 		end
 	end
 	self.back:add_child(self.mode_btn)
 
-	self.sort_btn = ModActionButton:new("排序：最热", V.v(header_btn_w, header_btn_h))
+	self.sort_btn = ModActionButton:new("Sắp xếp: Phổ biến", V.v(header_btn_w, header_btn_h))
 	self.sort_btn.pos = V.v(header_group_x + header_btn_w + header_btn_gap, header_top_y)
 	self.sort_btn.on_press = function()
 		self.sort_idx = self.sort_idx % #SORT_OPTIONS + 1
 		self.store_page = 1
 		self:_refresh_header_buttons()
 		if self.mode == "store" then
-			self:_start_task("刷新商店列表", function()
+			self:_start_task("Làm mới danh sách cửa hàng", function()
 				return self:_fetch_store_list()
 			end)
 		end
 	end
 	self.back:add_child(self.sort_btn)
 
-	self.category_btn = ModActionButton:new("分类：全部", V.v(header_btn_w, header_btn_h))
+	self.category_btn = ModActionButton:new("Danh mục: Tất cả", V.v(header_btn_w, header_btn_h))
 	self.category_btn.pos = V.v(header_group_x + (header_btn_w + header_btn_gap) * 2, header_top_y)
 	self.category_btn.on_press = function()
 		self.category_idx = self.category_idx % #CATEGORY_OPTIONS + 1
 		self.store_page = 1
 		self:_refresh_header_buttons()
 		if self.mode == "store" then
-			self:_start_task("刷新商店列表", function()
+			self:_start_task("Làm mới danh sách cửa hàng", function()
 				return self:_fetch_store_list()
 			end)
 		else
@@ -884,31 +884,31 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	end
 	self.back:add_child(self.category_btn)
 
-	self.refresh_btn = ModActionButton:new("刷新商店", V.v(header_btn_w, header_btn_h))
+	self.refresh_btn = ModActionButton:new("Làm mới cửa hàng", V.v(header_btn_w, header_btn_h))
 	self.refresh_btn.pos = V.v(header_group_x, header_row2_y)
 	self.refresh_btn.on_press = function()
 		if self.mode == "store" then
-			self:_start_task("刷新商店列表", function()
+			self:_start_task("Làm mới danh sách cửa hàng", function()
 				return self:_fetch_store_list()
 			end)
 		else
-			self:_start_task("查询远端条目", function()
+			self:_start_task("Tra cứu mục trực tuyến", function()
 				return self:_fetch_remote_entries_for_local()
 			end)
 		end
 	end
 	self.back:add_child(self.refresh_btn)
 
-	self.update_all_btn = ModActionButton:new("一键更新全部", V.v(header_btn_w, header_btn_h))
+	self.update_all_btn = ModActionButton:new("Cập nhật tất cả", V.v(header_btn_w, header_btn_h))
 	self.update_all_btn.pos = V.v(header_group_x + header_btn_w + header_btn_gap, header_row2_y)
 	self.update_all_btn.on_press = function()
-		self:_start_task("一键更新插件", function()
+		self:_start_task("Cập nhật tiện ích", function()
 			return self:_update_all_plugins()
 		end)
 	end
 	self.back:add_child(self.update_all_btn)
 
-	self.my_plugins_btn = ModActionButton:new("我的插件", V.v(header_btn_w, header_btn_h))
+	self.my_plugins_btn = ModActionButton:new("Tiện ích của tôi", V.v(header_btn_w, header_btn_h))
 	self.my_plugins_btn.pos = V.v(header_group_x + (header_btn_w + header_btn_gap) * 2, header_row2_y)
 	self.my_plugins_btn.on_press = function()
 		self._my_plugins_only = not self._my_plugins_only
@@ -925,14 +925,14 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	local pager_page_x = pager_next_x - pager_gap - pager_page_w
 	local pager_prev_x = pager_page_x - pager_gap - pager_btn_w
 
-	self.prev_page_btn = ModActionButton:new("上一页", V.v(pager_btn_w, pager_btn_h))
+	self.prev_page_btn = ModActionButton:new("Trang trước", V.v(pager_btn_w, pager_btn_h))
 	self.prev_page_btn.pos = V.v(pager_prev_x, pager_y)
 	self.prev_page_btn.on_press = function()
 		if self.mode ~= "store" or self.store_page <= 1 then
 			return
 		end
 		self.store_page = self.store_page - 1
-		self:_start_task("翻页刷新", function()
+		self:_start_task("Làm mới khi chuyển trang", function()
 			return self:_fetch_store_list()
 		end)
 	end
@@ -963,14 +963,14 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self.page_lbl.pos = V.v(pager_page_x, pager_y)
 	self.back:add_child(self.page_lbl)
 
-	self.next_page_btn = ModActionButton:new("下一页", V.v(pager_btn_w, pager_btn_h))
+	self.next_page_btn = ModActionButton:new("Trang sau", V.v(pager_btn_w, pager_btn_h))
 	self.next_page_btn.pos = V.v(pager_next_x, pager_y)
 	self.next_page_btn.on_press = function()
 		if self.mode ~= "store" or self.store_page >= self.store_total_pages then
 			return
 		end
 		self.store_page = self.store_page + 1
-		self:_start_task("翻页刷新", function()
+		self:_start_task("Làm mới khi chuyển trang", function()
 			return self:_fetch_store_list()
 		end)
 	end
@@ -993,7 +993,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self.task_title_lbl.text_align = "left"
 	self.task_title_lbl.vertical_align = "middle"
 	self.task_title_lbl.colors.text = {244, 221, 165, 255}
-	self.task_title_lbl.text = "网络任务进行中"
+	self.task_title_lbl.text = "Đang thực hiện tác vụ mạng"
 	self.task_title_lbl.pos = V.v(12, 10)
 	self.task_dialog:add_child(self.task_title_lbl)
 
@@ -1031,11 +1031,11 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	local task_btn_w = clamp(math.floor(110 * touch_scale + 0.5), 110, 150)
 	local task_btn_h = clamp(math.floor(28 * touch_scale + 0.5), 28, 34)
 	self._confirm_btn_h = task_btn_h
-	self.task_cancel_btn = ModActionButton:new("断开请求", V.v(task_btn_w, task_btn_h))
+	self.task_cancel_btn = ModActionButton:new("Ngắt yêu cầu", V.v(task_btn_w, task_btn_h))
 	self.task_cancel_btn.pos = V.v(self.task_dialog.size.x - task_btn_w - 12, self.task_dialog.size.y - task_btn_h - 12)
 	self.task_cancel_btn.on_press = function()
 		self._cancel_requested = true
-		self:_set_status("已请求断连，正在停止当前网络操作…", nil)
+		self:_set_status("Đã yêu cầu ngắt kết nối, đang dừng thao tác mạng…", nil)
 	end
 	self.task_dialog:add_child(self.task_cancel_btn)
 
@@ -1043,14 +1043,14 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self._confirm_btn_gap = cover_btn_gap
 	local cover_btn_w = math.floor(task_btn_w * 0.8)
 	self._confirm_btn_w = cover_btn_w
-	self._cover_yes_btn = ModActionButton:new("上传封面", V.v(cover_btn_w, task_btn_h))
+	self._cover_yes_btn = ModActionButton:new("Tải ảnh bìa lên", V.v(cover_btn_w, task_btn_h))
 	self._cover_yes_btn.on_press = function()
 		S:queue("GUIButtonCommon")
 		local mod_data = self._upload_pending_data
 		local has_cover = self._upload_pending_cover ~= nil
 		self:_reset_cover_prompt()
 		if mod_data then
-			self:_start_task("上传插件", function()
+			self:_start_task("Tải tiện ích lên", function()
 				return self:_upload_plugin(mod_data, has_cover)
 			end)
 		end
@@ -1058,13 +1058,13 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self._cover_yes_btn.hidden = true
 	self.task_dialog:add_child(self._cover_yes_btn)
 
-	self._cover_no_btn = ModActionButton:new("跳过封面", V.v(cover_btn_w, task_btn_h))
+	self._cover_no_btn = ModActionButton:new("Bỏ qua ảnh bìa", V.v(cover_btn_w, task_btn_h))
 	self._cover_no_btn.on_press = function()
 		S:queue("GUIButtonCommon")
 		local mod_data = self._upload_pending_data
 		self:_reset_cover_prompt()
 		if mod_data then
-			self:_start_task("上传插件", function()
+			self:_start_task("Tải tiện ích lên", function()
 				return self:_upload_plugin(mod_data, false)
 			end)
 		end
@@ -1072,7 +1072,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self._cover_no_btn.hidden = true
 	self.task_dialog:add_child(self._cover_no_btn)
 
-	self._confirm_cancel_btn = ModActionButton:new("取消", V.v(cover_btn_w, task_btn_h))
+	self._confirm_cancel_btn = ModActionButton:new("Hủy", V.v(cover_btn_w, task_btn_h))
 	self._confirm_cancel_btn.on_press = function()
 		S:queue("GUIButtonCommon")
 		self:_reset_cover_prompt()
@@ -1092,7 +1092,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 	self.back:add_child(self.mod_list)
 
 	local y_btn = footer_y
-	local save_btn = GGOptionsButton:new("保存并重启")
+	local save_btn = GGOptionsButton:new("Lưu và khởi động lại")
 	save_btn:set_anchor_to_center()
 	save_btn.pos = V.v(panel_w / 3, y_btn)
 	self.back:add_child(save_btn)
@@ -1103,7 +1103,7 @@ function ModManagerView:initialize(sw, sh, keyboard, controller)
 		restart.tmp()
 	end
 
-	local shop_btn = GGOptionsButton:new("浏览器商店")
+	local shop_btn = GGOptionsButton:new("Cửa hàng trên trình duyệt")
 	shop_btn:set_anchor_to_center()
 	shop_btn.pos = V.v(panel_w * 2 / 3, y_btn)
 	self.back:add_child(shop_btn)
@@ -1153,12 +1153,12 @@ function ModManagerView:_stop_http_thread()
 end
 
 function ModManagerView:_refresh_header_buttons()
-	self.mode_btn:set_text(self.mode == "local" and "前往商店" or "回到本地")
-	self.sort_btn:set_text("排序：" .. SORT_OPTIONS[self.sort_idx].label)
-	self.category_btn:set_text("分类：" .. CATEGORY_OPTIONS[self.category_idx].label)
+	self.mode_btn:set_text(self.mode == "local" and "Mở cửa hàng" or "Về danh sách trên máy")
+	self.sort_btn:set_text("Sắp xếp: " .. SORT_OPTIONS[self.sort_idx].label)
+	self.category_btn:set_text("Danh mục: " .. CATEGORY_OPTIONS[self.category_idx].label)
 	local in_store = self.mode == "store"
 	local task_running = self._active_task ~= nil
-	self.refresh_btn:set_text(in_store and "刷新商店" or "查询远端")
+	self.refresh_btn:set_text(in_store and "Làm mới cửa hàng" or "Tra cứu trực tuyến")
 	self.sort_btn:set_enabled(in_store and not self._active_task)
 	-- self.category_btn:set_enabled(in_store and not self._active_task)
 	self.category_btn:set_enabled(true) -- 分类按钮始终可用，本地下，直接切显示的本地插件分类。商店下，切换分类会直接刷新商店列表
@@ -1168,17 +1168,17 @@ function ModManagerView:_refresh_header_buttons()
 	self.next_page_btn.hidden = not in_store
 	self.prev_page_btn:set_enabled(in_store and not task_running and self.store_page > 1)
 	self.next_page_btn:set_enabled(in_store and not task_running and self.store_page < self.store_total_pages)
-	self.page_lbl.text = string.format("第%d/%d页", self.store_page, self.store_total_pages)
+	self.page_lbl.text = string.format("Trang %d/%d", self.store_page, self.store_total_pages)
 	self.task_cancel_btn:set_enabled(task_running)
 	self.update_all_btn:set_enabled(not task_running)
 	self.my_plugins_btn.hidden = not self._developer_mode or in_store
 	if not self.my_plugins_btn.hidden then
 		if self._my_plugins_only then
-			self.my_plugins_btn:set_text("切换本地插件")
+			self.my_plugins_btn:set_text("Đổi tiện ích trên máy")
 			self.my_plugins_btn.colors.background = {161, 122, 45, 245}
 			self.my_plugins_btn._label.colors.text = {255, 240, 190, 255}
 		else
-			self.my_plugins_btn:set_text("切换我的插件")
+			self.my_plugins_btn:set_text("Đổi tiện ích của tôi")
 			self.my_plugins_btn:_refresh()
 		end
 	end
@@ -1296,13 +1296,13 @@ function ModManagerView:_select_store_base_url()
 	end
 	local candidates = self:_get_candidate_sites()
 	for i, site in ipairs(candidates) do
-		self:_set_status(string.format("正在选择插件商店地址（%d/%d）：%s", i, #candidates, site), 0)
+		self:_set_status(string.format("Đang chọn địa chỉ cửa hàng (%d/%d): %s", i, #candidates, site), 0)
 		local test_url = site:gsub("/+$", "") .. "/plugins/list?page=1&page_size=1&sort=hot&category=all"
 		local resp, err = self:_request(test_url, {
 			method = "GET"
 		}, 10)
 		if err then
-			self:_set_status("地址不可用：" .. site .. "（" .. err .. "）", 0)
+			self:_set_status("Địa chỉ không khả dụng: " .. site .. "（" .. err .. "）", 0)
 		elseif tonumber(resp.code) == 200 then
 			self._selected_site = site
 			local params = main and main.params
@@ -1310,10 +1310,10 @@ function ModManagerView:_select_store_base_url()
 				params.update_last_site = site
 				storage:save_settings(params)
 			end
-			self:_set_status("已选中插件商店地址：" .. site, 0)
+			self:_set_status("Đã chọn địa chỉ cửa hàng: " .. site, 0)
 			return site:gsub("/+$", "") .. "/plugins"
 		else
-			self:_set_status("地址不可用：" .. site .. "（HTTP " .. tostring(resp.code) .. "）", 0)
+			self:_set_status("Địa chỉ không khả dụng: " .. site .. "（HTTP " .. tostring(resp.code) .. "）", 0)
 		end
 	end
 	return nil
@@ -1377,14 +1377,14 @@ function ModManagerView:_get_store_page(base, sort_val, category_val, page, use_
 		method = "GET"
 	}, 20)
 	if err then
-		return false, "拉取插件列表失败：" .. err, false
+		return false, "Không tải được danh sách tiện ích: " .. err, false
 	end
 	if tonumber(resp.code) ~= 200 then
-		return false, "拉取插件列表失败：HTTP " .. tostring(resp.code), false
+		return false, "Không tải được danh sách tiện ích: HTTP " .. tostring(resp.code), false
 	end
 	local ok, body = pcall(json.decode, resp.body)
 	if not ok or type(body) ~= "table" then
-		return false, "插件列表解析失败", false
+		return false, "Không đọc được dữ liệu danh sách tiện ích", false
 	end
 
 	local parsed = self:_decode_store_page(body, page)
@@ -1396,12 +1396,12 @@ function ModManagerView:_fetch_store_list()
 	self._cancel_requested = false
 	local base = self:_select_store_base_url()
 	if not base then
-		return false, "没有可用插件商店地址"
+		return false, "Không có địa chỉ cửa hàng khả dụng"
 	end
 	local sort_val = SORT_OPTIONS[self.sort_idx].value
 	local category_val = CATEGORY_OPTIONS[self.category_idx].value
 	local page = math.max(1, tonumber(self.store_page) or 1)
-	self:_set_status(string.format("正在刷新插件商店（第 %d 页）…", page), 5)
+	self:_set_status(string.format("Đang làm mới cửa hàng, trang %d…", page), 5)
 	local ok, page_data_or_err = self:_get_store_page(base, sort_val, category_val, page, true)
 	if not ok then
 		return false, page_data_or_err
@@ -1414,7 +1414,7 @@ function ModManagerView:_fetch_store_list()
 		self._remote_entry_cache[entry] = item
 	end
 	self.remote_by_entry = self._remote_entry_cache
-	self:_set_status(string.format("插件商店第 %d 页已刷新：%d 项", self.store_page, #self.store_items), 100)
+	self:_set_status(string.format("Đã làm mới trang %d: %d mục", self.store_page, #self.store_items), 100)
 	self:_reload_local_mods()
 	self:_render_current_list()
 	return true, nil
@@ -1426,14 +1426,14 @@ function ModManagerView:_fetch_remote_entries_for_local()
 	if #self.local_mods == 0 then
 		self.remote_by_entry = self._remote_entry_cache
 		self._remote_lookup_done = true
-		self:_set_status("本地没有已安装插件", 0)
+		self:_set_status("Chưa có tiện ích nào được cài trên máy", 0)
 		self:_render_current_list()
 		return true, nil
 	end
 
 	local base = self:_select_store_base_url()
 	if not base then
-		return false, "没有可用插件商店地址"
+		return false, "Không có địa chỉ cửa hàng khả dụng"
 	end
 
 	local target_entries = {}
@@ -1449,7 +1449,7 @@ function ModManagerView:_fetch_remote_entries_for_local()
 	end
 	if total_targets == 0 then
 		self._remote_lookup_done = true
-		self:_set_status("本地插件缺少可匹配的 entry 字段", 0)
+		self:_set_status("Tiện ích trên máy thiếu trường entry để đối chiếu", 0)
 		self:_render_current_list()
 		return true, nil
 	end
@@ -1478,7 +1478,7 @@ function ModManagerView:_fetch_remote_entries_for_local()
 				found_count = found_count + 1
 			end
 		end
-		self:_set_status(string.format("正在查询远端条目… 第 %d 页（已匹配 %d/%d）", page, found_count, total_targets), 5)
+		self:_set_status(string.format("Đang tra cứu mục trực tuyến… Trang %d, đã tìm thấy %d/%d", page, found_count, total_targets), 5)
 		if found_count >= total_targets then
 			break
 		end
@@ -1494,9 +1494,9 @@ function ModManagerView:_fetch_remote_entries_for_local()
 	self:_reload_local_mods()
 	self:_render_current_list()
 	if found_count >= total_targets then
-		self:_set_status(string.format("远端条目查询完成：已匹配 %d/%d", found_count, total_targets), 100)
+		self:_set_status(string.format("Tra cứu xong: tìm thấy %d/%d", found_count, total_targets), 100)
 	else
-		self:_set_status(string.format("远端条目查询完成：已匹配 %d/%d，仍有缺失", found_count, total_targets), 100)
+		self:_set_status(string.format("Tra cứu xong: tìm thấy %d/%d, vẫn còn mục chưa tìm thấy", found_count, total_targets), 100)
 	end
 	return true, nil
 end
@@ -1548,11 +1548,11 @@ end
 function ModManagerView:_delete_local_mod_by_name(mod_name)
 	local mod_data = self.local_by_name[mod_name]
 	if not mod_data then
-		return false, "本地插件不存在"
+		return false, "Tiện ích không tồn tại trên máy"
 	end
 	local ok = remove_dir_recursive(mod_data.path)
 	if not ok then
-		return false, "删除失败：" .. mod_data.path
+		return false, "Xóa thất bại: " .. mod_data.path
 	end
 	self:_reload_local_mods()
 	self:_render_current_list()
@@ -1562,11 +1562,11 @@ end
 function ModManagerView:_download_zip(item)
 	local base = self._selected_site and (self._selected_site:gsub("/+$", "") .. "/plugins") or self:_select_store_base_url()
 	if not base then
-		return nil, "无法选择插件商店地址"
+		return nil, "Không chọn được địa chỉ cửa hàng"
 	end
 	local filename = item.filename
 	if not filename or filename == "" then
-		return nil, "插件缺少下载文件名"
+		return nil, "Tiện ích thiếu tên tệp tải xuống"
 	end
 	local url = base .. "/download/" .. url_encode(filename)
 	local chunk_size = 256 * 1024
@@ -1592,11 +1592,11 @@ function ModManagerView:_download_zip(item)
 			}
 		}, 20)
 		if err then
-			return nil, "下载失败：" .. err
+			return nil, "Tải xuống thất bại: " .. err
 		end
 		local code = tonumber(resp.code)
 		if code ~= 206 and code ~= 200 then
-			return nil, "下载失败：HTTP " .. tostring(resp.code)
+			return nil, "Tải xuống thất bại: HTTP " .. tostring(resp.code)
 		end
 
 		local headers = normalize_headers(resp.headers)
@@ -1611,18 +1611,18 @@ function ModManagerView:_download_zip(item)
 		downloaded = downloaded + #body
 
 		local percent = total and (downloaded * 100 / math.max(total, 1)) or 0
-		self:_set_status(string.format("下载插件中：%s  %.1f%%", self._active_download_name, percent), percent)
+		self:_set_status(string.format("Đang tải tiện ích: %s  %.1f%%", self._active_download_name, percent), percent)
 
 		if code == 200 then
 			break
 		end
 		if #body == 0 then
-			return nil, "下载返回空数据"
+			return nil, "Dữ liệu tải xuống trống"
 		end
 	end
 
 	if total and downloaded ~= total then
-		return nil, "下载不完整"
+		return nil, "Tải xuống chưa hoàn tất"
 	end
 	return table.concat(chunks), nil
 end
@@ -1653,7 +1653,7 @@ end
 
 function ModManagerView:_install_plugin(item, is_update)
 	self._cancel_requested = false
-	self:_set_status((is_update and "正在更新插件：" or "正在安装插件：") .. (item.name or item.entry or "?"), 0)
+	self:_set_status((is_update and "Đang cập nhật tiện ích: " or "Đang cài tiện ích: ") .. (item.name or item.entry or "?"), 0)
 	local zip_data, err = self:_download_zip(item)
 	if not zip_data then
 		return false, err
@@ -1669,7 +1669,7 @@ function ModManagerView:_install_plugin(item, is_update)
 	FS.createDirectory("tmp/mod_store_stage")
 	FS.createDirectory(stage_root)
 
-	self:_set_status("正在解压插件：" .. (item.name or item.entry or "?"), 92)
+	self:_set_status("Đang giải nén tiện ích: " .. (item.name or item.entry or "?"), 92)
 	local ok, unzip_err = zip.unzip_to_dir(zip_data, stage_root)
 	if not ok then
 		return false, unzip_err
@@ -1692,7 +1692,7 @@ function ModManagerView:_install_plugin(item, is_update)
 		selected_dir = stage_root .. "/" .. entry
 	end
 	if not selected_dir then
-		return false, "安装包结构无法识别（未找到有效插件目录）"
+		return false, "Không nhận diện được cấu trúc gói, không tìm thấy thư mục tiện ích hợp lệ"
 	end
 
 	local target_name = (entry ~= "" and entry) or basename(selected_dir)
@@ -1715,7 +1715,7 @@ function ModManagerView:_install_plugin(item, is_update)
 		if FS.getInfo(local_cfg_path, "file") then
 			local local_cfg, read_err = self:_read_mod_config(local_cfg_path)
 			if not local_cfg then
-				return false, "更新前读取本地配置失败：" .. local_cfg_path .. " (" .. tostring(read_err) .. ")"
+				return false, "Không đọc được cấu hình trên máy trước khi cập nhật: " .. local_cfg_path .. " (" .. tostring(read_err) .. ")"
 			end
 			preserved_local_config = local_cfg
 		end
@@ -1725,12 +1725,12 @@ function ModManagerView:_install_plugin(item, is_update)
 	if preserved_enabled ~= nil then
 		local installed_cfg = self:_read_mod_config(target_dir .. "/config.lua")
 		if not installed_cfg then
-			return false, "更新后读取配置失败：" .. target_dir .. "/config.lua"
+			return false, "Không đọc được cấu hình sau khi cập nhật: " .. target_dir .. "/config.lua"
 		end
 		installed_cfg.enabled = preserved_enabled
 		local wok = self:_write_mod_config(target_dir .. "/config.lua", installed_cfg)
 		if not wok then
-			return false, "更新后写入配置失败：" .. target_dir .. "/config.lua"
+			return false, "Không ghi được cấu hình sau khi cập nhật: " .. target_dir .. "/config.lua"
 		end
 	end
 	if preserved_local_config then
@@ -1739,20 +1739,20 @@ function ModManagerView:_install_plugin(item, is_update)
 		if FS.getInfo(installed_local_cfg_path, "file") then
 			local remote_local_cfg, read_err = self:_read_mod_config(installed_local_cfg_path)
 			if not remote_local_cfg then
-				return false, "更新后读取远端本地配置失败：" .. installed_local_cfg_path .. " (" .. tostring(read_err) .. ")"
+				return false, "Không đọc được cấu hình cục bộ của bản tải về sau khi cập nhật: " .. installed_local_cfg_path .. " (" .. tostring(read_err) .. ")"
 			end
 			merge_missing_or_mismatch_fields(merged_local_cfg, remote_local_cfg)
 		end
 		local wok = self:_write_mod_config(installed_local_cfg_path, merged_local_cfg)
 		if not wok then
-			return false, "更新后写入本地配置失败：" .. installed_local_cfg_path
+			return false, "Không ghi được cấu hình trên máy sau khi cập nhật: " .. installed_local_cfg_path
 		end
 	end
 	remove_dir_recursive("tmp/mod_store_stage")
 
 	self:_reload_local_mods()
 	self:_render_current_list()
-	self:_set_status((is_update and "插件更新完成：" or "插件安装完成：") .. (item.name or item.entry or "?"), 100)
+	self:_set_status((is_update and "Đã cập nhật tiện ích: " or "Đã cài tiện ích: ") .. (item.name or item.entry or "?"), 100)
 	self._active_download_name = ""
 	return true, nil
 end
@@ -1768,7 +1768,7 @@ function ModManagerView:_update_all_plugins()
 	self._cancel_requested = false
 	self:_reload_local_mods()
 	if #self.local_mods == 0 then
-		self:_set_status("本地没有已安装插件", 0)
+		self:_set_status("Chưa có tiện ích nào được cài trên máy", 0)
 		return true, nil
 	end
 	local need_remote_lookup = not next(self._remote_entry_cache)
@@ -1799,21 +1799,21 @@ function ModManagerView:_update_all_plugins()
 		end
 	end
 	if #pending == 0 then
-		self:_set_status("没有可更新的插件", 0)
+		self:_set_status("Không có tiện ích cần cập nhật", 0)
 		return true, nil
 	end
 	for i, row in ipairs(pending) do
 		if self._cancel_requested then
 			return false, "cancelled"
 		end
-		self:_set_status(string.format("一键更新（%d/%d）：%s", i, #pending, row.remote.name or row.remote.entry), (i - 1) * 100 / #pending)
+		self:_set_status(string.format("Cập nhật tất cả (%d/%d): %s", i, #pending, row.remote.name or row.remote.entry), (i - 1) * 100 / #pending)
 		local ok, err = self:_install_plugin(row.remote, true)
 		if not ok then
 			return false, err
 		end
 		coroutine.yield()
 	end
-	self:_set_status(string.format("一键更新完成，共 %d 个插件", #pending), 100)
+	self:_set_status(string.format("Đã cập nhật xong %d tiện ích", #pending), 100)
 	return true, nil
 end
 
@@ -1823,7 +1823,7 @@ function ModManagerView:_start_task(name, fn)
 	end
 	self._cancel_requested = false
 	self._task_result = nil
-	self:_set_status("正在处理：" .. name, 0)
+	self:_set_status("Đang xử lý: " .. name, 0)
 	self.task_dialog:order_to_front()
 	self.task_dialog.hidden = false
 	self._active_task = coroutine.create(function()
@@ -1852,29 +1852,29 @@ function ModManagerView:_render_local_list()
 			local status = ""
 
 			if remote and has_update(cfg.version, remote.version) then
-				status = string.format("可更新：v%s → v%s", safe_tostring(cfg.version), safe_tostring(remote.version))
+				status = string.format("Có bản cập nhật: v%s → v%s", safe_tostring(cfg.version), safe_tostring(remote.version))
 			elseif remote then
-				status = "已是最新版本"
+				status = "Đang dùng bản mới nhất"
 			else
-				status = self._remote_lookup_done and "未在商店中找到远端条目" or "未查询远端条目（点“查询远端”）"
+				status = self._remote_lookup_done and "Không tìm thấy mục tương ứng trong cửa hàng" or "Chưa tra cứu trực tuyến; nhấp “Tra cứu trực tuyến”"
 			end
 
 			local actions = {}
 			if self._developer_mode and cfg.by == self._developer_config.account then
 				actions[#actions + 1] = {
-					text = "上传",
+					text = "Tải lên",
 					on_press = function()
 						self:_handle_upload_plugin(mod_data)
 					end
 				}
 			end
 			actions[#actions + 1] = {
-				text = "删除",
+				text = "Xóa",
 				on_press = function()
-					self:_start_task("删除插件", function()
+					self:_start_task("Xóa tiện ích", function()
 						local ok, err = self:_delete_local_mod_by_name(mod_data.name)
 						if ok then
-							self:_set_status("已删除插件：" .. mod_data.name, 0)
+							self:_set_status("Đã xóa tiện ích: " .. mod_data.name, 0)
 							return true, nil
 						end
 						return false, err
@@ -1883,9 +1883,9 @@ function ModManagerView:_render_local_list()
 			}
 			if remote and has_update(cfg.version, remote.version) then
 				actions[#actions + 1] = {
-					text = "更新",
+					text = "Cập nhật",
 					on_press = function()
-						self:_start_task("更新插件", function()
+						self:_start_task("Cập nhật tiện ích", function()
 							return self:_install_plugin(remote, true)
 						end)
 					end
@@ -1895,7 +1895,7 @@ function ModManagerView:_render_local_list()
 			local row = ModItemRow:new({
 				mod_data = mod_data,
 				title = cfg.name or mod_data.name,
-				meta = string.format("本地版本 v%s  作者: %s", safe_tostring(cfg.version), safe_tostring(cfg.by)),
+				meta = string.format("Bản trên máy v%s  Tác giả: %s", safe_tostring(cfg.version), safe_tostring(cfg.by)),
 				desc = cfg.desc or "",
 				status = status,
 				show_toggle = true,
@@ -1928,31 +1928,31 @@ function ModManagerView:_render_store_list()
 		local status
 		if installed then
 			if needs_update then
-				status = string.format("已安装：v%s（可更新到 v%s）", safe_tostring(local_mod.config.version), safe_tostring(item.version))
+				status = string.format("Đã cài v%s; có thể cập nhật lên v%s", safe_tostring(local_mod.config.version), safe_tostring(item.version))
 			else
-				status = "已安装且最新"
+				status = "Đã cài bản mới nhất"
 			end
 		else
-			status = "未安装"
+			status = "Chưa cài"
 		end
 
 		local actions = {}
 		actions[#actions + 1] = {
-			text = installed and (needs_update and "更新" or "重装") or "安装",
+			text = installed and (needs_update and "Cập nhật" or "Cài lại") or "Cài đặt",
 			on_press = function()
-				self:_start_task("安装插件", function()
+				self:_start_task("Cài tiện ích", function()
 					return self:_install_or_update_item(item)
 				end)
 			end
 		}
 		if installed then
 			actions[#actions + 1] = {
-				text = "删除",
+				text = "Xóa",
 				on_press = function()
-					self:_start_task("删除插件", function()
+					self:_start_task("Xóa tiện ích", function()
 						local ok, err = self:_delete_local_mod_by_name(local_mod.name)
 						if ok then
-							self:_set_status("已删除插件：" .. local_mod.name, 0)
+							self:_set_status("Đã xóa tiện ích: " .. local_mod.name, 0)
 							return true, nil
 						end
 						return false, err
@@ -1963,7 +1963,7 @@ function ModManagerView:_render_store_list()
 
 		local row = ModItemRow:new({
 			title = item.name or item.entry or "?",
-			meta = string.format("v%s  下载:%s  作者:%s", safe_tostring(item.version), safe_tostring(item.downloads), safe_tostring(item.by)),
+			meta = string.format("v%s  Lượt tải: %s  Tác giả: %s", safe_tostring(item.version), safe_tostring(item.downloads), safe_tostring(item.by)),
 			desc = item.desc or "",
 			status = status,
 			show_toggle = false,
@@ -2012,7 +2012,7 @@ function ModManagerView:show()
 	self:_reload_local_mods()
 	self:_render_current_list()
 	self.task_dialog.hidden = true
-	self:_set_status("前往插件商店后会自动拉取第一页", 0)
+	self:_set_status("Mở cửa hàng sẽ tự tải trang đầu", 0)
 	self:_sanitize_view_texts(self.back)
 	ModManagerView.super.show(self)
 end
@@ -2039,7 +2039,7 @@ function ModManagerView:update(dt)
 	if not ok then
 		self._active_task = nil
 		self.task_dialog.hidden = true
-		self:_set_status("操作失败：" .. tostring(result), 0)
+		self:_set_status("Thao tác thất bại: " .. tostring(result), 0)
 		log.error("mod manager task failed: %s", tostring(result))
 		self:_refresh_header_buttons()
 		return
@@ -2050,10 +2050,10 @@ function ModManagerView:update(dt)
 		self._task_result = result
 		if result and result.ok then
 			if self._cancel_requested then
-				self:_set_status("操作已断开", 0)
+				self:_set_status("Đã ngắt thao tác", 0)
 			end
 		else
-			self:_set_status("操作失败：" .. tostring(result and result.err or "unknown"), 0)
+			self:_set_status("Thao tác thất bại: " .. tostring(result and result.err or "unknown"), 0)
 		end
 		self._cancel_requested = false
 		self:_refresh_header_buttons()
@@ -2067,7 +2067,7 @@ function ModManagerView:_reset_cover_prompt()
 	self._cover_no_btn.hidden = true
 	self._confirm_cancel_btn.hidden = true
 	self.task_cancel_btn.hidden = false
-	self._cover_yes_btn:set_text("上传封面")
+	self._cover_yes_btn:set_text("Tải ảnh bìa lên")
 end
 
 function ModManagerView:_handle_upload_plugin(mod_data)
@@ -2089,15 +2089,15 @@ function ModManagerView:_handle_upload_plugin(mod_data)
 	self.progress_fill.size = V.v(0, self.progress_fill.size.y)
 
 	if cover_name then
-		self.task_title_lbl.text = "上传插件"
-		self.task_status_lbl.text = "检测到封面文件 " .. cover_name .. "，是否上传？"
-		self._cover_yes_btn:set_text("上传封面")
+		self.task_title_lbl.text = "Tải tiện ích lên"
+		self.task_status_lbl.text = "Tìm thấy tệp ảnh bìa " .. cover_name .. ". Bạn muốn tải lên không?"
+		self._cover_yes_btn:set_text("Tải ảnh bìa lên")
 		self._cover_yes_btn.hidden = false
 		self._cover_no_btn.hidden = false
 	else
-		self.task_title_lbl.text = "上传插件"
-		self.task_status_lbl.text = "确认上传 " .. (mod_data.config.name or mod_data.name) .. " 到商店？"
-		self._cover_yes_btn:set_text("确认上传")
+		self.task_title_lbl.text = "Tải tiện ích lên"
+		self.task_status_lbl.text = "Tải " .. (mod_data.config.name or mod_data.name) .. " lên cửa hàng?"
+		self._cover_yes_btn:set_text("Xác nhận tải lên")
 		self._cover_yes_btn.hidden = false
 		self._cover_no_btn.hidden = true
 	end
@@ -2123,10 +2123,10 @@ end
 function ModManagerView:_developer_login()
 	local base = self._selected_site and (self._selected_site:gsub("/+$", "") .. "/plugins") or self:_select_store_base_url()
 	if not base then
-		return false, "无法选择插件商店地址"
+		return false, "Không chọn được địa chỉ cửa hàng"
 	end
 
-	self:_set_status("正在登录开发者账户…", 5)
+	self:_set_status("Đang đăng nhập tài khoản nhà phát triển…", 5)
 	local resp, err = self:_request(base .. "/login", {
 		method = "POST",
 		headers = {
@@ -2139,15 +2139,15 @@ function ModManagerView:_developer_login()
 	}, 15)
 
 	if err then
-		return false, "登录失败：" .. err
+		return false, "Đăng nhập thất bại: " .. err
 	end
 	if tonumber(resp.code) ~= 200 then
-		return false, "登录失败：HTTP " .. tostring(resp.code) .. " " .. tostring(resp.body)
+		return false, "Đăng nhập thất bại: HTTP " .. tostring(resp.code) .. " " .. tostring(resp.body)
 	end
 
 	local ok, body = pcall(json.decode, resp.body)
 	if not ok or not body.token then
-		return false, "登录响应解析失败"
+		return false, "Không đọc được phản hồi đăng nhập"
 	end
 
 	self._developer_token = body.token
@@ -2163,7 +2163,7 @@ function ModManagerView:_upload_plugin(mod_data, upload_cover)
 	end
 
 	local entry = mod_data.config.entry or mod_data.name
-	self:_set_status("正在打包插件：" .. entry, 10)
+	self:_set_status("Đang đóng gói tiện ích: " .. entry, 10)
 
 	local cover_data = nil
 	local cover_ext = nil
@@ -2178,21 +2178,21 @@ function ModManagerView:_upload_plugin(mod_data, upload_cover)
 		end
 	end
 
-	self:_set_status("正在压缩插件：" .. entry, 20)
+	self:_set_status("Đang nén tiện ích: " .. entry, 20)
 	local zip_data = zip.create_from_dir(mod_data.path, {
 		exclude = {"^cover%..+$"},
 		skip_dirs = {".git", ".backup", ".tmp"}
 	})
 	if not zip_data then
-		return false, "打包插件失败：目录为空"
+		return false, "Đóng gói thất bại: thư mục trống"
 	end
 
 	local base = self._selected_site and (self._selected_site:gsub("/+$", "") .. "/plugins") or self:_select_store_base_url()
 	if not base then
-		return false, "无法选择插件商店地址"
+		return false, "Không chọn được địa chỉ cửa hàng"
 	end
 
-	self:_set_status("正在上传插件：" .. entry, 40)
+	self:_set_status("Đang tải tiện ích lên: " .. entry, 40)
 	local resp, err = self:_request(base .. "/upload", {
 		method = "POST",
 		headers = {
@@ -2203,21 +2203,21 @@ function ModManagerView:_upload_plugin(mod_data, upload_cover)
 	}, 60)
 
 	if err then
-		return false, "上传失败：" .. err
+		return false, "Tải lên thất bại: " .. err
 	end
 	if tonumber(resp.code) ~= 200 then
-		return false, "上传失败：HTTP " .. tostring(resp.code) .. " " .. tostring(resp.body)
+		return false, "Tải lên thất bại: HTTP " .. tostring(resp.code) .. " " .. tostring(resp.body)
 	end
 
 	local ok, body = pcall(json.decode, resp.body)
 	if not ok or not body.entry then
-		return false, "上传响应解析失败"
+		return false, "Không đọc được phản hồi tải lên"
 	end
 
-	self:_set_status("已上传插件，正在处理…", 80)
+	self:_set_status("Đã tải tiện ích lên, đang xử lý…", 80)
 
 	if cover_data and cover_ext then
-		self:_set_status("正在上传封面…", 90)
+		self:_set_status("Đang tải ảnh bìa lên…", 90)
 		local mime = "application/octet-stream"
 		if cover_ext == "png" then
 			mime = "image/png"
@@ -2238,20 +2238,20 @@ function ModManagerView:_upload_plugin(mod_data, upload_cover)
 		}, 30)
 
 		if cover_err then
-			self:_set_status("插件上传成功，但封面上传失败：" .. cover_err, 100)
+			self:_set_status("Đã tải tiện ích lên, nhưng tải ảnh bìa thất bại: " .. cover_err, 100)
 			self:_reload_local_mods()
 			self:_render_current_list()
 			return true, nil
 		end
 		if tonumber(cover_resp.code) ~= 200 then
-			self:_set_status("插件上传成功，但封面上传失败：HTTP " .. tostring(cover_resp.code), 100)
+			self:_set_status("Đã tải tiện ích lên, nhưng tải ảnh bìa thất bại: HTTP " .. tostring(cover_resp.code), 100)
 			self:_reload_local_mods()
 			self:_render_current_list()
 			return true, nil
 		end
 	end
 
-	self:_set_status("上传成功：" .. entry, 100)
+	self:_set_status("Tải lên thành công: " .. entry, 100)
 	self:_reload_local_mods()
 	self:_render_current_list()
 	return true, nil

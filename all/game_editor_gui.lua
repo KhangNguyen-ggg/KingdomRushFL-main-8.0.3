@@ -118,7 +118,7 @@ function gui:init(w, h, editor)
 			log.error("Map editor save failed: %s", tostring(save_err))
 		end
 
-		self:show_editor_notification(saved and "保存成功" or "保存失败：" .. tostring(save_err or "未知错误"), saved)
+		self:show_editor_notification(saved and "Đã lưu" or "Lưu thất bại: " .. tostring(save_err or "Lỗi chưa xác định"), saved)
 	end
 	wid("tools_load").on_click = function()
 		local ok, loaded = pcall(editor.level_load, editor, wid("tools_level_name").value, wid("tools_game_mode").value)
@@ -127,7 +127,7 @@ function gui:init(w, h, editor)
 			log.error("Map editor load failed: %s", tostring(loaded))
 		end
 
-		self:show_editor_notification(ok and loaded and "关卡已加载" or "加载失败，请查看控制台", ok and loaded)
+		self:show_editor_notification(ok and loaded and "Đã nạp màn chơi" or "Nạp thất bại, hãy xem bảng log", ok and loaded)
 	end
 	wid("tools_undo").on_click = function()
 		self:undo()
@@ -460,7 +460,7 @@ function gui:add_dove_style_controls()
 	local title = wid("tools_title")
 
 	if title then
-		title.text = "地图编辑器"
+		title.text = "Trình sửa bản đồ"
 		title.font_name = "body"
 		title.font_size = 16
 	end
@@ -475,30 +475,30 @@ function gui:add_dove_style_controls()
 		end
 	end
 
-	localize_button("tools_save", "保存")
-	localize_button("tools_load", "加载")
-	localize_button("tools_undo", "撤销")
-	localize_button("tools_general", "通用")
-	localize_button("tools_entities", "实体")
-	localize_button("tools_paths", "路径")
-	localize_button("tools_grid", "网格")
-	localize_button("tools_nav", "塔位导航")
-	localize_button("tools_particles", "粒子")
+	localize_button("tools_save", "Lưu")
+	localize_button("tools_load", "Nạp")
+	localize_button("tools_undo", "Hoàn tác")
+	localize_button("tools_general", "Chung")
+	localize_button("tools_entities", "Đối tượng")
+	localize_button("tools_paths", "Đường đi")
+	localize_button("tools_grid", "Lưới")
+	localize_button("tools_nav", "Liên kết vị trí tháp")
+	localize_button("tools_particles", "Hiệu ứng hạt")
 
 	if wid("tools_level_name") and wid("tools_level_name").lt then
-		wid("tools_level_name").lt.text = "关卡编号"
+		wid("tools_level_name").lt.text = "Số hiệu màn chơi"
 		wid("tools_level_name").lt.font_name = "body"
 	end
 
 	if wid("tools_game_mode") and wid("tools_game_mode").lt then
-		wid("tools_game_mode").lt.text = "模式（1 / 2 / 3）"
+		wid("tools_game_mode").lt.text = "Chế độ (1 / 2 / 3)"
 		wid("tools_game_mode").lt.font_name = "body"
 	end
 
 	local recover = wid("tools_recover")
 
 	if recover then
-		recover.text = "放弃修改并重载"
+		recover.text = "Bỏ thay đổi và nạp lại"
 		recover.font_name = "body"
 		recover.font_size = 16
 
@@ -511,11 +511,11 @@ function gui:add_dove_style_controls()
 				log.error("Map editor reload failed: %s", tostring(loaded))
 			end
 
-			gui:show_editor_notification(ok and loaded and "已放弃未保存修改" or "重新加载失败", ok and loaded)
+			gui:show_editor_notification(ok and loaded and "Đã bỏ các thay đổi chưa lưu" or "Nạp lại thất bại", ok and loaded)
 		end
 	end
 
-	local help_btn = KEButton:new("使用说明")
+	local help_btn = KEButton:new("Hướng dẫn")
 
 	help_btn.id = "tools_help"
 	help_btn.font_name = "body"
@@ -527,7 +527,7 @@ function gui:add_dove_style_controls()
 
 	layout:add_child(help_btn)
 
-	local back_btn = KEButton:new("返回地图")
+	local back_btn = KEButton:new("Về bản đồ")
 
 	back_btn.id = "tools_back_to_map"
 	back_btn.font_name = "body"
@@ -539,7 +539,7 @@ function gui:add_dove_style_controls()
 				next_item_name = "map"
 			})
 		else
-			gui:show_editor_notification("无法返回地图", false)
+			gui:show_editor_notification("Không thể trở về bản đồ", false)
 		end
 	end
 
@@ -591,7 +591,7 @@ function gui:show_editor_help()
 		35,
 		255
 	}
-	title.text = "地图编辑器使用说明"
+	title.text = "Hướng dẫn trình sửa bản đồ"
 	panel:add_child(title)
 
 	local body = KLabel:new(V.v(panel_w - 100, panel_h - 125))
@@ -608,18 +608,18 @@ function gui:show_editor_help()
 		255
 	}
 	body.text = table.concat({
-		"1. 先在 Level name 输入关卡编号，Game mode 使用 1/战役、2/英雄、3/钢铁，然后点击 load。",
-		"2. entities：放置、选中、复制和删除场景实体；新塔位可直接使用 tower_holder 模板。",
-		"3. paths：新建或编辑行走路径。选中端点后可向外延伸，选中中间点可细分曲线。",
-		"4. grid：绘制地面网格。LAND/WATER/CLIFF 是地形；NOWALK 禁止行走；SHALLOW 是浅水；FAERIE 是精灵地形。",
-		"5. nav：编辑塔位与其周围塔位的方向关系。undo 可撤销上一步。",
-		"6. save 会写入 kr3/data/levels 下对应的 _data、_paths、_grid 文件；请在保存前确认关卡编号。",
-		"7. “放弃修改并重载”只会丢弃尚未保存的改动；“返回地图”不会自动保存。",
-		"8. 右键可取消当前选择，大部分工具同时支持界面上标注的快捷键。"
+		"1. Nhập số hiệu màn ở Level name. Chọn Game mode: 1/Chiến dịch, 2/Anh hùng hoặc 3/Sắt, rồi nhấn load.",
+		"2. entities: đặt, chọn, sao chép hoặc xóa đối tượng trong màn. Dùng mẫu tower_holder để tạo vị trí xây tháp mới.",
+		"3. paths: tạo hoặc sửa đường đi. Chọn điểm đầu/cuối để kéo dài; chọn điểm giữa để chia nhỏ đường cong.",
+		"4. grid: vẽ lưới địa hình. LAND/WATER/CLIFF là đất/nước/vách đá; NOWALK cấm di chuyển; SHALLOW là nước nông; FAERIE là địa hình tiên.",
+		"5. nav: sửa hướng liên kết giữa các vị trí tháp. Nhấn undo để hoàn tác thao tác trước.",
+		"6. save ghi các file _data, _paths và _grid tương ứng vào kr3/data/levels. Kiểm tra số hiệu màn trước khi lưu.",
+		"7. “Bỏ thay đổi và nạp lại” chỉ bỏ các sửa đổi chưa lưu. “Về bản đồ” không tự lưu.",
+		"8. Nhấn chuột phải để bỏ lựa chọn. Phần lớn công cụ hỗ trợ phím tắt được ghi trên giao diện."
 	}, "\n\n")
 	panel:add_child(body)
 
-	local close = KEButton:new("关闭")
+	local close = KEButton:new("Đóng")
 
 	close.pos = V.v(panel_w - 120, 22)
 	close.size = V.v(86, 28)

@@ -12775,8 +12775,8 @@ local tower_menus = {
 				halo = "glow_ico_main",
 				image = "main_icons_0005",
 				place = 22,
-				tt_title = "新增塔位",
-				tt_desc = "点击后在地图空地上选择位置，新建一个可用防御塔位。"
+				tt_title = "Thêm vị trí tháp",
+				tt_desc = "Nhấp rồi chọn một chỗ trống trên bản đồ để tạo vị trí xây tháp mới."
 			},
 			{
 				check = "main_icons_0019",
@@ -17586,8 +17586,8 @@ local tower_menus = {
 				halo = "glow_ico_main",
 				image = "main_icons_0005",
 				place = 5,
-				tt_title = "召唤木乃伊",
-				tt_desc = "花费金币，从石棺中召唤5只木乃伊。"
+				tt_title = "Triệu hồi xác ướp",
+				tt_desc = "Dùng vàng để triệu hồi 5 xác ướp từ quan tài đá."
 			},
 			{
 				check = "ico_sell_0002",

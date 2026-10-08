@@ -81,7 +81,7 @@ function M.append_cooldown(desc, tower_name, power_name, power, level, already_d
 		cooldown_text = string.gsub(cooldown_text, "%.$", "")
 	end
 
-	return string.format("%s CD%s秒。", desc, cooldown_text)
+	return string.format("%s CD: %s giây.", desc, cooldown_text)
 end
 
 return M

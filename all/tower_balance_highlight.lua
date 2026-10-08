@@ -309,7 +309,7 @@ function M.upgrade_runs(before, after)
 		elseif has_old then
 			append_run(runs, old_text, M.RED, "old")
 			append_run(runs, "→", nil, "plain")
-			append_run(runs, "移除", M.BLUE, "new")
+			append_run(runs, "Đã loại bỏ", M.BLUE, "new")
 		elseif has_new then
 			append_run(runs, new_text, M.BLUE, "new")
 		elseif new_text ~= "" then

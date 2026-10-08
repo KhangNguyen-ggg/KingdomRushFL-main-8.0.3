@@ -17,6 +17,7 @@ local storage = require("storage")
 local bit = require("bit")
 local bor = bit.bor
 local LU = {}
+local infinite_heroes = require("infinite_heroes")
 
 function LU.queue_insert(store, e)
 	simulation:queue_insert_entity(e)
@@ -435,6 +436,10 @@ function LU.ensure_hero_rally(store)
 end
 
 function LU.insert_hero(store, name, pos)
+	if not name and infinite_heroes.active(store) and not store._inserting_infinite_heroes then
+		local heroes = infinite_heroes.spawn(store, LU.insert_hero)
+		return heroes and heroes[1]
+	end
 	if store.level.locked_hero then
 		log.debug("hero locked for level. will not insert")
 

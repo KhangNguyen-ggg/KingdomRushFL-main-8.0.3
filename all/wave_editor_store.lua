@@ -600,7 +600,7 @@ function M.get_lists(level_idx, mode)
 		if id and type(meta) == "table" and meta.level_idx == level_idx and meta.mode == mode and list_format == source_format then
 			out[#out + 1] = {
 				id = id,
-				name = meta.name or string.format("自定义 %d", id)
+				name = meta.name or string.format("Tùy chỉnh %d", id)
 			}
 		end
 	end
@@ -628,7 +628,7 @@ function M.create_from_source(level_idx, mode)
 		level_idx = level_idx,
 		mode = mode,
 		format = source.format,
-		name = string.format("自定义 %d", id),
+		name = string.format("Tùy chỉnh %d", id),
 		created_at = os.time()
 	}
 	registry.lists[id] = meta

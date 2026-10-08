@@ -19,6 +19,7 @@ local S = require("sound_db")
 local G = love.graphics
 local AC = require("achievements")
 local LU = require("level_utils")
+local infinite_heroes = require("infinite_heroes")
 local LU6 = require("level_utils_6")
 local RC = require("remote_config")
 local ISM = require("input_state_machine")
@@ -626,7 +627,7 @@ function director:queue_load_item_named(name, force_reload)
 			return random_result
 		end
 		--对英雄进行随机
-		if not (args.level_mode == GAME_MODE_CAMPAIGN and game.store.campaign_variant == CAMPAIGN_VARIANT_SPELL_RAID) and user_data.liuhui.rand_hero and user_data.liuhui.rand_hero == 1 then
+		if not (args.level_mode == GAME_MODE_CAMPAIGN and game.store.campaign_variant == CAMPAIGN_VARIANT_SPELL_RAID) and not infinite_heroes.allowed(game.store, user_data, args.level_mode) and user_data.liuhui.rand_hero and user_data.liuhui.rand_hero == 1 then
 			local hero_data = map_data.hero_data
 			if game.store.campaign_variant == CAMPAIGN_VARIANT_HERO_RALLY and args.level_mode == GAME_MODE_CAMPAIGN then
 				for i = 1, 4 do
@@ -646,8 +647,16 @@ function director:queue_load_item_named(name, force_reload)
 		user_data = storage:load_slot()
 		local ht = user_data.heroes.selected 
 		local active_hero_names = {}
+		game.store.infinite_hero_names = nil
+		if infinite_heroes.allowed(game.store, user_data, args.level_mode) then
+			local names = infinite_heroes.names(user_data, map_data.hero_data)
+			if #names == 0 then names = {ht} end
+			game.store.infinite_hero_names = names
+		end
 
-		if args.level_mode == GAME_MODE_CAMPAIGN and game.store.campaign_variant == CAMPAIGN_VARIANT_HERO_RALLY then
+		if game.store.infinite_hero_names then
+			for _, name in ipairs(game.store.infinite_hero_names) do table.insert(active_hero_names, name) end
+		elseif args.level_mode == GAME_MODE_CAMPAIGN and game.store.campaign_variant == CAMPAIGN_VARIANT_HERO_RALLY then
 			local defaults = {"hero_gerald", "hero_alric", "hero_elves_archer", "hero_orc"}
 
 			for i = 1, 4 do

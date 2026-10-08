@@ -20,6 +20,7 @@ local v = V.v
 local km = require("klua.macros")
 local i18n = require("i18n")
 local storage = require("storage")
+local infinite_heroes = require("infinite_heroes")
 local enemy_enhance = require("enemy_enhance")
 local power_selection = require("power_selection")
 local power_upgrades_6 = require("power_upgrades_6")
@@ -535,7 +536,7 @@ end
 -- Vietnamese captions on the dark map-button backgrounds.
 local function vietnamese_map_caption(label)
 	if i18n.current_locale ~= "zh-Hans" then return end
-	label.font_name = "body_bold"
+	label.font_name = "button"
 	label.font_size = 18
 	label.text_align = "center"
 	label.vertical_align = "middle"
@@ -1291,7 +1292,7 @@ function screen_map:init(w, h, done_callback)
 	change_button6.label.text_size = change_button6.label.size
 	change_button6.label.font_size = 18
 	change_button6.label.vertical_align = CJK("middle", "top", nil, "top")
-	change_button6.label.text = "Khởi đầu mới"
+	change_button6.label.text = "Genesis"
 	change_button6.label.fit_lines = 1
 	vietnamese_map_caption(change_button6.label)
 	self.window:add_child(change_button6)
@@ -1349,7 +1350,7 @@ function screen_map:init(w, h, done_callback)
 		_("Origin"),
 		_("Vegnance"),
 		_("Alliance"),
-		"Khởi đầu mới"
+		"Genesis"
 	}
 	local map_switch_aux_visibility
 
@@ -5099,6 +5100,21 @@ local function add_level_description(parent, text, max_y)
 	parent:add_child(bg)
 
 	local FIRST_PARAGRAPH_WIDTH = ls_page_w - bg.size.x
+	local english = i18n.english_for(text)
+	if english then
+		local font = F:f(font_name, font_size)
+		local function description_fits(value)
+			local body = string.sub(value, utf8.offset(value, 2))
+			local width, lines = font:getWrap(body, FIRST_PARAGRAPH_WIDTH)
+			local first_lines = math.min(#lines, math.ceil((bg.pos.y + bg.size.y - TEXT_TOP_POS - 3) / (font:getHeight() * line_height)))
+			local rest = {}
+			for n = first_lines + 1, #lines do rest[#rest + 1] = string.trim(lines[n]) end
+			local rest_width, rest_lines = font:getWrap(table.concat(rest, " "), FULL_PARAGRAPH_WIDTH)
+			local rest_height = #rest > 0 and (1 + (#rest_lines - 1) * line_height) * font:getHeight() or 0
+			return width <= FIRST_PARAGRAPH_WIDTH and rest_width <= FULL_PARAGRAPH_WIDTH and TEXT_TOP_POS + first_lines * font:getHeight() * line_height + rest_height <= RIGHT_PAGE_MAX_Y
+		end
+		if not description_fits(text) or (font.hasGlyphs and not font:hasGlyphs(text)) then text = english end
+	end
 	local p = string.sub(text, utf8.offset(text, 2))
 	local first_letter_label = GGLabel:new(V.v(bg.size.x, bg.size.y))
 
@@ -10780,6 +10796,7 @@ function Hero5SelectView:initialize(sw, sh)
 	function switch_button.on_click()
 		S:queue("GUIButtonCommon")
 		screen_map.user_data.liuhui_hero.usedoublehero = not screen_map.user_data.liuhui_hero.usedoublehero
+		screen_map.user_data.liuhui_hero.useinfinitehero = false
 		switch_button.label.text = screen_map.user_data.liuhui_hero.usedoublehero and _("HERO5_MODE_ON") or _("HERO5_MODE_OFF")
 		storage:save_slot(screen_map.user_data)
 	end
@@ -15073,6 +15090,7 @@ function HeroRoomView:initialize(sw, sh)
 	self.back:add_child(self.g1_level_but)
 
 	self:create_hero_deck_panel()
+	self:create_infinite_hero_panel()
 
 	if not IS_KR3 then
 		local header = GGPanelHeader:new(_("HERO ROOM"), 274)
@@ -15220,13 +15238,22 @@ function HeroRoomView:initialize(sw, sh)
 	switch_button.label.font_size = 18
 	switch_button.label.font_name = "body_bold"
 	switch_button.label.vertical_align = CJK("middle-caps", "middle", "middle", "middle")
-	switch_button.label.text = screen_map.user_data.liuhui_hero.usedoublehero and "Hai anh hùng: bật" or "Hai anh hùng: tắt"
+	switch_button.label.text = infinite_heroes.enabled(screen_map.user_data) and "Vô hạn tướng" or (screen_map.user_data.liuhui_hero.usedoublehero and "Hai tướng" or "Một tướng")
 	switch_button.label.fit_lines = 1
 
 	function switch_button.on_click()
 		S:queue("GUIButtonCommon")
-		screen_map.user_data.liuhui_hero.usedoublehero = not screen_map.user_data.liuhui_hero.usedoublehero
-		switch_button.label.text = screen_map.user_data.liuhui_hero.usedoublehero and "Hai anh hùng: bật" or "Hai anh hùng: tắt"
+		local settings = screen_map.user_data.liuhui_hero
+		if settings.useinfinitehero then
+			settings.useinfinitehero, settings.usedoublehero = false, false
+		elseif settings.usedoublehero then
+			settings.useinfinitehero, settings.usedoublehero = true, false
+			settings.infiniteheroes = settings.infiniteheroes or {}
+			if #settings.infiniteheroes == 0 then settings.infiniteheroes[1] = screen_map.user_data.heroes.selected end
+		else
+			settings.usedoublehero = true
+		end
+		switch_button.label.text = infinite_heroes.enabled(screen_map.user_data) and "Vô hạn tướng" or (screen_map.user_data.liuhui_hero.usedoublehero and "Hai tướng" or "Một tướng")
 		storage:save_slot(screen_map.user_data)
 		self:update_selected_hero()
 	end
@@ -15503,6 +15530,101 @@ function HeroRoomView:create_hero_deck_panel()
 	self:update_selected_hero()
 end
 
+function HeroRoomView:infinite_deck_button(parent, text, x, y, width, action)
+	local button = KView:new(v(width, 28))
+	button.pos = v(x, y)
+	button.colors.background = {66, 75, 39, 255}
+	local label = hero_deck_label(text, v(width, 28), 15)
+	label.propagate_on_click = true
+	button:add_child(label)
+	function button.on_click(_, mouse_button)
+		if mouse_button == 1 or mouse_button == nil then S:queue("GUIButtonCommon"); action() end
+	end
+	parent:add_child(button)
+	return button
+end
+
+function HeroRoomView:create_infinite_hero_panel()
+	local panel = KView:new(v(self.deck_panel.size.x, 142))
+	panel.pos = V.vclone(self.deck_panel.pos)
+	panel.colors.background = {37, 31, 22, 248}
+	self.back:add_child(panel)
+	self.infinite_panel = panel
+	self.infinite_page = 1
+	self.infinite_slots = {}
+	local settings = screen_map.user_data.liuhui_hero
+	settings.infiniteheroes = infinite_heroes.names(screen_map.user_data, screen_map.hero_data)
+	self.infinite_info = hero_deck_label("", v(270, 28), 16)
+	self.infinite_info.pos = v(10, 3)
+	panel:add_child(self.infinite_info)
+	self:infinite_deck_button(panel, "+ Thêm", 285, 3, 100, function() self:change_infinite_hero(1) end)
+	self:infinite_deck_button(panel, "- Bỏ", 395, 3, 90, function() self:change_infinite_hero(-1) end)
+	self:infinite_deck_button(panel, "Xóa đội", 495, 3, 100, function()
+		settings.infiniteheroes = {}; self.infinite_page = 1
+		storage:save_slot(screen_map.user_data); self:update_infinite_hero_panel()
+	end)
+	self:infinite_deck_button(panel, "Trang trước", 605, 3, 120, function()
+		self.infinite_page = math.max(1, self.infinite_page - 1); self:update_infinite_hero_panel()
+	end)
+	self:infinite_deck_button(panel, "Trang sau", 735, 3, 115, function()
+		self.infinite_page = math.min(math.max(1, math.ceil(#settings.infiniteheroes / 8)), self.infinite_page + 1); self:update_infinite_hero_panel()
+	end)
+	for n = 1, 8 do
+		local slot = KView:new(v(76, 76))
+		slot.pos = v(24 + (n - 1) * ((panel.size.x - 110) / 7), 56)
+		slot.colors.background = {34, 28, 20, 255}
+		slot.portrait = KImageView:new("heroroom_014_large")
+		slot.portrait.propagate_on_click = true
+		slot:add_child(slot.portrait)
+		slot.number = hero_deck_label("", v(36, 20), 12)
+		slot.number.colors.background = {12, 10, 8, 210}
+		slot.number.propagate_on_click = true
+		slot:add_child(slot.number)
+		function slot.on_click(_, mouse_button)
+			if mouse_button ~= nil and mouse_button ~= 1 then return end
+			if slot.team_index then
+				table.remove(settings.infiniteheroes, slot.team_index)
+				storage:save_slot(screen_map.user_data); self:update_infinite_hero_panel()
+			end
+		end
+		panel:add_child(slot); self.infinite_slots[n] = slot
+	end
+	self:update_selected_hero()
+end
+
+function HeroRoomView:change_infinite_hero(delta)
+	local hd = screen_map.hero_data[self.selected_index]
+	if not hd or hd.transplanting or (hd.available_level or 0) > #screen_map.user_data.levels then return end
+	local list = screen_map.user_data.liuhui_hero.infiniteheroes
+	if delta > 0 then
+		list[#list + 1] = hd.name
+		local status = screen_map.user_data.heroes.status[hd.name]
+		local xp = hd.starting_level < 2 and 0 or GS.hero_xp_thresholds[hd.starting_level - 1]
+		if status then status.xp = math.max(status.xp or 0, xp or 0) end
+		self.infinite_page = math.ceil(#list / 8)
+	else
+		for n = #list, 1, -1 do if list[n] == hd.name then table.remove(list, n); break end end
+	end
+	storage:save_slot(screen_map.user_data)
+	self:update_infinite_hero_panel()
+end
+
+function HeroRoomView:update_infinite_hero_panel()
+	local list = screen_map.user_data.liuhui_hero.infiniteheroes
+	local pages = math.max(1, math.ceil(#list / 8))
+	self.infinite_page = math.min(self.infinite_page, pages)
+	self.infinite_info.text = "Vô hạn: " .. #list .. " tướng | " .. self.infinite_page .. "/" .. pages
+	for n, slot in ipairs(self.infinite_slots) do
+		local index = (self.infinite_page - 1) * 8 + n
+		local hero_index = list[index] and get_hero_index(list[index])
+		slot.team_index = hero_index and index or nil
+		if hero_index then
+			self:set_hero_deck_slot(slot, hero_index)
+			slot.number.text = tostring(index)
+		else slot.hidden = true end
+	end
+end
+
 function HeroRoomView:set_hero_deck_slot(slot, hero_index)
 	local hd = screen_map.hero_data[hero_index]
 
@@ -15573,6 +15695,11 @@ function HeroRoomView:assign_selected_hero_to_deck(deck_name, slot_index)
 end
 
 function HeroRoomView:update_selected_hero()
+	if self.infinite_panel then
+		self.infinite_panel.hidden = not infinite_heroes.enabled(screen_map.user_data)
+		self.deck_panel.hidden = not self.infinite_panel.hidden
+		self:update_infinite_hero_panel()
+	end
 	if not self.deck_slots then
 		return
 	end

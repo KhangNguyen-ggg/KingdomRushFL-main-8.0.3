@@ -49,14 +49,14 @@ local STATE_CHECKING_ASSETS = 6
 local STATE_DOWNLOADING_ASSETS_HEAVY = 7 -- 【新增】大规模资源更新状态（超过1000个文件）
 local STATE_DOWNLOADING_ASSETS_MIDDLE_HEAVY = 8 -- 【新增】中等规模资源更新状态（超过100个文件）
 local STATE_STRING_MAP = {
-	[STATE_CHECKING_ASSETS] = "校验美术资源中……",
-	[STATE_DOWNLOADING_ASSETS] = "下载美术资源中（可能需要较长时间）……",
-	[STATE_DOWNLOADING_CODE] = "下载代码资源中……",
-	[STATE_COMMITTING_CHANGES] = "提交更新事务中……",
-	[STATE_SELECT_URL] = "选择更新地址中……",
-	[STATE_CHECK_UPDATE] = "检查更新中……",
-	[STATE_DOWNLOADING_ASSETS_HEAVY] = "下载巨量美术资源中，强烈建议直接下载本体⊙﹏⊙∥",
-	[STATE_DOWNLOADING_ASSETS_MIDDLE_HEAVY] = "下载大量美术资源中，如不成功可下载本体……"
+	[STATE_CHECKING_ASSETS] = "Đang kiểm tra tài nguyên hình ảnh…",
+	[STATE_DOWNLOADING_ASSETS] = "Đang tải tài nguyên hình ảnh, có thể mất nhiều thời gian…",
+	[STATE_DOWNLOADING_CODE] = "Đang tải mã game…",
+	[STATE_COMMITTING_CHANGES] = "Đang áp dụng bản cập nhật…",
+	[STATE_SELECT_URL] = "Đang chọn địa chỉ cập nhật…",
+	[STATE_CHECK_UPDATE] = "Đang kiểm tra cập nhật…",
+	[STATE_DOWNLOADING_ASSETS_HEAVY] = "Đang tải lượng tài nguyên rất lớn. Nên tải gói game đầy đủ ⊙﹏⊙∥",
+	[STATE_DOWNLOADING_ASSETS_MIDDLE_HEAVY] = "Đang tải nhiều tài nguyên. Nếu thất bại, hãy tải gói game đầy đủ…"
 }
 local state = STATE_DOWNLOADING_ASSETS
 local update_log_line_max_count = 20
@@ -262,7 +262,7 @@ end
 
 -- 记录错误日志
 local function log_error(line)
-	table.insert(update_log_lines, "[错误] " .. sanitize_utf8(line))
+	table.insert(update_log_lines, "[Lỗi] " .. sanitize_utf8(line))
 	if #update_log_lines > update_log_line_max_count then
 		table.remove(update_log_lines, 1)
 	end
@@ -360,7 +360,7 @@ local function cleanup_old_update_dirs(current_dir)
 						FS.remove(dir_path)
 					end
 					remove_dir_recursive(full_path)
-					log_info("清理旧缓存: " .. item)
+					log_info("Dọn bộ nhớ đệm cũ: " .. item)
 				end
 			end
 		end
@@ -417,7 +417,7 @@ local function adjust_chunk_size(success)
 		if consecutive_success_count >= 5 and current_chunk_size < DOWNLOAD_CONFIG.chunk_size_initial then
 			current_chunk_size = math.min(current_chunk_size * 1.5, DOWNLOAD_CONFIG.chunk_size_initial)
 			consecutive_success_count = 0
-			log_info(string.format("网络稳定，增大块: %dKB", current_chunk_size / 1024))
+			log_info(string.format("Mạng ổn định, tăng khối tải lên %d KB", current_chunk_size / 1024))
 		end
 	else
 		-- 失败时立即减半块大小（但不低于最小值）
@@ -425,7 +425,7 @@ local function adjust_chunk_size(success)
 		local old_size = current_chunk_size
 		current_chunk_size = math.max(current_chunk_size / 2, DOWNLOAD_CONFIG.chunk_size_min)
 		if current_chunk_size ~= old_size then
-			log_info(string.format("网络不稳定，减小块: %dKB", current_chunk_size / 1024))
+			log_info(string.format("Mạng không ổn định, giảm khối tải xuống %d KB", current_chunk_size / 1024))
 		end
 	end
 end
@@ -479,7 +479,7 @@ local function async_request(url, options, timeout)
 	local start_time = love.timer.getTime()
 	while resp_ch:getCount() == 0 do
 		if love.timer.getTime() - start_time > timeout then
-			return 0, "请求超时", {}, 0
+			return 0, "Yêu cầu hết thời gian chờ", {}, 0
 		end
 		coroutine.yield()
 	end
@@ -548,27 +548,27 @@ end
 -- 判断是否应该重试
 local function should_retry_error(code, retry_count)
 	if code == 0 then -- 网络错误
-		log_error("网络错误: " .. tostring(code))
+		log_error("Lỗi mạng: " .. tostring(code))
 		return true, "network"
 	end
 	if code >= 500 then -- 服务器错误
-		log_error("服务器错误: HTTP " .. tostring(code))
+		log_error("Lỗi máy chủ: HTTP " .. tostring(code))
 		return true, "server"
 	end
 	if code == 408 or code == 429 then -- 超时或限流
-		log_error("请求超时或被限流: HTTP " .. tostring(code))
+		log_error("Hết thời gian chờ hoặc bị giới hạn yêu cầu: HTTP " .. tostring(code))
 		return true, "throttle"
 	end
 	if code == 404 then -- 文件不存在
-		log_error("文件未找到: HTTP 404")
+		log_error("Không tìm thấy tệp: HTTP 404")
 		return false, "not_found"
 	end
 	if code == 416 then -- Range 无效
-		log_error("请求的范围无效: HTTP 416")
+		log_error("Phạm vi yêu cầu không hợp lệ: HTTP 416")
 		return false, "invalid_range"
 	end
 	if code >= 400 and code < 500 then
-		log_error("客户端错误: HTTP " .. tostring(code))
+		log_error("Lỗi phía máy khách: HTTP " .. tostring(code))
 		return retry_count < 3, "client" -- 其他客户端错误，最多3次
 	end
 	return true, "unknown"
@@ -591,7 +591,7 @@ local function validate_chunk_response(code, body, headers, chunk_start, chunk_e
 		local range_start, range_end, range_total = parse_content_range(headers and headers["content-range"])
 		local expected_len = chunk_end - chunk_start + 1
 		if range_start ~= chunk_start or range_end ~= chunk_end or range_total ~= total_size or #body ~= expected_len then
-			log_error(string.format("分块响应异常：请求 %d-%d，收到 %s，长度 %d", chunk_start, chunk_end, tostring(headers and headers["content-range"]), #body))
+			log_error(string.format("Phản hồi khối tải không hợp lệ: yêu cầu %d-%d, nhận %s, độ dài %d", chunk_start, chunk_end, tostring(headers and headers["content-range"]), #body))
 			return false, nil
 		end
 		return true, current_size + #body
@@ -602,7 +602,7 @@ local function validate_chunk_response(code, body, headers, chunk_start, chunk_e
 		if #body == total_size then
 			return true, total_size
 		end
-		log_error(string.format("分块响应异常：Range 请求返回 200 但长度不符（%d vs %d）", #body, total_size))
+		log_error(string.format("Phản hồi khối tải không hợp lệ: yêu cầu Range nhận 200 nhưng độ dài khác nhau (%d và %d)", #body, total_size))
 		return false, nil
 	end
 
@@ -638,7 +638,7 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 		total_size = #body
 		local wf = io.open(part_path, "wb")
 		if not wf then
-			log_error("无法写入文件: " .. part_path)
+			log_error("Không ghi được tệp: " .. part_path)
 			return false
 		end
 		wf:write(body)
@@ -650,12 +650,12 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 		os.rename(part_path, real_path)
 		return true
 	else
-		log_error(string.format("无法获取文件大小: HTTP %d", code))
+		log_error(string.format("Không lấy được kích thước tệp: HTTP %d", code))
 		return false
 	end
 
 	if not total_size or total_size == 0 then
-		log_error("文件大小无效")
+		log_error("Kích thước tệp không hợp lệ")
 		return false
 	end
 
@@ -668,12 +668,12 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 		downloaded_size = f_check:seek("end")
 		f_check:close()
 		if downloaded_size > total_size then
-			log_info(string.format("检测到异常续传文件（%d > %d），自动重置重下", downloaded_size, total_size))
+			log_info(string.format("Tệp tải tiếp bất thường (%d > %d), tự đặt lại để tải từ đầu", downloaded_size, total_size))
 			os.remove(part_path)
 			downloaded_size = 0
 		end
 		if downloaded_size > 0 then
-			log_info(string.format("续传 %.2f/%.2f MB", downloaded_size / 1024 / 1024, total_size / 1024 / 1024))
+			log_info(string.format("Tải tiếp %.2f/%.2f MB", downloaded_size / 1024 / 1024, total_size / 1024 / 1024))
 		end
 	end
 
@@ -700,7 +700,7 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 					local write_mode = code == 200 and "wb" or "ab"
 					local wf = io.open(part_path, write_mode)
 					if not wf then
-						log_error("无法打开文件写入")
+						log_error("Không mở được tệp để ghi")
 						return false
 					end
 					wf:write(body)
@@ -723,13 +723,13 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 				local should_retry_flag, error_type = should_retry_error(code, chunk_retries)
 
 				if not should_retry_flag then
-					log_error(string.format("下载失败: HTTP %d", code))
+					log_error(string.format("Tải xuống thất bại: HTTP %d", code))
 					return false
 				end
 
 				chunk_retries = chunk_retries + 1
 				if chunk_retries > DOWNLOAD_CONFIG.chunk_max_retries then
-					log_error("块下载失败（超过重试限制）")
+					log_error("Tải khối thất bại, vượt số lần thử lại")
 					return false
 				end
 
@@ -739,7 +739,7 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 				chunk_size = current_chunk_size
 
 				local backoff = calculate_backoff(chunk_retries, error_type)
-				log_info(string.format("重试中 (%d/%d, %ds, 块%dKB)...", chunk_retries, DOWNLOAD_CONFIG.chunk_max_retries, backoff, chunk_size / 1024))
+				log_info(string.format("Đang thử lại (%d/%d, %ds, khối %dKB)…", chunk_retries, DOWNLOAD_CONFIG.chunk_max_retries, backoff, chunk_size / 1024))
 				async_sleep(backoff)
 			end
 		end
@@ -754,14 +754,14 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 	-- 验证最终大小
 	local f_final = io.open(part_path, "rb")
 	if not f_final then
-		log_error("下载完成但无法读取文件")
+		log_error("Đã tải xong nhưng không đọc được tệp")
 		return false
 	end
 	local actual_size = f_final:seek("end")
 	f_final:close()
 
 	if actual_size ~= total_size then
-		log_error(string.format("文件大小不匹配: %d vs %d", actual_size, total_size))
+		log_error(string.format("Kích thước tệp không khớp: %d và %d", actual_size, total_size))
 		return false
 	end
 
@@ -784,7 +784,7 @@ local function download_to_file_chunked(url_base, file_param, real_path)
 			if wf then
 				wf:close()
 			end
-			log_error("文件移动失败")
+			log_error("Không di chuyển được tệp")
 			return false
 		end
 	end
@@ -819,7 +819,7 @@ local function download_to_lovefs_chunked(url_base, file_param, fs_path)
 		FS.remove(part_path)
 		return true, body
 	else
-		log_error(string.format("无法获取文件信息: HTTP %d", code))
+		log_error(string.format("Không lấy được thông tin tệp: HTTP %d", code))
 		return false, nil
 	end
 
@@ -827,14 +827,14 @@ local function download_to_lovefs_chunked(url_base, file_param, fs_path)
 	local existing = FS.read(part_path) or ""
 	local downloaded_size = #existing
 	if downloaded_size > total_size then
-		log_info(string.format("检测到异常续传文件（%d > %d），自动重置重下", downloaded_size, total_size))
+		log_info(string.format("Tệp tải tiếp bất thường (%d > %d), tự đặt lại để tải từ đầu", downloaded_size, total_size))
 		FS.remove(part_path)
 		existing = ""
 		downloaded_size = 0
 	end
 
 	if downloaded_size > 0 then
-		log_info(string.format("续传 %.2f/%.2f KB", downloaded_size / 1024, total_size / 1024))
+		log_info(string.format("Tải tiếp %.2f/%.2f KB", downloaded_size / 1024, total_size / 1024))
 	end
 
 	-- 分块下载（移除文件级别重试，只保留块级别重试）
@@ -878,13 +878,13 @@ local function download_to_lovefs_chunked(url_base, file_param, fs_path)
 				local should_retry_flag, error_type = should_retry_error(code, chunk_retries)
 
 				if not should_retry_flag then
-					log_error(string.format("下载失败: HTTP %d", code))
+					log_error(string.format("Tải xuống thất bại: HTTP %d", code))
 					return false, nil
 				end
 
 				chunk_retries = chunk_retries + 1
 				if chunk_retries > DOWNLOAD_CONFIG.chunk_max_retries then
-					log_error("块下载失败（超过重试限制）")
+					log_error("Tải khối thất bại, vượt số lần thử lại")
 					return false, nil
 				end
 
@@ -893,7 +893,7 @@ local function download_to_lovefs_chunked(url_base, file_param, fs_path)
 				chunk_size = current_chunk_size
 
 				local backoff = calculate_backoff(chunk_retries, error_type)
-				log_info(string.format("重试中 (%d/%d, %ds, 块%dKB)...", chunk_retries, DOWNLOAD_CONFIG.chunk_max_retries, backoff, chunk_size / 1024))
+				log_info(string.format("Đang thử lại (%d/%d, %ds, khối %dKB)…", chunk_retries, DOWNLOAD_CONFIG.chunk_max_retries, backoff, chunk_size / 1024))
 				async_sleep(backoff)
 			end
 		end
@@ -906,7 +906,7 @@ local function download_to_lovefs_chunked(url_base, file_param, fs_path)
 	end
 
 	if #existing ~= total_size then
-		log_error(string.format("文件大小不匹配: %d vs %d", #existing, total_size))
+		log_error(string.format("Kích thước tệp không khớp: %d và %d", #existing, total_size))
 		return false, nil
 	end
 
@@ -926,18 +926,18 @@ local function diff_assets()
 	FS.createDirectory(tmp_dir)
 
 	local url_base = server_address .. "file"
-	log_info("拉取资源索引文件...")
+	log_info("Đang tải chỉ mục tài nguyên…")
 
 	local tmp_file_path = tmp_dir .. "/assets_index.lua"
 	local ok, index_content = download_to_lovefs_chunked(url_base, "_assets/assets_index.lua", tmp_file_path)
 
 	if not ok then
-		log_error("下载资源索引失败")
+		log_error("Tải chỉ mục tài nguyên thất bại")
 		FS.remove(tmp_dir)
 		return nil
 	end
 
-	log_info("资源索引下载完成")
+	log_info("Đã tải xong chỉ mục tài nguyên")
 
 	local remote_assets_index = loadstring(index_content)()
 	local local_assets_index = love.filesystem.load("_assets/assets_index.lua")()
@@ -985,18 +985,18 @@ local function sync_assets(added_or_modified)
 
 		-- 设置当前文件信息（用于 UI）
 		set_current_file(file_path, i, file_count)
-		log_info(string.format("[资源 %d/%d] %s", i, file_count, file_path))
+		log_info(string.format("[Tài nguyên %d/%d] %s", i, file_count, file_path))
 
 		-- 检查是否已经在缓存中（断点续传）
 		local cached_info = FS.getInfo(cached_path)
 		if cached_info and cached_info.size and cached_info.size > 0 then
-			log_info("已缓存，跳过")
+			log_info("Đã có trong bộ nhớ đệm, bỏ qua")
 		else
 			FU.ensure_parent_dir(cached_path)
 			local ok = download_to_file_chunked(url_base, file_path, cached_path)
 
 			if not ok then
-				log_error("下载失败: " .. file_path)
+				log_error("Tải xuống thất bại: " .. file_path)
 				return false
 			end
 		end
@@ -1019,18 +1019,18 @@ local function upgrade_new_version(info)
 
 		-- 设置当前文件信息（用于 UI）
 		set_current_file(file_path, i, file_count)
-		log_info(string.format("[代码 %d/%d] %s", i, file_count, file_path))
+		log_info(string.format("[Mã %d/%d] %s", i, file_count, file_path))
 
 		-- 检查是否已经在缓存中（断点续传）
 		local cached_info = FS.getInfo(cached_path)
 		if cached_info and cached_info.size and cached_info.size > 0 then
-			log_info("已缓存，跳过")
+			log_info("Đã có trong bộ nhớ đệm, bỏ qua")
 		else
 			FU.ensure_parent_dir(cached_path)
 			local ok, _ = download_to_lovefs_chunked(url_base, file_path, cached_path)
 
 			if not ok then
-				log_error("下载失败: " .. file_path)
+				log_error("Tải xuống thất bại: " .. file_path)
 				return false
 			end
 		end
@@ -1054,12 +1054,12 @@ local function commit_all_changes(info)
 		if content then
 			FU.ensure_parent_dir(file_path)
 			if not FU.write_file(file_path, content) then
-				log_error("写入代码失败: " .. file_path)
+				log_error("Không ghi được mã: " .. file_path)
 				return false
 			end
-			log_info("提交代码: " .. file_path)
+			log_info("Áp dụng mã: " .. file_path)
 		else
-			log_error("读取缓存失败: " .. cached_path)
+			log_error("Không đọc được bộ nhớ đệm: " .. cached_path)
 			return false
 		end
 	end
@@ -1072,7 +1072,7 @@ local function commit_all_changes(info)
 		-- 读取缓存文件
 		local rf = io.open(cached_path, "rb")
 		if not rf then
-			log_error("读取资源缓存失败: " .. cached_path)
+			log_error("Không đọc được tài nguyên trong bộ nhớ đệm: " .. cached_path)
 			return false
 		end
 		local content = rf:read("*a")
@@ -1082,12 +1082,12 @@ local function commit_all_changes(info)
 		FU.ensure_parent_dir(local_path)
 		local wf = io.open(local_path, "wb")
 		if not wf then
-			log_error("写入资源失败: " .. local_path)
+			log_error("Không ghi được tài nguyên: " .. local_path)
 			return false
 		end
 		wf:write(content)
 		wf:close()
-		log_info("提交资源: " .. file_path)
+		log_info("Áp dụng tài nguyên: " .. file_path)
 	end
 
 	-- 3. 删除文件
@@ -1095,10 +1095,10 @@ local function commit_all_changes(info)
 		if FS.getInfo(file_path) then
 			local success = FU.delete_file(file_path)
 			if not success then
-				log_error("删除文件失败: " .. file_path)
+				log_error("Không xóa được tệp: " .. file_path)
 			-- 不中断更新
 			else
-				log_info("删除: " .. file_path)
+				log_info("Xóa: " .. file_path)
 			end
 		end
 	end
@@ -1106,7 +1106,7 @@ local function commit_all_changes(info)
 	-- 4. 更新版本号
 	if info.master_commit_hash then
 		if not FU.write_file("current_version_commit_hash.txt", info.master_commit_hash) then
-			log_error("更新版本号失败")
+			log_error("Không cập nhật được số phiên bản")
 			return false
 		end
 	end
@@ -1127,7 +1127,7 @@ local function check_update()
 	-- 【修复】trim 空白字符
 	commit_hash = commit_hash:match("^%s*(.-)%s*$")
 	if #commit_hash ~= 40 then
-		log_error("commit hash 格式无效: " .. commit_hash)
+		log_error("Mã commit không đúng định dạng: " .. commit_hash)
 		return false
 	end
 
@@ -1142,7 +1142,7 @@ local function check_update()
 
 	local resp_json = nil
 	for _, site in ipairs(candidate_sites) do
-		log_info("尝试: " .. site)
+		log_info("Thử: " .. site)
 		local url = site .. "commits"
 		set_state(STATE_CHECK_UPDATE)
 		local code, response = async_request(url, {
@@ -1158,20 +1158,20 @@ local function check_update()
 		if code == 200 then
 			resp_json = json.decode(response)
 			server_address = site
-			log_info("选中: " .. server_address)
+			log_info("Đã chọn: " .. server_address)
 			if site ~= params.update_last_site then
 				params.update_last_site = site
 				storage:save_settings(params)
 			end
 			break
 		else
-			log_info("不可用: HTTP " .. tostring(code))
+			log_info("Không khả dụng: HTTP " .. tostring(code))
 			set_state(STATE_SELECT_URL)
 		end
 	end
 
 	if not server_address then
-		log_info("无可用更新地址")
+		log_info("Không có địa chỉ cập nhật khả dụng")
 		return false
 	end
 
@@ -1198,7 +1198,7 @@ local function run_code()
 	-- 【修复】返回状态，让主循环显示消息框
 	return {
 		status = "AskUpdate",
-		message = "检测到有新内容可更新，是否立即更新？\n\n" .. table.concat(messages, "\n\n")
+		message = "Có nội dung mới. Cập nhật ngay?\n\n" .. table.concat(messages, "\n\n")
 	}
 end
 
@@ -1212,15 +1212,15 @@ local function do_update()
 	end
 	local server_hash = update_response.master_commit_hash or "unknown"
 	ensure_update_cache_dir(local_hash, server_hash)
-	log_info("缓存目录: " .. update_cache_dir)
+	log_info("Thư mục bộ nhớ đệm: " .. update_cache_dir)
 
 	-- 1. 检查资源差异
 	local added_or_modified_assets = diff_assets()
 	if not added_or_modified_assets then
 		return {
 			status = "Error",
-			title = "升级失败",
-			message = "校验美术资源时发生错误。\n\n" .. table.concat(error_log_lines, "\n")
+			title = "Cập nhật thất bại",
+			message = "Lỗi khi kiểm tra tài nguyên hình ảnh.\n\n" .. table.concat(error_log_lines, "\n")
 		}
 	end
 
@@ -1229,8 +1229,8 @@ local function do_update()
 	if not success then
 		return {
 			status = "Error",
-			title = "升级失败",
-			message = "下载资源失败，但已保留进度，下次将自动续传。\n\n" .. table.concat(error_log_lines, "\n")
+			title = "Cập nhật thất bại",
+			message = "Tải tài nguyên thất bại. Tiến độ đã lưu; lần sau sẽ tự tải tiếp.\n\n" .. table.concat(error_log_lines, "\n")
 		}
 	end
 
@@ -1239,8 +1239,8 @@ local function do_update()
 	if not success then
 		return {
 			status = "Error",
-			title = "升级失败",
-			message = "下载代码失败，但已保留进度，下次将自动续传。\n\n" .. table.concat(error_log_lines, "\n")
+			title = "Cập nhật thất bại",
+			message = "Tải mã game thất bại. Tiến độ đã lưu; lần sau sẽ tự tải tiếp.\n\n" .. table.concat(error_log_lines, "\n")
 		}
 	end
 
@@ -1257,14 +1257,14 @@ local function do_update()
 	if not success then
 		return {
 			status = "Error",
-			title = "升级失败",
-			message = "提交更改失败。\n\n" .. table.concat(error_log_lines, "\n")
+			title = "Cập nhật thất bại",
+			message = "Không áp dụng được thay đổi.\n\n" .. table.concat(error_log_lines, "\n")
 		}
 	end
 
 	return {
 		status = "Updated",
-		message = "资源已更新，点击关闭游戏"
+		message = "Tài nguyên đã cập nhật. Nhấp để đóng game."
 	}
 end
 
@@ -1273,7 +1273,7 @@ function M:_open_dialog(title, message, buttons, on_select)
 		title = sanitize_utf8(title or ""),
 		message = sanitize_utf8(message or ""),
 		buttons = buttons or {{
-			text = "确定",
+			text = "Đồng ý",
 			value = "ok",
 			is_default = true,
 			is_cancel = true
@@ -1456,7 +1456,7 @@ function M:update(dt)
 		local success, result = coroutine.resume(self.co)
 		if not success then
 			-- 协程执行异常
-			table.insert(update_log_lines, "[错误] " .. sanitize_utf8(tostring(result)))
+			table.insert(update_log_lines, "[Lỗi] " .. sanitize_utf8(tostring(result)))
 			table.insert(error_log_lines, sanitize_utf8(tostring(result)))
 			self.co = nil
 			-- 确保线程退出
@@ -1464,8 +1464,8 @@ function M:update(dt)
 			if http_worker then
 				http_worker:wait()
 			end
-			self:_open_dialog("升级失败", "更新过程异常。\n\n" .. sanitize_utf8(tostring(result)), {{
-				text = "确定",
+			self:_open_dialog("Cập nhật thất bại", "Lỗi trong quá trình cập nhật.\n\n" .. sanitize_utf8(tostring(result)), {{
+				text = "Đồng ý",
 				value = "ok",
 				is_default = true,
 				is_cancel = true
@@ -1487,12 +1487,12 @@ function M:update(dt)
 				self:done_callback()
 			elseif result.status == "AskUpdate" then
 				-- 询问是否更新
-				self:_open_dialog("发现新版本", result.message, {{
-					text = "更新",
+				self:_open_dialog("Có phiên bản mới", result.message, {{
+					text = "Cập nhật",
 					value = "update",
 					is_default = true
 				}, {
-					text = "取消",
+					text = "Hủy",
 					value = "cancel",
 					is_cancel = true
 				}}, function(btn)
@@ -1506,8 +1506,8 @@ function M:update(dt)
 				end)
 			elseif result.status == "Updated" then
 				-- 更新完成，显示成功消息并重启
-				self:_open_dialog("升级完成", result.message, {{
-					text = "确定",
+				self:_open_dialog("Cập nhật hoàn tất", result.message, {{
+					text = "Đồng ý",
 					value = "ok",
 					is_default = true,
 					is_cancel = true
@@ -1516,8 +1516,8 @@ function M:update(dt)
 				end)
 			elseif result.status == "Error" then
 				-- 更新失败，显示错误消息
-				self:_open_dialog(result.title or "错误", result.message, {{
-					text = "确定",
+				self:_open_dialog(result.title or "Lỗi", result.message, {{
+					text = "Đồng ý",
 					value = "ok",
 					is_default = true,
 					is_cancel = true
@@ -1577,11 +1577,11 @@ end
 -- 格式化时间
 local function format_time(seconds)
 	if seconds < 60 then
-		return string.format("%d秒", math.ceil(seconds))
+		return string.format("%d giây", math.ceil(seconds))
 	elseif seconds < 3600 then
-		return string.format("%d分%d秒", math.floor(seconds / 60), math.floor(seconds % 60))
+		return string.format("%d phút %d giây", math.floor(seconds / 60), math.floor(seconds % 60))
 	else
-		return string.format("%d时%d分", math.floor(seconds / 3600), math.floor((seconds % 3600) / 60))
+		return string.format("%d giờ %d phút", math.floor(seconds / 3600), math.floor((seconds % 3600) / 60))
 	end
 end
 
@@ -1755,7 +1755,7 @@ function M:draw()
 	-- 标题区域
 	local title_y = card_y + 20
 	G.setFont(font_title)
-	local title_text = "正在更新游戏"
+	local title_text = "Đang cập nhật game"
 	local title_w = font_title:getWidth(title_text)
 	G.setColor(1, 1, 1, ui_state.fade_alpha)
 	G.print(title_text, card_x + (card_w - title_w) / 2, title_y)
@@ -1763,7 +1763,7 @@ function M:draw()
 	-- 状态文字
 	local status_y = title_y + 40
 	G.setFont(font_normal)
-	local status_text = STATE_STRING_MAP[state] or "处理中……"
+	local status_text = STATE_STRING_MAP[state] or "Đang xử lý…"
 	local status_w = font_normal:getWidth(status_text)
 	G.setColor(0.7, 0.8, 0.9, ui_state.fade_alpha)
 	G.print(status_text, card_x + (card_w - status_w) / 2, status_y)
@@ -1816,7 +1816,7 @@ function M:draw()
 
 		-- 文件进度
 		if ui_state.files_total > 0 then
-			local files_text = string.format("文件进度: %d / %d", ui_state.files_done, ui_state.files_total)
+			local files_text = string.format("Tiến độ tệp: %d / %d", ui_state.files_done, ui_state.files_total)
 			G.setColor(0.6, 0.7, 0.8, ui_state.fade_alpha)
 			G.print(files_text, bar_x + bar_w - font_small:getWidth(files_text), info_y)
 		end
@@ -1841,7 +1841,7 @@ function M:draw()
 		-- 剩余时间
 		local eta = get_eta()
 		if eta and eta > 0 and eta < 86400 then
-			local eta_text = "剩余: " .. format_time(eta)
+			local eta_text = "Còn lại: " .. format_time(eta)
 			G.setColor(0.6, 0.7, 0.8, ui_state.fade_alpha)
 			G.print(eta_text, bar_x + bar_w - font_small:getWidth(eta_text), speed_y)
 		end
@@ -1901,7 +1901,7 @@ function M:draw()
 		end
 		local line_y = log_y + log_padding + (i - start_idx) * line_height
 		-- 错误日志用红色
-		if line:find("错误") then
+		if line:find("Lỗi") then
 			G.setColor(1, 0.4, 0.4, ui_state.fade_alpha)
 		else
 			G.setColor(0.5, 0.6, 0.7, ui_state.fade_alpha)
@@ -2007,7 +2007,7 @@ function M:draw()
 
 			G.setFont(font_normal)
 			G.setColor(1, 1, 1, 1)
-			local btn_text = (self._dialog.buttons[i] and self._dialog.buttons[i].text) or "确定"
+			local btn_text = (self._dialog.buttons[i] and self._dialog.buttons[i].text) or "Đồng ý"
 			G.printf(btn_text, btn_rect.x, btn_rect.y + 8, btn_rect.w, "center")
 		end
 	end

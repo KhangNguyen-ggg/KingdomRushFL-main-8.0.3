@@ -1,4 +1,4 @@
-﻿-- chunkname: @./lib/klove/font_db.lua
+-- chunkname: @./lib/klove/font_db.lua
 
 local log = require("klua.log"):new("font_db")
 local G = love.graphics
@@ -138,6 +138,11 @@ function font_db:f(alias, size)
 			log.debug("creating font %s-%s (orig size:%s) from file %s ", name, real_size, size, font_file)
 
 			local font = G.newFont(font_file, tonumber(real_size), "light")
+
+			-- Soup has Vietnamese letters but lacks several punctuation/Latin glyphs.
+			if name == "FL-SoupOfJustice" and font.setFallbacks then
+				font:setFallbacks(G.newFont(self.font_files["EBGaramond-Bold"], tonumber(real_size), "light"))
+			end
 
 			self.fonts[name_size] = font
 
@@ -365,3 +370,4 @@ function font_db:f_adj(alias, size)
 end
 
 return font_db
+

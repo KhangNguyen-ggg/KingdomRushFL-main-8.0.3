@@ -74,161 +74,161 @@ local utf8 = require("utf8")
 -- 通用题库（所有平台）
 local common_quiz = {
 	{
-		q = "Dove版的开发目标是什么？",
-		opts = {"高性能、高可操作性、高平衡度、高自由度", "画面精美、剧情丰富", "简单易玩、快速通关"},
+		q = "Mục tiêu phát triển của Dove là gì?",
+		opts = {"Hiệu năng cao, điều khiển linh hoạt, cân bằng và tự do tùy chỉnh", "Hình ảnh đẹp, cốt truyện phong phú", "Dễ chơi, vượt màn nhanh"},
 		ans = 1
 	},
 	{
-		q = "Dove版是否完全免费？",
-		opts = {"是的，完全免费", "需要付费解锁部分内容", "免费试玩，后续收费"},
+		q = "Dove có hoàn toàn miễn phí không?",
+		opts = {"Có, hoàn toàn miễn phí", "Phải trả tiền để mở một số nội dung", "Chơi thử miễn phí rồi phải trả tiền"},
 		ans = 1
 	},
 	{
-		q = "将Dove版用于商业用途是否合法？",
-		opts = {"不合法，属于侵权", "合法，可以随意使用", "需要得到作者授权"},
+		q = "Dùng Dove cho mục đích thương mại có hợp lệ không?",
+		opts = {"Không, tác giả coi đó là vi phạm quyền của mình", "Có, được dùng tùy ý", "Cần được tác giả cho phép"},
 		ans = 1
 	},
 	{
-		q = "不阅读作者的话就询问他人相关问题会怎样？",
-		opts = {"浪费他人的时间", "没有影响", "会得到帮助"},
+		q = "Hỏi lại nội dung lời tác giả khi chưa đọc sẽ gây ra điều gì?",
+		opts = {"Làm mất thời gian của người khác", "Không ảnh hưởng gì", "Sẽ được giúp đỡ"},
 		ans = 1
 	},
 	{
-		q = "游玩Dove版前建议先玩什么？",
-		opts = {"至少一代王国保卫战原版", "其他塔防游戏", "不需要玩其他游戏"},
+		q = "Trước khi chơi Dove, nên chơi gì?",
+		opts = {"Ít nhất một phần Kingdom Rush gốc", "Một game thủ thành khác", "Không cần chơi game khác"},
 		ans = 1
 	},
 	{
-		q = "Dove版英雄等级局外是否保留？",
-		opts = {"不保留，局内从1级开始升级", "保留", "部分保留"},
+		q = "Cấp anh hùng có giữ lại ngoài màn không?",
+		opts = {"Không, bắt đầu lên cấp từ cấp 1 trong mỗi màn", "Có giữ lại", "Giữ lại một phần"},
 		ans = 1
 	},
 	{
-		q = "如果不喜欢英雄局内升级，可以怎么做？",
-		opts = {"在大地图按f1配置，选择'开局英雄满级'", "无法修改", "在局内按f2修改"},
+		q = "Nếu không thích lên cấp anh hùng trong màn, làm thế nào?",
+		opts = {"Nhấn f1 ở bản đồ, bật “Anh hùng tối đa cấp từ đầu”", "Không thể thay đổi", "Nhấn f2 trong màn để đổi"},
 		ans = 1
 	},
 	{
-		q = "主线前期关卡有什么机制防止双英雄乱杀？",
-		opts = {"英雄经验获取衰减", "英雄伤害降低", "英雄数量限制"},
+		q = "Các màn đầu cốt truyện dùng cơ chế gì để hạn chế sức mạnh hai anh hùng?",
+		opts = {"Giảm kinh nghiệm nhận được của anh hùng", "Giảm sát thương anh hùng", "Giới hạn số anh hùng"},
 		ans = 1
 	},
 	{
-		q = "如何开启无尽模式？",
-		opts = {"在大地图按f1配置，打开无尽模式", "在局内按f2", "通关所有关卡后自动开启"},
+		q = "Bật chế độ vô tận thế nào?",
+		opts = {"Nhấn f1 ở bản đồ, bật vô tận trong cấu hình", "Nhấn f2 trong màn", "Tự mở sau khi vượt mọi màn"},
 		ans = 1
 	},
 	{
-		q = "无尽模式中如何购买科技？",
-		opts = {"按f2花费10000金币", "按f1花费5000金币", "自动获得"},
+		q = "Mua nghiên cứu trong vô tận thế nào?",
+		opts = {"Nhấn f2 và dùng 10000 vàng", "Nhấn f1 và dùng 5000 vàng", "Tự nhận được"},
 		ans = 1
 	},
 	{
-		q = "在哪个平台搜索什么可以找到作者自制关卡的通关视频？",
-		opts = {"bilibili搜索时笺滴答", "YouTube搜索KingdomRush", "抖音搜索塔防游戏"},
+		q = "Tìm ở nền tảng và kênh nào để xem video vượt màn của tác giả?",
+		opts = {"Tìm Shijian Dida trên bilibili", "Tìm KingdomRush trên YouTube", "Tìm game thủ thành trên Douyin"},
 		ans = 1
 	},
 	{
-		q = "局内按f1可以做什么？",
-		opts = {"开启一键造塔", "召唤英雄", "进入下一波"},
+		q = "Nhấn f1 trong màn để làm gì?",
+		opts = {"Bật xây tháp nhanh", "Triệu hồi anh hùng", "Gọi đợt tiếp theo"},
 		ans = 1
 	},
 	{
-		q = "局内按f4可以做什么（需在大地图配置中开启）？",
-		opts = {"召唤英雄", "一键造塔", "进入下一波"},
+		q = "Nhấn f4 trong màn làm gì, nếu đã bật trong cấu hình bản đồ?",
+		opts = {"Triệu hồi anh hùng", "Xây tháp nhanh", "Gọi đợt tiếp theo"},
 		ans = 1
 	},
 	{
-		q = "局内按f5可以做什么？",
-		opts = {"进入下一波", "召唤英雄", "获得金币"},
+		q = "Nhấn f5 trong màn để làm gì?",
+		opts = {"Gọi đợt tiếp theo", "Triệu hồi anh hùng", "Nhận vàng"},
 		ans = 1
 	},
 	{
-		q = "反馈蓝屏问题时首先要做什么？",
-		opts = {"确定版本最新", "直接截图", "重启游戏"},
+		q = "Việc đầu tiên khi báo lỗi màn hình xanh là gì?",
+		opts = {"Kiểm tra đang dùng bản mới nhất", "Chụp màn hình ngay", "Khởi động lại game"},
 		ans = 1
 	},
 	{
-		q = "反馈问题时需要提供什么信息？",
-		opts = {"蓝屏/控制台信息；崩溃前截图(电脑端)", "问题如何产生，表现为什么", "所有选项都需要"},
+		q = "Cần cung cấp thông tin gì khi báo lỗi?",
+		opts = {"Thông báo lỗi xanh/console; ảnh trước khi lỗi trên máy tính", "Cách gây ra lỗi và biểu hiện của lỗi", "Tất cả các thông tin trên"},
 		ans = 1
 	},
 	{
-		q = "不遵守反馈要求会有什么后果？",
-		opts = {"很可能被骂，被拉黑", "没有影响", "会被提醒"},
+		q = "Không làm theo yêu cầu báo lỗi có thể dẫn tới điều gì?",
+		opts = {"Bị tác giả khiển trách hoặc chặn", "Không ảnh hưởng gì", "Được nhắc nhở"},
 		ans = 1
 	},
 	{
-		q = "游戏的更新历史在哪里查阅？",
-		opts = {"https://krdovedownload4.crazyspotteddove.top/history", "游戏内f1菜单", "README文件"},
+		q = "Xem lịch sử cập nhật ở đâu?",
+		opts = {"https://krdovedownload4.crazyspotteddove.top/history", "Menu f1 trong game", "Tệp README"},
 		ans = 1
 	},
 	{
-		q = "询问更新历史会有什么后果？",
-		opts = {"很可能被骂，被拉黑", "会得到回答", "没有影响"},
+		q = "Hỏi lại lịch sử cập nhật có thể dẫn tới điều gì?",
+		opts = {"Bị tác giả khiển trách hoặc chặn", "Được trả lời", "Không ảnh hưởng gì"},
 		ans = 1
 	},
 	{
-		q = "重新下载安装Dove版后存档会怎样？",
-		opts = {"存档会得到保留", "存档会丢失", "需要手动备份"},
+		q = "Cài lại Dove ảnh hưởng dữ liệu lưu thế nào?",
+		opts = {"Dữ liệu lưu được giữ lại", "Dữ liệu lưu bị mất", "Cần sao lưu thủ công"},
 		ans = 1
 	},
 	{
-		q = "Dove版是否接受催更？",
-		opts = {"不接受，催更可能被骂、拉黑", "接受，欢迎催更", "偶尔可以催更"},
-		ans = 1
-	},
-
-	{
-		q = "点击单位后，绿圈表示什么？",
-		opts = {"远程范围", "拦截范围", "移动范围"},
+		q = "Dove có chấp nhận thúc giục cập nhật không?",
+		opts = {"Không, có thể bị khiển trách hoặc chặn", "Có, hoan nghênh thúc giục", "Thỉnh thoảng được"},
 		ans = 1
 	},
 
 	{
-		q = "残暴伤害的图标是什么？",
-		opts = {"利爪", "十字架", "闪电"},
-		ans = 1
-	},
-	{
-		q = "真实伤害的图标是什么？",
-		opts = {"金色十字架", "利爪", "盾牌"},
-		ans = 1
-	},
-	{
-		q = "破甲伤害的图标是什么？",
-		opts = {"碎裂的白色盾牌", "碎裂的蓝色盾牌", "利爪"},
-		ans = 1
-	},
-	{
-		q = "刺伤的图标是什么？",
-		opts = {"红色冲击状", "利爪", "闪电"},
-		ans = 1
-	},
-	{
-		q = "老兵难度下，防御塔价格会怎样？",
-		opts = {"提升", "降低", "不变"},
-		ans = 1
-	},
-	{
-		q = "不可能难度下，高血量敌人有什么特性？",
-		opts = {"获得一定秒杀抗性", "血量翻倍", "移动加速"},
-		ans = 1
-	},
-	{
-		q = "作者是否接受非主动提问情况下的修改建议？",
-		opts = {"不接受", "接受", "有时接受"},
+		q = "Vòng xanh lá khi nhấp đơn vị thể hiện gì?",
+		opts = {"Tầm đánh xa", "Phạm vi chặn địch", "Phạm vi di chuyển"},
 		ans = 1
 	},
 
 	{
-		q = "启动项设置内可以做什么？",
-		opts = {"关闭作者的话", "修改快捷键", "切换语言"},
+		q = "Biểu tượng sát thương tàn bạo là gì?",
+		opts = {"Móng vuốt", "Thánh giá", "Tia chớp"},
 		ans = 1
 	},
 	{
-		q = "在大地图配置中，如何调整数值项？",
-		opts = {"点击后键盘输入", "滑动调整", "双击修改"},
+		q = "Biểu tượng sát thương chuẩn là gì?",
+		opts = {"Thánh giá vàng", "Móng vuốt", "Khiên"},
+		ans = 1
+	},
+	{
+		q = "Biểu tượng sát thương phá giáp là gì?",
+		opts = {"Khiên trắng vỡ", "Khiên xanh vỡ", "Móng vuốt"},
+		ans = 1
+	},
+	{
+		q = "Biểu tượng sát thương đâm xuyên là gì?",
+		opts = {"Xung kích đỏ", "Móng vuốt", "Tia chớp"},
+		ans = 1
+	},
+	{
+		q = "Giá tháp ở Veteran thay đổi thế nào?",
+		opts = {"Tăng", "Giảm", "Không đổi"},
+		ans = 1
+	},
+	{
+		q = "Địch nhiều máu ở Impossible có đặc điểm gì?",
+		opts = {"Có khả năng kháng tiêu diệt tức thì", "Máu tăng gấp đôi", "Di chuyển nhanh hơn"},
+		ans = 1
+	},
+	{
+		q = "Tác giả có nhận đề nghị chỉnh sửa khi không chủ động hỏi không?",
+		opts = {"Không nhận", "Có nhận", "Đôi khi nhận"},
+		ans = 1
+	},
+
+	{
+		q = "Tùy chọn khởi động cho phép làm gì?",
+		opts = {"Tắt lời tác giả", "Đổi phím tắt", "Đổi ngôn ngữ"},
+		ans = 1
+	},
+	{
+		q = "Chỉnh mục số trong cấu hình bản đồ thế nào?",
+		opts = {"Nhấp rồi nhập bằng bàn phím", "Kéo để chỉnh", "Nhấp đúp để sửa"},
 		ans = 1
 	}
 }
@@ -236,125 +236,125 @@ local common_quiz = {
 -- 电脑端专用题目
 local pc_only_quiz = {
 	{
-		q = "Dove版联网的用途是什么？",
-		opts = {"只用于提供更新服务，不收集隐私", "收集用户数据", "提供联机对战"},
+		q = "Dove dùng kết nối mạng vào việc gì?",
+		opts = {"Chỉ cung cấp cập nhật, không thu thập dữ liệu riêng tư", "Thu thập dữ liệu người dùng", "Cung cấp đấu trực tuyến"},
 		ans = 1
 	},
 	{
-		q = "选择更新选项时，如果不了解IPv6/IPv4，应该怎么做？",
-		opts = {"先选IPv6，等待自动检测", "选IPv4", "离线启动"},
+		q = "Nếu không rõ IPv6/IPv4 khi chọn cập nhật, nên làm gì?",
+		opts = {"Chọn IPv6 trước rồi chờ tự kiểm tra", "Chọn IPv4", "Khởi động ngoại tuyến"},
 		ans = 1
 	},
 	{
-		q = "离线情况下启动应该怎么做？",
-		opts = {"在启动页面关闭更新", "等待超时", "强制更新"},
+		q = "Khi khởi động ngoại tuyến, nên làm gì?",
+		opts = {"Tắt cập nhật ở trang khởi động", "Chờ hết thời gian", "Buộc cập nhật"},
 		ans = 1
 	},
 	{
-		q = "反馈bug时需要截下小黑框图片吗？",
-		opts = {"需要，要完整截下", "不需要", "看情况"},
+		q = "Khi báo lỗi, có cần chụp cửa sổ console màu đen không?",
+		opts = {"Có, chụp đầy đủ", "Không cần", "Tùy trường hợp"},
 		ans = 1
 	},
 	{
-		q = "电脑端推荐使用多少帧率？",
-		opts = {"先选择最高帧率，然后依照性能表现选择", "固定30帧", "固定60帧"},
+		q = "Nên dùng tốc độ khung hình nào trên máy tính?",
+		opts = {"Thử mức cao nhất rồi chọn theo hiệu năng", "Cố định 30 FPS", "Cố định 60 FPS"},
 		ans = 1
 	},
 	{
-		q = "如何缩放屏幕？",
-		opts = {"滑动鼠标滚轮（中键）", "按Ctrl+加减号", "双击屏幕"},
+		q = "Phóng to hoặc thu nhỏ màn hình thế nào?",
+		opts = {"Lăn con lăn chuột", "Nhấn Ctrl với dấu cộng/trừ", "Nhấp đúp màn hình"},
 		ans = 1
 	},
 	{
-		q = "如果发现画质差应该怎么做？",
-		opts = {"关闭全屏，尝试分辨率，使屏幕大小一致后恢复全屏", "降低帧率", "重启游戏"},
+		q = "Nếu hình ảnh mờ, nên làm gì?",
+		opts = {"Tắt toàn màn hình, thử độ phân giải vừa màn hình rồi bật lại", "Giảm FPS", "Khởi động lại game"},
 		ans = 1
 	},
 	{
-		q = "插件文件夹应该放置在哪里？",
-		opts = {"存档目录/plugins", "KingdomRushDove/mods/local", "根目录"},
+		q = "Đặt thư mục tiện ích ở đâu?",
+		opts = {"Thư mục lưu game/plugins", "KingdomRushDove/mods/local", "Thư mục gốc"},
 		ans = 1
 	},
 	{
-		q = "如何打开插件管理器？",
-		opts = {"在大地图中按f3", "在局内按f3", "在启动页面"},
+		q = "Mở trình quản lý tiện ích thế nào?",
+		opts = {"Nhấn f3 ở bản đồ", "Nhấn f3 trong màn", "Ở trang khởi động"},
 		ans = 1
 	},
 	{
-		q = "调集第1-5名英雄的快捷键是什么？",
+		q = "Phím điều quân anh hùng thứ 1-5 là gì?",
 		opts = {"a,d,s,q,r", "1,2,3,4,5", "q,w,e,r,t"},
 		ans = 1
 	},
 	{
-		q = "按什么键可以调集所有援军？",
+		q = "Phím nào điều toàn bộ viện binh?",
 		opts = {"f", "e", "a"},
 		ans = 1
 	},
 	{
-		q = "按e键可以调集哪些单位？",
-		opts = {"除援军、英雄、兵营士兵外的可调集单位", "所有单位", "只有英雄"},
+		q = "Phím e điều những đơn vị nào?",
+		opts = {"Đơn vị có thể điều quân, trừ viện binh, anh hùng và lính doanh trại", "Mọi đơn vị", "Chỉ anh hùng"},
 		ans = 1
 	},
 	{
-		q = "快捷键无法使用时应该检查什么？",
-		opts = {"输入法是否为英文模式，fn锁定是否关闭", "鼠标是否正常", "游戏是否全屏"},
+		q = "Khi phím tắt không hoạt động, cần kiểm tra gì?",
+		opts = {"Bộ gõ ở chế độ tiếng Anh và khóa Fn đã tắt", "Chuột hoạt động bình thường", "Game đang toàn màn hình"},
 		ans = 1
 	},
 	{
-		q = "游戏的倍速键是什么？",
-		opts = {"4减速，5加速，6还原", "1减速，2加速，3还原", "7减速，8加速，9还原"},
+		q = "Phím chỉnh tốc độ game là gì?",
+		opts = {"4 giảm tốc, 5 tăng tốc, 6 về mặc định", "1 giảm tốc, 2 tăng tốc, 3 về mặc định", "7 giảm tốc, 8 tăng tốc, 9 về mặc định"},
 		ans = 1
 	},
 	{
-		q = "在大地图内按f2可以做什么？",
-		opts = {"打开斗蛐蛐配置", "打开配置", "切换地图"},
+		q = "Nhấn f2 ở bản đồ làm gì?",
+		opts = {"Mở cấu hình đấu đơn vị", "Mở cấu hình", "Đổi bản đồ"},
 		ans = 1
 	},
 	{
-		q = "在大地图内按k可以做什么？",
-		opts = {"打开键位设置", "打开配置", "切换地图"},
+		q = "Nhấn k ở bản đồ làm gì?",
+		opts = {"Mở thiết lập phím", "Mở cấu hình", "Đổi bản đồ"},
 		ans = 1
 	},
 	{
-		q = "在大地图内按l可以做什么？",
-		opts = {"打开启动项设置", "打开配置", "切换地图"},
+		q = "Nhấn l ở bản đồ làm gì?",
+		opts = {"Mở tùy chọn khởi động", "Mở cấu hình", "Đổi bản đồ"},
 		ans = 1
 	},
 	{
-		q = "在大地图内按wasd可以做什么？",
-		opts = {"移动视野", "切换地图", "打开配置"},
+		q = "Nhấn wasd ở bản đồ làm gì?",
+		opts = {"Di chuyển góc nhìn", "Đổi bản đồ", "Mở cấu hình"},
 		ans = 1
 	}
 }
 
 -- 安卓端专用题目
 local android_only_quiz = {{
-	q = "安卓端建议使用多少帧率？",
-	opts = {"30帧", "144帧", "30或60帧"},
+	q = "Android nên dùng tốc độ khung hình nào?",
+	opts = {"30 FPS", "144 FPS", "30 hoặc 60 FPS"},
 	ans = 1
 }, {
-	q = "Dove版对手机端的定位是什么？",
-	opts = {"提供最基础的游玩服务", "和电脑端完全一致的体验", "专门为手机端优化"},
+	q = "Dove định hướng bản điện thoại thế nào?",
+	opts = {"Cung cấp trải nghiệm chơi cơ bản", "Trải nghiệm hoàn toàn giống máy tính", "Tối ưu riêng cho điện thoại"},
 	ans = 1
 }, {
-	q = "手机端是否接受bug反馈？",
-	opts = {"不接受bug反馈，但接受蓝屏报错信息", "接受所有反馈", "完全不接受反馈"},
+	q = "Tác giả có nhận báo lỗi từ điện thoại không?",
+	opts = {"Không nhận lỗi gameplay, nhưng nhận thông tin lỗi màn hình xanh", "Nhận mọi báo lỗi", "Không nhận bất kỳ báo lỗi nào"},
 	ans = 1
 }, {
-	q = "作者建议在什么端游玩Dove版？",
-	opts = {"条件允许尽量在电脑端", "手机端", "都可以"},
+	q = "Tác giả khuyên chơi Dove trên thiết bị nào?",
+	opts = {"Ưu tiên máy tính nếu có điều kiện", "Điện thoại", "Thiết bị nào cũng được"},
 	ans = 1
 }, {
-	q = "安卓端如何使用绑定在快捷键上的功能？",
-	opts = {"在局内点击暂停按钮使用", "不能使用", "通过手势操作"},
+	q = "Dùng chức năng phím tắt trên Android thế nào?",
+	opts = {"Nhấp nút tạm dừng trong màn", "Không dùng được", "Dùng cử chỉ"},
 	ans = 1
 }, {
-	q = "安卓端如何调整UI按钮大小？",
-	opts = {"大地图按设置按钮，再点UI设置按钮", "无法调整", "喊作者调整"},
+	q = "Chỉnh kích thước nút giao diện trên Android thế nào?",
+	opts = {"Nhấp Cài đặt ở bản đồ rồi Cài đặt UI", "Không chỉnh được", "Nhờ tác giả chỉnh"},
 	ans = 1
 }, {
-	q = "安卓端如何调集所有援军？",
-	opts = {"在援军技能冷却时点击它", "大喊调集", "无法调集"}
+	q = "Điều toàn bộ viện binh trên Android thế nào?",
+	opts = {"Nhấp kỹ năng viện binh khi đang hồi", "Hô lệnh điều quân", "Không thể điều quân"}
 }}
 
 -- 根据平台组合题库
@@ -730,7 +730,7 @@ function MUST_READ:draw_reading_mode(w, h)
 	end
 
 	-- 标题
-	local title = "作者的话"
+	local title = "Lời tác giả"
 	love.graphics.printf(title, self.margin, 20, content_w, "center")
 
 	-- 文本绘制
@@ -753,7 +753,7 @@ function MUST_READ:draw_reading_mode(w, h)
 	local can_continue = is_scrolled_to_bottom(self.scroll, total_lines, visible_lines)
 	if not can_continue then
 		love.graphics.setColor(1, 1, 1, 0.7)
-		love.graphics.printf("向下滚动以阅读剩余内容...", self.margin, h - 120, content_w, "left")
+		love.graphics.printf("Cuộn xuống để đọc tiếp…", self.margin, h - 120, content_w, "left")
 	end
 
 	-- 按钮
@@ -780,7 +780,7 @@ function MUST_READ:draw_reading_mode(w, h)
 		end
 		love.graphics.rectangle("fill", bx, by, btn_w, btn_h, 6, 6)
 		love.graphics.setColor(1, 1, 1)
-		love.graphics.printf("继续游戏", bx, by + (btn_h - font:getHeight()) / 2, btn_w, "center")
+		love.graphics.printf("Tiếp tục chơi", bx, by + (btn_h - font:getHeight()) / 2, btn_w, "center")
 	else
 		-- 未答题，显示"去答题"
 		if self.mouse_pressed and is_btn_hover then
@@ -795,7 +795,7 @@ function MUST_READ:draw_reading_mode(w, h)
 		end
 		love.graphics.rectangle("fill", bx, by, btn_w, btn_h, 6, 6)
 		love.graphics.setColor(1, 1, 1)
-		love.graphics.printf("去答题", bx, by + (btn_h - font:getHeight()) / 2, btn_w, "center")
+		love.graphics.printf("Làm bài kiểm tra", bx, by + (btn_h - font:getHeight()) / 2, btn_w, "center")
 	end
 end
 
@@ -823,7 +823,7 @@ function MUST_READ:draw_quiz_mode(w, h)
 	love.graphics.rectangle("fill", back_x, back_y, back_btn_w, back_btn_h, 4, 4)
 	love.graphics.setColor(1, 1, 1)
 	love.graphics.setFont(small_font)
-	love.graphics.printf("← 返回阅读", back_x, back_y + (back_btn_h - small_font:getHeight()) / 2, back_btn_w, "center")
+	love.graphics.printf("← Đọc lại", back_x, back_y + (back_btn_h - small_font:getHeight()) / 2, back_btn_w, "center")
 
 	-- 题目卡片 - 响应式布局
 	-- 1. 计算卡片基本尺寸
@@ -907,7 +907,7 @@ function MUST_READ:draw_quiz_mode(w, h)
 	-- 进度显示（顶部居中）
 	love.graphics.setColor(0.7, 0.7, 0.7)
 	love.graphics.setFont(small_font)
-	local progress_text = string.format("题目 %d / %d", self.current_question, #quiz_bank)
+	local progress_text = string.format("Câu %d / %d", self.current_question, #quiz_bank)
 	love.graphics.printf(progress_text, card_x, card_y + self.ui.progress_margin, card_w, "center")
 
 	-- 题目文本
@@ -994,12 +994,12 @@ function MUST_READ:draw_quiz_mode(w, h)
 	if cooldown > 0 then
 		love.graphics.setColor(1, 0.5, 0)
 		love.graphics.setFont(small_font)
-		local cooldown_text = string.format("提交冷却中... %.1f秒", cooldown)
+		local cooldown_text = string.format("Chờ gửi đáp án… %.1f giây", cooldown)
 		love.graphics.printf(cooldown_text, card_x, card_y + card_h - 40, card_w, "center")
 	else
 		love.graphics.setColor(0.5, 1, 0.5)
 		love.graphics.setFont(small_font)
-		love.graphics.printf("点击选项提交答案", card_x, card_y + card_h - 40, card_w, "center")
+		love.graphics.printf("Nhấp lựa chọn để gửi đáp án", card_x, card_y + card_h - 40, card_w, "center")
 	end
 end
 

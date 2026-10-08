@@ -4,9 +4,9 @@
 local M = {
 	mode = "auto",
 	status_text = {
-		standard = "未开启补强",
-		enhanced = "已开启补强",
-		game = "游戏实装"
+		standard = "Tăng cường: tắt",
+		enhanced = "Tăng cường: bật",
+		game = "Thông số trong game"
 	},
 	skill_ranks = {
 		tower_ranger = {
@@ -325,30 +325,30 @@ local M = {
 	entries = {
 		["tower_ranger"] = {
 			doc_id = "",
-			title = "游侠匿所",
+			title = "Nơi trú ẩn cung thủ rừng",
 			attack = {
-				standard = "每0.4秒射出一支箭攻击敌方，物理伤害",
-				enhanced = "每0.4秒射出一支箭攻击敌方，物理伤害，箭更不容易空。"
+				standard = "Bắn một mũi tên mỗi 0.4 giây, gây sát thương vật lý.",
+				enhanced = "Bắn một mũi tên mỗi 0.4 giây, gây sát thương vật lý; tên ít bị trượt hơn."
 			},
-			change_note = "解说：靠2技能撑起强度的箭塔，实战当中普攻容易空，但也有一定的过渡能力，且伤害不容易溢出。原版毒箭性价比较低，且2/3级升级意义偏小，而缠绕的强度已经够了。提升次数主要提升堆游侠的性价比。",
+			change_note = "Nhận xét: Sức mạnh chủ yếu nằm ở kỹ năng 2. Đòn đánh thường hay trượt nhưng tháp vẫn hữu ích ở giai đoạn chuyển tiếp và ít lãng phí sát thương. Mũi tên độc bản gốc không đáng tiền, nâng cấp 2/3 ít có ý nghĩa, trong khi Dây leo trói đã đủ mạnh. Tăng số lần trói giúp việc xây nhiều tháp hiệu quả hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "毒箭",
-					standard = "攻击敌人附加中毒效果，每秒造成5点毒伤，持续3秒。",
-					enhanced = "攻击敌人附加中毒效果，每秒造成16点毒伤，持续3秒。",
-					levels_standard = { "攻击敌人附加中毒效果，每秒造成5点毒伤，持续3秒。", "攻击敌人附加中毒效果，每秒造成10点毒伤，持续3秒。", "攻击敌人附加中毒效果，每秒造成15点毒伤，持续3秒。" },
-					levels_enhanced = { "攻击敌人附加中毒效果，每秒造成16点毒伤，持续3秒。", "攻击敌人附加中毒效果，每秒造成28点毒伤，持续3秒。", "攻击敌人附加中毒效果，每秒造成40点毒伤，持续3秒。" },
+					name = "Mũi tên độc",
+					standard = "Đòn đánh gây độc, gây 5 sát thương độc mỗi giây trong 3 giây.",
+					enhanced = "Đòn đánh gây độc, gây 16 sát thương độc mỗi giây trong 3 giây.",
+					levels_standard = { "Đòn đánh gây độc, gây 5 sát thương độc mỗi giây trong 3 giây.", "Đòn đánh gây độc, gây 10 sát thương độc mỗi giây trong 3 giây.", "Đòn đánh gây độc, gây 15 sát thương độc mỗi giây trong 3 giây." },
+					levels_enhanced = { "Đòn đánh gây độc, gây 16 sát thương độc mỗi giây trong 3 giây.", "Đòn đánh gây độc, gây 28 sát thương độc mỗi giây trong 3 giây.", "Đòn đánh gây độc, gây 40 sát thương độc mỗi giây trong 3 giây." },
 					prices_standard = { "250", "250", "250" },
 					prices_enhanced = { "250", "125", "125" }
 				},
 				{
-					name = "缠绕",
-					standard = "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-4名敌人1.7秒，被缠绕的怪物无法行动且每秒受到40点物伤 CD8\n每个敌人最多被缠绕3次",
-					enhanced = "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-4名敌人1.7秒，被缠绕的怪物无法行动且每秒受到40点物伤 CD8\n每个敌人最多被缠绕99次",
-					levels_standard = { "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-4名敌人1.7秒，被缠绕的怪物无法行动且每秒受到40点物伤 CD8\n每个敌人最多被缠绕3次", "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-6名敌人2.7秒，被缠绕的怪物无法行动且每秒受到40点物伤 CD8\n每个敌人最多被缠绕3次", "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-8名敌人3.7秒，被缠绕的怪物无法行动且每秒受到40点物伤 CD8\n每个敌人最多被缠绕3次" },
-					levels_enhanced = { "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-4名敌人1.7秒，被缠绕的怪物无法行动且每秒受到60点物伤 CD8\n每个敌人最多被缠绕99次", "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-7名敌人2.7秒，被缠绕的怪物无法行动且每秒受到60点物伤 CD8\n每个敌人最多被缠绕99次", "游侠塔下的老巫师召唤藤蔓，缠绕施法射程内2-10名敌人3.7秒，被缠绕的怪物无法行动且每秒受到60点物伤 CD8\n每个敌人最多被缠绕99次" },
+					name = "Dây leo trói",
+					standard = "Pháp sư dưới tháp gọi dây leo trói 2-4 kẻ địch trong tầm phép suốt 1.7 giây. Mục tiêu không thể hành động và chịu 40 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 3 lần.",
+					enhanced = "Pháp sư dưới tháp gọi dây leo trói 2-4 kẻ địch trong tầm phép suốt 1.7 giây. Mục tiêu không thể hành động và chịu 40 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 99 lần.",
+					levels_standard = { "Pháp sư dưới tháp gọi dây leo trói 2-4 kẻ địch trong tầm phép suốt 1.7 giây. Mục tiêu không thể hành động và chịu 40 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 3 lần.", "Pháp sư dưới tháp gọi dây leo trói 2-6 kẻ địch trong tầm phép suốt 2.7 giây. Mục tiêu không thể hành động và chịu 40 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 3 lần.", "Pháp sư dưới tháp gọi dây leo trói 2-8 kẻ địch trong tầm phép suốt 3.7 giây. Mục tiêu không thể hành động và chịu 40 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 3 lần." },
+					levels_enhanced = { "Pháp sư dưới tháp gọi dây leo trói 2-4 kẻ địch trong tầm phép suốt 1.7 giây. Mục tiêu không thể hành động và chịu 60 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 99 lần.", "Pháp sư dưới tháp gọi dây leo trói 2-7 kẻ địch trong tầm phép suốt 2.7 giây. Mục tiêu không thể hành động và chịu 60 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 99 lần.", "Pháp sư dưới tháp gọi dây leo trói 2-10 kẻ địch trong tầm phép suốt 3.7 giây. Mục tiêu không thể hành động và chịu 60 sát thương vật lý mỗi giây. CD: 8 giây.\nMỗi kẻ địch bị trói tối đa 99 lần." },
 					prices_standard = { "300", "150", "150" },
 					prices_enhanced = { "300", "150", "150" }
 				},
@@ -356,30 +356,30 @@ local M = {
 		},
 		["tower_musketeer"] = {
 			doc_id = "",
-			title = "火枪要塞",
+			title = "Đồn lính súng",
 			attack = {
-				standard = "每1.5秒发动一次枪击攻击敌方，物理伤害",
-				enhanced = "每1.5秒发动一次枪击攻击敌方，物理伤害"
+				standard = "Bắn súng mỗi 1.5 giây, gây sát thương vật lý.",
+				enhanced = "Bắn súng mỗi 1.5 giây, gây sát thương vật lý."
 			},
-			change_note = "解说：DPS高而射程短的大号传统炮。原版普攻全代对单箭塔倒数第一且攻速慢，狙击拼运气，一旦打中高甲而没触发秒杀则几乎0收益，2技能虽强力但过渡不平滑、射程短。针对以上问题进行加强，但由于1代的两个箭塔技能确实非常强力，故都不能给太高的前期强度。",
+			change_note = "Nhận xét: Kỹ năng biến tháp thành pháo truyền thống cỡ lớn, sát thương cao nhưng tầm ngắn. Ở bản gốc, đòn đánh thường thuộc nhóm tháp cung đơn mục tiêu yếu nhất và tốc độ bắn chậm; bắn tỉa phụ thuộc may rủi. Trúng kẻ địch giáp cao mà không kích hoạt tiêu diệt ngay gần như đem lại 0 hiệu quả. Kỹ năng 2 mạnh nhưng nâng cấp đột ngột và tầm ngắn. Các điểm này được cải thiện, song kỹ năng của cả hai tháp cung phần 1 vốn rất mạnh nên không thể tăng quá nhiều sức mạnh ban đầu.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "狙击",
-					standard = "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*20%点物伤，20%秒杀目标，射程为面板的1.5倍(852)。CD14秒。",
-					enhanced = "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*20%点真伤，20%秒杀目标，射程为面板的1.5倍(852)。CD14秒。",
-					levels_standard = { "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*20%点物伤，20%秒杀目标，射程为面板的1.5倍(852)。CD14秒。", "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*40%点物伤，40%秒杀目标，射程为面板的1.5倍(852)。CD14秒。", "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*60%点物伤，60%秒杀目标，射程为面板的1.5倍(852)。CD14秒。" },
-					levels_enhanced = { "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*20%点真伤，20%秒杀目标，射程为面板的1.5倍(852)。CD14秒。", "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*40%点真伤，40%秒杀目标，射程为面板的1.5倍(852)。CD14秒。", "火枪手超远程射击一名敌人，对目标造成[普攻伤害]+目标生命上限*60%点真伤，60%秒杀目标，射程为面板的1.5倍(852)。CD14秒。" },
+					name = "Bắn tỉa",
+					standard = "Bắn tỉa từ rất xa, gây sát thương vật lý bằng [sát thương đòn đánh thường] + 20% máu tối đa của mục tiêu; có 20% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.",
+					enhanced = "Bắn tỉa từ rất xa, gây sát thương chuẩn bằng [sát thương đòn đánh thường] + 20% máu tối đa của mục tiêu; có 20% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.",
+					levels_standard = { "Bắn tỉa từ rất xa, gây sát thương vật lý bằng [sát thương đòn đánh thường] + 20% máu tối đa của mục tiêu; có 20% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.", "Bắn tỉa từ rất xa, gây sát thương vật lý bằng [sát thương đòn đánh thường] + 40% máu tối đa của mục tiêu; có 40% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.", "Bắn tỉa từ rất xa, gây sát thương vật lý bằng [sát thương đòn đánh thường] + 60% máu tối đa của mục tiêu; có 60% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây." },
+					levels_enhanced = { "Bắn tỉa từ rất xa, gây sát thương chuẩn bằng [sát thương đòn đánh thường] + 20% máu tối đa của mục tiêu; có 20% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.", "Bắn tỉa từ rất xa, gây sát thương chuẩn bằng [sát thương đòn đánh thường] + 40% máu tối đa của mục tiêu; có 40% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây.", "Bắn tỉa từ rất xa, gây sát thương chuẩn bằng [sát thương đòn đánh thường] + 60% máu tối đa của mục tiêu; có 60% cơ hội tiêu diệt ngay. Tầm bắn gấp 1.5 lần chỉ số hiển thị (852). CD: 14 giây." },
 					prices_standard = { "250", "250", "250" },
 					prices_enhanced = { "250", "175", "175" }
 				},
 				{
-					name = "霰弹",
-					standard = "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成10-40(40)点炮伤(弹片排布间隔为12.5-32.5)，CD9秒，射程为0.5倍普攻射程(284)。",
-					enhanced = "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成12-32(32)点炮伤(弹片排布间隔为12.5-32.5)，CD6秒，射程为0.625倍普攻射程(355)。",
-					levels_standard = { "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成10-40(40)点炮伤(弹片排布间隔为12.5-32.5)，CD9秒，射程为0.5倍普攻射程(284)。", "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成20-80(80)点炮伤(弹片排布间隔为12.5-32.5)，CD9秒，射程为0.5倍普攻射程(284)。", "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成30-120(120)点炮伤(弹片排布间隔为12.5-32.5)，CD9秒，射程为0.5倍普攻射程(284)。" },
-					levels_enhanced = { "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成12-32(32)点炮伤(弹片排布间隔为12.5-32.5)，CD6秒，射程为0.625倍普攻射程(355)。", "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成24-64(64)点炮伤(弹片排布间隔为12.5-32.5)，CD6秒，射程为0.625倍普攻射程(355)。", "火枪手用6枚榴弹轰炸一个区域，每发榴弹对96范围内的敌人造成36-96(96)点炮伤(弹片排布间隔为12.5-32.5)，CD6秒，射程为0.625倍普攻射程(355)。" },
+					name = "Đạn chùm",
+					standard = "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 10-40 (40) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 9 giây. Tầm bắn gấp 0.5 lần đòn đánh thường (284).",
+					enhanced = "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 12-32 (32) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 6 giây. Tầm bắn gấp 0.625 lần đòn đánh thường (355).",
+					levels_standard = { "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 10-40 (40) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 9 giây. Tầm bắn gấp 0.5 lần đòn đánh thường (284).", "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 20-80 (80) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 9 giây. Tầm bắn gấp 0.5 lần đòn đánh thường (284).", "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 30-120 (120) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 9 giây. Tầm bắn gấp 0.5 lần đòn đánh thường (284)." },
+					levels_enhanced = { "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 12-32 (32) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 6 giây. Tầm bắn gấp 0.625 lần đòn đánh thường (355).", "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 24-64 (64) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 6 giây. Tầm bắn gấp 0.625 lần đòn đánh thường (355).", "Bắn 6 quả lựu đạn vào một vùng. Mỗi quả gây 36-96 (96) sát thương pháo trong bán kính 96; khoảng cách bố trí mảnh đạn: 12.5-32.5. CD: 6 giây. Tầm bắn gấp 0.625 lần đòn đánh thường (355)." },
 					prices_standard = { "300", "300", "300" },
 					prices_enhanced = { "325", "325", "325" }
 				},
@@ -387,39 +387,39 @@ local M = {
 		},
 		["tower_paladin"] = {
 			doc_id = "",
-			title = "圣骑士殿堂",
+			title = "Thánh đường hiệp sĩ",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "解说：小幅提升输出能力(flash圣骑的3技能也是真实伤害)；只能靠数值不能靠特殊机制扛的兵营不值这么高的价格。",
+			change_note = "Nhận xét: Tăng nhẹ khả năng gây sát thương; kỹ năng 3 của thánh kỵ sĩ bản Flash cũng gây sát thương chuẩn. Doanh trại chỉ dựa vào chỉ số để chống chịu, thiếu cơ chế đặc biệt, chưa xứng đáng với mức giá này.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "圣光术",
-					standard = "当圣骑士生命低于70%时会发动圣光术，治疗自身40-60点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒",
-					enhanced = "当圣骑士生命低于70%时会发动圣光术，治疗自身40-60点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒",
-					levels_standard = { "当圣骑士生命低于70%时会发动圣光术，治疗自身40-60点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒", "当圣骑士生命低于70%时会发动圣光术，治疗自身80-120点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒", "当圣骑士生命低于70%时会发动圣光术，治疗自身120-180点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒" },
-					levels_enhanced = { "当圣骑士生命低于70%时会发动圣光术，治疗自身40-60点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒", "当圣骑士生命低于70%时会发动圣光术，治疗自身80-120点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒", "当圣骑士生命低于70%时会发动圣光术，治疗自身120-180点生命，无法移除身上例如燃烧，中毒的负面效果，CD10秒" },
+					name = "Ánh sáng thánh",
+					standard = "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 40-60 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.",
+					enhanced = "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 40-60 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.",
+					levels_standard = { "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 40-60 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.", "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 80-120 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.", "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 120-180 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây." },
+					levels_enhanced = { "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 40-60 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.", "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 80-120 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây.", "Khi máu dưới 70%, thánh kỵ sĩ tự hồi 120-180 máu. Không xóa hiệu ứng bất lợi như cháy hoặc độc. CD: 10 giây." },
 					prices_standard = { "150", "150", "150" },
 					prices_enhanced = { "80", "80", "80" }
 				},
 				{
-					name = "勇气之盾",
-					standard = "提升圣骑士15点护甲。",
-					enhanced = "提升圣骑士15点护甲。",
-					levels_standard = { "提升圣骑士15点护甲。" },
-					levels_enhanced = { "提升圣骑士15点护甲。" },
+					name = "Khiên dũng khí",
+					standard = "Tăng 15 giáp cho thánh kỵ sĩ.",
+					enhanced = "Tăng 15 giáp cho thánh kỵ sĩ.",
+					levels_standard = { "Tăng 15 giáp cho thánh kỵ sĩ." },
+					levels_enhanced = { "Tăng 15 giáp cho thánh kỵ sĩ." },
 					prices_standard = { "250" },
 					prices_enhanced = { "110" }
 				},
 				{
-					name = "神圣打击",
-					standard = "每次攻击10%发动神圣打击，对100范围内的敌人造成25-45点范围物理伤害。",
-					enhanced = "每次攻击20%发动神圣打击，对150范围内的敌人造成25-45点范围真实伤害。",
-					levels_standard = { "每次攻击10%发动神圣打击，对100范围内的敌人造成25-45点范围物理伤害。", "每次攻击10%发动神圣打击，对100范围内的敌人造成50-90点范围物理伤害。", "每次攻击10%发动神圣打击，对100范围内的敌人造成75-135点范围物理伤害。" },
-					levels_enhanced = { "每次攻击30%发动神圣打击，对150范围内的敌人造成25-45点范围真实伤害。", "每次攻击30%发动神圣打击，对150范围内的敌人造成50-90点范围真实伤害。", "每次攻击30%发动神圣打击，对150范围内的敌人造成75-135点范围真实伤害。" },
+					name = "Đòn đánh thánh",
+					standard = "Mỗi đòn đánh có 10% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 100.",
+					enhanced = "Mỗi đòn đánh có 20% cơ hội gây 25-45 sát thương chuẩn diện rộng trong bán kính 150.",
+					levels_standard = { "Mỗi đòn đánh có 10% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 100.", "Mỗi đòn đánh có 10% cơ hội gây 50-90 sát thương vật lý diện rộng trong bán kính 100.", "Mỗi đòn đánh có 10% cơ hội gây 75-135 sát thương vật lý diện rộng trong bán kính 100." },
+					levels_enhanced = { "Mỗi đòn đánh có 30% cơ hội gây 25-45 sát thương chuẩn diện rộng trong bán kính 150.", "Mỗi đòn đánh có 30% cơ hội gây 50-90 sát thương chuẩn diện rộng trong bán kính 150.", "Mỗi đòn đánh có 30% cơ hội gây 75-135 sát thương chuẩn diện rộng trong bán kính 150." },
 					prices_standard = { "220", "150", "150" },
 					prices_enhanced = { "145", "100", "100" }
 				},
@@ -427,39 +427,39 @@ local M = {
 		},
 		["tower_barbarian"] = {
 			doc_id = "",
-			title = "野蛮人大厅",
+			title = "Đại sảnh man tộc",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "远程能力进行全面提升。",
+			change_note = "Cải thiện toàn diện khả năng đánh xa.",
 			port_note = "",
-			notes = "远程能力进行全面提升。",
+			notes = "Cải thiện toàn diện khả năng đánh xa.",
 			skills = {
 				{
-					name = "多重战斧",
-					standard = "提升蛮族狂战士10点近战普攻伤害。",
-					enhanced = "提升蛮族狂战士16点近战普攻伤害。",
-					levels_standard = { "提升蛮族狂战士10点近战普攻伤害。", "提升蛮族狂战士20点近战普攻伤害。", "提升蛮族狂战士30点近战普攻伤害。" },
-					levels_enhanced = { "提升蛮族狂战士16点近战普攻伤害。", "提升蛮族狂战士32点近战普攻伤害。", "提升蛮族狂战士48点近战普攻伤害。" },
+					name = "Song rìu",
+					standard = "Tăng 10 sát thương cận chiến thường cho chiến binh man tộc.",
+					enhanced = "Tăng 16 sát thương cận chiến thường cho chiến binh man tộc.",
+					levels_standard = { "Tăng 10 sát thương cận chiến thường cho chiến binh man tộc.", "Tăng 20 sát thương cận chiến thường cho chiến binh man tộc.", "Tăng 30 sát thương cận chiến thường cho chiến binh man tộc." },
+					levels_enhanced = { "Tăng 16 sát thương cận chiến thường cho chiến binh man tộc.", "Tăng 32 sát thương cận chiến thường cho chiến binh man tộc.", "Tăng 48 sát thương cận chiến thường cho chiến binh man tộc." },
 					prices_standard = { "300", "100", "100" },
 					prices_enhanced = { "100", "100", "100" }
 				},
 				{
-					name = "旋风斩",
-					standard = "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有15%发动旋风斩，对周围80范围内的敌人造成25-45点范围物伤。",
-					enhanced = "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有18%发动旋风斩，对周围130范围内的敌人造成25-45点范围物伤。",
-					levels_standard = { "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有15%发动旋风斩，对周围80范围内的敌人造成25-45点范围物伤。", "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有20%发动旋风斩，对周围80范围内的敌人造成40-60点范围物伤。", "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有25%发动旋风斩，对周围80范围内的敌人造成55-75点范围物伤。" },
-					levels_enhanced = { "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有20%发动旋风斩，对周围130范围内的敌人造成25-45点范围物伤。", "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有30%发动旋风斩，对周围130范围内的敌人造成40-60点范围物伤。", "蛮族狂战士每次发动攻击或受到除了debuff扣伤害之外的伤害时有40%发动旋风斩，对周围130范围内的敌人造成55-75点范围物伤。" },
+					name = "Chém lốc xoáy",
+					standard = "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 15% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 80.",
+					enhanced = "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 18% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 130.",
+					levels_standard = { "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 15% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 80.", "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 20% cơ hội gây 40-60 sát thương vật lý diện rộng trong bán kính 80.", "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 25% cơ hội gây 55-75 sát thương vật lý diện rộng trong bán kính 80." },
+					levels_enhanced = { "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 20% cơ hội gây 25-45 sát thương vật lý diện rộng trong bán kính 130.", "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 30% cơ hội gây 40-60 sát thương vật lý diện rộng trong bán kính 130.", "Mỗi lần tấn công hoặc nhận sát thương, trừ sát thương định kỳ từ hiệu ứng bất lợi, có 40% cơ hội gây 55-75 sát thương vật lý diện rộng trong bán kính 130." },
 					prices_standard = { "150", "100", "100" },
 					prices_enhanced = { "150", "100", "100" }
 				},
 				{
-					name = "战斧投掷",
-					standard = "蛮族狂战士每3.5秒投掷一把战斧，\n造成34-42点物伤。",
-					enhanced = "蛮族狂战士每2秒投掷一把战斧，\n造成34-42点物伤。",
-					levels_standard = { "蛮族狂战士每3.5秒投掷一把战斧，\n造成34-42点物伤。", "蛮族狂战士每3.5秒投掷一把战斧，\n造成44-52点物伤。", "蛮族狂战士每3.5秒投掷一把战斧，\n造成54-62点物伤。" },
-					levels_enhanced = { "蛮族狂战士每2秒投掷一把战斧，\n造成34-42点物伤。", "蛮族狂战士每2秒投掷一把战斧，\n造成44-52点物伤。", "蛮族狂战士每2秒投掷一把战斧，\n造成54-62点物伤。" },
+					name = "Ném rìu",
+					standard = "Ném rìu mỗi 3.5 giây,\ngây 34-42 sát thương vật lý.",
+					enhanced = "Ném rìu mỗi 2 giây,\ngây 34-42 sát thương vật lý.",
+					levels_standard = { "Ném rìu mỗi 3.5 giây,\ngây 34-42 sát thương vật lý.", "Ném rìu mỗi 3.5 giây,\ngây 44-52 sát thương vật lý.", "Ném rìu mỗi 3.5 giây,\ngây 54-62 sát thương vật lý." },
+					levels_enhanced = { "Ném rìu mỗi 2 giây,\ngây 34-42 sát thương vật lý.", "Ném rìu mỗi 2 giây,\ngây 44-52 sát thương vật lý.", "Ném rìu mỗi 2 giây,\ngây 54-62 sát thương vật lý." },
 					prices_standard = { "200", "100", "100" },
 					prices_enhanced = { "200", "75", "75" }
 				},
@@ -467,30 +467,30 @@ local M = {
 		},
 		["tower_arcane_wizard"] = {
 			doc_id = "",
-			title = "奥术法师",
+			title = "Pháp sư bí thuật",
 			attack = {
-				standard = "每2秒发射魔法射线攻击敌方，魔法伤害",
-				enhanced = "每2秒发射魔法射线攻击敌方，魔法伤害"
+				standard = "Phóng tia phép mỗi 2 giây, gây sát thương phép.",
+				enhanced = "Phóng tia phép mỗi 2 giây, gây sát thương phép."
 			},
-			change_note = "解说：慢速法师塔，在1代当中是唯一一个没有对群能力的防御塔，在全代也是少有的只能对单的塔。作为一个输出为主的法师塔需要拥有更高的输出能力；加强后为全代常规65塔17个秒杀技能当中唯一一个智能秒杀；解决传送传不到人的问题。",
+			change_note = "Nhận xét: Tháp phép đánh chậm, là tháp duy nhất ở phần 1 không có khả năng đánh nhiều mục tiêu và cũng thuộc nhóm hiếm gặp trong toàn bộ các phần. Tháp thiên về sát thương cần hỏa lực cao hơn. Sau tăng cường, đây là kỹ năng tiêu diệt ngay thông minh duy nhất trong 17 kỹ năng của 65 tháp thông thường; đồng thời sửa tình trạng phép dịch chuyển không bắt được mục tiêu.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "死亡射线",
-					standard = "发射一条射线秒杀范围内最靠前的非boss怪物。CD20。",
-					enhanced = "发射一条射线秒杀范围内剩余血量最多的非boss怪物。CD24。",
-					levels_standard = { "发射一条射线秒杀范围内最靠前的非boss怪物。CD20。", "发射一条射线秒杀范围内最靠前的非boss怪物。CD18。", "发射一条射线秒杀范围内最靠前的非boss怪物。CD16。" },
-					levels_enhanced = { "发射一条射线秒杀范围内剩余血量最多的非boss怪物。CD24。", "发射一条射线秒杀范围内剩余血量最多的非boss怪物。CD20。", "发射一条射线秒杀范围内剩余血量最多的非boss怪物。CD16。" },
+					name = "Tia tử thần",
+					standard = "Phóng tia tiêu diệt ngay kẻ địch thường đi đầu trong tầm; không tác động lên trùm. CD: 20 giây.",
+					enhanced = "Phóng tia tiêu diệt ngay kẻ địch thường còn nhiều máu nhất trong tầm; không tác động lên trùm. CD: 24 giây.",
+					levels_standard = { "Phóng tia tiêu diệt ngay kẻ địch thường đi đầu trong tầm; không tác động lên trùm. CD: 20 giây.", "Phóng tia tiêu diệt ngay kẻ địch thường đi đầu trong tầm; không tác động lên trùm. CD: 18 giây.", "Phóng tia tiêu diệt ngay kẻ địch thường đi đầu trong tầm; không tác động lên trùm. CD: 16 giây." },
+					levels_enhanced = { "Phóng tia tiêu diệt ngay kẻ địch thường còn nhiều máu nhất trong tầm; không tác động lên trùm. CD: 24 giây.", "Phóng tia tiêu diệt ngay kẻ địch thường còn nhiều máu nhất trong tầm; không tác động lên trùm. CD: 20 giây.", "Phóng tia tiêu diệt ngay kẻ địch thường còn nhiều máu nhất trong tầm; không tác động lên trùm. CD: 16 giây." },
 					prices_standard = { "350", "200", "200" },
 					prices_enhanced = { "375", "100", "100" }
 				},
 				{
-					name = "传送",
-					standard = "产生一个最多传送4个敌人的传送法阵，让他们后退21-30个节点，传送阵效应范围65。每个敌人最多被传送3次。 CD10。",
-					enhanced = "产生一个最多传送4个敌人的传送法阵，让他们后退26-35个节点，传送阵效应范围100。每个敌人最多被传送5次。 CD10。",
-					levels_standard = { "产生一个最多传送4个敌人的传送法阵，让他们后退21-30个节点，传送阵效应范围65。每个敌人最多被传送3次。 CD10。", "产生一个最多传送5个敌人的传送法阵，让他们后退26-35个节点，传送阵效应范围65。每个敌人最多被传送3次。 CD10。", "产生一个最多传送6个敌人的传送法阵，让他们后退31-40个节点，传送阵效应范围65。每个敌人最多被传送3次。 CD10。" },
-					levels_enhanced = { "产生一个最多传送4个敌人的传送法阵，让他们后退26-35个节点，传送阵效应范围100。每个敌人最多被传送5次。 CD10。", "产生一个最多传送5个敌人的传送法阵，让他们后退31-40个节点，传送阵效应范围100。每个敌人最多被传送5次。 CD10。", "产生一个最多传送6个敌人的传送法阵，让他们后退36-45个节点，传送阵效应范围100。每个敌人最多被传送5次。 CD10。" },
+					name = "Dịch chuyển",
+					standard = "Tạo vòng phép dịch chuyển tối đa 4 kẻ địch lùi 21-30 nút đường đi, bán kính 65. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần. CD: 10 giây.",
+					enhanced = "Tạo vòng phép dịch chuyển tối đa 4 kẻ địch lùi 26-35 nút đường đi, bán kính 100. Mỗi kẻ địch bị dịch chuyển tối đa 5 lần. CD: 10 giây.",
+					levels_standard = { "Tạo vòng phép dịch chuyển tối đa 4 kẻ địch lùi 21-30 nút đường đi, bán kính 65. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần. CD: 10 giây.", "Tạo vòng phép dịch chuyển tối đa 5 kẻ địch lùi 26-35 nút đường đi, bán kính 65. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần. CD: 10 giây.", "Tạo vòng phép dịch chuyển tối đa 6 kẻ địch lùi 31-40 nút đường đi, bán kính 65. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần. CD: 10 giây." },
+					levels_enhanced = { "Tạo vòng phép dịch chuyển tối đa 4 kẻ địch lùi 26-35 nút đường đi, bán kính 100. Mỗi kẻ địch bị dịch chuyển tối đa 5 lần. CD: 10 giây.", "Tạo vòng phép dịch chuyển tối đa 5 kẻ địch lùi 31-40 nút đường đi, bán kính 100. Mỗi kẻ địch bị dịch chuyển tối đa 5 lần. CD: 10 giây.", "Tạo vòng phép dịch chuyển tối đa 6 kẻ địch lùi 36-45 nút đường đi, bán kính 100. Mỗi kẻ địch bị dịch chuyển tối đa 5 lần. CD: 10 giây." },
 					prices_standard = { "300", "100", "100" },
 					prices_enhanced = { "300", "100", "100" }
 				},
@@ -498,30 +498,30 @@ local M = {
 		},
 		["tower_sorcerer"] = {
 			doc_id = "",
-			title = "魔术师",
+			title = "Pháp sư phù phép",
 			attack = {
-				standard = "每1.5秒发射魔法射线攻击敌方并施放持续4.9秒的护甲诅咒。护甲诅咒使得怪物失去50%护甲且每1.25秒受到10点真实伤害。总共会受到40点诅咒伤害。",
-				enhanced = "每1.5秒发射魔法射线攻击敌方并施放持续7.0秒的护甲诅咒。护甲诅咒使得怪物失去50%护甲和50%魔抗且每1.25秒受到11点真实伤害。总共会受到66点诅咒伤害。"
+				standard = "Phóng tia phép mỗi 1.5 giây, kèm lời nguyền giáp kéo dài 4.9 giây: giảm 50% giáp và gây 10 sát thương chuẩn mỗi 1.25 giây, tổng cộng 40 sát thương từ lời nguyền.",
+				enhanced = "Phóng tia phép mỗi 1.5 giây, kèm lời nguyền giáp kéo dài 7.0 giây: giảm 50% giáp và 50% kháng phép; gây 11 sát thương chuẩn mỗi 1.25 giây, tổng cộng 66 sát thương từ lời nguyền."
 			},
-			change_note = "解说：提升黄法在削甲方面的辅助能力。避免出现“大毛羊”、“火骑羊”、“狼人羊”等内鬼情况。2技能看起能群秒7但对于作者这种手残党实测并不好用，有时候变了一个10+血的还没来得及点爆就被宰了。会根据实际情况进行调整。",
+			change_note = "Nhận xét: Tăng khả năng hỗ trợ phá giáp của pháp sư vàng và tránh các tình huống biến kẻ địch thành cừu nhưng vô tình khiến chúng nguy hiểm hơn. Kỹ năng 2 trông như có thể tiêu diệt hàng loạt 7 mục tiêu, nhưng tác giả thấy khó sử dụng: đôi lúc vừa biến một kẻ địch hơn 10 máu thành cừu thì nó đã bị giết trước khi kịp nhấn cho nổ. Sẽ điều chỉnh theo tình hình thực tế.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "变羊术",
-					standard = "将一名敌人变成无法拦截的绵羊(空军会变成长着翅膀的飞行绵羊)，敌人会失去全部攻击力、抗性，血量只有原来的50%，可点击8次致死。CD20",
-					enhanced = "将一名敌人变成几乎走不动路的胖羊，失去全部威胁，可点击3次致死。胖羊死后会传染附近的至多1名敌人，将他们变为跑得动的瘦羊。CD20",
-					levels_standard = { "将一名敌人变成无法拦截的绵羊(空军会变成长着翅膀的飞行绵羊)，敌人会失去全部攻击力、抗性，血量只有原来的50%，可点击8次致死。CD20", "将一名敌人变成无法拦截的绵羊(空军会变成长着翅膀的飞行绵羊)，敌人会失去全部攻击力、抗性，血量只有原来的50%，可点击8次致死。CD18", "将一名敌人变成无法拦截的绵羊(空军会变成长着翅膀的飞行绵羊)，敌人会失去全部攻击力、抗性，血量只有原来的50%，可点击8次致死。CD16" },
-					levels_enhanced = { "将一名敌人变成几乎走不动路的胖羊，失去全部威胁，可点击3次致死。胖羊死后会传染附近的至多1名敌人，将他们变为跑得动的瘦羊。CD20", "将一名敌人变成几乎走不动路的胖羊，失去全部威胁，可点击3次致死。胖羊死后会传染附近的至多3名敌人，将他们变为跑得动的瘦羊。CD18", "将一名敌人变成几乎走不动路的胖羊，失去全部威胁，可点击3次致死。胖羊死后会传染附近的至多6名敌人，将他们变为跑得动的瘦羊。CD16" },
+					name = "Biến cừu",
+					standard = "Biến một kẻ địch thành cừu không thể chặn; kẻ địch bay thành cừu có cánh. Mục tiêu mất toàn bộ sức tấn công và kháng, chỉ còn 50% máu ban đầu. Nhấn 8 lần để giết. CD: 20 giây.",
+					enhanced = "Biến một kẻ địch thành cừu béo gần như đứng yên, không còn nguy hiểm. Nhấn 3 lần để giết. Khi chết, nó biến tối đa 1 kẻ địch gần đó thành cừu gầy có thể chạy. CD: 20 giây.",
+					levels_standard = { "Biến một kẻ địch thành cừu không thể chặn; kẻ địch bay thành cừu có cánh. Mục tiêu mất toàn bộ sức tấn công và kháng, chỉ còn 50% máu ban đầu. Nhấn 8 lần để giết. CD: 20 giây.", "Biến một kẻ địch thành cừu không thể chặn; kẻ địch bay thành cừu có cánh. Mục tiêu mất toàn bộ sức tấn công và kháng, chỉ còn 50% máu ban đầu. Nhấn 8 lần để giết. CD: 18 giây.", "Biến một kẻ địch thành cừu không thể chặn; kẻ địch bay thành cừu có cánh. Mục tiêu mất toàn bộ sức tấn công và kháng, chỉ còn 50% máu ban đầu. Nhấn 8 lần để giết. CD: 16 giây." },
+					levels_enhanced = { "Biến một kẻ địch thành cừu béo gần như đứng yên, không còn nguy hiểm. Nhấn 3 lần để giết. Khi chết, nó biến tối đa 1 kẻ địch gần đó thành cừu gầy có thể chạy. CD: 20 giây.", "Biến một kẻ địch thành cừu béo gần như đứng yên, không còn nguy hiểm. Nhấn 3 lần để giết. Khi chết, nó biến tối đa 3 kẻ địch gần đó thành cừu gầy có thể chạy. CD: 18 giây.", "Biến một kẻ địch thành cừu béo gần như đứng yên, không còn nguy hiểm. Nhấn 3 lần để giết. Khi chết, nó biến tối đa 6 kẻ địch gần đó thành cừu gầy có thể chạy. CD: 16 giây." },
 					prices_standard = { "300", "150", "150" },
 					prices_enhanced = { "350", "200", "200" }
 				},
 				{
-					name = "土元素",
-					standard = "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲40，血量600。",
-					enhanced = "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲40，血量600。",
-					levels_standard = { "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲40，血量600。", "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲50，血量700。", "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲60，血量800。" },
-					levels_enhanced = { "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲40，血量600。", "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲50，血量700。", "召唤一只土元素参战拦截和攻击敌人，土元素的攻击能对65范围内最多4个敌人造成伤害。土元素护甲60，血量800。" },
+					name = "Tinh linh đất",
+					standard = "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 40; máu: 600.",
+					enhanced = "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 40; máu: 600.",
+					levels_standard = { "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 40; máu: 600.", "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 50; máu: 700.", "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 60; máu: 800." },
+					levels_enhanced = { "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 40; máu: 600.", "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 50; máu: 700.", "Triệu hồi Tinh linh đất chặn và đánh kẻ địch. Đòn đánh gây sát thương cho tối đa 4 mục tiêu trong bán kính 65. Giáp: 60; máu: 800." },
 					prices_standard = { "350", "150", "150" },
 					prices_enhanced = { "350", "150", "150" }
 				},
@@ -529,30 +529,30 @@ local M = {
 		},
 		["tower_bfg"] = {
 			doc_id = "",
-			title = "500MM大贝莎",
+			title = "Big Bertha 500MM",
 			attack = {
-				standard = "每3.5秒投出一枚炮弹，对150范围内敌人造成伤害。",
-				enhanced = "每3.5秒投出一枚炮弹，对150范围内敌人造成伤害。"
+				standard = "Bắn đạn pháo mỗi 3.5 giây, gây sát thương trong bán kính 150.",
+				enhanced = "Bắn đạn pháo mỗi 3.5 giây, gây sát thương trong bán kính 150."
 			},
-			change_note = "解说：flash巨炮。",
+			change_note = "Nhận xét: Pháo lớn của bản Flash.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "龙息导弹",
-					standard = "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成100-140点炮伤 爆炸范围82.5 CD13.5",
-					enhanced = "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成140-180点炮伤 爆炸范围150 CD7",
-					levels_standard = { "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成100-140点炮伤 爆炸范围82.5 CD13.5", "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成140-180点炮伤 爆炸范围82.5 CD13.5", "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成180-220点炮伤 爆炸范围82.5 CD13.5" },
-					levels_enhanced = { "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成140-180点炮伤 爆炸范围150 CD7", "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成180-220点炮伤 爆炸范围150 CD7", "发射一枚龙息导弹，对离防守点最近的地面/空中敌人造成220-260点炮伤 爆炸范围150 CD7" },
+					name = "Tên lửa hơi thở rồng",
+					standard = "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 100-140 sát thương pháo trong bán kính 82.5. CD: 13.5 giây.",
+					enhanced = "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 140-180 sát thương pháo trong bán kính 150. CD: 7 giây.",
+					levels_standard = { "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 100-140 sát thương pháo trong bán kính 82.5. CD: 13.5 giây.", "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 140-180 sát thương pháo trong bán kính 82.5. CD: 13.5 giây.", "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 180-220 sát thương pháo trong bán kính 82.5. CD: 13.5 giây." },
+					levels_enhanced = { "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 140-180 sát thương pháo trong bán kính 150. CD: 7 giây.", "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 180-220 sát thương pháo trong bán kính 150. CD: 7 giây.", "Bắn tên lửa vào kẻ địch mặt đất hoặc trên không gần lối thoát nhất, gây 220-260 sát thương pháo trong bán kính 150. CD: 7 giây." },
 					prices_standard = { "187", "75", "75" },
 					prices_enhanced = { "187", "112", "112" }
 				},
 				{
-					name = "群簇轰炸",
-					standard = "发射一枚特殊炸弹，在空中爆炸投放3枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)点范围炮伤，敌人会被多发炸弹波及。CD17.5",
-					enhanced = "发射一枚特殊炸弹，在空中爆炸投放3枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)+一半普攻(126-146)点范围炮伤，敌人会被多发炸弹波及。CD17.5",
-					levels_standard = { "发射一枚特殊炸弹，在空中爆炸投放3枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)点范围炮伤，敌人会被多发炸弹波及。CD17.5", "发射一枚特殊炸弹，在空中爆炸投放5枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)点范围炮伤，敌人会被多发炸弹波及。CD17.5", "发射一枚特殊炸弹，在空中爆炸投放7枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)点范围炮伤，敌人会被多发炸弹波及。CD17.5" },
-					levels_enhanced = { "发射一枚特殊炸弹，在空中爆炸投放3枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)+一半普攻(126-146)点范围炮伤，敌人会被多发炸弹波及。CD17.5", "发射一枚特殊炸弹，在空中爆炸投放5枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)+一半普攻(126-146)点范围炮伤，敌人会被多发炸弹波及。CD17.5", "发射一枚特殊炸弹，在空中爆炸投放7枚小炸弹，覆盖一整条路径，每发对82.5范围内敌人造成(60-80)+一半普攻(126-146)点范围炮伤，敌人会被多发炸弹波及。CD17.5" },
+					name = "Oanh tạc bom chùm",
+					standard = "Bắn bom đặc biệt nổ trên không, thả 3 bom nhỏ phủ dọc một đường đi. Mỗi bom gây 60-80 sát thương pháo diện rộng trong bán kính 82.5; một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.",
+					enhanced = "Bắn bom đặc biệt nổ trên không, thả 3 bom nhỏ phủ dọc một đường đi. Mỗi bom gây sát thương pháo diện rộng bằng 60-80 cộng một nửa sát thương đòn đánh thường (126-146), trong bán kính 82.5. Một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.",
+					levels_standard = { "Bắn bom đặc biệt nổ trên không, thả 3 bom nhỏ phủ dọc một đường đi. Mỗi bom gây 60-80 sát thương pháo diện rộng trong bán kính 82.5; một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.", "Bắn bom đặc biệt nổ trên không, thả 5 bom nhỏ phủ dọc một đường đi. Mỗi bom gây 60-80 sát thương pháo diện rộng trong bán kính 82.5; một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.", "Bắn bom đặc biệt nổ trên không, thả 7 bom nhỏ phủ dọc một đường đi. Mỗi bom gây 60-80 sát thương pháo diện rộng trong bán kính 82.5; một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây." },
+					levels_enhanced = { "Bắn bom đặc biệt nổ trên không, thả 3 bom nhỏ phủ dọc một đường đi. Mỗi bom gây sát thương pháo diện rộng bằng 60-80 cộng một nửa sát thương đòn đánh thường (126-146), trong bán kính 82.5. Một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.", "Bắn bom đặc biệt nổ trên không, thả 5 bom nhỏ phủ dọc một đường đi. Mỗi bom gây sát thương pháo diện rộng bằng 60-80 cộng một nửa sát thương đòn đánh thường (126-146), trong bán kính 82.5. Một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây.", "Bắn bom đặc biệt nổ trên không, thả 7 bom nhỏ phủ dọc một đường đi. Mỗi bom gây sát thương pháo diện rộng bằng 60-80 cộng một nửa sát thương đòn đánh thường (126-146), trong bán kính 82.5. Một kẻ địch có thể trúng nhiều bom. CD: 17.5 giây." },
 					prices_standard = { "187", "112", "112" },
 					prices_enhanced = { "187", "112", "112" }
 				},
@@ -560,30 +560,30 @@ local M = {
 		},
 		["tower_tesla"] = {
 			doc_id = "",
-			title = "特斯拉X104",
+			title = "Tesla X104",
 			attack = {
-				standard = "可主动对空。每2.2秒发射闪电攻击敌人，若该敌人附近190范围有其他敌人则连锁给下一个敌人，最多连锁3个敌人。\n对每个被连锁的敌人造成电伤，数值取26-39(26-52)(52-104)当中的13的整数倍。多个特斯拉不可叠加。\n※电伤和炮伤均为无视一半护甲，但部分敌人免疫炮伤而不免疫电伤。",
-				enhanced = "可主动对空。每2.2秒发射闪电攻击敌人，若该敌人附近250范围有其他敌人则连锁给下一个敌人，最多连锁3个敌人。\n对每个被连锁的敌人造成电伤，数值取30-45(30-60)(60-120)当中的15的整数倍。多个特斯拉可以叠加。\n※电伤和炮伤均为无视一半护甲，但部分免疫炮伤的敌人不会免疫电伤。"
+				standard = "Chủ động đánh được mục tiêu bay. Phóng điện mỗi 2.2 giây; điện lan sang kẻ địch khác trong bán kính 190, tối đa 3 mục tiêu.\nMỗi mục tiêu chịu sát thương điện, lấy bội số nguyên của 13 trong các khoảng 26-39 (26-52) (52-104). Nhiều Tesla không cộng dồn sát thương.\n※ Sát thương điện và pháo đều bỏ qua một nửa giáp; một số kẻ địch miễn nhiễm pháo nhưng vẫn chịu sát thương điện.",
+				enhanced = "Chủ động đánh được mục tiêu bay. Phóng điện mỗi 2.2 giây; điện lan sang kẻ địch khác trong bán kính 250, tối đa 3 mục tiêu.\nMỗi mục tiêu chịu sát thương điện, lấy bội số nguyên của 15 trong các khoảng 30-45 (30-60) (60-120). Nhiều Tesla có thể cộng dồn sát thương.\n※ Sát thương điện và pháo đều bỏ qua một nửa giáp; một số kẻ địch miễn nhiễm pháo nhưng vẫn chịu sát thương điện."
 			},
-			change_note = "解说：legacy电。",
+			change_note = "Nhận xét: Tesla bản Legacy.",
 			port_note = "",
-			notes = "2代防御塔",
+			notes = "Tháp phần 2",
 			skills = {
 				{
-					name = "连锁闪电",
-					standard = "令特斯拉最多能连锁到4名敌人。",
-					enhanced = "令特斯拉最多能连锁到4名敌人。",
-					levels_standard = { "令特斯拉最多能连锁到4名敌人。", "令特斯拉最多能连锁到5名敌人。" },
-					levels_enhanced = { "令特斯拉最多能连锁到4名敌人。", "令特斯拉最多能连锁到5名敌人。" },
+					name = "Sét liên hoàn",
+					standard = "Cho phép Tesla đánh lan tới tối đa 4 mục tiêu.",
+					enhanced = "Cho phép Tesla đánh lan tới tối đa 4 mục tiêu.",
+					levels_standard = { "Cho phép Tesla đánh lan tới tối đa 4 mục tiêu.", "Cho phép Tesla đánh lan tới tối đa 5 mục tiêu." },
+					levels_enhanced = { "Cho phép Tesla đánh lan tới tối đa 4 mục tiêu.", "Cho phép Tesla đánh lan tới tối đa 5 mục tiêu." },
 					prices_standard = { "187", "187" },
 					prices_enhanced = { "187", "187" }
 				},
 				{
-					name = "静电场",
-					standard = "电塔每次攻击后释放静电对附近330范围内所有敌人造成10-20点电伤。",
-					enhanced = "电塔每次攻击后释放静电对附近363范围内所有敌人造成10-20点电伤。",
-					levels_standard = { "电塔每次攻击后释放静电对附近330范围内所有敌人造成10-20点电伤。", "电塔每次攻击后释放静电对附近330范围内所有敌人造成20-30点电伤。", "电塔每次攻击后释放静电对附近330范围内所有敌人造成30-40点电伤。" },
-					levels_enhanced = { "电塔每次攻击后释放静电对附近363范围内所有敌人造成10-20点电伤。", "电塔每次攻击后释放静电对附近363范围内所有敌人造成20-30点电伤。", "电塔每次攻击后释放静电对附近363范围内所有敌人造成30-40点电伤。" },
+					name = "Trường tĩnh điện",
+					standard = "Sau mỗi đòn đánh, phóng tĩnh điện gây 10-20 sát thương điện lên tất cả kẻ địch trong bán kính 330.",
+					enhanced = "Sau mỗi đòn đánh, phóng tĩnh điện gây 10-20 sát thương điện lên tất cả kẻ địch trong bán kính 363.",
+					levels_standard = { "Sau mỗi đòn đánh, phóng tĩnh điện gây 10-20 sát thương điện lên tất cả kẻ địch trong bán kính 330.", "Sau mỗi đòn đánh, phóng tĩnh điện gây 20-30 sát thương điện lên tất cả kẻ địch trong bán kính 330.", "Sau mỗi đòn đánh, phóng tĩnh điện gây 30-40 sát thương điện lên tất cả kẻ địch trong bán kính 330." },
+					levels_enhanced = { "Sau mỗi đòn đánh, phóng tĩnh điện gây 10-20 sát thương điện lên tất cả kẻ địch trong bán kính 363.", "Sau mỗi đòn đánh, phóng tĩnh điện gây 20-30 sát thương điện lên tất cả kẻ địch trong bán kính 363.", "Sau mỗi đòn đánh, phóng tĩnh điện gây 30-40 sát thương điện lên tất cả kẻ địch trong bán kính 363." },
 					prices_standard = { "187", "93", "93" },
 					prices_enhanced = { "187", "93", "93" }
 				},
@@ -591,30 +591,30 @@ local M = {
 		},
 		["tower_totem"] = {
 			doc_id = "",
-			title = "部落投斧手",
+			title = "Lính ném rìu bộ tộc",
 			attack = {
-				standard = "每0.8秒扔出一个斧头攻击敌方，物理伤害",
-				enhanced = "每0.8秒扔出一个斧头攻击敌方，物理伤害"
+				standard = "Ném rìu mỗi 0.8 giây, gây sát thương vật lý.",
+				enhanced = "Ném rìu mỗi 0.8 giây, gây sát thương vật lý."
 			},
-			change_note = "解说：提升图腾的效应范围，且纯辅助不值这么高的价格；沉默图腾需要能做到无缝衔接。",
+			change_note = "Nhận xét: Tăng phạm vi tác dụng của vật tổ; một tháp thuần hỗ trợ chưa xứng đáng với mức giá cao như vậy. Vật tổ câm lặng cần duy trì hiệu ứng liên tục.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "虚弱图腾",
-					standard = "召唤一座持续3秒红色图腾，降低154范围内敌人50%近战攻击伤害，并使他们受到的伤害增40% CD10",
-					enhanced = "召唤一座持续3秒红色图腾，降低231范围内敌人50%近战攻击伤害，并使他们受到的伤害增65% CD10",
-					levels_standard = { "召唤一座持续3秒红色图腾，降低154范围内敌人50%近战攻击伤害，并使他们受到的伤害增40% CD10", "召唤一座持续6秒红色图腾，降低154范围内敌人50%近战攻击伤害，并使他们受到的伤害增40% CD10", "召唤一座持续9秒红色图腾，降低154范围内敌人50%近战攻击伤害，并使他们受到的伤害增40% CD10" },
-					levels_enhanced = { "召唤一座持续3秒红色图腾，降低231范围内敌人50%近战攻击伤害，并使他们受到的伤害增75% CD10", "召唤一座持续6秒红色图腾，降低231范围内敌人50%近战攻击伤害，并使他们受到的伤害增75% CD10", "召唤一座持续9秒红色图腾，降低231范围内敌人50%近战攻击伤害，并使他们受到的伤害增75% CD10" },
+					name = "Vật tổ suy yếu",
+					standard = "Triệu hồi vật tổ đỏ tồn tại 3 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 154 và tăng 40% sát thương chúng nhận. CD: 10 giây.",
+					enhanced = "Triệu hồi vật tổ đỏ tồn tại 3 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 231 và tăng 65% sát thương chúng nhận. CD: 10 giây.",
+					levels_standard = { "Triệu hồi vật tổ đỏ tồn tại 3 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 154 và tăng 40% sát thương chúng nhận. CD: 10 giây.", "Triệu hồi vật tổ đỏ tồn tại 6 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 154 và tăng 40% sát thương chúng nhận. CD: 10 giây.", "Triệu hồi vật tổ đỏ tồn tại 9 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 154 và tăng 40% sát thương chúng nhận. CD: 10 giây." },
+					levels_enhanced = { "Triệu hồi vật tổ đỏ tồn tại 3 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 231 và tăng 75% sát thương chúng nhận. CD: 10 giây.", "Triệu hồi vật tổ đỏ tồn tại 6 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 231 và tăng 75% sát thương chúng nhận. CD: 10 giây.", "Triệu hồi vật tổ đỏ tồn tại 9 giây, giảm 50% sát thương cận chiến của kẻ địch trong bán kính 231 và tăng 75% sát thương chúng nhận. CD: 10 giây." },
 					prices_standard = { "250", "200", "200" },
 					prices_enhanced = { "225", "100", "100" }
 				},
 				{
-					name = "沉默图腾",
-					standard = "召唤一座紫色图腾，沉默154范围内敌人4秒，令他们无法发动魔法能力，CD9",
-					enhanced = "召唤一座紫色图腾，沉默231范围内敌人5秒，令他们无法发动魔法能力，CD9",
-					levels_standard = { "召唤一座紫色图腾，沉默154范围内敌人4秒，令他们无法发动魔法能力，CD9", "召唤一座紫色图腾，沉默154范围内敌人6秒，令他们无法发动魔法能力，CD9", "召唤一座紫色图腾，沉默154范围内敌人8秒，令他们无法发动魔法能力，CD9" },
-					levels_enhanced = { "召唤一座紫色图腾，沉默231范围内敌人5秒，令他们无法发动魔法能力，CD9", "召唤一座紫色图腾，沉默231范围内敌人9秒，令他们无法发动魔法能力，CD9", "召唤一座紫色图腾，沉默231范围内敌人13秒，令他们无法发动魔法能力，CD9" },
+					name = "Vật tổ câm lặng",
+					standard = "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 154 suốt 4 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.",
+					enhanced = "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 231 suốt 5 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.",
+					levels_standard = { "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 154 suốt 4 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.", "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 154 suốt 6 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.", "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 154 suốt 8 giây, ngăn chúng dùng năng lực phép. CD: 9 giây." },
+					levels_enhanced = { "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 231 suốt 5 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.", "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 231 suốt 9 giây, ngăn chúng dùng năng lực phép. CD: 9 giây.", "Triệu hồi vật tổ tím, câm lặng kẻ địch trong bán kính 231 suốt 13 giây, ngăn chúng dùng năng lực phép. CD: 9 giây." },
 					prices_standard = { "150", "150", "150" },
 					prices_enhanced = { "120", "70", "70" }
 				},
@@ -622,30 +622,30 @@ local M = {
 		},
 		["tower_crossbow"] = {
 			doc_id = "",
-			title = "弩兵堡垒",
+			title = "Pháo đài lính nỏ",
 			attack = {
-				standard = "每0.5秒射出1支箭攻击敌方，物理伤害",
-				enhanced = "每0.5秒射出1支箭攻击敌方，物理伤害"
+				standard = "Bắn 1 mũi tên mỗi 0.5 giây, gây sát thương vật lý.",
+				enhanced = "Bắn 1 mũi tên mỗi 0.5 giây, gây sát thương vật lý."
 			},
-			change_note = "解说：纯输出箭塔，提升2/3级连弩的性价比。作为“鹰眼”，需要对能飞的造成额外的猎杀效果。",
+			change_note = "Nhận xét: Tháp cung thuần sát thương. Cải thiện hiệu quả nâng Liên xạ cấp 2/3. Mắt đại bàng nên giúp săn mục tiêu bay hiệu quả hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "连弩",
-					standard = "对目标在1.0秒内连续射出6支箭矢，每支箭矢造成30-40点物伤，总共造成180-240点物伤，CD6秒。",
-					enhanced = "对目标在1.8秒内连续射出14支伤害为30-40的箭矢，连续射击同一目标时后一支箭相比前一支能多造成8%伤害，CD6.8秒。",
-					levels_standard = { "对目标在1.0秒内连续射出6支箭矢，每支箭矢造成30-40点物伤，总共造成180-240点物伤，CD6秒。", "对目标在1.4秒内连续射出8支箭矢，每支箭矢造成30-40点物伤，总共造成240-320点物伤，CD6秒。", "对目标在1.8秒内连续射出10支箭矢，每支箭矢造成30-40点物伤，总共造成300-400点物伤，CD6秒。" },
-					levels_enhanced = { "对目标在1.0秒内连续射出6支伤害为30-40的箭矢，连续射击同一目标时后一支箭相比前一支能多造成8%伤害，CD6秒。", "对目标在1.4秒内连续射出10支伤害为30-40的箭矢，连续射击同一目标时后一支箭相比前一支能多造成8%伤害，CD6.4秒。", "对目标在1.8秒内连续射出14支伤害为30-40的箭矢，连续射击同一目标时后一支箭相比前一支能多造成8%伤害，CD6.8秒。" },
+					name = "Liên xạ",
+					standard = "Bắn liên tiếp 6 mũi tên trong 1.0 giây, mỗi mũi gây 30-40 sát thương vật lý, tổng cộng 180-240. CD: 6 giây.",
+					enhanced = "Bắn liên tiếp 14 mũi tên trong 1.8 giây, mỗi mũi gây 30-40 sát thương. Khi bắn cùng một mục tiêu, mũi sau gây thêm 8% sát thương so với mũi trước. CD: 6.8 giây.",
+					levels_standard = { "Bắn liên tiếp 6 mũi tên trong 1.0 giây, mỗi mũi gây 30-40 sát thương vật lý, tổng cộng 180-240. CD: 6 giây.", "Bắn liên tiếp 8 mũi tên trong 1.4 giây, mỗi mũi gây 30-40 sát thương vật lý, tổng cộng 240-320. CD: 6 giây.", "Bắn liên tiếp 10 mũi tên trong 1.8 giây, mỗi mũi gây 30-40 sát thương vật lý, tổng cộng 300-400. CD: 6 giây." },
+					levels_enhanced = { "Bắn liên tiếp 6 mũi tên trong 1.0 giây, mỗi mũi gây 30-40 sát thương. Khi bắn cùng một mục tiêu, mũi sau gây thêm 8% sát thương so với mũi trước. CD: 6 giây.", "Bắn liên tiếp 10 mũi tên trong 1.4 giây, mỗi mũi gây 30-40 sát thương. Khi bắn cùng một mục tiêu, mũi sau gây thêm 8% sát thương so với mũi trước. CD: 6.4 giây.", "Bắn liên tiếp 14 mũi tên trong 1.8 giây, mỗi mũi gây 30-40 sát thương. Khi bắn cùng một mục tiêu, mũi sau gây thêm 8% sát thương so với mũi trước. CD: 6.8 giây." },
 					prices_standard = { "250", "150", "150" },
 					prices_enhanced = { "250", "150", "150" }
 				},
 				{
-					name = "鹰眼",
-					standard = "提升自身和附近320范围内其他防御塔10%射程。\n弩塔自身普攻获得10%暴击率，暴击造成该次攻击200%伤害",
-					enhanced = "提升自身和附近320范围内其他防御塔10%射程。\n弩塔自身普攻获得40%暴击率，暴击造成该次攻击200%伤害",
-					levels_standard = { "提升自身和附近320范围内其他防御塔10%射程。\n弩塔自身普攻获得10%暴击率，暴击造成该次攻击200%伤害", "提升自身和附近384范围内其他防御塔15%射程。\n弩塔自身普攻获得15%暴击率，暴击造成该次攻击200%伤害", "提升自身和附近448范围内其他防御塔20%射程。\n弩塔自身普攻获得20%暴击率，暴击造成该次攻击200%伤害" },
-					levels_enhanced = { "使弩兵堡垒普攻与连射获得30%暴击率。形成一个效应范围420的鹰眼，鹰眼范围内的所有我方防御塔获得10%射程，敌方空军受到的伤害提升20%", "使弩兵堡垒普攻与连射获得50%暴击率。形成一个效应范围490的鹰眼，鹰眼范围内的所有我方防御塔获得15%射程，敌方空军受到的伤害提升50%", "使弩兵堡垒普攻与连射获得70%暴击率。形成一个效应范围560的鹰眼，鹰眼范围内的所有我方防御塔获得20%射程，敌方空军受到的伤害提升80%" },
+					name = "Mắt đại bàng",
+					standard = "Tăng 10% tầm đánh cho bản thân và các tháp khác trong bán kính 320.\nĐòn đánh thường có 10% cơ hội chí mạng, gây 200% sát thương của đòn đó.",
+					enhanced = "Tăng 10% tầm đánh cho bản thân và các tháp khác trong bán kính 320.\nĐòn đánh thường có 40% cơ hội chí mạng, gây 200% sát thương của đòn đó.",
+					levels_standard = { "Tăng 10% tầm đánh cho bản thân và các tháp khác trong bán kính 320.\nĐòn đánh thường có 10% cơ hội chí mạng, gây 200% sát thương của đòn đó.", "Tăng 15% tầm đánh cho bản thân và các tháp khác trong bán kính 384.\nĐòn đánh thường có 15% cơ hội chí mạng, gây 200% sát thương của đòn đó.", "Tăng 20% tầm đánh cho bản thân và các tháp khác trong bán kính 448.\nĐòn đánh thường có 20% cơ hội chí mạng, gây 200% sát thương của đòn đó." },
+					levels_enhanced = { "Đòn đánh thường và Liên xạ có 30% cơ hội chí mạng. Tạo vùng Mắt đại bàng bán kính 420: tháp đồng minh trong vùng tăng 10% tầm đánh, còn kẻ địch bay nhận thêm 20% sát thương.", "Đòn đánh thường và Liên xạ có 50% cơ hội chí mạng. Tạo vùng Mắt đại bàng bán kính 490: tháp đồng minh trong vùng tăng 15% tầm đánh, còn kẻ địch bay nhận thêm 50% sát thương.", "Đòn đánh thường và Liên xạ có 70% cơ hội chí mạng. Tạo vùng Mắt đại bàng bán kính 560: tháp đồng minh trong vùng tăng 20% tầm đánh, còn kẻ địch bay nhận thêm 80% sát thương." },
 					prices_standard = { "200", "200", "200" },
 					prices_enhanced = { "250", "200", "200" }
 				},
@@ -653,39 +653,39 @@ local M = {
 		},
 		["tower_assassin"] = {
 			doc_id = "",
-			title = "刺客工会",
+			title = "Hội sát thủ",
 			attack = {
-				standard = "近战攻击，物理伤害。拥有40%的闪避率。",
-				enhanced = "近战攻击，物理伤害。拥有40%的闪避率。"
+				standard = "Tấn công cận chiến, gây sát thương vật lý. Có 40% cơ hội né đòn.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý. Có 40% cơ hội né đòn."
 			},
-			change_note = "解说：综合各方面提升刺客的数值。",
+			change_note = "Nhận xét: Cải thiện các chỉ số của sát thủ trên nhiều mặt.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "偷袭",
-					standard = "每次攻击有10%触发普通的伤害型偷袭，造成20-40点物伤；另外每次攻击有3%触发秒杀型偷袭，直接秒杀目标敌人",
-					enhanced = "每次攻击有10%触发普通的伤害型偷袭，造成20-40点物伤；另外每次攻击有3%触发秒杀型偷袭，直接秒杀目标敌人",
-					levels_standard = { "每次攻击有10%触发普通的伤害型偷袭，造成20-40点物伤；另外每次攻击有3%触发秒杀型偷袭，直接秒杀目标敌人", "每次攻击有15%触发普通的伤害型偷袭，造成30-50点物伤；另外每次攻击有4%触发秒杀型偷袭，直接秒杀目标敌人", "每次攻击有20%触发普通的伤害型偷袭，造成40-60点物伤；另外每次攻击有5%触发秒杀型偷袭，直接秒杀目标敌人" },
-					levels_enhanced = { "每次攻击有10%触发普通的伤害型偷袭，造成20-40点物伤；另外每次攻击有3%触发秒杀型偷袭，直接秒杀目标敌人", "每次攻击有15%触发普通的伤害型偷袭，造成30-50点物伤；另外每次攻击有5%触发秒杀型偷袭，直接秒杀目标敌人", "每次攻击有20%触发普通的伤害型偷袭，造成40-60点物伤；另外每次攻击有7%触发秒杀型偷袭，直接秒杀目标敌人" },
+					name = "Đánh lén",
+					standard = "Mỗi đòn đánh có 10% cơ hội đánh lén gây 20-40 sát thương vật lý; đồng thời có 3% cơ hội đánh lén tiêu diệt ngay mục tiêu.",
+					enhanced = "Mỗi đòn đánh có 10% cơ hội đánh lén gây 20-40 sát thương vật lý; đồng thời có 3% cơ hội đánh lén tiêu diệt ngay mục tiêu.",
+					levels_standard = { "Mỗi đòn đánh có 10% cơ hội đánh lén gây 20-40 sát thương vật lý; đồng thời có 3% cơ hội đánh lén tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh có 15% cơ hội đánh lén gây 30-50 sát thương vật lý; đồng thời có 4% cơ hội đánh lén tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh có 20% cơ hội đánh lén gây 40-60 sát thương vật lý; đồng thời có 5% cơ hội đánh lén tiêu diệt ngay mục tiêu." },
+					levels_enhanced = { "Mỗi đòn đánh có 10% cơ hội đánh lén gây 20-40 sát thương vật lý; đồng thời có 3% cơ hội đánh lén tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh có 15% cơ hội đánh lén gây 30-50 sát thương vật lý; đồng thời có 5% cơ hội đánh lén tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh có 20% cơ hội đánh lén gây 40-60 sát thương vật lý; đồng thời có 7% cơ hội đánh lén tiêu diệt ngay mục tiêu." },
 					prices_standard = { "225", "150", "150" },
 					prices_enhanced = { "225", "150", "150" }
 				},
 				{
-					name = "闪避反击",
-					standard = "闪避几率提升至50%，反击造成20-24点物伤",
-					enhanced = "闪避几率提升至50%，反击造成20-24点物伤",
-					levels_standard = { "闪避几率提升至50%，反击造成20-24点物伤", "闪避几率提升至60%，反击造成30-34点物伤", "闪避几率提升至70%，反击造成40-44点物伤" },
-					levels_enhanced = { "闪避几率提升至50%，反击造成20-24点物伤", "闪避几率提升至60%，反击造成30-34点物伤", "闪避几率提升至70%，反击造成40-44点物伤" },
+					name = "Né đòn phản kích",
+					standard = "Tăng cơ hội né đòn lên 50%; phản kích gây 20-24 sát thương vật lý.",
+					enhanced = "Tăng cơ hội né đòn lên 50%; phản kích gây 20-24 sát thương vật lý.",
+					levels_standard = { "Tăng cơ hội né đòn lên 50%; phản kích gây 20-24 sát thương vật lý.", "Tăng cơ hội né đòn lên 60%; phản kích gây 30-34 sát thương vật lý.", "Tăng cơ hội né đòn lên 70%; phản kích gây 40-44 sát thương vật lý." },
+					levels_enhanced = { "Tăng cơ hội né đòn lên 50%; phản kích gây 20-24 sát thương vật lý.", "Tăng cơ hội né đòn lên 60%; phản kích gây 30-34 sát thương vật lý.", "Tăng cơ hội né đòn lên 70%; phản kích gây 40-44 sát thương vật lý." },
 					prices_standard = { "150", "100", "100" },
 					prices_enhanced = { "150", "100", "100" }
 				},
 				{
-					name = "扒手",
-					standard = "每次攻击20%从目标敌人身上获得1-3块金币，每个敌人最多被偷取其赏金数值的30%",
-					enhanced = "每次攻击30%从目标敌人身上获得1-6块金币，每个敌人最多被偷取其赏金数值的30%",
-					levels_standard = { "每次攻击20%从目标敌人身上获得1-3块金币，每个敌人最多被偷取其赏金数值的30%", "每次攻击30%从目标敌人身上获得1-3块金币，每个敌人最多被偷取其赏金数值的30%" },
-					levels_enhanced = { "每次攻击30%从目标敌人身上获得1-6块金币，每个敌人最多被偷取其赏金数值的30%", "每次攻击60%从目标敌人身上获得1-6块金币，每个敌人最多被偷取其赏金数值的30%" },
+					name = "Móc túi",
+					standard = "Mỗi đòn đánh có 20% cơ hội lấy 1-3 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó.",
+					enhanced = "Mỗi đòn đánh có 30% cơ hội lấy 1-6 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó.",
+					levels_standard = { "Mỗi đòn đánh có 20% cơ hội lấy 1-3 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó.", "Mỗi đòn đánh có 30% cơ hội lấy 1-3 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó." },
+					levels_enhanced = { "Mỗi đòn đánh có 30% cơ hội lấy 1-6 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó.", "Mỗi đòn đánh có 60% cơ hội lấy 1-6 vàng từ mục tiêu. Mỗi kẻ địch bị lấy tối đa 30% tiền thưởng của nó." },
 					prices_standard = { "100", "100" },
 					prices_enhanced = { "100", "100" }
 				},
@@ -693,39 +693,39 @@ local M = {
 		},
 		["tower_templar"] = {
 			doc_id = "",
-			title = "圣殿骑士",
+			title = "Hiệp sĩ Đền thánh",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "解说：改为无甲扛伤兵营，提升对真伤的抵抗能力；只能靠数值扛伤的兵营不值这么高的价格；增加圣杯的拼手气能力。",
+			change_note = "Nhận xét: Chuyển sang doanh trại chống chịu không giáp, tăng khả năng chống sát thương chuẩn. Doanh trại chỉ dựa vào chỉ số để đỡ đòn chưa xứng đáng với mức giá; tăng tính may rủi của Chén thánh.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "强韧",
-					standard = "提升圣殿骑士50点生命上限。",
-					enhanced = "提升圣殿骑士110点生命上限。",
-					levels_standard = { "提升圣殿骑士50点生命上限。", "提升圣殿骑士100点生命上限。", "提升圣殿骑士150点生命上限。" },
-					levels_enhanced = { "提升圣殿骑士110点生命上限。", "提升圣殿骑士220点生命上限。", "提升圣殿骑士330点生命上限。" },
+					name = "Bền bỉ",
+					standard = "Tăng 50 máu tối đa cho Hiệp sĩ Đền thánh.",
+					enhanced = "Tăng 110 máu tối đa cho Hiệp sĩ Đền thánh.",
+					levels_standard = { "Tăng 50 máu tối đa cho Hiệp sĩ Đền thánh.", "Tăng 100 máu tối đa cho Hiệp sĩ Đền thánh.", "Tăng 150 máu tối đa cho Hiệp sĩ Đền thánh." },
+					levels_enhanced = { "Tăng 110 máu tối đa cho Hiệp sĩ Đền thánh.", "Tăng 220 máu tối đa cho Hiệp sĩ Đền thánh.", "Tăng 330 máu tối đa cho Hiệp sĩ Đền thánh." },
 					prices_standard = { "200", "200", "200" },
 					prices_enhanced = { "75", "75", "75" }
 				},
 				{
-					name = "动脉打击",
-					standard = "圣殿骑士每次攻击10%造成动脉打击，使目标获得持续3秒的流血debuff，每秒造成25点真伤，总共造成75点真伤。",
-					enhanced = "圣殿骑士每次攻击50%造成动脉打击，使目标获得持续3秒的流血debuff，每秒造成25点真伤，总共造成75点真伤。",
-					levels_standard = { "圣殿骑士每次攻击10%造成动脉打击，使目标获得持续3秒的流血debuff，每秒造成25点真伤，总共造成75点真伤。", "圣殿骑士每次攻击10%造成动脉打击，使目标获得持续3秒的流血debuff，每秒造成40点真伤，总共造成120点真伤。", "圣殿骑士每次攻击10%造成动脉打击，使目标获得持续3秒的流血debuff，每秒造成55点真伤，总共造成165点真伤。" },
-					levels_enhanced = { "圣殿骑士每次攻击50%发动动脉打击，使目标获得持续3秒的流血debuff：每秒受到25点真伤。", "圣殿骑士每次攻击50%发动动脉打击-痛击-中和组合剑技，使目标获得持续3秒的流血/易伤/虚弱debuff：每秒受到40点真伤，受到的伤害提升50%，造成的伤害降低25%。", "圣殿骑士每次攻击50%发动动脉打击-破击-压制组合剑技，使目标获得持续3秒的流血与6秒被纸蛙/纸鹤强化的易伤/虚弱debuff：每秒受到55点真伤，受到的伤害提升75%，造成的伤害降低40%。" },
+					name = "Chém động mạch",
+					standard = "Mỗi đòn đánh có 10% cơ hội gây chảy máu trong 3 giây, gây 25 sát thương chuẩn mỗi giây, tổng cộng 75.",
+					enhanced = "Mỗi đòn đánh có 50% cơ hội gây chảy máu trong 3 giây, gây 25 sát thương chuẩn mỗi giây, tổng cộng 75.",
+					levels_standard = { "Mỗi đòn đánh có 10% cơ hội gây chảy máu trong 3 giây, gây 25 sát thương chuẩn mỗi giây, tổng cộng 75.", "Mỗi đòn đánh có 10% cơ hội gây chảy máu trong 3 giây, gây 40 sát thương chuẩn mỗi giây, tổng cộng 120.", "Mỗi đòn đánh có 10% cơ hội gây chảy máu trong 3 giây, gây 55 sát thương chuẩn mỗi giây, tổng cộng 165." },
+					levels_enhanced = { "Mỗi đòn đánh có 50% cơ hội gây chảy máu trong 3 giây, gây 25 sát thương chuẩn mỗi giây.", "Mỗi đòn đánh có 50% cơ hội tung chuỗi kiếm Chém động mạch - Đòn nặng - Trung hòa. Gây chảy máu, dễ tổn thương và suy yếu trong 3 giây: chịu 40 sát thương chuẩn mỗi giây, nhận thêm 50% sát thương và giảm 25% sát thương gây ra.", "Mỗi đòn đánh có 50% cơ hội tung chuỗi kiếm Chém động mạch - Phá kích - Áp chế. Gây chảy máu trong 3 giây và dễ tổn thương/suy yếu được ếch giấy hoặc hạc giấy tăng cường trong 6 giây: chịu 55 sát thương chuẩn mỗi giây, nhận thêm 75% sát thương và giảm 40% sát thương gây ra." },
 					prices_standard = { "250", "150", "150" },
 					prices_enhanced = { "250", "150", "150" }
 				},
 				{
-					name = "圣杯",
-					standard = "圣殿骑士受到致命一击时20%触发圣杯，以最大生命值20%形态立即原地复活",
-					enhanced = "圣殿骑士受到致命一击时20%触发圣杯，以最大生命值30%形态立即原地复活",
-					levels_standard = { "圣殿骑士受到致命一击时20%触发圣杯，以最大生命值20%形态立即原地复活", "圣殿骑士受到致命一击时30%触发圣杯，以最大生命值30%形态立即原地复活", "圣殿骑士受到致命一击时40%触发圣杯，以最大生命值40%形态立即原地复活" },
-					levels_enhanced = { "圣殿骑士受到致命一击时20%触发圣杯，以最大生命值30%形态立即原地复活", "圣殿骑士受到致命一击时40%触发圣杯，以最大生命值55%形态立即原地复活", "圣殿骑士受到致命一击时60%触发圣杯，以最大生命值80%形态立即原地复活" },
+					name = "Chén thánh",
+					standard = "Khi nhận đòn chí tử, có 20% cơ hội hồi sinh ngay tại chỗ với 20% máu tối đa.",
+					enhanced = "Khi nhận đòn chí tử, có 20% cơ hội hồi sinh ngay tại chỗ với 30% máu tối đa.",
+					levels_standard = { "Khi nhận đòn chí tử, có 20% cơ hội hồi sinh ngay tại chỗ với 20% máu tối đa.", "Khi nhận đòn chí tử, có 30% cơ hội hồi sinh ngay tại chỗ với 30% máu tối đa.", "Khi nhận đòn chí tử, có 40% cơ hội hồi sinh ngay tại chỗ với 40% máu tối đa." },
+					levels_enhanced = { "Khi nhận đòn chí tử, có 20% cơ hội hồi sinh ngay tại chỗ với 30% máu tối đa.", "Khi nhận đòn chí tử, có 40% cơ hội hồi sinh ngay tại chỗ với 55% máu tối đa.", "Khi nhận đòn chí tử, có 60% cơ hội hồi sinh ngay tại chỗ với 80% máu tối đa." },
 					prices_standard = { "250", "150", "150" },
 					prices_enhanced = { "250", "150", "150" }
 				},
@@ -733,30 +733,30 @@ local M = {
 		},
 		["tower_necromancer"] = {
 			doc_id = "",
-			title = "死灵法师",
+			title = "Pháp sư chiêu hồn",
 			attack = {
-				standard = "每1秒发射魔法弹攻击敌方，魔法伤害。若周围有敌人死亡，小于500血量生成小骷髅，大于500血量生成大骷髅。骷髅总数不超过8个，全局不超过30个。",
-				enhanced = "每1秒发射魔法弹攻击敌方，魔法伤害。若周围有敌人死亡，小于500血量生成小骷髅，大于500血量生成大骷髅。骷髅总数不超过8个，全局不超过30个。"
+				standard = "Bắn đạn phép mỗi 1 giây. Kẻ địch chết gần tháp tạo bộ xương nhỏ nếu máu dưới 500, hoặc bộ xương lớn nếu máu trên 500. Tối đa 8 bộ xương mỗi tháp và 30 trên toàn bản đồ.",
+				enhanced = "Bắn đạn phép mỗi 1 giây. Kẻ địch chết gần tháp tạo bộ xương nhỏ nếu máu dưới 500, hoặc bộ xương lớn nếu máu trên 500. Tối đa 8 bộ xương mỗi tháp và 30 trên toàn bản đồ."
 			},
-			change_note = "解说：具有拦截能力的法师塔；提升瘟疫云、23级亡灵骑士的性价比。",
-			port_note = "移植改动：将5代骷髅类友军加入了亡灵骑士的生效列表中。",
+			change_note = "Nhận xét: Tháp phép có khả năng chặn đường. Cải thiện hiệu quả nâng Mây dịch bệnh và Kỵ sĩ xác sống cấp 23.",
+			port_note = "Thay đổi khi chuyển sang mod: Kỵ sĩ xác sống có thể tăng cường cả đồng đội dạng bộ xương của phần 5.",
 			notes = "",
 			skills = {
 				{
-					name = "亡灵骑士",
-					standard = "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。",
-					enhanced = "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。",
-					levels_standard = { "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。", "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。", "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。" },
-					levels_enhanced = { "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。", "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。", "生成一个亡灵骑士参战。亡灵骑士可为周围的沙王和骷髅类友军(2代死灵法师的骷髅、5代死灵法师的骷髅、2/5代骨龙召唤的骷髅)增加30点护甲。" },
+					name = "Kỵ sĩ xác sống",
+					standard = "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.",
+					enhanced = "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.",
+					levels_standard = { "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.", "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.", "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5." },
+					levels_enhanced = { "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.", "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5.", "Triệu hồi Kỵ sĩ xác sống. Tăng 30 giáp cho Vua Cát và đồng đội dạng bộ xương gần đó: bộ xương của pháp sư chiêu hồn phần 2, phần 5, và rồng xương phần 2/5." },
 					prices_standard = { "270", "135", "135" },
 					prices_enhanced = { "270", "90", "90" }
 				},
 				{
-					name = "瘟疫",
-					standard = "制造1片持续4秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成20点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果",
-					enhanced = "制造1片持续4秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成50点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果",
-					levels_standard = { "制造1片持续4秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成20点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD12", "制造2片持续5秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成20点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD12", "制造3片持续6秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成20点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD12" },
-					levels_enhanced = { "制造1片持续4秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成50点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD9", "制造2片持续5秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成50点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD9", "制造3片持续6秒的毒云，每片毒云给93范围内的敌人加上中毒debuff，每秒造成50点真伤，瘟疫伤害不可叠加，敌人离开瘟疫区域就会消除中毒效果,CD9" },
+					name = "Dịch bệnh",
+					standard = "Tạo 1 đám mây độc tồn tại 4 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 20 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây.",
+					enhanced = "Tạo 1 đám mây độc tồn tại 4 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 50 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây.",
+					levels_standard = { "Tạo 1 đám mây độc tồn tại 4 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 20 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 12 giây.", "Tạo 2 đám mây độc tồn tại 5 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 20 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 12 giây.", "Tạo 3 đám mây độc tồn tại 6 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 20 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 12 giây." },
+					levels_enhanced = { "Tạo 1 đám mây độc tồn tại 4 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 50 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 9 giây.", "Tạo 2 đám mây độc tồn tại 5 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 50 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 9 giây.", "Tạo 3 đám mây độc tồn tại 6 giây. Mỗi đám gây độc cho kẻ địch trong bán kính 93, gây 50 sát thương chuẩn mỗi giây. Sát thương không cộng dồn; độc hết ngay khi mục tiêu rời vùng mây. CD: 9 giây." },
 					prices_standard = { "292", "180", "180" },
 					prices_enhanced = { "225", "117", "117" }
 				},
@@ -764,30 +764,30 @@ local M = {
 		},
 		["tower_archmage"] = {
 			doc_id = "",
-			title = "大法师",
+			title = "Đại pháp sư",
 			attack = {
-				standard = "每1.5秒发射魔法弹攻击敌方。无敌人时会存储魔法弹，最多3个。",
-				enhanced = "每1.5秒发射魔法弹攻击敌方。无敌人时会存储魔法弹，最多3个。"
+				standard = "Bắn đạn phép mỗi 1.5 giây. Khi không có kẻ địch, tích trữ tối đa 3 đạn.",
+				enhanced = "Bắn đạn phép mỗi 1.5 giây. Khi không có kẻ địch, tích trữ tối đa 3 đạn."
 			},
-			change_note = "解说：有稳定AOE能力的法师塔，但法师的稳定AOE需谨慎，故大幅上调了2技能的价格。注意仅爆炸有法穿，普攻的单体伤害是没有的。",
+			change_note = "Nhận xét: Tháp phép có sát thương diện rộng ổn định, cần cân nhắc khi tăng sức mạnh nên giá kỹ năng 2 được tăng đáng kể. Chỉ vụ nổ xuyên kháng phép; sát thương đơn mục tiêu của đòn đánh thường không có hiệu ứng này.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "龙卷风",
-					standard = "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走5名敌人，龙卷风存在5秒，将他们推后最多200距离并对他们造成40点法伤，CD22.5秒，每个敌人最多传送3次。",
-					enhanced = "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走5名敌人，龙卷风存在5秒，将他们推后最多200距离并对他们造成200点法伤，CD22.5秒，每个敌人最多传送3次。",
-					levels_standard = { "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走5名敌人，龙卷风存在5秒，将他们推后最多200距离并对他们造成40点法伤，CD22.5秒，每个敌人最多传送3次。", "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走6名敌人，龙卷风存在6.25秒，将他们推后最多250距离并对他们造成60点法伤，CD22.5秒，每个敌人最多传送3次。", "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走7名敌人，龙卷风存在7.5秒，将他们推后最多300距离并对他们造成80点法伤，CD22.5秒，每个敌人最多传送3次。" },
-					levels_enhanced = { "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走5名敌人，龙卷风存在5秒，将他们推后最多200距离并对他们造成220点法伤，CD22.5秒，每个敌人最多传送3次。", "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走6名敌人，龙卷风存在6.25秒，将他们推后最多250距离并对他们造成310点法伤，CD22.5秒，每个敌人最多传送3次。", "召唤一个龙卷风，以46的移速朝出怪口移动一段距离，将靠近龙卷风64范围内的敌人卷入其中，最多卷走7名敌人，龙卷风存在7.5秒，将他们推后最多300距离并对他们造成400点法伤，CD22.5秒，每个敌人最多传送3次。" },
+					name = "Lốc xoáy",
+					standard = "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 5 kẻ địch trong bán kính 64. Tồn tại 5 giây, đẩy chúng lùi tối đa 200 khoảng cách và gây 40 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.",
+					enhanced = "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 5 kẻ địch trong bán kính 64. Tồn tại 5 giây, đẩy chúng lùi tối đa 200 khoảng cách và gây 200 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.",
+					levels_standard = { "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 5 kẻ địch trong bán kính 64. Tồn tại 5 giây, đẩy chúng lùi tối đa 200 khoảng cách và gây 40 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.", "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 6 kẻ địch trong bán kính 64. Tồn tại 6.25 giây, đẩy chúng lùi tối đa 250 khoảng cách và gây 60 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.", "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 7 kẻ địch trong bán kính 64. Tồn tại 7.5 giây, đẩy chúng lùi tối đa 300 khoảng cách và gây 80 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần." },
+					levels_enhanced = { "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 5 kẻ địch trong bán kính 64. Tồn tại 5 giây, đẩy chúng lùi tối đa 200 khoảng cách và gây 220 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.", "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 6 kẻ địch trong bán kính 64. Tồn tại 6.25 giây, đẩy chúng lùi tối đa 250 khoảng cách và gây 310 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần.", "Triệu hồi lốc xoáy đi về điểm xuất hiện quái với tốc độ 46, cuốn tối đa 7 kẻ địch trong bán kính 64. Tồn tại 7.5 giây, đẩy chúng lùi tối đa 300 khoảng cách và gây 400 sát thương phép. CD: 22.5 giây. Mỗi kẻ địch bị dịch chuyển tối đa 3 lần." },
 					prices_standard = { "315", "225", "225" },
 					prices_enhanced = { "315", "225", "225" }
 				},
 				{
-					name = "能量爆破",
-					standard = "每次普攻后35%引发爆炸，对83范围内敌人造成30点范围魔法伤害。",
-					enhanced = "每次普攻后100%引发爆炸，对120范围内敌人造成30点无视50%魔抗的范围魔法伤害。",
-					levels_standard = { "每次普攻后35%引发爆炸，对83范围内敌人造成30点范围魔法伤害。", "每次普攻后35%引发爆炸，对90范围内敌人造成60点范围魔法伤害。", "每次普攻后35%引发爆炸，对96范围内敌人造成90点范围魔法伤害。" },
-					levels_enhanced = { "每次普攻后100%引发爆炸，对110范围内敌人造成30点无视40%魔抗的魔法伤害。", "每次普攻后100%引发爆炸，对120范围内敌人造成60点无视40%魔抗的魔法伤害。", "每次普攻后100%引发爆炸，对130范围内敌人造成90点无视40%魔抗的魔法伤害。" },
+					name = "Bùng nổ năng lượng",
+					standard = "Sau mỗi đòn đánh thường, có 35% cơ hội gây vụ nổ, gây 30 sát thương phép diện rộng trong bán kính 83.",
+					enhanced = "Sau mỗi đòn đánh thường, có 100% cơ hội gây vụ nổ, gây 30 sát thương phép diện rộng trong bán kính 120 và bỏ qua 50% kháng phép.",
+					levels_standard = { "Sau mỗi đòn đánh thường, có 35% cơ hội gây vụ nổ, gây 30 sát thương phép diện rộng trong bán kính 83.", "Sau mỗi đòn đánh thường, có 35% cơ hội gây vụ nổ, gây 60 sát thương phép diện rộng trong bán kính 90.", "Sau mỗi đòn đánh thường, có 35% cơ hội gây vụ nổ, gây 90 sát thương phép diện rộng trong bán kính 96." },
+					levels_enhanced = { "Sau mỗi đòn đánh thường, có 100% cơ hội gây vụ nổ, gây 30 sát thương phép trong bán kính 110 và bỏ qua 40% kháng phép.", "Sau mỗi đòn đánh thường, có 100% cơ hội gây vụ nổ, gây 60 sát thương phép trong bán kính 120 và bỏ qua 40% kháng phép.", "Sau mỗi đòn đánh thường, có 100% cơ hội gây vụ nổ, gây 90 sát thương phép trong bán kính 130 và bỏ qua 40% kháng phép." },
 					prices_standard = { "180", "180", "180" },
 					prices_enhanced = { "315", "315", "315" }
 				},
@@ -795,30 +795,30 @@ local M = {
 		},
 		["tower_dwaarp"] = {
 			doc_id = "",
-			title = "自动钻地武器平台",
+			title = "Dàn khoan chiến đấu",
 			attack = {
-				standard = "每3秒敲击地面，对攻击范围内所有敌人造成伤害，并减速60%持续0.4秒。",
-				enhanced = "每3秒敲击地面，对攻击范围内所有敌人造成伤害，并减速60%持续1.67秒。(该减速效果可以和2技能的减速效果叠加，满级2技能和普攻效果、眩晕科技效果叠加后可获得12秒为周期的51%的减速。)"
+				standard = "Đập xuống đất mỗi 3 giây, gây sát thương cho tất cả kẻ địch trong tầm và làm chậm 60% trong 0.4 giây.",
+				enhanced = "Đập xuống đất mỗi 3 giây, gây sát thương cho tất cả kẻ địch trong tầm và làm chậm 60% trong 1.67 giây. Hiệu ứng cộng dồn với làm chậm từ kỹ năng 2; khi kết hợp kỹ năng 2 tối đa, đòn đánh thường và nâng cấp làm choáng, tạo chu kỳ 12 giây với mức làm chậm 51%."
 			},
-			change_note = "解说：解决爆发比不上常规炮、环形攻击被拥有更多功能性的腐森/特斯拉/熔炉上位替代的问题。现在算上所有科技，裸地震的期望减速值为40%，算DPS和减速性价比略低于腐森但输出是炮伤。腐森1级能用3级成型，但地震的攻击范围和成长性均大于腐森。",
+			change_note = "Nhận xét: Giải quyết tình trạng sát thương bùng nổ kém pháo thường, còn đòn đánh vòng tròn bị Rừng mục rữa/Tesla/Lò nung đa dụng hơn thay thế. Tính đủ nâng cấp, mức làm chậm trung bình của tháp chưa mua kỹ năng là 40%. Hiệu quả sát thương và làm chậm hơi kém Rừng mục rữa nhưng gây sát thương pháo. Rừng mục rữa dùng được ở cấp 1 và hoàn thiện ở cấp 3; Dàn khoan có tầm đánh và tiềm năng nâng cấp lớn hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "岩芯钻",
-					standard = "不占用普攻时间，秒杀一只怪物，CD26(23.4)。",
-					enhanced = "不占用普攻时间，秒杀一只怪物，CD26(23.4)。会优先瞄准最大血量＞=800的敌人。",
-					levels_standard = { "不占用普攻时间，秒杀一只怪物，CD26(23.4)。", "不占用普攻时间，秒杀一只怪物，CD23(20.7)。", "不占用普攻时间，秒杀一只怪物，CD20(18.0)。" },
-					levels_enhanced = { "不占用普攻时间，秒杀一只怪物，CD26(23.4)。会优先瞄准最大血量＞=800的敌人。", "不占用普攻时间，秒杀一只怪物，CD23(20.7)。会优先瞄准最大血量＞=800的敌人。", "不占用普攻时间，秒杀一只怪物，CD20(18.0)。会优先瞄准最大血量＞=800的敌人。" },
+					name = "Mũi khoan lõi đá",
+					standard = "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 26 (23.4) giây.",
+					enhanced = "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 26 (23.4) giây. Ưu tiên mục tiêu có máu tối đa >= 800.",
+					levels_standard = { "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 26 (23.4) giây.", "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 23 (20.7) giây.", "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 20 (18.0) giây." },
+					levels_enhanced = { "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 26 (23.4) giây. Ưu tiên mục tiêu có máu tối đa >= 800.", "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 23 (20.7) giây. Ưu tiên mục tiêu có máu tối đa >= 800.", "Tiêu diệt ngay một kẻ địch, không chiếm thời gian đánh thường. CD: 20 (18.0) giây. Ưu tiên mục tiêu có máu tối đa >= 800." },
 					prices_standard = { "400", "200", "200" },
 					prices_enhanced = { "400", "80", "80" }
 				},
 				{
-					name = "锅炉爆炸",
-					standard = "发动普攻后点燃345范围的地面3秒，经过敌人会进入燃烧状态2秒，每0.2秒受到4点真实伤害，最多受到100点真实伤害。CD15。",
-					enhanced = "发动普攻后点燃394范围的地面3秒，经过敌人会进入燃烧状态2秒，每0.2秒受到4点真实伤害并减速，最多受到125点真实伤害。CD12。",
-					levels_standard = { "发动普攻后点燃345范围的地面3秒，经过敌人会进入燃烧状态2秒，每0.2秒受到4点真实伤害，最多受到100点真实伤害。CD15。", "发动普攻后点燃345范围的地面3秒，经过敌人会进入燃烧状态2秒，每0.2秒受到7点真实伤害，最多受到175点真实伤害。CD15。", "发动普攻后点燃345范围的地面3秒，经过敌人会进入燃烧状态2秒，每0.2秒受到10点真实伤害，最多受到250点真实伤害。CD15。" },
-					levels_enhanced = { "发动普攻后点燃394范围的地面3秒，经过的敌人会进入燃烧状态2秒，减少20%移速且每0.2秒受到5点真实伤害。CD12。", "发动普攻后点燃394范围的地面3秒，经过的敌人会进入燃烧状态2秒，减少30%移速且每0.2秒受到8点真实伤害。CD12。", "发动普攻后点燃394范围的地面3秒，经过的敌人会进入燃烧状态2秒，减少40%移速且每0.2秒受到11点真实伤害。CD12。" },
+					name = "Nổ lò hơi",
+					standard = "Sau đòn đánh thường, đốt vùng đất bán kính 345 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, chịu 4 sát thương chuẩn mỗi 0.2 giây, tối đa 100 sát thương chuẩn. CD: 15 giây.",
+					enhanced = "Sau đòn đánh thường, đốt vùng đất bán kính 394 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, chịu 4 sát thương chuẩn mỗi 0.2 giây và bị làm chậm, tối đa 125 sát thương chuẩn. CD: 12 giây.",
+					levels_standard = { "Sau đòn đánh thường, đốt vùng đất bán kính 345 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, chịu 4 sát thương chuẩn mỗi 0.2 giây, tối đa 100 sát thương chuẩn. CD: 15 giây.", "Sau đòn đánh thường, đốt vùng đất bán kính 345 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, chịu 7 sát thương chuẩn mỗi 0.2 giây, tối đa 175 sát thương chuẩn. CD: 15 giây.", "Sau đòn đánh thường, đốt vùng đất bán kính 345 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, chịu 10 sát thương chuẩn mỗi 0.2 giây, tối đa 250 sát thương chuẩn. CD: 15 giây." },
+					levels_enhanced = { "Sau đòn đánh thường, đốt vùng đất bán kính 394 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, giảm 20% tốc độ và chịu 5 sát thương chuẩn mỗi 0.2 giây. CD: 12 giây.", "Sau đòn đánh thường, đốt vùng đất bán kính 394 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, giảm 30% tốc độ và chịu 8 sát thương chuẩn mỗi 0.2 giây. CD: 12 giây.", "Sau đòn đánh thường, đốt vùng đất bán kính 394 trong 3 giây. Kẻ địch đi qua bị cháy 2 giây, giảm 40% tốc độ và chịu 11 sát thương chuẩn mỗi 0.2 giây. CD: 12 giây." },
 					prices_standard = { "300", "250", "250" },
 					prices_enhanced = { "380", "280", "280" }
 				},
@@ -826,30 +826,30 @@ local M = {
 		},
 		["tower_mech"] = {
 			doc_id = "",
-			title = "T200型战斗机甲",
+			title = "Cỗ máy chiến đấu T200",
 			attack = {
-				standard = "每秒扔出一个炮弹攻击敌人，对115.2范围的敌人造成伤害。可在350范围内进行调集。",
-				enhanced = "每秒扔出一个炮弹攻击敌人，对128范围的敌人造成伤害。可在350范围内进行调集。"
+				standard = "Ném một đạn pháo mỗi giây, gây sát thương trong bán kính 115.2. Có thể tập kết trong phạm vi 350.",
+				enhanced = "Ném một đạn pháo mỗi giây, gây sát thương trong bán kính 128. Có thể tập kết trong phạm vi 350."
 			},
-			change_note = "解说：提升了伤害的稳定性和在3倍出怪的实用性。3级导弹实战不一定有钱出得到满配。",
-			port_note = "整个漏油动画共37帧，但这段动画时间已经包含在CD内，不会额外相加，因此漏油的CD就是10(9)秒。网传的11.4(10.4)为考虑了额外动画打断发动的情况。导弹的5.4s是两次间隔而不是CD，算上动画CD为7.3秒。按照机甲每5秒走动一次且考虑动画延迟计算，裸塔的减速期望值为34.5%，满2减速期望为75.6%，满12减速期望为78.4%",
+			change_note = "Nhận xét: Tăng độ ổn định sát thương và hiệu quả khi mật độ quái gấp 3 lần. Trong thực chiến chưa chắc đủ tiền nâng tên lửa cấp 3 lên tối đa.",
+			port_note = "Hoạt ảnh rò dầu có 37 khung hình và đã được tính vào thời gian hồi; thời gian hồi thực là 10 (9) giây. Con số 11.4 (10.4) được chia sẻ trên mạng còn tính việc hoạt ảnh bị ngắt. 5.4 giây của tên lửa là khoảng cách giữa các lần bắn, không phải thời gian hồi; tính cả hoạt ảnh thì hồi 7.3 giây. Nếu cỗ máy di chuyển mỗi 5 giây và tính độ trễ hoạt ảnh, mức làm chậm trung bình là 34.5% khi chưa mua kỹ năng, 75.6% khi tối đa 2 và 78.4% khi tối đa 12.",
 			notes = "",
 			skills = {
 				{
-					name = "黄蜂导弹",
-					standard = "可主动对空。发射2枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。",
-					enhanced = "可主动对空。发射2枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。",
-					levels_standard = { "发射2枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。", "发射4枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。", "发射6枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒(开启补强后3级才会生效)。" },
-					levels_enhanced = { "发射2枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。", "发射4枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。", "发射8枚黄蜂导弹，造成115范围20-80点炮弹伤害，射程448。两次攻击之间间隔6(5.4)秒。" },
+					name = "Tên lửa Wasp",
+					standard = "Chủ động đánh được mục tiêu bay. Bắn 2 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.",
+					enhanced = "Chủ động đánh được mục tiêu bay. Bắn 2 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.",
+					levels_standard = { "Bắn 2 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.", "Bắn 4 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.", "Bắn 6 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây. Khi bật tăng cường, hiệu ứng chỉ có từ cấp 3." },
+					levels_enhanced = { "Bắn 2 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.", "Bắn 4 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây.", "Bắn 8 tên lửa gây 20-80 sát thương pháo trong bán kính 115; tầm bắn 448. Khoảng cách giữa hai lần bắn: 6 (5.4) giây." },
 					prices_standard = { "300", "250" },
 					prices_enhanced = { "250", "250", "250" }
 				},
 				{
-					name = "废料排泄",
-					standard = "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留4秒。CD10(9)秒。",
-					enhanced = "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留4秒。CD10(9)秒。",
-					levels_standard = { "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留4秒。CD10(9)秒。", "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留6秒。CD10(9)秒。", "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留8秒。CD10(9)秒。" },
-					levels_enhanced = { "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低102.4范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留4秒。CD10(9)秒。", "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低128范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留6秒。CD10(9)秒。", "高达发现附近115范围内出现敌人时，会将机油倒在自己脚下，降低128范围内敌人75%移速，敌人离开机油区域后减速消失，机油在地上滞留8秒。CD10(9)秒。" },
+					name = "Xả dầu thải",
+					standard = "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 4 giây. CD: 10 (9) giây.",
+					enhanced = "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 4 giây. CD: 10 (9) giây.",
+					levels_standard = { "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 4 giây. CD: 10 (9) giây.", "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 6 giây. CD: 10 (9) giây.", "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 8 giây. CD: 10 (9) giây." },
+					levels_enhanced = { "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 102.4. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 4 giây. CD: 10 (9) giây.", "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 128. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 6 giây. CD: 10 (9) giây.", "Khi có kẻ địch trong bán kính 115, cỗ máy đổ dầu dưới chân, giảm 75% tốc độ của kẻ địch trong bán kính 128. Hết làm chậm khi rời vùng dầu. Dầu tồn tại 8 giây. CD: 10 (9) giây." },
 					prices_standard = { "250", "200", "200" },
 					prices_enhanced = { "250", "200", "200" }
 				},
@@ -857,30 +857,30 @@ local M = {
 		},
 		["tower_arcane"] = {
 			doc_id = "",
-			title = "奥术弓手",
+			title = "Cung thủ bí thuật",
 			attack = {
-				standard = "每0.8秒射出2支箭攻击敌方，每支箭削减敌方3点魔抗，物理伤害。面板为2箭伤害之和。",
-				enhanced = "每0.8秒射出2支箭攻击敌方，每支箭削减敌方10点魔抗，物理伤害。面板为2箭伤害之和。"
+				standard = "Bắn 2 mũi tên mỗi 0.8 giây, gây sát thương vật lý và giảm 3 kháng phép của mục tiêu với mỗi mũi. Chỉ số hiển thị là tổng sát thương của 2 mũi.",
+				enhanced = "Bắn 2 mũi tên mỗi 0.8 giây, gây sát thương vật lý và giảm 10 kháng phép của mục tiêu với mỗi mũi. Chỉ số hiển thị là tổng sát thương của 2 mũi."
 			},
-			change_note = "解说：普攻输出已经足够，对标1代黄法的削除护甲，获得更多削除魔抗的能力。",
+			change_note = "Nhận xét: Sát thương đánh thường đã đủ. Tương tự khả năng phá giáp của pháp sư vàng phần 1, tháp được tăng khả năng giảm kháng phép.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "爆裂箭矢",
-					standard = "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成80(88)点法伤，CD12",
-					enhanced = "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成135(149)点法伤，CD12",
-					levels_standard = { "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成80(88)点法伤，CD12", "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成160(176)点法伤，CD12", "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成240(264)点法伤，CD12" },
-					levels_enhanced = { "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成125(138)点法伤，CD12", "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成250(275)点法伤，CD12", "发射一支爆炸的魔法箭，对目标以及周围115范围内敌人造成375(413)点法伤，CD12" },
+					name = "Mũi tên nổ",
+					standard = "Bắn mũi tên phép nổ, gây 80 (88) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.",
+					enhanced = "Bắn mũi tên phép nổ, gây 135 (149) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.",
+					levels_standard = { "Bắn mũi tên phép nổ, gây 80 (88) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.", "Bắn mũi tên phép nổ, gây 160 (176) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.", "Bắn mũi tên phép nổ, gây 240 (264) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây." },
+					levels_enhanced = { "Bắn mũi tên phép nổ, gây 125 (138) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.", "Bắn mũi tên phép nổ, gây 250 (275) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây.", "Bắn mũi tên phép nổ, gây 375 (413) sát thương phép lên mục tiêu và kẻ địch trong bán kính 115. CD: 12 giây." },
 					prices_standard = { "200", "200", "200" },
 					prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "沉睡箭矢",
-					standard = "发射1支催眠箭，令单个目标沉睡4(4.4)秒。。CD20秒。",
-					enhanced = "发射1支催眠箭，令单个目标沉睡4(4.4)秒。如果瞄准目标的300范围内还有其他敌人，则对该范围内至多2名其他敌人各发射一支催眠箭。CD20秒。",
-					levels_standard = { "发射1支催眠箭，令单个目标沉睡4(4.4)秒。CD20秒。", "发射1支催眠箭，令单个目标沉睡4(4.4)秒。CD16秒。", "发射1支催眠箭，令单个目标沉睡4(4.4)秒。CD12秒。" },
-					levels_enhanced = { "发射1支催眠箭，令单个目标沉睡4(4.4)秒。如果瞄准目标的300范围内还有其他敌人，则对该范围内至多2名其他敌人各发射一支催眠箭。CD20秒。", "发射1支催眠箭，令单个目标沉睡4(4.4)秒。如果瞄准目标的300范围内还有其他敌人，则对该范围内至多4名其他敌人各发射一支催眠箭。CD16秒。", "发射1支催眠箭，令单个目标沉睡4(4.4)秒。如果瞄准目标的300范围内还有其他敌人，则对该范围内至多6名其他敌人各发射一支催眠箭。CD12秒。" },
+					name = "Mũi tên ru ngủ",
+					standard = "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. CD: 20 giây.",
+					enhanced = "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. Nếu có kẻ địch khác trong bán kính 300 quanh mục tiêu, bắn thêm một mũi vào mỗi kẻ địch, tối đa 2 mục tiêu phụ. CD: 20 giây.",
+					levels_standard = { "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. CD: 20 giây.", "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. CD: 16 giây.", "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. CD: 12 giây." },
+					levels_enhanced = { "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. Nếu có kẻ địch khác trong bán kính 300 quanh mục tiêu, bắn thêm một mũi vào mỗi kẻ địch, tối đa 2 mục tiêu phụ. CD: 20 giây.", "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. Nếu có kẻ địch khác trong bán kính 300 quanh mục tiêu, bắn thêm một mũi vào mỗi kẻ địch, tối đa 4 mục tiêu phụ. CD: 16 giây.", "Bắn 1 mũi tên gây ngủ 4 (4.4) giây lên một mục tiêu. Nếu có kẻ địch khác trong bán kính 300 quanh mục tiêu, bắn thêm một mũi vào mỗi kẻ địch, tối đa 6 mục tiêu phụ. CD: 12 giây." },
 					prices_standard = { "180", "180", "180" },
 					prices_enhanced = { "180", "135", "135" }
 				},
@@ -888,30 +888,30 @@ local M = {
 		},
 		["tower_silver"] = {
 			doc_id = "",
-			title = "黄金长弓",
+			title = "Cung dài vàng",
 			attack = {
-				standard = "远距离(325-最大范围)每1.5秒射出一支箭并有6%几率暴击，近距离(325内)每0.7秒射出一支箭并有1%几率暴击，物理伤害。近距离射击为远距离射击伤害的33%。",
-				enhanced = "远距离(400-最大范围)每1.5秒射出一支箭并有6%几率暴击，近距离(400内)每0.7秒射出一支箭并有1%几率暴击，物理伤害。近距离射击为远距离射击伤害的45%。"
+				standard = "Ở khoảng cách xa (325 đến tầm tối đa), bắn mỗi 1.5 giây và có 6% cơ hội chí mạng. Ở gần (trong 325), bắn mỗi 0.7 giây và có 1% cơ hội chí mạng. Gây sát thương vật lý; sát thương bắn gần bằng 33% bắn xa.",
+				enhanced = "Ở khoảng cách xa (400 đến tầm tối đa), bắn mỗi 1.5 giây và có 6% cơ hội chí mạng. Ở gần (trong 400), bắn mỗi 0.7 giây và có 1% cơ hội chí mạng. Gây sát thương vật lý; sát thương bắn gần bằng 45% bắn xa."
 			},
-			change_note = "解说：输出箭塔，继承了3级箭塔无甲杀手的特性和数值，同时维持了大怪杀手的特性。3级箭打无甲强力还有一个原因是流血伤害是向上取整，打无甲必定造成12点伤害意味着流血向上取2，只要打无甲触发一次流血就能造成46点伤害。加强后的金弓更需要吃有近距离输出的环境，因为远距和近距的输出能力已经基本被拉平，而远距射击的命中率较低。",
+			change_note = "Nhận xét: Kế thừa chỉ số và khả năng diệt mục tiêu không giáp của tháp cung cấp 3, đồng thời giữ vai trò săn quái lớn. Tháp cung cấp 3 mạnh với mục tiêu không giáp vì sát thương chảy máu làm tròn lên: đòn đánh gây 12 sát thương thì chảy máu làm tròn thành 2, chỉ cần kích hoạt một lần đã gây 46 sát thương. Sau tăng cường, tháp cần vị trí bắn gần hơn vì sát thương gần và xa gần tương đương, trong khi bắn xa dễ trượt hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "血色审判",
-					standard = "每次远距射击3(3.3)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。",
-					enhanced = "每次远距射击3.63(4)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。金弓每次瞄准最高血量>=1200或中大体型的敌人时，会以2倍攻击力进攻，并无视该敌人40点护甲。",
-					levels_standard = { "每次远距射击3(3.3)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。", "每次远距射击6(6.6)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。", "每次远距射击9(9.9)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。" },
-					levels_enhanced = { "每次远距射击3.63(4)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。瞄准最高血量>=1200或中大体型的敌人时会造成2倍伤害，并无视该敌人40点护甲。", "每次远距射击7.26(8)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。瞄准最高血量>=1200或中大体型的敌人时会造成3倍伤害，并无视该敌人40点护甲。", "每次远距射击10.89(12)%秒杀目标敌人；近距射击的秒杀概率为远距的一半。瞄准最高血量>=1200或中大体型的敌人时会造成4倍伤害，并无视该敌人40点护甲。" },
+					name = "Phán quyết đẫm máu",
+					standard = "Bắn xa có 3 (3.3)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó.",
+					enhanced = "Bắn xa có 3.63 (4)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó. Khi nhắm kẻ địch có máu tối đa >= 1200 hoặc kích thước vừa/lớn, dùng sức tấn công gấp 2 lần và bỏ qua 40 giáp của mục tiêu.",
+					levels_standard = { "Bắn xa có 3 (3.3)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó.", "Bắn xa có 6 (6.6)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó.", "Bắn xa có 9 (9.9)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó." },
+					levels_enhanced = { "Bắn xa có 3.63 (4)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó. Khi nhắm kẻ địch có máu tối đa >= 1200 hoặc kích thước vừa/lớn, gây sát thương gấp 2 lần và bỏ qua 40 giáp.", "Bắn xa có 7.26 (8)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó. Khi nhắm kẻ địch có máu tối đa >= 1200 hoặc kích thước vừa/lớn, gây sát thương gấp 3 lần và bỏ qua 40 giáp.", "Bắn xa có 10.89 (12)% cơ hội tiêu diệt ngay; bắn gần có một nửa cơ hội đó. Khi nhắm kẻ địch có máu tối đa >= 1200 hoặc kích thước vừa/lớn, gây sát thương gấp 4 lần và bỏ qua 40 giáp." },
 					prices_standard = { "300", "300", "300" },
 					prices_enhanced = { "300", "300", "300" }
 				},
 				{
-					name = "猎人印记",
-					standard = "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的200%(220%)，持续5秒。\n不能对boss释放。CD12秒",
-					enhanced = "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的250%(275%)，持续5秒。\n可以对boss释放。CD12秒",
-					levels_standard = { "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的200%(220%)，持续5秒。\n不能对boss释放。CD12秒", "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的200%(220%)，持续10秒。\n不能对boss释放。CD12秒", "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的200%(220%)，持续15秒。\n不能对boss释放。CD12秒" },
-					levels_enhanced = { "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的250%(275%)，持续5秒。\n可以对boss释放。CD12秒", "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的250%(275%)，持续10秒。\n可以对boss释放。CD12秒", "给敌人附加一个标记并附加易伤debuff，令敌人受到伤害变为原来的250%(275%)，持续15秒。\n可以对boss释放。CD12秒" },
+					name = "Dấu ấn thợ săn",
+					standard = "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 200% (220%) ban đầu trong 5 giây.\nKhông dùng được lên trùm. CD: 12 giây.",
+					enhanced = "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 250% (275%) ban đầu trong 5 giây.\nDùng được lên trùm. CD: 12 giây.",
+					levels_standard = { "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 200% (220%) ban đầu trong 5 giây.\nKhông dùng được lên trùm. CD: 12 giây.", "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 200% (220%) ban đầu trong 10 giây.\nKhông dùng được lên trùm. CD: 12 giây.", "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 200% (220%) ban đầu trong 15 giây.\nKhông dùng được lên trùm. CD: 12 giây." },
+					levels_enhanced = { "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 250% (275%) ban đầu trong 5 giây.\nDùng được lên trùm. CD: 12 giây.", "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 250% (275%) ban đầu trong 10 giây.\nDùng được lên trùm. CD: 12 giây.", "Đánh dấu mục tiêu, khiến sát thương nó nhận thành 250% (275%) ban đầu trong 15 giây.\nDùng được lên trùm. CD: 12 giây." },
 					prices_standard = { "225", "225", "225" },
 					prices_enhanced = { "225", "150", "150" }
 				},
@@ -919,39 +919,39 @@ local M = {
 		},
 		["tower_blade"] = {
 			doc_id = "",
-			title = "咏剑士殿堂",
+			title = "Đại sảnh kiếm vũ",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "解说：机制扛伤能力已经足够。原版2技能明面上是一个加输出的技能，但是红兵近战拦截的时间一般远小于发动1技能或3技能的时间。所以加强时考虑将2技能和1/3技能绑定。",
+			change_note = "Nhận xét: Cơ chế chống chịu đã đủ mạnh. Kỹ năng 2 bản gốc tăng sát thương trên lý thuyết, nhưng thời gian chặn cận chiến thường ngắn hơn nhiều so với thời gian tung kỹ năng 1 hoặc 3. Vì vậy, bản tăng cường liên kết kỹ năng 2 với 1/3.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "完美闪避",
-					standard = "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有10%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有19%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成4点真伤。",
-					enhanced = "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有12.5%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有23.5%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成4点(2技能+6)真伤。",
-					levels_standard = { "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有10%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有19%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成3点真伤。", "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有20%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有36%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成3点真伤。", "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有30%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有51%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成3点真伤。" },
-					levels_enhanced = { "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有12.5%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有23.5%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成4点(2技能+6)真伤。", "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有25%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有43.7%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成4点(2技能+6)真伤。", "受到除了灼烧中毒、远程炮伤、远程真伤等debuff之外的伤害时，有37.5%免疫本次伤害并进入2秒无敌状态(若本次伤害为近战物理或者魔法伤害，则有61%的概率)，同时发动旋转打击，每1/6秒对周围100范围内敌人造成4点(2技能+6)真伤。" },
+					name = "Né đòn hoàn hảo",
+					standard = "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 10% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 19%. Đồng thời tung đòn xoay, gây 4 sát thương chuẩn trong bán kính 100 mỗi 1/6 giây.",
+					enhanced = "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 12.5% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 23.5%. Đồng thời tung đòn xoay, gây 4 sát thương chuẩn (kỹ năng 2 + 6) trong bán kính 100 mỗi 1/6 giây.",
+					levels_standard = { "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 10% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 19%. Đồng thời tung đòn xoay, gây 3 sát thương chuẩn trong bán kính 100 mỗi 1/6 giây.", "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 20% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 36%. Đồng thời tung đòn xoay, gây 3 sát thương chuẩn trong bán kính 100 mỗi 1/6 giây.", "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 30% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 51%. Đồng thời tung đòn xoay, gây 3 sát thương chuẩn trong bán kính 100 mỗi 1/6 giây." },
+					levels_enhanced = { "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 12.5% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 23.5%. Đồng thời tung đòn xoay, gây 4 sát thương chuẩn (kỹ năng 2 + 6) trong bán kính 100 mỗi 1/6 giây.", "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 25% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 43.7%. Đồng thời tung đòn xoay, gây 4 sát thương chuẩn (kỹ năng 2 + 6) trong bán kính 100 mỗi 1/6 giây.", "Khi nhận sát thương, trừ cháy, độc, pháo tầm xa, sát thương chuẩn tầm xa và các hiệu ứng tương tự, có 37.5% cơ hội miễn nhiễm đòn đó và bất tử 2 giây; nếu là sát thương vật lý hoặc phép cận chiến, cơ hội là 61%. Đồng thời tung đòn xoay, gây 4 sát thương chuẩn (kỹ năng 2 + 6) trong bán kính 100 mỗi 1/6 giây." },
 					prices_standard = { "175", "175", "175" },
 					prices_enhanced = { "50", "200", "200" }
 				},
 				{
-					name = "利刃大师",
-					standard = "提升咏剑士5点攻击伤害、20%攻速。",
-					enhanced = "提升咏剑士5点攻击伤害、20%攻速、3点完美闪避伤害和30点幻影突袭伤害。",
-					levels_standard = { "提升咏剑士5点攻击伤害、20%攻速。" },
-					levels_enhanced = { "提升咏剑士5点攻击伤害、20%攻速、6点完美闪避伤害和50点幻影突袭伤害。" },
+					name = "Bậc thầy kiếm thuật",
+					standard = "Tăng 5 sát thương đòn đánh và 20% tốc độ đánh cho kiếm vũ sĩ.",
+					enhanced = "Tăng 5 sát thương đòn đánh, 20% tốc độ đánh, 3 sát thương Né đòn hoàn hảo và 30 sát thương Đột kích ảo ảnh.",
+					levels_standard = { "Tăng 5 sát thương đòn đánh và 20% tốc độ đánh cho kiếm vũ sĩ." },
+					levels_enhanced = { "Tăng 5 sát thương đòn đánh, 20% tốc độ đánh, 6 sát thương Né đòn hoàn hảo và 50 sát thương Đột kích ảo ảnh." },
 					prices_standard = { "300" },
 					prices_enhanced = { "300" }
 				},
 				{
-					name = "幻影突袭",
-					standard = "每个咏剑士闪现到附近250范围内的地面敌人面前发动2次攻击，每次对单个敌人造成20-35点真伤并定身目标1秒，CD10",
-					enhanced = "每个咏剑士闪现到附近250范围内的地面/空中敌人面前发动2次攻击，每次对单个敌人造成20-50点(2技能+50)真伤并定身目标1秒，CD10",
-					levels_standard = { "每个咏剑士闪现到附近250范围内的地面敌人面前发动2次攻击，每次对单个敌人造成20-35点真伤并定身目标1秒，CD10", "每个咏剑士闪现到附近250范围内的地面敌人面前发动3次攻击，每次对单个敌人造成35-47点真伤并定身目标1秒，CD10", "每个咏剑士闪现到附近250范围内的地面敌人面前发动4次攻击，每次对单个敌人造成40-56点真伤并定身目标1秒，CD10" },
-					levels_enhanced = { "每个咏剑士闪现到附近250范围内的地面/空中敌人面前发动2次攻击，每次对单个敌人造成20-50点(2技能+50)真伤并定身目标1秒，CD10", "每个咏剑士闪现到附近250范围内的地面/空中敌人面前发动3次攻击，每次对单个敌人造成35-75点(2技能+50)真伤并定身目标1秒，CD10", "每个咏剑士闪现到附近250范围内的地面/空中敌人面前发动4次攻击，每次对单个敌人造成50-100点(2技能+50)真伤并定身目标1秒，CD10" },
+					name = "Đột kích ảo ảnh",
+					standard = "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất trong bán kính 250, đánh 2 lần. Mỗi lần gây 20-35 sát thương chuẩn lên một mục tiêu và giữ chân 1 giây. CD: 10 giây.",
+					enhanced = "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất hoặc trên không trong bán kính 250, đánh 2 lần. Mỗi lần gây 20-50 sát thương chuẩn (kỹ năng 2 + 50) và giữ chân 1 giây. CD: 10 giây.",
+					levels_standard = { "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất trong bán kính 250, đánh 2 lần. Mỗi lần gây 20-35 sát thương chuẩn lên một mục tiêu và giữ chân 1 giây. CD: 10 giây.", "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất trong bán kính 250, đánh 3 lần. Mỗi lần gây 35-47 sát thương chuẩn lên một mục tiêu và giữ chân 1 giây. CD: 10 giây.", "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất trong bán kính 250, đánh 4 lần. Mỗi lần gây 40-56 sát thương chuẩn lên một mục tiêu và giữ chân 1 giây. CD: 10 giây." },
+					levels_enhanced = { "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất hoặc trên không trong bán kính 250, đánh 2 lần. Mỗi lần gây 20-50 sát thương chuẩn (kỹ năng 2 + 50) và giữ chân 1 giây. CD: 10 giây.", "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất hoặc trên không trong bán kính 250, đánh 3 lần. Mỗi lần gây 35-75 sát thương chuẩn (kỹ năng 2 + 50) và giữ chân 1 giây. CD: 10 giây.", "Mỗi kiếm vũ sĩ dịch chuyển đến trước kẻ địch mặt đất hoặc trên không trong bán kính 250, đánh 4 lần. Mỗi lần gây 50-100 sát thương chuẩn (kỹ năng 2 + 50) và giữ chân 1 giây. CD: 10 giây." },
 					prices_standard = { "250", "250", "250" },
 					prices_enhanced = { "250", "250", "250" }
 				},
@@ -959,39 +959,39 @@ local M = {
 		},
 		["tower_forest"] = {
 			doc_id = "",
-			title = "森林守卫",
+			title = "Vệ binh rừng",
 			attack = {
-				standard = "2人兵营。近战攻击，物理伤害；350范围内有怪物则进行远程攻击",
-				enhanced = "3人兵营。近战攻击，物理伤害；350范围内有怪物则进行远程攻击"
+				standard = "Doanh trại có 2 lính. Đánh cận chiến gây sát thương vật lý; đánh xa khi có kẻ địch trong phạm vi 350.",
+				enhanced = "Doanh trại có 3 lính. Đánh cận chiến gây sát thương vật lý; đánh xa khi có kẻ địch trong phạm vi 350."
 			},
-			change_note = "解说：改为3人兵营。解决原版2人兵营投矛过于笨重的问题。1技能的2/3级和几乎没伤害的2技能不值这么高的价格。",
+			change_note = "Nhận xét: Chuyển thành doanh trại 3 lính, khắc phục việc ném giáo quá chậm của doanh trại 2 lính bản gốc. Kỹ năng 1 cấp 2/3 và kỹ năng 2 gần như không gây sát thương chưa xứng đáng với giá cao.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "生命之环",
-					standard = "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军4点生命值同时清除身上的伤害类debuff，4秒总共治疗80点生命值，光环存在期间免疫所有伤害类debuff CD10秒",
-					enhanced = "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军4点生命值同时清除身上的伤害类debuff，4秒总共治疗80点生命值，光环存在期间免疫所有伤害类debuff CD10秒",
-					levels_standard = { "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军4点生命值同时清除身上的伤害类debuff，4秒总共治疗80点生命值，光环存在期间免疫所有伤害类debuff CD10秒", "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军8点生命值同时清除身上的伤害类debuff，4秒总共治疗160点生命值，光环存在期间免疫所有伤害类debuff CD10秒", "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军12点生命值同时清除身上的伤害类debuff，4秒总共治疗240点生命值，光环存在期间免疫所有伤害类debuff CD10秒" },
-					levels_enhanced = { "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军4点生命值同时清除身上的伤害类debuff，6秒总共治疗120点生命值，光环存在期间免疫所有伤害类debuff CD10秒", "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军8点生命值同时清除身上的伤害类debuff，6秒总共治疗240点生命值，光环存在期间免疫所有伤害类debuff CD10秒", "当森林守卫者生命低于80%时每0.2秒治疗自身和附近200范围内友军12点生命值同时清除身上的伤害类debuff，6秒总共治疗360点生命值，光环存在期间免疫所有伤害类debuff CD10秒" },
+					name = "Vòng đời",
+					standard = "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 4 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 80 máu trong 4 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.",
+					enhanced = "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 4 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 80 máu trong 4 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.",
+					levels_standard = { "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 4 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 80 máu trong 4 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.", "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 8 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 160 máu trong 4 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.", "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 12 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 240 máu trong 4 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây." },
+					levels_enhanced = { "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 4 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 120 máu trong 6 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.", "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 8 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 240 máu trong 6 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây.", "Khi máu dưới 80%, tự hồi và hồi cho đồng đội trong bán kính 200: 12 máu mỗi 0.2 giây, đồng thời xóa hiệu ứng gây sát thương. Tổng cộng hồi 360 máu trong 6 giây. Miễn nhiễm các hiệu ứng gây sát thương khi hào quang tồn tại. CD: 10 giây." },
 					prices_standard = { "185", "185", "185" },
 					prices_enhanced = { "185", "120", "120" }
 				},
 				{
-					name = "诡异园丁",
-					standard = "召唤一片250范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续4秒，每0.167秒对处于藤蔓里的敌人造成3点物伤，CD10秒",
-					enhanced = "召唤一片250范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续4秒，每0.167秒对处于藤蔓里的敌人造成3点物伤，CD10秒",
-					levels_standard = { "召唤一片250范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续4秒，每0.167秒对处于藤蔓里的敌人造成3点物伤，CD10秒", "召唤一片280范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续6秒，每0.167秒对处于藤蔓里的敌人造成4点物伤，CD10秒" },
-					levels_enhanced = { "召唤一片250范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续4秒，每0.167秒对处于藤蔓里的敌人造成3点物伤，CD10秒", "召唤一片280范围的藤蔓，对走入藤蔓的敌人降低50%移速，持续6秒，每0.167秒对处于藤蔓里的敌人造成4点物伤，CD10秒" },
+					name = "Người làm vườn kỳ lạ",
+					standard = "Tạo vùng dây leo bán kính 250, làm chậm kẻ địch 50% trong 4 giây. Gây 3 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây.",
+					enhanced = "Tạo vùng dây leo bán kính 250, làm chậm kẻ địch 50% trong 4 giây. Gây 3 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây.",
+					levels_standard = { "Tạo vùng dây leo bán kính 250, làm chậm kẻ địch 50% trong 4 giây. Gây 3 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây.", "Tạo vùng dây leo bán kính 280, làm chậm kẻ địch 50% trong 6 giây. Gây 4 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây." },
+					levels_enhanced = { "Tạo vùng dây leo bán kính 250, làm chậm kẻ địch 50% trong 4 giây. Gây 3 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây.", "Tạo vùng dây leo bán kính 280, làm chậm kẻ địch 50% trong 6 giây. Gây 4 sát thương vật lý mỗi 0.167 giây cho mục tiêu trong vùng. CD: 10 giây." },
 					prices_standard = { "285", "285" },
 					prices_enhanced = { "135", "105" }
 				},
 				{
-					name = "橡树长矛",
-					standard = "强化森林守卫者的远程攻击伤害，变为90点真伤，射程350。",
-					enhanced = "强化森林守卫者的远程攻击伤害，变为80点真伤，射程350。",
-					levels_standard = { "强化森林守卫者的远程攻击伤害，变为90点真伤，射程350。", "强化森林守卫者的远程攻击伤害，变为125点真伤，射程350。", "强化森林守卫者的远程攻击伤害，变为160点真伤，射程350。" },
-					levels_enhanced = { "强化3位森林守卫者的远程攻击伤害，变为点70真伤，射程350。", "强化3位森林守卫者的远程攻击伤害，变为115点真伤，射程350。", "强化3位森林守卫者的远程攻击伤害，变为160点真伤，射程350。" },
+					name = "Giáo sồi",
+					standard = "Tăng sát thương đánh xa của Vệ binh rừng thành 90 sát thương chuẩn; tầm đánh 350.",
+					enhanced = "Tăng sát thương đánh xa của Vệ binh rừng thành 80 sát thương chuẩn; tầm đánh 350.",
+					levels_standard = { "Tăng sát thương đánh xa của Vệ binh rừng thành 90 sát thương chuẩn; tầm đánh 350.", "Tăng sát thương đánh xa của Vệ binh rừng thành 125 sát thương chuẩn; tầm đánh 350.", "Tăng sát thương đánh xa của Vệ binh rừng thành 160 sát thương chuẩn; tầm đánh 350." },
+					levels_enhanced = { "Tăng sát thương đánh xa của 3 Vệ binh rừng thành 70 sát thương chuẩn; tầm đánh 350.", "Tăng sát thương đánh xa của 3 Vệ binh rừng thành 115 sát thương chuẩn; tầm đánh 350.", "Tăng sát thương đánh xa của 3 Vệ binh rừng thành 160 sát thương chuẩn; tầm đánh 350." },
 					prices_standard = { "250", "250", "250" },
 					prices_enhanced = { "250", "250", "250" }
 				},
@@ -999,30 +999,30 @@ local M = {
 		},
 		["tower_wild_magus"] = {
 			doc_id = "",
-			title = "狂野魔术师",
+			title = "Pháp sư hoang dã",
 			attack = {
-				standard = "在攻击同一个目标时，每攻击1次增加0.5点攻击伤害，最高提升24点",
-				enhanced = "连续攻击同一个目标会累积战意，每层战意会提升1点攻击力，最高叠加36层。切换目标或连续6秒不攻击会失去6层战意。满层战意会激发狂野血脉，永久获得1攻击力，最多获得10点。"
+				standard = "Khi đánh cùng một mục tiêu, cứ 1 đòn tăng 0.5 sát thương; tối đa tăng 24.",
+				enhanced = "Đánh liên tiếp cùng một mục tiêu tích lũy chiến ý. Mỗi tầng tăng 1 sức tấn công, tối đa 36 tầng. Đổi mục tiêu hoặc không đánh trong 6 giây sẽ mất 6 tầng. Đủ tầng kích hoạt huyết mạch hoang dã, tăng vĩnh viễn 1 sức tấn công, tối đa 10."
 			},
-			change_note = "解说：解决频繁转火而导致伤害丢失的问题。",
+			change_note = "Nhận xét: Khắc phục việc mất sát thương do thường xuyên đổi mục tiêu.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "诡异厄运",
-					standard = "引爆一名敌人，并对周围175范围内敌人造成80点法伤，CD28",
-					enhanced = "引爆一名敌人，并对周围175范围内敌人造成144点法伤，CD28",
-					levels_standard = { "引爆一名敌人，并对周围175范围内敌人造成80点法伤，CD28", "引爆一名敌人，并对周围175范围内敌人造成180点法伤，CD24", "引爆一名敌人，并对周围175范围内敌人造成260点法伤，CD20" },
-					levels_enhanced = { "引爆一名敌人，并对周围175范围内敌人造成144点法伤，CD28", "引爆一名敌人，并对周围175范围内敌人造成324点法伤，CD22.5", "引爆一名敌人，并对周围175范围内敌人造成468点法伤，CD17" },
+					name = "Tai ương kỳ dị",
+					standard = "Cho nổ một kẻ địch và gây 80 sát thương phép cho mục tiêu trong bán kính 175. CD: 28 giây.",
+					enhanced = "Cho nổ một kẻ địch và gây 144 sát thương phép cho mục tiêu trong bán kính 175. CD: 28 giây.",
+					levels_standard = { "Cho nổ một kẻ địch và gây 80 sát thương phép cho mục tiêu trong bán kính 175. CD: 28 giây.", "Cho nổ một kẻ địch và gây 180 sát thương phép cho mục tiêu trong bán kính 175. CD: 24 giây.", "Cho nổ một kẻ địch và gây 260 sát thương phép cho mục tiêu trong bán kính 175. CD: 20 giây." },
+					levels_enhanced = { "Cho nổ một kẻ địch và gây 144 sát thương phép cho mục tiêu trong bán kính 175. CD: 28 giây.", "Cho nổ một kẻ địch và gây 324 sát thương phép cho mục tiêu trong bán kính 175. CD: 22.5 giây.", "Cho nổ một kẻ địch và gây 468 sát thương phép cho mục tiêu trong bán kính 175. CD: 17 giây." },
 					prices_standard = { "325", "185", "185" },
 					prices_enhanced = { "325", "185", "185" }
 				},
 				{
-					name = "破坏守卫",
-					standard = "沉默射程内可以使用魔法的1个敌人，持续10秒，CD11秒",
-					enhanced = "沉默射程内可以使用魔法的1个敌人，持续10秒，CD10秒",
-					levels_standard = { "沉默射程内可以使用魔法的1个敌人，持续10秒，CD11秒", "沉默射程内可以使用魔法的3个敌人，持续10秒，CD11秒", "沉默射程内可以使用魔法的6个敌人，持续10秒，CD11秒" },
-					levels_enhanced = { "永久沉默射程内可以使用魔法的1个敌人，CD10秒", "永久沉默射程内可以使用魔法的3个敌人，CD10秒", "永久沉默射程内可以使用魔法的6个敌人，CD10秒" },
+					name = "Ấn phá phép",
+					standard = "Câm lặng 1 kẻ địch có khả năng dùng phép trong tầm suốt 10 giây. CD: 11 giây.",
+					enhanced = "Câm lặng 1 kẻ địch có khả năng dùng phép trong tầm suốt 10 giây. CD: 10 giây.",
+					levels_standard = { "Câm lặng 1 kẻ địch có khả năng dùng phép trong tầm suốt 10 giây. CD: 11 giây.", "Câm lặng 3 kẻ địch có khả năng dùng phép trong tầm suốt 10 giây. CD: 11 giây.", "Câm lặng 6 kẻ địch có khả năng dùng phép trong tầm suốt 10 giây. CD: 11 giây." },
+					levels_enhanced = { "Câm lặng vĩnh viễn 1 kẻ địch có khả năng dùng phép trong tầm. CD: 10 giây.", "Câm lặng vĩnh viễn 3 kẻ địch có khả năng dùng phép trong tầm. CD: 10 giây.", "Câm lặng vĩnh viễn 6 kẻ địch có khả năng dùng phép trong tầm. CD: 10 giây." },
 					prices_standard = { "225", "225", "225" },
 					prices_enhanced = { "275", "200", "200" }
 				},
@@ -1030,30 +1030,30 @@ local M = {
 		},
 		["tower_high_elven"] = {
 			doc_id = "",
-			title = "高等精灵法师",
+			title = "Pháp sư tinh linh cao cấp",
 			attack = {
-				standard = "每1.5秒发射1个大球和2个小球攻击敌人，大球造成31-54(36-63)点魔法伤害，小球造成5-10点魔法伤害。\n若范围内有超过2个敌人会分开索敌。",
-				enhanced = "每1.5秒发射1个大球和2个小球攻击敌人，大球造成31-54(36-63)点魔法伤害，小球造成21-42点魔法伤害。\n若范围内有超过2个敌人会分开索敌。"
+				standard = "Mỗi 1.5 giây bắn 1 cầu lớn và 2 cầu nhỏ. Cầu lớn gây 31-54 (36-63) sát thương phép; cầu nhỏ gây 5-10.\nNếu có hơn 2 kẻ địch trong tầm, các cầu sẽ chọn mục tiêu riêng.",
+				enhanced = "Mỗi 1.5 giây bắn 1 cầu lớn và 2 cầu nhỏ. Cầu lớn gây 31-54 (36-63) sát thương phép; cầu nhỏ gây 21-42.\nNếu có hơn 2 kẻ địch trong tầm, các cầu sẽ chọn mục tiêu riêng."
 			},
-			change_note = "解说：原版3代法师塔的面板存在严重问题，分叉攻击在数值上必须超模而3代法塔反而是亏的。对比同代，3代真伤、混伤遍地走，导致专注法术输出的法师的定位尴尬；而对比跨代，高冷作为4级法塔，有4级法塔的价格，但只有1/2/4/5代3级法塔的面板。综上，3代的法师数值需要推倒性重做。",
-			port_note = "有关奥术哨卫：实测发现每0.75秒才能打一次，代码也明确了0.5的间隔外有0.25秒的索敌时长。原版完整的充电-一轮攻击测试下来时长在12-13秒左右。\n有关科技：原版只有大球吃法师+15%伤害的科技，小球是不吃的。",
+			change_note = "Nhận xét: Chỉ số tháp phép phần 3 bản gốc có vấn đề. Đòn đánh chia mục tiêu cần tổng chỉ số cao hơn chuẩn, nhưng tháp phép phần 3 lại thấp hơn. Trong phần 3 có nhiều nguồn sát thương chuẩn và hỗn hợp, khiến tháp thuần phép khó nổi bật. Xét xuyên các phần, tháp tinh linh là cấp 4, giá cấp 4 nhưng chỉ số chỉ tương đương tháp cấp 3 của phần 1/2/4/5. Vì vậy cần làm lại toàn diện chỉ số tháp phép phần 3.",
+			port_note = "Về Vệ tinh bí thuật: Thử nghiệm cho thấy mỗi 0.75 giây mới đánh một lần; mã nguồn có 0.25 giây tìm mục tiêu ngoài khoảng đánh 0.5. Chu kỳ nạp và đánh đầy đủ của bản gốc mất khoảng 12-13 giây.\nVề nâng cấp: Bản gốc chỉ cầu lớn nhận nâng cấp tăng 15% sát thương pháp sư; cầu nhỏ không nhận.",
 			notes = "",
 			skills = {
 				{
-					name = "时空禁锢",
-					standard = "每16秒禁锢射程内最多2名敌人5秒，并对他们造成100点法伤。",
-					enhanced = "生成一个360范围的力场，力场具有以下效果：lv1:吸收所有敌方的投射物。lv2:将触碰力场的投射物反弹给随机敌人。lv3:将触碰力场的投射物以3倍伤害反弹给随机敌人",
-					levels_standard = { "每16秒禁锢射程内最多2名敌人5秒，并对他们造成100点法伤。", "每16秒禁锢射程内最多3名敌人5秒，并对他们造成135点法伤。", "每16秒禁锢射程内最多4名敌人5秒，并对他们造成150点法伤。" },
-					levels_enhanced = { "生成一个360范围的力场，所有敌方的投射物触碰到立场后都会被吸收。", "生成一个360范围的力场，将触碰力场的投射物反弹给随机敌人。", "生成一个360范围的力场，将触碰力场的投射物以3倍伤害反弹给随机敌人。" },
+					name = "Giam cầm không gian",
+					standard = "Mỗi 16 giây, giam tối đa 2 kẻ địch trong tầm suốt 5 giây và gây 100 sát thương phép.",
+					enhanced = "Tạo trường lực bán kính 360. Cấp 1: hấp thụ mọi đạn của địch. Cấp 2: phản đạn chạm trường lực về kẻ địch ngẫu nhiên. Cấp 3: phản đạn với sát thương gấp 3 lần.",
+					levels_standard = { "Mỗi 16 giây, giam tối đa 2 kẻ địch trong tầm suốt 5 giây và gây 100 sát thương phép.", "Mỗi 16 giây, giam tối đa 3 kẻ địch trong tầm suốt 5 giây và gây 135 sát thương phép.", "Mỗi 16 giây, giam tối đa 4 kẻ địch trong tầm suốt 5 giây và gây 150 sát thương phép." },
+					levels_enhanced = { "Tạo trường lực bán kính 360, hấp thụ mọi đạn của địch chạm vào.", "Tạo trường lực bán kính 360, phản đạn chạm vào về kẻ địch ngẫu nhiên.", "Tạo trường lực bán kính 360, phản đạn chạm vào về kẻ địch ngẫu nhiên với sát thương gấp 3 lần." },
 					prices_standard = { "225", "225", "225" },
 					prices_enhanced = { "400", "240", "240" }
 				},
 				{
-					name = "奥术哨卫",
-					standard = "召唤1名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成16-32点法伤，攻速0.5秒，索敌时间0.25秒，攻击10次后回到法师旁边充能5秒。哨兵的寻敌射程600",
-					enhanced = "召唤1名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成22-44点法伤，攻速0.5秒，索敌时间0.25秒，攻击20次后回到法师旁边充能5秒。哨兵的寻敌射程600",
-					levels_standard = { "召唤1名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成16-32点法伤，攻速0.5秒，索敌时间0.25秒，攻击10次后回到法师旁边充能5秒。哨兵的寻敌射程600", "召唤2名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成16-32点法伤，攻速0.5秒，索敌时间0.25秒，攻击10次后回到法师旁边充能5秒。哨兵的寻敌射程600" },
-					levels_enhanced = { "召唤1名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成22-44点法伤，攻速0.5秒，索敌时间0.25秒，攻击20次后回到法师旁边充能5秒。哨兵的寻敌射程600", "召唤2名奥术哨卫，在远处寻找并攻击敌人，每次攻击造成22-44点法伤，攻速0.5秒，索敌时间0.25秒，攻击20次后回到法师旁边充能5秒。哨兵的寻敌射程600" },
+					name = "Vệ tinh bí thuật",
+					standard = "Triệu hồi 1 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 16-32 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 10 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600.",
+					enhanced = "Triệu hồi 1 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 22-44 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 20 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600.",
+					levels_standard = { "Triệu hồi 1 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 16-32 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 10 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600.", "Triệu hồi 2 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 16-32 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 10 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600." },
+					levels_enhanced = { "Triệu hồi 1 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 22-44 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 20 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600.", "Triệu hồi 2 vệ tinh tìm và đánh kẻ địch từ xa. Mỗi đòn gây 22-44 sát thương phép; khoảng đánh 0.5 giây, thời gian tìm mục tiêu 0.25 giây. Sau 20 đòn, trở về tháp nạp 5 giây. Tầm tìm mục tiêu 600." },
 					prices_standard = { "300", "300" },
 					prices_enhanced = { "300", "300" }
 				},
@@ -1061,30 +1061,30 @@ local M = {
 		},
 		["tower_druid"] = {
 			doc_id = "",
-			title = "大德鲁伊巨石阵",
+			title = "Vòng đá đại Druid",
 			attack = {
-				standard = "每1.7秒扔出一颗石头，造成100(110)范围炮伤(真伤)。范围内无敌人时会存储石头，最多存储3颗。",
-				enhanced = "每1.7秒扔出一颗石头，造成113(125)范围炮伤(真伤)。范围内无敌人时会存储石头，最多存储3颗。"
+				standard = "Ném đá mỗi 1.7 giây, gây sát thương pháo (chuẩn) trong bán kính 100 (110). Khi không có kẻ địch, tích trữ tối đa 3 viên.",
+				enhanced = "Ném đá mỗi 1.7 giây, gây sát thương pháo (chuẩn) trong bán kính 113 (125). Khi không có kẻ địch, tích trữ tối đa 3 viên."
 			},
-			change_note = "解说：3代炮塔的攻击面板也存在较大问题。不能因为是真伤而大幅度削减本应有的攻击力，作者怀疑是1/2代出了几个炮塔超模怪而导致铁皮矫枉过正。但因为是真伤且大德鲁伊攻速占模，其面板在重做后仍需要低于前代炮塔。1技能只有在锁大怪的情况下才能发挥出真实能力，但因为存在双诅咒的操作，这个技能不能被减价且不能在其他地方被加强。2技能需要把熊调整到值350元这个价的水平。",
+			change_note = "Nhận xét: Chỉ số tháp pháo phần 3 cũng có vấn đề. Không nên giảm quá mạnh sức tấn công chỉ vì gây sát thương chuẩn; tác giả cho rằng Ironhide đã điều chỉnh quá tay sau vài tháp pháo quá mạnh của phần 1/2. Tuy nhiên, vì sát thương chuẩn và tốc độ đánh đã chiếm phần lớn sức mạnh, chỉ số sau làm lại vẫn cần thấp hơn pháo các phần trước. Kỹ năng 1 chỉ mạnh khi khóa quái lớn; do có cách thao tác dùng hai lời nguyền, không thể giảm giá hoặc tăng thêm ở chỗ khác. Kỹ năng 2 cần điều chỉnh gấu cho xứng với giá 350 vàng.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "森林诅咒",
-					standard = "诅咒一名范围内的敌人5秒，使其受到伤害的35%以真伤形式传导给附近200范围的敌人。CD15",
-					enhanced = "诅咒一名范围内剩余血量最多的敌人10秒，使其受到伤害的35%以真伤形式传导给附近200范围的敌人。CD15",
-					levels_standard = { "诅咒一名范围内的敌人5秒，使其受到伤害的35%以真伤形式传导给附近200范围的敌人。CD15", "诅咒一名范围内的敌人5秒，使其受到伤害的70%以真伤形式传导给附近200范围的敌人。CD15", "诅咒一名范围内的敌人5秒，使其受到伤害的100%以真伤形式传导给附近200范围的敌人。CD15" },
-					levels_enhanced = { "诅咒一名范围内剩余血量最多的敌人15秒，使其受到伤害的35%以真伤形式传导给附近200范围的敌人。CD15", "诅咒一名范围内剩余血量最多的敌人15秒，使其受到伤害的70%以真伤形式传导给附近200范围的敌人。CD15", "诅咒一名范围内剩余血量最多的敌人15秒，使其受到伤害的100%以真伤形式传导给附近200范围的敌人。CD15" },
+					name = "Lời nguyền rừng",
+					standard = "Nguyền rủa một kẻ địch trong tầm suốt 5 giây. 35% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.",
+					enhanced = "Nguyền rủa kẻ địch còn nhiều máu nhất trong tầm suốt 10 giây. 35% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.",
+					levels_standard = { "Nguyền rủa một kẻ địch trong tầm suốt 5 giây. 35% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.", "Nguyền rủa một kẻ địch trong tầm suốt 5 giây. 70% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.", "Nguyền rủa một kẻ địch trong tầm suốt 5 giây. 100% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây." },
+					levels_enhanced = { "Nguyền rủa kẻ địch còn nhiều máu nhất trong tầm suốt 15 giây. 35% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.", "Nguyền rủa kẻ địch còn nhiều máu nhất trong tầm suốt 15 giây. 70% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây.", "Nguyền rủa kẻ địch còn nhiều máu nhất trong tầm suốt 15 giây. 100% sát thương nó nhận lan thành sát thương chuẩn đến kẻ địch trong bán kính 200. CD: 15 giây." },
 					prices_standard = { "250", "250", "250" },
 					prices_enhanced = { "250", "250", "250" }
 				},
 				{
-					name = "符文战熊",
-					standard = "召唤1只符文战熊参战，阻挡并攻击附近敌人。熊生命值250，护甲20，攻击力20-40，重生时间20，脱战回血25。",
-					enhanced = "召唤1只符文战熊参战，阻挡并攻击附近敌人。熊生命值700，护甲20，攻击力20-40，重生时间10，脱战回血35。",
-					levels_standard = { "召唤1只符文战熊参战，阻挡并攻击附近敌人。熊生命值250，护甲20，攻击力20-40，重生时间20，脱战回血25。", "召唤2只符文战熊参战，阻挡并攻击附近敌人。熊生命值250，护甲20，攻击力1.0，重生时间20，脱战回血25。" },
-					levels_enhanced = { "召唤1只符文战熊参战，阻挡并攻击附近敌人。熊生命值700，护甲20，攻击力20-40，重生时间10，脱战回血35。", "召唤2只符文战熊参战，阻挡并攻击附近敌人。熊生命值700，护甲20，攻击力1.0，重生时间10，脱战回血35。" },
+					name = "Gấu chiến cổ ngữ",
+					standard = "Triệu hồi 1 gấu chặn và đánh kẻ địch. Máu 250; giáp 20; sức tấn công 20-40; hồi sinh 20; hồi máu ngoài giao tranh 25.",
+					enhanced = "Triệu hồi 1 gấu chặn và đánh kẻ địch. Máu 700; giáp 20; sức tấn công 20-40; hồi sinh 10; hồi máu ngoài giao tranh 35.",
+					levels_standard = { "Triệu hồi 1 gấu chặn và đánh kẻ địch. Máu 250; giáp 20; sức tấn công 20-40; hồi sinh 20; hồi máu ngoài giao tranh 25.", "Triệu hồi 2 gấu chặn và đánh kẻ địch. Máu 250; giáp 20; sức tấn công 1.0; hồi sinh 20; hồi máu ngoài giao tranh 25." },
+					levels_enhanced = { "Triệu hồi 1 gấu chặn và đánh kẻ địch. Máu 700; giáp 20; sức tấn công 20-40; hồi sinh 10; hồi máu ngoài giao tranh 35.", "Triệu hồi 2 gấu chặn và đánh kẻ địch. Máu 700; giáp 20; sức tấn công 1.0; hồi sinh 10; hồi máu ngoài giao tranh 35." },
 					prices_standard = { "350", "350" },
 					prices_enhanced = { "350", "350" }
 				},
@@ -1092,30 +1092,30 @@ local M = {
 		},
 		["tower_entwood"] = {
 			doc_id = "",
-			title = "怪异树木",
+			title = "Thụ nhân kỳ dị",
 			attack = {
-				standard = "每3.5秒扔出一个坚果攻击敌人，对110(121)范围的敌人造成炮弹(真实)伤害。",
-				enhanced = "每3.5秒扔出一个坚果攻击敌人，对128(141)范围的敌人造成炮弹(真实)伤害。"
+				standard = "Ném hạt mỗi 3.5 giây, gây sát thương pháo (chuẩn) trong bán kính 110 (121).",
+				enhanced = "Ném hạt mỗi 3.5 giây, gây sát thương pháo (chuẩn) trong bán kính 128 (141)."
 			},
-			change_note = "解说：沈梦溪。",
+			change_note = "Nhận xét: Gợi nhắc nhân vật Thẩm Mộng Khê.",
 			port_note = "",
-			notes = "4代防御塔\n4代所有防御塔默认满科技，不需要点科技树。\n1、4代所有和防御塔有关的科技说明：\n(1)所有我方士兵血量+30%；\n(2)所有我方单位攻击力+10%；\n(3)火骑、飞艇、沉船的炸弹爆炸范围+20%；爆炸伤害计算机制采用前3代的计算和爆炸中心的距离，而不是4代的爆炸范围内取随机数。\n(4)黑弓、回旋镖、骨头、少林寺、沼巨箭塔形态的攻击范围+5%\n(5)所有防御塔的技能价格-15%，下整；\n(6)法师塔的暴击科技转化为提升10%面板攻击力，总共提升21%攻击力；\n2、和原版的不同之处\n(1)4代防御塔普遍偏小，对所有不可调集防御塔范围进行以450为基准的调整(调整幅度：箭法>普通炮>全范围炮)，对所有可调集防御塔的调集范围+10%。\n※如果希望玩到原版范围，可以关闭防御塔选择界面的4代范围设置的开关。这样所有4代防御塔均为原版(科技加成后)的范围。\n(2)法师塔的暴击科技转化为提升10%面板攻击力，总共提升21%攻击力；\n(3)4代引擎不同，需从0开始写代码，作者精力做不到完全复刻。每个塔后面列举了复刻机制和原版的不同之处。\n3、其他科技\n英雄科技：全部移植。\n援军科技：没有移植。使用1代援军代替。\n天灾科技：没有移植。使用1代天灾代替。",
+			notes = "Tháp phần 4\nTất cả tháp phần 4 mặc định có đủ nâng cấp, không cần mua trong cây nâng cấp.\nNâng cấp liên quan đến tháp phần 1 và 4:\n(1) Máu tất cả lính đồng minh +30%.\n(2) Sức tấn công tất cả đơn vị đồng minh +10%.\n(3) Bán kính nổ của tên lửa, khí cầu và tàu đắm +20%. Sát thương nổ tính theo khoảng cách đến tâm như 3 phần trước, thay vì lấy ngẫu nhiên trong vùng nổ như phần 4.\n(4) Tầm đánh của Cung thủ bóng tối, Boomerang, Lính ném xương, Thiếu Lâm Tự và dạng tháp cung của Quái vật đầm lầy +5%.\n(5) Giá kỹ năng của mọi tháp -15%, làm tròn xuống.\n(6) Nâng cấp chí mạng pháp sư đổi thành +10% sức tấn công hiển thị, tổng cộng +21%.\n2. Khác biệt với bản gốc\n(1) Tầm tháp phần 4 thường nhỏ: tháp không tập kết được điều chỉnh theo chuẩn 450 (tháp cung/phép > pháo thường > pháo toàn vùng); phạm vi tập kết của tháp có thể di chuyển +10%.\n※ Muốn dùng tầm gốc, tắt tùy chọn tầm phần 4 ở trang chọn tháp. Khi đó mọi tháp phần 4 dùng tầm gốc đã cộng nâng cấp.\n(2) Nâng cấp chí mạng pháp sư đổi thành +10% sức tấn công hiển thị, tổng cộng +21%.\n(3) Phần 4 dùng engine khác, phải viết lại từ 0; tác giả không thể tái hiện mọi cơ chế. Khác biệt của từng tháp được ghi trong mô tả.\n3. Nâng cấp khác\nAnh hùng: đã chuyển đầy đủ.\nViện quân: chưa chuyển, dùng viện quân phần 1.\nPhép tấn công: chưa chuyển, dùng phép phần 1.",
 			skills = {
 				{
-					name = "火焰坚果",
-					standard = "扔出一枚燃烧的坚果，对范围内敌人造成135点炮伤，并在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒造成1点真伤，爆炸范围130，火坑范围130。CD25.5",
-					enhanced = "扔出一枚燃烧的大坚果，对160范围内敌人造成120点真伤并分裂成3个燃烧的小坚果砸向敌人，每个小坚果能造成40点真实伤害。大小坚果爆炸后都能在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒造成1点真伤。CD16",
-					levels_standard = { "扔出一枚燃烧的坚果，对范围内敌人造成135点炮伤，并在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒造成1点真伤，爆炸范围130，火坑范围130。CD25.5", "扔出一枚燃烧的坚果，对范围内敌人造成270点炮伤，并在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒造成2点真伤，爆炸范围130，火坑范围130。CD25.5", "扔出一枚燃烧的坚果，对范围内敌人造成405点炮伤，并在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒造成3点真伤，爆炸范围130，火坑范围130。CD25.5" },
-					levels_enhanced = { "扔出一枚燃烧的大坚果，对160范围内敌人造成111点真伤并分裂成3个燃烧的小坚果砸向敌人，每个小坚果能造成44点真伤。大小坚果爆炸后都能在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒受到1点真伤。CD16", "扔出一枚燃烧的大坚果，对160范围内敌人造成222点真伤并分裂成4个燃烧的小坚果砸向敌人，每个小坚果能造成66点真伤。大小坚果爆炸后都能在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒受到2点真伤。CD16", "扔出一枚燃烧的大坚果，对160范围内敌人造成333点真伤并分裂成5个燃烧的小坚果砸向敌人，每个小坚果能造成88点真伤。大小坚果爆炸后都能在地上留下一个持续5秒的火炕，走过火坑的敌人会被点燃6秒，每0.1秒受到3点真伤。CD16" },
+					name = "Hạt cháy",
+					standard = "Ném hạt đang cháy gây 135 sát thương pháo, bán kính nổ 130. Để lại vùng lửa bán kính 130 tồn tại 5 giây. Kẻ địch đi qua bị cháy 6 giây, chịu 1 sát thương chuẩn mỗi 0.1 giây. CD: 25.5 giây.",
+					enhanced = "Ném hạt lớn đang cháy gây 120 sát thương chuẩn trong bán kính 160, rồi tách thành 3 hạt nhỏ, mỗi hạt gây 40 sát thương chuẩn. Hạt lớn và nhỏ đều để lại vùng lửa tồn tại 5 giây; kẻ địch đi qua bị cháy 6 giây, chịu 1 sát thương chuẩn mỗi 0.1 giây. CD: 16 giây.",
+					levels_standard = { "Ném hạt đang cháy gây 135 sát thương pháo, bán kính nổ 130. Để lại vùng lửa bán kính 130 tồn tại 5 giây. Kẻ địch đi qua bị cháy 6 giây, chịu 1 sát thương chuẩn mỗi 0.1 giây. CD: 25.5 giây.", "Ném hạt đang cháy gây 270 sát thương pháo, bán kính nổ 130. Để lại vùng lửa bán kính 130 tồn tại 5 giây. Kẻ địch đi qua bị cháy 6 giây, chịu 2 sát thương chuẩn mỗi 0.1 giây. CD: 25.5 giây.", "Ném hạt đang cháy gây 405 sát thương pháo, bán kính nổ 130. Để lại vùng lửa bán kính 130 tồn tại 5 giây. Kẻ địch đi qua bị cháy 6 giây, chịu 3 sát thương chuẩn mỗi 0.1 giây. CD: 25.5 giây." },
+					levels_enhanced = { "Ném hạt lớn đang cháy gây 111 sát thương chuẩn trong bán kính 160, rồi tách thành 3 hạt nhỏ, mỗi hạt gây 44 sát thương chuẩn. Hạt lớn và nhỏ đều để lại vùng lửa tồn tại 5 giây; kẻ địch đi qua bị cháy 6 giây, chịu 1 sát thương chuẩn mỗi 0.1 giây. CD: 16 giây.", "Ném hạt lớn đang cháy gây 222 sát thương chuẩn trong bán kính 160, rồi tách thành 4 hạt nhỏ, mỗi hạt gây 66 sát thương chuẩn. Hạt lớn và nhỏ đều để lại vùng lửa tồn tại 5 giây; kẻ địch đi qua bị cháy 6 giây, chịu 2 sát thương chuẩn mỗi 0.1 giây. CD: 16 giây.", "Ném hạt lớn đang cháy gây 333 sát thương chuẩn trong bán kính 160, rồi tách thành 5 hạt nhỏ, mỗi hạt gây 88 sát thương chuẩn. Hạt lớn và nhỏ đều để lại vùng lửa tồn tại 5 giây; kẻ địch đi qua bị cháy 6 giây, chịu 3 sát thương chuẩn mỗi 0.1 giây. CD: 16 giây." },
 					prices_standard = { "330", "330", "330" },
 					prices_enhanced = { "330", "330", "330" }
 				},
 				{
-					name = "震地",
-					standard = "猛击地面，震击450范围内所有陆军敌人造成75点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续1秒，CD14",
-					enhanced = "猛击地面，震击450范围内所有陆军敌人造成75点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续1秒，CD14",
-					levels_standard = { "猛击地面，震击450范围内所有陆军敌人造成75点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续1秒，CD14", "猛击地面，震击450范围内所有陆军敌人造成100点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续2秒，CD14", "猛击地面，震击450范围内所有陆军敌人造成125点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续3秒，CD14" },
-					levels_enhanced = { "猛击地面，震击450范围内所有陆军敌人造成75点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续1秒，CD14", "猛击地面，震击450范围内所有陆军敌人造成135点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续2秒，CD14", "猛击地面，震击450范围内所有陆军敌人造成195点真伤，必定晕眩前2个敌人，第3个敌人有75%晕眩，第4个敌人开始，均只有50%的概率被击晕，持续3秒，CD14" },
+					name = "Chấn động mặt đất",
+					standard = "Đập xuống đất, gây 75 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 1 giây. CD: 14 giây.",
+					enhanced = "Đập xuống đất, gây 75 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 1 giây. CD: 14 giây.",
+					levels_standard = { "Đập xuống đất, gây 75 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 1 giây. CD: 14 giây.", "Đập xuống đất, gây 100 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 2 giây. CD: 14 giây.", "Đập xuống đất, gây 125 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 3 giây. CD: 14 giây." },
+					levels_enhanced = { "Đập xuống đất, gây 75 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 1 giây. CD: 14 giây.", "Đập xuống đất, gây 135 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 2 giây. CD: 14 giây.", "Đập xuống đất, gây 195 sát thương chuẩn cho toàn bộ kẻ địch mặt đất trong bán kính 450. 2 mục tiêu đầu chắc chắn bị choáng; mục tiêu thứ 3 có 75% cơ hội bị choáng; từ mục tiêu thứ 4 trở đi có 50% cơ hội. Choáng 3 giây. CD: 14 giây." },
 					prices_standard = { "225", "225", "225" },
 					prices_enhanced = { "225", "225", "225" }
 				},
@@ -1123,39 +1123,39 @@ local M = {
 		},
 		["tower_orc_shaman_lvl4"] = {
 			doc_id = "",
-			title = "兽人萨满",
+			title = "Pháp sư orc",
 			attack = {
-				standard = "每2.3秒发射一道闪电攻击敌人造成魔法伤害并晕眩目标0.66秒。",
-				enhanced = "每2.3秒发射一道闪电攻击敌人造成魔法伤害并晕眩目标0.66秒。"
+				standard = "Phóng sét mỗi 2.3 giây, gây sát thương phép và làm choáng 0.66 giây.",
+				enhanced = "Phóng sét mỗi 2.3 giây, gây sát thương phép và làm choáng 0.66 giây."
 			},
-			change_note = "解说：老4代萨满号称欧皇检测器（面板4-20/10-55/20-110/35-190），补强模式继续发扬欧皇风格。你敢赌每次都能劈出300+的伤害吗？",
-			port_note = "移植改动：原版全等级范围370。暴击科技已经折算面板。",
+			change_note = "Nhận xét: Pháp sư orc phần 4 cũ được gọi là phép thử vận may, với sát thương 4-20/10-55/20-110/35-190. Bản tăng cường tiếp tục phong cách này. Bạn có dám cược mỗi tia sét đều gây hơn 300 sát thương?",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc của mọi cấp là 370. Nâng cấp chí mạng đã được tính vào chỉ số.",
 			notes = "",
 			skills = {
 				{
-					name = "治疗根系",
-					standard = "产生一片有治疗作用的草根，在6秒内治疗120范围内友军60点生命值(每0.1秒治疗1点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒",
-					enhanced = "产生一片有治疗作用的草根，在6秒内治疗175范围内友军120点生命值(每0.1秒治疗2点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒",
-					levels_standard = { "产生一片有治疗作用的草根，在6秒内治疗120范围内友军60点生命值(每0.1秒治疗1点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒", "产生一片有治疗作用的草根，在6秒内治疗120范围内友军120点生命值(每0.1秒治疗2点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒", "产生一片有治疗作用的草根，在6秒内治疗120范围内友军180点生命值(每0.1秒治疗3点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒" },
-					levels_enhanced = { "产生一片有治疗作用的草根，在6秒内治疗210范围内友军120点生命值(每0.1秒治疗2点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒", "产生一片有治疗作用的草根，在6秒内治疗210范围内友军240点生命值(每0.1秒治疗4点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒", "产生一片有治疗作用的草根，在6秒内治疗210范围内友军360点生命值(每0.1秒治疗6点)，但目标范围内至少有2名生命低于50%的友军才能触发，CD16秒" },
+					name = "Rễ hồi phục",
+					standard = "Tạo vùng rễ hồi phục, hồi tổng cộng 60 máu trong 6 giây cho đồng đội trong bán kính 120, tức 1 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.",
+					enhanced = "Tạo vùng rễ hồi phục, hồi tổng cộng 120 máu trong 6 giây cho đồng đội trong bán kính 175, tức 2 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.",
+					levels_standard = { "Tạo vùng rễ hồi phục, hồi tổng cộng 60 máu trong 6 giây cho đồng đội trong bán kính 120, tức 1 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.", "Tạo vùng rễ hồi phục, hồi tổng cộng 120 máu trong 6 giây cho đồng đội trong bán kính 120, tức 2 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.", "Tạo vùng rễ hồi phục, hồi tổng cộng 180 máu trong 6 giây cho đồng đội trong bán kính 120, tức 3 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây." },
+					levels_enhanced = { "Tạo vùng rễ hồi phục, hồi tổng cộng 120 máu trong 6 giây cho đồng đội trong bán kính 210, tức 2 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.", "Tạo vùng rễ hồi phục, hồi tổng cộng 240 máu trong 6 giây cho đồng đội trong bán kính 210, tức 4 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây.", "Tạo vùng rễ hồi phục, hồi tổng cộng 360 máu trong 6 giây cho đồng đội trong bán kính 210, tức 6 máu mỗi 0.1 giây. Chỉ kích hoạt khi có ít nhất 2 đồng đội trong vùng có máu dưới 50%. CD: 16 giây." },
 					prices_standard = { "110", "110", "110" },
 					prices_enhanced = { "110", "110", "110" }
 				},
 				{
-					name = "天降陨石",
-					standard = "降下4枚陨石，每枚陨石对100范围内敌人造成30-50点法伤，可主动对空。CD20秒",
-					enhanced = "降下4枚陨石，每枚陨石对110范围内敌人造成21-90点法伤，可主动对空。CD18.4秒",
-					levels_standard = { "降下4枚陨石，每枚陨石对100范围内敌人造30-50成点法伤，可主动对空。CD20秒", "降下5枚陨石，每枚陨石对100范围内敌人造成50-70点法伤，可主动对空。CD20秒", "降下6枚陨石，每枚陨石对100范围内敌人造成70-90点法伤，可主动对空。CD20秒" },
-					levels_enhanced = { "降下4枚陨石，每枚陨石对110范围内敌人造成21-90点法伤，可主动对空。CD18.4秒", "降下5枚陨石，每枚陨石对110范围内敌人造成35-126点法伤，可主动对空。CD18.4秒", "降下6枚陨石，每枚陨石对110范围内敌人造成49-162点法伤，可主动对空。CD18.4秒" },
+					name = "Thiên thạch",
+					standard = "Gọi 4 thiên thạch, mỗi viên gây 30-50 sát thương phép trong bán kính 100. Chủ động đánh được mục tiêu bay. CD: 20 giây.",
+					enhanced = "Gọi 4 thiên thạch, mỗi viên gây 21-90 sát thương phép trong bán kính 110. Chủ động đánh được mục tiêu bay. CD: 18.4 giây.",
+					levels_standard = { "Gọi 4 thiên thạch, mỗi viên gây 30-50 sát thương phép trong bán kính 100. Chủ động đánh được mục tiêu bay. CD: 20 giây.", "Gọi 5 thiên thạch, mỗi viên gây 50-70 sát thương phép trong bán kính 100. Chủ động đánh được mục tiêu bay. CD: 20 giây.", "Gọi 6 thiên thạch, mỗi viên gây 70-90 sát thương phép trong bán kính 100. Chủ động đánh được mục tiêu bay. CD: 20 giây." },
+					levels_enhanced = { "Gọi 4 thiên thạch, mỗi viên gây 21-90 sát thương phép trong bán kính 110. Chủ động đánh được mục tiêu bay. CD: 18.4 giây.", "Gọi 5 thiên thạch, mỗi viên gây 35-126 sát thương phép trong bán kính 110. Chủ động đánh được mục tiêu bay. CD: 18.4 giây.", "Gọi 6 thiên thạch, mỗi viên gây 49-162 sát thương phép trong bán kính 110. Chủ động đánh được mục tiêu bay. CD: 18.4 giây." },
 					prices_standard = { "153", "153", "153" },
 					prices_enhanced = { "153", "153", "153" }
 				},
 				{
-					name = "静电冲击",
-					standard = "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成点8-16点法伤",
-					enhanced = "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成4-38点电伤",
-					levels_standard = { "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成8-16点伤", "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成18-32点法伤", "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成26-48点法伤" },
-					levels_enhanced = { "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成4-38点电伤", "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成9-76点电伤", "每次攻击都会在目标周围120范围内额外造成一次静电冲击，对范围内敌人造成14-114点电伤" },
+					name = "Xung kích tĩnh điện",
+					standard = "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 8-16 sát thương phép.",
+					enhanced = "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 4-38 sát thương điện.",
+					levels_standard = { "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 8-16 sát thương.", "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 18-32 sát thương phép.", "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 26-48 sát thương phép." },
+					levels_enhanced = { "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 4-38 sát thương điện.", "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 9-76 sát thương điện.", "Mỗi đòn đánh tạo thêm xung kích trong bán kính 120 quanh mục tiêu, gây 14-114 sát thương điện." },
 					prices_standard = { "153", "153", "153" },
 					prices_enhanced = { "153", "153", "153" }
 				},
@@ -1163,39 +1163,39 @@ local M = {
 		},
 		["tower_orc_warriors_den_lvl4"] = {
 			doc_id = "",
-			title = "兽人勇士巢穴",
+			title = "Hang chiến binh orc",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "解说：结合1技能，试水近战输出兵营。生命护甲确实很低，但如果站起来的那一会输出很高，那么仍然能发挥出作用。",
-			port_note = "移植改动：原版全等级范围290。",
+			change_note = "Nhận xét: Kết hợp kỹ năng 1 để thử hướng doanh trại cận chiến gây sát thương. Máu và giáp thấp, nhưng vẫn hữu ích nếu gây sát thương cao trong khoảng thời gian còn đứng vững.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc của mọi cấp là 290.",
 			notes = "",
 			skills = {
 				{
-					name = "战欲难耐",
-					standard = "提升兽人40%攻击力",
-					enhanced = "提升兽人40%攻击力",
-					levels_standard = { "提升兽人40%攻击力", "提升兽人80%攻击力" },
-					levels_enhanced = { "提升兽人40%攻击力", "提升兽人80%攻击力" },
+					name = "Khát chiến",
+					standard = "Tăng 40% sức tấn công cho orc.",
+					enhanced = "Tăng 40% sức tấn công cho orc.",
+					levels_standard = { "Tăng 40% sức tấn công cho orc.", "Tăng 80% sức tấn công cho orc." },
+					levels_enhanced = { "Tăng 40% sức tấn công cho orc.", "Tăng 80% sức tấn công cho orc." },
 					prices_standard = { "153", "153" },
 					prices_enhanced = { "153", "153" }
 				},
 				{
-					name = "兽人队长",
-					standard = "提拔一名队长。队长有300(390)生命50甲，\n攻击力16-23(17-25)。",
-					enhanced = "提拔一名队长。队长有300(390)生命50甲，\n攻击力37-54(40-60)。",
-					levels_standard = { "提拔一名队长。队长有300(390)生命50甲，\n攻击力16-23(17-25)。" },
-					levels_enhanced = { "提拔一名队长。队长有300(390)生命50甲，\n攻击力37-54(40-60)。" },
+					name = "Đội trưởng orc",
+					standard = "Thăng chức một lính thành đội trưởng: 300 (390) máu, 50 giáp;\nsức tấn công 16-23 (17-25).",
+					enhanced = "Thăng chức một lính thành đội trưởng: 300 (390) máu, 50 giáp;\nsức tấn công 37-54 (40-60).",
+					levels_standard = { "Thăng chức một lính thành đội trưởng: 300 (390) máu, 50 giáp;\nsức tấn công 16-23 (17-25)." },
+					levels_enhanced = { "Thăng chức một lính thành đội trưởng: 300 (390) máu, 50 giáp;\nsức tấn công 37-54 (40-60)." },
 					prices_standard = { "127" },
 					prices_enhanced = { "127" }
 				},
 				{
-					name = "血之契约",
-					standard = "兽人每秒回复5点生命。",
-					enhanced = "兽人每秒回复10点生命。",
-					levels_standard = { "兽人每秒回复5点生命。", "兽人每秒回复10点生命。" },
-					levels_enhanced = { "兽人每秒回复12点生命。", "兽人每秒回复25点生命。" },
+					name = "Khế ước máu",
+					standard = "Orc hồi 5 máu mỗi giây.",
+					enhanced = "Orc hồi 10 máu mỗi giây.",
+					levels_standard = { "Orc hồi 5 máu mỗi giây.", "Orc hồi 10 máu mỗi giây." },
+					levels_enhanced = { "Orc hồi 12 máu mỗi giây.", "Orc hồi 25 máu mỗi giây." },
 					prices_standard = { "102", "102" },
 					prices_enhanced = { "102", "102" }
 				},
@@ -1203,39 +1203,39 @@ local M = {
 		},
 		["tower_goblirang_lvl4"] = {
 			doc_id = "",
-			title = "哥布林回旋镖",
+			title = "Goblin boomerang",
 			attack = {
-				standard = "每1.4秒发射一个回旋镖，对周围40/40/40/46范围内的敌人造成面板物理伤害，去程和返程最多分别造成1次伤害。造成伤害时会降低目标50%移速，持续0.1秒。",
-				enhanced = "每1.4秒发射一个回旋镖，对周围40/44/48/52范围内的敌人造成面板物理伤害，去程和返程最多分别造成1次伤害。造成伤害时会降低目标50%移速，持续0.1秒。"
+				standard = "Ném boomerang mỗi 1.4 giây, gây sát thương vật lý theo chỉ số cho kẻ địch trong phạm vi 40/40/40/46. Lượt đi và về gây tối đa 1 lần sát thương mỗi lượt. Khi trúng đòn, mục tiêu bị giảm 50% tốc độ trong 0.1 giây.",
+				enhanced = "Ném boomerang mỗi 1.4 giây, gây sát thương vật lý theo chỉ số cho kẻ địch trong phạm vi 40/44/48/52. Lượt đi và về gây tối đa 1 lần sát thương mỗi lượt. Khi trúng đòn, mục tiêu bị giảm 50% tốc độ trong 0.1 giây."
 			},
-			change_note = "解说：普攻基础面板已经足够，但返程空怪的问题时有发生，故提升普攻和大回旋镖的弹道宽度。",
-			port_note = "移植改动：原版全等级范围350(+5%)；原版1技能会占用一次普攻，改版不占用。",
+			change_note = "Nhận xét: Chỉ số đánh thường đã đủ, nhưng boomerang lượt về đôi lúc trượt quái; tăng độ rộng đường bay của boomerang thường và lớn.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 350 (+5%). Kỹ năng 1 bản gốc chiếm một đòn đánh thường; bản mod không chiếm.",
 			notes = "",
 			skills = {
 				{
-					name = "大回旋镖",
-					standard = "投掷一枚大号回旋镖，对击中敌人造成57-85点物伤，弹道宽度70，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD12秒",
-					enhanced = "投掷一枚大号回旋镖，对击中敌人造成57-85点物伤，弹道宽度84，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD8.4秒",
-					levels_standard = { "投掷一枚大号回旋镖，对击中敌人造成57-85点物伤，弹道宽度70，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD12秒", "投掷一枚大号回旋镖，对击中敌人造成69-100点物伤，弹道宽度70，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD12秒", "投掷一枚大号回旋镖，对击中敌人造成96-115点物伤，弹道宽度70，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD12秒" },
-					levels_enhanced = { "投掷一枚大号回旋镖，对击中敌人造成57-85点物伤，弹道宽度84，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD8.4秒", "投掷一枚大号回旋镖，对击中敌人造成69-100点物伤，弹道宽度84，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD8.4秒", "投掷一枚大号回旋镖，对击中敌人造成96-115点物伤，弹道宽度84，造成伤害时会降低目标50%移速，持续0.1秒，大回旋镖不占用普攻，可以被增伤。CD8.4秒" },
+					name = "Boomerang lớn",
+					standard = "Ném boomerang lớn gây 57-85 sát thương vật lý; đường bay rộng 70. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 12 giây.",
+					enhanced = "Ném boomerang lớn gây 57-85 sát thương vật lý; đường bay rộng 84. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 8.4 giây.",
+					levels_standard = { "Ném boomerang lớn gây 57-85 sát thương vật lý; đường bay rộng 70. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 12 giây.", "Ném boomerang lớn gây 69-100 sát thương vật lý; đường bay rộng 70. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 12 giây.", "Ném boomerang lớn gây 96-115 sát thương vật lý; đường bay rộng 70. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 12 giây." },
+					levels_enhanced = { "Ném boomerang lớn gây 57-85 sát thương vật lý; đường bay rộng 84. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 8.4 giây.", "Ném boomerang lớn gây 69-100 sát thương vật lý; đường bay rộng 84. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 8.4 giây.", "Ném boomerang lớn gây 96-115 sát thương vật lý; đường bay rộng 84. Trúng đòn làm chậm 50% trong 0.1 giây. Không chiếm đòn đánh thường và nhận hiệu ứng tăng sát thương. CD: 8.4 giây." },
 					prices_standard = { "170", "85", "85" },
 					prices_enhanced = { "170", "85", "85" }
 				},
 				{
-					name = "当头一击",
-					standard = "每次攻击有5%眩晕敌人1.0秒。",
-					enhanced = "每次攻击有7%眩晕敌人1.0秒。",
-					levels_standard = { "每次攻击有5%眩晕敌人1.0秒。", "每次攻击有10%眩晕敌人1.0秒。", "每次攻击有15%眩晕敌人1.0秒。" },
-					levels_enhanced = { "每次攻击有7%眩晕敌人1.0秒。", "每次攻击有14%眩晕敌人1.0秒。", "每次攻击有20%眩晕敌人1.0秒。" },
+					name = "Đòn vào đầu",
+					standard = "Mỗi đòn đánh có 5% cơ hội làm choáng 1.0 giây.",
+					enhanced = "Mỗi đòn đánh có 7% cơ hội làm choáng 1.0 giây.",
+					levels_standard = { "Mỗi đòn đánh có 5% cơ hội làm choáng 1.0 giây.", "Mỗi đòn đánh có 10% cơ hội làm choáng 1.0 giây.", "Mỗi đòn đánh có 15% cơ hội làm choáng 1.0 giây." },
+					levels_enhanced = { "Mỗi đòn đánh có 7% cơ hội làm choáng 1.0 giây.", "Mỗi đòn đánh có 14% cơ hội làm choáng 1.0 giây.", "Mỗi đòn đánh có 20% cơ hội làm choáng 1.0 giây." },
 					prices_standard = { "110", "110", "110" },
 					prices_enhanced = { "110", "110", "110" }
 				},
 				{
-					name = "马蜂窝",
-					standard = "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成5物伤，在7秒内造成共计100点物伤。\nCD秒",
-					enhanced = "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成5物伤，在7秒内造成共计100点物伤。\nCD1814秒",
-					levels_standard = { "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成5物伤，在7秒内造成共计100点物伤。\nCD18秒", "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成10物伤，在7秒内造成共计200点物伤。\nCD18秒", "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成15物伤，在7秒内造成共计300点物伤。\nCD18秒" },
-					levels_enhanced = { "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成5物伤，在7秒内造成共计100点物伤。\nCD14秒", "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成10物伤，在7秒内造成共计200点物伤。\nCD14秒", "向敌人投掷一个持续7秒的马蜂窝，对目标及其附近80范围内敌人每0.3秒造成15物伤，在7秒内造成共计300点物伤。\nCD14秒" },
+					name = "Tổ ong vò vẽ",
+					standard = "Ném tổ ong tồn tại 7 giây, gây 5 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 100 sát thương trong 7 giây.\nThời gian hồi chưa được ghi trong mô tả gốc.",
+					enhanced = "Ném tổ ong tồn tại 7 giây, gây 5 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 100 sát thương trong 7 giây.\nCD: 1814 giây.",
+					levels_standard = { "Ném tổ ong tồn tại 7 giây, gây 5 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 100 sát thương trong 7 giây.\nCD: 18 giây.", "Ném tổ ong tồn tại 7 giây, gây 10 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 200 sát thương trong 7 giây.\nCD: 18 giây.", "Ném tổ ong tồn tại 7 giây, gây 15 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 300 sát thương trong 7 giây.\nCD: 18 giây." },
+					levels_enhanced = { "Ném tổ ong tồn tại 7 giây, gây 5 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 100 sát thương trong 7 giây.\nCD: 14 giây.", "Ném tổ ong tồn tại 7 giây, gây 10 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 200 sát thương trong 7 giây.\nCD: 14 giây.", "Ném tổ ong tồn tại 7 giây, gây 15 sát thương vật lý mỗi 0.3 giây cho mục tiêu và kẻ địch trong bán kính 80. Tổng cộng 300 sát thương trong 7 giây.\nCD: 14 giây." },
 					prices_standard = { "170", "170", "170" },
 					prices_enhanced = { "170", "170", "170" }
 				},
@@ -1243,39 +1243,39 @@ local M = {
 		},
 		["tower_rocket_riders_lvl4"] = {
 			doc_id = "",
-			title = "哥布林火箭骑兵",
+			title = "Goblin cưỡi tên lửa",
 			attack = {
-				standard = "每3/3/3/2.8秒投出一枚炮弹，对90(108)范围内敌人造成炮伤。",
-				enhanced = "每3/3/3/2.8秒指挥一名哥布林骑上火箭飞向地面爆炸并对112.5(135)范围内敌人造成炮伤。火箭爆炸后骑兵落地并参与拦截（生命值1，攻速0.8，伤害类型炮伤，攻击力8-14/25-36/50-74/81-114）。只要能赶在敌人动手之前砍出一刀那就是英雄，否则就是个炮灰。"
+				standard = "Bắn đạn pháo mỗi 3/3/3/2.8 giây, gây sát thương pháo trong bán kính 90 (108).",
+				enhanced = "Mỗi 3/3/3/2.8 giây, một goblin cưỡi tên lửa lao xuống đất, nổ gây sát thương pháo trong bán kính 112.5 (135). Sau vụ nổ, goblin hạ đất và chặn đường: máu 1, khoảng đánh 0.8, sát thương pháo, sức tấn công 8-14/25-36/50-74/81-114. Kịp chém trước khi quái ra tay thì thành anh hùng; không thì chỉ là bia đỡ đạn."
 			},
-			change_note = "解说：早期复仇版本的火箭非常重量级(裸塔1010元换64-92(70-101)/2.8的普攻，满配造价更是达到了2453)虽然加强过一次但仍然不够看，3个技能仍然是一个比一个重量级。因此修改普攻模组：攻击后生成一个一次性拦截物。对于3个技能，1技能数值不高且很容易丢到没敌人的路径上；2技能点1级不如不点；3技能点了反而导致输出下降。这都是数值过低导致的现状，因此全面拉高3个技能的数值。",
-			port_note = "移植改动：原版全等级范围330/350/380/400。",
+			change_note = "Nhận xét: Tên lửa trong Vengeance đời đầu rất kém hiệu quả: tháp 1010 vàng đổi lấy đòn 64-92 (70-101)/2.8; nâng đủ lên tới 2453 vàng. Sau một lần tăng vẫn yếu, còn 3 kỹ năng đều khó dùng. Vì vậy, đòn đánh tạo thêm vật chặn dùng một lần. Trong 3 kỹ năng: 1 có chỉ số thấp và dễ ném vào đường trống; 2 nâng cấp 1 không đáng; 3 còn làm giảm sát thương. Do chỉ số quá thấp, tăng toàn diện 3 kỹ năng.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 330/350/380/400.",
 			notes = "",
 			skills = {
 				{
-					name = "雷区",
-					standard = "在路径上放置地雷，引爆时对附近最多5个敌人造成60点范围炮伤，CD8，地雷最多存在50秒。",
-					enhanced = "在路径上放置地雷，引爆时对附近最多5个敌人造成95点范围炮伤，CD8，地雷最多存在50秒。",
-					levels_standard = { "在路径上放置地雷，引爆时对附近最多5个敌人造成60点范围炮伤，CD8，地雷最多存在50秒。", "在路径上放置地雷，引爆时对附近最多5个敌人造成125点范围炮伤，CD8，地雷最多存在50秒。", "在路径上放置地雷，引爆时对附近最多5个敌人造成190点范围炮伤，CD8，地雷最多存在50秒。"},
-					levels_enhanced = { "在路径上放置地雷，引爆时对附近最多5个敌人造成95点范围炮伤，CD8，地雷最多存在50秒。", "在路径上放置地雷，引爆时对附近最多5个敌人造成190点范围炮伤，CD8，地雷最多存在50秒。", "在路径上放置地雷，引爆时对附近最多5个敌人造成285点范围炮伤，CD8，地雷最多存在50秒。"},
+					name = "Bãi mìn",
+					standard = "Đặt mìn trên đường, nổ gây 60 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.",
+					enhanced = "Đặt mìn trên đường, nổ gây 95 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.",
+					levels_standard = { "Đặt mìn trên đường, nổ gây 60 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.", "Đặt mìn trên đường, nổ gây 125 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.", "Đặt mìn trên đường, nổ gây 190 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây."},
+					levels_enhanced = { "Đặt mìn trên đường, nổ gây 95 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.", "Đặt mìn trên đường, nổ gây 190 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây.", "Đặt mìn trên đường, nổ gây 285 sát thương pháo diện rộng cho tối đa 5 kẻ địch. CD: 8 giây. Mìn tồn tại tối đa 50 giây."},
 					prices_standard = { "191", "191", "191" },
 					prices_enhanced = { "161", "161", "161" }
 				},
 				{
-					name = "硝基火箭",
-					standard = "替换一次普攻，发射一枚强化火箭，造成100(110)点范围炮伤，施法射程500，爆炸范围100(120)，CD12",
-					enhanced = "替换一次普攻，发射一枚强化火箭，造成100(110)点范围炮伤，施法射程500，爆炸范围200(240)，CD12",
-					levels_standard = { "替换一次普攻，发射一枚强化火箭，造成100(110)点范围炮伤，施法射程500，爆炸范围100(120)，CD12", "替换一次普攻，发射一枚强化火箭，造成180(198)点范围炮伤，施法射程500，爆炸范围100(120)，CD12" },
-					levels_enhanced = { "替换一次普攻，发射一枚强化火箭，造成208(228)点范围炮伤，施法射程500，爆炸范围200(240)，CD12", "替换一次普攻，发射一枚强化火箭，造成311(342)点范围炮伤，施法射程500，爆炸范围200(240)，CD12" },
+					name = "Tên lửa Nitro",
+					standard = "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 100 (110) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 100 (120). CD: 12 giây.",
+					enhanced = "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 100 (110) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 200 (240). CD: 12 giây.",
+					levels_standard = { "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 100 (110) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 100 (120). CD: 12 giây.", "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 180 (198) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 100 (120). CD: 12 giây." },
+					levels_enhanced = { "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 208 (228) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 200 (240). CD: 12 giây.", "Thay một đòn đánh thường bằng tên lửa cường hóa, gây 311 (342) sát thương pháo diện rộng. Tầm dùng 500, bán kính nổ 200 (240). CD: 12 giây." },
 					prices_standard = { "127", "127" },
 					prices_enhanced = { "127", "127" }
 				},
 				{
-					name = "有损引擎",
-					standard = "发射一枚有瑕疵的火箭，在半空中爆炸，产生5枚碎片覆盖一片路径，每块碎片对敌人造成22点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒",
-					enhanced = "发射一枚有瑕疵的火箭，在半空中爆炸，产生5枚碎片覆盖一片路径，每块碎片对敌人造成44点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒",
-					levels_standard = { "发射一枚有瑕疵的火箭，在半空中爆炸，产生5枚碎片覆盖一片路径，每块碎片对敌人造成22点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒", "发射一枚有瑕疵的火箭，在半空中爆炸，产生7枚碎片覆盖一片路径，每块碎片对敌人造成32点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒" },
-					levels_enhanced = { "发射一枚有瑕疵的火箭，在半空中爆炸，产生5枚碎片覆盖一片路径，每块碎片对敌人造成44点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒", "发射一枚有瑕疵的火箭，在半空中爆炸，产生7枚碎片覆盖一片路径，每块碎片对敌人造成64点范围炮伤 ，每个碎片的爆炸范围是140(168)，该技能替换一次普攻且可以直接对空释放，敌人可以被多颗炸弹波及，CD20秒" },
+					name = "Động cơ lỗi",
+					standard = "Bắn tên lửa lỗi nổ giữa trời, tạo 5 mảnh phủ một đoạn đường. Mỗi mảnh gây 22 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây.",
+					enhanced = "Bắn tên lửa lỗi nổ giữa trời, tạo 5 mảnh phủ một đoạn đường. Mỗi mảnh gây 44 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây.",
+					levels_standard = { "Bắn tên lửa lỗi nổ giữa trời, tạo 5 mảnh phủ một đoạn đường. Mỗi mảnh gây 22 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây.", "Bắn tên lửa lỗi nổ giữa trời, tạo 7 mảnh phủ một đoạn đường. Mỗi mảnh gây 32 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây." },
+					levels_enhanced = { "Bắn tên lửa lỗi nổ giữa trời, tạo 5 mảnh phủ một đoạn đường. Mỗi mảnh gây 44 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây.", "Bắn tên lửa lỗi nổ giữa trời, tạo 7 mảnh phủ một đoạn đường. Mỗi mảnh gây 64 sát thương pháo diện rộng, bán kính 140 (168). Thay một đòn đánh thường, chủ động đánh được mục tiêu bay; một kẻ địch có thể trúng nhiều mảnh. CD: 20 giây." },
 					prices_standard = { "127", "127" },
 					prices_enhanced = { "127", "127" }
 				},
@@ -1283,39 +1283,39 @@ local M = {
 		},
 		["tower_balloon_lvl4"] = {
 			doc_id = "",
-			title = "哥布林战争飞艇",
+			title = "Khí cầu chiến tranh goblin",
 			attack = {
-				standard = "可在调集范围内调集飞艇。飞艇对飞艇周围210范围内的敌人投射炸弹，炸弹爆炸对70(84)范围内的敌人造成炮伤。",
-				enhanced = "可在调集范围内调集飞艇。飞艇对飞艇周围256范围内的敌人投射炸弹，炸弹爆炸对85(102)范围内的敌人造成炮伤。"
+				standard = "Có thể tập kết khí cầu trong phạm vi cho phép. Ném bom vào kẻ địch trong bán kính 210 quanh khí cầu; bom gây sát thương pháo trong bán kính 70 (84).",
+				enhanced = "Có thể tập kết khí cầu trong phạm vi cho phép. Ném bom vào kẻ địch trong bán kính 256 quanh khí cầu; bom gây sát thương pháo trong bán kính 85 (102)."
 			},
-			change_note = "解说：攻击的DPS已经足够，但210的攻击范围和84的爆炸范围都太小了。1技能真空期也偏长。",
-			port_note = "移植改动：原版4级调集范围380；\n移植说明：原版2技能是加强飞艇周围防御塔的范围而不是飞艇塔台周围的范围，且原版在飞艇开始移动之后会取消原停驻位置的增强，在移动过程中不增强任何防御塔的范围，等到了新地点后再重新开始加强。原版3技能空投军团下落速度更慢。",
+			change_note = "Nhận xét: Sát thương theo thời gian đã đủ, nhưng tầm đánh 210 và bán kính nổ 84 quá nhỏ. Khoảng trống giữa các lần dùng kỹ năng 1 cũng quá dài.",
+			port_note = "Thay đổi khi chuyển sang mod: Phạm vi tập kết cấp 4 bản gốc là 380.\nKỹ năng 2 tăng tầm cho tháp quanh khí cầu, không phải quanh bệ tháp. Khi khí cầu bắt đầu di chuyển, hiệu ứng ở vị trí cũ mất ngay; không tăng tầm khi đang bay, đến vị trí mới mới áp dụng lại. Kỹ năng 3 bản gốc thả lính xuống chậm hơn.",
 			notes = "",
 			skills = {
 				{
-					name = "柏油桶",
-					standard = "把一桶柏油扔到路径上，让120范围内的敌人减速20%持续6秒。CD15秒。",
-					enhanced = "把一桶柏油扔到路径上，让120范围内的敌人减速20%持续12秒。CD15秒。",
-					levels_standard = { "把一桶柏油扔到路径上，让120范围内的敌人减速20%持续6秒。CD15秒。", "把一桶柏油扔到路径上，让120范围内的敌人减速40%持续6秒。CD15秒。", "把一桶柏油扔到路径上，让120范围内的敌人减速60%持续6秒。CD15秒。" },
-					levels_enhanced = { "把一桶柏油扔到路径上，让120范围内的敌人减速20%持续12秒。CD15秒。", "把一桶柏油扔到路径上，让120范围内的敌人减速40%持续12秒。CD15秒。", "把一桶柏油扔到路径上，让120范围内的敌人减速60%持续12秒。CD15秒。" },
+					name = "Thùng nhựa đường",
+					standard = "Ném thùng nhựa đường xuống đường đi, làm chậm 20% kẻ địch trong bán kính 120 suốt 6 giây. CD: 15 giây.",
+					enhanced = "Ném thùng nhựa đường xuống đường đi, làm chậm 20% kẻ địch trong bán kính 120 suốt 12 giây. CD: 15 giây.",
+					levels_standard = { "Ném thùng nhựa đường xuống đường đi, làm chậm 20% kẻ địch trong bán kính 120 suốt 6 giây. CD: 15 giây.", "Ném thùng nhựa đường xuống đường đi, làm chậm 40% kẻ địch trong bán kính 120 suốt 6 giây. CD: 15 giây.", "Ném thùng nhựa đường xuống đường đi, làm chậm 60% kẻ địch trong bán kính 120 suốt 6 giây. CD: 15 giây." },
+					levels_enhanced = { "Ném thùng nhựa đường xuống đường đi, làm chậm 20% kẻ địch trong bán kính 120 suốt 12 giây. CD: 15 giây.", "Ném thùng nhựa đường xuống đường đi, làm chậm 40% kẻ địch trong bán kính 120 suốt 12 giây. CD: 15 giây.", "Ném thùng nhựa đường xuống đường đi, làm chậm 60% kẻ địch trong bán kính 120 suốt 12 giây. CD: 15 giây." },
 					prices_standard = { "68", "68", "68" },
 					prices_enhanced = { "136", "136", "136" }
 				},
 				{
-					name = "哥布林侦察兵",
-					standard = "提升飞艇附近400范围内除自身以外防御塔20%的攻击范围。如果飞艇移动，会立即撤销现有的加范围效果，等移动到新地点后再重新结算效果。",
-					enhanced = "提升飞艇附近400范围内除自身以外防御塔20%的攻击范围。如果飞艇移动，会立即撤销现有的加范围效果，等移动到新地点后再重新结算效果。",
-					levels_standard = { "提升飞艇附近400范围内除自身以外防御塔20%的攻击范围。如果飞艇移动，会立即撤销现有的加范围效果，等移动到新地点后再重新结算效果。" },
-					levels_enhanced = { "提升飞艇附近400范围内除自身以外防御塔20%的攻击范围。如果飞艇移动，会立即撤销现有的加范围效果，等移动到新地点后再重新结算效果。" },
+					name = "Trinh sát goblin",
+					standard = "Tăng 20% tầm đánh cho các tháp khác trong bán kính 400 quanh khí cầu. Khi khí cầu di chuyển, hiệu ứng mất ngay và được tính lại khi tới vị trí mới.",
+					enhanced = "Tăng 20% tầm đánh cho các tháp khác trong bán kính 400 quanh khí cầu. Khi khí cầu di chuyển, hiệu ứng mất ngay và được tính lại khi tới vị trí mới.",
+					levels_standard = { "Tăng 20% tầm đánh cho các tháp khác trong bán kính 400 quanh khí cầu. Khi khí cầu di chuyển, hiệu ứng mất ngay và được tính lại khi tới vị trí mới." },
+					levels_enhanced = { "Tăng 20% tầm đánh cho các tháp khác trong bán kính 400 quanh khí cầu. Khi khí cầu di chuyển, hiệu ứng mất ngay và được tính lại khi tới vị trí mới." },
 					prices_standard = { "212" },
 					prices_enhanced = { "212" }
 				},
 				{
-					name = "空投军团",
-					standard = "空降一个投弹手作战12秒，投弹手60血，无近战能力也不会被近战敌人攻击，每1秒扔出一枚伤害16-24、爆炸范围72的炸弹。CD12",
-					enhanced = "空降一个投弹手作战12秒，投弹手60血，无近战能力也不会被近战敌人攻击，每1秒扔出一枚伤害16-24、爆炸范围72的炸弹。CD12",
-					levels_standard = { "空降一个投弹手作战12秒，投弹手60血，无近战能力，每1秒扔出一枚伤害16-24、爆炸范围72的炸弹。CD12" },
-					levels_enhanced = { "空降一个投弹手作战12秒，投弹手60血，无近战能力，每1秒扔出一枚伤害16-24、爆炸范围72的炸弹。CD12" },
+					name = "Lính đổ bộ",
+					standard = "Thả lính ném bom chiến đấu 12 giây. Máu 60, không đánh cận chiến và không bị kẻ địch cận chiến tấn công. Ném bom mỗi 1 giây, gây 16-24 sát thương trong bán kính 72. CD: 12 giây.",
+					enhanced = "Thả lính ném bom chiến đấu 12 giây. Máu 60, không đánh cận chiến và không bị kẻ địch cận chiến tấn công. Ném bom mỗi 1 giây, gây 16-24 sát thương trong bán kính 72. CD: 12 giây.",
+					levels_standard = { "Thả lính ném bom chiến đấu 12 giây. Máu 60, không đánh cận chiến. Ném bom mỗi 1 giây, gây 16-24 sát thương trong bán kính 72. CD: 12 giây." },
+					levels_enhanced = { "Thả lính ném bom chiến đấu 12 giây. Máu 60, không đánh cận chiến. Ném bom mỗi 1 giây, gây 16-24 sát thương trong bán kính 72. CD: 12 giây." },
 					prices_standard = { "136" },
 					prices_enhanced = { "136" }
 				},
@@ -1323,39 +1323,39 @@ local M = {
 		},
 		["tower_infernal_mage_lvl4"] = {
 			doc_id = "",
-			title = "炼狱法师",
+			title = "Pháp sư địa ngục",
 			attack = {
-				standard = "每1.8发射一个魔法弹，造成魔法伤害，",
-				enhanced = "每1.75发射一个魔法弹，造成魔法伤害。被动：普攻和技能命中后给予可传染的灼烧状态：每0.4秒造成4/8/13/18点真实伤害，持续1.5秒；如果敌人在灼烧状态下死亡，则在原地产生爆炸并造成84范围的12/24/39/54点魔法伤害，并给予范围内敌人可传染的灼烧状态，持续1.5秒。"
+				standard = "Bắn đạn phép mỗi 1.8, gây sát thương phép.",
+				enhanced = "Bắn đạn phép mỗi 1.75, gây sát thương phép. Nội tại: đòn đánh thường và kỹ năng gây cháy có thể lan truyền, gây 4/8/13/18 sát thương chuẩn mỗi 0.4 giây trong 1.5 giây. Kẻ địch chết khi đang cháy phát nổ, gây 12/24/39/54 sát thương phép trong bán kính 84 và lây hiệu ứng cháy kéo dài 1.5 giây."
 			},
-			change_note = "解说：普攻不论是原版还是跨代都已经是一个不低的水准了，但三个技能都有一定的问题，范围都偏小，传送距离偏短，功能性不明确。除此之外，萨满作为电系法师能电敌人，火法作为火系法师却不能烧敌人，属实有些不合理。",
-			port_note = "移植改动：原版全等级范围350。暴击科技已经折算面板。",
+			change_note = "Nhận xét: Đòn đánh thường đã khá mạnh cả trong bản gốc lẫn xuyên các phần, nhưng ba kỹ năng có phạm vi nhỏ, dịch chuyển ngắn và vai trò chưa rõ. Pháp sư orc hệ điện gây choáng điện, trong khi pháp sư hệ lửa lại không gây cháy, điều này chưa hợp lý.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc của mọi cấp là 350. Nâng cấp chí mạng đã được tính vào chỉ số.",
 			notes = "",
 			skills = {
 				{
-					name = "焚甲符文",
-					standard = "产生一个烈焰符文，对走过的敌人降低25点护甲和30点魔抗，减抗效果持续5秒，符文影响范围120，最多影响5个敌人，CD12",
-					enhanced = "产生一个烈焰符文，对走过的敌人降低25点护甲和30点魔抗，减抗效果持续15秒，符文影响范围160，最多影响99个敌人，CD12",
-					levels_standard = { "产生一个烈焰符文，对走过的敌人降低25点护甲和30点魔抗，减抗效果持续秒，符文影响范围120，最多影响5个敌人，CD12", "产生一个烈焰符文，对走过的敌人降低50点护甲和60点魔抗，减抗效果持续5秒，符文影响范围120，最多影响5个敌人，CD12" },
-					levels_enhanced = { "产生一个烈焰符文，对走过的敌人降低25点护甲和30点魔抗，减抗效果持续15秒，符文影响范围160，最多影响99个敌人，CD12", "产生一个烈焰符文，对走过的敌人降低50点护甲和60点魔抗，减抗效果持续15秒，符文影响范围200，最多影响99个敌人，CD12" },
+					name = "Cổ ngữ thiêu giáp",
+					standard = "Tạo cổ ngữ lửa bán kính 120, tác động tối đa 5 kẻ địch đi qua: giảm 25 giáp và 30 kháng phép trong 5 giây. CD: 12 giây.",
+					enhanced = "Tạo cổ ngữ lửa bán kính 160, tác động tối đa 99 kẻ địch đi qua: giảm 25 giáp và 30 kháng phép trong 15 giây. CD: 12 giây.",
+					levels_standard = { "Tạo cổ ngữ lửa bán kính 120, tác động tối đa 5 kẻ địch đi qua: giảm 25 giáp và 30 kháng phép. CD: 12 giây. Mô tả gốc chưa ghi thời lượng giảm kháng.", "Tạo cổ ngữ lửa bán kính 120, tác động tối đa 5 kẻ địch đi qua: giảm 50 giáp và 60 kháng phép trong 5 giây. CD: 12 giây." },
+					levels_enhanced = { "Tạo cổ ngữ lửa bán kính 160, tác động tối đa 99 kẻ địch đi qua: giảm 25 giáp và 30 kháng phép trong 15 giây. CD: 12 giây.", "Tạo cổ ngữ lửa bán kính 200, tác động tối đa 99 kẻ địch đi qua: giảm 50 giáp và 60 kháng phép trong 15 giây. CD: 12 giây." },
 					prices_standard = { "102", "102" },
 					prices_enhanced = { "102", "102" }
 				},
 				{
-					name = "熔岩裂缝",
-					standard = "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对60范围内的敌人造成33-56点法伤，间隔距离45，无法主动对空。CD20",
-					enhanced = "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对90范围内的敌人造成33-56点法伤，间隔距离60，可主动对空。CD17.5",
-					levels_standard = { "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对范围内的敌人造成33-56点法伤，间隔距离45，无法主动对空。CD20", "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对范围内的敌人造成66-98点法伤，间隔距离45，无法主动对空。CD20", "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对范围内的敌人造成100-130点法伤，间隔距离45，无法主动对空。CD20" },
-					levels_enhanced = { "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对60120范围内的敌人造成33-56点法伤，间隔距离60，可主动对空。CD17.5", "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对60120范围内的敌人造成66-98点法伤，间隔距离60，可主动对空。CD17.5", "在一片180的范围区域内产生8个熔岩裂缝 ，每个岩浆对60120范围内的敌人造成100-130点法伤，间隔距离60，可主动对空。CD17.5"},
+					name = "Khe nứt dung nham",
+					standard = "Tạo 8 khe dung nham trong vùng 180, cách nhau 45. Mỗi khe gây 33-56 sát thương phép trong bán kính 60. Không chủ động đánh mục tiêu bay. CD: 20 giây.",
+					enhanced = "Tạo 8 khe dung nham trong vùng 180, cách nhau 60. Mỗi khe gây 33-56 sát thương phép trong bán kính 90. Chủ động đánh được mục tiêu bay. CD: 17.5 giây.",
+					levels_standard = { "Tạo 8 khe dung nham trong vùng 180, cách nhau 45. Mỗi khe gây 33-56 sát thương phép trong vùng. Không chủ động đánh mục tiêu bay. CD: 20 giây.", "Tạo 8 khe dung nham trong vùng 180, cách nhau 45. Mỗi khe gây 66-98 sát thương phép trong vùng. Không chủ động đánh mục tiêu bay. CD: 20 giây.", "Tạo 8 khe dung nham trong vùng 180, cách nhau 45. Mỗi khe gây 100-130 sát thương phép trong vùng. Không chủ động đánh mục tiêu bay. CD: 20 giây." },
+					levels_enhanced = { "Tạo 8 khe dung nham trong vùng 180, cách nhau 60. Mỗi khe gây 33-56 sát thương phép trong bán kính 60120. Chủ động đánh được mục tiêu bay. CD: 17.5 giây.", "Tạo 8 khe dung nham trong vùng 180, cách nhau 60. Mỗi khe gây 66-98 sát thương phép trong bán kính 60120. Chủ động đánh được mục tiêu bay. CD: 17.5 giây.", "Tạo 8 khe dung nham trong vùng 180, cách nhau 60. Mỗi khe gây 100-130 sát thương phép trong bán kính 60120. Chủ động đánh được mục tiêu bay. CD: 17.5 giây."},
 					prices_standard = { "170", "170", "170" },
 					prices_enhanced = { "170", "170", "170" }
 				},
 				{
-					name = "地狱传送门",
-					standard = "召唤一个120范围的传送法阵，传送最多4名敌人，使他们向后移动200距离，CD22",
-					enhanced = "召唤一个160范围的传送法阵，传送最多4名敌人，使他们向后移动350距离，CD17.5",
-					levels_standard = { "召唤一个120范围的传送法阵，传送最多4名敌人，使他们向后移动200距离，CD22", "召唤一个120范围的传送法阵，传送最多6名敌人，使他们向后移动200距离，CD22" },
-					levels_enhanced = { "召唤一个120范围的传送法阵，传送最多4名敌人，使他们向后移动350距离，CD14", "召唤一个120范围的传送法阵，传送最多6名敌人，使他们向后移动350距离，CD14" },
+					name = "Cổng địa ngục",
+					standard = "Tạo vòng dịch chuyển bán kính 120, đẩy tối đa 4 kẻ địch lùi 200 khoảng cách. CD: 22 giây.",
+					enhanced = "Tạo vòng dịch chuyển bán kính 160, đẩy tối đa 4 kẻ địch lùi 350 khoảng cách. CD: 17.5 giây.",
+					levels_standard = { "Tạo vòng dịch chuyển bán kính 120, đẩy tối đa 4 kẻ địch lùi 200 khoảng cách. CD: 22 giây.", "Tạo vòng dịch chuyển bán kính 120, đẩy tối đa 6 kẻ địch lùi 200 khoảng cách. CD: 22 giây." },
+					levels_enhanced = { "Tạo vòng dịch chuyển bán kính 120, đẩy tối đa 4 kẻ địch lùi 350 khoảng cách. CD: 14 giây.", "Tạo vòng dịch chuyển bán kính 120, đẩy tối đa 6 kẻ địch lùi 350 khoảng cách. CD: 14 giây." },
 					prices_standard = { "187", "187" },
 					prices_enhanced = { "187", "93" }
 				},
@@ -1363,39 +1363,39 @@ local M = {
 		},
 		["tower_shadow_archer_lvl4"] = {
 			doc_id = "",
-			title = "暗影弓箭手",
+			title = "Cung thủ bóng tối",
 			attack = {
-				standard = "每0.7秒射出一支箭攻击对手，造成物理伤害。",
-				enhanced = "每0.7秒射出一支无视敌方75点物理护甲的箭攻击对手，造成物理伤害。"
+				standard = "Bắn một mũi tên mỗi 0.7 giây, gây sát thương vật lý.",
+				enhanced = "Bắn một mũi tên mỗi 0.7 giây, gây sát thương vật lý và bỏ qua 75 giáp của địch."
 			},
-			change_note = "解说：还原了老版黑弓的穿甲bug。同时调整2/3技能使得不像原先那么重量级。",
-			port_note = "移植改动：原版全等级范围300/330/360/400(+5%)。",
+			change_note = "Nhận xét: Khôi phục lỗi xuyên giáp của Cung thủ bóng tối phiên bản cũ; điều chỉnh kỹ năng 2/3 cho hữu dụng hơn.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 300/330/360/400 (+5%).",
 			notes = "",
 			skills = {
 				{
-					name = "暗影印记",
-					standard = "暗影弓箭手每18秒射出一支标记箭，使得目标敌人受到的伤害增加30%，持续5秒。",
-					enhanced = "暗影弓箭手每10秒射出一支标记箭，使得目标敌人受到的伤害增加30%，持续5秒。",
-					levels_standard = { "暗影弓箭手每18秒射出一支标记箭，使得目标敌人受到的伤害增加30%，持续5秒。", "暗影弓箭手每18秒射出一支标记箭，使得目标敌人受到的伤害增加60%，持续5秒。", "暗影弓箭手每18秒射出一支标记箭，使得目标敌人受到的伤害增加100%，持续5秒。" },
-					levels_enhanced = { "暗影弓箭手每12秒射出一支标记箭，使得目标敌人受到的伤害增加30%，持续6秒。", "暗影弓箭手每12秒射出一支标记箭，使得目标敌人受到的伤害增加60%，持续7.5秒。", "暗影弓箭手每12秒射出一支标记箭，使得目标敌人受到的伤害增加100%，持续9秒。" },
+					name = "Dấu ấn bóng tối",
+					standard = "Mỗi 18 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây.",
+					enhanced = "Mỗi 10 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây.",
+					levels_standard = { "Mỗi 18 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây.", "Mỗi 18 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 60% sát thương trong 5 giây.", "Mỗi 18 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 100% sát thương trong 5 giây." },
+					levels_enhanced = { "Mỗi 12 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 30% sát thương trong 6 giây.", "Mỗi 12 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 60% sát thương trong 7.5 giây.", "Mỗi 12 giây bắn tên đánh dấu, khiến mục tiêu nhận thêm 100% sát thương trong 9 giây." },
 					prices_standard = { "102", "102", "102" },
 					prices_enhanced = { "102", "102", "102" }
 				},
 				{
-					name = "亡命之刃",
-					standard = "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD40秒。",
-					enhanced = "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD40秒。",
-					levels_standard = { "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD40秒。", "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD32秒。", "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD24秒。" },
-					levels_enhanced = { "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD36秒。", "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD29秒。", "暗影弓箭手闪现到敌人背后，直接秒杀敌人。CD22秒。" },
+					name = "Lưỡi kiếm tử thần",
+					standard = "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 40 giây.",
+					enhanced = "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 40 giây.",
+					levels_standard = { "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 40 giây.", "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 32 giây.", "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 24 giây." },
+					levels_enhanced = { "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 36 giây.", "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 29 giây.", "Dịch chuyển ra sau kẻ địch và tiêu diệt ngay. CD: 22 giây." },
 					prices_standard = { "255", "85", "85" },
 					prices_enhanced = { "170", "85", "85" }
 				},
 				{
-					name = "乌鸦巢穴",
-					standard = "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成2点物理伤害。",
-					enhanced = "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成9点物理伤害。",
-					levels_standard = { "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成2点物理伤害。", "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成4点物理伤害。" },
-					levels_enhanced = { "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成9点物理伤害。", "召唤一只乌鸦攻击敌人，每0.5秒对敌方造成18点物理伤害。" },
+					name = "Tổ quạ",
+					standard = "Triệu hồi quạ gây 2 sát thương vật lý mỗi 0.5 giây.",
+					enhanced = "Triệu hồi quạ gây 9 sát thương vật lý mỗi 0.5 giây.",
+					levels_standard = { "Triệu hồi quạ gây 2 sát thương vật lý mỗi 0.5 giây.", "Triệu hồi quạ gây 4 sát thương vật lý mỗi 0.5 giây." },
+					levels_enhanced = { "Triệu hồi quạ gây 9 sát thương vật lý mỗi 0.5 giây.", "Triệu hồi quạ gây 18 sát thương vật lý mỗi 0.5 giây." },
 					prices_standard = { "170", "170" },
 					prices_enhanced = { "170", "170" }
 				},
@@ -1403,39 +1403,39 @@ local M = {
 		},
 		["tower_spirit_mausoleum_lvl4"] = {
 			doc_id = "",
-			title = "死灵墓",
+			title = "Lăng mộ linh hồn",
 			attack = {
-				standard = "每1.45秒发射一个幽魂，造成魔法伤害。如果范围内没有敌人会存储幽魂，最多存储3个。",
-				enhanced = "每1.45秒发射一个幽魂，造成魔法伤害。如果范围内没有敌人会存储幽魂，最多存储3个。"
+				standard = "Bắn linh hồn mỗi 1.45 giây, gây sát thương phép. Khi không có kẻ địch, tích trữ tối đa 3 linh hồn.",
+				enhanced = "Bắn linh hồn mỗi 1.45 giây, gây sát thương phép. Khi không có kẻ địch, tích trữ tối đa 3 linh hồn."
 			},
-			change_note = "解说：石像鬼在削弱前血量为390。2技能旨在解决普攻输出过低、技能没用的问题。",
-			port_note = "移植改动：原版全等级范围350；暴击科技已经折算面板。\n移植说明：策反机制不保证100%复刻，不保证在和其他4代塔组合时100%对应原版特性。策反是移植4代时bug最多的塔，当前策反部分怪物还要出问题，这种情况只能发现一个处理一个，请及时反馈。",
+			change_note = "Nhận xét: Gargoyle trước khi bị giảm sức mạnh có 390 máu. Kỹ năng 2 được chỉnh để khắc phục sát thương đánh thường quá thấp và kỹ năng ít hữu ích.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 350; nâng cấp chí mạng đã được tính vào chỉ số.\nCơ chế chiếm hữu không bảo đảm tái hiện 100% bản gốc, hoặc khớp 100% khi kết hợp tháp phần 4 khác. Đây là tháp phát sinh nhiều lỗi nhất khi chuyển phần 4; một số quái vẫn lỗi khi bị chiếm hữu. Cần phát hiện và xử lý từng trường hợp, hãy gửi phản hồi khi gặp lỗi.",
 			notes = "",
 			skills = {
 				{
-					name = "石像鬼守卫",
-					standard = "召唤1个拥有180(234)血量、60护甲的石像鬼。",
-					enhanced = "召唤1个拥有240(312)血量、60护甲的石像鬼。",
-					levels_standard = { "召唤1个拥有180(234)血量、60护甲的石像鬼。", "召唤2个拥有180(234)血量、60护甲的石像鬼。" },
-					levels_enhanced = { "召唤1个拥有300(390)血量、60护甲的石像鬼。", "召唤2个拥有300(390)血量、60护甲的石像鬼。" },
+					name = "Vệ binh gargoyle",
+					standard = "Triệu hồi 1 gargoyle có 180 (234) máu và 60 giáp.",
+					enhanced = "Triệu hồi 1 gargoyle có 240 (312) máu và 60 giáp.",
+					levels_standard = { "Triệu hồi 1 gargoyle có 180 (234) máu và 60 giáp.", "Triệu hồi 2 gargoyle có 180 (234) máu và 60 giáp." },
+					levels_enhanced = { "Triệu hồi 1 gargoyle có 300 (390) máu và 60 giáp.", "Triệu hồi 2 gargoyle có 300 (390) máu và 60 giáp." },
 					prices_standard = { "212", "212" },
 					prices_enhanced = { "212", "212" }
 				},
 				{
-					name = "通灵",
-					standard = "死灵墓最多能存储4个幽魂；",
-					enhanced = "死灵墓最多能存储4个幽魂；每个幽魂的伤害提升到57-93(68-111).",
-					levels_standard = { "死灵墓最多能存储4个幽魂。", "死灵墓最多能存储5个幽魂；" },
-					levels_enhanced = { "死灵墓最多能存储4个幽魂。激发死灵墓汲取亡灵力量的能力，亡灵越强大，汲取的力量越强大。死灵墓400范围内的敌人死亡后，会化为游魂附身敌人，被附身的敌人受到[普攻伤害×50%+死亡敌人最大生命值×3%]点魔法伤害。", "死灵墓最多能存储5个幽魂。激发死灵墓汲取亡灵力量的能力，亡灵越强大，汲取的力量越强大。死灵墓400范围内的敌人死亡后，会化为更强大的游魂附身敌人，被附身的敌人受到[普攻伤害×100%+死亡敌人最大生命值×8%]点魔法伤害。"},
+					name = "Thông linh",
+					standard = "Tăng số linh hồn tích trữ tối đa lên 4.",
+					enhanced = "Tăng số linh hồn tích trữ tối đa lên 4; tăng sát thương mỗi linh hồn thành 57-93 (68-111).",
+					levels_standard = { "Tăng số linh hồn tích trữ tối đa lên 4.", "Tăng số linh hồn tích trữ tối đa lên 5." },
+					levels_enhanced = { "Tích trữ tối đa 4 linh hồn và hấp thụ sức mạnh người chết: kẻ địch càng mạnh, linh hồn càng mạnh. Kẻ địch chết trong bán kính 400 hóa hồn chiếm hữu mục tiêu khác, gây sát thương phép bằng [sát thương đánh thường × 50% + máu tối đa của kẻ địch đã chết × 3%].", "Tích trữ tối đa 5 linh hồn và hấp thụ sức mạnh người chết: kẻ địch càng mạnh, linh hồn càng mạnh. Kẻ địch chết trong bán kính 400 hóa hồn mạnh hơn chiếm hữu mục tiêu khác, gây sát thương phép bằng [sát thương đánh thường × 100% + máu tối đa của kẻ địch đã chết × 8%]."},
 					prices_standard = { "127", "85" },
 					prices_enhanced = { "357", "357" }
 				},
 				{
-					name = "幽灵附身",
-					standard = "附身范围内血量最高的敌人，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续10秒，CD23秒。",
-					enhanced = "附身一名敌人进行策反，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续10秒，CD23秒。",
-					levels_standard = { "附身范围内血量最高的敌人，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续10秒，CD23秒。", "附身范围内血量最高的敌人，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续10秒，CD20秒。", "附身范围内血量最高的敌人，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续10秒，CD17秒。"},
-					levels_enhanced = { "附身范围内血量最高的敌人，使敌人暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续12秒，CD25秒。", "附身范围内血量前二高的敌人，使敌人们暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续13秒，CD24秒。", "附身范围内血量前三高的敌人，使敌人们暂时为我方作战，操纵其向出怪口移动并且拦截攻击沿途的敌人，持续14秒，CD23秒。" },
+					name = "Chiếm hữu linh hồn",
+					standard = "Chiếm hữu kẻ địch nhiều máu nhất trong tầm, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 10 giây. CD: 23 giây.",
+					enhanced = "Chiếm hữu một kẻ địch, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 10 giây. CD: 23 giây.",
+					levels_standard = { "Chiếm hữu kẻ địch nhiều máu nhất trong tầm, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 10 giây. CD: 23 giây.", "Chiếm hữu kẻ địch nhiều máu nhất trong tầm, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 10 giây. CD: 20 giây.", "Chiếm hữu kẻ địch nhiều máu nhất trong tầm, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 10 giây. CD: 17 giây."},
+					levels_enhanced = { "Chiếm hữu kẻ địch nhiều máu nhất trong tầm, tạm thời biến nó thành đồng minh. Điều khiển nó đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 12 giây. CD: 25 giây.", "Chiếm hữu hai kẻ địch nhiều máu nhất trong tầm, tạm thời biến chúng thành đồng minh. Điều khiển chúng đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 13 giây. CD: 24 giây.", "Chiếm hữu ba kẻ địch nhiều máu nhất trong tầm, tạm thời biến chúng thành đồng minh. Điều khiển chúng đi về điểm xuất hiện quái, chặn và đánh kẻ địch trên đường trong 14 giây. CD: 23 giây." },
 					prices_standard = { "170", "85", "85" },
 					prices_enhanced = { "195", "195", "195" }
 				},
@@ -1443,39 +1443,39 @@ local M = {
 		},
 		["tower_melting_furnace_lvl4"] = {
 			doc_id = "",
-			title = "爆裂熔炉",
+			title = "Lò nung bùng nổ",
 			attack = {
-				standard = "每4.0秒震击地面，对范围内所有敌人造成无视75%护甲的物理伤害，并眩晕敌人0.3/0.4/0.5/0.6秒。",
-				enhanced = "每3.5秒震击地面，对范围内所有敌人造成无视75%护甲的物理伤害，并眩晕敌人0.8秒。"
+				standard = "Chấn động mặt đất mỗi 4.0 giây, gây sát thương vật lý bỏ qua 75% giáp cho mọi kẻ địch trong tầm và làm choáng 0.3/0.4/0.5/0.6 giây.",
+				enhanced = "Chấn động mặt đất mỗi 3.5 giây, gây sát thương vật lý bỏ qua 75% giáp cho mọi kẻ địch trong tầm và làm choáng 0.8 giây."
 			},
-			change_note = "解说：由于前3代塔位集中，熔炉已经完全可以配合奥术玩增伤阵，故除了稍微提升普攻模组，其余不做改动。",
-			port_note = "移植改动：原版全等级范围320，由于是范围攻击，调整幅度相比同类320范围的塔较小。",
+			change_note = "Nhận xét: Vị trí tháp ở 3 phần trước tập trung, nên Lò nung đã có thể kết hợp Pháp sư bí thuật thành trận địa tăng sát thương. Chỉ tăng nhẹ đòn đánh thường, không đổi các phần khác.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 320. Vì đánh toàn vùng, tăng phạm vi ít hơn các tháp cùng loại tầm 320.",
 			notes = "",
 			skills = {
 				{
-					name = "燃烧煤块",
-					standard = "熔炉投掷3块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成5点物伤，最多造成150点物伤，单个煤块的效应范围75",
-					enhanced = "熔炉投掷3块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成5点物伤，最多造成150点物伤，单个煤块的效应范围75",
-					levels_standard = { "熔炉投掷3块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成5点物伤，最多造成150点物伤，单个煤块的效应范围75", "熔炉投掷5块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成8点物伤，最多造成240点物伤，单个煤块的效应范围75" },
-					levels_enhanced = { "熔炉投掷3块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成5点物伤，最多造成150点物伤，单个煤块的效应范围75", "熔炉投掷5块煤炭，覆盖一段路径，持续6秒，对站在上面的敌人每0.2秒造成8点物伤，最多造成240点物伤，单个煤块的效应范围75" },
+					name = "Than cháy",
+					standard = "Ném 3 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 5 sát thương vật lý mỗi 0.2 giây, tối đa 150 sát thương. Bán kính mỗi cục 75.",
+					enhanced = "Ném 3 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 5 sát thương vật lý mỗi 0.2 giây, tối đa 150 sát thương. Bán kính mỗi cục 75.",
+					levels_standard = { "Ném 3 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 5 sát thương vật lý mỗi 0.2 giây, tối đa 150 sát thương. Bán kính mỗi cục 75.", "Ném 5 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 8 sát thương vật lý mỗi 0.2 giây, tối đa 240 sát thương. Bán kính mỗi cục 75." },
+					levels_enhanced = { "Ném 3 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 5 sát thương vật lý mỗi 0.2 giây, tối đa 150 sát thương. Bán kính mỗi cục 75.", "Ném 5 cục than phủ một đoạn đường trong 6 giây. Kẻ địch đứng trên than chịu 8 sát thương vật lý mỗi 0.2 giây, tối đa 240 sát thương. Bán kính mỗi cục 75." },
 					prices_standard = { "119", "119" },
 					prices_enhanced = { "119", "119" }
 				},
 				{
-					name = "高温研磨",
-					standard = "提升熔炉附近530范围内所有防御塔(不包括自己)15%攻击伤害。",
-					enhanced = "提升熔炉附近530范围内所有防御塔(不包括自己)15%攻击伤害。",
-					levels_standard = { "提升熔炉附近530范围内所有防御塔(不包括自己)15%攻击伤害。", "提升熔炉附近530范围内所有防御塔(不包括自己)30%攻击伤害。" },
-					levels_enhanced = { "提升熔炉附近530范围内所有防御塔(不包括自己)15%攻击伤害。", "提升熔炉附近530范围内所有防御塔(不包括自己)30%攻击伤害。" },
+					name = "Nhiệt luyện",
+					standard = "Tăng 15% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò.",
+					enhanced = "Tăng 15% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò.",
+					levels_standard = { "Tăng 15% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò.", "Tăng 30% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò." },
+					levels_enhanced = { "Tăng 15% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò.", "Tăng 30% sát thương cho tất cả tháp khác trong bán kính 530 quanh lò." },
 					prices_standard = { "170", "170" },
 					prices_enhanced = { "170", "170" }
 				},
 				{
-					name = "速煤燃料",
-					standard = "填入强力燃料，攻速提升为2.0，持续10秒。CD30秒。",
-					enhanced = "填入强力燃料，攻速提升为2.0，持续10秒。CD30秒。",
-					levels_standard = { "填入强力燃料，攻速提升为2.0，持续10秒。CD30秒。" },
-					levels_enhanced = { "填入强力燃料，攻速提升为2.0，持续10秒。CD30秒。" },
+					name = "Nhiên liệu tăng tốc",
+					standard = "Nạp nhiên liệu mạnh, tăng tốc độ đánh thành 2.0 trong 10 giây. CD: 30 giây.",
+					enhanced = "Nạp nhiên liệu mạnh, tăng tốc độ đánh thành 2.0 trong 10 giây. CD: 30 giây.",
+					levels_standard = { "Nạp nhiên liệu mạnh, tăng tốc độ đánh thành 2.0 trong 10 giây. CD: 30 giây." },
+					levels_enhanced = { "Nạp nhiên liệu mạnh, tăng tốc độ đánh thành 2.0 trong 10 giây. CD: 30 giây." },
 					prices_standard = { "212" },
 					prices_enhanced = { "212" }
 				},
@@ -1483,39 +1483,39 @@ local M = {
 		},
 		["tower_dark_knights_lvl4"] = {
 			doc_id = "",
-			title = "暗黑骑士殿堂",
+			title = "Đại sảnh hắc kỵ sĩ",
 			attack = {
-				standard = "2人兵营，近战攻击，物理伤害",
-				enhanced = "1级为2人兵营，2-4级为3人兵营。近战攻击，物理伤害"
+				standard = "Doanh trại 2 lính, đánh cận chiến gây sát thương vật lý.",
+				enhanced = "Cấp 1 có 2 lính; cấp 2-4 có 3 lính. Đánh cận chiến gây sát thương vật lý."
 			},
-			change_note = "解说：黑骑在4代最大的问题是攻速慢、只有2人。因此在这方面进行处理，但血量需要随之下调。由于跨代不少单位都能加护甲，高甲单位的护甲最多只能给到80点，同理幽冥战魂。至于3技能，作者想不出什么办法能抬这个技能。",
-			port_note = "移植改动：原版全等级范围290。",
+			change_note = "Nhận xét: Hắc kỵ sĩ phần 4 đánh chậm và chỉ có 2 lính, nên điều chỉnh hai điểm này đồng thời giảm máu. Vì nhiều đơn vị xuyên các phần tăng giáp, giáp của đơn vị giáp cao chỉ nên tối đa 80; Hồn chiến binh cũng tương tự. Với kỹ năng 3, tác giả chưa tìm được hướng cải thiện.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc của mọi cấp là 290.",
 			notes = "",
 			skills = {
 				{
-					name = "野蛮攻击",
-					standard = "黑骑每次进攻有2%秒杀敌人。",
-					enhanced = "黑骑每次进攻有2.4%秒杀敌人。",
-					levels_standard = { "黑骑每次进攻有2%秒杀敌人。", "黑骑每次进攻有4%秒杀敌人。", "黑骑每次进攻有6%秒杀敌人。" },
-					levels_enhanced = { "黑骑每次进攻有2.6%秒杀敌人。", "黑骑每次进攻有5.2%秒杀敌人。", "黑骑每次进攻有7.8%秒杀敌人。" },
+					name = "Đòn đánh tàn bạo",
+					standard = "Mỗi đòn đánh của hắc kỵ sĩ có 2% cơ hội tiêu diệt ngay mục tiêu.",
+					enhanced = "Mỗi đòn đánh của hắc kỵ sĩ có 2.4% cơ hội tiêu diệt ngay mục tiêu.",
+					levels_standard = { "Mỗi đòn đánh của hắc kỵ sĩ có 2% cơ hội tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh của hắc kỵ sĩ có 4% cơ hội tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh của hắc kỵ sĩ có 6% cơ hội tiêu diệt ngay mục tiêu." },
+					levels_enhanced = { "Mỗi đòn đánh của hắc kỵ sĩ có 2.6% cơ hội tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh của hắc kỵ sĩ có 5.2% cơ hội tiêu diệt ngay mục tiêu.", "Mỗi đòn đánh của hắc kỵ sĩ có 7.8% cơ hội tiêu diệt ngay mục tiêu." },
 					prices_standard = { "238", "238", "238" },
 					prices_enhanced = { "238", "238", "238" }
 				},
 				{
-					name = "荆棘装甲",
-					standard = "黑骑每次受到伤害会反弹15点物理伤害。",
-					enhanced = "黑骑每次受到伤害会反弹15点真实伤害。",
-					levels_standard = { "黑骑每次受到伤害会反弹15点物理伤害。", "黑骑每次受到伤害会反弹30点物理伤害。", "黑骑每次受到伤害会反弹45点物理伤害。" },
-					levels_enhanced = { "黑骑每次受到伤害会反弹15点真实伤害。", "黑骑每次受到伤害会反弹30点真实伤害。", "黑骑每次受到伤害会反弹45点真实伤害。" },
+					name = "Giáp gai",
+					standard = "Mỗi lần nhận sát thương, phản lại 15 sát thương vật lý.",
+					enhanced = "Mỗi lần nhận sát thương, phản lại 15 sát thương chuẩn.",
+					levels_standard = { "Mỗi lần nhận sát thương, phản lại 15 sát thương vật lý.", "Mỗi lần nhận sát thương, phản lại 30 sát thương vật lý.", "Mỗi lần nhận sát thương, phản lại 45 sát thương vật lý." },
+					levels_enhanced = { "Mỗi lần nhận sát thương, phản lại 15 sát thương chuẩn.", "Mỗi lần nhận sát thương, phản lại 30 sát thương chuẩn.", "Mỗi lần nhận sát thương, phản lại 45 sát thương chuẩn." },
 					prices_standard = { "127", "127", "127" },
 					prices_enhanced = { "127", "127", "127" }
 				},
 				{
-					name = "坚不可破",
-					standard = "黑暗骑士与非BOSS的敌人交战时会拿出用盾牌保护自己，获得持续6秒的无敌时间，期间黑暗骑士不能发动攻击",
-					enhanced = "黑暗骑士与非BOSS的敌人交战时会拿出用盾牌保护自己，获得持续6秒的无敌时间，期间黑暗骑士不能发动攻击",
-					levels_standard = { "黑暗骑士与非BOSS的敌人交战时会拿出用盾牌保护自己，获得持续6秒的无敌时间，期间黑暗骑士不能发动攻击" },
-					levels_enhanced = { "黑暗骑士与非BOSS的敌人交战时会拿出用盾牌保护自己，获得持续6秒的无敌时间，期间黑暗骑士不能发动攻击" },
+					name = "Bất khả phá",
+					standard = "Khi giao chiến với kẻ địch thường, hắc kỵ sĩ giơ khiên và bất tử 6 giây; không thể tấn công trong thời gian này.",
+					enhanced = "Khi giao chiến với kẻ địch thường, hắc kỵ sĩ giơ khiên và bất tử 6 giây; không thể tấn công trong thời gian này.",
+					levels_standard = { "Khi giao chiến với kẻ địch thường, hắc kỵ sĩ giơ khiên và bất tử 6 giây; không thể tấn công trong thời gian này." },
+					levels_enhanced = { "Khi giao chiến với kẻ địch thường, hắc kỵ sĩ giơ khiên và bất tử 6 giây; không thể tấn công trong thời gian này." },
 					prices_standard = { "170" },
 					prices_enhanced = { "85" }
 				},
@@ -1523,39 +1523,39 @@ local M = {
 		},
 		["tower_grim_cemetery_lvl4"] = {
 			doc_id = "",
-			title = "阴森墓地",
+			title = "Nghĩa địa rùng rợn",
 			attack = {
-				standard = "近战攻击，物理伤害。墓地每隔12秒会在330范围内随机位置产生一只僵尸，僵尸不能脱战回血或调集。墓地附近大于500血的敌人死亡会生成强化的僵尸，如果低于500则只能产生普通的僵尸。最多储存5只僵尸。",
-				enhanced = "近战攻击，物理伤害。墓地每隔12秒会在330范围内随机位置产生一只僵尸，僵尸不能脱战回血或调集。墓地附近大于500血的敌人死亡会生成强化的僵尸，如果低于500则只能产生普通的僵尸。最多储存5/6/7/8只僵尸。"
+				standard = "Đánh cận chiến gây sát thương vật lý. Cứ 12 giây tạo một zombie tại vị trí ngẫu nhiên trong bán kính 330; zombie không hồi máu ngoài giao tranh và không thể tập kết. Kẻ địch chết gần nghĩa địa có máu trên 500 tạo zombie cường hóa; dưới 500 chỉ tạo zombie thường. Tích trữ tối đa 5 zombie.",
+				enhanced = "Đánh cận chiến gây sát thương vật lý. Cứ 12 giây tạo một zombie tại vị trí ngẫu nhiên trong bán kính 330; zombie không hồi máu ngoài giao tranh và không thể tập kết. Kẻ địch chết gần nghĩa địa có máu trên 500 tạo zombie cường hóa; dưới 500 chỉ tạo zombie thường. Tích trữ tối đa 5/6/7/8 zombie."
 			},
-			change_note = "解说：原版只有1级僵尸值得出，2/3/4级僵尸没有升级价值。同时参考2代死灵，如果最大僵尸数能有8只的话，拦截的能力会有一定的提升。所以降低价格、提升人数。调整后不至于彻底占用死灵的生态位。",
+			change_note = "Nhận xét: Bản gốc chỉ zombie cấp 1 đáng dùng; nâng cấp 2/3/4 không đáng tiền. Tham khảo pháp sư chiêu hồn phần 2: nếu tối đa 8 zombie, khả năng chặn đường sẽ tốt hơn. Vì vậy giảm giá, tăng quân số nhưng giữ vai trò khác biệt với tháp chiêu hồn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "冷手抓人",
-					standard = "在一片路径区域产生10只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在4秒。",
-					enhanced = "在一片路径区域产生10只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在4秒。",
-					levels_standard = { "在一片路径区域产生10只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在4秒。", "在一片路径区域产生15只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在6秒。" },
-					levels_enhanced = { "在一片路径区域产生10只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在4秒。", "在一片路径区域产生15只僵尸手，每只僵尸手会减缓周围70范围内的敌人60%移速， 僵尸手存在6秒。" },
+					name = "Bàn tay lạnh",
+					standard = "Tạo 10 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 4 giây.",
+					enhanced = "Tạo 10 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 4 giây.",
+					levels_standard = { "Tạo 10 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 4 giây.", "Tạo 15 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 6 giây." },
+					levels_enhanced = { "Tạo 10 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 4 giây.", "Tạo 15 bàn tay zombie trên đường, giảm 60% tốc độ của kẻ địch trong bán kính 70 quanh mỗi bàn tay. Tồn tại 6 giây." },
 					prices_standard = { "110", "110" },
 					prices_enhanced = { "110", "110" }
 				},
 				{
-					name = "僵尸肌酸",
-					standard = "强化僵尸的属性，把所有僵尸变为强化体。",
-					enhanced = "强化僵尸的属性，把所有僵尸变为强化体。",
-					levels_standard = { "强化僵尸的属性，把所有僵尸变为强化体。" },
-					levels_enhanced = { "强化僵尸的属性，把所有僵尸变为强化体。" },
+					name = "Cường hóa zombie",
+					standard = "Tăng chỉ số, biến mọi zombie thành dạng cường hóa.",
+					enhanced = "Tăng chỉ số, biến mọi zombie thành dạng cường hóa.",
+					levels_standard = { "Tăng chỉ số, biến mọi zombie thành dạng cường hóa." },
+					levels_enhanced = { "Tăng chỉ số, biến mọi zombie thành dạng cường hóa." },
 					prices_standard = { "127" },
 					prices_enhanced = { "127" }
 				},
 				{
-					name = "腐败巨人观",
-					standard = "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生15点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤",
-					enhanced = "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生15点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤",
-					levels_standard = { "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生15点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤", "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生60点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤" },
-					levels_enhanced = { "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生15点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤", "每隔3秒就有1只敌人产生的僵尸获得自爆能力\n自爆死亡的僵尸将产生60点范围法伤(范围90) ，使敌人中毒，在3秒内造成共计27点法伤" },
+					name = "Zombie trương nổ",
+					standard = "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 15 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây.",
+					enhanced = "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 15 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây.",
+					levels_standard = { "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 15 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây.", "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 60 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây." },
+					levels_enhanced = { "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 15 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây.", "Cứ 3 giây, 1 zombie được tạo từ kẻ địch nhận khả năng tự nổ.\nKhi chết, gây 60 sát thương phép diện rộng trong bán kính 90 và gây độc, gây tổng cộng 27 sát thương phép trong 3 giây." },
 					prices_standard = { "93", "93" },
 					prices_enhanced = { "93", "93" }
 				},
@@ -1563,39 +1563,39 @@ local M = {
 		},
 		["tower_bone_flingers_lvl4"] = {
 			doc_id = "",
-			title = "掷骨者",
+			title = "Lính ném xương",
 			attack = {
-				standard = "每0.6秒发射一根骨头，扔向范围内随机敌人。",
-				enhanced = "每0.6秒发射一根骨头，扔向范围内随机敌人。"
+				standard = "Ném một khúc xương mỗi 0.6 giây vào kẻ địch ngẫu nhiên trong tầm.",
+				enhanced = "Ném một khúc xương mỗi 0.6 giây vào kẻ địch ngẫu nhiên trong tầm."
 			},
-			change_note = "解说：原版骨塔范围只有315，即便改版提升到了373，对于1/2/3/5代的箭塔来说也是偏小的。由于前3代还没有[范围偏小但输出更高的箭塔]，故对骨塔做出类似改动。和红兵一样，加强后的“利刃大师”既然能加强和“刃”有关的1/3技能，那么加强后的“喝牛奶”也应该能加强和“骨”有关的骷髅远程伤害。",
-			port_note = "移植改动：原版全等级范围300(+5%)。",
+			change_note = "Nhận xét: Tầm tháp xương bản gốc chỉ 315, tăng lên 373 vẫn nhỏ so với tháp cung phần 1/2/3/5. Vì 3 phần trước chưa có tháp cung tầm ngắn nhưng sát thương cao, tháp xương được chỉnh theo hướng này. Tương tự Bậc thầy kiếm thuật tăng kỹ năng 1/3 liên quan đến kiếm, Uống sữa cũng nên tăng sát thương đánh xa của bộ xương.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 300 (+5%).",
 			notes = "",
 			skills = {
 				{
-					name = "行走骨骼",
-					standard = "每隔16秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。",
-					enhanced = "每隔8秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。",
-					levels_standard = { "每隔16秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。", "每隔12秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。" },
-					levels_enhanced = { "每隔8秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。", "每隔8秒生成一名能走遍整条路径的骷髅战士/骷髅骑士，拦截并攻击敌人。" },
+					name = "Xương biết đi",
+					standard = "Cứ 16 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch.",
+					enhanced = "Cứ 8 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch.",
+					levels_standard = { "Cứ 16 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch.", "Cứ 12 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch." },
+					levels_enhanced = { "Cứ 8 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch.", "Cứ 8 giây tạo một chiến binh/kỵ sĩ bộ xương đi hết đường, chặn và đánh kẻ địch." },
 					prices_standard = { "153", "153" },
 					prices_enhanced = { "153", "153" }
 				},
 				{
-					name = "喝牛奶",
-					standard = "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅5点防御塔远程攻击伤害",
-					enhanced = "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅8点防御塔远程攻击伤害和巨人骷髅的远程攻击伤害。",
-					levels_standard = { "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅点防御塔远程攻击伤害", "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅10点防御塔远程攻击伤害", "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅15点防御塔远程攻击伤害" },
-					levels_enhanced = { "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅8点防御塔远程攻击伤害和巨人骷髅的远程攻击伤害。", "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅18点防御塔远程攻击伤害和巨人骷髅的远程攻击伤害。", "骷髅们喝下牛奶后进行远程攻击时都更有力量。提升骷髅28点防御塔远程攻击伤害和巨人骷髅的远程攻击伤害。"},
+					name = "Uống sữa",
+					standard = "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 5 sát thương đánh xa của tháp.",
+					enhanced = "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 8 sát thương đánh xa của tháp và Bộ xương khổng lồ.",
+					levels_standard = { "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng sát thương đánh xa của tháp.", "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 10 sát thương đánh xa của tháp.", "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 15 sát thương đánh xa của tháp." },
+					levels_enhanced = { "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 8 sát thương đánh xa của tháp và Bộ xương khổng lồ.", "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 18 sát thương đánh xa của tháp và Bộ xương khổng lồ.", "Uống sữa giúp bộ xương đánh xa mạnh hơn. Tăng 28 sát thương đánh xa của tháp và Bộ xương khổng lồ."},
 					prices_standard = { "93", "93", "93" },
 					prices_enhanced = { "93", "93", "93" }
 				},
 				{
-					name = "巨人骷髅",
-					standard = "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围300。。",
-					enhanced = "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围373。被2技能加成后，远程攻击力提升到 25-39。",
-					levels_standard = { "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围300。。", "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围300。。", "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围300。" },
-					levels_enhanced = { "召唤一名巨人骷髅参战，390血0甲10秒复活，远程攻击17-31/1.0，远程攻击范围373。被2技能加成后，远程攻击力提升到 25-39/35-49/45-59。"},
+					name = "Bộ xương khổng lồ",
+					standard = "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 300.",
+					enhanced = "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 373. Kỹ năng 2 tăng sát thương đánh xa thành 25-39.",
+					levels_standard = { "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 300.", "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 300.", "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 300." },
+					levels_enhanced = { "Triệu hồi Bộ xương khổng lồ: máu 390, giáp 0, hồi sinh 10 giây; đánh xa 17-31/1.0, tầm 373. Kỹ năng 2 tăng sát thương đánh xa thành 25-39/35-49/45-59."},
 					prices_standard = { "255" },
 					prices_enhanced = { "255" }
 				},
@@ -1603,39 +1603,39 @@ local M = {
 		},
 		["tower_blazing_watcher_lvl4"] = {
 			doc_id = "",
-			title = "炙热宝石",
+			title = "Ngọc lửa",
 			attack = {
-				standard = "选中一名距离防守点最远的敌人持续攻击直至死亡或走出范围。每2次选中的间隔不低于1.5秒。连续攻击同一个目标攻击3次之后攻击力变为正常的2倍，6次之后变为正常的3倍。",
-				enhanced = "选中一名距离防守点最远的敌人持续攻击直至死亡或走出范围。每2次选中的间隔不低于1.5秒。连续攻击同一个目标攻击3次之后攻击力变为正常的2倍，6次之后变为正常的3倍。\n若怪物走出范围时未杀死敌人，会持续攻击敌人，直至怪物走出范围超过60点距离(相当于索敌范围提升到原版440/加强范围后495)。"
+				standard = "Khóa kẻ địch xa lối thoát nhất, đánh đến khi nó chết hoặc rời tầm. Khoảng cách giữa 2 lần khóa tối thiểu 1.5 giây. Đánh cùng mục tiêu 3 lần tăng sức tấn công lên 2 lần; sau 6 lần tăng lên 3 lần.",
+				enhanced = "Khóa kẻ địch xa lối thoát nhất, đánh đến khi nó chết hoặc rời tầm. Khoảng cách giữa 2 lần khóa tối thiểu 1.5 giây. Đánh cùng mục tiêu 3 lần tăng sức tấn công lên 2 lần; sau 6 lần tăng lên 3 lần.\nMục tiêu chưa chết khi rời tầm vẫn bị đánh đến khi vượt thêm 60 khoảng cách, tương đương tầm tìm mục tiêu 440 bản gốc hoặc 495 sau tăng tầm."
 			},
-			change_note = "解说：偏科战神且不好改回常规法塔，因此就提升其长板。提升2技能2/3级的属性和1技能的上限。",
-			port_note = "移植改动：遵循的是2022.10版本的红钻数值，新版本造价为980且攻击力有削弱；原版全等级范围320；\n改版转火速度有时会略小于1.5秒(但2.0beta版早期的瞬间转火的bug已经修了)。",
+			change_note = "Nhận xét: Tháp chuyên biệt, khó chuyển thành tháp phép thông thường nên tăng thế mạnh sẵn có. Cải thiện kỹ năng 2 cấp 2/3 và giới hạn kỹ năng 1.",
+			port_note = "Thay đổi khi chuyển sang mod: Dùng chỉ số Ngọc lửa phiên bản 2022.10. Bản mới giá 980, sức tấn công bị giảm. Tầm gốc mọi cấp 320.\nĐôi lúc đổi mục tiêu nhanh hơn 1.5 giây; lỗi đổi mục tiêu tức thì của bản 2.0 beta đầu đã sửa.",
 			notes = "",
 			skills = {
 				{
-					name = "充能宝石",
-					standard = "连续攻击9次后，攻击力变为4倍。如果点击技能时已经连续攻击一个目标9次及以上则立即生效。",
-					enhanced = "连续攻击9次后，攻击力变为4倍并可继续以一半的速度充能，最高充能到10倍攻击力。",
-					levels_standard = { "连续攻击9次后，攻击力变为4倍。如果点击技能时已经连续攻击一个目标9次及以上则立即生效。" },
-					levels_enhanced = { "连续攻击9次后，攻击力变为4倍并可继续以一半的速度充能，最高充能到10倍攻击力。" },
+					name = "Ngọc tích điện",
+					standard = "Sau 9 đòn liên tiếp, sức tấn công tăng 4 lần. Nếu đã đánh cùng mục tiêu ít nhất 9 lần khi mua kỹ năng, hiệu ứng có ngay.",
+					enhanced = "Sau 9 đòn liên tiếp, sức tấn công tăng 4 lần, tiếp tục tích điện với một nửa tốc độ, tối đa 10 lần.",
+					levels_standard = { "Sau 9 đòn liên tiếp, sức tấn công tăng 4 lần. Nếu đã đánh cùng mục tiêu ít nhất 9 lần khi mua kỹ năng, hiệu ứng có ngay." },
+					levels_enhanced = { "Sau 9 đòn liên tiếp, sức tấn công tăng 4 lần, tiếp tục tích điện với một nửa tốc độ, tối đa 10 lần." },
 					prices_standard = { "170" },
 					prices_enhanced = { "170" }
 				},
 				{
-					name = "毁灭射线",
-					standard = "秒杀一名敌人，CD25，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发",
-					enhanced = "秒杀一名敌人，CD25，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发",
-					levels_standard = { "秒杀一名敌人，CD25，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发", "秒杀一名敌人，CD23，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发", "秒杀一名敌人，CD20，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发" },
-					levels_enhanced = { "秒杀一名敌人，CD25，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发", "秒杀一名敌人，CD20，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发", "秒杀一名敌人，CD15，CD冷却完毕且防御塔没锁定敌人时才触发，如果在攻击敌人而CD冷却好了则不会触发" },
+					name = "Tia hủy diệt",
+					standard = "Tiêu diệt ngay một kẻ địch. CD: 25 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.",
+					enhanced = "Tiêu diệt ngay một kẻ địch. CD: 25 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.",
+					levels_standard = { "Tiêu diệt ngay một kẻ địch. CD: 25 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.", "Tiêu diệt ngay một kẻ địch. CD: 23 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.", "Tiêu diệt ngay một kẻ địch. CD: 20 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh." },
+					levels_enhanced = { "Tiêu diệt ngay một kẻ địch. CD: 25 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.", "Tiêu diệt ngay một kẻ địch. CD: 20 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh.", "Tiêu diệt ngay một kẻ địch. CD: 15 giây. Chỉ kích hoạt khi đã hồi và tháp chưa khóa mục tiêu; không kích hoạt giữa lúc đang đánh." },
 					prices_standard = { "212", "148", "148" },
 					prices_enhanced = { "212", "106", "106" }
 				},
 				{
-					name = "不稳定力量",
-					standard = "击杀敌人后对100范围内敌人造成32-38×技能等级×充能层数点魔法伤害",
-					enhanced = "击杀敌人后对100范围内敌人造成32-38×技能等级×充能层数点魔法伤害",
-					levels_standard = { "击杀敌人后对100范围内敌人造成32-38×充能层数点魔法伤害", "击杀敌人后对100范围内敌人造成64-76×充能层数点魔法伤害" },
-					levels_enhanced = { "击杀敌人后对100范围内敌人造成32-38×充能层数点魔法伤害", "击杀敌人后对100范围内敌人造成64-76×充能层数点魔法伤害" },
+					name = "Sức mạnh bất ổn",
+					standard = "Khi giết mục tiêu, gây 32-38 × cấp kỹ năng × tầng tích điện sát thương phép trong bán kính 100.",
+					enhanced = "Khi giết mục tiêu, gây 32-38 × cấp kỹ năng × tầng tích điện sát thương phép trong bán kính 100.",
+					levels_standard = { "Khi giết mục tiêu, gây 32-38 × tầng tích điện sát thương phép trong bán kính 100.", "Khi giết mục tiêu, gây 64-76 × tầng tích điện sát thương phép trong bán kính 100." },
+					levels_enhanced = { "Khi giết mục tiêu, gây 32-38 × tầng tích điện sát thương phép trong bán kính 100.", "Khi giết mục tiêu, gây 64-76 × tầng tích điện sát thương phép trong bán kính 100." },
 					prices_standard = { "170", "170" },
 					prices_enhanced = { "170", "170" }
 				},
@@ -1643,39 +1643,39 @@ local M = {
 		},
 		["tower_rotten_forest_lvl4"] = {
 			doc_id = "",
-			title = "腐朽森林",
+			title = "Rừng mục rữa",
 			attack = {
-				standard = "攻击范围内召唤树根，站在树根上面的敌人会降低20/20/30/30%移速，且每0.4秒还会受到3/4/5/7点物理伤害。",
-				enhanced = "攻击范围内召唤树根，站在树根上面的敌人会降低20/20/30/30%移速，且每0.4秒还会受到3/4/5/7点物理伤害。"
+				standard = "Gọi rễ trong tầm đánh. Kẻ địch đứng trên rễ bị giảm 20/20/30/30% tốc độ, chịu 3/4/5/7 sát thương vật lý mỗi 0.4 giây.",
+				enhanced = "Gọi rễ trong tầm đánh. Kẻ địch đứng trên rễ bị giảm 20/20/30/30% tốc độ, chịu 3/4/5/7 sát thương vật lý mỗi 0.4 giây."
 			},
-			change_note = "解说：由于1/2/3/5代路径平均要比4代就要窄10%左右，加之移植后统一调整了4代塔的范围，腐森在前3代已经是强塔，不需要进一步补强了。",
-			port_note = "移植改动：原版全等级范围320，由于是范围攻击，调整幅度相比同类320范围的塔较小；复仇新版本(2025.04)已经移除了迷雾减速，但移植时保留了此特性；\n1技能树人原版可以持续10秒但有-50的生命回复；\n3技能原版是降低怪物15/25%的命中率，但由于KR敌方攻击存在大量的致死真伤或秒杀，故降低命中率从机制上要优于降低攻击力(例如鞭爷降低了攻击力也能一鞭抽死1级兵，但降低了命中则可能一鞭抽不死)，所以降低攻击力给了更多数值。有关该机制的研究，该视频给出了详细的解释：https://www.bilibili.com/video/BV13y411i71p。",
+			change_note = "Nhận xét: Đường đi phần 1/2/3/5 hẹp hơn phần 4 khoảng 10%; tầm tháp phần 4 cũng đã điều chỉnh khi chuyển sang mod. Rừng mục rữa vốn mạnh ở 3 phần trước, không cần tăng thêm.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 320; tăng ít hơn tháp cùng loại tầm 320 vì đánh toàn vùng. Vengeance bản mới (2025.04) bỏ làm chậm từ sương nhưng bản mod giữ lại.\nThụ nhân kỹ năng 1 bản gốc tồn tại 10 giây, hồi máu -50.\nKỹ năng 3 bản gốc giảm 15/25% độ chính xác. Nhiều đòn đánh địch là sát thương chuẩn chí tử hoặc tiêu diệt ngay, nên giảm độ chính xác tốt hơn giảm sức tấn công: địch cầm roi vẫn có thể giết lính cấp 1 khi bị giảm sức đánh, nhưng có thể đánh trượt. Vì vậy mức giảm sức đánh được tăng thêm. Giải thích: https://www.bilibili.com/video/BV13y411i71p.",
 			notes = "",
 			skills = {
 				{
-					name = "邪恶树人",
-					standard = "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。",
-					enhanced = "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。",
-					levels_standard = { "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。", "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。" },
-					levels_enhanced = { "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。", "每18/13秒召唤2只血量260、生命回复0的树人，最多作战5.2秒。" },
+					name = "Thụ nhân tà ác",
+					standard = "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây.",
+					enhanced = "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây.",
+					levels_standard = { "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây.", "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây." },
+					levels_enhanced = { "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây.", "Mỗi 18/13 giây triệu hồi 2 thụ nhân, máu 260, hồi máu 0, tồn tại tối đa 5.2 giây." },
 					prices_standard = { "170", "85" },
 					prices_enhanced = { "170", "85" }
 				},
 				{
-					name = "邪恶之根",
-					standard = "缠绕范围内最多5名敌人，持续3秒，CD15秒",
-					enhanced = "缠绕范围内最多5名敌人，持续3秒，被缠绕的敌人每秒还会受到25点物理伤害，总共受到75点物理伤害。CD15秒",
-					levels_standard = { "缠绕范围内最多5名敌人，持续3秒，CD15秒", "缠绕范围内最多5名敌人，持续6秒，CD15秒" },
-					levels_enhanced = { "缠绕范围内最多5名敌人，持续3秒，被缠绕的敌人每秒还会受到25点物理伤害，总共受到75点物理伤害。CD15秒", "缠绕范围内最多5名敌人，持续6秒，被缠绕的敌人每秒还会受到25点物理伤害，总共受到150点物理伤害。CD15秒" },
+					name = "Rễ tà ác",
+					standard = "Trói tối đa 5 kẻ địch trong tầm suốt 3 giây. CD: 15 giây.",
+					enhanced = "Trói tối đa 5 kẻ địch trong tầm suốt 3 giây, gây 25 sát thương vật lý mỗi giây, tổng 75. CD: 15 giây.",
+					levels_standard = { "Trói tối đa 5 kẻ địch trong tầm suốt 3 giây. CD: 15 giây.", "Trói tối đa 5 kẻ địch trong tầm suốt 6 giây. CD: 15 giây." },
+					levels_enhanced = { "Trói tối đa 5 kẻ địch trong tầm suốt 3 giây, gây 25 sát thương vật lý mỗi giây, tổng 75. CD: 15 giây.", "Trói tối đa 5 kẻ địch trong tầm suốt 6 giây, gây 25 sát thương vật lý mỗi giây, tổng 150. CD: 15 giây." },
 					prices_standard = { "136", "136" },
 					prices_enhanced = { "136", "136" }
 				},
 				{
-					name = "迷雾",
-					standard = "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方18%攻击力。",
-					enhanced = "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方18%攻击力。",
-					levels_standard = { "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方18%攻击力。", "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方30%攻击力。" },
-					levels_enhanced = { "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方18%攻击力。", "在攻击范围内生成迷雾，将减速幅度提升到37%，并降低敌方30%攻击力。" },
+					name = "Sương mù",
+					standard = "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 18% sức tấn công của địch.",
+					enhanced = "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 18% sức tấn công của địch.",
+					levels_standard = { "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 18% sức tấn công của địch.", "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 30% sức tấn công của địch." },
+					levels_enhanced = { "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 18% sức tấn công của địch.", "Tạo sương trong tầm đánh, tăng mức làm chậm lên 37% và giảm 30% sức tấn công của địch." },
 					prices_standard = { "102", "102" },
 					prices_enhanced = { "102", "102" }
 				},
@@ -1683,39 +1683,39 @@ local M = {
 		},
 		["tower_wicked_sisters_lvl4"] = {
 			doc_id = "",
-			title = "女巫姐妹花",
+			title = "Chị em phù thủy",
 			attack = {
-				standard = "可以在275范围内调集并切换中毒形态和眩晕形态。\n眩晕形态下，每2.5秒发射一个紫色能量球造成94-220点魔法伤害，并有40/40/50/60%几率眩晕敌方1.2/1.4/1.6/2秒；\n剧毒形态下，每2.5秒发射一个绿色能量球，造成0/0/1/2点毒素伤害，并令敌方进入中毒状态2.4秒，每0.8秒受到12/30/51/84点毒素伤害。",
-				enhanced = "可以在275范围内调集并切换中毒形态和眩晕形态。\n眩晕形态下，每2.5秒发射一个紫色能量球造成176-220点魔法伤害，并有40/40/50/60%几率眩晕敌方1.2/1.4/1.6/2秒；\n剧毒形态下，每2.5秒发射一个绿色能量球，造成0/0/1/2点毒素伤害，并令敌方进入中毒状态2.4秒，每0.8秒受到12/30/51/84点毒素伤害。"
+				standard = "Tập kết trong phạm vi 275, đổi giữa dạng độc và choáng.\nDạng choáng: bắn cầu tím mỗi 2.5 giây, gây 94-220 sát thương phép; có 40/40/50/60% cơ hội choáng 1.2/1.4/1.6/2 giây.\nDạng độc: bắn cầu xanh mỗi 2.5 giây, gây 0/0/1/2 sát thương độc; gây độc 2.4 giây, gây 12/30/51/84 sát thương độc mỗi 0.8 giây.",
+				enhanced = "Tập kết trong phạm vi 275, đổi giữa dạng độc và choáng.\nDạng choáng: bắn cầu tím mỗi 2.5 giây, gây 176-220 sát thương phép; có 40/40/50/60% cơ hội choáng 1.2/1.4/1.6/2 giây.\nDạng độc: bắn cầu xanh mỗi 2.5 giây, gây 0/0/1/2 sát thương độc; gây độc 2.4 giây, gây 12/30/51/84 sát thương độc mỗi 0.8 giây."
 			},
-			change_note = "解说：虽然索敌的毒点很多，但毒形态的DPS已经全代断档第1了，不能再加强了。仅增加眩晕形态的稳定性，起码让另一个形态能用，不至于打蜘蛛0发挥。",
-			port_note = "移植改动：遵循的是2024.09版本的女巫数值(既能吃暴击科技也能吃增伤科技，每次普攻平均能打出84.7×3=254.1点伤害，改版去尾后为84×3+2=254)，新版本(2025.04)女巫中毒不吃暴击也不吃10%增伤科技，每次普攻只能打210伤害。\n移植说明：原版调集范围250，升级3技能后调集范围350/450；\n升级防御塔后，原版女巫会直接停留在原处继续攻击，而改版会从防御塔中心重新召唤；\n1技能变蛙原版6秒之内不点死会变回去；\n(1)原版女巫普攻和1技能没有所谓的“智能索敌”。原版索敌是先锁定最先出现在出怪口的怪物，而不是锁定最大血量/最大赏金/进家损失最多的怪物。导致错觉的原因是大怪容易被拖到下一波，以及部分波次会先出大怪后出小怪。\n(2)原版女巫不吃熔炉的增伤(面板增加但实际攻击力不变)。改版面板和实际攻击力均保持不变。",
+			change_note = "Nhận xét: Dù tìm mục tiêu còn nhiều vấn đề, dạng độc đã đứng thứ 1 vượt trội về sát thương mỗi giây, không thể tăng thêm. Chỉ tăng độ ổn định dạng choáng để vẫn hữu ích khi đánh nhện, tránh hiệu quả 0.",
+			port_note = "Thay đổi khi chuyển sang mod: Dùng chỉ số phiên bản 2024.09, nhận cả chí mạng và tăng sát thương. Mỗi đòn trung bình 84.7×3=254.1; bản mod bỏ phần đuôi thành 84×3+2=254. Bản mới (2025.04) không nhận chí mạng hoặc nâng cấp tăng 10%, mỗi đòn chỉ 210 sát thương.\nTầm tập kết gốc 250; sau nâng kỹ năng 3 là 350/450.\nBản gốc nâng tháp thì phù thủy đứng nguyên và đánh tiếp; bản mod triệu hồi lại từ giữa tháp.\nẾch từ kỹ năng 1 bản gốc trở về dạng cũ nếu không nhấn giết trong 6 giây.\n(1) Đòn đánh thường và kỹ năng 1 bản gốc không tìm mục tiêu thông minh: khóa quái xuất hiện sớm nhất, không ưu tiên máu, tiền thưởng hay số mạng làm mất. Quái lớn kéo dài sang đợt sau hoặc xuất hiện trước quái nhỏ tạo cảm giác ưu tiên.\n(2) Bản gốc không nhận tăng sát thương từ Lò nung: chỉ số tăng nhưng sức đánh thực không đổi. Bản mod giữ nguyên cả hai.",
 			notes = "",
 			skills = {
 				{
-					name = "变蛙术",
-					standard = "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD22秒。",
-					enhanced = "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD22秒。",
-					levels_standard = { "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD22秒。", "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD18秒。" },
-					levels_enhanced = { "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD22秒。", "将敌人永久变形为一只无害的青蛙，青蛙拥有75%生命值和20点移速，点击3下可致死。优先瞄准最先出场的敌人。CD18秒。" },
+					name = "Biến ếch",
+					standard = "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 22 giây.",
+					enhanced = "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 22 giây.",
+					levels_standard = { "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 22 giây.", "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 18 giây." },
+					levels_enhanced = { "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 22 giây.", "Biến vĩnh viễn kẻ địch thành ếch vô hại, còn 75% máu, tốc độ 20. Nhấn 3 lần để giết. Ưu tiên quái xuất hiện sớm nhất. CD: 18 giây." },
 					prices_standard = { "195", "153" },
 					prices_enhanced = { "195", "153" }
 				},
 				{
-					name = "沉默图腾",
-					standard = "站在塔上的女巫在280范围内生成一个效应范围200、持续10秒的图腾，沉默效应范围内的敌人(可同时禁用敌方技能和亡语)。CD15。本技能被封塔时无法释放。",
-					enhanced = "站在塔上的女巫在280范围内生成一个效应范围200、持续10秒的图腾，沉默效应范围内的敌人(可同时禁用敌方技能和亡语)。CD15。本技能被封塔时无法释放。",
-					levels_standard = { "站在塔上的女巫在280范围内生成一个效应范围200、持续10秒的图腾，沉默效应范围内的敌人(可同时禁用敌方技能和亡语)。CD15。本技能被封塔时无法释放。" },
-					levels_enhanced = { "站在塔上的女巫在280范围内生成一个效应范围200、持续10秒的图腾，沉默效应范围内的敌人(可同时禁用敌方技能和亡语)。CD15。本技能被封塔时无法释放。" },
+					name = "Vật tổ câm lặng",
+					standard = "Phù thủy trên tháp đặt vật tổ trong tầm 280, bán kính 200, tồn tại 10 giây. Câm lặng kẻ địch, vô hiệu hóa cả kỹ năng lẫn hiệu ứng khi chết. CD: 15 giây. Không dùng được khi tháp bị khóa.",
+					enhanced = "Phù thủy trên tháp đặt vật tổ trong tầm 280, bán kính 200, tồn tại 10 giây. Câm lặng kẻ địch, vô hiệu hóa cả kỹ năng lẫn hiệu ứng khi chết. CD: 15 giây. Không dùng được khi tháp bị khóa.",
+					levels_standard = { "Phù thủy trên tháp đặt vật tổ trong tầm 280, bán kính 200, tồn tại 10 giây. Câm lặng kẻ địch, vô hiệu hóa cả kỹ năng lẫn hiệu ứng khi chết. CD: 15 giây. Không dùng được khi tháp bị khóa." },
+					levels_enhanced = { "Phù thủy trên tháp đặt vật tổ trong tầm 280, bán kính 200, tồn tại 10 giây. Câm lặng kẻ địch, vô hiệu hóa cả kỹ năng lẫn hiệu ứng khi chết. CD: 15 giây. Không dùng được khi tháp bị khóa." },
 					prices_standard = { "153" },
 					prices_enhanced = { "153" }
 				},
 				{
-					name = "光轮4000",
-					standard = "提升调集范围到350(385)。",
-					enhanced = "提升调集范围到350(385)。",
-					levels_standard = { "提升调集范围到350(385)。", "提升调集范围到450(495)。" },
-					levels_enhanced = { "提升调集范围到350(385)。", "提升调集范围到450(495)。" },
+					name = "Nimbus 4000",
+					standard = "Tăng phạm vi tập kết lên 350 (385).",
+					enhanced = "Tăng phạm vi tập kết lên 350 (385).",
+					levels_standard = { "Tăng phạm vi tập kết lên 350 (385).", "Tăng phạm vi tập kết lên 450 (495)." },
+					levels_enhanced = { "Tăng phạm vi tập kết lên 350 (385).", "Tăng phạm vi tập kết lên 450 (495)." },
 					prices_standard = { "85", "85" },
 					prices_enhanced = { "85", "85" }
 				},
@@ -1723,39 +1723,39 @@ local M = {
 		},
 		["tower_twilight_elves_barrack_lvl4"] = {
 			doc_id = "",
-			title = "精英骚扰者",
+			title = "Lính quấy rối tinh nhuệ",
 			attack = {
-				standard = "2人兵营。360范围内有敌人进行远程射击，100范围内有敌人改为近战。\n近战有30%几率闪避攻击。",
-				enhanced = "3人兵营。360范围内有敌人进行远程射击，100范围内有敌人改为近战。\n近战有30%几率闪避攻击。"
+				standard = "Doanh trại 2 lính. Đánh xa khi địch trong tầm 360, chuyển cận chiến trong tầm 100.\nCận chiến có 30% cơ hội né đòn.",
+				enhanced = "Doanh trại 3 lính. Đánh xa khi địch trong tầm 360, chuyển cận chiến trong tầm 100.\nCận chiến có 30% cơ hội né đòn."
 			},
-			change_note = "解说：4级人数增加减少了阵亡带来的损失；2人变3人普攻面板下降而伤害总和基本不变，提升了2技能的输出能力。",
-			port_note = "移植改动：原版全等级调集范围350。",
+			change_note = "Nhận xét: Tăng quân số cấp 4 để giảm tổn thất khi lính chết. Từ 2 lên 3 lính, chỉ số mỗi lính giảm nhưng tổng sát thương gần như giữ nguyên; tăng sát thương kỹ năng 2.",
+			port_note = "Thay đổi khi chuyển sang mod: Phạm vi tập kết gốc mọi cấp 350.",
 			notes = "",
 			skills = {
 				{
-					name = "背刺",
-					standard = "提升骚扰者的闪避几率为40%，并反击造成10-15点物伤",
-					enhanced = "提升骚扰者的闪避几率为40%，并反击造成10-15点物伤",
-					levels_standard = { "提升骚扰者的闪避几率为40%，并反击造成10-15点物伤", "提升骚扰者的闪避几率为50%，并反击造成20-30点物伤" },
-					levels_enhanced = { "提升骚扰者的闪避几率为40%，并反击造成10-15点物伤", "提升骚扰者的闪避几率为50%，并反击造成20-30点物伤" },
+					name = "Đâm sau lưng",
+					standard = "Tăng né đòn lên 40%; phản kích gây 10-15 sát thương vật lý.",
+					enhanced = "Tăng né đòn lên 40%; phản kích gây 10-15 sát thương vật lý.",
+					levels_standard = { "Tăng né đòn lên 40%; phản kích gây 10-15 sát thương vật lý.", "Tăng né đòn lên 50%; phản kích gây 20-30 sát thương vật lý." },
+					levels_enhanced = { "Tăng né đòn lên 40%; phản kích gây 10-15 sát thương vật lý.", "Tăng né đòn lên 50%; phản kích gây 20-30 sát thương vật lý." },
 					prices_standard = { "153", "153" },
 					prices_enhanced = { "153", "153" }
 				},
 				{
-					name = "箭矢风暴",
-					standard = "骚扰者对一名敌人连续射出5支箭，每发造成16-24点物伤，CD12秒",
-					enhanced = "骚扰者对一名敌人连续射出5支箭，每发造成16-24点物伤，CD12秒",
-					levels_standard = { "骚扰者对一名敌人连续射出5支箭，每发造成16-24点物伤，CD12秒", "骚扰者对一名敌人连续射出5支箭，每发造成32-48点物伤，CD12秒", "骚扰者对一名敌人连续射出5支箭，每发造成48-72点物伤，CD12秒" },
-					levels_enhanced = { "骚扰者对一名敌人连续射出5支箭，每发造成16-24点物伤，CD12秒", "骚扰者对一名敌人连续射出5支箭，每发造成32-48点物伤，CD12秒", "骚扰者对一名敌人连续射出5支箭，每发造成48-72点物伤，CD12秒" },
+					name = "Bão tên",
+					standard = "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 16-24 sát thương vật lý. CD: 12 giây.",
+					enhanced = "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 16-24 sát thương vật lý. CD: 12 giây.",
+					levels_standard = { "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 16-24 sát thương vật lý. CD: 12 giây.", "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 32-48 sát thương vật lý. CD: 12 giây.", "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 48-72 sát thương vật lý. CD: 12 giây." },
+					levels_enhanced = { "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 16-24 sát thương vật lý. CD: 12 giây.", "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 32-48 sát thương vật lý. CD: 12 giây.", "Bắn liên tiếp 5 mũi tên vào một mục tiêu, mỗi mũi gây 48-72 sát thương vật lý. CD: 12 giây." },
 					prices_standard = { "119", "119", "119" },
 					prices_enhanced = { "119", "119", "119" }
 				},
 				{
-					name = "暮光之怒",
-					standard = "骚扰者阵亡时75%狂化生成狂暴的骚扰者，250(325)血32-48攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。",
-					enhanced = "骚扰者阵亡时100%狂化生成狂暴的骚扰者，250(325)血32-48攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。",
-					levels_standard = { "骚扰者阵亡时75%狂化生成狂暴的骚扰者，250(325)血32-48攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。", "骚扰者阵亡时75狂化生成狂暴的骚扰者，250(325)血0.5攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。" },
-					levels_enhanced = { "骚扰者阵亡时100%狂化生成狂暴的骚扰者，250(325)血32-48攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。", "骚扰者阵亡时100%狂化生成狂暴的骚扰者，250(325)血0.5攻击力，失去远程攻击能力，会持续战斗直到目标或自己死亡，至少存在6秒，狂怒骚扰者的存在不会拖延骚扰者的复活时间。" },
+					name = "Cuồng nộ Chạng vạng",
+					standard = "Khi chết, có 75% cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 32-48, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường.",
+					enhanced = "Khi chết, có 100% cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 32-48, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường.",
+					levels_standard = { "Khi chết, có 75% cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 32-48, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường.", "Khi chết, có 75 cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 0.5, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường." },
+					levels_enhanced = { "Khi chết, có 100% cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 32-48, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường.", "Khi chết, có 100% cơ hội hóa lính cuồng nộ: 250 (325) máu, sức đánh 0.5, mất khả năng đánh xa. Chiến đấu đến khi bản thân hoặc mục tiêu chết, tồn tại ít nhất 6 giây. Không làm chậm hồi sinh lính thường." },
 					prices_standard = { "187" },
 					prices_enhanced = { "187" }
 				},
@@ -1763,39 +1763,39 @@ local M = {
 		},
 		["tower_deep_devils_lvl4"] = {
 			doc_id = "",
-			title = "深渊恶魔环礁",
+			title = "Rạn quỷ biển sâu",
 			attack = {
-				standard = "每1.5秒发射一个魔法弹攻击敌人。同时每级会召唤2只50/90/135/180(65/117/175/234)点生命值、重生时间12秒、调集范围290的鱼人以拦截过路敌人。4级鱼人将拥有9-15/0.9远程能力。",
-				enhanced = "每1.5秒发射一个魔法弹攻击敌人。同时每级会召唤2只50/90/135/180(65/117/175/234)点生命值、重生时间12秒、调集范围290的鱼人以拦截过路敌人。4级鱼人将拥有9-15/0.9远程能力。"
+				standard = "Bắn đạn phép mỗi 1.5 giây. Mỗi cấp triệu hồi 2 người cá: 50/90/135/180 (65/117/175/234) máu, hồi sinh 12 giây, tập kết 290. Người cá cấp 4 đánh xa 9-15/0.9.",
+				enhanced = "Bắn đạn phép mỗi 1.5 giây. Mỗi cấp triệu hồi 2 người cá: 50/90/135/180 (65/117/175/234) máu, hồi sinh 12 giây, tập kết 290. Người cá cấp 4 đánh xa 9-15/0.9."
 			},
-			change_note = "解说：普攻、召唤物、1技能都没有值得加强的点了。但3技能性价比偏低。",
-			port_note = "移植改动：原版全等级范围300；暴击科技已经折算面板；原版2技能投网后敌人不能受到伤害。\n完美风暴写代码的时候借用了高等精灵法师的哨卫，机制上会略有不同。",
+			change_note = "Nhận xét: Đòn đánh thường, đơn vị triệu hồi và kỹ năng 1 không cần tăng thêm. Kỹ năng 3 chưa đáng tiền.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 300; chí mạng đã tính vào chỉ số. Kỹ năng 2 bản gốc khiến mục tiêu trúng lưới không nhận sát thương.\nBão hoàn hảo dùng mã vệ tinh của tháp tinh linh cao cấp nên cơ chế hơi khác.",
 			notes = "",
 			skills = {
 				{
-					name = "海选之人",
-					standard = "提升海潮战士50点生命值、15点护甲和5点攻击力。",
-					enhanced = "提升海潮战士50点生命值、15点护甲和5点攻击力。",
-					levels_standard = { "提升海潮战士50点生命值、15点护甲和5点攻击力。" },
-					levels_enhanced = { "提升海潮战士50点生命值、15点护甲和5点攻击力。" },
+					name = "Người được biển chọn",
+					standard = "Tăng 50 máu, 15 giáp và 5 sức tấn công cho chiến binh thủy triều.",
+					enhanced = "Tăng 50 máu, 15 giáp và 5 sức tấn công cho chiến binh thủy triều.",
+					levels_standard = { "Tăng 50 máu, 15 giáp và 5 sức tấn công cho chiến binh thủy triều." },
+					levels_enhanced = { "Tăng 50 máu, 15 giáp và 5 sức tấn công cho chiến binh thủy triều." },
 					prices_standard = { "170" },
 					prices_enhanced = { "170" }
 				},
 				{
-					name = "投网",
-					standard = "海潮战士每14/12秒投出一个网禁锢敌人2秒，\n期间敌人不可行动，正常受到伤害。",
-					enhanced = "海潮战士每14/12秒投出一个网禁锢敌人2秒，\n期间敌人不可行动，正常受到伤害。",
-					levels_standard = { "海潮战士每14/12秒投出一个网禁锢敌人2秒，\n期间敌人不可行动，正常受到伤害。", "海潮战士每14/12秒投出一个网禁锢敌人4秒，\n期间敌人不可行动，正常受到伤害。" },
-					levels_enhanced = { "海潮战士每14/12秒投出一个网禁锢敌人2秒，\n期间敌人不可行动，正常受到伤害。", "海潮战士每14/12秒投出一个网禁锢敌人4秒，\n期间敌人不可行动，正常受到伤害。" },
+					name = "Ném lưới",
+					standard = "Mỗi 14/12 giây ném lưới giữ chân 2 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường.",
+					enhanced = "Mỗi 14/12 giây ném lưới giữ chân 2 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường.",
+					levels_standard = { "Mỗi 14/12 giây ném lưới giữ chân 2 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường.", "Mỗi 14/12 giây ném lưới giữ chân 4 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường." },
+					levels_enhanced = { "Mỗi 14/12 giây ném lưới giữ chân 2 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường.", "Mỗi 14/12 giây ném lưới giữ chân 4 giây.\nMục tiêu không thể hành động nhưng vẫn nhận sát thương bình thường." },
 					prices_standard = { "102", "102" },
 					prices_enhanced = { "102", "102" }
 				},
 				{
-					name = "完美风暴",
-					standard = "召唤乌云攻击单个敌人，在5秒内造成5次攻击，每次造成点25法伤，每次晕眩目标0.5秒。CD20秒。",
-					enhanced = "召唤乌云攻击单个敌人，在20秒内造成20次攻击，每次造成30点法伤，每次晕眩目标0.66秒。CD28秒。",
-					levels_standard = { "召唤乌云攻击单个敌人，在5秒内造成5次攻击，每次造成25点法伤，每次晕眩目标0.5秒。CD20秒。", "召唤乌云攻击单个敌人，在5秒内造成5次攻击，每次造成50点法伤，每次晕眩目标0.5秒。CD20秒。", "召唤乌云攻击单个敌人，在5秒内造成5次攻击，每次造成点75法伤，每次晕眩目标0.5秒。CD20秒。",  },
-					levels_enhanced = { "召唤乌云攻击单个敌人，在20秒内造成20次攻击，每次造成30点法伤，每次晕眩目标0.66秒。CD28秒。", "召唤乌云攻击单个敌人，在20秒内造成20次攻击，每次造成61点法伤，每次晕眩目标0.66秒。CD28秒。", "召唤乌云攻击单个敌人，在20秒内造成20次攻击，每次造成92点法伤，每次晕眩目标0.66秒。CD28秒。"},
+					name = "Bão hoàn hảo",
+					standard = "Gọi mây đen đánh một mục tiêu 5 lần trong 5 giây. Mỗi lần gây 25 sát thương phép và choáng 0.5 giây. CD: 20 giây.",
+					enhanced = "Gọi mây đen đánh một mục tiêu 20 lần trong 20 giây. Mỗi lần gây 30 sát thương phép và choáng 0.66 giây. CD: 28 giây.",
+					levels_standard = { "Gọi mây đen đánh một mục tiêu 5 lần trong 5 giây. Mỗi lần gây 25 sát thương phép và choáng 0.5 giây. CD: 20 giây.", "Gọi mây đen đánh một mục tiêu 5 lần trong 5 giây. Mỗi lần gây 50 sát thương phép và choáng 0.5 giây. CD: 20 giây.", "Gọi mây đen đánh một mục tiêu 5 lần trong 5 giây. Mỗi lần gây 75 sát thương phép và choáng 0.5 giây. CD: 20 giây.",  },
+					levels_enhanced = { "Gọi mây đen đánh một mục tiêu 20 lần trong 20 giây. Mỗi lần gây 30 sát thương phép và choáng 0.66 giây. CD: 28 giây.", "Gọi mây đen đánh một mục tiêu 20 lần trong 20 giây. Mỗi lần gây 61 sát thương phép và choáng 0.66 giây. CD: 28 giây.", "Gọi mây đen đánh một mục tiêu 20 lần trong 20 giây. Mỗi lần gây 92 sát thương phép và choáng 0.66 giây. CD: 28 giây."},
 					prices_standard = { "170", "170", "170" },
 					prices_enhanced = { "170", "170", "170" }
 				},
@@ -1803,39 +1803,39 @@ local M = {
 		},
 		["tower_shaolin_lvl4"] = {
 			doc_id = "",
-			title = "少林寺",
+			title = "Thiếu Lâm Tự",
 			attack = {
-				standard = "少林寺内居住了3/3/3/3(点了3技能后为4/5/6)名武僧，每名武僧每1.37秒会闪现到敌人面前定身并攻击敌人造成物理伤害。每名敌人被单座少林寺内的武僧攻击的间隔为1.37秒。",
-				enhanced = "少林寺内居住了3/3/4/4(点了3技能后为5/6/8)名武僧，每名武僧每1.37秒会闪现到敌人面前定身并攻击敌人造成物理伤害。每名敌人被单座少林寺内的武僧攻击的间隔为1.37秒。"
+				standard = "Có 3/3/3/3 võ tăng, hoặc 4/5/6 khi nâng kỹ năng 3. Mỗi võ tăng dịch chuyển đến giữ chân và đánh địch mỗi 1.37 giây, gây sát thương vật lý. Mỗi mục tiêu bị võ tăng của cùng một tháp đánh cách nhau 1.37 giây.",
+				enhanced = "Có 3/3/4/4 võ tăng, hoặc 5/6/8 khi nâng kỹ năng 3. Mỗi võ tăng dịch chuyển đến giữ chân và đánh địch mỗi 1.37 giây, gây sát thương vật lý. Mỗi mục tiêu bị võ tăng của cùng một tháp đánh cách nhau 1.37 giây."
 			},
-			change_note = "解说：少林寺不论是原代还是跨代攻击力都不够看，出了4代对空也留不到少林寺来对，升2/3/4级的作用也不大。需要提升普攻输出和2/3/4级少林的性价比。",
-			port_note = "移植改动：原版全等级范围320(+5%)；原版僧侣可能存在攻击间隔的波动且为分别计算CD，而改版是一并计算1.37的固定CD；",
+			change_note = "Nhận xét: Sức đánh thấp cả trong phần gốc lẫn xuyên các phần; ngoài phần 4, thường không còn mục tiêu bay để tháp xử lý. Nâng cấp 2/3/4 ít hiệu quả. Cần tăng đòn đánh thường và hiệu quả nâng cấp 2/3/4.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 320 (+5%). Bản gốc có khoảng đánh biến động, tính hồi riêng từng võ tăng; bản mod tính chung thời gian hồi cố định 1.37.",
 			notes = "",
 			skills = {
 				{
-					name = "神龙大侠",
-					standard = "召唤一位神龙大侠。\n生命值400(520)攻击力40-60，复活13秒，调集范围350。",
-					enhanced = "召唤一位神龙大侠。\n生命值400(520)攻击力40-60，复活13秒，调集范围350。",
-					levels_standard = { "召唤一位神龙大侠。\n生命值400(520)攻击力40-60，复活13秒，调集范围350。", "召唤一位神龙大侠。\n生命值400(520)攻击力1.0，复活13秒，调集范围350。" },
-					levels_enhanced = { "召唤一位神龙大侠。\n生命值400(520)攻击力40-60，复活13秒，调集范围350。", "召唤一位神龙大侠。\n生命值400(520)攻击力1.0，复活13秒，调集范围350。" },
+					name = "Thần Long Đại Hiệp",
+					standard = "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 40-60, hồi sinh 13 giây, tập kết 350.",
+					enhanced = "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 40-60, hồi sinh 13 giây, tập kết 350.",
+					levels_standard = { "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 40-60, hồi sinh 13 giây, tập kết 350.", "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 1.0, hồi sinh 13 giây, tập kết 350." },
+					levels_enhanced = { "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 40-60, hồi sinh 13 giây, tập kết 350.", "Triệu hồi Thần Long Đại Hiệp.\nMáu 400 (520), sức đánh 1.0, hồi sinh 13 giây, tập kết 350." },
 					prices_standard = { "212" },
 					prices_enhanced = { "212" }
 				},
 				{
-					name = "丰饶之狮",
-					standard = "召唤一座丰饶之狮。\n少林寺336范围内死亡的敌人额外掉落10%金币，下整可叠乘。",
-					enhanced = "召唤一座丰饶之狮。\n少林寺336范围内死亡的敌人额外掉落10%金币，下整可叠乘。",
-					levels_standard = { "召唤一座丰饶之狮。\n少林寺336范围内死亡的敌人额外掉落10%金币，下整可叠乘。" },
-					levels_enhanced = { "召唤一座丰饶之狮。\n少林寺336范围内死亡的敌人额外掉落10%金币，下整可叠乘。" },
+					name = "Sư tử thịnh vượng",
+					standard = "Triệu hồi tượng sư tử.\nKẻ địch chết trong bán kính 336 quanh tháp cho thêm 10% vàng, làm tròn xuống; nhiều hiệu ứng nhân dồn.",
+					enhanced = "Triệu hồi tượng sư tử.\nKẻ địch chết trong bán kính 336 quanh tháp cho thêm 10% vàng, làm tròn xuống; nhiều hiệu ứng nhân dồn.",
+					levels_standard = { "Triệu hồi tượng sư tử.\nKẻ địch chết trong bán kính 336 quanh tháp cho thêm 10% vàng, làm tròn xuống; nhiều hiệu ứng nhân dồn." },
+					levels_enhanced = { "Triệu hồi tượng sư tử.\nKẻ địch chết trong bán kính 336 quanh tháp cho thêm 10% vàng, làm tròn xuống; nhiều hiệu ứng nhân dồn." },
 					prices_standard = { "85" },
 					prices_enhanced = { "85" }
 				},
 				{
-					name = "少林僧侣",
-					standard = "招募少林僧侣。\n增加武僧人数到4人。",
-					enhanced = "招募少林僧侣。\n增加武僧人数到5人。",
-					levels_standard = { "招募少林僧侣。\n增加武僧人数到4人。", "招募少林僧侣。\n增加武僧人数到5人。", "招募少林僧侣。\n增加武僧人数到6人。" },
-					levels_enhanced = { "招募少林僧侣。\n增加武僧人数到5人。", "招募少林僧侣。\n增加武僧人数到6人。", "招募少林僧侣。\n增加武僧人数到8人。" },
+					name = "Võ tăng Thiếu Lâm",
+					standard = "Tuyển thêm võ tăng.\nTăng quân số lên 4.",
+					enhanced = "Tuyển thêm võ tăng.\nTăng quân số lên 5.",
+					levels_standard = { "Tuyển thêm võ tăng.\nTăng quân số lên 4.", "Tuyển thêm võ tăng.\nTăng quân số lên 5.", "Tuyển thêm võ tăng.\nTăng quân số lên 6." },
+					levels_enhanced = { "Tuyển thêm võ tăng.\nTăng quân số lên 5.", "Tuyển thêm võ tăng.\nTăng quân số lên 6.", "Tuyển thêm võ tăng.\nTăng quân số lên 8." },
 					prices_standard = { "148", "148", "148" },
 					prices_enhanced = { "148", "148", "148" }
 				},
@@ -1843,39 +1843,39 @@ local M = {
 		},
 		["tower_swamp_monster_lvl4"] = {
 			doc_id = "",
-			title = "沼泽巨人",
+			title = "Quái vật đầm lầy",
 			attack = {
-				standard = "每2.1秒扔出一个腐烂的植物球攻击敌人，造成物理伤害。\n每2.5秒锤击地面，对150范围内最多5个敌人造成物理伤害。重生时间20秒。免疫1代强狼人感染、中毒。\n可切换到箭塔形态。",
-				enhanced = "每2.1秒扔出一个腐烂的植物球攻击敌人，造成物理伤害。\n每2.5秒锤击地面，对150范围内最多15个敌人造成物理伤害。重生时间20秒。免疫1代强狼人感染、中毒、秒杀、分解、变形、寄生。\n可切换到箭塔形态。"
+				standard = "Ném cầu thực vật mục mỗi 2.1 giây, gây sát thương vật lý.\nĐập đất mỗi 2.5 giây, gây sát thương vật lý cho tối đa 5 mục tiêu trong bán kính 150. Hồi sinh 20 giây. Miễn nhiễm lây bệnh người sói mạnh phần 1 và độc.\nCó thể đổi thành tháp cung.",
+				enhanced = "Ném cầu thực vật mục mỗi 2.1 giây, gây sát thương vật lý.\nĐập đất mỗi 2.5 giây, gây sát thương vật lý cho tối đa 15 mục tiêu trong bán kính 150. Hồi sinh 20 giây. Miễn nhiễm lây bệnh người sói mạnh phần 1, độc, tiêu diệt ngay, phân rã, biến hình và ký sinh.\nCó thể đổi thành tháp cung."
 			},
-			change_note = "解说：前3代敌方秒杀较多，加强主要针对面对兵营杀手无法存活的问题。肉食性植物在老版4代是68元。",
-			port_note = "移植改动：原版全等级调集范围250；移植后继承了黄法石头人的免疫感染的特性。",
+			change_note = "Nhận xét: 3 phần trước có nhiều hiệu ứng tiêu diệt ngay, nên tăng khả năng sống sót trước sát thủ doanh trại. Thực vật ăn thịt bản cũ phần 4 giá 68 vàng.",
+			port_note = "Thay đổi khi chuyển sang mod: Phạm vi tập kết gốc mọi cấp 250; kế thừa miễn nhiễm lây bệnh của Tinh linh đất.",
 			notes = "",
 			skills = {
 				{
-					name = "粉碎之力",
-					standard = "沼泽巨人每次扔出的植物球/每次捶地有2%的几率秒杀被植物球砸中/被正在拦截的敌人。",
-					enhanced = "沼泽巨人每次扔出的植物球/每次捶地有2%的几率秒杀被植物球砸中/被正在拦截的敌人。",
-					levels_standard = { "沼泽巨人每次扔出的植物球/每次捶地有2%的几率秒杀被植物球砸中/被正在拦截的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有4%的几率秒杀被植物球砸中/被正在拦截的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有6%的几率秒杀被植物球砸中/被正在拦截的敌人。" },
-					levels_enhanced = { "沼泽巨人每次扔出的植物球/每次捶地有2%的几率秒杀被植物球砸中/被正在拦截的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有4%的几率秒杀被植物球砸中/被正在拦截的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有6%的几率秒杀被植物球砸中/被正在拦截的敌人。" },
+					name = "Sức mạnh nghiền nát",
+					standard = "Mỗi cầu thực vật hoặc đòn đập đất có 2% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.",
+					enhanced = "Mỗi cầu thực vật hoặc đòn đập đất có 2% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.",
+					levels_standard = { "Mỗi cầu thực vật hoặc đòn đập đất có 2% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.", "Mỗi cầu thực vật hoặc đòn đập đất có 4% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.", "Mỗi cầu thực vật hoặc đòn đập đất có 6% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn." },
+					levels_enhanced = { "Mỗi cầu thực vật hoặc đòn đập đất có 2% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.", "Mỗi cầu thực vật hoặc đòn đập đất có 4% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn.", "Mỗi cầu thực vật hoặc đòn đập đất có 6% cơ hội tiêu diệt ngay mục tiêu bị cầu đánh trúng hoặc đang bị chặn." },
 					prices_standard = { "119", "119", "119" },
 					prices_enhanced = { "119", "119", "119" }
 				},
 				{
-					name = "致盲毒液",
-					standard = "沼泽巨人每次扔出的植物球/每次捶地有20%的几率击晕被植物球砸中/被捶地砸中的敌人。",
-					enhanced = "沼泽巨人每次扔出的植物球/每次捶地有20%的几率击晕被植物球砸中/被捶地砸中的敌人。",
-					levels_standard = { "沼泽巨人每次扔出的植物球/每次捶地有20%的几率击晕被植物球砸中/被捶地砸中的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有40%的几率击晕被植物球砸中/被捶地砸中的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有60%的几率击晕被植物球砸中/被捶地砸中的敌人。" },
-					levels_enhanced = { "沼泽巨人每次扔出的植物球/每次捶地有20%的几率击晕被植物球砸中/被捶地砸中的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有40%的几率击晕被植物球砸中/被捶地砸中的敌人。", "沼泽巨人每次扔出的植物球/每次捶地有60%的几率击晕被植物球砸中/被捶地砸中的敌人。" },
+					name = "Nọc gây mù",
+					standard = "Mỗi cầu thực vật hoặc đòn đập đất có 20% cơ hội làm choáng mục tiêu trúng đòn.",
+					enhanced = "Mỗi cầu thực vật hoặc đòn đập đất có 20% cơ hội làm choáng mục tiêu trúng đòn.",
+					levels_standard = { "Mỗi cầu thực vật hoặc đòn đập đất có 20% cơ hội làm choáng mục tiêu trúng đòn.", "Mỗi cầu thực vật hoặc đòn đập đất có 40% cơ hội làm choáng mục tiêu trúng đòn.", "Mỗi cầu thực vật hoặc đòn đập đất có 60% cơ hội làm choáng mục tiêu trúng đòn." },
+					levels_enhanced = { "Mỗi cầu thực vật hoặc đòn đập đất có 20% cơ hội làm choáng mục tiêu trúng đòn.", "Mỗi cầu thực vật hoặc đòn đập đất có 40% cơ hội làm choáng mục tiêu trúng đòn.", "Mỗi cầu thực vật hoặc đòn đập đất có 60% cơ hội làm choáng mục tiêu trúng đòn." },
 					prices_standard = { "102", "102", "102" },
 					prices_enhanced = { "102", "102", "102" }
 				},
 				{
-					name = "肉食性植物",
-					standard = "沼泽巨人每次击杀敌人会回复1050点生命值。",
-					enhanced = "沼泽巨人每次击杀敌人会回复1050点生命值。",
-					levels_standard = { "沼泽巨人每次击杀敌人会回复1050点生命值。" },
-					levels_enhanced = { "沼泽巨人每次击杀敌人会回复1050点生命值。" },
+					name = "Thực vật ăn thịt",
+					standard = "Hồi 1050 máu mỗi lần giết kẻ địch.",
+					enhanced = "Hồi 1050 máu mỗi lần giết kẻ địch.",
+					levels_standard = { "Hồi 1050 máu mỗi lần giết kẻ địch." },
+					levels_enhanced = { "Hồi 1050 máu mỗi lần giết kẻ địch." },
 					prices_standard = { "119" },
 					prices_enhanced = { "68" }
 				},
@@ -1883,39 +1883,39 @@ local M = {
 		},
 		["tower_ignis_altar_lvl4"] = {
 			doc_id = "",
-			title = "火光祭坛",
+			title = "Tế đàn lửa",
 			attack = {
-				standard = "落地后额外形成一个持续3.5秒直径100的弹坑，每0.4/0.35/0.3/0.2秒对弹坑内的地面敌人造成2/4/6/8点炮伤，总共造成20/44/78/152点炮伤，多个弹坑伤害可以叠加。",
-				enhanced = "落地后额外形成一个持续3.5秒直径100的弹坑，每0.4/0.35/0.3/0.2秒对弹坑内的地面敌人造成2/4/6/8点炮伤，总共造成20/44/78/152点炮伤，多个弹坑伤害可以叠加。"
+				standard = "Khi đạn chạm đất, tạo hố đường kính 100 tồn tại 3.5 giây. Gây 2/4/6/8 sát thương pháo mỗi 0.4/0.35/0.3/0.2 giây cho quái mặt đất trong hố, tổng 20/44/78/152. Sát thương nhiều hố cộng dồn.",
+				enhanced = "Khi đạn chạm đất, tạo hố đường kính 100 tồn tại 3.5 giây. Gây 2/4/6/8 sát thương pháo mỗi 0.4/0.35/0.3/0.2 giây cho quái mặt đất trong hố, tổng 20/44/78/152. Sát thương nhiều hố cộng dồn."
 			},
-			change_note = "解说：从伤害模组到过渡的平滑度都很强势的炮塔，不能再加强了。增强熔岩元素对护甲怪的应对能力，但失去对真实伤害的抵抗能力。",
-			port_note = "移植改动：原版全等级范围300/330/360/390；普攻面板原版是每次攻击造成的伤害，改版为一轮普攻伤害打满的总伤害；\n2技能的魔法伤害是在怪物死亡后对周围100范围内怪物触发，改版是先造成魔法伤害再给易伤。",
+			change_note = "Nhận xét: Tháp pháo mạnh cả cơ chế sát thương lẫn tiến trình nâng cấp, không cần tăng thêm. Tăng khả năng của Tinh linh dung nham trước mục tiêu có giáp nhưng giảm khả năng chống sát thương chuẩn.",
+			port_note = "Thay đổi khi chuyển sang mod: Tầm gốc mọi cấp 300/330/360/390. Chỉ số đòn đánh bản gốc là sát thương mỗi lần; bản mod là tổng sát thương cả chu kỳ.\nKỹ năng 2 bản gốc gây sát thương phép trong bán kính 100 sau khi mục tiêu chết; bản mod gây sát thương trước rồi áp dụng dễ tổn thương.",
 			notes = "",
 			skills = {
 				{
-					name = "熔岩元素",
-					standard = "召唤一个岩浆元素。450(585)血0甲，复活时间10，移速30，攻击19-43，调集范围400",
-					enhanced = "召唤一个岩浆元素。225(292)血70甲，复活时间10，移速30，攻击19-43，调集范围400",
-					levels_standard = { "召唤一个岩浆元素。450(585)血0甲甲，复活时间10，移速30，攻击19-43，调集范围400", "召唤一个岩浆元素。450(585)血0甲，复活时间10，移速30，攻击1.0，调集范围400" },
-					levels_enhanced = { "召唤一个岩浆元素。225(292)血70甲，复活时间10，移速30，攻击19-43，调集范围400", "召唤一个岩浆元素。225(292)血70甲，复活时间10，移速30，攻击1.0，调集范围400" },
+					name = "Tinh linh dung nham",
+					standard = "Triệu hồi Tinh linh dung nham: 450 (585) máu, 0 giáp, hồi sinh 10, tốc độ 30, sức đánh 19-43, tập kết 400.",
+					enhanced = "Triệu hồi Tinh linh dung nham: 225 (292) máu, 70 giáp, hồi sinh 10, tốc độ 30, sức đánh 19-43, tập kết 400.",
+					levels_standard = { "Triệu hồi Tinh linh dung nham: 450 (585) máu, 0 giáp, hồi sinh 10, tốc độ 30, sức đánh 19-43, tập kết 400.", "Triệu hồi Tinh linh dung nham: 450 (585) máu, 0 giáp, hồi sinh 10, tốc độ 30, sức đánh 1.0, tập kết 400." },
+					levels_enhanced = { "Triệu hồi Tinh linh dung nham: 225 (292) máu, 70 giáp, hồi sinh 10, tốc độ 30, sức đánh 19-43, tập kết 400.", "Triệu hồi Tinh linh dung nham: 225 (292) máu, 70 giáp, hồi sinh 10, tốc độ 30, sức đánh 1.0, tập kết 400." },
 					prices_standard = { "255" },
 					prices_enhanced = { "255" }
 				},
 				{
-					name = "业火轮",
-					standard = "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成32点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升50%，CD18",
-					enhanced = "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成32点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升50%，CD18",
-					levels_standard = { "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成32点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升50%，CD18", "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成54点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升75%，CD18", "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成76点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升100%，CD18" },
-					levels_enhanced = { "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成32点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升50%，CD18", "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成54点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升75%，CD18", "发射一个岩浆魔法弹瞄准范围内生命值最高的敌人，对该敌人造成76点魔法伤害并令其进入易伤状态10秒，在此期间该敌人受到的伤害提升100%，CD18" },
+					name = "Vòng lửa nghiệp",
+					standard = "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 32 sát thương phép và dễ tổn thương 10 giây, tăng 50% sát thương nhận. CD: 18 giây.",
+					enhanced = "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 32 sát thương phép và dễ tổn thương 10 giây, tăng 50% sát thương nhận. CD: 18 giây.",
+					levels_standard = { "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 32 sát thương phép và dễ tổn thương 10 giây, tăng 50% sát thương nhận. CD: 18 giây.", "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 54 sát thương phép và dễ tổn thương 10 giây, tăng 75% sát thương nhận. CD: 18 giây.", "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 76 sát thương phép và dễ tổn thương 10 giây, tăng 100% sát thương nhận. CD: 18 giây." },
+					levels_enhanced = { "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 32 sát thương phép và dễ tổn thương 10 giây, tăng 50% sát thương nhận. CD: 18 giây.", "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 54 sát thương phép và dễ tổn thương 10 giây, tăng 75% sát thương nhận. CD: 18 giây.", "Bắn đạn dung nham vào kẻ địch nhiều máu nhất trong tầm, gây 76 sát thương phép và dễ tổn thương 10 giây, tăng 100% sát thương nhận. CD: 18 giây." },
 					prices_standard = { "153", "85", "85" },
 					prices_enhanced = { "153", "85", "85" }
 				},
 				{
-					name = "迟滞真炎",
-					standard = "进入弹坑的敌人减速50%，持续0.3秒。持续在弹坑里面则刷新减速时间。",
-					enhanced = "进入弹坑的敌人减速50%，持续0.3秒。持续在弹坑里面则刷新减速时间。",
-					levels_standard = { "进入弹坑的敌人减速50%，持续0.3秒。持续在弹坑里面则刷新减速时间。" },
-					levels_enhanced = { "进入弹坑的敌人减速50%，持续0.3秒。持续在弹坑里面则刷新减速时间。" },
+					name = "Lửa làm chậm",
+					standard = "Kẻ địch vào hố bị giảm 50% tốc độ trong 0.3 giây; thời gian làm chậm được làm mới khi còn ở trong hố.",
+					enhanced = "Kẻ địch vào hố bị giảm 50% tốc độ trong 0.3 giây; thời gian làm chậm được làm mới khi còn ở trong hố.",
+					levels_standard = { "Kẻ địch vào hố bị giảm 50% tốc độ trong 0.3 giây; thời gian làm chậm được làm mới khi còn ở trong hố." },
+					levels_enhanced = { "Kẻ địch vào hố bị giảm 50% tốc độ trong 0.3 giây; thời gian làm chậm được làm mới khi còn ở trong hố." },
 					prices_standard = { "212" },
 					prices_enhanced = { "212" }
 				},
@@ -1923,39 +1923,39 @@ local M = {
 		},
 		["tower_sandworm_lvl4"] = {
 			doc_id = "",
-			title = "沙虫巢穴",
+			title = "Tổ giun cát",
 			attack = {
-				standard = "每6秒形成一个持续3/3.5/4/4.5秒直径80的虫口，对虫口内的地面敌人施加持续0.5秒的效果：每0.25秒受到4/9/14/19点炮伤。\n总共每轮普攻造成56/144/252/380点炮伤，多个虫口伤害可以叠加。",
-				enhanced = "每6秒形成一个持续3/3.5/4/4.5秒直径110的虫口，对虫口内的地面敌人施加持续0.5秒的效果：每0.25秒受到4/9/14/19点炮伤。\n总共每轮普攻造成56/144/252/380点炮伤，多个虫口伤害可以叠加。"
+				standard = "Cứ 6 giây tạo một miệng giun đường kính 80, tồn tại 3/3.5/4/4.5 giây. Kẻ địch mặt đất trong vùng chịu hiệu ứng kéo dài 0.5 giây: nhận 4/9/14/19 sát thương pháo mỗi 0.25 giây.\nMỗi lượt đánh thường gây tổng cộng 56/144/252/380 sát thương pháo. Sát thương từ nhiều miệng giun có thể cộng dồn.",
+				enhanced = "Cứ 6 giây tạo một miệng giun đường kính 110, tồn tại 3/3.5/4/4.5 giây. Kẻ địch mặt đất trong vùng chịu hiệu ứng kéo dài 0.5 giây: nhận 4/9/14/19 sát thương pháo mỗi 0.25 giây.\nMỗi lượt đánh thường gây tổng cộng 56/144/252/380 sát thương pháo. Sát thương từ nhiều miệng giun có thể cộng dồn."
 			},
-			change_note = "解说：沙虫的主要问题是虫口留不住人，2技能CD过长，3技能无法对自身释放的普攻造成影响，且点了这个技能反而导致自身普攻输出能力下降。但是不能再在虫口区域加减速了，因为不论是4代火山还是2代NPC炮塔沙虫巢穴都已经有这个机制了。因此主要对3技能进行一些伤害的补偿，保证点了3技能后，总DPS不至于下降。",
-			port_note = "移植改动：原版全等级范围300；面板伤害原版为单次伤害，改版为一轮普攻的总伤害。原版2技能会同时吃敌方和我方单位，改版只吃敌方单位。",
+			change_note = "Nhận xét: Miệng giun khó giữ chân địch, kỹ năng 2 hồi quá lâu, còn kỹ năng 3 không tăng sức mạnh cho đòn đánh thường và thậm chí làm giảm sát thương thường. Không thêm làm chậm vì núi lửa phần 4 và tổ giun cát NPC phần 2 đã có cơ chế này. Vì vậy, tăng sát thương kỹ năng 3 để tổng DPS không giảm sau khi mua kỹ năng 3.",
+			port_note = "Thay đổi khi chuyển sang FL: Bản gốc có tầm đánh 300 ở mọi cấp. Sát thương hiển thị trước đây là của một lần đánh, còn bản này hiển thị tổng sát thương của một lượt đánh thường. Kỹ năng 2 ở bản gốc nuốt cả đồng minh lẫn kẻ địch; bản FL chỉ nuốt kẻ địch.",
 			notes = "",
 			skills = {
 				{
-					name = "沙虫召唤",
-					standard = "每14/10秒召唤一只沙虫朝出怪口移动。",
-					enhanced = "每14/10秒召唤一只沙虫朝出怪口移动。",
-					levels_standard = { "每14秒召唤一只沙虫朝出怪口移动。", "每10秒召唤一只沙虫朝出怪口移动。" },
-					levels_enhanced = { "每14秒召唤一只沙虫朝出怪口移动。", "每10秒召唤一只沙虫朝出怪口移动。" },
+					name = "Triệu hồi giun cát",
+					standard = "Cứ 14/10 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch.",
+					enhanced = "Cứ 14/10 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch.",
+					levels_standard = { "Cứ 14 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch.", "Cứ 10 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch." },
+					levels_enhanced = { "Cứ 14 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch.", "Cứ 10 giây triệu hồi một giun cát bò về phía điểm xuất quân của địch." },
 					prices_standard = { "144", "144" },
 					prices_enhanced = { "144", "144" }
 				},
 				{
-					name = "沙县小吃",
-					standard = "巨型沙虫开始行动，从道路中心张开大口，吃下160范围内所有敌方非boss单位，攻击范围550。CD45秒。",
-					enhanced = "巨型沙虫开始行动，从道路中心张开大口，吃下175范围内所有敌方非boss单位，攻击范围550。CD42秒。",
-					levels_standard = { "巨型沙虫开始行动，从道路中心张开大口，吃下160范围内所有敌方非boss单位，攻击范围550。CD45秒。" },
-					levels_enhanced = { "巨型沙虫开始行动，从道路中心张开大口，吃下175范围内所有敌方非boss单位，攻击范围550。CD42秒。" },
+					name = "Bữa ăn Shaxian",
+					standard = "Giun cát khổng lồ há miệng giữa đường, nuốt mọi kẻ địch không phải trùm trong phạm vi 160. Tầm đánh: 550. CD: 45 giây.",
+					enhanced = "Giun cát khổng lồ há miệng giữa đường, nuốt mọi kẻ địch không phải trùm trong phạm vi 175. Tầm đánh: 550. CD: 42 giây.",
+					levels_standard = { "Giun cát khổng lồ há miệng giữa đường, nuốt mọi kẻ địch không phải trùm trong phạm vi 160. Tầm đánh: 550. CD: 45 giây." },
+					levels_enhanced = { "Giun cát khổng lồ há miệng giữa đường, nuốt mọi kẻ địch không phải trùm trong phạm vi 175. Tầm đánh: 550. CD: 42 giây." },
 					prices_standard = { "255" },
 					prices_enhanced = { "289" }
 				},
 				{
-					name = "紫色粘液球",
-					standard = "巨型沙虫投出一个紫色的粘液球，，产生120范围的粘液区，持续5秒，降低上方敌人单位50%移速，最多影响8个单位，CD14。",
-					enhanced = "巨型沙虫投出一个紫色的粘液球，被粘液球砸中的敌人受到4次普攻的伤害(76)，产生120范围的粘液区，持续5秒，降低上方敌人单位50%移速，最多影响8个单位，CD14。",
-					levels_standard = { "巨型沙虫投出一个紫色的粘液球，，产生120范围的粘液区，持续5秒，降低上方敌人单位50%移速，最多影响8个单位，CD14。", "巨型沙虫投出一个紫色的粘液球，，产生120范围的粘液区，持续6秒，降低上方敌人单位70%移速，最多影响8个单位，CD12。" },
-					levels_enhanced = { "巨型沙虫投出一个紫色的粘液球，被粘液球砸中的敌人受到4次普攻的伤害(76)，产生120范围的粘液区，持续5秒，降低上方敌人单位50%移速，最多影响8个单位，CD14。", "巨型沙虫投出一个紫色的粘液球，被粘液球砸中的敌人受到8次普攻的伤害(152)，产生120范围的粘液区，持续6秒，降低上方敌人单位70%移速，最多影响8个单位，CD12。" },
+					name = "Cầu dịch nhầy tím",
+					standard = "Ném một quả cầu dịch nhầy tím, tạo vùng dịch nhầy phạm vi 120 trong 5 giây. Kẻ địch trong vùng bị giảm 50% tốc độ di chuyển; tối đa 8 mục tiêu. CD: 14.",
+					enhanced = "Ném cầu dịch nhầy tím gây sát thương bằng 4 đòn đánh thường (76) cho mục tiêu trúng đòn. Tạo vùng dịch nhầy phạm vi 120 trong 5 giây, giảm 50% tốc độ di chuyển của tối đa 8 kẻ địch. CD: 14.",
+					levels_standard = { "Ném một quả cầu dịch nhầy tím, tạo vùng dịch nhầy phạm vi 120 trong 5 giây. Kẻ địch trong vùng bị giảm 50% tốc độ di chuyển; tối đa 8 mục tiêu. CD: 14.", "Ném một quả cầu dịch nhầy tím, tạo vùng dịch nhầy phạm vi 120 trong 6 giây. Kẻ địch trong vùng bị giảm 70% tốc độ di chuyển; tối đa 8 mục tiêu. CD: 12." },
+					levels_enhanced = { "Ném cầu dịch nhầy tím gây sát thương bằng 4 đòn đánh thường (76) cho mục tiêu trúng đòn. Tạo vùng dịch nhầy phạm vi 120 trong 5 giây, giảm 50% tốc độ di chuyển của tối đa 8 kẻ địch. CD: 14.", "Ném cầu dịch nhầy tím gây sát thương bằng 8 đòn đánh thường (152) cho mục tiêu trúng đòn. Tạo vùng dịch nhầy phạm vi 120 trong 6 giây, giảm 70% tốc độ di chuyển của tối đa 8 kẻ địch. CD: 12." },
 					prices_standard = { "127", "127" },
 					prices_enhanced = { "127", "127" }
 				},
@@ -1963,38 +1963,38 @@ local M = {
 		},
 		["tower_ogre_shipwreck_lvl4"] = {
 			doc_id = "",
-			title = "食人魔沉船",
+			title = "Tàu đắm Ogre",
 			attack = {
 				standard = "",
 				enhanced = ""
 			},
-			change_note = "解说：1级就能成型，不能再加强了。调整了相对没那么强的2技能。",
-			port_note = "移植改动：原版箭塔攻击范围300(+5%)，炮塔范围400。",
+			change_note = "Nhận xét: Tháp đã phát huy sức mạnh ngay ở cấp 1 nên không tăng thêm. Chỉ điều chỉnh kỹ năng 2 vốn yếu hơn.",
+			port_note = "Thay đổi khi chuyển sang FL: Tầm đánh của tháp cung bản gốc là 300 (+5%); tầm pháo là 400.",
 			skills = {
 				{
-					name = "船员升级",
-					standard = "提升食人魔18点攻击力30护甲，提升水手4攻击力30护甲。",
-					enhanced = "提升食人魔18点攻击力30护甲，提升水手4攻击力30护甲。",
-					levels_standard = { "提升食人魔18点攻击力30护甲，提升水手4攻击力30护甲。" },
-					levels_enhanced = { "提升食人魔18点攻击力30护甲，提升水手4攻击力30护甲。" },
+					name = "Nâng cấp thủy thủ",
+					standard = "Tăng 18 sức tấn công và 30 giáp cho Ogre; tăng 4 sức tấn công và 30 giáp cho thủy thủ.",
+					enhanced = "Tăng 18 sức tấn công và 30 giáp cho Ogre; tăng 4 sức tấn công và 30 giáp cho thủy thủ.",
+					levels_standard = { "Tăng 18 sức tấn công và 30 giáp cho Ogre; tăng 4 sức tấn công và 30 giáp cho thủy thủ." },
+					levels_enhanced = { "Tăng 18 sức tấn công và 30 giáp cho Ogre; tăng 4 sức tấn công và 30 giáp cho thủy thủ." },
 					prices_standard = { "127" },
 					prices_enhanced = { "127" }
 				},
 				{
-					name = "加速装填",
-					standard = "兽人枪手发射15发子弹，每次造成18点物伤，总共造成270点物伤，CD15",
-					enhanced = "兽人枪手发射15发子弹，每次造成18点物伤，总共造成270点物伤，CD15",
-					levels_standard = { "兽人枪手发射15发子弹，每次造成点物伤，总共造成270点物伤，CD15", "兽人枪手发射15发子弹，每次造成点29物伤，总共造成435点物伤，CD15", "兽人枪手发射15发子弹，每次造成40点物伤，总共造成600点物伤，CD15" },
-					levels_enhanced = { "兽人枪手发射15发子弹，每次造成18点物伤，总共造成270/540点物伤，CD15", "兽人枪手发射15发子弹，每次造成36点物伤，总共造成540点物伤，CD15", "兽人枪手发射15发子弹，每次造成54点物伤，总共造成810点物伤，CD15" },
+					name = "Nạp đạn nhanh",
+					standard = "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 18 sát thương vật lý, tổng cộng 270. CD: 15.",
+					enhanced = "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 18 sát thương vật lý, tổng cộng 270. CD: 15.",
+					levels_standard = { "Xạ thủ Orc bắn 15 viên đạn, gây tổng cộng 270 sát thương vật lý. CD: 15.", "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 29 sát thương vật lý, tổng cộng 435. CD: 15.", "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 40 sát thương vật lý, tổng cộng 600. CD: 15." },
+					levels_enhanced = { "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 18 sát thương vật lý, tổng cộng 270/540. CD: 15.", "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 36 sát thương vật lý, tổng cộng 540. CD: 15.", "Xạ thủ Orc bắn 15 viên đạn, mỗi viên gây 54 sát thương vật lý, tổng cộng 810. CD: 15." },
 					prices_standard = { "119", "119" },
 					prices_enhanced = { "136", "136" }
 				},
 				{
-					name = "哥布林发射器",
-					standard = "炮手将哥布林加入他的备选炮弹里，每15秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。",
-					enhanced = "炮手将哥布林加入他的备选炮弹里，每15秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。",
-					levels_standard = { "炮手将哥布林加入他的备选炮弹里，每15秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。", "炮手将哥布林加入他的备选炮弹里，每10秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。" },
-					levels_enhanced = { "炮手将哥布林加入他的备选炮弹里，每15秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。", "炮手将哥布林加入他的备选炮弹里，每10秒发射一只红帽哥布林水手，落地对105(126)范围内敌人造成50-70(55-77)炮伤，战斗5秒后离开。哥布林水手免疫远程群伤。" },
+					name = "Máy phóng Goblin",
+					standard = "Pháo thủ dùng thêm Goblin làm đạn. Cứ 15 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa.",
+					enhanced = "Pháo thủ dùng thêm Goblin làm đạn. Cứ 15 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa.",
+					levels_standard = { "Pháo thủ dùng thêm Goblin làm đạn. Cứ 15 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa.", "Pháo thủ dùng thêm Goblin làm đạn. Cứ 10 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa." },
+					levels_enhanced = { "Pháo thủ dùng thêm Goblin làm đạn. Cứ 15 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa.", "Pháo thủ dùng thêm Goblin làm đạn. Cứ 10 giây phóng một thủy thủ Goblin Mũ Đỏ, gây 50-70 (55-77) sát thương pháo trong phạm vi 105 (126) khi tiếp đất. Goblin rời đi sau 5 giây chiến đấu và miễn nhiễm sát thương diện rộng từ xa." },
 					prices_standard = { "170", "85" },
 					prices_enhanced = { "170", "85" }
 				},
@@ -2002,30 +2002,30 @@ local M = {
 		},
 		["tower_paladin_covenant_lvl4"] = {
 			doc_id = "",
-			title = "圣骑士殿堂",
+			title = "Thánh đường hiệp sĩ",
 			attack = {
-				standard = "近战攻击，物理伤害",
-				enhanced = "近战攻击，物理伤害"
+				standard = "Tấn công cận chiến, gây sát thương vật lý.",
+				enhanced = "Tấn công cận chiến, gây sát thương vật lý."
 			},
-			change_note = "解说：基础数值最低的扛伤兵营，满级几乎只有前代3级兵的数值。因此走低价、性价比路线。",
+			change_note = "Nhận xét: Đây là doanh trại đỡ đòn có chỉ số cơ bản thấp nhất; ở cấp tối đa gần như chỉ bằng lính cấp 3 của các phần trước. Vì vậy, tháp hướng tới giá rẻ và hiệu quả kinh tế.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "身先士卒",
-					standard = "将一名士兵升级为队长，队长拥有200(220)点生命值、60护甲、30脱战回血，但攻击攻速不变。队长会发动持续5秒光环，提升140范围内英雄、援兵20%的攻击力，CD20秒",
-					enhanced = "将一名士兵升级为队长，队长拥有200(220)点生命值、60护甲、30脱战回血，但攻击攻速不变。队长会发动持续5秒光环，提升140范围内英雄、援兵20%的攻击力，CD20秒",
-					levels_standard = { "将一名士兵升级为队长，队长拥有200(220)点生命值、60护甲、30脱战回血，但攻击攻速不变。队长会发动持续5秒光环，提升140范围内英雄、援兵20%的攻击力，CD20秒" },
-					levels_enhanced = { "将一名士兵升级为队长，队长拥有200(220)点生命值、60护甲、30脱战回血，但攻击攻速不变。队长会发动持续5秒光环，提升140范围内英雄、援兵20%的攻击力，CD20秒" },
+					name = "Tiên phong gương mẫu",
+					standard = "Nâng một binh sĩ thành đội trưởng với 200 (220) máu, 60 giáp và hồi 30 máu ngoài giao tranh; sức tấn công và tốc độ đánh không đổi. Đội trưởng tạo hào quang trong 5 giây, tăng 20% sức tấn công cho anh hùng và viện binh trong phạm vi 140. CD: 20 giây.",
+					enhanced = "Nâng một binh sĩ thành đội trưởng với 200 (220) máu, 60 giáp và hồi 30 máu ngoài giao tranh; sức tấn công và tốc độ đánh không đổi. Đội trưởng tạo hào quang trong 5 giây, tăng 20% sức tấn công cho anh hùng và viện binh trong phạm vi 140. CD: 20 giây.",
+					levels_standard = { "Nâng một binh sĩ thành đội trưởng với 200 (220) máu, 60 giáp và hồi 30 máu ngoài giao tranh; sức tấn công và tốc độ đánh không đổi. Đội trưởng tạo hào quang trong 5 giây, tăng 20% sức tấn công cho anh hùng và viện binh trong phạm vi 140. CD: 20 giây." },
+					levels_enhanced = { "Nâng một binh sĩ thành đội trưởng với 200 (220) máu, 60 giáp và hồi 30 máu ngoài giao tranh; sức tấn công và tốc độ đánh không đổi. Đội trưởng tạo hào quang trong 5 giây, tăng 20% sức tấn công cho anh hùng và viện binh trong phạm vi 140. CD: 20 giây." },
 					prices_standard = { "200" },
 					prices_enhanced = { "140" }
 				},
 				{
-					name = "治愈祷告",
-					standard = "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复12点生命值，持续4秒，CD28",
-					enhanced = "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复12点生命值，持续4秒，CD23",
-					levels_standard = { "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复12点生命值，持续4秒，CD28", "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复24点生命值，持续4秒，CD25", "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复36点生命值，持续4秒，CD22" },
-					levels_enhanced = { "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复12点生命值，持续4秒，CD23", "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复24点生命值，持续4秒，CD17", "当生命值低于25%时，进入无敌状态，无敌状态下无法拦截敌人\n每秒回复36点生命值，持续4秒，CD11" },
+					name = "Lời cầu nguyện chữa lành",
+					standard = "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 12 máu mỗi giây trong 4 giây. CD: 28.",
+					enhanced = "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 12 máu mỗi giây trong 4 giây. CD: 23.",
+					levels_standard = { "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 12 máu mỗi giây trong 4 giây. CD: 28.", "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 24 máu mỗi giây trong 4 giây. CD: 25.", "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 36 máu mỗi giây trong 4 giây. CD: 22." },
+					levels_enhanced = { "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 12 máu mỗi giây trong 4 giây. CD: 23.", "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 24 máu mỗi giây trong 4 giây. CD: 17.", "Khi máu dưới 25%, trở nên bất tử nhưng không thể chặn địch.\nHồi 36 máu mỗi giây trong 4 giây. CD: 11." },
 					prices_standard = { "140", "105", "105" },
 					prices_enhanced = { "120", "105", "105" }
 				},
@@ -2033,30 +2033,30 @@ local M = {
 		},
 		["tower_royal_archers_lvl4"] = {
 			doc_id = "",
-			title = "皇家弓箭手",
+			title = "Cung thủ Hoàng gia",
 			attack = {
-				standard = "每0.8秒射出一支箭攻击敌方，物理伤害",
-				enhanced = "每0.8秒射出一支箭攻击敌方，物理伤害"
+				standard = "Bắn một mũi tên mỗi 0.8 giây, gây sát thương vật lý.",
+				enhanced = "Bắn một mũi tên mỗi 0.8 giây, gây sát thương vật lý."
 			},
-			change_note = "解说：只有输出能力的箭塔且论输出也比不过2代弩兵和3代3级箭。同样走低价、性价比路线。",
+			change_note = "Nhận xét: Tháp cung chỉ chuyên gây sát thương nhưng vẫn thua tháp nỏ phần 2 và tháp cung cấp 3 phần 3. Vì vậy, cũng hướng tới giá rẻ và hiệu quả kinh tế.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "穿甲射击",
-					standard = "射出3支箭矢，每支箭矢造成38-58点无视对方20点护甲的物理伤害，CD15(12)(6.4)秒。本技能会延迟普攻。",
-					enhanced = "射出3支箭矢，每支箭矢造成38-58点无视对方20点护甲的物理伤害，CD8(6.4)秒。本技能会延迟普攻。",
-					levels_standard = { "射出3支箭矢，每支箭矢造成38-58点无视对方20点护甲的物理伤害，CD15(12)秒。本技能会延迟普攻。", "射出3支箭矢，每支箭矢造成78-118点无视对方35点护甲的物理伤害，CD15(12)秒。本技能会延迟普攻。", "射出3支箭矢，每支箭矢造成120-150点无视对方50点护甲的物理伤害，CD15(12)秒。本技能会延迟普攻。" },
-					levels_enhanced = { "射出3支箭矢，每支箭矢造成38-58点无视对方20点护甲的物理伤害，CD8(6.4)秒。本技能会延迟普攻。", "射出3支箭矢，每支箭矢造成78-118点无视对方35点护甲的物理伤害，CD8(6.4)秒。本技能会延迟普攻。", "射出3支箭矢，每支箭矢造成120-150点无视对方50点护甲的物理伤害，CD8(6.4)秒。本技能会延迟普攻。" },
+					name = "Bắn xuyên giáp",
+					standard = "Bắn 3 mũi tên, mỗi mũi gây 38-58 sát thương vật lý và bỏ qua 20 giáp của mục tiêu. CD: 15 (12) (6.4) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.",
+					enhanced = "Bắn 3 mũi tên, mỗi mũi gây 38-58 sát thương vật lý và bỏ qua 20 giáp của mục tiêu. CD: 8 (6.4) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.",
+					levels_standard = { "Bắn 3 mũi tên, mỗi mũi gây 38-58 sát thương vật lý và bỏ qua 20 giáp của mục tiêu. CD: 15 (12) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.", "Bắn 3 mũi tên, mỗi mũi gây 78-118 sát thương vật lý và bỏ qua 35 giáp của mục tiêu. CD: 15 (12) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.", "Bắn 3 mũi tên, mỗi mũi gây 120-150 sát thương vật lý và bỏ qua 50 giáp của mục tiêu. CD: 15 (12) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo." },
+					levels_enhanced = { "Bắn 3 mũi tên, mỗi mũi gây 38-58 sát thương vật lý và bỏ qua 20 giáp của mục tiêu. CD: 8 (6.4) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.", "Bắn 3 mũi tên, mỗi mũi gây 78-118 sát thương vật lý và bỏ qua 35 giáp của mục tiêu. CD: 8 (6.4) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo.", "Bắn 3 mũi tên, mỗi mũi gây 120-150 sát thương vật lý và bỏ qua 50 giáp của mục tiêu. CD: 8 (6.4) giây. Kỹ năng làm chậm lượt đánh thường tiếp theo." },
 					prices_standard = { "120", "90", "90" },
 					prices_enhanced = { "120", "90", "90" }
 				},
 				{
-					name = "贪婪猎手",
-					standard = "召唤一只战鹰攻击路上敌人，造成18-26点物理伤害。\n平均CD2.7秒",
-					enhanced = "召唤一只战鹰攻击路上敌人，造成34-67点物理伤害。\n平均CD2.7秒",
-					levels_standard = { "召唤一只战鹰攻击路上敌人，造成18-26点物理伤害。\n平均CD2.7秒", "召唤一只战鹰攻击路上敌人，造成34-52点物理伤害。\n平均CD2.7秒", "召唤一只战鹰攻击路上敌人，造成52-78点物理伤害。\n平均CD2.7秒" },
-					levels_enhanced = { "召唤一只战鹰攻击路上敌人，造成34-67点物理伤害。\n平均CD2.7秒", "召唤一只战鹰攻击路上敌人，造成66-133点物理伤害。\n平均CD2.7秒", "召唤一只战鹰攻击路上敌人，造成98-199点物理伤害。\n平均CD2.7秒" },
+					name = "Thợ săn tham lam",
+					standard = "Triệu hồi chiến ưng tấn công địch trên đường, gây 18-26 sát thương vật lý.\nCD trung bình: 2.7 giây.",
+					enhanced = "Triệu hồi chiến ưng tấn công địch trên đường, gây 34-67 sát thương vật lý.\nCD trung bình: 2.7 giây.",
+					levels_standard = { "Triệu hồi chiến ưng tấn công địch trên đường, gây 18-26 sát thương vật lý.\nCD trung bình: 2.7 giây.", "Triệu hồi chiến ưng tấn công địch trên đường, gây 34-52 sát thương vật lý.\nCD trung bình: 2.7 giây.", "Triệu hồi chiến ưng tấn công địch trên đường, gây 52-78 sát thương vật lý.\nCD trung bình: 2.7 giây." },
+					levels_enhanced = { "Triệu hồi chiến ưng tấn công địch trên đường, gây 34-67 sát thương vật lý.\nCD trung bình: 2.7 giây.", "Triệu hồi chiến ưng tấn công địch trên đường, gây 66-133 sát thương vật lý.\nCD trung bình: 2.7 giây.", "Triệu hồi chiến ưng tấn công địch trên đường, gây 98-199 sát thương vật lý.\nCD trung bình: 2.7 giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "150", "120", "120" }
 				},
@@ -2064,30 +2064,30 @@ local M = {
 		},
 		["tower_arcane_wizard_lvl4"] = {
 			doc_id = "",
-			title = "奥术法师",
+			title = "Pháp sư bí thuật",
 			attack = {
-				standard = "每2.0秒发射魔法射线攻击敌方，魔法伤害",
-				enhanced = "每1.9秒发射魔法射线攻击敌方，魔法伤害"
+				standard = "Phóng tia phép mỗi 2.0 giây, gây sát thương phép.",
+				enhanced = "Phóng tia phép mỗi 1.9 giây, gây sát thương phép."
 			},
-			change_note = "解说：在加强前奥术法师就已经能作为一个增伤工具人出场，前3代塔位密集，选好塔位的奥术最多可以增伤7个塔位，6代出后将光环技能对标了6代的魔典学者。而原版1技能虽然有对boss的伤害，却没有对boss的索敌，导致对boss有伤害的特性难以发挥，所以增加索敌机制。",
+			change_note = "Nhận xét: Trước khi được tăng sức mạnh, Pháp sư Bí thuật đã hữu ích nhờ khả năng tăng sát thương. Các phần 3 đầu có vị trí tháp sát nhau, nên chọn đúng chỗ có thể hỗ trợ tới 7 tháp. Từ phần 6, hào quang được cân theo Học giả Cổ thư phần 6. Kỹ năng 1 vốn gây sát thương lên trùm nhưng không nhắm trùm, nên bổ sung cơ chế chọn mục tiêu để phát huy tác dụng này.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "分解射线",
-					standard = "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成800点魔法伤害。CD30(25)秒。",
-					enhanced = "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成800点魔法伤害。\n如果攻击范围内有Boss，则优先选中最靠前的Boss；\n否则优先选中最靠前的怪物。CD30(25)秒。",
-					levels_standard = { "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成800点魔法伤害。CD30(25)秒。", "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成1200点魔法伤害。CD28(22.4)秒。", "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成1500点魔法伤害。CD26(20.8)秒。" },
-					levels_enhanced = { "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成800点魔法伤害。\n如果攻击范围内有Boss，则优先选中最靠前的Boss；\n否则优先选中最靠前的怪物。CD30(25)秒。", "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成1440点魔法伤害。\n如果攻击范围内有Boss，则优先选中最靠前的Boss；\n否则优先选中最靠前的怪物。CD28(22.4)秒。", "发射一条强化射线，若瞄准的不是Boss则直接秒杀，\n是Boss则造成2080点魔法伤害。\n如果攻击范围内有Boss，则优先选中最靠前的Boss；\n否则优先选中最靠前的怪物。CD26(20.8)秒。" },
+					name = "Tia phân rã",
+					standard = "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 800 sát thương phép lên trùm.\nCD: 30 (25) giây.",
+					enhanced = "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 800 sát thương phép lên trùm.\nƯu tiên trùm đi xa nhất trong tầm đánh; nếu không có trùm, chọn kẻ địch đi xa nhất. CD: 30 (25) giây.",
+					levels_standard = { "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 800 sát thương phép lên trùm.\nCD: 30 (25) giây.", "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 1200 sát thương phép lên trùm.\nCD: 28 (22.4) giây.", "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 1500 sát thương phép lên trùm.\nCD: 26 (20.8) giây." },
+					levels_enhanced = { "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 800 sát thương phép lên trùm.\nƯu tiên trùm đi xa nhất trong tầm đánh; nếu không có trùm, chọn kẻ địch đi xa nhất. CD: 30 (25) giây.", "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 1440 sát thương phép lên trùm.\nƯu tiên trùm đi xa nhất trong tầm đánh; nếu không có trùm, chọn kẻ địch đi xa nhất. CD: 28 (22.4) giây.", "Bắn tia năng lượng cường hóa: tiêu diệt ngay mục tiêu không phải trùm, hoặc gây 2080 sát thương phép lên trùm.\nƯu tiên trùm đi xa nhất trong tầm đánh; nếu không có trùm, chọn kẻ địch đi xa nhất. CD: 26 (20.8) giây." },
 					prices_standard = { "300", "112", "112" },
 					prices_enhanced = { "300", "112", "112" }
 				},
 				{
-					name = "强化光环",
-					standard = "提升440范围内防御塔15%的攻击伤害\n",
-					enhanced = "提升自身和465范围内防御塔15%的攻击伤害\n",
-					levels_standard = { "提升440范围内防御塔15%的攻击伤害(不含自身，范围会被射程buff影响)\n", "提升440范围内防御塔25%的攻击伤害(不含自身，范围会被射程buff影响)\n", "提升440范围内防御塔40%的攻击伤害(不含自身，范围会被射程buff影响)\n" },
-					levels_enhanced = { "提升自身和465范围内防御塔15%的攻击伤害(范围会被射程buff影响)\n", "提升自身和465范围内防御塔25%的攻击伤害(范围会被射程buff影响)\n", "提升自身和465范围内防御塔40%的攻击伤害(范围会被射程buff影响)\n" },
+					name = "Hào quang cường hóa",
+					standard = "Tăng 15% sát thương cho các tháp trong phạm vi 440.\n",
+					enhanced = "Tăng 15% sát thương cho bản thân và các tháp trong phạm vi 465.\n",
+					levels_standard = { "Tăng 15% sát thương cho các tháp trong phạm vi 440, trừ bản thân. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n", "Tăng 25% sát thương cho các tháp trong phạm vi 440, trừ bản thân. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n", "Tăng 40% sát thương cho các tháp trong phạm vi 440, trừ bản thân. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n" },
+					levels_enhanced = { "Tăng 15% sát thương cho bản thân và các tháp trong phạm vi 465. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n", "Tăng 25% sát thương cho bản thân và các tháp trong phạm vi 465. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n", "Tăng 40% sát thương cho bản thân và các tháp trong phạm vi 465. Phạm vi chịu ảnh hưởng của hiệu ứng tăng tầm đánh.\n" },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2095,30 +2095,30 @@ local M = {
 		},
 		["tower_tricannon_lvl4"] = {
 			doc_id = "",
-			title = "三管加农炮",
+			title = "Pháo ba nòng",
 			attack = {
-				standard = "每3秒发射3颗炮弹分别攻击地面敌人，爆炸范围90(112.5)\n若范围内有多个敌人，则3颗炮弹会分别瞄准不同敌人，炮弹伤害",
-				enhanced = "每3秒发射3颗炮弹分别攻击地面敌人，爆炸范围90(112.5)\n若范围内有多个敌人，则3颗炮弹会分别瞄准不同敌人，炮弹伤害"
+				standard = "Cứ 3 giây bắn 3 quả đạn vào địch mặt đất, gây sát thương pháo trong phạm vi 90 (112.5).\nNếu có nhiều mục tiêu, 3 quả đạn sẽ nhắm vào các kẻ địch khác nhau.",
+				enhanced = "Cứ 3 giây bắn 3 quả đạn vào địch mặt đất, gây sát thương pháo trong phạm vi 90 (112.5).\nNếu có nhiều mục tiêu, 3 quả đạn sẽ nhắm vào các kẻ địch khác nhau."
 			},
-			change_note = "解说：使得2技能可以和1技能打配合而不是内鬼1技能。",
-			port_note = "1技能可以被全代任意一种增伤(例如希尔瓦拉/墨尔古伦/5代奥术/熔炉)加成",
+			change_note = "Nhận xét: Cho kỹ năng 2 phối hợp với kỹ năng 1, thay vì vô tình làm yếu kỹ năng 1.",
+			port_note = "Kỹ năng 1 nhận mọi hiệu ứng tăng sát thương từ các phần, ví dụ Sylvara, Murglun, Pháp sư Bí thuật phần 5 hoặc Lò luyện.",
 			notes = "",
 			skills = {
 				{
-					name = "猛烈轰炸",
-					standard = "本技能会替换并延迟普攻，迅速向四周以110为间隔发射8颗炮弹，每颗炮弹造成24-48点炮弹伤害，CD15(12)秒\n本技能发动期间不可发动2技能的红热炸弹",
-					enhanced = "本技能会替换并延迟普攻，迅速向四周以110为间隔发射8颗炮弹，每颗炮弹造成24-48点炮弹伤害，CD15(12)秒\n2技能buff期间发动本技能会发射等量的红热炸弹",
-					levels_standard = { "本技能会替换并延迟普攻，迅速向四周以110为间隔发射8颗炮弹，每颗炮弹造成24-48点炮弹伤害，CD15(12)秒\n本技能发动期间不可发动2技能的红热炸弹", "本技能会替换并延迟普攻，迅速向四周以60为间隔发射14颗炮弹，每颗炮弹造成32-64点炮弹伤害，CD15(12)秒\n本技能发动期间不可发动2技能的红热炸弹", "本技能会替换并延迟普攻，迅速向四周以40为间隔发射22颗炮弹，每颗炮弹造成40-80点炮弹伤害，CD15(12)秒\n本技能发动期间不可发动2技能的红热炸弹" },
-					levels_enhanced = { "本技能会替换并延迟普攻，迅速向四周以110为间隔发射8颗炮弹，每颗炮弹造成24-48点炮弹伤害，CD15(12)秒\n2技能加成期间发动本技能会发射等量的红热炸弹", "本技能会替换并延迟普攻，迅速向四周以60为间隔发射14颗炮弹，每颗炮弹造成32-64点炮弹伤害，CD15(12)秒\n2技能加成期间发动本技能会发射等量的红热炸弹", "本技能会替换并延迟普攻，迅速向四周以40为间隔发射22颗炮弹，每颗炮弹造成40-80点炮弹伤害，CD15(12)秒\n2技能加成期间发动本技能会发射等量的红热炸弹" },
+					name = "Oanh tạc dữ dội",
+					standard = "Thay thế và làm chậm đòn đánh thường, bắn nhanh 8 quả đạn ra xung quanh, cách nhau 110. Mỗi quả gây 24-48 sát thương pháo. CD: 15 (12) giây.\nKhông dùng được bom nung đỏ của kỹ năng 2 khi đang thi triển.",
+					enhanced = "Thay thế và làm chậm đòn đánh thường, bắn nhanh 8 quả đạn ra xung quanh, cách nhau 110. Mỗi quả gây 24-48 sát thương pháo. CD: 15 (12) giây.\nNếu hiệu ứng kỹ năng 2 đang có hiệu lực, toàn bộ đạn bắn ra là bom nung đỏ.",
+					levels_standard = { "Thay thế và làm chậm đòn đánh thường, bắn nhanh 8 quả đạn ra xung quanh, cách nhau 110. Mỗi quả gây 24-48 sát thương pháo. CD: 15 (12) giây.\nKhông dùng được bom nung đỏ của kỹ năng 2 khi đang thi triển.", "Thay thế và làm chậm đòn đánh thường, bắn nhanh 14 quả đạn ra xung quanh, cách nhau 60. Mỗi quả gây 32-64 sát thương pháo. CD: 15 (12) giây.\nKhông dùng được bom nung đỏ của kỹ năng 2 khi đang thi triển.", "Thay thế và làm chậm đòn đánh thường, bắn nhanh 22 quả đạn ra xung quanh, cách nhau 40. Mỗi quả gây 40-80 sát thương pháo. CD: 15 (12) giây.\nKhông dùng được bom nung đỏ của kỹ năng 2 khi đang thi triển." },
+					levels_enhanced = { "Thay thế và làm chậm đòn đánh thường, bắn nhanh 8 quả đạn ra xung quanh, cách nhau 110. Mỗi quả gây 24-48 sát thương pháo. CD: 15 (12) giây.\nNếu hiệu ứng kỹ năng 2 đang có hiệu lực, toàn bộ đạn bắn ra là bom nung đỏ.", "Thay thế và làm chậm đòn đánh thường, bắn nhanh 14 quả đạn ra xung quanh, cách nhau 60. Mỗi quả gây 32-64 sát thương pháo. CD: 15 (12) giây.\nNếu hiệu ứng kỹ năng 2 đang có hiệu lực, toàn bộ đạn bắn ra là bom nung đỏ.", "Thay thế và làm chậm đòn đánh thường, bắn nhanh 22 quả đạn ra xung quanh, cách nhau 40. Mỗi quả gây 40-80 sát thương pháo. CD: 15 (12) giây.\nNếu hiệu ứng kỹ năng 2 đang có hiệu lực, toàn bộ đạn bắn ra là bom nung đỏ." },
 					prices_standard = { "250", "150", "150" },
 					prices_enhanced = { "250", "150", "150" }
 				},
 				{
-					name = "过热模式",
-					standard = "使得炮管变得红热，持续3秒(即1次普攻)，\n炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成3点真实实伤害,不可叠加，CD24(19.2)\n本技能发动期间不可发动1技能",
-					enhanced = "使得炮管变得红热，持续3秒(即1次普攻)，\n炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成3点真实实伤害,不可叠加，CD24(19.2)\n本技能buff期间可发动1技能",
-					levels_standard = { "使得炮管变得红热，持续3秒(即1次普攻)，\n炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成3点真实实伤害,不可叠加，CD24(19.2)\n本技能发动期间不可发动1技能", "使得炮管变得红热，持续6秒(即2次普攻)，\n炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成5点真实实伤害,不可叠加，CD24(19.2)\n本技能发动期间不可发动1技能", "使得炮管变得红热，持续9秒(即3次普攻)，\n炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成7点真实实伤害,不可叠加，CD24(19.2)\n本技能发动期间不可发动1技能" },
-					levels_enhanced = { "使得炮管变得红热，持续3秒(即1次普攻)，\n普攻和猛烈轰炸技能发射的炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成3点真实实伤害,不可叠加，CD24(19.2)。", "使得炮管变得红热，持续6秒(即2次普攻)，\n普攻和猛烈轰炸技能发射的炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成6点真实实伤害,不可叠加，CD24(19.2)。", "使得炮管变得红热，持续9秒(即3次普攻)，\n普攻和猛烈轰炸技能发射的炸弹会灼烧80范围地面3.0秒，每0.25秒对经过的敌人造成9点真实实伤害,不可叠加，CD24(19.2)。" },
+					name = "Chế độ quá nhiệt",
+					standard = "Nung đỏ nòng pháo trong 3 giây, tương đương 1 lượt đánh thường. Bom đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 3 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).\nKhông thể dùng kỹ năng 1 trong thời gian này.",
+					enhanced = "Nung đỏ nòng pháo trong 3 giây, tương đương 1 lượt đánh thường. Bom đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 3 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).\nCó thể dùng kỹ năng 1 trong thời gian hiệu ứng có tác dụng.",
+					levels_standard = { "Nung đỏ nòng pháo trong 3 giây, tương đương 1 lượt đánh thường. Bom đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 3 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).\nKhông thể dùng kỹ năng 1 trong thời gian này.", "Nung đỏ nòng pháo trong 6 giây, tương đương 2 lượt đánh thường. Bom đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 5 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).\nKhông thể dùng kỹ năng 1 trong thời gian này.", "Nung đỏ nòng pháo trong 9 giây, tương đương 3 lượt đánh thường. Bom đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 7 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).\nKhông thể dùng kỹ năng 1 trong thời gian này." },
+					levels_enhanced = { "Nung đỏ nòng pháo trong 3 giây, tương đương 1 lượt đánh thường. Bom của đòn đánh thường và Oanh tạc dữ dội đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 3 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).", "Nung đỏ nòng pháo trong 6 giây, tương đương 2 lượt đánh thường. Bom của đòn đánh thường và Oanh tạc dữ dội đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 6 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2).", "Nung đỏ nòng pháo trong 9 giây, tương đương 3 lượt đánh thường. Bom của đòn đánh thường và Oanh tạc dữ dội đốt mặt đất trong phạm vi 80 suốt 3.0 giây, gây 9 sát thương chuẩn mỗi 0.25 giây cho địch đi qua. Không cộng dồn. CD: 24 (19.2)." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
@@ -2126,30 +2126,30 @@ local M = {
 		},
 		["tower_arborean_emissary_lvl4"] = {
 			doc_id = "",
-			title = "树灵使者",
+			title = "Sứ giả Arborean",
 			attack = {
-				standard = "每1.8秒发射魔法弹攻击敌方，同时使对方进入易伤状态5/5/5/5秒，比率为1.2/1.3/1.4/1.5。\n进入状态后不会被该塔优先选中攻击，魔法伤害。",
-				enhanced = "每1.8秒发射魔法弹攻击敌方，同时使对方进入易伤状态4/6/8/10秒，比率为1.2/1.3/1.4/1.5。\n进入状态后不会被该塔优先选中攻击，魔法伤害。"
+				standard = "Cứ 1.8 giây bắn đạn phép, gây sát thương phép và khiến mục tiêu dễ bị tổn thương trong 5/5/5/5 giây, với hệ số 1.2/1.3/1.4/1.5.\nTháp giảm ưu tiên tấn công các mục tiêu đã chịu hiệu ứng.",
+				enhanced = "Cứ 1.8 giây bắn đạn phép, gây sát thương phép và khiến mục tiêu dễ bị tổn thương trong 4/6/8/10 giây, với hệ số 1.2/1.3/1.4/1.5.\nTháp giảm ưu tiên tấn công các mục tiêu đã chịu hiệu ứng."
 			},
-			change_note = "解说：原版普攻太低，2/3/4级塔无存在意义，故提升面板和易伤持续时间。但因为改版有12个卡槽，有空间带辅助，也不需要加太强。",
+			change_note = "Nhận xét: Sát thương thường bản gốc quá thấp khiến các cấp 2/3/4 ít hữu ích, nên tăng chỉ số và thời gian dễ bị tổn thương. Bản FL có 12 ô chọn tháp, đủ chỗ mang tháp hỗ trợ, nên không cần tăng quá mạnh.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "自然馈赠",
-					standard = "召唤仙灵治疗460范围内友军，每0.25秒回复4点生命值，持续6秒，CD20(16)秒",
-					enhanced = "召唤仙灵治疗460范围内友军，每0.25秒回复4点生命值，持续6秒，CD20(16)秒",
-					levels_standard = { "召唤仙灵治疗460范围内友军，每0.25秒回复4点生命值，持续6秒，CD20(16)秒", "召唤仙灵治疗460范围内友军，每0.25秒回复8点生命值，持续6秒，CD20(16)秒", "召唤仙灵治疗460范围内友军，每0.25秒回复12点生命值，持续6秒，CD20(16)秒" },
-					levels_enhanced = { "召唤仙灵治疗460范围内友军，每0.25秒回复4点生命值，持续6秒，CD20(16)秒", "召唤仙灵治疗460范围内友军，每0.25秒回复8点生命值，持续6秒，CD20(16)秒", "召唤仙灵治疗460范围内友军，每0.25秒回复12点生命值，持续6秒，CD20(16)秒" },
+					name = "Quà tặng thiên nhiên",
+					standard = "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 4 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.",
+					enhanced = "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 4 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.",
+					levels_standard = { "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 4 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.", "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 8 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.", "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 12 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây." },
+					levels_enhanced = { "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 4 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.", "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 8 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây.", "Triệu hồi tiên chữa lành đồng minh trong phạm vi 460: hồi 12 máu mỗi 0.25 giây, kéo dài 6 giây. CD: 20 (16) giây." },
 					prices_standard = { "120", "90", "90" },
 					prices_enhanced = { "120", "90", "90" }
 				},
 				{
-					name = "荆棘缠绕",
-					standard = "生长出3根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD15(12)秒",
-					enhanced = "生长出3根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD15(12)秒",
-					levels_standard = { "生长出3根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD15(12)秒", "生长出5根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD13(10.4)秒", "生长出8根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD12(9.6)秒" },
-					levels_enhanced = { "生长出3根树根缠绕440范围内敌人3秒，并使敌人受到40点真实伤害，CD15(12)秒", "生长出5根树根缠绕440范围内敌人3秒，并使敌人受到65点真实伤害，CD13(10.4)秒", "生长出8根树根缠绕440范围内敌人3秒，并使敌人受到90点真实伤害，CD12(9.6)秒" },
+					name = "Dây gai trói buộc",
+					standard = "Mọc 3 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 15 (12) giây.",
+					enhanced = "Mọc 3 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 15 (12) giây.",
+					levels_standard = { "Mọc 3 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 15 (12) giây.", "Mọc 5 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 13 (10.4) giây.", "Mọc 8 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 12 (9.6) giây." },
+					levels_enhanced = { "Mọc 3 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 40 sát thương chuẩn. CD: 15 (12) giây.", "Mọc 5 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 65 sát thương chuẩn. CD: 13 (10.4) giây.", "Mọc 8 rễ cây, trói địch trong phạm vi 440 suốt 3 giây và gây 90 sát thương chuẩn. CD: 12 (9.6) giây." },
 					prices_standard = { "160", "120", "120" },
 					prices_enhanced = { "160", "120", "120" }
 				},
@@ -2157,30 +2157,30 @@ local M = {
 		},
 		["tower_demon_pit_lvl4"] = {
 			doc_id = "",
-			title = "恶魔熔坑",
+			title = "Hố quỷ",
 			attack = {
-				standard = "每间隔4秒发射一个呆头鹅拦截敌方造成物理伤害，场上存在10秒或死亡后立即爆炸造成等同于[攻击力×1]的范围炮伤，爆炸范围80(100)。伤害后击晕敌方0.25/0.4/0.6/0.8秒",
-				enhanced = "每间隔2.8秒发射一个呆头鹅拦截敌方造成物理伤害，场上存在10秒或死亡后立即爆炸造成等同于[攻击力×3.75]的范围炮伤，爆炸范围80(100)。伤害后击晕敌方0.25/0.4/0.6/0.8秒"
+				standard = "Cứ 4 giây phóng một tiểu quỷ chặn địch và gây sát thương vật lý. Sau 10 giây hoặc khi chết, nó phát nổ, gây sát thương pháo bằng [sức tấn công × 1] trong phạm vi 80 (100). Vụ nổ làm choáng địch 0.25/0.4/0.6/0.8 giây.",
+				enhanced = "Cứ 2.8 giây phóng một tiểu quỷ chặn địch và gây sát thương vật lý. Sau 10 giây hoặc khi chết, nó phát nổ, gây sát thương pháo bằng [sức tấn công × 3.75] trong phạm vi 80 (100). Vụ nổ làm choáng địch 0.25/0.4/0.6/0.8 giây."
 			},
-			change_note = "解说：原版2/3/4级塔完全没有存在意义，故基于原先的设计将其改为一个炮塔，这样也提升了1技能的性价比。降低真空期并提升灵活性。",
+			change_note = "Nhận xét: Các cấp 2/3/4 của bản gốc hầu như không hữu ích. Dựa trên thiết kế cũ, chuyển tháp sang hướng pháo để tăng hiệu quả kỹ năng 1, giảm khoảng trống giữa các đòn và tăng tính linh hoạt.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "爆炸大师",
-					standard = "呆头鹅的爆炸伤害提升20%，且爆炸后使敌人燃烧，每秒造成2-4点真实伤害，持续3秒",
-					enhanced = "呆头鹅的爆炸伤害提升30%，且爆炸后使敌人燃烧，每秒造成2-4点真实伤害，持续3秒",
-					levels_standard = { "呆头鹅的爆炸伤害提升20%，且爆炸后使敌人燃烧，每秒造成2-4点真实伤害，持续3秒", "呆头鹅的爆炸伤害提升40%，且爆炸后使敌人燃烧，每秒造成4-6点真实伤害，持续4秒", "呆头鹅的爆炸伤害提升60%，且爆炸后使敌人燃烧，每秒造成6-10点真实伤害，持续5秒" },
-					levels_enhanced = { "呆头鹅的爆炸伤害提升30%，且爆炸后使敌人燃烧，每秒造成2-4点真实伤害，持续3秒", "呆头鹅的爆炸伤害提升60%，且爆炸后使敌人燃烧，每秒造成4-6点真实伤害，持续4秒", "呆头鹅的爆炸伤害提升100%，且爆炸后使敌人燃烧，每秒造成6-10点真实伤害，持续5秒" },
+					name = "Bậc thầy vụ nổ",
+					standard = "Tăng 20% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 2-4 sát thương chuẩn mỗi giây trong 3 giây.",
+					enhanced = "Tăng 30% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 2-4 sát thương chuẩn mỗi giây trong 3 giây.",
+					levels_standard = { "Tăng 20% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 2-4 sát thương chuẩn mỗi giây trong 3 giây.", "Tăng 40% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 4-6 sát thương chuẩn mỗi giây trong 4 giây.", "Tăng 60% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 6-10 sát thương chuẩn mỗi giây trong 5 giây." },
+					levels_enhanced = { "Tăng 30% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 2-4 sát thương chuẩn mỗi giây trong 3 giây.", "Tăng 60% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 4-6 sát thương chuẩn mỗi giây trong 4 giây.", "Tăng 100% sát thương nổ của tiểu quỷ. Vụ nổ đốt địch, gây 6-10 sát thương chuẩn mỗi giây trong 5 giây." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
 				{
-					name = "天降魔头",
-					standard = "召唤一个大恶魔，血量110，攻击力19-29，死亡爆炸时造成100点炮伤。\nCD40(32)秒，视为一次强化普攻。",
-					enhanced = "召唤一个大恶魔，血量110，攻击力19-29，死亡爆炸时造成100点炮伤。\nCD28(22.4)秒，视为一次强化普攻。",
-					levels_standard = { "召唤一个大恶魔，血量110，攻击力19-29，死亡爆炸时造成100点炮伤。\nCD40(32)秒，视为一次强化普攻。", "召唤一个大恶魔，血量165，攻击力28-42，死亡爆炸时造成150点炮伤。\nCD40(32)秒，视为一次强化普攻。", "召唤一个大恶魔，血量220，攻击力37-55，死亡爆炸时造成250点炮伤。\nCD40(32)秒，视为一次强化普攻。" },
-					levels_enhanced = { "召唤一个大恶魔，血量110，攻击力19-29，死亡爆炸时造成100点炮伤。\nCD28(22.4)秒，视为一次强化普攻。", "召唤一个大恶魔，血量165，攻击力28-42，死亡爆炸时造成150点炮伤。\nCD28(22.4)秒，视为一次强化普攻。", "召唤一个大恶魔，血量220，攻击力37-55，死亡爆炸时造成250点炮伤。\nCD28(22.4)秒，视为一次强化普攻。" },
+					name = "Đại quỷ giáng trần",
+					standard = "Triệu hồi đại quỷ với 110 máu và 19-29 sức tấn công. Khi chết, nó phát nổ gây 100 sát thương pháo.\nCD: 40 (32) giây. Được tính là một đòn đánh thường cường hóa.",
+					enhanced = "Triệu hồi đại quỷ với 110 máu và 19-29 sức tấn công. Khi chết, nó phát nổ gây 100 sát thương pháo.\nCD: 28 (22.4) giây. Được tính là một đòn đánh thường cường hóa.",
+					levels_standard = { "Triệu hồi đại quỷ với 110 máu và 19-29 sức tấn công. Khi chết, nó phát nổ gây 100 sát thương pháo.\nCD: 40 (32) giây. Được tính là một đòn đánh thường cường hóa.", "Triệu hồi đại quỷ với 165 máu và 28-42 sức tấn công. Khi chết, nó phát nổ gây 150 sát thương pháo.\nCD: 40 (32) giây. Được tính là một đòn đánh thường cường hóa.", "Triệu hồi đại quỷ với 220 máu và 37-55 sức tấn công. Khi chết, nó phát nổ gây 250 sát thương pháo.\nCD: 40 (32) giây. Được tính là một đòn đánh thường cường hóa." },
+					levels_enhanced = { "Triệu hồi đại quỷ với 110 máu và 19-29 sức tấn công. Khi chết, nó phát nổ gây 100 sát thương pháo.\nCD: 28 (22.4) giây. Được tính là một đòn đánh thường cường hóa.", "Triệu hồi đại quỷ với 165 máu và 28-42 sức tấn công. Khi chết, nó phát nổ gây 150 sát thương pháo.\nCD: 28 (22.4) giây. Được tính là một đòn đánh thường cường hóa.", "Triệu hồi đại quỷ với 220 máu và 37-55 sức tấn công. Khi chết, nó phát nổ gây 250 sát thương pháo.\nCD: 28 (22.4) giây. Được tính là một đòn đánh thường cường hóa." },
 					prices_standard = { "200", "75", "75" },
 					prices_enhanced = { "200", "75", "75" }
 				},
@@ -2188,30 +2188,30 @@ local M = {
 		},
 		["tower_elven_stargazers_lvl4"] = {
 			doc_id = "",
-			title = "精灵观星者",
+			title = "Tinh linh Chiêm tinh",
 			attack = {
-				standard = "每2.7秒发动一轮攻击，每轮攻击发射5条魔法射线，每条射线造成面板魔法伤害。若敌人≥5则5个敌人分别受到1次攻击，否则范围内敌人轮流受到攻击。",
-				enhanced = "每2.7秒发动一轮攻击，每轮攻击发射5条魔法射线，每条射线造成面板魔法伤害。若敌人≥5则5个敌人分别受到1次攻击，否则范围内敌人轮流受到攻击。"
+				standard = "Cứ 2.7 giây thực hiện một lượt đánh gồm 5 tia phép; mỗi tia gây sát thương phép theo bảng chỉ số. Nếu có ít nhất 5 địch, 5 mục tiêu nhận 1 lần đánh mỗi mục tiêu; nếu ít hơn, các mục tiêu trong tầm lần lượt chịu đòn.",
+				enhanced = "Cứ 2.7 giây thực hiện một lượt đánh gồm 5 tia phép; mỗi tia gây sát thương phép theo bảng chỉ số. Nếu có ít nhất 5 địch, 5 mục tiêu nhận 1 lần đánh mỗi mục tiêu; nếu ít hơn, các mục tiêu trong tầm lần lượt chịu đòn."
 			},
-			change_note = "解说：仅增加不堆观星时2技能的实用性。",
-			port_note = "移植改动：原版1技能在观星触发第1段传送动画后到触发第2段传送动画前会无敌一段时间，如果保持此特性，怪物有一定几率会进入无敌状态。故改版移除了此特性。",
+			change_note = "Nhận xét: Chỉ tăng tính hữu dụng của kỹ năng 2 khi không xây nhiều tháp Chiêm tinh.",
+			port_note = "Thay đổi khi chuyển sang FL: Kỹ năng 1 bản gốc khiến mục tiêu bất tử giữa hoạt ảnh dịch chuyển thứ 1 và thứ 2. Giữ cơ chế này có thể khiến địch bị kẹt ở trạng thái bất tử, nên bản FL đã bỏ nó.",
 			notes = "",
 			skills = {
 				{
-					name = "事件视界",
-					standard = "传送不超过3个敌人，令其倒退200个单位的距离，\n本技能会延迟普攻，CD20秒",
-					enhanced = "传送不超过3个敌人，令其倒退200个单位的距离，\n本技能会延迟普攻，CD20秒",
-					levels_standard = { "传送不超过3个敌人，令其倒退200个单位的距离，\n本技能会延迟普攻，CD20秒", "传送不超过4个敌人，令其倒退250个单位的距离，\n本技能会延迟普攻，CD18秒", "传送不超过6个敌人，令其倒退300个单位的距离，\n本技能会延迟普攻，CD16秒" },
-					levels_enhanced = { "传送不超过3个敌人，令其倒退200个单位的距离，\n本技能会延迟普攻，CD20秒", "传送不超过4个敌人，令其倒退250个单位的距离，\n本技能会延迟普攻，CD18秒", "传送不超过6个敌人，令其倒退300个单位的距离，\n本技能会延迟普攻，CD16秒" },
+					name = "Chân trời sự kiện",
+					standard = "Dịch chuyển tối đa 3 kẻ địch lùi 200 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 20 giây.",
+					enhanced = "Dịch chuyển tối đa 3 kẻ địch lùi 200 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 20 giây.",
+					levels_standard = { "Dịch chuyển tối đa 3 kẻ địch lùi 200 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 20 giây.", "Dịch chuyển tối đa 4 kẻ địch lùi 250 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 18 giây.", "Dịch chuyển tối đa 6 kẻ địch lùi 300 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 16 giây." },
+					levels_enhanced = { "Dịch chuyển tối đa 3 kẻ địch lùi 200 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 20 giây.", "Dịch chuyển tối đa 4 kẻ địch lùi 250 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 18 giây.", "Dịch chuyển tối đa 6 kẻ địch lùi 300 đơn vị khoảng cách.\nLàm chậm đòn đánh thường tiếp theo. CD: 16 giây." },
 					prices_standard = { "250", "75", "75" },
 					prices_enhanced = { "250", "75", "75" }
 				},
 				{
-					name = "星光涌现",
-					standard = "攻击敌人后给敌人附加0.8秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多3个)的魔法星，每个星星造成18-30点魔法伤害，并击晕敌人0.8秒。",
-					enhanced = "攻击敌人后给敌人附加1.5秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多3个)的魔法星，每个星星造成18-30点魔法伤害，并击晕敌人0.8秒。",
-					levels_standard = { "攻击敌人后给敌人附加0.8秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多3个)的魔法星，每个星星造成18-30点魔法伤害，并击晕敌人0.8秒。", "攻击敌人后给敌人附加0.8秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多4个)的魔法星，每个星星造成28-42点魔法伤害，并击晕敌人0.8秒。", "攻击敌人后给敌人附加0.8秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多5个)的魔法星，每个星星造成36-54点魔法伤害，并击晕敌人0.8秒。" },
-					levels_enhanced = { "攻击敌人后给敌人附加1.5秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多3个)的魔法星，每个星星造成18-30点魔法伤害，并击晕敌人0.8秒。", "每轮攻击额外发射1条射线。攻击敌人后给敌人附加1.5秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多4个)的魔法星，每个星星造成28-42点魔法伤害，并击晕敌人0.8秒。", "每轮攻击额外发射2条射线。攻击敌人后给敌人附加1.5秒的星光状态，处于星光状态的敌人死亡后从死亡敌人400范围内召唤等同于范围内敌人数量(至多5个)的魔法星，每个星星造成36-54点魔法伤害，并击晕敌人0.8秒。" },
+					name = "Ánh sao bùng nổ",
+					standard = "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 0.8 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 3 sao. Mỗi sao gây 18-30 sát thương phép và làm choáng 0.8 giây.",
+					enhanced = "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 1.5 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 3 sao. Mỗi sao gây 18-30 sát thương phép và làm choáng 0.8 giây.",
+					levels_standard = { "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 0.8 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 3 sao. Mỗi sao gây 18-30 sát thương phép và làm choáng 0.8 giây.", "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 0.8 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 4 sao. Mỗi sao gây 28-42 sát thương phép và làm choáng 0.8 giây.", "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 0.8 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 5 sao. Mỗi sao gây 36-54 sát thương phép và làm choáng 0.8 giây." },
+					levels_enhanced = { "Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 1.5 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 3 sao. Mỗi sao gây 18-30 sát thương phép và làm choáng 0.8 giây.", "Bắn thêm 1 tia mỗi lượt. Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 1.5 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 4 sao. Mỗi sao gây 28-42 sát thương phép và làm choáng 0.8 giây.", "Bắn thêm 2 tia mỗi lượt. Đòn đánh đánh dấu mục tiêu bằng ánh sao trong 1.5 giây. Khi mục tiêu chết, tạo sao phép theo số địch trong phạm vi 400 quanh nó, tối đa 5 sao. Mỗi sao gây 36-54 sát thương phép và làm choáng 0.8 giây." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "150", "150" }
 				},
@@ -2219,30 +2219,30 @@ local M = {
 		},
 		["tower_rocket_gunners_lvl4"] = {
 			doc_id = "",
-			title = "火箭枪手",
+			title = "Xạ thủ tên lửa",
 			attack = {
-				standard = "300(330)范围内有敌人时进行远程攻击，40范围内有敌人时近战拦截。可进行地面/空中形态的切换。空中形态下无法拦截敌人",
-				enhanced = "300(330)范围内有敌人时进行远程攻击，40范围内有敌人时近战拦截。可进行地面/空中形态的切换。空中形态下无法拦截敌人且免疫所有远程伤害。"
+				standard = "Bắn từ xa khi có địch trong phạm vi 300 (330), cận chiến khi địch ở phạm vi 40. Có thể chuyển giữa chế độ mặt đất và trên không. Trên không không thể chặn địch.",
+				enhanced = "Bắn từ xa khi có địch trong phạm vi 300 (330), cận chiến khi địch ở phạm vi 40. Có thể chuyển giữa chế độ mặt đất và trên không. Trên không không thể chặn địch và miễn nhiễm mọi sát thương từ xa."
 			},
-			change_note = "解说：原版火箭不仅输出低、攻击间隔长，110血30甲更是连输出都打不了多少就得坠机。因此改版不仅需要提升数值，还需要保证在空中形态下能打满伤害。",
+			change_note = "Nhận xét: Bản gốc gây sát thương thấp, đánh chậm, chỉ có 110 máu và 30 giáp nên thường bị hạ trước khi gây đủ sát thương. Bản FL tăng chỉ số và bảo đảm xạ thủ có thể phát huy sát thương khi bay.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "蜂刺导弹",
-					standard = "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于300的敌人，CD24(19.2)秒。",
-					enhanced = "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于500的敌人，CD24(19.2)秒。",
-					levels_standard = { "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于300的敌人，CD24(19.2)秒。", "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于600的敌人，CD20(16)秒。", "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于900的敌人，CD16(12.8)秒。" },
-					levels_enhanced = { "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于500的敌人，CD24(19.2)秒。", "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于1000的敌人，CD20(16)秒。", "强化普攻，发射一枚导弹秒杀一名攻击范围内血量不高于1500的敌人，CD16(12.8)秒。" },
+					name = "Tên lửa Stinger",
+					standard = "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 300. CD: 24 (19.2) giây.",
+					enhanced = "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 500. CD: 24 (19.2) giây.",
+					levels_standard = { "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 300. CD: 24 (19.2) giây.", "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 600. CD: 20 (16) giây.", "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 900. CD: 16 (12.8) giây." },
+					levels_enhanced = { "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 500. CD: 24 (19.2) giây.", "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 1000. CD: 20 (16) giây.", "Cường hóa đòn đánh thường: bắn tên lửa tiêu diệt ngay một kẻ địch trong tầm có máu không vượt quá 1500. CD: 16 (12.8) giây." },
 					prices_standard = { "250", "75", "75" },
 					prices_enhanced = { "250", "75", "75" }
 				},
 				{
-					name = "磷化子弹",
-					standard = "增强普攻效果，每次攻击会移除敌方1点护甲，且攻击后造成13-16(16)点80(100)范围炮弹伤害。",
-					enhanced = "增强普攻效果，每次攻击会移除敌方1点护甲，且攻击后造成13-16(16)点80(100)范围炮弹伤害。",
-					levels_standard = { "增强普攻效果，每次攻击会移除敌方1点护甲，且攻击后造成13-16(16)点80(100)范围炮弹伤害。", "增强普攻效果，每次攻击会移除敌方2点护甲，且攻击后造成17-22(24)点80(100)范围炮弹伤害。", "增强普攻效果，每次攻击会移除敌方3点护甲，且攻击后造成21-27(32)点80(100)范围炮弹伤害。" },
-					levels_enhanced = { "增强普攻效果，每次攻击会移除敌方1点护甲，且攻击后造成13-16(16)点80(100)范围炮弹伤害。", "增强普攻效果，每次攻击会移除敌方2点护甲，且攻击后造成19-24(24)点80(100)范围炮弹伤害。", "增强普攻效果，每次攻击会移除敌方3点护甲，且攻击后造成25-32(32)点80(100)范围炮弹伤害。" },
+					name = "Đạn phốt pho",
+					standard = "Cường hóa đòn đánh thường: mỗi đòn giảm 1 giáp của mục tiêu và gây thêm 13-16 (16) sát thương pháo trong phạm vi 80 (100).",
+					enhanced = "Cường hóa đòn đánh thường: mỗi đòn giảm 1 giáp của mục tiêu và gây thêm 13-16 (16) sát thương pháo trong phạm vi 80 (100).",
+					levels_standard = { "Cường hóa đòn đánh thường: mỗi đòn giảm 1 giáp của mục tiêu và gây thêm 13-16 (16) sát thương pháo trong phạm vi 80 (100).", "Cường hóa đòn đánh thường: mỗi đòn giảm 2 giáp của mục tiêu và gây thêm 17-22 (24) sát thương pháo trong phạm vi 80 (100).", "Cường hóa đòn đánh thường: mỗi đòn giảm 3 giáp của mục tiêu và gây thêm 21-27 (32) sát thương pháo trong phạm vi 80 (100)." },
+					levels_enhanced = { "Cường hóa đòn đánh thường: mỗi đòn giảm 1 giáp của mục tiêu và gây thêm 13-16 (16) sát thương pháo trong phạm vi 80 (100).", "Cường hóa đòn đánh thường: mỗi đòn giảm 2 giáp của mục tiêu và gây thêm 19-24 (24) sát thương pháo trong phạm vi 80 (100).", "Cường hóa đòn đánh thường: mỗi đòn giảm 3 giáp của mục tiêu và gây thêm 25-32 (32) sát thương pháo trong phạm vi 80 (100)." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2250,30 +2250,30 @@ local M = {
 		},
 		["tower_ballista_lvl4"] = {
 			doc_id = "",
-			title = "巨弩哨站",
+			title = "Trạm nỏ lớn",
 			attack = {
-				standard = "每4秒连续射出5支箭攻击敌方，升级会立即刷新CD，\n杀死敌人后若150范围内有敌人则会更换目标，物理伤害",
-				enhanced = "每4秒连续射出5支箭攻击敌方，升级会立即刷新CD，\n杀死敌人后若150范围内有敌人则会更换目标，物理伤害"
+				standard = "Cứ 4 giây liên tiếp bắn 5 mũi tên gây sát thương vật lý. Nâng cấp sẽ lập tức làm mới CD.\nSau khi hạ mục tiêu, chuyển sang địch khác nếu có trong phạm vi 150.",
+				enhanced = "Cứ 4 giây liên tiếp bắn 5 mũi tên gây sát thương vật lý. Nâng cấp sẽ lập tức làm mới CD.\nSau khi hạ mục tiêu, chuyển sang địch khác nếu có trong phạm vi 150."
 			},
-			change_note = "解说：灵活性低于皇弓等常规箭塔，在普攻上需要给出更多数值。提升两个技能的伤害能力。",
-			port_note = "1技能可以被全代任意一种增伤(例如希尔瓦拉/墨尔古伦/5代奥术/熔炉)加成",
+			change_note = "Nhận xét: Kém linh hoạt hơn Cung thủ Hoàng gia và các tháp cung thường, nên cần chỉ số đánh thường cao hơn. Tăng sát thương cho cả hai kỹ năng.",
+			port_note = "Kỹ năng 1 nhận mọi hiệu ứng tăng sát thương từ các phần, ví dụ Sylvara, Murglun, Pháp sư Bí thuật phần 5 hoặc Lò luyện.",
 			notes = "",
 			skills = {
 				{
-					name = "终结一钉",
-					standard = "令每次普攻发出的5支箭矢中的最后一支造成1.5倍普攻伤害，并击晕敌方2.5秒。",
-					enhanced = "令每次普攻发出的5支箭矢中的最后一支对路径上所有敌人造成1.2倍伤害，并击晕敌方1.1秒。",
-					levels_standard = { "令每次普攻发出的5支箭矢中的最后一支造成1.5倍普攻伤害，并击晕敌方2.5秒。", "令每次普攻发出的5支箭矢中的最后一支造成2倍普攻伤害，并击晕敌方2.5秒。", "令每次普攻发出的5支箭矢中的最后一支造成2.5倍普攻伤害，并击晕敌方2.5秒。" },
-					levels_enhanced = { "令每次普攻发出的5支箭矢中的最后一支对路径上所有敌人造成1.2倍伤害，并击晕所有穿过的敌人1.1秒。", "令每次普攻发出的5支箭矢中的最后一支对路径上所有敌人造成1.6倍伤害，并击晕所有穿过的敌人1.1秒。", "令每次普攻发出的5支箭矢中的最后一支对路径上所有敌人造成2.0倍伤害，并击晕所有穿过的敌人1.1秒。" },
+					name = "Mũi tên kết liễu",
+					standard = "Mũi tên cuối trong 5 mũi tên mỗi lượt gây sát thương bằng 1.5 lần đòn đánh thường và làm choáng mục tiêu 2.5 giây.",
+					enhanced = "Mũi tên cuối trong 5 mũi tên mỗi lượt xuyên qua mọi kẻ địch trên đường, gây sát thương gấp 1.2 lần và làm choáng 1.1 giây.",
+					levels_standard = { "Mũi tên cuối trong 5 mũi tên mỗi lượt gây sát thương bằng 1.5 lần đòn đánh thường và làm choáng mục tiêu 2.5 giây.", "Mũi tên cuối trong 5 mũi tên mỗi lượt gây sát thương bằng 2 lần đòn đánh thường và làm choáng mục tiêu 2.5 giây.", "Mũi tên cuối trong 5 mũi tên mỗi lượt gây sát thương bằng 2.5 lần đòn đánh thường và làm choáng mục tiêu 2.5 giây." },
+					levels_enhanced = { "Mũi tên cuối trong 5 mũi tên mỗi lượt xuyên qua mọi kẻ địch trên đường, gây sát thương gấp 1.2 lần và làm choáng mọi mục tiêu trúng đòn 1.1 giây.", "Mũi tên cuối trong 5 mũi tên mỗi lượt xuyên qua mọi kẻ địch trên đường, gây sát thương gấp 1.6 lần và làm choáng mọi mục tiêu trúng đòn 1.1 giây.", "Mũi tên cuối trong 5 mũi tên mỗi lượt xuyên qua mọi kẻ địch trên đường, gây sát thương gấp 2.0 lần và làm choáng mọi mục tiêu trúng đòn 1.1 giây." },
 					prices_standard = { "250", "75", "75" },
 					prices_enhanced = { "250", "75", "75" }
 				},
 				{
-					name = "废品炸弹",
-					standard = "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成82-124(124)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD24(19.2)秒",
-					enhanced = "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成100-200(200)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD24(19.2)秒",
-					levels_standard = { "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成82-124(124)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD24(19.2)秒", "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成118-176(176)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD20(16)秒", "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成142-214(214)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD16(12.8)秒" },
-					levels_enhanced = { "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成100-200(200)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD24(19.2)秒", "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成170-325(325)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD20(16)秒", "发射一枚废品制成的炸弹，攻击范围500，在3个120圆形区域内\n造成240-450(450)点炮弹伤害并减速50%持续6秒。处于圆形区域重叠部分的怪物也只能受到1次伤害。CD16(12.8)秒" },
+					name = "Bom phế liệu",
+					standard = "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 82-124 (124) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 24 (19.2) giây.",
+					enhanced = "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 100-200 (200) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 24 (19.2) giây.",
+					levels_standard = { "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 82-124 (124) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 24 (19.2) giây.", "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 118-176 (176) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 20 (16) giây.", "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 142-214 (214) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 16 (12.8) giây." },
+					levels_enhanced = { "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 100-200 (200) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 24 (19.2) giây.", "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 170-325 (325) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 20 (16) giây.", "Ném bom phế liệu với tầm đánh 500, nổ tại 3 vùng tròn bán kính 120.\nGây 240-450 (450) sát thương pháo và làm chậm 50% trong 6 giây. Địch ở vùng giao nhau chỉ nhận 1 lần sát thương. CD: 16 (12.8) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2281,30 +2281,30 @@ local M = {
 		},
 		["tower_necromancer_lvl4"] = {
 			doc_id = "",
-			title = "死灵法师",
+			title = "Pháp sư chiêu hồn",
 			attack = {
-				standard = "蓄能攻击，若范围内无目标会储存一个魔法弹，最多储存4个。每1.5秒召唤一个魔法弹攻击敌方，魔法伤害。\n攻击会令敌方进入死灵状态3秒，处于死灵状态的敌人在死亡时无法触发亡语，且会据体型变为骷髅/大骷髅。小型敌人变为小骷髅，中/大型敌人变为大骷髅。小骷髅50血0甲，大骷髅150血0甲。\n每个塔只能存在2/3/4/5个骷髅，大骷髅最多1个。全局最多30个骷髅。",
-				enhanced = "蓄能攻击，若范围内无目标或有敌人死亡会储存一个魔法弹，最多储存4个。每1.5秒召唤一个魔法弹攻击敌方，魔法伤害。\n攻击会令敌方进入死灵状态3秒，处于死灵状态的敌人在死亡时无法触发亡语，且会据体型变为骷髅/大骷髅。小型敌人变为小骷髅，中/大型敌人变为大骷髅。小骷髅50血0甲，大骷髅150血0甲。\n每个塔只能存在2/3/4/5个骷髅，大骷髅最多1个。全局最多30个骷髅。"
+				standard = "Tích đạn khi không có mục tiêu, tối đa 4 đạn phép. Cứ 1.5 giây bắn một đạn gây sát thương phép.\nĐòn đánh gây trạng thái tử linh trong 3 giây. Địch chết khi chịu hiệu ứng không kích hoạt hiệu ứng khi chết và biến thành bộ xương theo kích cỡ: địch nhỏ thành xương nhỏ, địch vừa/lớn thành xương lớn. Xương nhỏ có 50 máu, 0 giáp; xương lớn có 150 máu, 0 giáp.\nMỗi tháp duy trì tối đa 2/3/4/5 bộ xương, trong đó tối đa 1 xương lớn. Toàn bản đồ tối đa 30 bộ xương.",
+				enhanced = "Tích đạn khi không có mục tiêu hoặc khi một kẻ địch chết, tối đa 4 đạn phép. Cứ 1.5 giây bắn một đạn gây sát thương phép.\nĐòn đánh gây trạng thái tử linh trong 3 giây. Địch chết khi chịu hiệu ứng không kích hoạt hiệu ứng khi chết và biến thành bộ xương theo kích cỡ: địch nhỏ thành xương nhỏ, địch vừa/lớn thành xương lớn. Xương nhỏ có 50 máu, 0 giáp; xương lớn có 150 máu, 0 giáp.\nMỗi tháp duy trì tối đa 2/3/4/5 bộ xương, trong đó tối đa 1 xương lớn. Toàn bản đồ tối đa 30 bộ xương."
 			},
-			change_note = "解说：面板过低，参照2代死灵的普攻修改，不过2代的死亡人头提供拦截能力，5代的提供进攻能力。前3代怪海环境，2技能虽然在5代打不动人，但前3代是可以清一路的，150数值偏低但不需要大量加强。",
-			port_note = "移植改动：原版骷髅需要敌人死亡2秒后生成，而改版的骷髅是立即生成的。将2代骷髅类友军加入了1技能的生效列表中。",
+			change_note = "Nhận xét: Chỉ số quá thấp nên điều chỉnh đòn đánh thường theo Tử linh sư phần 2. Lượt kết liễu phần 2 tạo khả năng chặn địch, còn phần 5 tạo sức tấn công. Các phần 3 đầu đông quái: kỹ năng 2 yếu ở phần 5 nhưng đủ quét một đường trong các phần 3 đầu. Chỉ số 150 thấp nhưng không cần tăng nhiều.",
+			port_note = "Thay đổi khi chuyển sang FL: Bộ xương bản gốc xuất hiện sau khi địch chết 2 giây; bản FL tạo ngay lập tức. Thêm các đồng minh thuộc nhóm bộ xương phần 2 vào danh sách chịu hiệu ứng kỹ năng 1.",
 			notes = "",
 			skills = {
 				{
-					name = "颤骨图腾",
-					standard = "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升50%，CD20秒",
-					enhanced = "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升50%，CD20秒",
-					levels_standard = { "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升50%，CD20秒", "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升100%，CD16秒", "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升150%，CD12秒" },
-					levels_enhanced = { "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升50%，CD20秒", "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升100%，CD16秒", "召唤一个持续12秒、范围250的图腾，进入图腾范围的敌人会立即进入死灵状态，且范围内的骷髅(含2代死灵法师的骷髅、5代死灵法师的骷髅、2代骨龙召唤的骷髅、5代骨龙召唤的骷髅)攻击力提升150%，CD12秒" },
+					name = "Vật tổ Rung xương",
+					standard = "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 50% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 20 giây.",
+					enhanced = "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 50% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 20 giây.",
+					levels_standard = { "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 50% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 20 giây.", "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 100% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 16 giây.", "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 150% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 12 giây." },
+					levels_enhanced = { "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 50% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 20 giây.", "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 100% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 16 giây.", "Triệu hồi vật tổ tồn tại 12 giây, phạm vi 250. Địch bước vào lập tức chịu trạng thái tử linh. Tăng 150% sức tấn công cho bộ xương trong vùng, gồm xương của Tử linh sư phần 2, Tử linh sư phần 5, Rồng Xương phần 2 và Rồng Xương phần 5. CD: 12 giây." },
 					prices_standard = { "120", "90", "90" },
 					prices_enhanced = { "120", "45", "45" }
 				},
 				{
-					name = "亡灵骑士",
-					standard = "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成60点真实伤害，并进入死灵状态。CD28(22.4)秒",
-					enhanced = "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成80点真实伤害，并进入死灵状态。CD28(22.4)秒",
-					levels_standard = { "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成60点真实伤害，并进入死灵状态。CD28(22.4)秒", "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成110点真实伤害，并进入死灵状态。CD25(20)秒", "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成150点真实伤害，并进入死灵状态。CD22(17.6)秒" },
-					levels_enhanced = { "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成80点真实伤害，并进入死灵状态。CD28(22.4)秒", "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成145点真实伤害，并进入死灵状态。CD25(20)秒", "需要范围内2个敌人才能触发，召唤一个亡灵骑士向前冲锋750个单位，\n对地面上的敌人造成200点真实伤害，并进入死灵状态。CD22(17.6)秒" },
+					name = "Kỵ sĩ xác sống",
+					standard = "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 60 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 28 (22.4) giây.",
+					enhanced = "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 80 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 28 (22.4) giây.",
+					levels_standard = { "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 60 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 28 (22.4) giây.", "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 110 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 25 (20) giây.", "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 150 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 22 (17.6) giây." },
+					levels_enhanced = { "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 80 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 28 (22.4) giây.", "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 145 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 25 (20) giây.", "Cần ít nhất 2 địch trong tầm để kích hoạt. Triệu hồi kỵ sĩ bất tử lao về trước 750 đơn vị khoảng cách, gây 200 sát thương chuẩn cho địch mặt đất và áp dụng trạng thái tử linh. CD: 22 (17.6) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2312,30 +2312,30 @@ local M = {
 		},
 		["tower_flamespitter_lvl4"] = {
 			doc_id = "",
-			title = "矮人喷火器",
+			title = "Súng phun lửa Người Lùn",
 			attack = {
-				standard = "每3.2秒朝一固定方向对地面敌人发射持续0.5秒的火焰，每0.25秒对火焰尖端120范围地面/空中敌人造成真实伤害并进入烧伤状态，每0.25秒造成1/2/3/4点真实伤害，持续3秒",
-				enhanced = "每3.2秒朝一固定方向对地面敌人发射持续0.5秒的火焰，每0.25秒对火焰尖端140范围地面/空中敌人造成真实伤害并进入烧伤状态，每0.25秒造成1/2/3/4点真实伤害，持续3秒"
+				standard = "Cứ 3.2 giây phun lửa về một hướng trong 0.5 giây. Mỗi 0.25 giây gây sát thương chuẩn cho địch mặt đất và trên không trong phạm vi 120 ở đầu ngọn lửa, đồng thời gây bỏng trong 3 giây: nhận 1/2/3/4 sát thương chuẩn mỗi 0.25 giây.",
+				enhanced = "Cứ 3.2 giây phun lửa về một hướng trong 0.5 giây. Mỗi 0.25 giây gây sát thương chuẩn cho địch mặt đất và trên không trong phạm vi 140 ở đầu ngọn lửa, đồng thời gây bỏng trong 3 giây: nhận 1/2/3/4 sát thương chuẩn mỗi 0.25 giây."
 			},
-			change_note = "解说：两个技能伤害和性价比较高，但裸塔价格高且普攻伤害低、容易打不中人，关卡中没钱点出技能。价格过高导致对空的能力也发挥不出来。故提升普攻攻击范围、降低裸塔的价格，提升过渡能力的同时也更容易点出技能。",
+			change_note = "Nhận xét: Hai kỹ năng gây sát thương tốt với chi phí hợp lý, nhưng tháp cơ bản đắt, đánh thường yếu và dễ trượt nên khó có tiền mua kỹ năng. Giá cao cũng khiến khả năng chống địch bay khó phát huy. Vì vậy, tăng vùng đánh thường và giảm giá tháp cơ bản để dễ vượt qua giai đoạn đầu và mua kỹ năng hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "烈焰火柱",
-					standard = "发射火柱，每根火柱对100范围造成42-70点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒",
-					enhanced = "发射火柱，每根火柱对100范围造成42-70点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒",
-					levels_standard = { "发射火柱，每根火柱对100范围造成42-70点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒", "发射火柱，每根火柱对100范围造成108-180点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒", "发射火柱，每根火柱对100范围造成180-300点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒" },
-					levels_enhanced = { "发射火柱，每根火柱对100范围造成42-70点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒", "发射火柱，每根火柱对100范围造成108-180点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒", "发射火柱，每根火柱对100范围造成180-300点物理伤害(50范围内为真伤)，然后眩晕敌人1秒。CD20(16)秒" },
+					name = "Cột lửa",
+					standard = "Phóng các cột lửa, mỗi cột gây 42-70 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.",
+					enhanced = "Phóng các cột lửa, mỗi cột gây 42-70 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.",
+					levels_standard = { "Phóng các cột lửa, mỗi cột gây 42-70 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.", "Phóng các cột lửa, mỗi cột gây 108-180 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.", "Phóng các cột lửa, mỗi cột gây 180-300 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây." },
+					levels_enhanced = { "Phóng các cột lửa, mỗi cột gây 42-70 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.", "Phóng các cột lửa, mỗi cột gây 108-180 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây.", "Phóng các cột lửa, mỗi cột gây 180-300 sát thương vật lý trong phạm vi 100, chuyển thành sát thương chuẩn trong phạm vi 50, rồi làm choáng 1 giây. CD: 20 (16) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
 				{
-					name = "炽热轨迹",
-					standard = "响应范围600，发射一个燃烧弹，对范围300内的敌人造成80点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒",
-					enhanced = "响应范围600，发射一个燃烧弹，对范围300内的敌人造成80点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒",
-					levels_standard = { "响应范围600，发射一个燃烧弹，对范围300内的敌人造成80点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒", "响应范围600，发射一个燃烧弹，对范围300内的敌人造成160点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒", "响应范围600，发射一个燃烧弹，对范围300内的敌人造成280点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒" },
-					levels_enhanced = { "响应范围600，发射一个燃烧弹，对范围300内的敌人造成80点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒", "响应范围600，发射一个燃烧弹，对范围300内的敌人造成160点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒", "响应范围600，发射一个燃烧弹，对范围300内的敌人造成280点炮弹伤害，并令敌人进入烧伤状态，每0.25造成4点真实伤害，与普攻烧伤不可叠加但会重置烧伤时间。CD20(16)秒" },
+					name = "Vệt lửa rực cháy",
+					standard = "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 80 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.",
+					enhanced = "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 80 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.",
+					levels_standard = { "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 80 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.", "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 160 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.", "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 280 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây." },
+					levels_enhanced = { "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 80 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.", "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 160 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây.", "Kích hoạt trong phạm vi 600, bắn đạn cháy gây 280 sát thương pháo trong phạm vi 300. Gây bỏng với 4 sát thương chuẩn mỗi 0.25. Không cộng dồn với bỏng từ đòn đánh thường nhưng làm mới thời gian bỏng. CD: 20 (16) giây." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
@@ -2343,30 +2343,30 @@ local M = {
 		},
 		["tower_sand_lvl4"] = {
 			doc_id = "",
-			title = "沙丘哨兵",
+			title = "Lính gác Cồn cát",
 			attack = {
-				standard = "每0.8秒发射一个手里剑造成物理伤害。若敌人的260范围内有其他敌人则弹射，最多弹射2/3/4/5次。每次弹射造成伤害是上一次的0.6倍。",
-				enhanced = "每0.8秒发射一个手里剑造成物理伤害。若敌人的260范围内有其他敌人则弹射，最多弹射2/3/4/5次。每次弹射造成伤害是上一次的0.6/0.7/0.8/0.9倍。"
+				standard = "Cứ 0.8 giây ném phi tiêu gây sát thương vật lý. Nếu có địch khác trong phạm vi 260 quanh mục tiêu, phi tiêu nảy tiếp, tối đa 2/3/4/5 lần. Sát thương mỗi lần nảy bằng 0.6 lần lần trước.",
+				enhanced = "Cứ 0.8 giây ném phi tiêu gây sát thương vật lý. Nếu có địch khác trong phạm vi 260 quanh mục tiêu, phi tiêu nảy tiếp, tối đa 2/3/4/5 lần. Sát thương mỗi lần nảy bằng 0.6/0.7/0.8/0.9 lần lần trước."
 			},
-			change_note = "解说：沙镖作为一个伪对群，输出在能够打群的情况下已经基本够了。但是在对单的时候仅有30+的DPS。2技能作为一个AOE伤害从没打满过。改版进一步特化其伪对群的能力。",
+			change_note = "Nhận xét: Sát thương khi phi tiêu nảy qua nhiều địch đã khá đủ, nhưng khi đánh một mục tiêu, DPS chỉ hơn 30. Kỹ năng 2 là sát thương diện rộng nhưng hiếm khi gây đủ sát thương. Bản FL tiếp tục chuyên biệt hóa khả năng nảy qua nhiều mục tiêu.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "赏金狩猎",
-					standard = "强化普攻，响应范围300，投掷一枚衰减倍率0.6、最多弹射4次的手里剑，造成56点物理伤害，被击杀的敌人产生4个金币。CD8(6.4)秒",
-					enhanced = "强化普攻，响应范围300，投掷一枚衰减倍率1.0、最多弹射4次的手里剑，造成56点物理伤害，被击杀的敌人产生4个金币。CD8(6.4)秒",
-					levels_standard = { "强化普攻，响应范围300，投掷一枚衰减倍率0.6、最多弹射4次的手里剑，造成56点物理伤害，被击杀的敌人产生4个金币。CD8(6.4)秒", "强化普攻，响应范围300，投掷一枚衰减倍率0.6、最多弹射4次的手里剑，造成118点物理伤害，被击杀的敌人产生8个金币。CD8(6.4)秒", "强化普攻，响应范围300，投掷一枚衰减倍率0.6、最多弹射4次的手里剑，造成184点物理伤害，被击杀的敌人产生12个金币。CD8(6.4)秒" },
-					levels_enhanced = { "强化普攻，响应范围300，投掷一枚衰减倍率1.0、最多弹射4次的手里剑，造成56点物理伤害，被击杀的敌人产生4个金币。CD8(6.4)秒", "强化普攻，响应范围300，投掷一枚衰减倍率1.0、最多弹射4次的手里剑，造成118点物理伤害，被击杀的敌人产生8个金币。CD8(6.4)秒", "强化普攻，响应范围300，投掷一枚衰减倍率1.0、最多弹射4次的手里剑，造成184点物理伤害，被击杀的敌人产生12个金币。CD8(6.4)秒" },
+					name = "Săn tiền thưởng",
+					standard = "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 56 sát thương vật lý, hệ số sát thương mỗi lần nảy 0.6, tối đa 4 lần nảy. Địch bị hạ cho thêm 4 vàng. CD: 8 (6.4) giây.",
+					enhanced = "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 56 sát thương vật lý, hệ số sát thương mỗi lần nảy 1.0, tối đa 4 lần nảy. Địch bị hạ cho thêm 4 vàng. CD: 8 (6.4) giây.",
+					levels_standard = { "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 56 sát thương vật lý, hệ số sát thương mỗi lần nảy 0.6, tối đa 4 lần nảy. Địch bị hạ cho thêm 4 vàng. CD: 8 (6.4) giây.", "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 118 sát thương vật lý, hệ số sát thương mỗi lần nảy 0.6, tối đa 4 lần nảy. Địch bị hạ cho thêm 8 vàng. CD: 8 (6.4) giây.", "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 184 sát thương vật lý, hệ số sát thương mỗi lần nảy 0.6, tối đa 4 lần nảy. Địch bị hạ cho thêm 12 vàng. CD: 8 (6.4) giây." },
+					levels_enhanced = { "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 56 sát thương vật lý, hệ số sát thương mỗi lần nảy 1.0, tối đa 4 lần nảy. Địch bị hạ cho thêm 4 vàng. CD: 8 (6.4) giây.", "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 118 sát thương vật lý, hệ số sát thương mỗi lần nảy 1.0, tối đa 4 lần nảy. Địch bị hạ cho thêm 8 vàng. CD: 8 (6.4) giây.", "Cường hóa đòn đánh thường, kích hoạt trong phạm vi 300: ném phi tiêu gây 184 sát thương vật lý, hệ số sát thương mỗi lần nảy 1.0, tối đa 4 lần nảy. Địch bị hạ cho thêm 12 vàng. CD: 8 (6.4) giây." },
 					prices_standard = { "250", "187", "187" },
 					prices_enhanced = { "250", "187", "187" }
 				},
 				{
-					name = "厄运回旋",
-					standard = "响应范围400，召唤2枚高速旋转的手里剑持续4秒，\n每0.25秒对附近80范围内的敌人造成6-10点物理伤害并减速25%，CD16(12.8)秒",
-					enhanced = "响应范围400，召唤2枚高速旋转的手里剑持续4秒，\n每0.25秒对附近80120范围内的敌人造成6-10点物理伤害并减速60%，CD16(12.8)秒",
-					levels_standard = { "响应范围400，召唤2枚高速旋转的手里剑持续4秒，\n每0.25秒对附近80范围内的敌人造成6-10点物理伤害并减速25%，CD16(12.8)秒", "响应范围400，召唤2枚高速旋转的手里剑持续5秒，\n每0.25秒对附近80范围内的敌人造成10-16点物理伤害并减速25%，CD16(12.8)秒", "响应范围400，召唤2枚高速旋转的手里剑持续6秒，\n每0.25秒对附近80范围内的敌人造成13-19点物理伤害并减速25%，CD16(12.8)秒" },
-					levels_enhanced = { "响应范围400，召唤2枚高速旋转的手里剑持续4秒，\n每0.25秒对附近120范围内的敌人造成6-10点物理伤害并减速60%，CD16(12.8)秒", "响应范围400，召唤2枚高速旋转的手里剑持续5秒，\n每0.25秒对附近120范围内的敌人造成10-16点物理伤害并减速60%，CD16(12.8)秒", "响应范围400，召唤2枚高速旋转的手里剑持续6秒，\n每0.25秒对附近120范围内的敌人造成13-19点物理伤害并减速60%，CD16(12.8)秒" },
+					name = "Vòng xoáy tai ương",
+					standard = "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 4 giây.\nCứ 0.25 giây gây 6-10 sát thương vật lý cho địch trong phạm vi 80 và làm chậm 25%. CD: 16 (12.8) giây.",
+					enhanced = "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 4 giây.\nCứ 0.25 giây gây 6-10 sát thương vật lý cho địch trong phạm vi 80120 và làm chậm 60%. CD: 16 (12.8) giây.",
+					levels_standard = { "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 4 giây.\nCứ 0.25 giây gây 6-10 sát thương vật lý cho địch trong phạm vi 80 và làm chậm 25%. CD: 16 (12.8) giây.", "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 5 giây.\nCứ 0.25 giây gây 10-16 sát thương vật lý cho địch trong phạm vi 80 và làm chậm 25%. CD: 16 (12.8) giây.", "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 6 giây.\nCứ 0.25 giây gây 13-19 sát thương vật lý cho địch trong phạm vi 80 và làm chậm 25%. CD: 16 (12.8) giây." },
+					levels_enhanced = { "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 4 giây.\nCứ 0.25 giây gây 6-10 sát thương vật lý cho địch trong phạm vi 120 và làm chậm 60%. CD: 16 (12.8) giây.", "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 5 giây.\nCứ 0.25 giây gây 10-16 sát thương vật lý cho địch trong phạm vi 120 và làm chậm 60%. CD: 16 (12.8) giây.", "Kích hoạt trong phạm vi 400, tạo 2 phi tiêu xoay nhanh trong 6 giây.\nCứ 0.25 giây gây 13-19 sát thương vật lý cho địch trong phạm vi 120 và làm chậm 60%. CD: 16 (12.8) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2374,30 +2374,30 @@ local M = {
 		},
 		["tower_ghost_lvl4"] = {
 			doc_id = "",
-			title = "幽冥战魂",
+			title = "Chiến hồn U minh",
 			attack = {
-				standard = "近战攻击，真实伤害。可在任意时刻切换防御塔。\n切换防御塔后，召唤物立即复活，部分技能可以立即刷新CD。",
-				enhanced = "近战攻击，真实伤害。可在任意时刻切换防御塔。\n切换防御塔后，召唤物立即复活，部分技能可以立即刷新CD。"
+				standard = "Cận chiến, gây sát thương chuẩn. Có thể đổi vị trí tháp bất cứ lúc nào.\nSau khi đổi tháp, đơn vị triệu hồi lập tức sống lại; một số kỹ năng được làm mới CD ngay.",
+				enhanced = "Cận chiến, gây sát thương chuẩn. Có thể đổi vị trí tháp bất cứ lúc nào.\nSau khi đổi tháp, đơn vị triệu hồi lập tức sống lại; một số kỹ năng được làm mới CD ngay."
 			},
-			change_note = "解说：除了换塔之外的存在感太低了。但其实战魂输出为真伤且攻击力不低，具有输出的潜力，只要增加生存能力就得以体现。1/2技能存在左右互搏的情况，实战中可根据环境2选1。",
-			port_note = "移植改动：移除了原版幽魂可以和自身交换，从而一生二，二生三，三生万物的特性。\n移植说明：由于不同技能的刷新机制有区别，部分技能可以在换塔之后立即触发效果，兵营在交换后会立即复活。例如，可以通过恰当操作，让火枪每3秒打出一发霰弹，或者蛤蟆每3秒刷新一次胃口。由于原版就有该特性，且利用该特性的代价是需要专注于某2-3个塔并增加操作量，故从增加游戏可玩性的角度考虑，作者默许了此特性。但对于这个特性的利用，作者的态度是可以用，但不提倡。\n此外，前3代拥有此特性的技能明显多于4/5代，经测试，除3代大德鲁伊巨石阵的1技能，其他前3代塔几乎所有的升到2/3级的技能都有此特性。",
-			notes = "由于原版就有该特性，且利用该特性的代价是需要专注于某2-3个塔并增加操作量，故从增加游戏可玩性的角度考虑，作者默许了此特性。但对于这个特性的利用，作者的态度是可以用，但不提倡。\n此外，前3代拥有此特性的技能明显多于4/5代，经测试，除3代大德鲁伊巨石阵的1技能，其他前3代塔几乎所有的升到2/3级的技能都有此特性。",
+			change_note = "Nhận xét: Ngoài khả năng đổi tháp, chiến hồn ít nổi bật. Tuy nhiên, sát thương chuẩn và sức tấn công cao cho thấy tiềm năng gây sát thương nếu tăng khả năng sống sót. Kỹ năng 1/2 có thể cản nhau, nên tùy tình huống chọn 1 trong 2 kỹ năng.",
+			port_note = "Thay đổi khi chuyển sang FL: Bỏ khả năng đổi với chính mình để nhân bản vô hạn.\nLưu ý: Do cơ chế làm mới khác nhau, một số kỹ năng có thể dùng ngay sau khi đổi tháp; lính doanh trại cũng hồi sinh ngay. Ví dụ, thao tác đúng có thể cho tháp súng bắn đạn ghém mỗi 3 giây hoặc cho cóc làm mới kỹ năng nuốt mỗi 3 giây. Tính năng này vốn có trong bản gốc, đòi hỏi tập trung vào 2-3 tháp và thao tác nhiều hơn, nên tác giả giữ lại để tăng cách chơi; có thể dùng nhưng không khuyến khích lạm dụng.\nCác phần 3 đầu có nhiều kỹ năng dùng được cách này hơn phần 4/5. Qua kiểm tra, trừ kỹ năng 1 của Đại Druid phần 3, gần như mọi kỹ năng tháp ở các phần 3 đầu khi nâng tới cấp 2/3 đều có tính năng này.",
+			notes = "Tính năng này vốn có trong bản gốc, đòi hỏi tập trung vào 2-3 tháp và thao tác nhiều hơn, nên tác giả giữ lại để tăng cách chơi; có thể dùng nhưng không khuyến khích lạm dụng.\nCác phần 3 đầu có nhiều kỹ năng dùng được cách này hơn phần 4/5. Qua kiểm tra, trừ kỹ năng 1 của Đại Druid phần 3, gần như mọi kỹ năng tháp ở các phần 3 đầu khi nâng tới cấp 2/3 đều có tính năng này.",
 			skills = {
 				{
-					name = "灵魂虹吸",
-					standard = "幽灵战士战斗5秒后，提升50%攻击力。脱战4秒后消失。",
-					enhanced = "幽灵战士战斗1秒后，提升50%攻击力。脱战4秒后消失。",
-					levels_standard = { "幽灵战士战斗5秒后，提升50%攻击力。脱战4秒后消失。", "幽灵战士战斗5秒后，提升75%攻击力。脱战4秒后消失。", "幽灵战士战斗5秒后，提升100%攻击力。脱战4秒后消失。" },
-					levels_enhanced = { "幽灵战士战斗1秒后，提升50%攻击力。脱战4秒后消失。", "幽灵战士战斗1秒后，提升75%攻击力。脱战4秒后消失。", "幽灵战士战斗1秒后，提升100%攻击力。脱战4秒后消失。" },
+					name = "Hút linh hồn",
+					standard = "Sau 5 giây chiến đấu, chiến binh ma tăng 50% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.",
+					enhanced = "Sau 1 giây chiến đấu, chiến binh ma tăng 50% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.",
+					levels_standard = { "Sau 5 giây chiến đấu, chiến binh ma tăng 50% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.", "Sau 5 giây chiến đấu, chiến binh ma tăng 75% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.", "Sau 5 giây chiến đấu, chiến binh ma tăng 100% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh." },
+					levels_enhanced = { "Sau 1 giây chiến đấu, chiến binh ma tăng 50% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.", "Sau 1 giây chiến đấu, chiến binh ma tăng 75% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh.", "Sau 1 giây chiến đấu, chiến binh ma tăng 100% sức tấn công. Hiệu ứng mất sau 4 giây ngoài giao tranh." },
 					prices_standard = { "200", "75", "75" },
 					prices_enhanced = { "150", "60", "60" }
 				},
 				{
-					name = "永恒恐惧",
-					standard = "幽灵战士死亡后感染一个敌人，造成60点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。",
-					enhanced = "幽灵战士死亡后感染一个敌人，造成70点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。",
-					levels_standard = { "幽灵战士死亡后感染一个敌人，造成60点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。", "幽灵战士死亡后感染一个敌人，造成120点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。", "幽灵战士死亡后感染一个敌人，造成180点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。" },
-					levels_enhanced = { "幽灵战士死亡后感染一个敌人，造成70点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。", "幽灵战士死亡后感染一个敌人，造成240点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。", "幽灵战士死亡后感染一个敌人，造成410点真实伤害，削弱敌方50%的攻击力并降低40%移动速度持续5秒。" },
+					name = "Nỗi sợ vĩnh hằng",
+					standard = "Khi chiến binh ma chết, ám một kẻ địch, gây 60 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.",
+					enhanced = "Khi chiến binh ma chết, ám một kẻ địch, gây 70 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.",
+					levels_standard = { "Khi chiến binh ma chết, ám một kẻ địch, gây 60 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.", "Khi chiến binh ma chết, ám một kẻ địch, gây 120 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.", "Khi chiến binh ma chết, ám một kẻ địch, gây 180 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây." },
+					levels_enhanced = { "Khi chiến binh ma chết, ám một kẻ địch, gây 70 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.", "Khi chiến binh ma chết, ám một kẻ địch, gây 240 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây.", "Khi chiến binh ma chết, ám một kẻ địch, gây 410 sát thương chuẩn, giảm 50% sức tấn công và 40% tốc độ di chuyển trong 5 giây." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
@@ -2405,30 +2405,30 @@ local M = {
 		},
 		["tower_barrel_lvl4"] = {
 			doc_id = "",
-			title = "酿酒战匠",
+			title = "Thợ chiến Ủ rượu",
 			attack = {
-				standard = "每2.5秒发射1个酒桶攻击地面敌人造成120(150)范围炮伤，并令对方进入醉酒状态3秒：削弱50%攻击力。",
-				enhanced = "每2.5秒发射1个酒桶攻击地面敌人造成120(150)范围炮伤，并令对方进入醉酒状态3秒：削弱50%攻击力。"
+				standard = "Cứ 2.5 giây bắn 1 thùng rượu, gây sát thương pháo lên địch mặt đất trong phạm vi 120 (150). Khiến địch say 3 giây, giảm 50% sức tấn công.",
+				enhanced = "Cứ 2.5 giây bắn 1 thùng rượu, gây sát thương pháo lên địch mặt đất trong phạm vi 120 (150). Khiến địch say 3 giây, giảm 50% sức tấn công."
 			},
-			change_note = "解说：普攻面板+减攻击的模组已经完全够了，但2技能容易出现敌人都跑出范围了酒桶才爆炸的情况，且存在真空期过长、物伤打不动人的问题。",
+			change_note = "Nhận xét: Chỉ số đánh thường và giảm sức tấn công đã đủ tốt, nhưng kỹ năng 2 thường nổ khi địch đã ra khỏi vùng, hồi quá lâu và sát thương vật lý khó xuyên giáp.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "神奇药酒",
-					standard = "召唤一个喝下药酒的战士作战10秒，HP100(110)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害26-38。",
-					enhanced = "召唤一个喝下药酒的战士作战10秒，HP100(110)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害26-38。",
-					levels_standard = { "召唤一个喝下药酒的战士作战10秒，HP100(110)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害26-38。", "召唤一个喝下药酒的战士作战10秒，HP140(154)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害37-55。", "召唤一个喝下药酒的战士作战10秒，HP180(198)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害48-72。" },
-					levels_enhanced = { "召唤一个喝下药酒的战士作战10秒，HP100(110)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害26-38。", "召唤一个喝下药酒的战士作战10秒，HP140(154)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害37-55。", "召唤一个喝下药酒的战士作战10秒，HP180(198)0甲，攻速1，重生时间12(9.6)秒，普攻物理伤害48-72。" },
+					name = "Rượu thuốc thần kỳ",
+					standard = "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 100 (110); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 26-38.",
+					enhanced = "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 100 (110); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 26-38.",
+					levels_standard = { "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 100 (110); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 26-38.", "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 140 (154); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 37-55.", "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 180 (198); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 48-72." },
+					levels_enhanced = { "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 100 (110); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 26-38.", "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 140 (154); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 37-55.", "Triệu hồi chiến binh uống rượu thuốc, chiến đấu 10 giây. Máu: 180 (198); giáp: 0; khoảng cách giữa đòn đánh: 1; hồi sinh: 12 (9.6) giây; sát thương vật lý thường: 48-72." },
 					prices_standard = { "200", "75", "75" },
 					prices_enhanced = { "200", "75", "75" }
 				},
 				{
-					name = "不良批次",
-					standard = "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速50%，随后爆炸，造成120点120(150)范围物伤，本技能为强化普攻，CD24(19.2)秒",
-					enhanced = "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速70%，随后爆炸，造成120点120(150)范围炮伤，本技能为强化普攻，CD24(19.2)秒",
-					levels_standard = { "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速50%，随后爆炸，造成120点120(150)范围物伤，本技能为强化普攻，CD24(19.2)秒", "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速50%，随后爆炸，造成264点120(150)范围物伤，本技能为强化普攻，CD24(19.2)秒", "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速50%，随后爆炸，造成432点120(150)范围物伤，本技能为强化普攻，CD24(19.2)秒" },
-					levels_enhanced = { "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速70%，随后爆炸，造成120点120(150)范围炮伤，本技能为强化普攻，CD24(19.2)秒", "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速70%，随后爆炸，造成264点120(150)范围炮伤，本技能为强化普攻，CD22(17.6)秒", "投下一个毒酒桶毒化160范围地面5秒，每0.25秒对敌人造成1点真实伤害并减速70%，随后爆炸，造成432点120(150)范围炮伤，本技能为强化普攻，CD20(16)秒" },
+					name = "Mẻ rượu hỏng",
+					standard = "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 50%, rồi nổ gây 120 sát thương vật lý trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây.",
+					enhanced = "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 70%, rồi nổ gây 120 sát thương pháo trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây.",
+					levels_standard = { "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 50%, rồi nổ gây 120 sát thương vật lý trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây.", "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 50%, rồi nổ gây 264 sát thương vật lý trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây.", "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 50%, rồi nổ gây 432 sát thương vật lý trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây." },
+					levels_enhanced = { "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 70%, rồi nổ gây 120 sát thương pháo trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 24 (19.2) giây.", "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 70%, rồi nổ gây 264 sát thương pháo trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 22 (17.6) giây.", "Ném thùng rượu độc, nhiễm độc mặt đất trong phạm vi 160 suốt 5 giây. Cứ 0.25 giây gây 1 sát thương chuẩn và làm chậm 70%, rồi nổ gây 432 sát thương pháo trong phạm vi 120 (150). Là đòn đánh thường cường hóa. CD: 20 (16) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2436,30 +2436,30 @@ local M = {
 		},
 		["tower_ray_lvl4"] = {
 			doc_id = "",
-			title = "诡术魔导师",
+			title = "Pháp sư Ảo thuật",
 			attack = {
-				standard = "0.5秒内选中锁定敌人并发射魔法射线，持续攻击3.75秒造成16段伤害，然后冷却0.5秒并准备选中、锁定下一个敌人。攻击过程中被锁定的敌人被杀死会立即跳过剩下的攻击并进入冷却状态。第1/2/3/4秒造成的伤害为普攻面板的0.1/0.2/0.35/0.35倍。",
-				enhanced = "0.5秒内选中锁定敌人并发射魔法射线，持续攻击3.75秒造成16段伤害，然后冷却0.5秒并准备选中、锁定下一个敌人。攻击过程中被锁定的敌人被杀死会立即跳过剩下的攻击并进入冷却状态。第1/2/3/4秒造成的伤害为普攻面板的0.4/0.4/0.1/0.1倍。"
+				standard = "Chọn và khóa mục tiêu trong 0.5 giây, bắn tia phép liên tục 3.75 giây với 16 lần sát thương, rồi nghỉ 0.5 giây trước khi chọn mục tiêu mới. Nếu mục tiêu chết, ngừng bắn và chuyển ngay sang thời gian nghỉ. Sát thương ở giây thứ 1/2/3/4 bằng 0.1/0.2/0.35/0.35 lần chỉ số đánh thường.",
+				enhanced = "Chọn và khóa mục tiêu trong 0.5 giây, bắn tia phép liên tục 3.75 giây với 16 lần sát thương, rồi nghỉ 0.5 giây trước khi chọn mục tiêu mới. Nếu mục tiêu chết, ngừng bắn và chuyển ngay sang thời gian nghỉ. Sát thương ở giây thứ 1/2/3/4 bằng 0.4/0.4/0.1/0.1 lần chỉ số đánh thường."
 			},
-			change_note = "解说：频繁转火会导致输出丢失，而出伤出在后半段则更加难以打出有效输出。考虑到诡术的输出方式是输出3.75秒休息1秒，因此只要将超过63.16%的出伤集中在前2秒，就可以保证在输出的第2-3.75秒期间转火不造成任何伤害损失，达到理论DPS水平。与此同时，小幅提升面板能力。但由于两个技能在各自赛道上都比较超模，面板是不能给太高的。",
+			change_note = "Nhận xét: Đổi mục tiêu liên tục làm mất sát thương, nhất là khi sát thương tập trung cuối lượt. Vì tháp bắn 3.75 giây rồi nghỉ 1 giây, dồn hơn 63.16% sát thương vào 2 giây đầu giúp đổi mục tiêu ở giây 2-3.75 mà không mất sát thương, đạt DPS lý thuyết. Tăng nhẹ chỉ số cơ bản; không tăng quá nhiều vì cả hai kỹ năng vốn rất mạnh.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "魔力溢流",
-					standard = "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害25%的魔法伤害",
-					enhanced = "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害25%的魔法伤害",
-					levels_standard = { "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害25%的魔法伤害", "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害50%的魔法伤害", "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害75%的魔法伤害" },
-					levels_enhanced = { "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害25%的魔法伤害", "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害50%的魔法伤害", "使得魔力射线能额外连锁最多260距离内3个敌人，令4个敌人减速20%，\n且每个被连锁的敌人受到额度为普攻伤害75%的魔法伤害" },
+					name = "Tràn năng lượng",
+					standard = "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 25% sát thương đánh thường.",
+					enhanced = "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 25% sát thương đánh thường.",
+					levels_standard = { "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 25% sát thương đánh thường.", "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 50% sát thương đánh thường.", "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 75% sát thương đánh thường." },
+					levels_enhanced = { "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 25% sát thương đánh thường.", "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 50% sát thương đánh thường.", "Tia phép nối thêm tối đa 3 kẻ địch trong khoảng cách 260 và làm chậm 4 mục tiêu 20%.\nMỗi mục tiêu nối thêm nhận sát thương phép bằng 75% sát thương đánh thường." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
 				{
-					name = "变形魔咒",
-					standard = "将非Boss敌人变为一只绵羊，绵羊的生命值为原本敌人最大生命值的50%，可以被点击5次致死并获得金币，CD20(16)",
-					enhanced = "将非Boss敌人变为一只绵羊，绵羊的生命值为原本敌人最大生命值的50%，可以被点击5次致死并获得金币，CD20(16)",
-					levels_standard = { "将非Boss敌人变为一只绵羊，绵羊的生命值为原本敌人最大生命值的50%，可以被点击5次致死并获得金币，CD20(16)" },
-					levels_enhanced = { "将非Boss敌人变为一只绵羊，绵羊的生命值为原本敌人最大生命值的50%，可以被点击5次致死并获得金币，CD20(16)" },
+					name = "Bùa biến hình",
+					standard = "Biến kẻ địch không phải trùm thành cừu với máu bằng 50% máu tối đa ban đầu. Nhấp 5 lần để giết cừu và nhận vàng. CD: 20 (16).",
+					enhanced = "Biến kẻ địch không phải trùm thành cừu với máu bằng 50% máu tối đa ban đầu. Nhấp 5 lần để giết cừu và nhận vàng. CD: 20 (16).",
+					levels_standard = { "Biến kẻ địch không phải trùm thành cừu với máu bằng 50% máu tối đa ban đầu. Nhấp 5 lần để giết cừu và nhận vàng. CD: 20 (16)." },
+					levels_enhanced = { "Biến kẻ địch không phải trùm thành cừu với máu bằng 50% máu tối đa ban đầu. Nhấp 5 lần để giết cừu và nhận vàng. CD: 20 (16)." },
 					prices_standard = { "160" },
 					prices_enhanced = { "160" }
 				},
@@ -2467,30 +2467,30 @@ local M = {
 		},
 		["tower_dark_elf_lvl4"] = {
 			doc_id = "",
-			title = "暮光长弓",
+			title = "Trường cung Chạng vạng",
 			attack = {
-				standard = "每2.95秒射出一支的箭攻击敌方。会在蓄力瞬间瞄准敌人。可以手动选择血量最高的敌人和距离出口最近的敌人。",
-				enhanced = "每2.95秒射出一支无视5/10/15/20甲的箭攻击敌方。会在蓄力瞬间瞄准敌人。可以手动选择血量最高的敌人和距离出口最近的敌人。"
+				standard = "Cứ 2.95 giây bắn một mũi tên, chọn mục tiêu ngay khi bắt đầu giương cung. Có thể chọn thủ công ưu tiên địch nhiều máu nhất hoặc gần lối ra nhất.",
+				enhanced = "Cứ 2.95 giây bắn một mũi tên bỏ qua 5/10/15/20 giáp, chọn mục tiêu ngay khi bắt đầu giương cung. Có thể chọn thủ công ưu tiên địch nhiều máu nhất hoặc gần lối ra nhất."
 			},
-			change_note = "解说：慢速纯输出箭塔，必须要提供穿甲能力；提供叠层玩法，2技能额外给一个被动，方便拿人头。",
+			change_note = "Nhận xét: Tháp cung đánh chậm và chỉ gây sát thương nên cần xuyên giáp. Thêm cơ chế tích lũy sức mạnh và nội tại cho kỹ năng 2 để dễ kết liễu hơn.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "利刃援军",
-					standard = "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值60(66)，回血速度8，护甲40，攻速1.0，攻击力10-14，响应范围140，拥有60%的闪避率。",
-					enhanced = "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值60(66)，回血速度8，护甲40，攻速1.0，攻击力10-14，响应范围140，拥有68%的闪避率。",
-					levels_standard = { "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值60(66)，回血速度8，护甲40，攻速1.0，攻击力10-14，响应范围140，拥有60%的闪避率。", "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值90(99)，回血速度12，护甲40，攻速1.0，攻击力14-22，响应范围140，拥有60%的闪避率。", "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值120(132)，回血速度16，护甲40，攻速1.0，攻击力22-30，响应范围140，拥有60%的闪避率。" },
-					levels_enhanced = { "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值60(66)，回血速度8，护甲40，攻速1.0，攻击力10-14，响应范围140，拥有68%的闪避率。", "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值90(99)，回血速度12，护甲40，攻速1.0，攻击力14-22，响应范围140，拥有68%的闪避率。", "召唤2名暮光骚扰者，重生时间10，调集范围290，生命值120(132)，回血速度16，护甲40，攻速1.0，攻击力22-30，响应范围140，拥有68%的闪避率。" },
+					name = "Viện binh Lưỡi kiếm",
+					standard = "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 60 (66); hồi máu: 8; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 10-14; phạm vi phản ứng: 140; né tránh: 60%.",
+					enhanced = "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 60 (66); hồi máu: 8; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 10-14; phạm vi phản ứng: 140; né tránh: 68%.",
+					levels_standard = { "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 60 (66); hồi máu: 8; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 10-14; phạm vi phản ứng: 140; né tránh: 60%.", "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 90 (99); hồi máu: 12; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 14-22; phạm vi phản ứng: 140; né tránh: 60%.", "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 120 (132); hồi máu: 16; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 22-30; phạm vi phản ứng: 140; né tránh: 60%." },
+					levels_enhanced = { "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 60 (66); hồi máu: 8; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 10-14; phạm vi phản ứng: 140; né tránh: 68%.", "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 90 (99); hồi máu: 12; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 14-22; phạm vi phản ứng: 140; né tránh: 68%.", "Triệu hồi 2 Chiến binh Quấy rối Chạng vạng. Hồi sinh: 10; phạm vi điều quân: 290; máu: 120 (132); hồi máu: 16; giáp: 40; khoảng cách giữa đòn đánh: 1.0; sức tấn công: 22-30; phạm vi phản ứng: 140; né tránh: 68%." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
 				{
-					name = "猎杀戾气",
-					standard = "每击杀一个敌人，本关之内永久提升1点攻击下限和2点攻击上限。",
-					enhanced = "令弓手能敏锐嗅觉到杀戮的气息。每击杀一个敌人，本关之内永久提升2点攻击下限和4点攻击上限。\n瞄准生命值比例≤60%的敌人时，会以1.6倍攻击力进攻，且穿甲额度提升到35点。",
-					levels_standard = { "每击杀一个敌人，本关之内永久提升1点攻击下限和2点攻击上限。" },
-					levels_enhanced = { "令弓手能敏锐嗅觉到杀戮的气息。每击杀一个敌人，本关之内永久提升2点攻击下限和4点攻击上限。\n瞄准生命值比例≤60%的敌人时，会以1.5倍攻击力进攻，且穿甲额度提升到30点。" },
+					name = "Sát khí săn mồi",
+					standard = "Mỗi lần hạ địch, tăng vĩnh viễn 1 sát thương tối thiểu và 2 sát thương tối đa trong màn hiện tại.",
+					enhanced = "Cung thủ cảm nhận sát khí. Mỗi lần hạ địch, tăng vĩnh viễn 2 sát thương tối thiểu và 4 sát thương tối đa trong màn hiện tại.\nKhi nhắm địch còn không quá 60% máu, tấn công với 1.6 lần sức mạnh và bỏ qua 35 giáp.",
+					levels_standard = { "Mỗi lần hạ địch, tăng vĩnh viễn 1 sát thương tối thiểu và 2 sát thương tối đa trong màn hiện tại." },
+					levels_enhanced = { "Cung thủ cảm nhận sát khí. Mỗi lần hạ địch, tăng vĩnh viễn 2 sát thương tối thiểu và 4 sát thương tối đa trong màn hiện tại.\nKhi nhắm địch còn không quá 60% máu, tấn công với 1.5 lần sức mạnh và bỏ qua 30 giáp." },
 					prices_standard = { "160" },
 					prices_enhanced = { "280" }
 				},
@@ -2498,30 +2498,30 @@ local M = {
 		},
 		["tower_hermit_toad_lvl4"] = {
 			doc_id = "",
-			title = "沼泽隐士",
+			title = "Ẩn sĩ Đầm lầy",
 			attack = {
-				standard = "法：每1.2秒吐出一个泡泡攻击敌人造成魔法伤害。\n炮：每2.5秒吐出一个泡泡对120(150)范围内敌人造成炮伤，并减速20/30/40/50%持续1.95秒。",
-				enhanced = "法：每1.2秒吐出一个泡泡攻击敌人造成魔法伤害。\n炮：每2.5秒吐出一个泡泡对120(150)范围内敌人造成炮伤，并减速20/30/40/50%持续1.95秒。"
+				standard = "Chế độ phép: Cứ 1.2 giây phun bong bóng gây sát thương phép.\nChế độ pháo: Cứ 2.5 giây phun bong bóng gây sát thương pháo trong phạm vi 120 (150), làm chậm 20/30/40/50% trong 1.95 giây.",
+				enhanced = "Chế độ phép: Cứ 1.2 giây phun bong bóng gây sát thương phép.\nChế độ pháo: Cứ 2.5 giây phun bong bóng gây sát thương pháo trong phạm vi 120 (150), làm chậm 20/30/40/50% trong 1.95 giây."
 			},
-			change_note = "解说：出了5代小boss遍地走的环境就是全代第1秒杀，并且前4级的功能性也不差，不能再加强了。5代诡术和蛤蟆的秒杀都到了不削弱其他秒杀就数值崩坏的程度。",
+			change_note = "Nhận xét: Ngoài môi trường nhiều tiểu trùm của phần 5, đây là kỹ năng tiêu diệt tức thì xếp thứ 1 toàn bộ các phần. Các cấp 4 đầu cũng hữu dụng nên không tăng thêm. Kỹ năng của Pháp sư Ảo thuật và cóc phần 5 đã mạnh tới mức nếu không giảm các kỹ năng tiêu diệt tức thì khác thì sẽ mất cân bằng.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "泰山压顶",
-					standard = "跳向一个区域对200范围内敌人造成80点物伤并晕眩2秒，然后返回池塘里。\nCD35(28)秒",
-					enhanced = "跳向一个区域对200范围内敌人造成120点物伤并晕眩2秒，然后返回池塘里。\nCD35(28)秒",
-					levels_standard = { "跳向一个区域对200范围内敌人造成80点物伤并晕眩2秒，然后返回池塘里。\nCD35(28)秒", "跳向一个区域对200范围内敌人造成140点物伤并晕眩3秒，然后返回池塘里。\nCD30(24)秒", "跳向一个区域对200范围内敌人造成180点物伤并晕眩4秒，然后返回池塘里。\nCD25(20)秒" },
-					levels_enhanced = { "跳向一个区域对200范围内敌人造成120点物伤并晕眩2秒，然后返回池塘里。\nCD35(28)秒", "跳向一个区域对200范围内敌人造成210点物伤并晕眩3秒，然后返回池塘里。\nCD30(24)秒", "跳向一个区域对200范围内敌人造成270点物伤并晕眩4秒，然后返回池塘里。\nCD25(20)秒" },
+					name = "Cú nhảy nghiền nát",
+					standard = "Nhảy vào một vùng, gây 80 sát thương vật lý trong phạm vi 200 và làm choáng 2 giây, rồi trở lại ao.\nCD: 35 (28) giây.",
+					enhanced = "Nhảy vào một vùng, gây 120 sát thương vật lý trong phạm vi 200 và làm choáng 2 giây, rồi trở lại ao.\nCD: 35 (28) giây.",
+					levels_standard = { "Nhảy vào một vùng, gây 80 sát thương vật lý trong phạm vi 200 và làm choáng 2 giây, rồi trở lại ao.\nCD: 35 (28) giây.", "Nhảy vào một vùng, gây 140 sát thương vật lý trong phạm vi 200 và làm choáng 3 giây, rồi trở lại ao.\nCD: 30 (24) giây.", "Nhảy vào một vùng, gây 180 sát thương vật lý trong phạm vi 200 và làm choáng 4 giây, rồi trở lại ao.\nCD: 25 (20) giây." },
+					levels_enhanced = { "Nhảy vào một vùng, gây 120 sát thương vật lý trong phạm vi 200 và làm choáng 2 giây, rồi trở lại ao.\nCD: 35 (28) giây.", "Nhảy vào một vùng, gây 210 sát thương vật lý trong phạm vi 200 và làm choáng 3 giây, rồi trở lại ao.\nCD: 30 (24) giây.", "Nhảy vào một vùng, gây 270 sát thương vật lý trong phạm vi 200 và làm choáng 4 giây, rồi trở lại ao.\nCD: 25 (20) giây." },
 					prices_standard = { "120", "90", "90" },
 					prices_enhanced = { "120", "75", "75" }
 				},
 				{
-					name = "黏性长舌",
-					standard = "直接吞下一个480范围内的非boss敌人。\nCD18(14.4)秒。",
-					enhanced = "直接吞下一个480范围内的非boss敌人。\nCD18(14.4)秒。",
-					levels_standard = { "直接吞下一个480范围内的非boss敌人。\nCD18(14.4)秒。" },
-					levels_enhanced = { "直接吞下一个480范围内的非boss敌人。\nCD18(14.4)秒。" },
+					name = "Lưỡi dính",
+					standard = "Nuốt ngay một kẻ địch không phải trùm trong phạm vi 480.\nCD: 18 (14.4) giây.",
+					enhanced = "Nuốt ngay một kẻ địch không phải trùm trong phạm vi 480.\nCD: 18 (14.4) giây.",
+					levels_standard = { "Nuốt ngay một kẻ địch không phải trùm trong phạm vi 480.\nCD: 18 (14.4) giây." },
+					levels_enhanced = { "Nuốt ngay một kẻ địch không phải trùm trong phạm vi 480.\nCD: 18 (14.4) giây." },
 					prices_standard = { "240" },
 					prices_enhanced = { "240" }
 				},
@@ -2529,30 +2529,30 @@ local M = {
 		},
 		["tower_dwarf_lvl4"] = {
 			doc_id = "",
-			title = "炮兵小队",
+			title = "Tiểu đội Pháo binh",
 			attack = {
-				standard = "300(330)范围内有敌人时进行远程攻击，120范围内有敌人且为地面形态时近战拦截。",
-				enhanced = "300(330)范围内有敌人时进行远程攻击，120范围内有敌人且为地面形态时近战拦截。"
+				standard = "Bắn từ xa khi có địch trong phạm vi 300 (330). Chặn địch bằng cận chiến khi ở chế độ mặt đất và có địch trong phạm vi 120.",
+				enhanced = "Bắn từ xa khi có địch trong phạm vi 300 (330). Chặn địch bằng cận chiến khi ở chế độ mặt đất và có địch trong phạm vi 120."
 			},
-			change_note = "解说：不能再加强了。但由于3/4级兵营过渡性稍差，故调整了平滑性。",
-			port_note = "移植改动：原版1技能价格为120/180/240[返还120]，改版为120/200/200，计算科技后为120/150/150，从而在计算科技的情况下总价和原版相同。",
+			change_note = "Nhận xét: Không tăng sức mạnh thêm. Chỉ làm quá trình nâng cấp mượt hơn vì doanh trại cấp 3/4 hơi yếu.",
+			port_note = "Thay đổi khi chuyển sang FL: Kỹ năng 1 bản gốc giá 120/180/240 [hoàn lại 120]; bản FL giá 120/200/200, sau nâng cấp nghiên cứu là 120/150/150. Tổng giá sau nghiên cứu bằng bản gốc.",
 			notes = "",
 			skills = {
 				{
-					name = "队伍扩充",
-					standard = "提升队伍人数为3人。",
-					enhanced = "提升队伍人数为3人。",
-					levels_standard = { "提升队伍人数为3人。", "提升队伍人数为4人。", "提升队伍人数为5人。" },
-					levels_enhanced = { "提升队伍人数为3人。", "提升队伍人数为4人。", "提升队伍人数为5人。" },
+					name = "Mở rộng tiểu đội",
+					standard = "Tăng quân số tiểu đội lên 3 người.",
+					enhanced = "Tăng quân số tiểu đội lên 3 người.",
+					levels_standard = { "Tăng quân số tiểu đội lên 3 người.", "Tăng quân số tiểu đội lên 4 người.", "Tăng quân số tiểu đội lên 5 người." },
+					levels_enhanced = { "Tăng quân số tiểu đội lên 3 người.", "Tăng quân số tiểu đội lên 4 người.", "Tăng quân số tiểu đội lên 5 người." },
 					prices_standard = { "120", "150", "150" },
 					prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "燃烧弹药",
-					standard = "每人投出一枚燃烧弹，对100范围内敌人造成20-28炮伤，并点燃该区域2秒，总共造成24点真伤。",
-					enhanced = "每人投出一枚燃烧弹，对100范围内敌人造成20-28炮伤，并点燃该区域2秒，总共造成24点真伤。",
-					levels_standard = { "每人投出一枚燃烧弹，对100范围内敌人造成20-28炮伤，并点燃该区域2秒，总共造成24点真伤。", "每人投出一枚燃烧弹，对100范围内敌人造成38-58炮伤，并点燃该区域2秒，总共造成64点真伤。", "每人投出一枚燃烧弹，对100范围内敌人造成52-80炮伤，并点燃该区域2秒，总共造成112点真伤。" },
-					levels_enhanced = { "每人投出一枚燃烧弹，对100范围内敌人造成20-28炮伤，并点燃该区域2秒，总共造成24点真伤。", "每人投出一枚燃烧弹，对100范围内敌人造成38-58炮伤，并点燃该区域2秒，总共造成64点真伤。", "每人投出一枚燃烧弹，对100范围内敌人造成52-80炮伤，并点燃该区域2秒，总共造成112点真伤。" },
+					name = "Đạn cháy",
+					standard = "Mỗi người ném một bom cháy, gây 20-28 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 24 sát thương chuẩn.",
+					enhanced = "Mỗi người ném một bom cháy, gây 20-28 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 24 sát thương chuẩn.",
+					levels_standard = { "Mỗi người ném một bom cháy, gây 20-28 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 24 sát thương chuẩn.", "Mỗi người ném một bom cháy, gây 38-58 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 64 sát thương chuẩn.", "Mỗi người ném một bom cháy, gây 52-80 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 112 sát thương chuẩn." },
+					levels_enhanced = { "Mỗi người ném một bom cháy, gây 20-28 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 24 sát thương chuẩn.", "Mỗi người ném một bom cháy, gây 38-58 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 64 sát thương chuẩn.", "Mỗi người ném một bom cháy, gây 52-80 sát thương pháo trong phạm vi 100 và đốt vùng đó 2 giây, tổng cộng 112 sát thương chuẩn." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
@@ -2560,30 +2560,30 @@ local M = {
 		},
 		["tower_sparking_geode_lvl4"] = {
 			doc_id = "",
-			title = "电涌巨像",
+			title = "Cự tượng Điện năng",
 			attack = {
-				standard = "向敌人发射真伤闪电，若命中敌人的附近280范围内存在其他敌人则造成弹射，每次弹射造成的伤害是上一次伤害的1.05/1.1/1.15/1.25倍。",
-				enhanced = "向敌人发射真伤闪电，若命中敌人的附近280范围内存在其他敌人则造成弹射，每次弹射造成的伤害是上一次伤害的1.05/1.1/1.15/1.25倍。"
+				standard = "Bắn sét gây sát thương chuẩn. Nếu có địch khác trong phạm vi 280 quanh mục tiêu, sét nảy tiếp. Sát thương mỗi lần nảy bằng 1.05/1.1/1.15/1.25 lần lần trước.",
+				enhanced = "Bắn sét gây sát thương chuẩn. Nếu có địch khác trong phạm vi 280 quanh mục tiêu, sét nảy tiếp. Sát thương mỗi lần nảy bằng 1.05/1.1/1.15/1.25 lần lần trước."
 			},
-			change_note = "解说：原版巨像的普攻已经足够看了，问题在于技能冷却时间太长。",
+			change_note = "Nhận xét: Đòn đánh thường bản gốc đã đủ mạnh; vấn đề là kỹ năng hồi quá lâu.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "结晶化",
-					standard = "使范围内2名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD31(24.8)秒",
-					enhanced = "使范围内2名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD30(24)秒",
-					levels_standard = { "使范围内2名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD31(24.8)秒", "使范围内3名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD28(22.4)秒", "使范围内4名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD25(20)秒" },
-					levels_enhanced = { "使范围内2名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD30(24)秒", "使范围内3名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD26(20.8)秒", "使范围内4名敌人晶化持续5秒，期间受到伤害增加30%且无法行动\nCD22(17.6)秒" },
+					name = "Kết tinh",
+					standard = "Kết tinh 2 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 31 (24.8) giây.",
+					enhanced = "Kết tinh 2 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 30 (24) giây.",
+					levels_standard = { "Kết tinh 2 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 31 (24.8) giây.", "Kết tinh 3 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 28 (22.4) giây.", "Kết tinh 4 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 25 (20) giây." },
+					levels_enhanced = { "Kết tinh 2 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 30 (24) giây.", "Kết tinh 3 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 26 (20.8) giây.", "Kết tinh 4 địch trong tầm suốt 5 giây. Mục tiêu không thể hành động và nhận thêm 30% sát thương.\nCD: 22 (17.6) giây." },
 					prices_standard = { "150", "112", "112" },
 					prices_enhanced = { "150", "112", "112" }
 				},
 				{
-					name = "电气涌流",
-					standard = "创造一个电场，对周围400范围内敌人每0.5秒造成3点真伤，并降低他们30%移速，持续6秒CD40(32)秒",
-					enhanced = "创造一个电场，对周围400范围内敌人每0.5秒造成3点真伤，并降低他们30%移速，持续6秒，CD38(30.4)秒",
-					levels_standard = { "创造一个电场，对周围400范围内敌人每0.5秒造成3点真伤，并降低他们30%移速，持续6秒CD40(32)秒", "创造一个电场，对周围400范围内敌人每0.5秒造成4点真伤，并降低他们40%移速，持续8秒CD35(28)秒", "创造一个电场，对周围400范围内敌人每0.5秒造成5点真伤，并降低他们50%移速，持续10秒CD30(24)秒" },
-					levels_enhanced = { "创造一个电场，对周围400范围内敌人每0.5秒造成3点真伤，并降低他们30%移速，持续6秒，CD38(30.4)秒", "创造一个电场，对周围400范围内敌人每0.5秒造成4点真伤，并降低他们40%移速，持续8秒，CD32(25.6)秒", "创造一个电场，对周围400范围内敌人每0.5秒造成5点真伤，并降低他们50%移速，持续10秒，CD26(20.8)秒" },
+					name = "Dòng điện trào dâng",
+					standard = "Tạo điện trường trong phạm vi 400, gây 3 sát thương chuẩn mỗi 0.5 giây và giảm 30% tốc độ di chuyển trong 6 giây. CD: 40 (32) giây.",
+					enhanced = "Tạo điện trường trong phạm vi 400, gây 3 sát thương chuẩn mỗi 0.5 giây và giảm 30% tốc độ di chuyển trong 6 giây. CD: 38 (30.4) giây.",
+					levels_standard = { "Tạo điện trường trong phạm vi 400, gây 3 sát thương chuẩn mỗi 0.5 giây và giảm 30% tốc độ di chuyển trong 6 giây. CD: 40 (32) giây.", "Tạo điện trường trong phạm vi 400, gây 4 sát thương chuẩn mỗi 0.5 giây và giảm 40% tốc độ di chuyển trong 8 giây. CD: 35 (28) giây.", "Tạo điện trường trong phạm vi 400, gây 5 sát thương chuẩn mỗi 0.5 giây và giảm 50% tốc độ di chuyển trong 10 giây. CD: 30 (24) giây." },
+					levels_enhanced = { "Tạo điện trường trong phạm vi 400, gây 3 sát thương chuẩn mỗi 0.5 giây và giảm 30% tốc độ di chuyển trong 6 giây. CD: 38 (30.4) giây.", "Tạo điện trường trong phạm vi 400, gây 4 sát thương chuẩn mỗi 0.5 giây và giảm 40% tốc độ di chuyển trong 8 giây. CD: 32 (25.6) giây.", "Tạo điện trường trong phạm vi 400, gây 5 sát thương chuẩn mỗi 0.5 giây và giảm 50% tốc độ di chuyển trong 10 giây. CD: 26 (20.8) giây." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
@@ -2591,39 +2591,39 @@ local M = {
 		},
 		["tower_pandas_lvl4"] = {
 			doc_id = "",
-			title = "竹宗三侠",
+			title = "Tam hiệp Trúc tông",
 			attack = {
-				standard = "近战攻击，物理伤害。血量降低到0后，会回到塔上攻击5(3)秒再下塔拦截。每只熊猫的攻击间隔为1.5秒(若3只熊猫都在则每0.5秒攻击1次)，攻击范围360，攻击力为4-6/7-10/10-15/15-20，造成真实伤害。主动：将3只熊猫全部传送回防御塔8秒进行远程攻击。",
-				enhanced = "近战攻击，物理伤害。血量降低到0后，会回到塔上攻击5(3)秒再下塔拦截。每只熊猫的攻击间隔为1.5秒(若3只熊猫都在则每0.5秒攻击1次)，攻击范围360，攻击力为4-6/7-10/10-15/15-20，造成真实伤害。主动：将3只熊猫全部传送回防御塔8秒进行远程攻击。"
+				standard = "Cận chiến gây sát thương vật lý. Khi máu giảm tới 0, gấu trúc trở về tháp bắn trong 5 (3) giây rồi xuống chặn địch. Mỗi gấu đánh cách nhau 1.5 giây; nếu có đủ 3 gấu, mỗi 0.5 giây đánh 1 lần. Tầm đánh: 360; sức tấn công: 4-6/7-10/10-15/15-20, gây sát thương chuẩn. Chủ động: Đưa cả 3 gấu về tháp bắn từ xa trong 8 giây.",
+				enhanced = "Cận chiến gây sát thương vật lý. Khi máu giảm tới 0, gấu trúc trở về tháp bắn trong 5 (3) giây rồi xuống chặn địch. Mỗi gấu đánh cách nhau 1.5 giây; nếu có đủ 3 gấu, mỗi 0.5 giây đánh 1 lần. Tầm đánh: 360; sức tấn công: 4-6/7-10/10-15/15-20, gây sát thương chuẩn. Chủ động: Đưa cả 3 gấu về tháp bắn từ xa trong 8 giây."
 			},
-			change_note = "解说：要么1级要么升技能。1技能作为一个纯伤害技能需要能打出更高伤害；3技能2级性价比过低。",
+			change_note = "Nhận xét: Hoặc giữ cấp 1, hoặc mua kỹ năng. Kỹ năng 1 chỉ gây sát thương nên cần mạnh hơn; kỹ năng 3 cấp 2 quá kém hiệu quả so với giá.",
 			port_note = "",
 			notes = "",
 			skills = {
 				{
-					name = "飞笠斩",
-					standard = "扔出斗笠攻击敌人，若命中敌人后该敌人360范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到20-25点真实伤害，最多对3个敌人造成伤害。CD8，施法射程400。",
-					enhanced = "扔出斗笠攻击敌人，若命中敌人后该敌人360范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到28-35点真实伤害，最多对3个敌人造成伤害。CD8，施法射程400。",
-					levels_standard = { "扔出斗笠攻击敌人，若命中敌人后该敌人360范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到20-25点真实伤害，最多对3个敌人造成伤害。CD8，施法射程400。", "扔出斗笠攻击敌人，若命中敌人后该敌人400范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到40-50点真实伤害，最多对5个敌人造成伤害。CD8，施法射程400。" },
-					levels_enhanced = { "扔出斗笠攻击敌人，若命中敌人后该敌人360范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到28-35点真实伤害，最多对3个敌人造成伤害。CD8，施法射程400。", "扔出斗笠攻击敌人，若命中敌人后该敌人400范围内还有其他敌人，则弹射给下个敌人。每个被弹射到的敌人会受到56-70点真实伤害，最多对5个敌人造成伤害。CD8，施法射程400。" },
+					name = "Phi nón trảm",
+					standard = "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 360 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 20-25 sát thương chuẩn, tối đa 3 mục tiêu. CD: 8; tầm thi triển: 400.",
+					enhanced = "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 360 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 28-35 sát thương chuẩn, tối đa 3 mục tiêu. CD: 8; tầm thi triển: 400.",
+					levels_standard = { "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 360 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 20-25 sát thương chuẩn, tối đa 3 mục tiêu. CD: 8; tầm thi triển: 400.", "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 400 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 40-50 sát thương chuẩn, tối đa 5 mục tiêu. CD: 8; tầm thi triển: 400." },
+					levels_enhanced = { "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 360 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 28-35 sát thương chuẩn, tối đa 3 mục tiêu. CD: 8; tầm thi triển: 400.", "Ném nón tấn công địch. Nếu có địch khác trong phạm vi 400 quanh mục tiêu, nón nảy tiếp. Mỗi mục tiêu nhận 56-70 sát thương chuẩn, tối đa 5 mục tiêu. CD: 8; tầm thi triển: 400." },
 					prices_standard = { "150", "100" },
 					prices_enhanced = { "150", "100" }
 				},
 				{
-					name = "天雷破",
-					standard = "召唤雷电，对200范围内敌人造成12-24点真实伤害并眩晕敌人1.5秒。CD15。施法射程400。",
-					enhanced = "召唤雷电，对200范围内敌人造成12-24点真实伤害并眩晕敌人1.5秒。CD15。施法射程400。",
-					levels_standard = { "召唤雷电，对200范围内敌人造成12-24点真实伤害并眩晕敌人1.5秒。CD15。施法射程400。", "召唤雷电，对200范围内敌人造成22-34点真实伤害并眩晕敌人1.5秒。CD10。施法射程400。" },
-					levels_enhanced = { "召唤雷电，对200范围内敌人造成12-24点真实伤害并眩晕敌人1.5秒。CD15。施法射程400。", "召唤雷电，对200范围内敌人造成22-34点真实伤害并眩晕敌人1.5秒。CD10。施法射程400。" },
+					name = "Thiên lôi phá",
+					standard = "Gọi sét gây 12-24 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 15; tầm thi triển: 400.",
+					enhanced = "Gọi sét gây 12-24 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 15; tầm thi triển: 400.",
+					levels_standard = { "Gọi sét gây 12-24 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 15; tầm thi triển: 400.", "Gọi sét gây 22-34 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 10; tầm thi triển: 400." },
+					levels_enhanced = { "Gọi sét gây 12-24 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 15; tầm thi triển: 400.", "Gọi sét gây 22-34 sát thương chuẩn trong phạm vi 200 và làm choáng 1.5 giây. CD: 10; tầm thi triển: 400." },
 					prices_standard = { "150", "100" },
 					prices_enhanced = { "150", "100" }
 				},
 				{
-					name = "狱火劫",
-					standard = "发射至多5个火焰弹，每个火焰弹能对敌人造成3-6点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD20，施法射程400。",
-					enhanced = "发射至多5个火焰弹，每个火焰弹能对敌人造成3-6点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD20，施法射程400。",
-					levels_standard = { "发射至多5个火焰弹，每个火焰弹能对敌人造成3-6点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD20，施法射程400。", "发射至多5个火焰弹，每个火焰弹能对敌人造成6-9点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD15，施法射程400。" },
-					levels_enhanced = { "发射至多5个火焰弹，每个火焰弹能对敌人造成3-6点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD20，施法射程400。", "发射至多5个火焰弹，每个火焰弹能对敌人造成6-9点真实伤害并将敌人往回传送200-240距离。每个人最多被传送3次。CD15，施法射程400。" },
+					name = "Hỏa ngục kiếp",
+					standard = "Bắn tối đa 5 cầu lửa, mỗi quả gây 3-6 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 20; tầm thi triển: 400.",
+					enhanced = "Bắn tối đa 5 cầu lửa, mỗi quả gây 3-6 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 20; tầm thi triển: 400.",
+					levels_standard = { "Bắn tối đa 5 cầu lửa, mỗi quả gây 3-6 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 20; tầm thi triển: 400.", "Bắn tối đa 5 cầu lửa, mỗi quả gây 6-9 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 15; tầm thi triển: 400." },
+					levels_enhanced = { "Bắn tối đa 5 cầu lửa, mỗi quả gây 3-6 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 20; tầm thi triển: 400.", "Bắn tối đa 5 cầu lửa, mỗi quả gây 6-9 sát thương chuẩn và dịch chuyển mục tiêu lùi 200-240 đơn vị khoảng cách. Mỗi địch bị dịch chuyển tối đa 3 lần. CD: 15; tầm thi triển: 400." },
 					prices_standard = { "150", "100" },
 					prices_enhanced = { "150", "100" }
 				},
@@ -2631,30 +2631,30 @@ local M = {
 		},
 		["tower_dragons_lvl4"] = {
 			doc_id = "",
-			title = "龙之孵育所",
+			title = "Trại ấp Rồng",
 			attack = {
-				standard = "召唤1/2/3/3只龙参战。每只龙每2.13秒发射一个魔法弹攻击敌方，造成魔法伤害的同时降低敌人60%速度持续2秒。",
-				enhanced = "召唤2/3/4/4只龙参战。每只龙每2.13秒发射一个魔法弹攻击敌方，造成魔法伤害的同时降低敌人/40%/50%/60%/70%速度持续2秒。"
+				standard = "Triệu hồi 1/2/3/3 rồng tham chiến. Mỗi rồng bắn đạn phép mỗi 2.13 giây, gây sát thương phép và giảm 60% tốc độ của địch trong 2 giây.",
+				enhanced = "Triệu hồi 2/3/4/4 rồng tham chiến. Mỗi rồng bắn đạn phép mỗi 2.13 giây, gây sát thương phép và giảm /40%/50%/60%/70% tốc độ của địch trong 2 giây."
 			},
-			change_note = "解说：功能很全面的防御塔，但是原版比较缺伤害，且1条龙的作用不大。相比原版，吃了双黑暗军增伤/提升范围/减CD的科技。",
-			port_note = "每条龙的代码攻击间隔为2秒，实际攻击间隔在2.13秒左右，面板攻速为[2÷龙的数量]。",
-			notes = "功能很全面的防御塔，但是原版比较缺伤害，且1条龙的作用不大。\n说明：攻击间隔受到和防御塔距离的影响，2.13为攻击远处怪物的攻速，若持续攻击近处怪物，会提升攻击速度，最高理论可达到<1秒。实际DPS会远高于理论值。",
+			change_note = "Nhận xét: Tháp rất đa dụng nhưng bản gốc thiếu sát thương; 1 rồng ít tác dụng. So với bản gốc, tháp nhận nghiên cứu của cả hai phe Hắc ám: tăng sát thương, tăng tầm và giảm CD.",
+			port_note = "Khoảng cách giữa đòn đánh trong mã của mỗi rồng là 2 giây; thực tế khoảng 2.13 giây. Tốc độ đánh hiển thị là [2 ÷ số rồng].",
+			notes = "Tháp rất đa dụng nhưng bản gốc thiếu sát thương; 1 rồng ít tác dụng.\nLưu ý: Khoảng cách giữa đòn đánh phụ thuộc khoảng cách tới tháp. 2.13 là tốc độ khi đánh địch ở xa; liên tục đánh địch ở gần sẽ nhanh hơn, lý thuyết có thể dưới 1 giây. DPS thực tế thường cao hơn giá trị lý thuyết.",
 			skills = {
 				{
-					name = "魔法唾液",
-					standard = "发射3个魔法唾液，造成100-150点魔法伤害，并对100范围内敌人造成20-30点魔法伤害。CD12(9.6)",
-					enhanced = "发射3个魔法唾液，造成100-150点魔法伤害，并对100范围内敌人造成20-30点魔法伤害。CD12(9.6)",
-					levels_standard = { "发射3个魔法唾液，造成100-150点魔法伤害，并对100范围内敌人造成20-30点魔法伤害。CD12(9.6)", "发射3个魔法唾液，造成200-300点魔法伤害，并对100范围内敌人造成40-60点魔法伤害。CD12(9.6)", "发射3个魔法唾液，造成400-600点魔法伤害，并对100范围内敌人造成70-100点魔法伤害。CD12(9.6)" },
-					levels_enhanced = { "发射3个魔法唾液，造成100-150点魔法伤害，并对100范围内敌人造成20-30点魔法伤害。CD12(9.6)", "发射3个魔法唾液，造成200-300点魔法伤害，并对100范围内敌人造成40-60点魔法伤害。CD12(9.6)", "发射3个魔法唾液，造成400-600点魔法伤害，并对100范围内敌人造成70-100点魔法伤害。CD12(9.6)" },
+					name = "Nước bọt Ma thuật",
+					standard = "Phun 3 khối nước bọt phép, gây 100-150 sát thương phép và thêm 20-30 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).",
+					enhanced = "Phun 3 khối nước bọt phép, gây 100-150 sát thương phép và thêm 20-30 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).",
+					levels_standard = { "Phun 3 khối nước bọt phép, gây 100-150 sát thương phép và thêm 20-30 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).", "Phun 3 khối nước bọt phép, gây 200-300 sát thương phép và thêm 40-60 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).", "Phun 3 khối nước bọt phép, gây 400-600 sát thương phép và thêm 70-100 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6)." },
+					levels_enhanced = { "Phun 3 khối nước bọt phép, gây 100-150 sát thương phép và thêm 20-30 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).", "Phun 3 khối nước bọt phép, gây 200-300 sát thương phép và thêm 40-60 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6).", "Phun 3 khối nước bọt phép, gây 400-600 sát thương phép và thêm 70-100 sát thương phép cho địch trong phạm vi 100. CD: 12 (9.6)." },
 					prices_standard = { "200", "150", "150" },
 					prices_enhanced = { "200", "150", "150" }
 				},
 				{
-					name = "颤栗龙吼",
-					standard = "眩晕360范围内至多15个敌人2.5秒。CD22(17.6)",
-					enhanced = "眩晕360范围内至多15个敌人2.5秒并造成45点真实伤害。CD22(17.6)",
-					levels_standard = { "眩晕360范围内至多15个敌人2.5秒。CD22(17.6)", "眩晕360范围内至多15个敌人4秒。CD22(17.6)" },
-					levels_enhanced = { "眩晕360范围内至多15个敌人2.5秒并造成45点真实伤害。CD22(17.6)", "眩晕360范围内至多15个敌人4秒并造成90点真实伤害。CD22(17.6)" },
+					name = "Tiếng gầm kinh hãi",
+					standard = "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 2.5 giây. CD: 22 (17.6).",
+					enhanced = "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 2.5 giây và gây 45 sát thương chuẩn. CD: 22 (17.6).",
+					levels_standard = { "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 2.5 giây. CD: 22 (17.6).", "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 4 giây. CD: 22 (17.6)." },
+					levels_enhanced = { "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 2.5 giây và gây 45 sát thương chuẩn. CD: 22 (17.6).", "Làm choáng tối đa 15 địch trong phạm vi 360 suốt 4 giây và gây 90 sát thương chuẩn. CD: 22 (17.6)." },
 					prices_standard = { "200", "150" },
 					prices_enhanced = { "200", "150" }
 				},
@@ -2662,582 +2662,582 @@ local M = {
 		},
 		["tower_archers_lvl4"] = {
 			doc_id = "",
-			title = "弓兵要塞",
+			title = "Pháo đài Cung thủ",
 			attack = {
-				standard = "每0.6(0.54)秒射出1支箭矢，造成物理伤害。",
-				enhanced = "每0.6(0.54)秒射出1支箭矢，造成物理伤害。学习肌腱穿刺后，对正在拦截或眩晕的敌人额外造成16%/32%/48%伤害。"
+				standard = "Cứ 0.6 (0.54) giây bắn 1 mũi tên gây sát thương vật lý.",
+				enhanced = "Cứ 0.6 (0.54) giây bắn 1 mũi tên gây sát thương vật lý. Sau khi học Xuyên gân, gây thêm 16%/32%/48% sát thương lên địch đang bị chặn hoặc choáng."
 			},
-			change_note = "本身靠加范围的技能强度就很高了。仅加强了作用相对较小的眩晕技能，并且依据6代的箭塔科技的特性，对这个技能增加了额外的适配功能性。", port_note = "", notes = "", skills = {
+			change_note = "Nhận xét: Kỹ năng tăng tầm đã rất mạnh nên chỉ tăng kỹ năng choáng vốn ít hữu ích hơn, đồng thời bổ sung tương tác phù hợp với nghiên cứu tháp cung phần 6.", port_note = "", notes = "", skills = {
 				{
-					name = "肌腱穿刺",
-					standard = "向2名敌人各射出一箭，造成16-24点物理伤害并眩晕2秒。CD15秒。",
-					enhanced = "向4名敌人各射出一箭，每箭造成18-29点物理伤害并眩晕2秒；本塔对正在拦截或眩晕的敌人额外造成11%伤害。CD15秒。",
-					levels_standard = { "向2名敌人各射出一箭，造成16-24点物理伤害并眩晕2秒。CD15秒。", "向2名敌人各射出一箭，造成20-30点物理伤害并眩晕4秒。CD15秒。", "向2名敌人各射出一箭，造成24-36点物理伤害并眩晕6秒。CD15秒。" },
-					levels_enhanced = { "向4名敌人各射出一箭，每箭造成18-29点物理伤害并眩晕2秒；本塔对正在拦截或眩晕的敌人额外造成11%伤害。CD15秒。", "向4名敌人各射出一箭，每箭造成36-58点物理伤害并眩晕4秒；本塔对正在拦截或眩晕的敌人额外造成22%伤害。CD15秒。", "向4名敌人各射出一箭，每箭造成54-87点物理伤害并眩晕6秒；本塔对正在拦截或眩晕的敌人额外造成33%伤害。CD15秒。" },
+					name = "Xuyên gân",
+					standard = "Bắn mỗi mục tiêu trong 2 địch một mũi tên, gây 16-24 sát thương vật lý và làm choáng 2 giây. CD: 15 giây.",
+					enhanced = "Bắn mỗi mục tiêu trong 4 địch một mũi tên, gây 18-29 sát thương vật lý và làm choáng 2 giây. Tháp gây thêm 11% sát thương lên địch bị chặn hoặc choáng. CD: 15 giây.",
+					levels_standard = { "Bắn mỗi mục tiêu trong 2 địch một mũi tên, gây 16-24 sát thương vật lý và làm choáng 2 giây. CD: 15 giây.", "Bắn mỗi mục tiêu trong 2 địch một mũi tên, gây 20-30 sát thương vật lý và làm choáng 4 giây. CD: 15 giây.", "Bắn mỗi mục tiêu trong 2 địch một mũi tên, gây 24-36 sát thương vật lý và làm choáng 6 giây. CD: 15 giây." },
+					levels_enhanced = { "Bắn mỗi mục tiêu trong 4 địch một mũi tên, gây 18-29 sát thương vật lý và làm choáng 2 giây. Tháp gây thêm 11% sát thương lên địch bị chặn hoặc choáng. CD: 15 giây.", "Bắn mỗi mục tiêu trong 4 địch một mũi tên, gây 36-58 sát thương vật lý và làm choáng 4 giây. Tháp gây thêm 22% sát thương lên địch bị chặn hoặc choáng. CD: 15 giây.", "Bắn mỗi mục tiêu trong 4 địch một mũi tên, gây 54-87 sát thương vật lý và làm choáng 6 giây. Tháp gây thêm 33% sát thương lên địch bị chặn hoặc choáng. CD: 15 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "225", "225", "225" }
 				},
 				{
-					name = "苍穹之眼",
-					standard = "自身及周围防御塔射程提高15%。",
-					enhanced = "自身及周围防御塔射程提高15%。",
-					levels_standard = { "自身及周围防御塔射程提高15%。", "自身及周围防御塔射程提高25%。", "自身及周围防御塔射程提高35%。" },
-					levels_enhanced = { "自身及周围防御塔射程提高15%。", "自身及周围防御塔射程提高25%。", "自身及周围防御塔射程提高35%。" },
+					name = "Mắt trời",
+					standard = "Tăng 15% tầm đánh cho bản thân và các tháp xung quanh.",
+					enhanced = "Tăng 15% tầm đánh cho bản thân và các tháp xung quanh.",
+					levels_standard = { "Tăng 15% tầm đánh cho bản thân và các tháp xung quanh.", "Tăng 25% tầm đánh cho bản thân và các tháp xung quanh.", "Tăng 35% tầm đánh cho bản thân và các tháp xung quanh." },
+					levels_enhanced = { "Tăng 15% tầm đánh cho bản thân và các tháp xung quanh.", "Tăng 25% tầm đánh cho bản thân và các tháp xung quanh.", "Tăng 35% tầm đánh cho bản thân và các tháp xung quanh." },
 					prices_standard = { "120", "120", "120" }, prices_enhanced = { "120", "120", "120" }
 				},
 				{
-					name = "揭示弱点",
-					standard = "标记敌人，使其受到的伤害提高30%，持续5秒；对首领提高15%。CD12秒。",
-					enhanced = "标记敌人，使其受到的伤害提高30%，持续5秒；对首领提高15%。CD12秒。",
-					levels_standard = { "标记敌人，使其受到的伤害提高30%，持续5秒；对首领提高15%。CD12秒。", "标记敌人，使其受到的伤害提高50%，持续6秒；对首领提高25%。CD12秒。", "标记敌人，使其受到的伤害提高75%，持续7秒；对首领提高35%。CD12秒。" },
-					levels_enhanced = { "标记敌人，使其受到的伤害提高30%，持续5秒；对首领提高15%。CD12秒。", "标记敌人，使其受到的伤害提高50%，持续6秒；对首领提高25%。CD12秒。", "标记敌人，使其受到的伤害提高75%，持续7秒；对首领提高35%。CD12秒。" },
+					name = "Vạch điểm yếu",
+					standard = "Đánh dấu địch, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây; với trùm là 15%. CD: 12 giây.",
+					enhanced = "Đánh dấu địch, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây; với trùm là 15%. CD: 12 giây.",
+					levels_standard = { "Đánh dấu địch, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây; với trùm là 15%. CD: 12 giây.", "Đánh dấu địch, khiến mục tiêu nhận thêm 50% sát thương trong 6 giây; với trùm là 25%. CD: 12 giây.", "Đánh dấu địch, khiến mục tiêu nhận thêm 75% sát thương trong 7 giây; với trùm là 35%. CD: 12 giây." },
+					levels_enhanced = { "Đánh dấu địch, khiến mục tiêu nhận thêm 30% sát thương trong 5 giây; với trùm là 15%. CD: 12 giây.", "Đánh dấu địch, khiến mục tiêu nhận thêm 50% sát thương trong 6 giây; với trùm là 25%. CD: 12 giây.", "Đánh dấu địch, khiến mục tiêu nhận thêm 75% sát thương trong 7 giây; với trùm là 35%. CD: 12 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "狂袭箭矢",
-					standard = "持续6秒快速射箭，每0.3秒射出一箭。CD36秒。",
-					enhanced = "持续6秒快速射箭，每0.3秒射出一箭。CD36秒。",
-					levels_standard = { "持续6秒快速射箭，每0.3秒射出一箭。CD36秒。" },
-					levels_enhanced = { "持续6秒快速射箭，每0.3秒射出一箭。CD36秒。" },
+					name = "Mưa tên cuồng kích",
+					standard = "Bắn tên nhanh trong 6 giây, mỗi 0.3 giây một mũi. CD: 36 giây.",
+					enhanced = "Bắn tên nhanh trong 6 giây, mỗi 0.3 giây một mũi. CD: 36 giây.",
+					levels_standard = { "Bắn tên nhanh trong 6 giây, mỗi 0.3 giây một mũi. CD: 36 giây." },
+					levels_enhanced = { "Bắn tên nhanh trong 6 giây, mỗi 0.3 giây một mũi. CD: 36 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_knights_lvl4"] = {
 			doc_id = "",
-			title = "守卫骑士团",
+			title = "Hiệp sĩ Hộ vệ",
 			attack = {
-				standard = "兵营派出3名骑士拦截敌人，近战造成物理伤害。",
-				enhanced = "兵营派出3名骑士拦截敌人，近战造成物理伤害。"
+				standard = "Doanh trại cử 3 hiệp sĩ chặn địch, cận chiến gây sát thương vật lý.",
+				enhanced = "Doanh trại cử 3 hiệp sĩ chặn địch, cận chiến gây sát thương vật lý."
 			},
-			change_note = "强化2技能，以方便循环错位拦截。", port_note = "", notes = "", skills = {
+			change_note = "Tăng sức mạnh kỹ năng 2 để dễ luân phiên chặn địch.", port_note = "", notes = "", skills = {
 				{
-					name = "守护鼓舞",
-					standard = "每有1名附近英雄，骑士护甲提高5%。",
-					enhanced = "每有1名附近英雄，骑士护甲提高5%。",
-					levels_standard = { "每有1名附近英雄，骑士护甲提高5%。", "每有1名附近英雄，骑士护甲提高10%。", "每有1名附近英雄，骑士护甲提高15%。" },
-					levels_enhanced = { "每有1名附近英雄，骑士护甲提高5%。", "每有1名附近英雄，骑士护甲提高10%。", "每有1名附近英雄，骑士护甲提高15%。" },
+					name = "Khích lệ hộ vệ",
+					standard = "Mỗi 1 anh hùng ở gần tăng 5% giáp cho hiệp sĩ.",
+					enhanced = "Mỗi 1 anh hùng ở gần tăng 5% giáp cho hiệp sĩ.",
+					levels_standard = { "Mỗi 1 anh hùng ở gần tăng 5% giáp cho hiệp sĩ.", "Mỗi 1 anh hùng ở gần tăng 10% giáp cho hiệp sĩ.", "Mỗi 1 anh hùng ở gần tăng 15% giáp cho hiệp sĩ." },
+					levels_enhanced = { "Mỗi 1 anh hùng ở gần tăng 5% giáp cho hiệp sĩ.", "Mỗi 1 anh hùng ở gần tăng 10% giáp cho hiệp sĩ.", "Mỗi 1 anh hùng ở gần tăng 15% giáp cho hiệp sĩ." },
 					prices_standard = { "120", "120", "120" }, prices_enhanced = { "120", "120", "120" }
 				},
 				{
-					name = "战斗坚韧",
-					standard = "骑士进入战斗时恢复25%最大生命值。CD15秒。",
-					enhanced = "骑士进入战斗时恢复25%最大生命值。CD15秒。",
-					levels_standard = { "骑士进入战斗时恢复25%最大生命值。CD15秒。", "骑士进入战斗时恢复40%最大生命值。CD15秒。", "骑士进入战斗时恢复60%最大生命值。CD15秒。" },
-					levels_enhanced = { "骑士进入战斗时恢复25%最大生命值。CD15秒。", "骑士进入战斗时恢复40%最大生命值。CD15秒。", "骑士进入战斗时恢复60%最大生命值。CD15秒。" },
+					name = "Bền bỉ chiến đấu",
+					standard = "Khi vào giao tranh, hiệp sĩ hồi 25% máu tối đa. CD: 15 giây.",
+					enhanced = "Khi vào giao tranh, hiệp sĩ hồi 25% máu tối đa. CD: 15 giây.",
+					levels_standard = { "Khi vào giao tranh, hiệp sĩ hồi 25% máu tối đa. CD: 15 giây.", "Khi vào giao tranh, hiệp sĩ hồi 40% máu tối đa. CD: 15 giây.", "Khi vào giao tranh, hiệp sĩ hồi 60% máu tối đa. CD: 15 giây." },
+					levels_enhanced = { "Khi vào giao tranh, hiệp sĩ hồi 25% máu tối đa. CD: 15 giây.", "Khi vào giao tranh, hiệp sĩ hồi 40% máu tối đa. CD: 15 giây.", "Khi vào giao tranh, hiệp sĩ hồi 60% máu tối đa. CD: 15 giây." },
 					prices_standard = { "180", "180", "180" }, prices_enhanced = { "180", "180", "180" }
 				},
 				{
-					name = "继承遗志",
-					standard = "附近骑士阵亡后，其余骑士攻击间隔缩短20%，持续8秒。",
-					enhanced = "附近骑士阵亡后，其余骑士攻击间隔缩短20%，持续8秒，并恢复20%最大生命值。",
-					levels_standard = { "附近骑士阵亡后，其余骑士攻击间隔缩短20%，持续8秒。", "附近骑士阵亡后，其余骑士攻击间隔缩短40%，持续8秒。", "附近骑士阵亡后，其余骑士攻击间隔缩短60%，持续8秒。" },
-					levels_enhanced = { "附近骑士阵亡后，其余骑士攻击间隔缩短20%，持续8秒，并恢复20%最大生命值。", "附近骑士阵亡后，其余骑士攻击间隔缩短40%，持续8秒，并恢复35%最大生命值。", "附近骑士阵亡后，其余骑士攻击间隔缩短60%，持续8秒，并恢复50%最大生命值。" },
+					name = "Kế thừa ý chí",
+					standard = "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 20% khoảng cách giữa đòn đánh trong 8 giây.",
+					enhanced = "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 20% khoảng cách giữa đòn đánh trong 8 giây và hồi 20% máu tối đa.",
+					levels_standard = { "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 20% khoảng cách giữa đòn đánh trong 8 giây.", "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 40% khoảng cách giữa đòn đánh trong 8 giây.", "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 60% khoảng cách giữa đòn đánh trong 8 giây." },
+					levels_enhanced = { "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 20% khoảng cách giữa đòn đánh trong 8 giây và hồi 20% máu tối đa.", "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 40% khoảng cách giữa đòn đánh trong 8 giây và hồi 35% máu tối đa.", "Khi một hiệp sĩ gần đó ngã xuống, những người còn lại giảm 60% khoảng cách giữa đòn đánh trong 8 giây và hồi 50% máu tối đa." },
 					prices_standard = { "150", "100", "100" }, prices_enhanced = { "150", "100", "100" }
 				},
 				{
-					name = "最后防线",
-					standard = "骑士生命值低于20%且处于近战时，无敌5秒。CD30秒。",
-					enhanced = "骑士生命值低于20%且处于近战时，无敌5秒。CD30秒。",
-					levels_standard = { "骑士生命值低于20%且处于近战时，无敌5秒。CD30秒。" },
-					levels_enhanced = { "骑士生命值低于20%且处于近战时，无敌5秒。CD30秒。" },
+					name = "Phòng tuyến cuối cùng",
+					standard = "Khi dưới 20% máu và đang cận chiến, hiệp sĩ bất tử trong 5 giây. CD: 30 giây.",
+					enhanced = "Khi dưới 20% máu và đang cận chiến, hiệp sĩ bất tử trong 5 giây. CD: 30 giây.",
+					levels_standard = { "Khi dưới 20% máu và đang cận chiến, hiệp sĩ bất tử trong 5 giây. CD: 30 giây." },
+					levels_enhanced = { "Khi dưới 20% máu và đang cận chiến, hiệp sĩ bất tử trong 5 giây. CD: 30 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_wizard_lvl4"] = {
 			doc_id = "",
-			title = "魔典学者",
+			title = "Học giả Cổ thư",
 			attack = {
-				standard = "每2秒激发左右两侧魔典分别向敌人发射魔法弹。面板为单个魔法弹的数值。",
-				enhanced = "每2秒激发左右两侧魔典分别向敌人发射魔法弹。面板为单个魔法弹的数值。"
+				standard = "Cứ 2 giây kích hoạt hai cổ thư hai bên, mỗi cuốn bắn một đạn phép. Chỉ số hiển thị là của một đạn.",
+				enhanced = "Cứ 2 giây kích hoạt hai cổ thư hai bên, mỗi cuốn bắn một đạn phép. Chỉ số hiển thị là của một đạn."
 			},
-			change_note = "将3技能的数值为初版魔典的数值。但是作为一个高DPS并且还自带大范围增伤的塔，不能再加强了，这么改3技能仅提升了上限，而没有提升性价比。", port_note = "", notes = "", skills = {
+			change_note = "Đưa chỉ số kỹ năng 3 về mức của phiên bản Học giả Cổ thư đầu tiên. Tháp đã có DPS cao và tăng sát thương diện rộng nên không tăng thêm. Đổi kỹ năng 3 chỉ tăng tiềm năng tối đa, không tăng hiệu quả so với giá.", port_note = "", notes = "", skills = {
 				{
-					name = "火炎法书",
-					standard = "投出火炎法书，造成40点魔法伤害，并在4秒内造成32点真实灼烧伤害。CD20秒。",
-					enhanced = "投出火炎法书，造成40点魔法伤害，并在4秒内造成32点真实灼烧伤害。CD20秒。",
-					levels_standard = { "投出火炎法书，造成40点魔法伤害，并在4秒内造成32点真实灼烧伤害。CD20秒。", "投出火炎法书，造成100点魔法伤害，并在4秒内造成48点真实灼烧伤害。CD20秒。", "投出火炎法书，造成160点魔法伤害，并在4秒内造成64点真实灼烧伤害。CD20秒。" },
-					levels_enhanced = { "投出火炎法书，造成40点魔法伤害，并在4秒内造成32点真实灼烧伤害。CD20秒。", "投出火炎法书，造成100点魔法伤害，并在4秒内造成48点真实灼烧伤害。CD20秒。", "投出火炎法书，造成160点魔法伤害，并在4秒内造成64点真实灼烧伤害。CD20秒。" },
+					name = "Sách lửa",
+					standard = "Ném sách lửa gây 40 sát thương phép, rồi 32 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.",
+					enhanced = "Ném sách lửa gây 40 sát thương phép, rồi 32 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.",
+					levels_standard = { "Ném sách lửa gây 40 sát thương phép, rồi 32 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.", "Ném sách lửa gây 100 sát thương phép, rồi 48 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.", "Ném sách lửa gây 160 sát thương phép, rồi 64 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây." },
+					levels_enhanced = { "Ném sách lửa gây 40 sát thương phép, rồi 32 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.", "Ném sách lửa gây 100 sát thương phép, rồi 48 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây.", "Ném sách lửa gây 160 sát thương phép, rồi 64 sát thương bỏng chuẩn trong 4 giây. CD: 20 giây." },
 					prices_standard = { "120", "120", "120" }, prices_enhanced = { "120", "120", "120" }
 				},
 				{
-					name = "知识之卷",
-					standard = "使附近防御塔伤害提高50%，持续8秒。CD25秒。",
-					enhanced = "使附近防御塔伤害提高50%，持续8秒。CD25秒。",
-					levels_standard = { "使附近防御塔伤害提高50%，持续8秒。CD25秒。", "使附近防御塔伤害提高75%，持续10秒。CD25秒。", "使附近防御塔伤害提高100%，持续12秒。CD25秒。" },
-					levels_enhanced = { "使附近防御塔伤害提高50%，持续8秒。CD25秒。", "使附近防御塔伤害提高75%，持续10秒。CD25秒。", "使附近防御塔伤害提高100%，持续12秒。CD25秒。" },
+					name = "Cuộn tri thức",
+					standard = "Tăng 50% sát thương cho tháp gần đó trong 8 giây. CD: 25 giây.",
+					enhanced = "Tăng 50% sát thương cho tháp gần đó trong 8 giây. CD: 25 giây.",
+					levels_standard = { "Tăng 50% sát thương cho tháp gần đó trong 8 giây. CD: 25 giây.", "Tăng 75% sát thương cho tháp gần đó trong 10 giây. CD: 25 giây.", "Tăng 100% sát thương cho tháp gần đó trong 12 giây. CD: 25 giây." },
+					levels_enhanced = { "Tăng 50% sát thương cho tháp gần đó trong 8 giây. CD: 25 giây.", "Tăng 75% sát thương cho tháp gần đó trong 10 giây. CD: 25 giây.", "Tăng 100% sát thương cho tháp gần đó trong 12 giây. CD: 25 giây." },
 					prices_standard = { "200", "160", "160" }, prices_enhanced = { "200", "160", "160" }
 				},
 				{
-					name = "备份抄本",
-					standard = "投出魔法书，命中造成50点伤害，再射出3发34-60点魔法弹。CD25秒。",
-					enhanced = "投出魔法书，命中造成50点伤害，再射出5发35-65点魔法弹。CD25秒。",
-					levels_standard = { "投出魔法书，命中造成50点伤害，再射出3发34-60点魔法弹。CD25秒。", "投出魔法书，命中造成50点伤害，再射出5发52-92点魔法弹。CD25秒。", "投出魔法书，命中造成50点伤害，再射出8发62-108点魔法弹。CD25秒。" },
-					levels_enhanced = { "投出魔法书，命中造成50点伤害，再射出5发35-65点魔法弹。CD25秒。", "投出魔法书，命中造成50点伤害，再射出7发56-104点魔法弹。CD25秒。", "投出魔法书，命中造成50点伤害，再射出10发77-143点魔法弹。CD25秒。" },
+					name = "Bản sao dự phòng",
+					standard = "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 3 đạn phép gây 34-60 sát thương. CD: 25 giây.",
+					enhanced = "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 5 đạn phép gây 35-65 sát thương. CD: 25 giây.",
+					levels_standard = { "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 3 đạn phép gây 34-60 sát thương. CD: 25 giây.", "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 5 đạn phép gây 52-92 sát thương. CD: 25 giây.", "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 8 đạn phép gây 62-108 sát thương. CD: 25 giây." },
+					levels_enhanced = { "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 5 đạn phép gây 35-65 sát thương. CD: 25 giây.", "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 7 đạn phép gây 56-104 sát thương. CD: 25 giây.", "Ném sách phép gây 50 sát thương khi trúng đích, rồi bắn 10 đạn phép gây 77-143 sát thương. CD: 25 giây." },
 					prices_standard = { "160", "160", "160" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "奥术陨石",
-					standard = "召唤陨石造成620点魔法伤害，并眩晕周围敌人1秒。CD36秒。",
-					enhanced = "召唤陨石造成620点魔法伤害，并眩晕周围敌人1秒。CD36秒。",
-					levels_standard = { "召唤陨石造成620点魔法伤害，并眩晕周围敌人1秒。CD36秒。" },
-					levels_enhanced = { "召唤陨石造成620点魔法伤害，并眩晕周围敌人1秒。CD36秒。" },
+					name = "Thiên thạch Bí thuật",
+					standard = "Gọi thiên thạch gây 620 sát thương phép và làm choáng địch xung quanh 1 giây. CD: 36 giây.",
+					enhanced = "Gọi thiên thạch gây 620 sát thương phép và làm choáng địch xung quanh 1 giây. CD: 36 giây.",
+					levels_standard = { "Gọi thiên thạch gây 620 sát thương phép và làm choáng địch xung quanh 1 giây. CD: 36 giây." },
+					levels_enhanced = { "Gọi thiên thạch gây 620 sát thương phép và làm choáng địch xung quanh 1 giây. CD: 36 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_catapult_lvl4"] = {
 			doc_id = "",
-			title = "皇家投石机",
+			title = "Máy bắn đá Hoàng gia",
 			attack = {
-				standard = "每5.2秒向敌人投射石块，造成120范围的炮弹伤害。",
-				enhanced = "每5.2秒向敌人投射石块，造成120范围的炮弹伤害；每发普攻石块落地后沿路径向回滚动，最多滚动400距离，每次滚动伤害为该发面板伤害的15%。"
+				standard = "Cứ 5.2 giây ném đá, gây sát thương pháo trong phạm vi 120.",
+				enhanced = "Cứ 5.2 giây ném đá, gây sát thương pháo trong phạm vi 120. Sau khi tiếp đất, đá lăn ngược đường tối đa 400 đơn vị khoảng cách; mỗi lần va chạm gây sát thương bằng 15% chỉ số của đòn đó."
 			},
-			change_note = "价伤比全代倒数第一炮。加强普攻使得每发普攻都具备奥义技能的特效。", port_note = "", notes = "", skills = {
+			change_note = "Tháp pháo có hiệu quả sát thương so với giá thấp nhất trong các phần. Cường hóa đánh thường để mọi đòn đều có hiệu ứng của tuyệt kỹ.", port_note = "", notes = "", skills = {
 				{
-					name = "焦油覆地",
-					standard = "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速40%，持续6秒。CD15秒。",
-					enhanced = "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速40%，持续6秒。CD15秒。",
-					levels_standard = { "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速40%，持续6秒。CD15秒。", "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速50%，持续8秒。CD15秒。", "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速60%，持续10秒。CD15秒。" },
-					levels_enhanced = { "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速40%，持续6秒。CD15秒。", "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速50%，持续8秒。CD15秒。", "投掷焦油桶，爆炸造成80-120点炮弹伤害，并使敌人减速60%，持续10秒。CD15秒。" },
+					name = "Phủ hắc ín",
+					standard = "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 40% trong 6 giây. CD: 15 giây.",
+					enhanced = "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 40% trong 6 giây. CD: 15 giây.",
+					levels_standard = { "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 40% trong 6 giây. CD: 15 giây.", "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 50% trong 8 giây. CD: 15 giây.", "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 60% trong 10 giây. CD: 15 giây." },
+					levels_enhanced = { "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 40% trong 6 giây. CD: 15 giây.", "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 50% trong 8 giây. CD: 15 giây.", "Ném thùng hắc ín, nổ gây 80-120 sát thương pháo và làm chậm 60% trong 10 giây. CD: 15 giây." },
 					prices_standard = { "100", "100", "100" }, prices_enhanced = { "100", "100", "100" }
 				},
 				{
-					name = "爆裂投石",
-					standard = "普通石块落地后再次爆炸，造成18-32点炮弹伤害。",
-					enhanced = "普通石块落地后再次爆炸，造成18-32点炮弹伤害；石块随后向回滚动最多25个路径节点，每次滚动伤害为该发面板伤害的15%。",
-					levels_standard = { "普通石块落地后再次爆炸，造成18-32点炮弹伤害。", "普通石块落地后再次爆炸，造成36-64点炮弹伤害。", "普通石块落地后再次爆炸，造成52-92点炮弹伤害。" },
-					levels_enhanced = { "普通石块落地后再次爆炸，造成18-32点炮弹伤害。该部分伤害可用于加成滚动伤害。", "普通石块落地后再次爆炸，造成36-64点炮弹伤害；该部分伤害可用于加成滚动伤害。", "普通石块落地后再次爆炸，造成52-92点炮弹伤害；该部分伤害可用于加成滚动伤害。" },
+					name = "Đá nổ",
+					standard = "Đá thường nổ thêm sau khi tiếp đất, gây 18-32 sát thương pháo.",
+					enhanced = "Đá thường nổ thêm sau khi tiếp đất, gây 18-32 sát thương pháo, rồi lăn ngược tối đa 25 điểm trên đường. Mỗi lần va chạm gây sát thương bằng 15% chỉ số của đòn đó.",
+					levels_standard = { "Đá thường nổ thêm sau khi tiếp đất, gây 18-32 sát thương pháo.", "Đá thường nổ thêm sau khi tiếp đất, gây 36-64 sát thương pháo.", "Đá thường nổ thêm sau khi tiếp đất, gây 52-92 sát thương pháo." },
+					levels_enhanced = { "Đá thường nổ thêm sau khi tiếp đất, gây 18-32 sát thương pháo. Phần sát thương này được tính vào sát thương khi đá lăn.", "Đá thường nổ thêm sau khi tiếp đất, gây 36-64 sát thương pháo. Phần sát thương này được tính vào sát thương khi đá lăn.", "Đá thường nổ thêm sau khi tiếp đất, gây 52-92 sát thương pháo. Phần sát thương này được tính vào sát thương khi đá lăn." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "防卫区域",
-					standard = "每7秒在塔旁布置陷阱，触发时造成20-30点物理伤害并眩晕1秒，最多存放3个。",
-					enhanced = "每7秒在塔旁布置陷阱，触发时造成20-30点物理伤害并眩晕1秒，最多存放3个。",
-					levels_standard = { "每7秒在塔旁布置陷阱，触发时造成20-30点物理伤害并眩晕1秒，最多存放3个。", "每7秒在塔旁布置陷阱，触发时造成32-48点物理伤害并眩晕2秒，最多存放4个。", "每7秒在塔旁布置陷阱，触发时造成48-72点物理伤害并眩晕3秒，最多存放5个。" },
-					levels_enhanced = { "每7秒在塔旁布置陷阱，触发时造成20-30点物理伤害并眩晕1秒，最多存放3个。", "每7秒在塔旁布置陷阱，触发时造成32-48点物理伤害并眩晕2秒，最多存放4个。", "每7秒在塔旁布置陷阱，触发时造成48-72点物理伤害并眩晕3秒，最多存放5个。" },
+					name = "Khu vực phòng vệ",
+					standard = "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 20-30 sát thương vật lý và làm choáng 1 giây. Tối đa 3 bẫy.",
+					enhanced = "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 20-30 sát thương vật lý và làm choáng 1 giây. Tối đa 3 bẫy.",
+					levels_standard = { "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 20-30 sát thương vật lý và làm choáng 1 giây. Tối đa 3 bẫy.", "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 32-48 sát thương vật lý và làm choáng 2 giây. Tối đa 4 bẫy.", "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 48-72 sát thương vật lý và làm choáng 3 giây. Tối đa 5 bẫy." },
+					levels_enhanced = { "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 20-30 sát thương vật lý và làm choáng 1 giây. Tối đa 3 bẫy.", "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 32-48 sát thương vật lý và làm choáng 2 giây. Tối đa 4 bẫy.", "Cứ 7 giây đặt bẫy cạnh tháp. Khi kích hoạt, gây 48-72 sát thương vật lý và làm choáng 3 giây. Tối đa 5 bẫy." },
 					prices_standard = { "150", "100", "100" }, prices_enhanced = { "150", "100", "100" }
 				},
 				{
-					name = "燃焰投石",
-					standard = "掷出燃烧巨石，沿路滚动500距离碰撞并爆炸，总计造成195点炮弹伤害，并留下灼烧。CD30秒。",
-					enhanced = "掷出燃烧巨石，沿路滚动500距离碰撞并爆炸，总计造成195点炮弹伤害，并留下灼烧。CD30秒。",
-					levels_standard = { "掷出燃烧巨石，沿路滚动500距离碰撞并爆炸，总计造成195点炮弹伤害，并留下灼烧。CD30秒。" },
-					levels_enhanced = { "掷出燃烧巨石，沿路滚动500距离碰撞并爆炸，总计造成195点炮弹伤害，并留下灼烧。CD30秒。" },
+					name = "Đá lửa",
+					standard = "Ném đá cháy lăn 500 đơn vị khoảng cách, va chạm và phát nổ, gây tổng cộng 195 sát thương pháo và để lại vùng cháy. CD: 30 giây.",
+					enhanced = "Ném đá cháy lăn 500 đơn vị khoảng cách, va chạm và phát nổ, gây tổng cộng 195 sát thương pháo và để lại vùng cháy. CD: 30 giây.",
+					levels_standard = { "Ném đá cháy lăn 500 đơn vị khoảng cách, va chạm và phát nổ, gây tổng cộng 195 sát thương pháo và để lại vùng cháy. CD: 30 giây." },
+					levels_enhanced = { "Ném đá cháy lăn 500 đơn vị khoảng cách, va chạm và phát nổ, gây tổng cộng 195 sát thương pháo và để lại vùng cháy. CD: 30 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_ranger_lvl4"] = {
 			doc_id = "",
-			title = "精灵精英游侠",
+			title = "Du kích Tinh linh Tinh nhuệ",
 			attack = {
-				standard = "每1.5(1.35)秒射出1支箭矢，造成物理伤害。",
-				enhanced = "每1.5(1.35)秒射出1支箭矢，造成物理伤害。"
+				standard = "Cứ 1.5 (1.35) giây bắn 1 mũi tên gây sát thương vật lý.",
+				enhanced = "Cứ 1.5 (1.35) giây bắn 1 mũi tên gây sát thương vật lý."
 			},
-			change_note = "本身功能性和群伤能力就很强的塔，仅增强了1技能的实用性和3技能的灵活性。", port_note = "", notes = "", skills = {
+			change_note = "Tháp vốn đa dụng và gây sát thương nhóm tốt. Chỉ tăng tính hữu dụng kỹ năng 1 và sự linh hoạt kỹ năng 3.", port_note = "", notes = "", skills = {
 				{
-					name = "淬毒箭矢",
-					standard = "射出3支毒箭，每支造成物理伤害，并在3秒内造成24点真实毒伤。CD15秒。",
-					enhanced = "射出3支毒箭，每支造成物理伤害，并在3秒内造成24点真实毒伤。CD12秒。",
-					levels_standard = { "射出3支毒箭，每支造成物理伤害，并在3秒内造成24点真实毒伤。CD15秒。", "射出3支毒箭，每支造成物理伤害，并在5秒内造成80点真实毒伤。CD15秒。", "射出3支毒箭，每支造成物理伤害，并在8秒内造成192点真实毒伤。CD15秒。" },
-					levels_enhanced = { "射出3支毒箭，每支造成物理伤害，并在3秒内造成24点真实毒伤。CD12秒。", "射出3支毒箭，每支造成物理伤害，并在5秒内造成80点真实毒伤。CD12秒。", "射出3支毒箭，每支造成物理伤害，并在8秒内造成192点真实毒伤。CD12秒。" },
+					name = "Tên tẩm độc",
+					standard = "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 24 sát thương độc chuẩn trong 3 giây. CD: 15 giây.",
+					enhanced = "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 24 sát thương độc chuẩn trong 3 giây. CD: 12 giây.",
+					levels_standard = { "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 24 sát thương độc chuẩn trong 3 giây. CD: 15 giây.", "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 80 sát thương độc chuẩn trong 5 giây. CD: 15 giây.", "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 192 sát thương độc chuẩn trong 8 giây. CD: 15 giây." },
+					levels_enhanced = { "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 24 sát thương độc chuẩn trong 3 giây. CD: 12 giây.", "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 80 sát thương độc chuẩn trong 5 giây. CD: 12 giây.", "Bắn 3 tên độc, mỗi tên gây sát thương vật lý và 192 sát thương độc chuẩn trong 8 giây. CD: 12 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "刺藤射击",
-					standard = "蓄力射击造成80-120点物理伤害并眩晕2秒，附近敌人减速60%持续6秒。CD25秒。",
-					enhanced = "蓄力射击造成80-120点物理伤害并眩晕2秒，附近敌人减速60%持续6秒。CD25秒。",
-					levels_standard = { "蓄力射击造成80-120点物理伤害并眩晕2秒，附近敌人减速60%持续6秒。CD25秒。", "蓄力射击造成120-180点物理伤害并眩晕2秒，附近敌人减速60%持续7秒。CD25秒。", "蓄力射击造成160-240点物理伤害并眩晕2秒，附近敌人减速60%持续9秒。CD25秒。" },
-					levels_enhanced = { "蓄力射击造成80-120点物理伤害并眩晕2秒，附近敌人减速60%持续6秒。CD25秒。", "蓄力射击造成120-180点物理伤害并眩晕2秒，附近敌人减速60%持续7秒。CD25秒。", "蓄力射击造成160-240点物理伤害并眩晕2秒，附近敌人减速60%持续9秒。CD25秒。" },
+					name = "Bắn dây gai",
+					standard = "Giương cung bắn gây 80-120 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 6 giây. CD: 25 giây.",
+					enhanced = "Giương cung bắn gây 80-120 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 6 giây. CD: 25 giây.",
+					levels_standard = { "Giương cung bắn gây 80-120 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 6 giây. CD: 25 giây.", "Giương cung bắn gây 120-180 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 7 giây. CD: 25 giây.", "Giương cung bắn gây 160-240 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 9 giây. CD: 25 giây." },
+					levels_enhanced = { "Giương cung bắn gây 80-120 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 6 giây. CD: 25 giây.", "Giương cung bắn gây 120-180 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 7 giây. CD: 25 giây.", "Giương cung bắn gây 160-240 sát thương vật lý và làm choáng 2 giây; làm chậm địch gần đó 60% trong 9 giây. CD: 25 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "林地弹射",
-					standard = "箭矢最多弹射3次，弹射伤害为原伤害的25%。",
-					enhanced = "箭矢最多弹射3次，弹射伤害为原伤害的25%。",
-					levels_standard = { "箭矢最多弹射3次，弹射伤害为原伤害的25%。", "箭矢最多弹射3次，弹射伤害为原伤害的50%。", "箭矢最多弹射3次，弹射伤害为原伤害的75%。" },
-					levels_enhanced = { "箭矢最多弹射3次，弹射伤害为原伤害的25%。", "箭矢最多弹射3次，弹射伤害为原伤害的50%。", "箭矢最多弹射3次，弹射伤害为原伤害的75%。" },
+					name = "Tên nảy Rừng xanh",
+					standard = "Tên nảy tối đa 3 lần, sát thương nảy bằng 25% sát thương ban đầu.",
+					enhanced = "Tên nảy tối đa 3 lần, sát thương nảy bằng 25% sát thương ban đầu.",
+					levels_standard = { "Tên nảy tối đa 3 lần, sát thương nảy bằng 25% sát thương ban đầu.", "Tên nảy tối đa 3 lần, sát thương nảy bằng 50% sát thương ban đầu.", "Tên nảy tối đa 3 lần, sát thương nảy bằng 75% sát thương ban đầu." },
+					levels_enhanced = { "Tên nảy tối đa 3 lần, sát thương nảy bằng 25% sát thương ban đầu.", "Tên nảy tối đa 3 lần, sát thương nảy bằng 50% sát thương ban đầu.", "Tên nảy tối đa 3 lần, sát thương nảy bằng 75% sát thương ban đầu." },
 					prices_standard = { "250", "200", "200" }, prices_enhanced = { "230", "185", "185" }
 				},
 				{
-					name = "无情射杀",
-					standard = "射杀生命值低于40%的普通敌人；对首领造成500点伤害。CD32秒。",
-					enhanced = "射杀生命值低于40%的普通敌人；对首领造成500点伤害。CD32秒。",
-					levels_standard = { "射杀生命值低于40%的普通敌人；对首领造成500点伤害。CD32秒。" },
-					levels_enhanced = { "射杀生命值低于40%的普通敌人；对首领造成500点伤害。CD32秒。" },
+					name = "Bắn hạ tàn nhẫn",
+					standard = "Tiêu diệt địch thường dưới 40% máu; gây 500 sát thương lên trùm. CD: 32 giây.",
+					enhanced = "Tiêu diệt địch thường dưới 40% máu; gây 500 sát thương lên trùm. CD: 32 giây.",
+					levels_standard = { "Tiêu diệt địch thường dưới 40% máu; gây 500 sát thương lên trùm. CD: 32 giây." },
+					levels_enhanced = { "Tiêu diệt địch thường dưới 40% máu; gây 500 sát thương lên trùm. CD: 32 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_culverine_lvl4"] = {
 			doc_id = "",
-			title = "矮人扩散炮",
+			title = "Pháo tản Người Lùn",
 			attack = {
-				standard = "每3秒向敌人发射炮弹，造成110范围的炮弹伤害。",
-				enhanced = "每3秒向敌人发射炮弹，造成110范围的炮弹伤害。"
+				standard = "Cứ 3 giây bắn đạn pháo, gây sát thương pháo trong phạm vi 110.",
+				enhanced = "Cứ 3 giây bắn đạn pháo, gây sát thương pháo trong phạm vi 110."
 			},
-			change_note = "3个技能只有连射能配合法术，而削甲和硫磺都没用，硫磺甚至还是负提升。削甲改为对高甲怪的额外克制，硫磺作为强化普攻也额外增加了一次普攻的数值。", port_note = "", notes = "", skills = {
+			change_note = "Trong 3 kỹ năng, chỉ bắn liên thanh phối hợp tốt với phép; giảm giáp và lưu huỳnh ít hữu ích, lưu huỳnh còn làm giảm hiệu quả. Đổi giảm giáp thành khắc chế địch giáp cao; đạn lưu huỳnh là đòn cường hóa nên nhận thêm sát thương của một đòn thường.", port_note = "", notes = "", skills = {
 				{
-					name = "硫磺爆裂",
-					standard = "发射硫磺弹，造成66-86点炮弹伤害，烟雾使敌人魔抗降低100%持续6秒。CD16秒。",
-					enhanced = "只需1名敌人即可发射硫磺弹，造成普攻伤害+66-86点炮弹伤害，；烟雾使敌人魔抗降低100%持续6秒。CD16秒。",
-					levels_standard = { "发射硫磺弹，造成66-86点炮弹伤害，烟雾使敌人魔抗降低100%持续6秒。CD16秒。", "发射硫磺弹，造成108-148点炮弹伤害，烟雾使敌人魔抗降低100%持续8秒。CD16秒。", "发射硫磺弹，造成156-218点炮弹伤害，烟雾使敌人魔抗降低100%持续10秒。CD16秒。" },
-					levels_enhanced = { "只需1名敌人即可发射硫磺弹，造成普攻伤害+66-86点炮弹伤害；烟雾使敌人魔抗降低100%持续6秒。CD16秒。", "只需1名敌人即可发射硫磺弹，造成普攻伤害+108-148点炮弹伤害；烟雾使敌人魔抗降低100%持续8秒。CD16秒。", "只需1名敌人即可发射硫磺弹，造成普攻伤害+156-218点炮弹伤害；烟雾使敌人魔抗降低100%持续10秒。CD16秒。" },
+					name = "Nổ lưu huỳnh",
+					standard = "Bắn đạn lưu huỳnh gây 66-86 sát thương pháo. Khói giảm 100% kháng phép của địch trong 6 giây. CD: 16 giây.",
+					enhanced = "Chỉ cần 1 địch để bắn đạn lưu huỳnh, gây sát thương đánh thường cộng 66-86 sát thương pháo. Khói giảm 100% kháng phép trong 6 giây. CD: 16 giây.",
+					levels_standard = { "Bắn đạn lưu huỳnh gây 66-86 sát thương pháo. Khói giảm 100% kháng phép của địch trong 6 giây. CD: 16 giây.", "Bắn đạn lưu huỳnh gây 108-148 sát thương pháo. Khói giảm 100% kháng phép của địch trong 8 giây. CD: 16 giây.", "Bắn đạn lưu huỳnh gây 156-218 sát thương pháo. Khói giảm 100% kháng phép của địch trong 10 giây. CD: 16 giây." },
+					levels_enhanced = { "Chỉ cần 1 địch để bắn đạn lưu huỳnh, gây sát thương đánh thường cộng 66-86 sát thương pháo. Khói giảm 100% kháng phép trong 6 giây. CD: 16 giây.", "Chỉ cần 1 địch để bắn đạn lưu huỳnh, gây sát thương đánh thường cộng 108-148 sát thương pháo. Khói giảm 100% kháng phép trong 8 giây. CD: 16 giây.", "Chỉ cần 1 địch để bắn đạn lưu huỳnh, gây sát thương đánh thường cộng 156-218 sát thương pháo. Khói giảm 100% kháng phép trong 10 giây. CD: 16 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "锋利弹片",
-					standard = "普通炮弹命中后降低敌人3%护甲。",
-					enhanced = "对每名命中的敌人额外造成其护甲百分数值×0.25的真实伤害。",
-					levels_standard = { "普通炮弹命中后降低敌人3%护甲。", "普通炮弹命中后降低敌人5%护甲。", "普通炮弹命中后降低敌人7%护甲。" },
-					levels_enhanced = { "对每名命中的敌人额外造成护甲百分比数值0.3倍的真实伤害。", "对每名命中的敌人额外造成其护甲百分比数值0.7倍的真实伤害。", "对每名命中的敌人额外造成其护甲百分数值1.2倍的真实伤害。" },
+					name = "Mảnh đạn sắc",
+					standard = "Đạn pháo thường giảm 3% giáp của địch trúng đòn.",
+					enhanced = "Mỗi địch trúng đòn nhận thêm sát thương chuẩn bằng giá trị phần trăm giáp của nó × 0.25.",
+					levels_standard = { "Đạn pháo thường giảm 3% giáp của địch trúng đòn.", "Đạn pháo thường giảm 5% giáp của địch trúng đòn.", "Đạn pháo thường giảm 7% giáp của địch trúng đòn." },
+					levels_enhanced = { "Mỗi địch trúng đòn nhận thêm sát thương chuẩn bằng 0.3 lần giá trị phần trăm giáp của nó.", "Mỗi địch trúng đòn nhận thêm sát thương chuẩn bằng 0.7 lần giá trị phần trăm giáp của nó.", "Mỗi địch trúng đòn nhận thêm sát thương chuẩn bằng 1.2 lần giá trị phần trăm giáp của nó." },
 					prices_standard = { "100", "100", "100" }, prices_enhanced = { "100", "100", "100" }
 				},
 				{
-					name = "火力全开",
-					standard = "快速连续发射3枚炮弹。CD25秒。",
-					enhanced = "快速连续发射3枚炮弹。CD25秒。",
-					levels_standard = { "快速连续发射3枚炮弹。CD25秒。", "快速连续发射6枚炮弹。CD25秒。", "快速连续发射9枚炮弹。CD25秒。" },
-					levels_enhanced = { "快速连续发射3枚炮弹。CD25秒。", "快速连续发射6枚炮弹。CD25秒。", "快速连续发射9枚炮弹。CD25秒。" },
+					name = "Toàn lực khai hỏa",
+					standard = "Bắn nhanh liên tiếp 3 quả đạn. CD: 25 giây.",
+					enhanced = "Bắn nhanh liên tiếp 3 quả đạn. CD: 25 giây.",
+					levels_standard = { "Bắn nhanh liên tiếp 3 quả đạn. CD: 25 giây.", "Bắn nhanh liên tiếp 6 quả đạn. CD: 25 giây.", "Bắn nhanh liên tiếp 9 quả đạn. CD: 25 giây." },
+					levels_enhanced = { "Bắn nhanh liên tiếp 3 quả đạn. CD: 25 giây.", "Bắn nhanh liên tiếp 6 quả đạn. CD: 25 giây.", "Bắn nhanh liên tiếp 9 quả đạn. CD: 25 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "热焰排气",
-					standard = "攻击6次后排出热焰，对周围敌人造成60-110点炮弹伤害并眩晕2秒。CD35秒。",
-					enhanced = "攻击6次后排出热焰，对周围敌人造成60-110点炮弹伤害并眩晕2秒。CD35秒。",
-					levels_standard = { "攻击6次后排出热焰，对周围敌人造成60-110点炮弹伤害并眩晕2秒。CD35秒。" },
-					levels_enhanced = { "攻击6次后排出热焰，对周围敌人造成60-110点炮弹伤害并眩晕2秒。CD35秒。" },
+					name = "Xả lửa nóng",
+					standard = "Sau 6 lần đánh, xả lửa gây 60-110 sát thương pháo cho địch xung quanh và làm choáng 2 giây. CD: 35 giây.",
+					enhanced = "Sau 6 lần đánh, xả lửa gây 60-110 sát thương pháo cho địch xung quanh và làm choáng 2 giây. CD: 35 giây.",
+					levels_standard = { "Sau 6 lần đánh, xả lửa gây 60-110 sát thương pháo cho địch xung quanh và làm choáng 2 giây. CD: 35 giây." },
+					levels_enhanced = { "Sau 6 lần đánh, xả lửa gây 60-110 sát thương pháo cho địch xung quanh và làm choáng 2 giây. CD: 35 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_sunray_master_lvl4"] = {
 			doc_id = "",
-			title = "日耀大师",
+			title = "Bậc thầy Nhật quang",
 			attack = {
-				standard = "可切换光束与速射模式，默认速射。光束仅对地面敌人攻击，持续0.5秒，每4.43秒对半径55内敌人造成4段面板值的魔法伤害并减速20%；速射模式每0.28秒发射1枚魔法弹。可对空。",
-				enhanced = "可切换光束与速射模式，默认速射。光束仅对地面敌人攻击，持续0.5秒，每4.43秒对半径55内敌人造成4段面板值的魔法伤害并减速20%；速射模式每0.28秒发射1枚魔法弹。可对空。"
+				standard = "Chuyển giữa tia sáng và bắn nhanh, mặc định bắn nhanh. Tia sáng chỉ đánh địch mặt đất trong 0.5 giây: mỗi 4.43 giây gây 4 lần sát thương phép theo chỉ số trong bán kính 55 và làm chậm 20%. Chế độ bắn nhanh bắn 1 đạn phép mỗi 0.28 giây, có thể đánh địch bay.",
+				enhanced = "Chuyển giữa tia sáng và bắn nhanh, mặc định bắn nhanh. Tia sáng chỉ đánh địch mặt đất trong 0.5 giây: mỗi 4.43 giây gây 4 lần sát thương phép theo chỉ số trong bán kính 55 và làm chậm 20%. Chế độ bắn nhanh bắn 1 đạn phép mỗi 0.28 giây, có thể đánh địch bay."
 			},
-			change_note = "以提升光束模式为主，增强了过载的伤害能力和元素的拦截能力。现在光束模式每6.1秒可以换到140点伤害的全范围AOE和短暂控制效果，性价比已经足够。", port_note = "", notes = "", skills = {
+			change_note = "Chủ yếu cải thiện chế độ tia sáng, tăng sát thương Quá tải và khả năng chặn địch của tinh linh. Tia sáng giờ có thể đổi mỗi 6.1 giây lấy 140 sát thương diện rộng cùng khống chế ngắn, đủ hiệu quả so với giá.", port_note = "", notes = "", skills = {
 				{
-					name = "小型元素",
-					standard = "召唤2个小型元素拦截敌人；每个拥有100生命值，近战造成3-5点伤害。",
-					enhanced = "召唤2个小型元素拦截敌人；每个拥有180生命值、40%护甲，近战对32.5范围内敌人造成10-30点伤害。",
-					levels_standard = { "召唤2个小型元素拦截敌人；每个拥有100生命值，近战造成3-5点伤害。", "召唤2个小型元素拦截敌人；每个拥有140生命值，近战造成4-6点伤害。", "召唤2个小型元素拦截敌人；每个拥有180生命值，近战造成5-7点伤害。" },
-					levels_enhanced = { "召唤2个小型元素拦截敌人；每个拥有180生命值、30%护甲，近战对32.5范围内敌人造成10-30点伤害。", "召唤2个小型元素拦截敌人；每个拥有265生命值、50%护甲，近战对32.5范围内敌人造成20-40点伤害。", "召唤2个小型元素拦截敌人；每个拥有350生命值、60%护甲，近战对32.5范围内敌人造成30-50点伤害。" },
+					name = "Tinh linh nhỏ",
+					standard = "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 100 máu và gây 3-5 sát thương cận chiến.",
+					enhanced = "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 180 máu, 40% giáp, cận chiến gây 10-30 sát thương trong phạm vi 32.5.",
+					levels_standard = { "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 100 máu và gây 3-5 sát thương cận chiến.", "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 140 máu và gây 4-6 sát thương cận chiến.", "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 180 máu và gây 5-7 sát thương cận chiến." },
+					levels_enhanced = { "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 180 máu, 30% giáp, cận chiến gây 10-30 sát thương trong phạm vi 32.5.", "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 265 máu, 50% giáp, cận chiến gây 20-40 sát thương trong phạm vi 32.5.", "Triệu hồi 2 tinh linh nhỏ chặn địch; mỗi tinh linh có 350 máu, 60% giáp, cận chiến gây 30-50 sát thương trong phạm vi 32.5." },
 					prices_standard = { "200", "100", "100" }, prices_enhanced = { "300", "150", "150" }
 				},
 				{
-					name = "日耀过载",
-					standard = "光束过热时释放冲击波，造成16-24点伤害，并减速敌人20%持续3秒。",
-					enhanced = "光束过热时释放冲击波，造成64-96点伤害，并减速敌人20%持续3秒。",
-					levels_standard = { "光束过热时释放冲击波，造成16-24点伤害，并减速敌人20%持续3秒。", "光束过热时释放冲击波，造成32-48点伤害，并减速敌人30%持续3秒。", "光束过热时释放冲击波，造成48-72点伤害，并减速敌人40%持续3秒。" },
-					levels_enhanced = { "光束过热时释放冲击波，造成64-96点伤害，并减速敌人20%持续3秒。", "光束过热时释放冲击波，造成88-132点伤害，并减速敌人30%持续3秒。", "光束过热时释放冲击波，造成112-168点伤害，并减速敌人40%持续3秒。" },
+					name = "Quá tải Nhật quang",
+					standard = "Khi tia sáng quá nhiệt, phát sóng xung kích gây 16-24 sát thương và làm chậm 20% trong 3 giây.",
+					enhanced = "Khi tia sáng quá nhiệt, phát sóng xung kích gây 64-96 sát thương và làm chậm 20% trong 3 giây.",
+					levels_standard = { "Khi tia sáng quá nhiệt, phát sóng xung kích gây 16-24 sát thương và làm chậm 20% trong 3 giây.", "Khi tia sáng quá nhiệt, phát sóng xung kích gây 32-48 sát thương và làm chậm 30% trong 3 giây.", "Khi tia sáng quá nhiệt, phát sóng xung kích gây 48-72 sát thương và làm chậm 40% trong 3 giây." },
+					levels_enhanced = { "Khi tia sáng quá nhiệt, phát sóng xung kích gây 64-96 sát thương và làm chậm 20% trong 3 giây.", "Khi tia sáng quá nhiệt, phát sóng xung kích gây 88-132 sát thương và làm chậm 30% trong 3 giây.", "Khi tia sáng quá nhiệt, phát sóng xung kích gây 112-168 sát thương và làm chậm 40% trong 3 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "185", "185", "185" }
 				},
 				{
-					name = "狂暴光能",
-					standard = "速射模式每第4发魔法弹伤害提高40%，并削减目标2%护甲。",
-					enhanced = "速射模式每第2发和第4发魔法弹伤害提高40%，并削减目标2%护甲。",
-					levels_standard = { "速射模式每第4发魔法弹伤害提高40%，并削减目标2%护甲。", "速射模式每第4发魔法弹伤害提高70%，并削减目标3%护甲。", "速射模式每第4发魔法弹伤害提高100%，并削减目标4%护甲。" },
-					levels_enhanced = { "速射模式每第2发和第4发魔法弹伤害提高40%，并削减目标2%护甲。", "速射模式每第2发和第4发魔法弹伤害提高70%，并削减目标3%护甲。", "速射模式每第2发和第4发魔法弹伤害提高100%，并削减目标4%护甲。" },
+					name = "Quang năng cuồng bạo",
+					standard = "Ở chế độ bắn nhanh, mỗi đạn thứ 4 gây thêm 40% sát thương và giảm 2% giáp của mục tiêu.",
+					enhanced = "Ở chế độ bắn nhanh, đạn thứ 2 và thứ 4 gây thêm 40% sát thương và giảm 2% giáp của mục tiêu.",
+					levels_standard = { "Ở chế độ bắn nhanh, mỗi đạn thứ 4 gây thêm 40% sát thương và giảm 2% giáp của mục tiêu.", "Ở chế độ bắn nhanh, mỗi đạn thứ 4 gây thêm 70% sát thương và giảm 3% giáp của mục tiêu.", "Ở chế độ bắn nhanh, mỗi đạn thứ 4 gây thêm 100% sát thương và giảm 4% giáp của mục tiêu." },
+					levels_enhanced = { "Ở chế độ bắn nhanh, đạn thứ 2 và thứ 4 gây thêm 40% sát thương và giảm 2% giáp của mục tiêu.", "Ở chế độ bắn nhanh, đạn thứ 2 và thứ 4 gây thêm 70% sát thương và giảm 3% giáp của mục tiêu.", "Ở chế độ bắn nhanh, đạn thứ 2 và thứ 4 gây thêm 100% sát thương và giảm 4% giáp của mục tiêu." },
 					prices_standard = { "100", "100", "100" }, prices_enhanced = { "130", "130", "130" }
 				},
 				{
-					name = "日耀裁决",
-					standard = "发射4道光束，每道造成36-64点魔法伤害，并眩晕2秒。CD40秒。",
-					enhanced = "发射4道光束，每道造成36-64点魔法伤害，并眩晕2秒。CD40秒。",
-					levels_standard = { "发射4道光束，每道造成36-64点魔法伤害，并眩晕2秒。CD40秒。" },
-					levels_enhanced = { "发射4道光束，每道造成36-64点魔法伤害，并眩晕2秒。CD40秒。" },
+					name = "Phán quyết Nhật quang",
+					standard = "Bắn 4 tia sáng, mỗi tia gây 36-64 sát thương phép và làm choáng 2 giây. CD: 40 giây.",
+					enhanced = "Bắn 4 tia sáng, mỗi tia gây 36-64 sát thương phép và làm choáng 2 giây. CD: 40 giây.",
+					levels_standard = { "Bắn 4 tia sáng, mỗi tia gây 36-64 sát thương phép và làm choáng 2 giây. CD: 40 giây." },
+					levels_enhanced = { "Bắn 4 tia sáng, mỗi tia gây 36-64 sát thương phép và làm choáng 2 giây. CD: 40 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_light_priestess_lvl4"] = {
 			doc_id = "",
-			title = "光明女祭司",
+			title = "Nữ tư tế Ánh sáng",
 			attack = {
-				standard = "每1.6秒发射一个魔法弹攻击敌人。周围的友军获得10/15/20/25点护甲。",
-				enhanced = "每1.6秒发射一个魔法弹攻击敌人。周围的友军获得10/15/20/25点护甲。"
+				standard = "Cứ 1.6 giây bắn đạn phép. Đồng minh xung quanh nhận thêm 10/15/20/25 giáp.",
+				enhanced = "Cứ 1.6 giây bắn đạn phép. Đồng minh xung quanh nhận thêm 10/15/20/25 giáp."
 			},
-			change_note = "增强了攻击与效应范围，提升防御塔的功能性，同时使得能在范围之外沉默敌人。", port_note = "", notes = "", skills = {
+			change_note = "Tăng tầm đánh và phạm vi hiệu ứng để tháp hữu dụng hơn, đồng thời có thể khiến địch ngoài tầm đánh câm lặng.", port_note = "", notes = "", skills = {
 				{
-					name = "守护圣域",
-					standard = "4秒内治疗友军96点生命，并额外提高10%护甲。CD16秒。",
-					enhanced = "4秒内治疗友军96点生命，并额外提高10%护甲。CD16秒。",
-					levels_standard = { "4秒内治疗友军96点生命，并额外提高10%护甲。CD16秒。", "4秒内治疗友军128点生命，并额外提高20%护甲。CD16秒。", "4秒内治疗友军192点生命，并额外提高30%护甲。CD16秒。" },
-					levels_enhanced = { "4秒内治疗友军96点生命，并额外提高10%护甲。CD16秒。", "4秒内治疗友军128点生命，并额外提高20%护甲。CD16秒。", "4秒内治疗友军192点生命，并额外提高30%护甲。CD16秒。" },
+					name = "Thánh địa Hộ vệ",
+					standard = "Hồi 96 máu cho đồng minh trong 4 giây và tăng thêm 10% giáp. CD: 16 giây.",
+					enhanced = "Hồi 96 máu cho đồng minh trong 4 giây và tăng thêm 10% giáp. CD: 16 giây.",
+					levels_standard = { "Hồi 96 máu cho đồng minh trong 4 giây và tăng thêm 10% giáp. CD: 16 giây.", "Hồi 128 máu cho đồng minh trong 4 giây và tăng thêm 20% giáp. CD: 16 giây.", "Hồi 192 máu cho đồng minh trong 4 giây và tăng thêm 30% giáp. CD: 16 giây." },
+					levels_enhanced = { "Hồi 96 máu cho đồng minh trong 4 giây và tăng thêm 10% giáp. CD: 16 giây.", "Hồi 128 máu cho đồng minh trong 4 giây và tăng thêm 20% giáp. CD: 16 giây.", "Hồi 192 máu cho đồng minh trong 4 giây và tăng thêm 30% giáp. CD: 16 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "沉默光环",
-					standard = "使周围敌人减速40%并沉默6秒。CD22秒。",
-					enhanced = "使周围敌人减速40%并沉默6秒。CD22秒。",
-					levels_standard = { "使周围敌人减速40%并沉默6秒。CD22秒。", "使周围敌人减速40%并沉默8秒。CD22秒。", "使周围敌人减速40%并沉默10秒。CD22秒。" },
-					levels_enhanced = { "使周围敌人减速40%并沉默6秒。CD22秒。", "使周围敌人减速40%并沉默8秒。CD22秒。", "使周围敌人减速40%并沉默10秒。CD22秒。" },
+					name = "Hào quang Câm lặng",
+					standard = "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 6 giây. CD: 22 giây.",
+					enhanced = "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 6 giây. CD: 22 giây.",
+					levels_standard = { "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 6 giây. CD: 22 giây.", "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 8 giây. CD: 22 giây.", "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 10 giây. CD: 22 giây." },
+					levels_enhanced = { "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 6 giây. CD: 22 giây.", "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 8 giây. CD: 22 giây.", "Làm chậm địch xung quanh 40% và khiến chúng câm lặng 10 giây. CD: 22 giây." },
 					prices_standard = { "120", "120", "120" }, prices_enhanced = { "120", "120", "120" }
 				},
 				{
-					name = "帕那刻亚的祝福",
-					standard = "使一座防御塔伤害提高50%，持续5秒。CD18秒。",
-					enhanced = "使一座防御塔伤害提高50%，持续5秒。CD18秒。",
-					levels_standard = { "使一座防御塔伤害提高50%，持续5秒。CD18秒。", "使一座防御塔伤害提高75%，持续7秒。CD18秒。", "使一座防御塔伤害提高100%，持续9秒。CD18秒。" },
-					levels_enhanced = { "提升最近1座防御塔15%的攻击力并降低25%的技能冷却时间。", "提升最近2座防御塔15%的攻击力并降低25%的技能冷却时间。", "提升最近3座防御塔15%的攻击力并降低25%的技能冷却时间。" },
+					name = "Phước lành Panacea",
+					standard = "Tăng 50% sát thương cho một tháp trong 5 giây. CD: 18 giây.",
+					enhanced = "Tăng 50% sát thương cho một tháp trong 5 giây. CD: 18 giây.",
+					levels_standard = { "Tăng 50% sát thương cho một tháp trong 5 giây. CD: 18 giây.", "Tăng 75% sát thương cho một tháp trong 7 giây. CD: 18 giây.", "Tăng 100% sát thương cho một tháp trong 9 giây. CD: 18 giây." },
+					levels_enhanced = { "Tăng 15% sức tấn công và giảm 25% thời gian hồi kỹ năng cho 1 tháp gần nhất.", "Tăng 15% sức tấn công và giảm 25% thời gian hồi kỹ năng cho 2 tháp gần nhất.", "Tăng 15% sức tấn công và giảm 25% thời gian hồi kỹ năng cho 3 tháp gần nhất." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "335", "335", "335" }
 				},
 				{
-					name = "圣光降世",
-					standard = "持续5秒发射圣光，每0.25秒造成20-30点魔法伤害并削减护甲；附近友军获得无敌。CD37秒。",
-					enhanced = "持续5秒发射圣光，每0.25秒造成20-30点魔法伤害并削减护甲；附近友军获得无敌。CD37秒。",
-					levels_standard = { "持续5秒发射圣光，每0.25秒造成20-30点魔法伤害并削减护甲；附近友军获得无敌。CD37秒。" },
-					levels_enhanced = { "持续5秒发射圣光，每0.25秒造成20-30点魔法伤害并削减护甲；附近友军获得无敌。CD37秒。" },
+					name = "Thánh quang Giáng thế",
+					standard = "Phóng thánh quang trong 5 giây, gây 20-30 sát thương phép mỗi 0.25 giây và giảm giáp; đồng minh gần đó trở nên bất tử. CD: 37 giây.",
+					enhanced = "Phóng thánh quang trong 5 giây, gây 20-30 sát thương phép mỗi 0.25 giây và giảm giáp; đồng minh gần đó trở nên bất tử. CD: 37 giây.",
+					levels_standard = { "Phóng thánh quang trong 5 giây, gây 20-30 sát thương phép mỗi 0.25 giây và giảm giáp; đồng minh gần đó trở nên bất tử. CD: 37 giây." },
+					levels_enhanced = { "Phóng thánh quang trong 5 giây, gây 20-30 sát thương phép mỗi 0.25 giây và giảm giáp; đồng minh gần đó trở nên bất tử. CD: 37 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_tree_lvl4"] = {
 			doc_id = "",
-			title = "铁木树精",
+			title = "Thụ tinh Thiết mộc",
 			attack = {
-				standard = "塔形态对地面敌人发动范围砸击，4级每次对范围内所有敌人造成炮弹伤害，基础攻击间隔4.07(3.77)秒；切换为树精形态后停止塔身攻击，改由1名树精拦截并近战范围攻击，对100范围内敌人造成炮弹伤害，基础攻击间隔3秒。两种形态互斥。",
-				enhanced = "塔形态对地面敌人发动范围砸击，4级每次对范围内所有敌人造成炮弹伤害，另对随机1名敌人追加2倍面板伤害，基础攻击间隔4.07(3.77)秒；切换为树精形态后停止塔身攻击，改由1名树精拦截并近战范围攻击，对100范围内敌人造成炮弹伤害，另对随机1名敌人追加2倍面板伤害，基础攻击间隔3秒。两种形态互斥。"
+				standard = "Dạng tháp đập diện rộng lên địch mặt đất. Ở cấp 4, mỗi đòn gây sát thương pháo cho mọi địch trong vùng, cách nhau 4.07 (3.77) giây. Đổi sang dạng thụ tinh sẽ ngừng đánh từ tháp, thay bằng 1 thụ tinh chặn địch và cận chiến gây sát thương pháo trong phạm vi 100, cách nhau 3 giây. Chỉ dùng được một dạng mỗi lúc.",
+				enhanced = "Dạng tháp đập diện rộng lên địch mặt đất. Ở cấp 4, mỗi đòn gây sát thương pháo cho mọi địch trong vùng và thêm 2 lần chỉ số sát thương cho 1 địch ngẫu nhiên, cách nhau 4.07 (3.77) giây. Dạng thụ tinh ngừng đánh từ tháp, thay bằng 1 thụ tinh chặn địch, cận chiến gây sát thương pháo trong phạm vi 100 và thêm 2 lần chỉ số sát thương cho 1 địch ngẫu nhiên, cách nhau 3 giây. Chỉ dùng được một dạng mỗi lúc."
 			},
 			change_note = "", port_note = "", notes = "", skills = {
 				{
-					name = "花粉过敏",
-					standard = "释放花粉，4秒内造成32点真实伤害，并使敌人攻击伤害降低90%。CD20秒。",
-					enhanced = "释放花粉，4秒内造成32点真实伤害，使敌人攻击伤害降低90%，物抗和魔抗各降低原值的20%。CD20秒。",
-					levels_standard = { "释放花粉，4秒内造成32点真实伤害，并使敌人攻击伤害降低90%。CD20秒。", "释放花粉，6秒内造成72点真实伤害，并使敌人攻击伤害降低90%。CD20秒。", "释放花粉，8秒内造成128点真实伤害，并使敌人攻击伤害降低90%。CD20秒。" },
-					levels_enhanced = { "释放花粉，4秒内造成32点真实伤害，使敌人攻击伤害降低90%，物抗和魔抗各降低原值的20%。CD20秒。", "释放花粉，6秒内造成72点真实伤害，使敌人攻击伤害降低90%，物抗和魔抗各降低原值的35%。CD20秒。", "释放花粉，8秒内造成128点真实伤害，使敌人攻击伤害降低90%，物抗和魔抗各降低原值的50%。CD20秒。" },
+					name = "Dị ứng phấn hoa",
+					standard = "Phát tán phấn hoa, gây 32 sát thương chuẩn trong 4 giây và giảm 90% sát thương tấn công của địch. CD: 20 giây.",
+					enhanced = "Phát tán phấn hoa, gây 32 sát thương chuẩn trong 4 giây, giảm 90% sát thương tấn công và giảm cả giáp lẫn kháng phép đi 20% giá trị ban đầu. CD: 20 giây.",
+					levels_standard = { "Phát tán phấn hoa, gây 32 sát thương chuẩn trong 4 giây và giảm 90% sát thương tấn công của địch. CD: 20 giây.", "Phát tán phấn hoa, gây 72 sát thương chuẩn trong 6 giây và giảm 90% sát thương tấn công của địch. CD: 20 giây.", "Phát tán phấn hoa, gây 128 sát thương chuẩn trong 8 giây và giảm 90% sát thương tấn công của địch. CD: 20 giây." },
+					levels_enhanced = { "Phát tán phấn hoa, gây 32 sát thương chuẩn trong 4 giây, giảm 90% sát thương tấn công và giảm cả giáp lẫn kháng phép đi 20% giá trị ban đầu. CD: 20 giây.", "Phát tán phấn hoa, gây 72 sát thương chuẩn trong 6 giây, giảm 90% sát thương tấn công và giảm cả giáp lẫn kháng phép đi 35% giá trị ban đầu. CD: 20 giây.", "Phát tán phấn hoa, gây 128 sát thương chuẩn trong 8 giây, giảm 90% sát thương tấn công và giảm cả giáp lẫn kháng phép đi 50% giá trị ban đầu. CD: 20 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "自然之手",
-					standard = "树精形态埋葬一名最大生命值不超过1500的敌人。CD25秒。",
-					enhanced = "树精形态埋葬一名最大生命值不超过1500的敌人。CD25秒。",
-					levels_standard = { "树精形态埋葬一名最大生命值不超过1500的敌人。CD25秒。", "树精形态埋葬一名最大生命值不超过2000的敌人。CD25秒。", "树精形态埋葬一名最大生命值不超过2800的敌人。CD25秒。" },
-					levels_enhanced = { "树精形态埋葬一名最大生命值不超过1500的敌人。CD25秒。", "树精形态埋葬一名最大生命值不超过2000的敌人。CD25秒。", "树精形态埋葬一名最大生命值不超过2800的敌人。CD25秒。" },
+					name = "Bàn tay Thiên nhiên",
+					standard = "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 1500. CD: 25 giây.",
+					enhanced = "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 1500. CD: 25 giây.",
+					levels_standard = { "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 1500. CD: 25 giây.", "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 2000. CD: 25 giây.", "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 2800. CD: 25 giây." },
+					levels_enhanced = { "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 1500. CD: 25 giây.", "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 2000. CD: 25 giây.", "Ở dạng thụ tinh, chôn một kẻ địch có máu tối đa không quá 2800. CD: 25 giây." },
 					prices_standard = { "300", "100", "100" }, prices_enhanced = { "300", "100", "100" }
 				},
 				{
-					name = "盘根错节",
-					standard = "塔形态缠住最多4名敌人2秒。CD14秒。",
-					enhanced = "塔形态缠住最多4名敌人2秒。CD14秒。",
-					levels_standard = { "塔形态缠住最多4名敌人2秒。CD14秒。", "塔形态缠住最多5名敌人3秒。CD14秒。", "塔形态缠住最多6名敌人4秒。CD14秒。" },
-					levels_enhanced = { "塔形态缠住最多4名敌人2秒。CD14秒。", "塔形态缠住最多5名敌人3秒。CD14秒。", "塔形态缠住最多6名敌人4秒。CD14秒。" },
+					name = "Rễ cây chằng chịt",
+					standard = "Ở dạng tháp, trói tối đa 4 địch trong 2 giây. CD: 14 giây.",
+					enhanced = "Ở dạng tháp, trói tối đa 4 địch trong 2 giây. CD: 14 giây.",
+					levels_standard = { "Ở dạng tháp, trói tối đa 4 địch trong 2 giây. CD: 14 giây.", "Ở dạng tháp, trói tối đa 5 địch trong 3 giây. CD: 14 giây.", "Ở dạng tháp, trói tối đa 6 địch trong 4 giây. CD: 14 giây." },
+					levels_enhanced = { "Ở dạng tháp, trói tối đa 4 địch trong 2 giây. CD: 14 giây.", "Ở dạng tháp, trói tối đa 5 địch trong 3 giây. CD: 14 giây.", "Ở dạng tháp, trói tối đa 6 địch trong 4 giây. CD: 14 giây." },
 					prices_standard = { "180", "100", "100" }, prices_enhanced = { "180", "100", "100" }
 				},
 				{
-					name = "暴躁幼苗",
-					standard = "投出橡果，造成80-120点炮弹伤害并召唤3名幼苗；每名幼苗拥有60生命值，近战造成6-10点物理伤害。CD35秒。",
-					enhanced = "投出橡果，造成80-120点炮弹伤害并召唤3名幼苗；每名幼苗拥有60生命值，近战造成6-10点物理伤害。CD35秒。",
-					levels_standard = { "投出橡果，造成80-120点炮弹伤害并召唤3名幼苗；每名幼苗拥有60生命值，近战造成6-10点物理伤害。CD35秒。" },
-					levels_enhanced = { "投出橡果，造成80-120点炮弹伤害并召唤3名幼苗；每名幼苗拥有60生命值，近战造成6-10点物理伤害。CD35秒。" },
+					name = "Mầm cây cáu kỉnh",
+					standard = "Ném quả sồi gây 80-120 sát thương pháo và triệu hồi 3 mầm cây. Mỗi mầm có 60 máu, cận chiến gây 6-10 sát thương vật lý. CD: 35 giây.",
+					enhanced = "Ném quả sồi gây 80-120 sát thương pháo và triệu hồi 3 mầm cây. Mỗi mầm có 60 máu, cận chiến gây 6-10 sát thương vật lý. CD: 35 giây.",
+					levels_standard = { "Ném quả sồi gây 80-120 sát thương pháo và triệu hồi 3 mầm cây. Mỗi mầm có 60 máu, cận chiến gây 6-10 sát thương vật lý. CD: 35 giây." },
+					levels_enhanced = { "Ném quả sồi gây 80-120 sát thương pháo và triệu hồi 3 mầm cây. Mỗi mầm có 60 máu, cận chiến gây 6-10 sát thương vật lý. CD: 35 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_wildcat_lvl4"] = {
 			doc_id = "",
-			title = "野猫女猎手",
+			title = "Nữ thợ săn Linh miêu",
 			attack = {
-				standard = "派出2名女猎手拦截敌人；近战挥击与远程投射均造成物理伤害。攻速1，远程范围350。",
-				enhanced = "派出2名女猎手拦截敌人；近战挥击与远程投射均造成物理伤害。攻速1，远程范围350。近战会有10/20/30/40%的几率闪避敌方攻击。"
+				standard = "Cử 2 nữ thợ săn chặn địch; cận chiến và ném từ xa đều gây sát thương vật lý. Khoảng cách giữa đòn đánh: 1; tầm đánh xa: 350.",
+				enhanced = "Cử 2 nữ thợ săn chặn địch; cận chiến và ném từ xa đều gây sát thương vật lý. Khoảng cách giữa đòn đánh: 1; tầm đánh xa: 350. Khi cận chiến, có 10/20/30/40% cơ hội né đòn."
 			},
 			change_note = "", port_note = "", notes = "", skills = {
 				{
-					name = "银制飞刃", standard = "投出飞刃，造成18-28点物理伤害，可弹射2次且伤害不衰减。CD15秒。", enhanced = "投出飞刃，造成18-28点物理伤害，可弹射2次且伤害不衰减。CD15秒。",
-					levels_standard = { "投出飞刃，造成18-28点物理伤害，可弹射2次且伤害不衰减。CD15秒。", "投出飞刃，造成32-46点物理伤害，可弹射3次且伤害不衰减。CD15秒。", "投出飞刃，造成38-56点物理伤害，可弹射4次且伤害不衰减。CD15秒。" },
-					levels_enhanced = { "投出飞刃，造成18-28点物理伤害，可弹射2次且伤害不衰减。CD15秒。", "投出飞刃，造成32-46点物理伤害，可弹射3次且伤害不衰减。CD15秒。", "投出飞刃，造成38-56点物理伤害，可弹射4次且伤害不衰减。CD15秒。" },
+					name = "Phi đao bạc", standard = "Ném phi đao gây 18-28 sát thương vật lý, nảy 2 lần và không giảm sát thương. CD: 15 giây.", enhanced = "Ném phi đao gây 18-28 sát thương vật lý, nảy 2 lần và không giảm sát thương. CD: 15 giây.",
+					levels_standard = { "Ném phi đao gây 18-28 sát thương vật lý, nảy 2 lần và không giảm sát thương. CD: 15 giây.", "Ném phi đao gây 32-46 sát thương vật lý, nảy 3 lần và không giảm sát thương. CD: 15 giây.", "Ném phi đao gây 38-56 sát thương vật lý, nảy 4 lần và không giảm sát thương. CD: 15 giây." },
+					levels_enhanced = { "Ném phi đao gây 18-28 sát thương vật lý, nảy 2 lần và không giảm sát thương. CD: 15 giây.", "Ném phi đao gây 32-46 sát thương vật lý, nảy 3 lần và không giảm sát thương. CD: 15 giây.", "Ném phi đao gây 38-56 sát thương vật lý, nảy 4 lần và không giảm sát thương. CD: 15 giây." },
 					prices_standard = { "120", "120", "120" }, prices_enhanced = { "120", "120", "120" }
 				},
 				{
-					name = "致命撕咬", standard = "猎豹撕咬造成27-42点物理伤害，并在4秒内造成48点持续伤害。CD12秒。", enhanced = "猎豹撕咬造成27-42点物理伤害，并在4秒内造成48点持续伤害。CD12秒。",
-					levels_standard = { "猎豹撕咬造成27-42点物理伤害，并在4秒内造成48点持续伤害。CD12秒。", "猎豹撕咬造成80-120点物理伤害，并在4秒内造成64点持续伤害。CD12秒。", "猎豹撕咬造成134-200点物理伤害，并在4秒内造成80点持续伤害。CD12秒。" },
-					levels_enhanced = { "猎豹撕咬造成27-42点物理伤害，并在4秒内造成48点持续伤害。CD12秒。", "猎豹撕咬造成80-120点物理伤害，并在4秒内造成64点持续伤害。CD12秒。", "猎豹撕咬造成134-200点物理伤害，并在4秒内造成80点持续伤害。CD12秒。" },
+					name = "Cú cắn chí mạng", standard = "Báo cắn gây 27-42 sát thương vật lý và thêm 48 sát thương theo thời gian trong 4 giây. CD: 12 giây.", enhanced = "Báo cắn gây 27-42 sát thương vật lý và thêm 48 sát thương theo thời gian trong 4 giây. CD: 12 giây.",
+					levels_standard = { "Báo cắn gây 27-42 sát thương vật lý và thêm 48 sát thương theo thời gian trong 4 giây. CD: 12 giây.", "Báo cắn gây 80-120 sát thương vật lý và thêm 64 sát thương theo thời gian trong 4 giây. CD: 12 giây.", "Báo cắn gây 134-200 sát thương vật lý và thêm 80 sát thương theo thời gian trong 4 giây. CD: 12 giây." },
+					levels_enhanced = { "Báo cắn gây 27-42 sát thương vật lý và thêm 48 sát thương theo thời gian trong 4 giây. CD: 12 giây.", "Báo cắn gây 80-120 sát thương vật lý và thêm 64 sát thương theo thời gian trong 4 giây. CD: 12 giây.", "Báo cắn gây 134-200 sát thương vật lý và thêm 80 sát thương theo thời gian trong 4 giây. CD: 12 giây." },
 					prices_standard = { "160", "160", "160" }, prices_enhanced = { "160", "160", "160" }
 				},
 				{
-					name = "狩猎箭雨", standard = "射出8支箭，每支造成14-22点物理伤害。CD18秒。", enhanced = "两名女猎手可分别发动箭雨，每人射出8支箭，每支造成14-22点物理伤害，各自CD18秒。",
-					levels_standard = { "一名猎手射出8支箭，每支造成14-22点物理伤害。CD18秒。", "一名猎手射出8支箭，每支造成24-34点物理伤害。CD18秒。", "一名猎手射出8支箭，每支造成30-44点物理伤害。CD18秒。" },
-					levels_enhanced = { "两名女猎手可分别发动箭雨，每人射出8支箭，每支造成14-22点物理伤害，各自CD18秒。", "两名女猎手可分别发动箭雨，每人射出10支箭，每支造成24-34点物理伤害，各自CD18秒。", "两名女猎手可分别发动箭雨，每人射出12支箭，每支造成30-44点物理伤害，各自CD18秒。" },
+					name = "Mưa tên Săn mồi", standard = "Bắn 8 mũi tên, mỗi mũi gây 14-22 sát thương vật lý. CD: 18 giây.", enhanced = "Hai thợ săn có thể dùng Mưa tên riêng biệt, mỗi người bắn 8 mũi tên, mỗi mũi gây 14-22 sát thương vật lý. CD riêng: 18 giây.",
+					levels_standard = { "Một thợ săn bắn 8 mũi tên, mỗi mũi gây 14-22 sát thương vật lý. CD: 18 giây.", "Một thợ săn bắn 8 mũi tên, mỗi mũi gây 24-34 sát thương vật lý. CD: 18 giây.", "Một thợ săn bắn 8 mũi tên, mỗi mũi gây 30-44 sát thương vật lý. CD: 18 giây." },
+					levels_enhanced = { "Hai thợ săn có thể dùng Mưa tên riêng biệt, mỗi người bắn 8 mũi tên, mỗi mũi gây 14-22 sát thương vật lý. CD riêng: 18 giây.", "Hai thợ săn có thể dùng Mưa tên riêng biệt, mỗi người bắn 10 mũi tên, mỗi mũi gây 24-34 sát thương vật lý. CD riêng: 18 giây.", "Hai thợ săn có thể dùng Mưa tên riêng biệt, mỗi người bắn 12 mũi tên, mỗi mũi gây 30-44 sát thương vật lý. CD riêng: 18 giây." },
 					prices_standard = { "180", "180", "180" }, prices_enhanced = { "180", "180", "180" }
 				},
 				{
-					name = "潜行利爪", standard = "派出4只猎豹突袭，每次攻击造成160-240点物理伤害。CD35秒。", enhanced = "派出4只猎豹突袭，每次攻击造成160-240点物理伤害。CD35秒。",
-					levels_standard = { "派出4只猎豹突袭，每次攻击造成160-240点物理伤害。CD35秒。" },
-					levels_enhanced = { "派出4只猎豹突袭，每次攻击造成160-240点物理伤害。CD35秒。" },
+					name = "Vuốt săn Lén lút", standard = "Cử 4 báo tập kích, mỗi đòn gây 160-240 sát thương vật lý. CD: 35 giây.", enhanced = "Cử 4 báo tập kích, mỗi đòn gây 160-240 sát thương vật lý. CD: 35 giây.",
+					levels_standard = { "Cử 4 báo tập kích, mỗi đòn gây 160-240 sát thương vật lý. CD: 35 giây." },
+					levels_enhanced = { "Cử 4 báo tập kích, mỗi đòn gây 160-240 sát thương vật lý. CD: 35 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_alchemist_lvl4"] = {
 			doc_id = "",
-			title = "炼金术士小屋",
+			title = "Lều Giả kim",
 			attack = {
-				standard = "投掷药瓶，在落点留下一滩药水，对96范围内的敌人每0.3秒造成面板的真实伤害并造成40%减速，持续2/3/4/5秒；基础投掷间隔3.8(3.7)秒。",
-				enhanced = "投掷药瓶，在落点留下一滩药水，对96范围内的敌人每0.3秒造成面板的真实伤害并造成40%减速，持续2/3/4/5秒；基础投掷间隔3.8(3.7)秒。"
+				standard = "Ném lọ thuốc, để lại vũng thuốc trong phạm vi 96. Mỗi 0.3 giây gây sát thương chuẩn theo chỉ số và làm chậm 40%, tồn tại 2/3/4/5 giây. Khoảng cách giữa lần ném: 3.8 (3.7) giây.",
+				enhanced = "Ném lọ thuốc, để lại vũng thuốc trong phạm vi 96. Mỗi 0.3 giây gây sát thương chuẩn theo chỉ số và làm chậm 40%, tồn tại 2/3/4/5 giây. Khoảng cách giữa lần ném: 3.8 (3.7) giây."
 			},
-			change_note = "炼金术士向祭坛旁的萨满借助力量的同时，另一边还向黑暗工程师借助了力量。同时拥有了两种力量的炼金术士拥有怎样的实力呢？", port_note = "可以在菜单当中查看奥义赚的金币数量。", notes = "", skills = {
+			change_note = "Nhà giả kim mượn sức mạnh từ pháp sư Shaman bên tế đàn lẫn Kỹ sư Hắc ám. Kết hợp hai nguồn sức mạnh này sẽ tạo nên điều gì?", port_note = "Có thể xem lượng vàng kiếm được từ tuyệt kỹ trong menu.", notes = "", skills = {
 				{
-					name = "黏液喷溅", standard = "喷洒8份黏液，区域内敌人减速40%，持续5秒。CD15秒。", enhanced = "喷洒8份黏液，每份落地时造成25点真实伤害；区域内敌人减速40%，持续5秒，留存黏液不再造成伤害。CD15秒。",
-					levels_standard = { "喷洒8份黏液，区域内敌人减速40%，持续5秒。CD15秒。", "喷洒10份黏液，区域内敌人减速55%，持续6秒。CD15秒。", "喷洒12份黏液，区域内敌人减速70%，持续7秒。CD15秒。" },
-					levels_enhanced = { "喷洒8份黏液，每份落地时造成25点真实伤害；区域内敌人减速40%，持续5秒。CD15秒。", "喷洒10份黏液，每份落地时造成40点真实伤害；区域内敌人减速55%，持续6秒。CD15秒。", "喷洒12份黏液，每份落地时造成55点真实伤害；区域内敌人减速70%，持续7秒。CD15秒。" },
+					name = "Dịch nhầy bắn tóe", standard = "Phun 8 phần dịch nhầy, làm chậm địch trong vùng 40% suốt 5 giây. CD: 15 giây.", enhanced = "Phun 8 phần dịch nhầy, mỗi phần gây 25 sát thương chuẩn khi rơi xuống. Làm chậm địch trong vùng 40% suốt 5 giây; dịch nhầy còn lại không gây sát thương. CD: 15 giây.",
+					levels_standard = { "Phun 8 phần dịch nhầy, làm chậm địch trong vùng 40% suốt 5 giây. CD: 15 giây.", "Phun 10 phần dịch nhầy, làm chậm địch trong vùng 55% suốt 6 giây. CD: 15 giây.", "Phun 12 phần dịch nhầy, làm chậm địch trong vùng 70% suốt 7 giây. CD: 15 giây." },
+					levels_enhanced = { "Phun 8 phần dịch nhầy, mỗi phần gây 25 sát thương chuẩn khi rơi xuống. Làm chậm địch trong vùng 40% suốt 5 giây. CD: 15 giây.", "Phun 10 phần dịch nhầy, mỗi phần gây 40 sát thương chuẩn khi rơi xuống. Làm chậm địch trong vùng 55% suốt 6 giây. CD: 15 giây.", "Phun 12 phần dịch nhầy, mỗi phần gây 55 sát thương chuẩn khi rơi xuống. Làm chậm địch trong vùng 70% suốt 7 giây. CD: 15 giây." },
 					prices_standard = { "100", "100", "100" }, prices_enhanced = { "250", "200", "200" }
 				},
 				{
-					name = "实验人员", standard = "召唤实验助手战斗30秒，拥有150生命值，近战造成16-24点真实伤害。CD22秒。", enhanced = "召唤实验助手战斗30秒，拥有150生命值，近战造成16-24点真实伤害。CD22秒。",
-					levels_standard = { "召唤实验助手战斗30秒，拥有150生命值，近战造成16-24点真实伤害。CD22秒。", "召唤实验助手战斗30秒，拥有180生命值，近战造成32-48点真实伤害。CD22秒。", "召唤实验助手战斗30秒，拥有210生命值，近战造成64-96点真实伤害。CD22秒。" },
-					levels_enhanced = { "召唤实验助手战斗30秒，拥有150生命值，近战造成16-24点真实伤害。CD22秒。", "召唤实验助手战斗30秒，拥有180生命值，近战造成32-48点真实伤害。CD22秒。", "召唤实验助手战斗30秒，拥有210生命值，近战造成64-96点真实伤害。CD22秒。" },
+					name = "Trợ lý thí nghiệm", standard = "Triệu hồi trợ lý chiến đấu 30 giây, có 150 máu, cận chiến gây 16-24 sát thương chuẩn. CD: 22 giây.", enhanced = "Triệu hồi trợ lý chiến đấu 30 giây, có 150 máu, cận chiến gây 16-24 sát thương chuẩn. CD: 22 giây.",
+					levels_standard = { "Triệu hồi trợ lý chiến đấu 30 giây, có 150 máu, cận chiến gây 16-24 sát thương chuẩn. CD: 22 giây.", "Triệu hồi trợ lý chiến đấu 30 giây, có 180 máu, cận chiến gây 32-48 sát thương chuẩn. CD: 22 giây.", "Triệu hồi trợ lý chiến đấu 30 giây, có 210 máu, cận chiến gây 64-96 sát thương chuẩn. CD: 22 giây." },
+					levels_enhanced = { "Triệu hồi trợ lý chiến đấu 30 giây, có 150 máu, cận chiến gây 16-24 sát thương chuẩn. CD: 22 giây.", "Triệu hồi trợ lý chiến đấu 30 giây, có 180 máu, cận chiến gây 32-48 sát thương chuẩn. CD: 22 giây.", "Triệu hồi trợ lý chiến đấu 30 giây, có 210 máu, cận chiến gây 64-96 sát thương chuẩn. CD: 22 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "完美配方", standard = "药瓶额外爆炸造成10-16点炮弹伤害；药水每0.3秒造成5-7点真实伤害。", enhanced = "药瓶额外爆炸造成10-16点炮弹伤害；药水每0.3秒造成5-7点真实伤害。",
-					levels_standard = { "药瓶额外爆炸造成10-16点炮弹伤害；药水每0.3秒造成5-7点真实伤害。", "药瓶额外爆炸造成28-46点炮弹伤害；药水每0.3秒造成6-8点真实伤害。", "药瓶额外爆炸造成46-68点炮弹伤害；药水每0.3秒造成7-9点真实伤害。" },
-					levels_enhanced = { "药瓶额外爆炸造成10-16点炮弹伤害；药水每0.3秒造成5-7点真实伤害。", "药瓶额外爆炸造成28-46点炮弹伤害；药水每0.3秒造成6-8点真实伤害。", "药瓶额外爆炸造成46-68点炮弹伤害；药水每0.3秒造成7-9点真实伤害。" },
+					name = "Công thức hoàn hảo", standard = "Lọ thuốc nổ thêm gây 10-16 sát thương pháo. Thuốc gây 5-7 sát thương chuẩn mỗi 0.3 giây.", enhanced = "Lọ thuốc nổ thêm gây 10-16 sát thương pháo. Thuốc gây 5-7 sát thương chuẩn mỗi 0.3 giây.",
+					levels_standard = { "Lọ thuốc nổ thêm gây 10-16 sát thương pháo. Thuốc gây 5-7 sát thương chuẩn mỗi 0.3 giây.", "Lọ thuốc nổ thêm gây 28-46 sát thương pháo. Thuốc gây 6-8 sát thương chuẩn mỗi 0.3 giây.", "Lọ thuốc nổ thêm gây 46-68 sát thương pháo. Thuốc gây 7-9 sát thương chuẩn mỗi 0.3 giây." },
+					levels_enhanced = { "Lọ thuốc nổ thêm gây 10-16 sát thương pháo. Thuốc gây 5-7 sát thương chuẩn mỗi 0.3 giây.", "Lọ thuốc nổ thêm gây 28-46 sát thương pháo. Thuốc gây 6-8 sát thương chuẩn mỗi 0.3 giây.", "Lọ thuốc nổ thêm gây 46-68 sát thương pháo. Thuốc gây 7-9 sát thương chuẩn mỗi 0.3 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "至高杰作", standard = "将一名血量不大于600的敌人变成金猪15秒，血量不变而失去全部抗性和技能；击杀金猪在获得敌人原始赏金的同时额外获得15金币。CD40秒。", enhanced = "将一名血量不大于600的敌人变成金猪15秒，血量不变而失去全部抗性和技能；击杀金猪在获得敌人原始赏金的同时额外获得15金币。CD40秒。",
-					levels_standard = { "将一名血量不大于600的敌人变成金猪15秒，血量不变而失去全部抗性和技能；击杀金猪在获得敌人原始赏金的同时额外获得15金币。CD40秒。" },
-					levels_enhanced = { "将一名血量不大于600的敌人变成金猪15秒，血量不变而失去全部抗性和技能；击杀金猪在获得敌人原始赏金的同时额外获得15金币。CD40秒。" },
+					name = "Kiệt tác Tối thượng", standard = "Biến một địch có máu không quá 600 thành heo vàng trong 15 giây. Máu không đổi nhưng mất mọi khả năng kháng và kỹ năng. Hạ heo vàng nhận tiền thưởng ban đầu của địch cộng thêm 15 vàng. CD: 40 giây.", enhanced = "Biến một địch có máu không quá 600 thành heo vàng trong 15 giây. Máu không đổi nhưng mất mọi khả năng kháng và kỹ năng. Hạ heo vàng nhận tiền thưởng ban đầu của địch cộng thêm 15 vàng. CD: 40 giây.",
+					levels_standard = { "Biến một địch có máu không quá 600 thành heo vàng trong 15 giây. Máu không đổi nhưng mất mọi khả năng kháng và kỹ năng. Hạ heo vàng nhận tiền thưởng ban đầu của địch cộng thêm 15 vàng. CD: 40 giây." },
+					levels_enhanced = { "Biến một địch có máu không quá 600 thành heo vàng trong 15 giây. Máu không đổi nhưng mất mọi khả năng kháng và kỹ năng. Hạ heo vàng nhận tiền thưởng ban đầu của địch cộng thêm 15 vàng. CD: 40 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_forger_lvl4"] = {
 			doc_id = "",
-			title = "奥术幻铸师",
+			title = "Thợ rèn Ảo thuật",
 			attack = {
-				standard = "锻造并发射奥术武器，命中时对100范围内敌人造成范围魔法伤害。最多可以储存3枚奥术武器。",
-				enhanced = "锻造并发射奥术武器，命中时对100范围内敌人造成范围魔法伤害。最多可以储存3枚奥术武器。"
+				standard = "Rèn và bắn vũ khí bí thuật, gây sát thương phép diện rộng trong phạm vi 100 khi trúng đích. Tích trữ tối đa 3 vũ khí.",
+				enhanced = "Rèn và bắn vũ khí bí thuật, gây sát thương phép diện rộng trong phạm vi 100 khi trúng đích. Tích trữ tối đa 3 vũ khí."
 			},
-			change_note = "作为法炮强度已经足够，仅提升2技能的性价比和大招的指向性。", port_note = "", notes = "", skills = {
+			change_note = "Tháp pháo phép đã đủ mạnh. Chỉ tăng hiệu quả so với giá của kỹ năng 2 và khả năng chọn mục tiêu của tuyệt kỹ.", port_note = "", notes = "", skills = {
 				{
-					name = "斩裂圆锯", standard = "放出3枚圆锯沿路攻击；每枚总计造成60-90点魔法伤害。CD18秒。", enhanced = "放出3枚圆锯沿路攻击；每枚总计造成60-90点魔法伤害。CD18秒。",
-					levels_standard = { "放出3枚圆锯沿路攻击；每枚总计造成60-90点魔法伤害。CD18秒。", "放出3枚圆锯沿路攻击；每枚总计造成120-180点魔法伤害。CD18秒。", "放出3枚圆锯沿路攻击；每枚总计造成180-270点魔法伤害。CD18秒。" },
-					levels_enhanced = { "放出3枚圆锯沿路攻击；每枚总计造成60-90点魔法伤害。CD18秒。", "放出3枚圆锯沿路攻击；每枚总计造成120-180点魔法伤害。CD18秒。", "放出3枚圆锯沿路攻击；每枚总计造成180-270点魔法伤害。CD18秒。" },
+					name = "Cưa tròn Xé toạc", standard = "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 60-90 sát thương phép. CD: 18 giây.", enhanced = "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 60-90 sát thương phép. CD: 18 giây.",
+					levels_standard = { "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 60-90 sát thương phép. CD: 18 giây.", "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 120-180 sát thương phép. CD: 18 giây.", "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 180-270 sát thương phép. CD: 18 giây." },
+					levels_enhanced = { "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 60-90 sát thương phép. CD: 18 giây.", "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 120-180 sát thương phép. CD: 18 giây.", "Thả 3 cưa tròn chạy dọc đường, mỗi cưa gây tổng cộng 180-270 sát thương phép. CD: 18 giây." },
 					prices_standard = { "250", "250", "250" }, prices_enhanced = { "250", "250", "250" }
 				},
 				{
-					name = "棱光守卫", standard = "召唤2枚晶体持续10秒；每枚每秒造成32-48点魔法伤害，累计造成100点伤害后消失。CD20秒。", enhanced = "召唤3枚晶体持续10秒；每枚每秒造成32-48点魔法伤害，累计造成100点伤害后消失。CD20秒。",
-					levels_standard = { "召唤2枚晶体持续10秒；每枚每秒造成32-48点魔法伤害，累计造成100点伤害后消失。CD20秒。", "召唤2枚晶体持续10秒；每枚每秒造成64-96点魔法伤害，累计造成200点伤害后消失。CD20秒。", "召唤2枚晶体持续10秒；每枚每秒造成96-144点魔法伤害，累计造成300点伤害后消失。CD20秒。" },
-					levels_enhanced = { "召唤3枚晶体持续10秒；每枚每秒造成32-48点魔法伤害，累计造成100点伤害后消失。CD20秒。", "召唤3枚晶体持续10秒；每枚每秒造成64-96点魔法伤害，累计造成200点伤害后消失。CD20秒。", "召唤3枚晶体持续10秒；每枚每秒造成96-144点魔法伤害，累计造成300点伤害后消失。CD20秒。" },
+					name = "Vệ binh Quang lăng", standard = "Triệu hồi 2 tinh thể trong 10 giây. Mỗi tinh thể gây 32-48 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 100 sát thương. CD: 20 giây.", enhanced = "Triệu hồi 3 tinh thể trong 10 giây. Mỗi tinh thể gây 32-48 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 100 sát thương. CD: 20 giây.",
+					levels_standard = { "Triệu hồi 2 tinh thể trong 10 giây. Mỗi tinh thể gây 32-48 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 100 sát thương. CD: 20 giây.", "Triệu hồi 2 tinh thể trong 10 giây. Mỗi tinh thể gây 64-96 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 200 sát thương. CD: 20 giây.", "Triệu hồi 2 tinh thể trong 10 giây. Mỗi tinh thể gây 96-144 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 300 sát thương. CD: 20 giây." },
+					levels_enhanced = { "Triệu hồi 3 tinh thể trong 10 giây. Mỗi tinh thể gây 32-48 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 100 sát thương. CD: 20 giây.", "Triệu hồi 3 tinh thể trong 10 giây. Mỗi tinh thể gây 64-96 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 200 sát thương. CD: 20 giây.", "Triệu hồi 3 tinh thể trong 10 giây. Mỗi tinh thể gây 96-144 sát thương phép mỗi giây, biến mất sau khi gây tổng cộng 300 sát thương. CD: 20 giây." },
 					prices_standard = { "160", "160", "160" }, prices_enhanced = { "190", "190", "190" }
 				},
 				{
-					name = "硬光监狱", standard = "困住最多2名敌人5秒。CD26秒。", enhanced = "困住最多2名敌人5秒。CD26秒。",
-					levels_standard = { "禁锢最多2名敌人5秒。CD26秒。", "禁锢最多3名敌人7秒。CD26秒。", "禁锢最多4名敌人9秒。CD26秒。" },
-					levels_enhanced = { "禁锢最多2名敌人5秒，被禁锢的敌人受到20%额外伤害。CD26秒。", "禁锢最多3名敌人7秒，被禁锢的敌人受到25%额外伤害。CD26秒。", "禁锢最多4名敌人9秒，被禁锢的敌人受到30%额外伤害。CD26秒。" },
+					name = "Ngục Ánh sáng", standard = "Giam tối đa 2 địch trong 5 giây. CD: 26 giây.", enhanced = "Giam tối đa 2 địch trong 5 giây. CD: 26 giây.",
+					levels_standard = { "Giam tối đa 2 địch trong 5 giây. CD: 26 giây.", "Giam tối đa 3 địch trong 7 giây. CD: 26 giây.", "Giam tối đa 4 địch trong 9 giây. CD: 26 giây." },
+					levels_enhanced = { "Giam tối đa 2 địch trong 5 giây, khiến mục tiêu nhận thêm 20% sát thương. CD: 26 giây.", "Giam tối đa 3 địch trong 7 giây, khiến mục tiêu nhận thêm 25% sát thương. CD: 26 giây.", "Giam tối đa 4 địch trong 9 giây, khiến mục tiêu nhận thêm 30% sát thương. CD: 26 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "奥术巨噬", standard = "召唤巨龙吞噬当前生命值合计300-1200的一组敌人。CD40秒。", enhanced = "优先瞄准有魔抗的敌人，召唤巨龙吞噬当前生命值合计300-1200的一组敌人。CD40秒。",
-					levels_standard = { "召唤巨龙吞噬当前生命值合计300-1200的一组敌人。CD40秒。" },
-					levels_enhanced = { "优先瞄准有魔抗的敌人，召唤巨龙吞噬当前生命值合计300-1200的一组敌人。CD40秒。" },
+					name = "Bí thuật Nuốt chửng", standard = "Triệu hồi rồng nuốt một nhóm địch có tổng máu hiện tại 300-1200. CD: 40 giây.", enhanced = "Ưu tiên địch có kháng phép; triệu hồi rồng nuốt một nhóm có tổng máu hiện tại 300-1200. CD: 40 giây.",
+					levels_standard = { "Triệu hồi rồng nuốt một nhóm địch có tổng máu hiện tại 300-1200. CD: 40 giây." },
+					levels_enhanced = { "Ưu tiên địch có kháng phép; triệu hồi rồng nuốt một nhóm có tổng máu hiện tại 300-1200. CD: 40 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_crossbows_lvl4"] = {
 			doc_id = "",
-			title = "诅咒弩手",
+			title = "Nỏ thủ Nguyền rủa",
 			attack = {
-				standard = "弩手每2.1(2.0)秒进行三连射；每支弩箭造成物理伤害，原目标死亡后可改射附近敌人。",
-				enhanced = "弩手每2.1(2.0)秒进行三连射；每支弩箭造成物理伤害，原目标死亡后可改射附近敌人。"
+				standard = "Cứ 2.1 (2.0) giây bắn liên tiếp ba phát nỏ gây sát thương vật lý. Nếu mục tiêu chết, có thể chuyển sang địch gần đó.",
+				enhanced = "Cứ 2.1 (2.0) giây bắn liên tiếp ba phát nỏ gây sát thương vật lý. Nếu mục tiêu chết, có thể chuyển sang địch gần đó."
 			},
-			change_note = "恐惧、秒杀箭两个技能都没用。恐惧箭使用了观星同款的触发方式以提升触发概率，秒杀箭额外给予了秒杀失败的补偿。", port_note = "", notes = "", skills = {
+			change_note = "Hai kỹ năng gây sợ hãi và tên tiêu diệt tức thì ít hữu ích. Dùng cơ chế kích hoạt như tháp Chiêm tinh để tăng cơ hội gây sợ hãi; bổ sung hiệu ứng bù khi tên không tiêu diệt tức thì.", port_note = "", notes = "", skills = {
 				{
-					name = "腐化狂暴", standard = "弩手进入快速连射状态，持续4秒。CD25秒。", enhanced = "弩手进入快速连射状态，每箭造成18-28点物理伤害，持续4秒。CD25秒。",
-					levels_standard = { "弩手进入快速连射状态，持续4秒。CD25秒。", "弩手进入快速连射状态，持续6秒。CD25秒。", "弩手进入快速连射状态，每箭造成18-28点物理伤害，持续9秒。CD25秒。" },
-					levels_enhanced = { "弩手进入快速连射状态，持续4秒。CD25秒。", "弩手进入快速连射状态，持续6秒。CD25秒。", "弩手进入快速连射状态，持续9秒。CD25秒。" },
+					name = "Cuồng bạo Tha hóa", standard = "Nỏ thủ bắn liên thanh nhanh trong 4 giây. CD: 25 giây.", enhanced = "Nỏ thủ bắn liên thanh nhanh, mỗi tên gây 18-28 sát thương vật lý, kéo dài 4 giây. CD: 25 giây.",
+					levels_standard = { "Nỏ thủ bắn liên thanh nhanh trong 4 giây. CD: 25 giây.", "Nỏ thủ bắn liên thanh nhanh trong 6 giây. CD: 25 giây.", "Nỏ thủ bắn liên thanh nhanh, mỗi tên gây 18-28 sát thương vật lý, kéo dài 9 giây. CD: 25 giây." },
+					levels_enhanced = { "Nỏ thủ bắn liên thanh nhanh trong 4 giây. CD: 25 giây.", "Nỏ thủ bắn liên thanh nhanh trong 6 giây. CD: 25 giây.", "Nỏ thủ bắn liên thanh nhanh trong 9 giây. CD: 25 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "恐惧因子", standard = "击杀敌人时释放恐惧，使附近敌人减速20%、攻击伤害降低10%，持续4秒。", enhanced = "普攻使目标进入惊魂状态2秒；目标在此期间被任意来源击杀，便释放恐惧，使附近敌人减速20%、攻击伤害降低10%，持续4秒。",
-					levels_standard = { "击杀敌人时释放恐惧，使附近敌人减速20%、攻击伤害降低10%，持续4秒。", "击杀敌人时释放恐惧，使附近敌人减速35%、攻击伤害降低25%，持续6秒。", "击杀敌人时释放恐惧，使附近敌人减速50%、攻击伤害降低40%，持续8秒。" },
-					levels_enhanced = { "普攻会使目标进入惊魂状态2秒；目标在此期间被任意来源击杀，便释放恐惧，使附近敌人减速20%、攻击伤害降低10%，每秒受到4点魔法伤害，持续4秒。", "普攻会使目标进入惊魂状态2.5秒；目标在此期间被任意来源击杀，便释放恐惧，使附近敌人减速35%、攻击伤害降低25%，每秒受到5点魔法伤害，持续6秒。", "普攻会使目标进入惊魂状态3秒；目标在此期间被任意来源击杀，便释放恐惧，使附近敌人减速50%、攻击伤害降低40%，每秒受到6点魔法伤害，持续8秒。" },
+					name = "Mầm mống Sợ hãi", standard = "Khi hạ địch, phát tán sợ hãi, giảm 20% tốc độ di chuyển và 10% sát thương tấn công của địch gần đó trong 4 giây.", enhanced = "Đánh thường gây hoảng hồn trong 2 giây. Nếu mục tiêu bị hạ bởi bất kỳ nguồn nào trong thời gian này, phát tán sợ hãi, giảm 20% tốc độ di chuyển và 10% sát thương tấn công của địch gần đó trong 4 giây.",
+					levels_standard = { "Khi hạ địch, phát tán sợ hãi, giảm 20% tốc độ di chuyển và 10% sát thương tấn công của địch gần đó trong 4 giây.", "Khi hạ địch, phát tán sợ hãi, giảm 35% tốc độ di chuyển và 25% sát thương tấn công của địch gần đó trong 6 giây.", "Khi hạ địch, phát tán sợ hãi, giảm 50% tốc độ di chuyển và 40% sát thương tấn công của địch gần đó trong 8 giây." },
+					levels_enhanced = { "Đánh thường gây hoảng hồn trong 2 giây. Nếu mục tiêu bị hạ bởi bất kỳ nguồn nào trong thời gian này, phát tán sợ hãi, giảm 20% tốc độ di chuyển, 10% sát thương tấn công và gây 4 sát thương phép mỗi giây cho địch gần đó trong 4 giây.", "Đánh thường gây hoảng hồn trong 2.5 giây. Nếu mục tiêu bị hạ bởi bất kỳ nguồn nào trong thời gian này, phát tán sợ hãi, giảm 35% tốc độ di chuyển, 25% sát thương tấn công và gây 5 sát thương phép mỗi giây cho địch gần đó trong 6 giây.", "Đánh thường gây hoảng hồn trong 3 giây. Nếu mục tiêu bị hạ bởi bất kỳ nguồn nào trong thời gian này, phát tán sợ hãi, giảm 50% tốc độ di chuyển, 40% sát thương tấn công và gây 6 sát thương phép mỗi giây cho địch gần đó trong 8 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "诅咒弩箭", standard = "发射诅咒弩箭，造成120-180点真实伤害，并有10%概率秒杀。CD20秒。", enhanced = "发射诅咒弩箭，造成120-180点真实伤害，并有10%概率秒杀；未秒杀时额外造成该次基础伤害50%的真实伤害。CD20秒。",
-					levels_standard = { "发射诅咒弩箭，造成120-180点真实伤害，并有10%概率秒杀。CD20秒。", "发射诅咒弩箭，造成240-360点真实伤害，并有25%概率秒杀。CD20秒。", "发射诅咒弩箭，造成360-540点真实伤害，并有40%概率秒杀。CD20秒。" },
-					levels_enhanced = { "发射诅咒弩箭，造成120-180点真实伤害，并有10%概率秒杀；未秒杀时释放恐惧，使附近敌人减速20%、攻击伤害降低10%，每秒受到4点魔法伤害，持续4秒。CD20秒。", "发射诅咒弩箭，造成240-360点真实伤害，并有25%概率秒杀；未秒杀时额外释放恐惧，使附近敌人减速35%、攻击伤害降低25%，每秒受到5点魔法伤害，持续6秒。CD20秒。", "发射诅咒弩箭，造成360-540点真实伤害，并有40%概率秒杀。未秒杀时额外释放恐惧，使附近敌人减速50%、攻击伤害降低40%，每秒受到6点魔法伤害，持续8秒。CD20秒。" },
+					name = "Tên nỏ Nguyền rủa", standard = "Bắn tên nguyền rủa gây 120-180 sát thương chuẩn, có 10% cơ hội tiêu diệt tức thì. CD: 20 giây.", enhanced = "Bắn tên nguyền rủa gây 120-180 sát thương chuẩn, có 10% cơ hội tiêu diệt tức thì. Nếu không kích hoạt, gây thêm sát thương chuẩn bằng 50% sát thương cơ bản của đòn đó. CD: 20 giây.",
+					levels_standard = { "Bắn tên nguyền rủa gây 120-180 sát thương chuẩn, có 10% cơ hội tiêu diệt tức thì. CD: 20 giây.", "Bắn tên nguyền rủa gây 240-360 sát thương chuẩn, có 25% cơ hội tiêu diệt tức thì. CD: 20 giây.", "Bắn tên nguyền rủa gây 360-540 sát thương chuẩn, có 40% cơ hội tiêu diệt tức thì. CD: 20 giây." },
+					levels_enhanced = { "Bắn tên nguyền rủa gây 120-180 sát thương chuẩn, có 10% cơ hội tiêu diệt tức thì. Nếu không kích hoạt, phát tán sợ hãi: giảm 20% tốc độ di chuyển, 10% sát thương tấn công và gây 4 sát thương phép mỗi giây cho địch gần đó trong 4 giây. CD: 20 giây.", "Bắn tên nguyền rủa gây 240-360 sát thương chuẩn, có 25% cơ hội tiêu diệt tức thì. Nếu không kích hoạt, phát tán thêm sợ hãi: giảm 35% tốc độ di chuyển, 25% sát thương tấn công và gây 5 sát thương phép mỗi giây cho địch gần đó trong 6 giây. CD: 20 giây.", "Bắn tên nguyền rủa gây 360-540 sát thương chuẩn, có 40% cơ hội tiêu diệt tức thì. Nếu không kích hoạt, phát tán thêm sợ hãi: giảm 50% tốc độ di chuyển, 40% sát thương tấn công và gây 6 sát thương phép mỗi giây cho địch gần đó trong 8 giây. CD: 20 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "死魂骑士", standard = "召唤死魂骑士战斗30秒，拥有250生命值、80%物理护甲，近战造成32-48点物理伤害。CD36秒。", enhanced = "召唤死魂骑士战斗24秒，拥有444生命值、94%物理护甲，近战造成44-94点物理伤害。CD44秒。",
-					levels_standard = { "召唤死魂骑士战斗30秒，拥有250生命值、80%物理护甲，近战造成32-48点物理伤害。CD36秒。" },
-					levels_enhanced = { "召唤死魂骑士战斗24秒，拥有444生命值、94%物理护甲，近战造成44-94点物理伤害。CD44秒。" },
+					name = "Kỵ sĩ Tử hồn", standard = "Triệu hồi Kỵ sĩ Tử hồn chiến đấu 30 giây, có 250 máu, 80% giáp vật lý và gây 32-48 sát thương vật lý cận chiến. CD: 36 giây.", enhanced = "Triệu hồi Kỵ sĩ Tử hồn chiến đấu 24 giây, có 444 máu, 94% giáp vật lý và gây 44-94 sát thương vật lý cận chiến. CD: 44 giây.",
+					levels_standard = { "Triệu hồi Kỵ sĩ Tử hồn chiến đấu 30 giây, có 250 máu, 80% giáp vật lý và gây 32-48 sát thương vật lý cận chiến. CD: 36 giây." },
+					levels_enhanced = { "Triệu hồi Kỵ sĩ Tử hồn chiến đấu 24 giây, có 444 máu, 94% giáp vật lý và gây 44-94 sát thương vật lý cận chiến. CD: 44 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_miners_lvl4"] = {
 			doc_id = "",
-			title = "淘金矮人",
+			title = "Người Lùn Đãi vàng",
 			attack = {
-				standard = "敌人进入集结范围时，矿工从地下出现并拦截，以近战造成物理伤害；不直接从塔上发射弹体。最多同时派出8名矿工，每5.7秒尝试补充1名。所有淘金矮人每波最多赚取300金币。",
-				enhanced = "敌人进入集结范围时，矿工从地下出现并拦截，以近战造成物理伤害；不直接从塔上发射弹体。最多同时派出8名矿工，每5.7秒尝试补充1名。所有淘金矮人每波最多赚取750金币。"
+				standard = "Khi địch vào phạm vi tập kết, thợ mỏ chui lên chặn địch và cận chiến gây sát thương vật lý; tháp không trực tiếp bắn đạn. Tối đa 8 thợ mỏ cùng lúc, mỗi 5.7 giây thử bổ sung 1 người. Tổng các tháp Đãi vàng kiếm tối đa 300 vàng mỗi đợt.",
+				enhanced = "Khi địch vào phạm vi tập kết, thợ mỏ chui lên chặn địch và cận chiến gây sát thương vật lý; tháp không trực tiếp bắn đạn. Tối đa 8 thợ mỏ cùng lúc, mỗi 5.7 giây thử bổ sung 1 người. Tổng các tháp Đãi vàng kiếm tối đa 750 vàng mỗi đợt."
 			},
-			change_note = "现在三个技能都能赚钱了，矿工的数值也更高了。你能回本吗？", port_note = "可以在菜单当中查看奥义赚的金币数量。", notes = "", skills = {
+			change_note = "Cả ba kỹ năng giờ đều kiếm được vàng, thợ mỏ cũng có chỉ số cao hơn. Bạn có thu hồi được vốn không?", port_note = "Có thể xem lượng vàng kiếm được từ tuyệt kỹ trong menu.", notes = "", skills = {
 				{
-					name = "疯狂探险队", standard = "派出矿车，撞击造成18-28点炮弹伤害，并召唤2名矿工战斗15秒。CD20秒。", enhanced = "派出矿车，撞击造成18-28点炮弹伤害；每撞击1名敌人，额外获得该敌人金币价值的10%（向上取整），并召唤2名矿工战斗15秒。CD20秒。",
-					levels_standard = { "派出矿车，撞击造成18-28点炮弹伤害，并召唤2名矿工战斗15秒。CD20秒。", "派出矿车，撞击造成40-60点炮弹伤害，并召唤2名矿工战斗15秒。CD20秒。", "派出矿车，撞击造成52-78点炮弹伤害，并召唤2名矿工战斗15秒。CD20秒。" },
-					levels_enhanced = { "派出矿车，撞击造成18-28点炮弹伤害；每撞击1名敌人，额外获得该敌人金币价值的10%（向上取整），并召唤2名矿工战斗15秒。CD20秒。", "派出矿车，撞击造成40-60点炮弹伤害；每撞击1名敌人，额外获得该敌人金币价值的20%（向上取整），并召唤2名矿工战斗15秒。CD20秒。", "派出矿车，撞击造成52-78点炮弹伤害；每撞击1名敌人，额外获得该敌人金币价值的30%（向上取整），并召唤2名矿工战斗15秒。CD20秒。" },
+					name = "Đoàn thám hiểm Điên cuồng", standard = "Phóng xe mỏ gây 18-28 sát thương pháo khi va chạm, triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.", enhanced = "Phóng xe mỏ gây 18-28 sát thương pháo. Mỗi 1 địch bị va chạm cho thêm 10% tiền thưởng của địch đó, làm tròn lên. Triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.",
+					levels_standard = { "Phóng xe mỏ gây 18-28 sát thương pháo khi va chạm, triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.", "Phóng xe mỏ gây 40-60 sát thương pháo khi va chạm, triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.", "Phóng xe mỏ gây 52-78 sát thương pháo khi va chạm, triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây." },
+					levels_enhanced = { "Phóng xe mỏ gây 18-28 sát thương pháo. Mỗi 1 địch bị va chạm cho thêm 10% tiền thưởng của địch đó, làm tròn lên. Triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.", "Phóng xe mỏ gây 40-60 sát thương pháo. Mỗi 1 địch bị va chạm cho thêm 20% tiền thưởng của địch đó, làm tròn lên. Triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây.", "Phóng xe mỏ gây 52-78 sát thương pháo. Mỗi 1 địch bị va chạm cho thêm 30% tiền thưởng của địch đó, làm tròn lên. Triệu hồi 2 thợ mỏ chiến đấu 15 giây. CD: 20 giây." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "450", "450", "450" }
 				},
 				{
-					name = "窜地而出", standard = "矿工破土时对周围敌人造成8-12点物理伤害，并眩晕1秒。", enhanced = "矿工破土时对周围敌人造成8-12点物理伤害，并眩晕1秒；每眩晕1名敌人额外获得1金币。",
-					levels_standard = { "矿工破土时对周围敌人造成8-12点物理伤害，并眩晕1秒。", "矿工破土时对周围敌人造成20-30点物理伤害，并眩晕1.5秒。", "矿工破土时对周围敌人造成32-48点物理伤害，并眩晕2秒。" },
-					levels_enhanced = { "矿工破土时对周围敌人造成8-12点物理伤害，并眩晕1秒；每眩晕1名敌人额外获得1金币。", "矿工破土时对周围敌人造成20-30点物理伤害，并眩晕1.5秒；每眩晕1名敌人额外获得2金币。", "矿工破土时对周围敌人造成32-48点物理伤害，并眩晕2秒；每眩晕1名敌人额外获得4金币。" },
+					name = "Phá đất trồi lên", standard = "Thợ mỏ trồi lên gây 8-12 sát thương vật lý cho địch quanh đó và làm choáng 1 giây.", enhanced = "Thợ mỏ trồi lên gây 8-12 sát thương vật lý cho địch quanh đó và làm choáng 1 giây. Mỗi 1 địch bị choáng cho thêm 1 vàng.",
+					levels_standard = { "Thợ mỏ trồi lên gây 8-12 sát thương vật lý cho địch quanh đó và làm choáng 1 giây.", "Thợ mỏ trồi lên gây 20-30 sát thương vật lý cho địch quanh đó và làm choáng 1.5 giây.", "Thợ mỏ trồi lên gây 32-48 sát thương vật lý cho địch quanh đó và làm choáng 2 giây." },
+					levels_enhanced = { "Thợ mỏ trồi lên gây 8-12 sát thương vật lý cho địch quanh đó và làm choáng 1 giây. Mỗi 1 địch bị choáng cho thêm 1 vàng.", "Thợ mỏ trồi lên gây 20-30 sát thương vật lý cho địch quanh đó và làm choáng 1.5 giây. Mỗi 1 địch bị choáng cho thêm 2 vàng.", "Thợ mỏ trồi lên gây 32-48 sát thương vật lý cho địch quanh đó và làm choáng 2 giây. Mỗi 1 địch bị choáng cho thêm 4 vàng." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "290", "290", "290" }
 				},
 				{
-					name = "接力上工", standard = "矿工进入战斗时仍可产金，每次产金量为基础值的1倍。", enhanced = "矿工进入战斗时仍可产金，每次产金量为基础值的1倍。",
-					levels_standard = { "矿工进入战斗时仍可产金，每次产金量为基础值的1倍。", "矿工进入战斗时仍可产金，每次产金量为基础值的1.5倍。", "矿工进入战斗时仍可产金，每次产金量为基础值的2倍。" },
-					levels_enhanced = { "矿工进入战斗时仍可产金，每次产金量为基础值的1倍。", "矿工进入战斗时仍可产金，每次产金量为基础值的1.5倍。", "矿工进入战斗时仍可产金，每次产金量为基础值的2倍。" },
+					name = "Luân phiên vào việc", standard = "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1 lần lượng cơ bản.", enhanced = "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1 lần lượng cơ bản.",
+					levels_standard = { "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1 lần lượng cơ bản.", "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1.5 lần lượng cơ bản.", "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 2 lần lượng cơ bản." },
+					levels_enhanced = { "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1 lần lượng cơ bản.", "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 1.5 lần lượng cơ bản.", "Thợ mỏ vẫn tạo vàng khi vào giao tranh, mỗi lần bằng 2 lần lượng cơ bản." },
 					prices_standard = { "250", "100", "100" }, prices_enhanced = { "250", "100", "100" }
 				},
 				{
-					name = "淘金潮", standard = "额外产出72-96金币，持续1.5秒。CD50秒。", enhanced = "额外产出72-96金币，持续1.5秒。CD50秒。",
-					levels_standard = { "额外产出72-96金币，持续1.5秒。CD50秒。" },
-					levels_enhanced = { "额外产出72-96金币，持续1.5秒。CD50秒。" },
+					name = "Cơn sốt Vàng", standard = "Tạo thêm 72-96 vàng trong 1.5 giây. CD: 50 giây.", enhanced = "Tạo thêm 72-96 vàng trong 1.5 giây. CD: 50 giây.",
+					levels_standard = { "Tạo thêm 72-96 vàng trong 1.5 giây. CD: 50 giây." },
+					levels_enhanced = { "Tạo thêm 72-96 vàng trong 1.5 giây. CD: 50 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}
 		},
 		["tower_sniper_lvl4"] = {
 			doc_id = "",
-			title = "哨兵瞭望塔",
+			title = "Tháp canh Lính gác",
 			attack = {
-				standard = "超远程瞄准射击，可切换优先攻击最靠近出口或最大生命值最高的敌人；最大射程无限，但150范围内为射击盲区，基础攻击间隔7.4(7.0)秒。",
-				enhanced = "超远程瞄准射击，可切换优先攻击最靠近出口或最大生命值最高的敌人；最大射程无限，但150范围内为射击盲区，基础攻击间隔7.4(7.0)秒。敌人每拥有12/8/5/3点魔抗能力值，普攻命中后就额外附加敌方最大生命值1%的物理伤害，对首领上限为80/120/200/300"
+				standard = "Bắn tỉa cực xa, có thể chọn ưu tiên địch gần lối ra nhất hoặc có máu tối đa cao nhất. Tầm xa không giới hạn, nhưng phạm vi 150 quanh tháp là vùng không thể bắn. Khoảng cách giữa đòn đánh: 7.4 (7.0) giây.",
+				enhanced = "Bắn tỉa cực xa, có thể chọn ưu tiên địch gần lối ra nhất hoặc có máu tối đa cao nhất. Tầm xa không giới hạn, nhưng phạm vi 150 quanh tháp là vùng không thể bắn. Khoảng cách giữa đòn đánh: 7.4 (7.0) giây. Cứ mỗi 12/8/5/3 điểm kháng phép của địch, đòn thường gây thêm sát thương vật lý bằng 1% máu tối đa của mục tiêu; giới hạn với trùm là 80/120/200/300."
 			},
-			change_note = "增加了对魔抗怪的对策效果和战势勃勃技能的作用。", port_note = "", notes = "", skills = {
+			change_note = "Bổ sung khả năng khắc chế địch kháng phép và tăng tác dụng kỹ năng Khí thế chiến đấu.", port_note = "", notes = "", skills = {
 				{
-					name = "战势勃勃", standard = "普通攻击击杀敌人后，下次射击伤害提高10%，攻击间隔缩短25%。", enhanced = "购买后普攻无需击杀即可触发：下次射击伤害提高10%，攻击间隔缩短25%；附带最大生命值×魔抗值÷2的额外物理伤害，对首领最多300点。",
-					levels_standard = { "普通攻击击杀敌人后，下次射击伤害提高10%，攻击间隔缩短25%。", "普通攻击击杀敌人后，下次射击伤害提高25%，攻击间隔缩短25%。", "普通攻击击杀敌人后，下次射击伤害提高40%，攻击间隔缩短25%。" },
-					levels_enhanced = { "射击伤害提高10%，攻击间隔缩短25%。", "射击伤害提高25%，攻击间隔缩短25%。", "射击伤害提高40%，攻击间隔缩短25%。" },
+					name = "Khí thế chiến đấu", standard = "Sau khi đánh thường hạ địch, phát bắn kế tiếp tăng 10% sát thương và giảm 25% khoảng cách giữa đòn đánh.", enhanced = "Sau khi mua, không cần hạ địch để kích hoạt: phát bắn kế tiếp tăng 10% sát thương, giảm 25% khoảng cách giữa đòn đánh, thêm sát thương vật lý bằng máu tối đa × kháng phép ÷ 2. Với trùm, tối đa 300 sát thương.",
+					levels_standard = { "Sau khi đánh thường hạ địch, phát bắn kế tiếp tăng 10% sát thương và giảm 25% khoảng cách giữa đòn đánh.", "Sau khi đánh thường hạ địch, phát bắn kế tiếp tăng 25% sát thương và giảm 25% khoảng cách giữa đòn đánh.", "Sau khi đánh thường hạ địch, phát bắn kế tiếp tăng 40% sát thương và giảm 25% khoảng cách giữa đòn đánh." },
+					levels_enhanced = { "Tăng 10% sát thương bắn và giảm 25% khoảng cách giữa đòn đánh.", "Tăng 25% sát thương bắn và giảm 25% khoảng cách giữa đòn đánh.", "Tăng 40% sát thương bắn và giảm 25% khoảng cách giữa đòn đánh." },
 					prices_standard = { "150", "150", "150" }, prices_enhanced = { "150", "150", "150" }
 				},
 				{
-					name = "致命射杀", standard = "射击目标并附加流血，4秒内造成128-160点真实伤害。CD12秒。", enhanced = "射击目标并附加流血，4秒内造成128-160点真实伤害。CD12秒。",
-					levels_standard = { "射击目标并附加流血，4秒内造成128-160点真实伤害。CD12秒。", "射击目标并附加流血，4秒内造成256-320点真实伤害。CD12秒。", "射击目标并附加流血，4秒内造成384-480点真实伤害。CD12秒。" },
-					levels_enhanced = { "射击目标并附加流血，4秒内造成128-160点真实伤害。CD12秒。", "射击目标并附加流血，4秒内造成256-320点真实伤害。CD12秒。", "射击目标并附加流血，4秒内造成384-480点真实伤害。CD12秒。" },
+					name = "Phát bắn Chí mạng", standard = "Bắn mục tiêu gây chảy máu, tổng cộng 128-160 sát thương chuẩn trong 4 giây. CD: 12 giây.", enhanced = "Bắn mục tiêu gây chảy máu, tổng cộng 128-160 sát thương chuẩn trong 4 giây. CD: 12 giây.",
+					levels_standard = { "Bắn mục tiêu gây chảy máu, tổng cộng 128-160 sát thương chuẩn trong 4 giây. CD: 12 giây.", "Bắn mục tiêu gây chảy máu, tổng cộng 256-320 sát thương chuẩn trong 4 giây. CD: 12 giây.", "Bắn mục tiêu gây chảy máu, tổng cộng 384-480 sát thương chuẩn trong 4 giây. CD: 12 giây." },
+					levels_enhanced = { "Bắn mục tiêu gây chảy máu, tổng cộng 128-160 sát thương chuẩn trong 4 giây. CD: 12 giây.", "Bắn mục tiêu gây chảy máu, tổng cộng 256-320 sát thương chuẩn trong 4 giây. CD: 12 giây.", "Bắn mục tiêu gây chảy máu, tổng cộng 384-480 sát thương chuẩn trong 4 giây. CD: 12 giây." },
 					prices_standard = { "200", "200", "200" }, prices_enhanced = { "200", "200", "200" }
 				},
 				{
-					name = "守卫猎犬", standard = "派出猎犬攻击近处敌人，每次造成22-30点物理伤害，完整攻击共66-90点。CD6秒。", enhanced = "派出猎犬攻击近处敌人，每次造成22-30点物理伤害，完整攻击共66-90点。CD6秒。",
-					levels_standard = { "派出猎犬攻击近处敌人，每次造成22-30点物理伤害，完整攻击共66-90点。CD6秒。", "派出猎犬攻击近处敌人，每次造成46-58点物理伤害，完整攻击共138-177点。CD6秒。", "派出猎犬攻击近处敌人，每次造成68-88点物理伤害，完整攻击共204-264点。CD6秒。" },
-					levels_enhanced = { "派出猎犬攻击近处敌人，每次造成22-30点物理伤害，完整攻击共66-90点。CD6秒。", "派出猎犬攻击近处敌人，每次造成46-58点物理伤害，完整攻击共138-177点。CD6秒。", "派出猎犬攻击近处敌人，每次造成68-88点物理伤害，完整攻击共204-264点。CD6秒。" },
+					name = "Chó săn Hộ vệ", standard = "Cử chó săn đánh địch ở gần, mỗi lần gây 22-30 sát thương vật lý, toàn lượt gây 66-90. CD: 6 giây.", enhanced = "Cử chó săn đánh địch ở gần, mỗi lần gây 22-30 sát thương vật lý, toàn lượt gây 66-90. CD: 6 giây.",
+					levels_standard = { "Cử chó săn đánh địch ở gần, mỗi lần gây 22-30 sát thương vật lý, toàn lượt gây 66-90. CD: 6 giây.", "Cử chó săn đánh địch ở gần, mỗi lần gây 46-58 sát thương vật lý, toàn lượt gây 138-177. CD: 6 giây.", "Cử chó săn đánh địch ở gần, mỗi lần gây 68-88 sát thương vật lý, toàn lượt gây 204-264. CD: 6 giây." },
+					levels_enhanced = { "Cử chó săn đánh địch ở gần, mỗi lần gây 22-30 sát thương vật lý, toàn lượt gây 66-90. CD: 6 giây.", "Cử chó săn đánh địch ở gần, mỗi lần gây 46-58 sát thương vật lý, toàn lượt gây 138-177. CD: 6 giây.", "Cử chó săn đánh địch ở gần, mỗi lần gây 68-88 sát thương vật lý, toàn lượt gây 204-264. CD: 6 giây." },
 					prices_standard = { "180", "180", "180" }, prices_enhanced = { "180", "180", "180" }
 				},
 				{
-					name = "三连速射", standard = "连续射出3发子弹，每发造成普通射击110%的伤害。CD50秒。", enhanced = "连续射出3发子弹，每发造成普通射击110%的伤害，并附带目标最大生命值×魔抗值÷3的额外物理伤害；对首领每发最多300点。CD50秒。",
-					levels_standard = { "连续射出3发子弹，每发造成普通射击110%的伤害。CD50秒。" },
-					levels_enhanced = { "连续射出3发子弹，每发造成普通射击110%的伤害，并附带目标最大生命值×魔抗值÷3的额外物理伤害；对首领每发最多300点。CD50秒。" },
+					name = "Bắn nhanh ba phát", standard = "Bắn liên tiếp 3 viên đạn, mỗi viên gây 110% sát thương phát bắn thường. CD: 50 giây.", enhanced = "Bắn liên tiếp 3 viên đạn, mỗi viên gây 110% sát thương phát bắn thường và thêm sát thương vật lý bằng máu tối đa của mục tiêu × kháng phép ÷ 3. Với trùm, tối đa 300 mỗi viên. CD: 50 giây.",
+					levels_standard = { "Bắn liên tiếp 3 viên đạn, mỗi viên gây 110% sát thương phát bắn thường. CD: 50 giây." },
+					levels_enhanced = { "Bắn liên tiếp 3 viên đạn, mỗi viên gây 110% sát thương phát bắn thường và thêm sát thương vật lý bằng máu tối đa của mục tiêu × kháng phép ÷ 3. Với trùm, tối đa 300 mỗi viên. CD: 50 giây." },
 					prices_standard = { "0" }, prices_enhanced = { "0" }
 				}
 			}

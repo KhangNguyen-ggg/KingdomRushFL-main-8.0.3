@@ -174,7 +174,7 @@ local at = common_requirements("artillery_")
 
 M.tree_order = {"g6_archers", "g6_barracks", "g6_mages", "g6_artillery"}
 M.trees = {
-	g6_archers = branch_tree("6代箭塔", "6代箭塔科技", "属于6代的箭塔可享受这些科技。", 3, "archers", {
+	g6_archers = branch_tree("Tháp cung phần 6", "Nâng cấp tháp cung phần 6", "Áp dụng cho các tháp cung của phần 6.", 3, "archers", {
 		item("archers_l1", 1, 1, 15, "TOWER_MARKSMAN_UPGRADE_RANGE_TITLE", "TOWER_MARKSMAN_UPGRADE_RANGE_DESC"),
 		item("archers_l2", 2, 2, 21, "TOWER_MARKSMAN_UPGRADE_DAMAGE_TITLE", "TOWER_MARKSMAN_UPGRADE_DAMAGE_DESC", ar.l2),
 		item("archers_l3a", 3, 3, 16, "TOWER_MARKSMAN_UPGRADE_BLOCKEDDMG_TITLE", "TOWER_MARKSMAN_UPGRADE_BLOCKEDDMG_DESC", ar.l3a),
@@ -183,7 +183,7 @@ M.trees = {
 		item("archers_l4b", 4, 3, 19, "TOWER_MARKSMAN_UPGRADE_MAXDAMAGE_TITLE", "TOWER_MARKSMAN_UPGRADE_MAXDAMAGE_DESC", ar.l4b),
 		item("archers_ulti", 5, 5, 20, "TOWER_MARKSMAN_UPGRADE_ULTIMATE_TITLE", "TOWER_MARKSMAN_UPGRADE_ULTIMATE_DESC", ar.ulti)
 	}),
-	g6_barracks = branch_tree("6代兵营", "6代兵营科技", "属于6代的兵营和兵营单位可享受这些科技。", 1, "barracks", {
+	g6_barracks = branch_tree("Doanh trại phần 6", "Nâng cấp doanh trại phần 6", "Áp dụng cho doanh trại và binh lính của phần 6.", 1, "barracks", {
 		item("barracks_l1", 1, 1, 1, "TOWER_BARRACKS_UPGRADE_HP_TITLE", "TOWER_BARRACKS_UPGRADE_HP_DESC"),
 		item("barracks_l2", 2, 2, 4, "TOWER_BARRACKS_UPGRADE_COOLDOWN_TITLE", "TOWER_BARRACKS_UPGRADE_COOLDOWN_DESC", ba.l2),
 		item("barracks_l3a", 3, 3, 2, "TOWER_BARRACKS_UPGRADE_DAMAGE_TITLE", "TOWER_BARRACKS_UPGRADE_DAMAGE_DESC", ba.l3a),
@@ -192,7 +192,7 @@ M.trees = {
 		item("barracks_l4b", 4, 3, 5, "TOWER_BARRACKS_UPGRADE_RESISTDMG_TITLE", "TOWER_BARRACKS_UPGRADE_RESISTDMG_DESC", ba.l4b),
 		item("barracks_ulti", 5, 5, 7, "TOWER_BARRACKS_UPGRADE_ULTIMATE_TITLE", "TOWER_BARRACKS_UPGRADE_ULTIMATE_DESC", ba.ulti)
 	}),
-	g6_mages = branch_tree("6代法师", "6代法师科技", "属于6代的法师塔可享受这些科技。", 2, "mages", {
+	g6_mages = branch_tree("Pháp sư phần 6", "Nâng cấp pháp sư phần 6", "Áp dụng cho các tháp phép của phần 6.", 2, "mages", {
 		item("mages_l1", 1, 1, 8, "TOWER_MAGES_UPGRADE_MINDAMAGE_TITLE", "TOWER_MAGES_UPGRADE_MINDAMAGE_DESC"),
 		item("mages_l2", 2, 2, 9, "TOWER_MAGES_UPGRADE_COST_TITLE", "TOWER_MAGES_UPGRADE_COST_DESC", ma.l2),
 		item("mages_l3a", 3, 3, 10, "TOWER_MAGES_UPGRADE_SKILLCOST_TITLE", "TOWER_MAGES_UPGRADE_SKILLCOST_DESC", ma.l3a),
@@ -208,7 +208,7 @@ M.trees = {
 		}),
 		item("mages_ulti", 5, 5, 13, "TOWER_MAGES_UPGRADE_ULTIMATE_TITLE", "TOWER_MAGES_UPGRADE_ULTIMATE_DESC", ma.ulti)
 	}),
-	g6_artillery = branch_tree("6代炮塔", "6代炮塔科技", "属于6代的炮塔可享受这些科技。", 4, "artillery", {
+	g6_artillery = branch_tree("Tháp pháo phần 6", "Nâng cấp tháp pháo phần 6", "Áp dụng cho các tháp pháo của phần 6.", 4, "artillery", {
 		item("artillery_l1", 1, 1, 22, "TOWER_ARTILLERY_UPGRADE_AREAINC_TITLE", "TOWER_ARTILLERY_UPGRADE_AREAINC_DESC"),
 		item("artillery_l2", 2, 2, 23, "TOWER_ARTILLERY_UPGRADE_DAMAGE_TITLE", "TOWER_ARTILLERY_UPGRADE_DAMAGE_DESC", at.l2),
 		item("artillery_l3a", 3, 3, 24, "TOWER_ARTILLERY_UPGRADE_COOLDOWN_TITLE", "TOWER_ARTILLERY_UPGRADE_COOLDOWN_DESC", at.l3a),

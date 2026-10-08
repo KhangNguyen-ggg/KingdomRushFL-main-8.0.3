@@ -20,9 +20,9 @@ generation_upgrades.page_tree_order = {
 
 generation_upgrades.trees = {
 	g4_reinforcements = {
-		name = "4代援军",
-		root_name = "4代援军科技",
-		root_description = "适用于4代关卡中的援军。",
+		name = "Viện quân phần 4",
+		root_name = "Nâng cấp viện quân phần 4",
+		root_description = "Áp dụng cho viện quân trong các màn của phần 4.",
 		root_sprite = "Generation_G4_0028",
 		exclusive_price_groups = {
 			{
@@ -40,16 +40,16 @@ generation_upgrades.trees = {
 				level = 1,
 				price = 2,
 				icon = 26,
-				name = "爆裂消亡",
-				description = "4代援军死亡时对附近敌人造成范围伤害。"
+				name = "Nổ khi chết",
+				description = "Viện quân phần 4 gây sát thương diện rộng lên kẻ địch gần đó khi chết."
 			},
 			{
 				key = "g4_reinforcements_training",
 				level = 2,
 				price = 3,
 				icon = 27,
-				name = "强化恶魔",
-				description = "将4代援军强化为训练有素的小恶魔。",
+				name = "Quỷ tinh nhuệ",
+				description = "Nâng viện quân phần 4 thành tiểu quỷ được huấn luyện.",
 				requires = {"g4_reinforcements_death_burst"}
 			},
 			{
@@ -57,8 +57,8 @@ generation_upgrades.trees = {
 				level = 3,
 				price = 3,
 				icon = 28,
-				name = "恶魔卫兵",
-				description = "召唤生命和护甲更高的近战恶魔卫兵。",
+				name = "Vệ binh quỷ",
+				description = "Triệu hồi vệ binh quỷ cận chiến có máu và giáp cao hơn.",
 				requires = {"g4_reinforcements_training"},
 				blocks = {"g4_reinforcements_trident"}
 			},
@@ -67,8 +67,8 @@ generation_upgrades.trees = {
 				level = 3,
 				price = 3,
 				icon = 28,
-				name = "地狱三叉戟",
-				description = "召唤能够攻击地面与飞行敌人的远程恶魔。",
+				name = "Đinh ba địa ngục",
+				description = "Triệu hồi quỷ tầm xa tấn công được cả kẻ địch mặt đất và trên không.",
 				requires = {"g4_reinforcements_training"},
 				blocks = {"g4_reinforcements_guard"}
 			},
@@ -77,8 +77,8 @@ generation_upgrades.trees = {
 				level = 4,
 				price = 3,
 				icon = 29,
-				name = "地狱新星",
-				description = "恶魔卫兵死亡时产生更强、更大的爆炸。",
+				name = "Bùng nổ địa ngục",
+				description = "Vệ binh quỷ tạo vụ nổ mạnh hơn, rộng hơn khi chết.",
 				requires = {"g4_reinforcements_guard"},
 				blocks = {"g4_reinforcements_flaming_trident"}
 			},
@@ -87,8 +87,8 @@ generation_upgrades.trees = {
 				level = 4,
 				price = 3,
 				icon = 29,
-				name = "燃烧三叉戟",
-				description = "远程恶魔的三叉戟会点燃命中的敌人。",
+				name = "Đinh ba rực lửa",
+				description = "Đinh ba của quỷ tầm xa đốt cháy mục tiêu trúng đòn.",
 				requires = {"g4_reinforcements_trident"},
 				blocks = {"g4_reinforcements_guard_nova"}
 			},
@@ -97,8 +97,8 @@ generation_upgrades.trees = {
 				level = 5,
 				price = 4,
 				icon = 30,
-				name = "深渊领主",
-				description = "召唤4代援军时有30%几率额外出现一名深渊领主。",
+				name = "Lãnh chúa vực thẳm",
+				description = "Khi triệu hồi viện quân phần 4, có 30% cơ hội xuất hiện thêm một Lãnh chúa vực thẳm.",
 				requires_any = {
 					"g4_reinforcements_guard_nova",
 					"g4_reinforcements_flaming_trident"
@@ -107,9 +107,9 @@ generation_upgrades.trees = {
 		}
 	},
 	g4_towers = {
-		name = "4代防御塔",
-		root_name = "4代防御塔科技",
-		root_description = "属于4代的防御塔和兵营单位可享受这些科技。",
+		name = "Tháp phần 4",
+		root_name = "Nâng cấp tháp phần 4",
+		root_description = "Áp dụng cho tháp và binh lính doanh trại của phần 4.",
 		root_sprite = "Generation_G4_0013",
 		items = {
 			{
@@ -117,16 +117,16 @@ generation_upgrades.trees = {
 				level = 1,
 				price = 1,
 				icon = 21,
-				name = "闪电战术",
-				description = "提前召唤敌人的奖励金币提高80%。"
+				name = "Chiến thuật chớp nhoáng",
+				description = "Tăng 80% vàng thưởng khi gọi đợt quái sớm."
 			},
 			{
 				key = "g4_towers_war_rations",
 				level = 2,
 				price = 1,
 				icon = 22,
-				name = "军粮",
-				description = "4代兵营士兵和部分雇佣兵单位的生命上限提高30%。",
+				name = "Quân lương",
+				description = "Tăng 30% máu tối đa cho lính doanh trại phần 4 và một số lính đánh thuê.",
 				requires = {"g4_towers_blitz_tactics"}
 			},
 			{
@@ -134,8 +134,8 @@ generation_upgrades.trees = {
 				level = 2,
 				price = 1,
 				icon = 23,
-				name = "大型炸弹",
-				description = "4代炮塔炮弹的爆炸范围提高20%。",
+				name = "Bom lớn",
+				description = "Tăng 20% bán kính nổ của đạn tháp pháo phần 4.",
 				requires = {"g4_towers_blitz_tactics"}
 			},
 			{
@@ -143,8 +143,8 @@ generation_upgrades.trees = {
 				level = 3,
 				price = 2,
 				icon = 24,
-				name = "GXR-1瞄准系统",
-				description = "4代高塔上的射手攻击范围提高5%。",
+				name = "Hệ thống ngắm GXR-1",
+				description = "Tăng 5% tầm bắn cho xạ thủ trên tháp phần 4.",
 				requires = {"g4_towers_war_rations"}
 			},
 			{
@@ -152,8 +152,8 @@ generation_upgrades.trees = {
 				level = 3,
 				price = 2,
 				icon = 25,
-				name = "力量符文",
-				description = "4代法师塔攻击有10%几率造成2倍伤害。",
+				name = "Cổ ngữ sức mạnh",
+				description = "Đòn đánh của tháp phép phần 4 có 10% cơ hội gây sát thương gấp 2 lần.",
 				chance = 0.1,
 				damage_factor = 2,
 				requires = {"g4_towers_large_bombs"}
@@ -163,8 +163,8 @@ generation_upgrades.trees = {
 				level = 4,
 				price = 2,
 				icon = 19,
-				name = "商人行会",
-				description = "4代防御塔的技能价格降低15%。",
+				name = "Hiệp hội thương nhân",
+				description = "Giảm 15% giá kỹ năng của tháp phần 4.",
 				requires = {
 					"g4_towers_gxr1",
 					"g4_towers_rune_power"
@@ -175,8 +175,8 @@ generation_upgrades.trees = {
 				level = 5,
 				price = 2,
 				icon = 20,
-				name = "建筑大师",
-				description = "4代防御塔和兵营单位造成的伤害提高10%。",
+				name = "Bậc thầy xây dựng",
+				description = "Tăng 10% sát thương cho tháp và binh lính doanh trại phần 4.",
 				requires = {"g4_towers_merchant_guild"}
 			},
 			{
@@ -184,16 +184,16 @@ generation_upgrades.trees = {
 				level = 5,
 				price = 4,
 				icon = 30,
-				name = "死亡线圈",
-				description = "每180秒从出口发射死亡线圈，造成150-300点真实伤害。",
+				name = "Cuộn điện tử thần",
+				description = "Cứ 180 giây, phóng cuộn điện tử thần từ lối thoát, gây 150-300 sát thương chuẩn.",
 				requires = {"g4_towers_merchant_guild"}
 			}
 		}
 	},
 	g5_reinforcements = {
-		name = "5代援军",
-		root_name = "5代援军科技",
-		root_description = "适用于5代关卡中的援军。",
+		name = "Viện quân phần 5",
+		root_name = "Nâng cấp viện quân phần 5",
+		root_description = "Áp dụng cho viện quân trong các màn của phần 5.",
 		root_sprite = "Generation_G5_Reinforcements_0008",
 		exclusive_price_groups = {
 			{
@@ -286,9 +286,9 @@ generation_upgrades.trees = {
 		}
 	},
 	g5_towers = {
-		name = "5代防御塔",
-		root_name = "5代防御塔科技",
-		root_description = "属于5代的防御塔和兵营单位可享受这些科技。",
+		name = "Tháp phần 5",
+		root_name = "Nâng cấp tháp phần 5",
+		root_description = "Áp dụng cho tháp và binh lính doanh trại của phần 5.",
 		root_sprite = "Generation_G5_Towers_0008",
 		items = {
 			{
@@ -350,7 +350,7 @@ generation_upgrades.trees = {
 				price = 3,
 				icon = 6,
 				name_key = "towers_favorite_customer_NAME",
-				description = "降低防御塔2、3级技能25%的购买价格。如果技能只有2级则降低2级50%价格，只有1级则降低1级20%价格。",
+				description = "Giảm 25% giá mua kỹ năng tháp cấp 2 và 3. Nếu kỹ năng chỉ có 2 cấp, giảm 50% giá cấp 2; nếu chỉ có 1 cấp, giảm 20% giá cấp 1.",
 				requires = {"towers_golden_time"}
 			},
 			{

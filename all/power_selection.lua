@@ -103,8 +103,8 @@ local function cheat_item_option(item_name, label, price, cooldown, effect, poin
 		required_textures = {"go_items_" .. item_name},
 		required_exoskeletons = item_required_exoskeletons[item_name],
 		required_sounds = {"item_" .. item_name},
-		description = string.format("%s 冷却时间为%i秒。%s", effect, cooldown,
-			max_uses and string.format("每局最多使用%i次。", max_uses) or "")
+		description = string.format("%s Thời gian hồi: %i giây. %s", effect, cooldown,
+			max_uses and string.format("Mỗi trận dùng tối đa %i lần.", max_uses) or "")
 	}
 end
 
@@ -124,14 +124,14 @@ local function kro_item_option(item_name, template_name, label, cooldown, effect
 		required_textures = required_textures or {},
 		cast_sound = cast_sound,
 		required_sounds = required_sounds or {},
-		description = string.format("%s 冷却时间为%i秒。%s", effect, cooldown,
-			max_uses and string.format("每局最多使用%i次。", max_uses) or "")
+		description = string.format("%s Thời gian hồi: %i giây. %s", effect, cooldown,
+			max_uses and string.format("Mỗi trận dùng tối đa %i lần.", max_uses) or "")
 	}
 end
 
 M.options = {
 	reinforcement_g1 = {
-		label = "1代援军",
+		label = "Viện quân phần 1",
 		icon = "reinforcements_0001",
 		map_icon = "spell_selection_icon_reinforcement",
 		pointer_icon = "pointer_user_power_0002",
@@ -141,7 +141,7 @@ M.options = {
 		tech_upgrade = "reinforcements"
 	},
 	reinforcement_g2 = {
-		label = "2代援军",
+		label = "Viện quân phần 2",
 		icon = "reinforcements_0001",
 		map_icon = "spell_selection_icon_reinforcement",
 		pointer_icon = "pointer_user_power_0002",
@@ -151,7 +151,7 @@ M.options = {
 		tech_upgrade = "reinforcements"
 	},
 	reinforcement_g3 = {
-		label = "3代援军",
+		label = "Viện quân phần 3",
 		icon = "power_button_icons_0018",
 		map_icon = "spell_selection_icon_reinforcement_g3",
 		pointer_icon = "pointer_hero_power_0018",
@@ -161,7 +161,7 @@ M.options = {
 		tech_upgrade = "reinforcements"
 	},
 	reinforcement_g4 = {
-		label = "4代援军",
+		label = "Viện quân phần 4",
 		icon = "reinforcements_0001",
 		map_icon = "spell_selection_icon_reinforcement",
 		pointer_icon = "pointer_user_power_0002",
@@ -172,7 +172,7 @@ M.options = {
 		scale_required_textures = {"kr4_power_reinforcements"}
 	},
 	reinforcement_g5 = {
-		label = "5代援军",
+		label = "Viện quân phần 5",
 		icon = "reinforcements_0001",
 		map_icon = "spell_selection_icon_reinforcement",
 		pointer_icon = "pointer_user_power_0002",
@@ -181,10 +181,10 @@ M.options = {
 		generation = 5,
 		tech_upgrade = "reinforcements"
 	},
-	reinforcement_g6 = kr6_power_option("reinforcements", "6代援军",
-		"召唤两名近战单位上场与敌人战斗。基础冷却时间为15秒。", "point", true),
+	reinforcement_g6 = kr6_power_option("reinforcements", "Viện quân phần 6",
+		"Triệu hồi hai đơn vị cận chiến hỗ trợ chiến đấu. Thời gian hồi cơ bản: 15 giây.", "point", true),
 	fireball_g1 = {
-		label = "1代火雨",
+		label = "Mưa lửa phần 1",
 		icon = "fire_0001",
 		map_icon = "spell_selection_icon_fire",
 		pointer_icon = "pointer_user_power_0001",
@@ -194,7 +194,7 @@ M.options = {
 		tech_upgrade = "thunder"
 	},
 	fireball_g2 = {
-		label = "2代火雨",
+		label = "Mưa lửa phần 2",
 		icon = "fire_0001",
 		map_icon = "spell_selection_icon_fire",
 		pointer_icon = "pointer_user_power_0001",
@@ -204,7 +204,7 @@ M.options = {
 		tech_upgrade = "thunder"
 	},
 	thunder_g3 = {
-		label = "3代闪电",
+		label = "Sấm sét phần 3",
 		icon = "power_button_icons_0017",
 		map_icon = "spell_selection_icon_thunder",
 		pointer_icon = "pointer_hero_power_0017",
@@ -213,43 +213,43 @@ M.options = {
 		generation = 3,
 		tech_upgrade = "thunder"
 	},
-	fireball_g6 = kr6_power_option("rain_of_fire", "6代火雨",
-		"召来毁灭的魔法流星，让炽烈燃烧的陨石降下冲击，在范围内对敌军造成大量伤害。基础冷却时间为60秒。", "area"),
-	royal_edict_g6 = kr6_power_option("royal_edict", "皇家号令",
-		"提升周围防御塔的伤害，持续数秒。基础冷却时间为50秒。", "area"),
-	soaring_shop_g6 = kr6_power_option("soaring_shop", "侏儒商店",
-		"召唤一间飞行商店，投掷炸药攻击敌人。基础冷却时间为50秒。", "point"),
-	aspect_of_sol_g6 = kr6_power_option("aspect_of_sol", "索罗化身",
-		"召唤初代圣骑士的化身与敌人战斗。基础冷却时间为60秒。", "point"),
-	teleportation_sigil_g6 = kr6_power_option("teleportation_sigil", "传送符印",
-		"将部分敌人沿路径向后传送。基础冷却时间为45秒。", "area"),
-	thunder_zapper_g6 = kr6_power_option("thunder_zapper", "放电工程师",
-		"召唤一名放电工程师，释放电流攻击途经的敌人。基础冷却时间为50秒。", "point"),
-	wintersongs_wrath_g6 = kr6_power_option("wintersongs_wrath", "凛冬怒咏",
-		"召唤伊罗拉以冰霜之力妨碍敌人的行动。基础冷却时间为40秒。", "area"),
-	musketeers_g6 = kr6_power_option("musketeers", "王牌火枪手",
-		"召唤数名火枪手射击敌人。基础冷却时间为20秒。", "point"),
+	fireball_g6 = kr6_power_option("rain_of_fire", "Mưa lửa phần 6",
+		"Gọi mưa thiên thạch phép đang bốc cháy, gây sát thương lớn lên kẻ địch trong vùng. Thời gian hồi cơ bản: 60 giây.", "area"),
+	royal_edict_g6 = kr6_power_option("royal_edict", "Sắc lệnh hoàng gia",
+		"Tăng sát thương cho các tháp xung quanh trong vài giây. Thời gian hồi cơ bản: 50 giây.", "area"),
+	soaring_shop_g6 = kr6_power_option("soaring_shop", "Cửa hàng Gnome",
+		"Triệu hồi một cửa hàng bay, ném thuốc nổ tấn công kẻ địch. Thời gian hồi cơ bản: 50 giây.", "point"),
+	aspect_of_sol_g6 = kr6_power_option("aspect_of_sol", "Hiện thân Sol",
+		"Triệu hồi hiện thân của Sol, vị thánh kỵ sĩ đầu tiên, để chiến đấu. Thời gian hồi cơ bản: 60 giây.", "point"),
+	teleportation_sigil_g6 = kr6_power_option("teleportation_sigil", "Ấn dịch chuyển",
+		"Dịch chuyển một số kẻ địch lùi về phía sau trên đường đi. Thời gian hồi cơ bản: 45 giây.", "area"),
+	thunder_zapper_g6 = kr6_power_option("thunder_zapper", "Kỹ sư phóng điện",
+		"Triệu hồi kỹ sư phóng điện tấn công kẻ địch đi ngang qua. Thời gian hồi cơ bản: 50 giây.", "point"),
+	wintersongs_wrath_g6 = kr6_power_option("wintersongs_wrath", "Khúc ca cuồng nộ mùa đông",
+		"Triệu hồi Elora dùng sức mạnh băng giá cản bước kẻ địch. Thời gian hồi cơ bản: 40 giây.", "area"),
+	musketeers_g6 = kr6_power_option("musketeers", "Xạ thủ tinh nhuệ",
+		"Triệu hồi một nhóm lính súng bắn kẻ địch. Thời gian hồi cơ bản: 20 giây.", "point"),
 	lightning_flash = {
-		label = "Flash闪电",
+		label = "Sét Flash",
 		icon = "lightning_0001",
 		map_icon = "spell_selection_icon_flash",
 		pointer_icon = "pointer_user_power_0003",
 		pointer_style = "point",
 		kind = "lightning",
-		description = "本法术为1代flash版的付费内容。效果是造成666-999点单体真实伤害，冷却时间25秒。"
+		description = "Phép trả phí trong bản Flash của phần 1. Gây 666-999 sát thương chuẩn lên một mục tiêu. Thời gian hồi: 25 giây."
 	},
 	mermaid_gift = {
-		label = "人鱼赐福",
+		label = "Phước lành tiên cá",
 		icon = "dolia_mermaid_gift_0001",
 		map_icon = "dolia_mermaid_gift_0001",
 		pointer_icon = "pointer_dolia_mermaid_gift_0001",
 		pointer_style = "point",
 		kind = "mermaid_gift",
 		cooldown = 40,
-		description = "刷新所有正在冷却的英雄大招，并治疗、复活全屏友军；其他法术不受影响。若有多个相同的主动英雄大招，只刷新其中剩余冷却时间最长的一个。必须有可刷新的英雄大招正在冷却才能释放。冷却时间为40秒加上本次实际刷新冷却总时间的1.6倍，最高200秒。"
+		description = "Lập tức hồi tất cả chiêu cuối anh hùng đang chờ hồi, đồng thời hồi máu và hồi sinh đồng đội trên toàn bản đồ; không tác động đến các phép khác. Nếu có nhiều chiêu cuối chủ động giống nhau, chỉ hồi chiêu có thời gian chờ dài nhất. Chỉ dùng được khi có chiêu cuối anh hùng đang chờ hồi. Thời gian hồi bằng 40 giây cộng 1.6 lần tổng thời gian hồi đã rút ngắn, tối đa 200 giây."
 	},
 	yao_spirit_blessing = {
-		label = "独立兮山之上",
+		label = "Sừng sững trên đỉnh núi",
 		icon = "yao_spell_icon_0001",
 		map_icon = "yao_spell_icon_0001",
 		pointer_icon = "pointer_yao_spell_0001",
@@ -261,10 +261,10 @@ M.options = {
 		cast_sound = "YaoSpellCast",
 		required_textures = {"yao_spell_icon", "yao_spell_fx"},
 		required_sounds = {"power_yao_spell"},
-		description = "立即复活我方所有单位，为全场所有我方非飞行单位提供200点护盾；沉默场上所有敌方英雄，并使其攻击力、护甲与魔抗降低50%，持续14秒。冷却时间为70秒。"
+		description = "Hồi sinh toàn bộ đơn vị phe ta và cấp 200 khiên cho mọi đơn vị không bay. Câm lặng toàn bộ anh hùng phe địch, giảm 50% sức tấn công, giáp và kháng phép của chúng trong 14 giây. Thời gian hồi: 70 giây."
 	},
 	shaosiyuan_fateful_bond = {
-		label = "因缘际会",
+		label = "Nhân duyên hội ngộ",
 		icon = "shaosiyuan_spell_icon_0001",
 		map_icon = "shaosiyuan_spell_icon_0001",
 		pointer_icon = "pointer_shaosiyuan_spell_0001",
@@ -276,68 +276,68 @@ M.options = {
 		cast_sound = "ShaosiyuanSpellCast",
 		required_textures = {"shaosiyuan_spell_icon", "shaosiyuan_spell_fx"},
 		required_sounds = {"power_shaosiyuan_spell"},
-		description = "立即复活我方所有单位；持续16秒，全场所有我方单位每秒回复10%最大生命值，所有怪物降低30%移动速度并每秒受到8点真实伤害。每命中2名我方士兵，或者每命中2名敌人，都会获得2金币的奖励。冷却时间为80秒。"
+		description = "Hồi sinh toàn bộ đơn vị phe ta. Trong 16 giây, đồng đội trên toàn bản đồ hồi 10% máu tối đa mỗi giây; mọi kẻ địch bị giảm 30% tốc độ di chuyển và chịu 8 sát thương chuẩn mỗi giây. Cứ tác động đến 2 lính đồng minh hoặc 2 kẻ địch sẽ nhận 2 vàng. Thời gian hồi: 80 giây."
 	},
 	default_cataclysm = {
-		label = "默认天灾",
+		label = "Phép tấn công mặc định",
 		icon = "power_button_icons_0017",
 		map_icon = "spell_selection_icon_thunder",
 		pointer_icon = "pointer_hero_power_0017",
 		pointer_style = "area",
 		kind = "default_cataclysm",
-		description = "使用所进入关卡的默认自带的天灾。1/4代使用1代火雨，2代使用2代火雨，3/5代使用3代闪电，6代使用6代火雨。"
+		description = "Dùng phép tấn công mặc định của màn đang chơi. Phần 1/4 dùng Mưa lửa phần 1; phần 2 dùng Mưa lửa phần 2; phần 3/5 dùng Sấm sét phần 3; phần 6 dùng Mưa lửa phần 6."
 	},
 	default_reinforcement = {
-		label = "默认援军",
+		label = "Viện quân mặc định",
 		icon = "reinforcements_0001",
 		map_icon = "spell_selection_icon_reinforcement",
 		pointer_icon = "pointer_user_power_0002",
 		pointer_style = "point",
 		kind = "reinforcement",
 		default_generation = true,
-		description = "使用所进入关卡的默认自带的援军。"
+		description = "Dùng viện quân mặc định của màn đang chơi."
 	},
 	empty_spell = {
-		label = "空法术",
+		label = "Ô phép trống",
 		icon = "spell_selection_icon_empty",
 		map_icon = "spell_selection_icon_empty",
 		pointer_icon = "spell_selection_icon_empty",
 		pointer_style = "point",
 		kind = "empty",
-		description = "不启用该法术槽位",
+		description = "Không dùng ô phép này.",
 		cooldown = 100
 	},
-	item_cluster_bomb = cheat_item_option("cluster_bomb", "集束炸弹", 50, 24,
-		"投掷一枚炸弹，对范围内的敌人造成伤害，并在周围分裂出更多小型炸弹。", "area"),
-	item_portable_coil = cheat_item_option("portable_coil", "便携式线圈", 80, 24,
-		"在路径上设置陷阱，伤害并眩晕触发它的敌人，效果可连锁至附近敌人。", "area"),
-	item_scroll_of_spaceshift = cheat_item_option("scroll_of_spaceshift", "空间移动卷轴", 150, 30,
-		"将范围内最多10名敌人向路径后方传送。", "area"),
-	item_deaths_touch = cheat_item_option("deaths_touch", "死亡之触", 300, 90,
-		"点击敌人将其立即消灭；对首领造成高额真实伤害。", "point"),
-	item_winter_age = cheat_item_option("winter_age", "凛冬已至", 350, 75,
-		"冻结战场上的所有有效敌人。", "area"),
-	item_summon_blackburn = cheat_item_option("summon_blackburn", "布莱克本之盔", 600, 108,
-		"召唤布莱克本领主在路径上协助作战。", "point"),
-	item_loot_box = cheat_item_option("loot_box", "战利品箱", 400, 150,
-		"向路径投下宝箱，对敌人造成伤害并获得666金币。", "area", 2, {gold_amount = 666}),
-	item_medical_kit = cheat_item_option("medical_kit", "医疗包", 300, 150,
-		"获得5点生命值。", "point", 2, {hearts = 5}),
-	item_veznan_wrath = cheat_item_option("veznan_wrath", "维兹南之怒", 990, 180,
-		"维兹南施放强大魔法，对战场上的所有敌人造成毁灭性打击。", "area", 1),
-	kro_teleport_scroll = kro_item_option("teleport_scroll", "teleport_scroll", "传送卷轴", 30,
-		"将范围内的敌人向路径后方传送。", "area"),
-	kro_horn_heroism = kro_item_option("horn_heroism", "horn_heroism", "英雄号角", 84,
-		"强化附近的士兵与防御塔，使其获得保护并造成双倍伤害。", "area"),
-	kro_gem_timewarp = kro_item_option("gem_timewarp", "gem_timewarp", "漩涡之门", 72,
-		"对战场上的所有怪物造成128点魔法伤害，将其向路径后方传送并使其减速。", "area", nil, nil,
+	item_cluster_bomb = cheat_item_option("cluster_bomb", "Bom chùm", 50, 24,
+		"Ném bom gây sát thương trong vùng rồi phân tách thành nhiều bom nhỏ xung quanh.", "area"),
+	item_portable_coil = cheat_item_option("portable_coil", "Cuộn điện di động", 80, 24,
+		"Đặt bẫy trên đường đi, gây sát thương và làm choáng kẻ địch kích hoạt bẫy. Hiệu ứng có thể lan sang kẻ địch gần đó.", "area"),
+	item_scroll_of_spaceshift = cheat_item_option("scroll_of_spaceshift", "Cuộn dịch chuyển không gian", 150, 30,
+		"Dịch chuyển tối đa 10 kẻ địch trong vùng lùi về phía sau trên đường đi.", "area"),
+	item_deaths_touch = cheat_item_option("deaths_touch", "Cái chạm tử thần", 300, 90,
+		"Nhấn vào kẻ địch để tiêu diệt ngay; gây sát thương chuẩn lớn lên trùm.", "point"),
+	item_winter_age = cheat_item_option("winter_age", "Mùa đông đã đến", 350, 75,
+		"Đóng băng tất cả kẻ địch có thể bị ảnh hưởng trên chiến trường.", "area"),
+	item_summon_blackburn = cheat_item_option("summon_blackburn", "Mũ Blackburn", 600, 108,
+		"Triệu hồi Lãnh chúa Blackburn hỗ trợ chiến đấu trên đường đi.", "point"),
+	item_loot_box = cheat_item_option("loot_box", "Rương chiến lợi phẩm", 400, 150,
+		"Thả rương xuống đường đi, gây sát thương cho kẻ địch và nhận 666 vàng.", "area", 2, {gold_amount = 666}),
+	item_medical_kit = cheat_item_option("medical_kit", "Túi cứu thương", 300, 150,
+		"Nhận 5 mạng.", "point", 2, {hearts = 5}),
+	item_veznan_wrath = cheat_item_option("veznan_wrath", "Cơn thịnh nộ của Vez'nan", 990, 180,
+		"Vez'nan tung phép mạnh, giáng đòn hủy diệt lên toàn bộ kẻ địch trên chiến trường.", "area", 1),
+	kro_teleport_scroll = kro_item_option("teleport_scroll", "teleport_scroll", "Cuộn dịch chuyển", 30,
+		"Dịch chuyển kẻ địch trong vùng lùi về phía sau trên đường đi.", "area"),
+	kro_horn_heroism = kro_item_option("horn_heroism", "horn_heroism", "Tù và anh hùng", 84,
+		"Cường hóa lính và tháp gần đó, bảo vệ chúng và tăng sát thương lên gấp đôi.", "area"),
+	kro_gem_timewarp = kro_item_option("gem_timewarp", "gem_timewarp", "Cổng xoáy", 72,
+		"Gây 128 sát thương phép lên toàn bộ kẻ địch, dịch chuyển chúng lùi về phía sau và làm chậm.", "area", nil, nil,
 		"DaqiaoVortexGateCast", {"power_daqiao_vortex_gate"}),
-	kro_rod_dragon_fire = kro_item_option("rod_dragon_fire", "rod_dragon_fire", "龙息法杖", 120,
-		"在路径上放置龙息法杖，持续向附近敌人发射火球。", "point", nil, {"go_items_rod_dragon_fire"}),
-	kro_hand_midas = kro_item_option("hand_midas", "hand_midas", "迈达斯之手", 120,
-		"在35秒内使击杀敌人获得的金币翻倍。", "point", 2),
-	kro_wrath_of_elynia = kro_item_option("wrath_of_elynia", "wrath_of_elynia", "艾纳妮之怒", 180,
-		"消灭战场上的普通敌人，并对首领造成3000点真实伤害。", "area", 1)
+	kro_rod_dragon_fire = kro_item_option("rod_dragon_fire", "rod_dragon_fire", "Trượng hơi thở rồng", 120,
+		"Đặt trượng hơi thở rồng trên đường đi, liên tục bắn cầu lửa vào kẻ địch gần đó.", "point", nil, {"go_items_rod_dragon_fire"}),
+	kro_hand_midas = kro_item_option("hand_midas", "hand_midas", "Bàn tay Midas", 120,
+		"Nhân đôi vàng nhận được khi tiêu diệt kẻ địch trong 35 giây.", "point", 2),
+	kro_wrath_of_elynia = kro_item_option("wrath_of_elynia", "wrath_of_elynia", "Cơn thịnh nộ của Elynie", 180,
+		"Tiêu diệt kẻ địch thường trên chiến trường và gây 3000 sát thương chuẩn lên trùm.", "area", 1)
 }
 
 local cataclysm_options = {
@@ -458,7 +458,7 @@ function M.get_description(user_data, option_id)
 			level = generation_upgrades.level(user_data, "g" .. option.generation .. "_reinforcements")
 		end
 
-		return string.format("本法术受科技树相应栏目的影响。不在本页面调整。当前科技等级为%i", level)
+		return string.format("Phép này chịu tác động của nhánh nâng cấp tương ứng và không điều chỉnh tại đây. Cấp nâng cấp hiện tại: %i", level)
 	end
 
 	return option.description or ""

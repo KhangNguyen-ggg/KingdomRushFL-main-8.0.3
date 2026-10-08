@@ -585,7 +585,7 @@ function love.draw()
 			end
 
 			if max_scroll > 0 then
-				table.insert(lines, 1, string.format("[log %s-%s/%s，可在黑色日志区域上下滑动]", first, last, #all_lines))
+				table.insert(lines, 1, string.format("[log %s-%s/%s; vuốt lên hoặc xuống trong vùng log màu đen]", first, last, #all_lines))
 			end
 
 			local text = table.concat(lines, "\n")
@@ -1048,7 +1048,7 @@ function love.errhand(msg)
 	love.graphics.setColor(255, 255, 255, 255)
 
 	local pt = string.format(
-		"Version %s\n\n出了一些错误。如果你不想被嘲讽连中文都不认识的话，请将此截图发到作者的发布贴或发布视频，并详细描述局内的情况。",
+		"Version %s\n\nGame gặp lỗi. Hãy gửi ảnh chụp này vào bài đăng hoặc video phát hành của tác giả và mô tả chi tiết tình huống trong trận.",
 		KR_FL_VERSION)
 
 	pt = string.gsub(pt, "\t", "")
