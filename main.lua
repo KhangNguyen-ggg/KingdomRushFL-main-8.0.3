@@ -367,6 +367,23 @@ end
 function love.load(arg)
 	love.filesystem.setIdentity(version.identity)
 
+	if KR_PLATFORM == "win" and love.filesystem and love.filesystem.getSaveDirectory then
+		local ok, crash_save_dir = pcall(love.filesystem.getSaveDirectory)
+
+		if ok and crash_save_dir and crash_save_dir ~= "" then
+			local crash_path = crash_save_dir .. "/KRFL_crash_log.txt"
+			pcall(function()
+				local f = io.open(crash_path, "a")
+
+				if f then
+					f:write(string.format("\n===== KRFL %s SESSION START =====\nTime: %s\nCrash log: %s\n", tostring(KR_FL_VERSION or "unknown"), os.date("%Y-%m-%d %H:%M:%S"), crash_path))
+					f:flush()
+					f:close()
+				end
+			end)
+		end
+	end
+
 	local save_dir = "fl_save"
 	if not love.filesystem.isDirectory(save_dir) then
 		if not love.filesystem.createDirectory(save_dir) then
