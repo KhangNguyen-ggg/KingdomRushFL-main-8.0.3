@@ -984,6 +984,87 @@ local function crash_report(str)
 	end
 end
 
+local function write_windows_crash_log(stack_msg)
+	if KR_PLATFORM ~= "win" then
+		return nil
+	end
+
+	local timestamp = os.date("%Y-%m-%d %H:%M:%S")
+	local report = string.format(
+		"\n===== KRFL %s CRASH =====\nTime: %s\nGame build: %s\nPlatform: %s\n\n%s\n",
+		tostring(KR_FL_VERSION or "unknown"),
+		tostring(timestamp),
+		tostring(version and version.string or "unknown"),
+		tostring(KR_PLATFORM or "unknown"),
+		tostring(stack_msg or "unknown error")
+	)
+
+	local save_dir
+
+	if love and love.filesystem and love.filesystem.getSaveDirectory then
+		local ok, dir = pcall(love.filesystem.getSaveDirectory)
+
+		if ok and dir and dir ~= "" then
+			save_dir = dir
+		end
+	end
+
+	if save_dir then
+		local path = save_dir .. "/KRFL_crash_log.txt"
+		local ok, err = pcall(function()
+			local f, open_err = io.open(path, "a")
+
+			if not f then
+				error(open_err or "open failed")
+			end
+
+			f:write(report)
+			f:flush()
+			f:close()
+		end)
+
+		if ok then
+			return path
+		end
+
+		pcall(function()
+			io.stderr:write("Failed to write KRFL crash log to " .. tostring(path) .. ": " .. tostring(err) .. "\n")
+			io.stderr:flush()
+		end)
+	end
+
+	if love and love.filesystem then
+		local name = "KRFL_crash_log.txt"
+		local ok = false
+
+		if love.filesystem.append then
+			ok = pcall(love.filesystem.append, name, report)
+		elseif love.filesystem.write then
+			local old = ""
+
+			if love.filesystem.read then
+				local read_ok, data = pcall(love.filesystem.read, name)
+
+				if read_ok and data then
+					old = data
+				end
+			end
+
+			ok = pcall(love.filesystem.write, name, old .. report)
+		end
+
+		if ok then
+			if save_dir then
+				return save_dir .. "/" .. name
+			end
+
+			return name
+		end
+	end
+
+	return nil
+end
+
 function love.errhand(msg)
 	local error_canvas = G.newCanvas(G.getWidth(), G.getHeight())
 	local last_canvas = G.getCanvas()
@@ -998,7 +1079,9 @@ function love.errhand(msg)
 	stack_msg = (stack_msg or "") .. "\n" .. last_log_msg
 
 	print(stack_msg)
-	log.error(stack_msg)
+	log.error("%s", stack_msg)
+
+	local crash_log_path = write_windows_crash_log(stack_msg)
 
 	if IS_ANDROID and log.android_log_write then
 		log.android_log_write("\n===== KRFL fatal error =====\n" .. stack_msg .. "\n")
@@ -1050,6 +1133,10 @@ function love.errhand(msg)
 	local pt = string.format(
 		"Version %s\n\nGame gặp lỗi. Hãy gửi ảnh chụp này vào bài đăng hoặc video phát hành của tác giả và mô tả chi tiết tình huống trong trận.",
 		KR_FL_VERSION)
+
+	if crash_log_path then
+		pt = pt .. "\n\nCrash log: " .. tostring(crash_log_path)
+	end
 
 	pt = string.gsub(pt, "\t", "")
 	pt = string.gsub(pt, "%[string \"(.-)\"%]", "%1")
