@@ -5100,7 +5100,7 @@ local function add_level_description(parent, text, max_y)
 	parent:add_child(bg)
 
 	local FIRST_PARAGRAPH_WIDTH = ls_page_w - bg.size.x
-	local english = i18n.english_for(text)
+	local english = i18n.english_for and i18n.english_for(text)
 	if english then
 		local font = F:f(font_name, font_size)
 		local function description_fits(value)
@@ -5638,7 +5638,7 @@ local level_select_campaign_variants = {
 }
 
 local level_select_campaign_variant_labels = {
-	[CAMPAIGN_VARIANT_REGULAR] = CJK("Campaign", "Chiến dịch", "キャンペーン", "캠페인"),
+	[CAMPAIGN_VARIANT_REGULAR] = CJK("Campaign", "Campaign", "キャンペーン", "캠페인"),
 	[CAMPAIGN_VARIANT_SPELL_RAID] = CJK("Spell Raid", "Đột kích phép", "スペル強襲", "주문 습격"),
 	[CAMPAIGN_VARIANT_HERO_RALLY] = CJK("Hero Rally", "Hội quân anh hùng", "英雄集結", "영웅 집결"),
 	[CAMPAIGN_VARIANT_NOSTALGIC_CLASSIC] = CJK("Nostalgic", "Cổ điển", "懐旧クラシック", "향수 클래식")

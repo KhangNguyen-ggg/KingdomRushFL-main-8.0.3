@@ -6964,11 +6964,18 @@ function HudBottomView:update_infinite_hero_page(page)
 		portrait.hidden = math.ceil(n / 2) ~= self.infinite_hero_page
 		portrait.pos = v(8 + ((n - 1) % 2) * (portrait.size.x - 18), 0)
 		portrait:set_style(nil)
+		if portrait.infinite_skill then
+			local skill = portrait.infinite_skill
+			skill.hidden = portrait.hidden
+			skill.pos = v(29 + ((n - 1) % 2) * 63, 30 - game_gui.power_1.size.y - 8)
+			local background = portrait.infinite_skill_background
+			background.hidden = portrait.hidden
+			background.pos = v(skill.pos.x + game_gui.power_1.size.x / 2, self.powers.size.y - game_gui.power_1.size.y - 8)
+		end
 	end
 	self.powers.pos.x = 175
 	if not self.infinite_pager then
 		local pager = KView:new(v(130, 24))
-		pager.pos = v(8, -145)
 		pager.colors.background = {37, 31, 22, 245}
 		self.herobar:add_child(pager)
 		self.infinite_pager = pager
@@ -6996,6 +7003,9 @@ function HudBottomView:update_infinite_hero_page(page)
 			pager:add_child(button)
 		end
 	end
+	if portraits[1] then
+		self.infinite_pager.pos = v(8 + math.floor((2 * portraits[1].size.x - 18 - 130) / 2), -portraits[1].size.y - 28)
+	end
 	self.infinite_pager.hidden = pages <= 1
 	self.infinite_page_label.text = tostring(self.infinite_hero_page) .. "/" .. pages
 	self.herobar:order_to_front()
@@ -7021,9 +7031,13 @@ function HudBottomView:add_hero(hero_entity)
 		local ultimate = hero_entity.hero and hero_entity.hero.skills and hero_entity.hero.skills.ultimate
 		if ultimate and ultimate.controller_name then
 			local skill = InfiniteHeroUltimateButton:new(hero_entity)
-			skill.pos = v(hero.size.x / 2, -21)
-			skill.scale = v(0.55, 0.55)
-			hero:add_child(skill)
+			skill.scale = v(game_gui.power_1.size.x / skill.size.x, game_gui.power_1.size.y / skill.size.y)
+			local background = KImageView:new("base_power_slot_bg")
+			background.anchor = v(background.size.x / 2, background.size.y)
+			self.powers:add_child(background)
+			self.powers:add_child(skill)
+			hero.infinite_skill = skill
+			hero.infinite_skill_background = background
 		end
 		self:update_infinite_hero_page(self.infinite_hero_page or 1)
 		return hero
