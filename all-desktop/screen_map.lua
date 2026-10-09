@@ -2261,93 +2261,6 @@ function screen_map:keypressed(key, isrepeat)
 		end
 	end
 
-	if DEBUG_MAP_KEYS then
-		if not self._test_unlocked_level then
-			self._test_unlocked_level = #self.user_data.levels
-		end
-
-		local function reset_unlock_data()
-			self.unlock_data = {}
-			self.unlock_data.unlocked_levels = {}
-		end
-
-		if isrepeat then
-			return
-		end
-
-		if self.map_view.show_flags_in_progress then
-			log.debug("show_flags in progress... it will look ugly!")
-		end
-
-		if key == "r" then
-			self.map_view:clear_flags()
-
-			self.user_data.levels = {
-				{}
-			}
-
-			reset_unlock_data()
-
-			self._test_unlocked_level = 1
-
-			self.map_view:show_flags()
-		elseif key == "n" then
-			local cur = self._test_unlocked_level
-			local nex = U.find_next_level_in_ranges(GS.level_ranges, cur)
-
-			self.map_view:clear_flags()
-			reset_unlock_data()
-
-			self.user_data.levels[cur] = {
-				2,
-				stars = 1
-			}
-			self.unlock_data.show_stars_level = cur
-			self.unlock_data.star_count_before = 0
-
-			U.unlock_next_levels_in_ranges(self.unlock_data, self.user_data.levels, GS, 3)
-			log.debug("test unlock level: %s", tul)
-
-			self._test_unlocked_level = nex
-
-			self.map_view:show_flags()
-		end
-
-		if self._test_unlocked_level > 1 then
-			if key == "s" then
-				self.map_view:clear_flags()
-				reset_unlock_data()
-
-				local lvl = self._test_unlocked_level - 1
-
-				self.unlock_data.show_stars_level = lvl
-				self.unlock_data.star_count_before = screen_map.user_data.levels[lvl].stars
-				self.user_data.levels[lvl].stars = km.clamp(1, 3, screen_map.user_data.levels[lvl].stars + 1)
-
-				self.map_view:show_flags()
-			elseif key == "h" then
-				self.map_view:clear_flags()
-				reset_unlock_data()
-
-				local lvl = self._test_unlocked_level - 1
-
-				self.user_data.levels[lvl][2] = 2
-				self.unlock_data.heroic_level = lvl
-
-				self.map_view:show_flags()
-			elseif key == "i" then
-				self.map_view:clear_flags()
-				reset_unlock_data()
-
-				local lvl = self._test_unlocked_level - 1
-
-				self.unlock_data.iron_level = lvl
-				self.user_data.levels[lvl][3] = 2
-
-				self.map_view:show_flags()
-			end
-		end
-	end
 end
 
 function screen_map:keyreleased(key)
@@ -15248,7 +15161,7 @@ function HeroRoomView:initialize(sw, sh)
 			settings.useinfinitehero, settings.usedoublehero = false, false
 		elseif settings.usedoublehero then
 			settings.useinfinitehero, settings.usedoublehero = true, false
-			settings.infiniteheroes = settings.infiniteheroes or {}
+			settings = infinite_heroes.settings(screen_map.user_data)
 			if #settings.infiniteheroes == 0 then settings.infiniteheroes[1] = screen_map.user_data.heroes.selected end
 		else
 			settings.usedoublehero = true
@@ -15552,15 +15465,33 @@ function HeroRoomView:create_infinite_hero_panel()
 	self.infinite_panel = panel
 	self.infinite_page = 1
 	self.infinite_slots = {}
-	local settings = screen_map.user_data.liuhui_hero
-	settings.infiniteheroes = infinite_heroes.names(screen_map.user_data, screen_map.hero_data)
+	local settings = infinite_heroes.settings(screen_map.user_data)
+	self.infinite_team_info = hero_deck_label("", v(270, 28), 15)
+	self.infinite_team_info.pos = v(10, 32)
+	panel:add_child(self.infinite_team_info)
+	self:infinite_deck_button(panel, "< Đội", 285, 32, 100, function() self:change_infinite_team(-1) end)
+	self:infinite_deck_button(panel, "Đội >", 395, 32, 90, function() self:change_infinite_team(1) end)
+	self:infinite_deck_button(panel, "Đội mới", 495, 32, 100, function() self:change_infinite_team(0, false) end)
+	self:infinite_deck_button(panel, "Nhân bản", 605, 32, 120, function() self:change_infinite_team(0, true) end)
+	self.infinite_delete_team_button = self:infinite_deck_button(panel, "Xóa đội", 735, 32, 115, function()
+		if not infinite_heroes.delete_team(screen_map.user_data) then
+			self.infinite_team_info.text = "Cần giữ ít nhất 1 đội"
+			return
+		end
+		self.infinite_page = 1
+		storage:save_slot(screen_map.user_data)
+		self:update_infinite_hero_panel()
+	end)
+	self.infinite_delete_team_button.colors.background = {168, 45, 38, 255}
+	self.infinite_delete_team_button.children[1].colors.text = {255, 245, 232, 255}
 	self.infinite_info = hero_deck_label("", v(270, 28), 16)
 	self.infinite_info.pos = v(10, 3)
 	panel:add_child(self.infinite_info)
 	self:infinite_deck_button(panel, "+ Thêm", 285, 3, 100, function() self:change_infinite_hero(1) end)
 	self:infinite_deck_button(panel, "- Bỏ", 395, 3, 90, function() self:change_infinite_hero(-1) end)
-	self:infinite_deck_button(panel, "Xóa đội", 495, 3, 100, function()
-		settings.infiniteheroes = {}; self.infinite_page = 1
+	self:infinite_deck_button(panel, "Bỏ hết", 495, 3, 100, function()
+		for n = #settings.infiniteheroes, 1, -1 do table.remove(settings.infiniteheroes, n) end
+		self.infinite_page = 1
 		storage:save_slot(screen_map.user_data); self:update_infinite_hero_panel()
 	end)
 	self:infinite_deck_button(panel, "Trang trước", 605, 3, 120, function()
@@ -15571,7 +15502,7 @@ function HeroRoomView:create_infinite_hero_panel()
 	end)
 	for n = 1, 8 do
 		local slot = KView:new(v(76, 76))
-		slot.pos = v(24 + (n - 1) * ((panel.size.x - 110) / 7), 56)
+		slot.pos = v(24 + (n - 1) * ((panel.size.x - 110) / 7), 64)
 		slot.colors.background = {34, 28, 20, 255}
 		slot.portrait = KImageView:new("heroroom_014_large")
 		slot.portrait.propagate_on_click = true
@@ -15592,6 +15523,18 @@ function HeroRoomView:create_infinite_hero_panel()
 	self:update_selected_hero()
 end
 
+function HeroRoomView:change_infinite_team(delta, copy_current)
+	local settings = infinite_heroes.settings(screen_map.user_data)
+	if delta == 0 then
+		infinite_heroes.new_team(screen_map.user_data, copy_current)
+	else
+		infinite_heroes.select_team(screen_map.user_data, settings.infinite_team_index + delta)
+	end
+	self.infinite_page = 1
+	storage:save_slot(screen_map.user_data)
+	self:update_infinite_hero_panel()
+end
+
 function HeroRoomView:change_infinite_hero(delta)
 	local hd = screen_map.hero_data[self.selected_index]
 	if not hd or hd.transplanting or (hd.available_level or 0) > #screen_map.user_data.levels then return end
@@ -15610,10 +15553,13 @@ function HeroRoomView:change_infinite_hero(delta)
 end
 
 function HeroRoomView:update_infinite_hero_panel()
-	local list = screen_map.user_data.liuhui_hero.infiniteheroes
+	local settings = infinite_heroes.settings(screen_map.user_data)
+	local list = settings.infiniteheroes
 	local pages = math.max(1, math.ceil(#list / 8))
 	self.infinite_page = math.min(self.infinite_page, pages)
 	self.infinite_info.text = "Vô hạn: " .. #list .. " tướng | " .. self.infinite_page .. "/" .. pages
+	self.infinite_team_info.text = settings.infinite_teams[settings.infinite_team_index].name .. " (" .. settings.infinite_team_index .. "/" .. #settings.infinite_teams .. ")"
+	self.infinite_delete_team_button.alpha = #settings.infinite_teams > 1 and 1 or 0.5
 	for n, slot in ipairs(self.infinite_slots) do
 		local index = (self.infinite_page - 1) * 8 + n
 		local hero_index = list[index] and get_hero_index(list[index])

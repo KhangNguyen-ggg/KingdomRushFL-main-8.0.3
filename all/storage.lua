@@ -1,4 +1,4 @@
-﻿-- chunkname: @./all/storage.lua
+-- chunkname: @./all/storage.lua
 
 local log = require("klua.log"):new("storage")
 local km = require("klua.macros")
@@ -212,14 +212,13 @@ function storage:load_slot(idx, force)
 
 	local input = self:load_lua(string.format(self.SLOT_FILE_FMT, idx), force)
 
-	if not input or not type(input) == "table" then
+	if type(input) ~= "table" then
 		return nil
 	end
 
 	for _, v in pairs(SLOT_MANDATORY_KEYS) do
-		if not input[v] then
-			log.error("loaded slot %s has invalid data for %s. removing.", idx, v)
-			self:delete_slot(idx)
+		if type(input[v]) ~= "table" then
+			log.error("loaded slot %s has invalid data for %s. preserving original.", idx, v)
 
 			return nil
 		end
@@ -235,6 +234,10 @@ function storage:load_slot(idx, force)
 end
 
 function storage:save_slot(data_table, idx, should_sync)
+	if type(data_table) ~= "table" then
+		log.error("refusing to save non-table slot data")
+		return false
+	end
 	idx = idx or self.active_slot_idx
 
 	if not idx then
@@ -278,13 +281,16 @@ function storage:delete_slot(idx)
 end
 
 function storage:create_slot(idx)
-	local template
-
-	if DEBUG and idx == 1 then
-		template = require("data.slot_template_debug")
-	else
-		template = require("data.slot_template")
+	local filename = string.format(self.SLOT_FILE_FMT, idx)
+	local function exists(path)
+		if FS.getInfo then return FS.getInfo(path, "file") ~= nil end
+		return FS.isFile(path)
 	end
+	if exists(filename) or exists(filename .. ".bak") then
+		log.error("refusing to replace existing unreadable slot %s", idx)
+		return nil
+	end
+	local template = require("data.slot_template")
 
 	template = table.deepclone(template)
 
@@ -540,3 +546,4 @@ function storage:import_dotnet(dirname)
 end
 
 return storage
+

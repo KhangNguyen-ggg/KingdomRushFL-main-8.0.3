@@ -320,11 +320,11 @@ M.options = {
 	item_summon_blackburn = cheat_item_option("summon_blackburn", "Mũ Blackburn", 600, 108,
 		"Triệu hồi Lãnh chúa Blackburn hỗ trợ chiến đấu trên đường đi.", "point"),
 	item_loot_box = cheat_item_option("loot_box", "Rương chiến lợi phẩm", 400, 150,
-		"Thả rương xuống đường đi, gây sát thương cho kẻ địch và nhận 666 vàng.", "area", 2, {gold_amount = 666}),
+		"Thả rương xuống đường đi, gây sát thương cho kẻ địch và nhận 666 vàng.", "area", nil, {gold_amount = 666}),
 	item_medical_kit = cheat_item_option("medical_kit", "Túi cứu thương", 300, 150,
-		"Nhận 5 mạng.", "point", 2, {hearts = 5}),
+		"Nhận 5 mạng.", "point", nil, {hearts = 5}),
 	item_veznan_wrath = cheat_item_option("veznan_wrath", "Cơn thịnh nộ của Vez'nan", 990, 180,
-		"Vez'nan tung phép mạnh, giáng đòn hủy diệt lên toàn bộ kẻ địch trên chiến trường.", "area", 1),
+		"Vez'nan tung phép mạnh, giáng đòn hủy diệt lên toàn bộ kẻ địch trên chiến trường.", "area", nil),
 	kro_teleport_scroll = kro_item_option("teleport_scroll", "teleport_scroll", "Cuộn dịch chuyển", 30,
 		"Dịch chuyển kẻ địch trong vùng lùi về phía sau trên đường đi.", "area"),
 	kro_horn_heroism = kro_item_option("horn_heroism", "horn_heroism", "Tù và anh hùng", 84,
@@ -335,9 +335,9 @@ M.options = {
 	kro_rod_dragon_fire = kro_item_option("rod_dragon_fire", "rod_dragon_fire", "Trượng hơi thở rồng", 120,
 		"Đặt trượng hơi thở rồng trên đường đi, liên tục bắn cầu lửa vào kẻ địch gần đó.", "point", nil, {"go_items_rod_dragon_fire"}),
 	kro_hand_midas = kro_item_option("hand_midas", "hand_midas", "Bàn tay Midas", 120,
-		"Nhân đôi vàng nhận được khi tiêu diệt kẻ địch trong 35 giây.", "point", 2),
+		"Nhân đôi vàng nhận được khi tiêu diệt kẻ địch trong 35 giây.", "point", nil),
 	kro_wrath_of_elynia = kro_item_option("wrath_of_elynia", "wrath_of_elynia", "Cơn thịnh nộ của Elynie", 180,
-		"Tiêu diệt kẻ địch thường trên chiến trường và gây 3000 sát thương chuẩn lên trùm.", "area", 1)
+		"Tiêu diệt kẻ địch thường trên chiến trường và gây 3000 sát thương chuẩn lên trùm.", "area", nil)
 }
 
 local cataclysm_options = {
@@ -526,3 +526,4 @@ function M.should_auto_cast_hero_ultimate(store, hero, allowed, excluded)
 end
 
 return M
+

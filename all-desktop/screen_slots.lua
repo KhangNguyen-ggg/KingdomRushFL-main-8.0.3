@@ -1,4 +1,4 @@
-﻿-- chunkname: @./all-desktop/screen_slots.lua
+-- chunkname: @./all-desktop/screen_slots.lua
 
 local log = require("klua.log"):new("screen_slots")
 
@@ -41,182 +41,6 @@ screen.ref_res = TEXTURE_SIZE_ALIAS.fullhd
 
 local function wid(name)
 	return screen.window:get_child_by_id(name)
-end
-
-local AUTO_FULL_SLOT_SKILL_LEVEL = 3
-local AUTO_FULL_SLOT_UPGRADE_LEVEL = 5
-local AUTO_FULL_SLOT_UPGRADE_GROUPS = {
-	"reinforcements",
-	"archers",
-	"thunder",
-	"rocks",
-	"barracks",
-	"mages"
-}
-local AUTO_FULL_SLOT_CONFIGS = {
-	{
-		slot_idx = 2,
-		stars = 2
-	},
-	{
-		slot_idx = 3,
-		stars = 3
-	}
-}
-local AUTO_FULL_SLOT_G6_UPGRADES = {
-	{tree = "g6_archers", keys = {"archers_l1", "archers_l2", "archers_l3a", "archers_l4a", "archers_ulti"}},
-	{tree = "g6_barracks", keys = {"barracks_l1", "barracks_l2", "barracks_l3a", "barracks_l4a", "barracks_ulti"}},
-	{tree = "g6_mages", keys = {"mages_l1", "mages_l2", "mages_l3a", "mages_l4a", "mages_ulti"}},
-	{tree = "g6_artillery", keys = {"artillery_l1", "artillery_l2", "artillery_l3a", "artillery_l4a", "artillery_ulti"}}
-}
-local AUTO_FULL_SLOT_ADDED_LEVEL_RANGES = {
-	{
-		193,
-		201
-	}
-}
-
-local function ensure_campaign_level(slot, level_idx, stars)
-	local level = slot.levels[level_idx]
-	local changed = false
-
-	if not level then
-		level = {}
-		slot.levels[level_idx] = level
-		changed = true
-	end
-
-	if level[GAME_MODE_CAMPAIGN] ~= 4 then
-		level[GAME_MODE_CAMPAIGN] = 4
-		changed = true
-	end
-
-	if (level.stars or 0) < stars then
-		level.stars = stars
-		changed = true
-	end
-
-	return changed
-end
-
-local function add_campaign_levels(slot, ranges, stars)
-	local changed = false
-
-	for _, range in ipairs(ranges) do
-		if range.list then
-			for i = 1, #range do
-				if ensure_campaign_level(slot, range[i], stars) then
-					changed = true
-				end
-			end
-		elseif #range == 1 then
-			if ensure_campaign_level(slot, range[1], stars) then
-				changed = true
-			end
-		else
-			for level_idx = range[1], range[2] do
-				if ensure_campaign_level(slot, level_idx, stars) then
-					changed = true
-				end
-			end
-		end
-	end
-
-	return changed
-end
-
-local function fill_auto_full_slot_upgrades(slot)
-	local changed = false
-
-	slot.upgrades = slot.upgrades or {}
-
-	for _, group in ipairs(AUTO_FULL_SLOT_UPGRADE_GROUPS) do
-		if slot.upgrades[group] ~= AUTO_FULL_SLOT_UPGRADE_LEVEL then
-			slot.upgrades[group] = AUTO_FULL_SLOT_UPGRADE_LEVEL
-			changed = true
-		end
-	end
-
-	return changed
-end
-
-local function ensure_auto_full_slot(slot_idx, stars)
-	local slot = storage:load_slot(slot_idx)
-
-	if slot then
-		return
-	end
-
-	slot = table.deepclone(slot_template)
-
-	slot.levels = slot.levels or {}
-	slot.liuhui = slot.liuhui or {}
-	-- The automatically generated completion slot should not enable the
-	-- optional KR4/KR5/KR6 hero-summoning systems by default.
-	slot.liuhui.cheat5 = false
-	slot.liuhui.cheat6 = false
-
-	for _, ranges in ipairs({
-		GS.level_ranges1,
-		GS.level_ranges2,
-		GS.level_ranges3,
-		GS.level_ranges4,
-		GS.level_ranges5,
-		GS.level_ranges6
-	}) do
-		add_campaign_levels(slot, ranges, stars)
-	end
-	add_campaign_levels(slot, AUTO_FULL_SLOT_ADDED_LEVEL_RANGES, stars)
-
-	fill_auto_full_slot_upgrades(slot)
-
-	local max_hero_xp = GS.hero_xp_thresholds[#GS.hero_xp_thresholds]
-
-	for _, status in pairs(slot.heroes.status) do
-		status.xp = max_hero_xp
-
-		-- 第一代和第六代英雄没有这张技能表。
-		for skill_name in pairs(status.skills) do
-			status.skills[skill_name] = AUTO_FULL_SLOT_SKILL_LEVEL
-		end
-	end
-
-	local generation_upgrades = require("generation_upgrades")
-
-	for _, tree in ipairs(AUTO_FULL_SLOT_G6_UPGRADES) do
-		for _, key in ipairs(tree.keys) do
-			if not generation_upgrades.buy(slot, tree.tree, key) then
-				log.error("failed to select automatic full slot upgrade %s", key)
-			end
-		end
-	end
-
-	local hero_upgrades_6 = require("hero_upgrades_6")
-	local hero_level = #GS.skill_points_for_hero_level
-
-	for _, hero_name in ipairs(hero_upgrades_6.hero_names) do
-		for _, node_id in ipairs(hero_upgrades_6.node_order) do
-			if node_id ~= "talent_2" and not hero_upgrades_6.buy(slot, hero_name, node_id, hero_level, GS.skill_points_for_hero_level) then
-				log.error("failed to select automatic full slot hero upgrade %s.%s", hero_name, node_id)
-			end
-		end
-	end
-
-	if slot_idx == 3 then
-		for _, achievement in ipairs(require("data.achievements_data")) do
-			slot.achievements[achievement.name] = true
-		end
-	end
-
-	if not storage:save_slot(slot, slot_idx, true) then
-		log.error("failed to create automatic full slot %s", slot_idx)
-	end
-end
-
-local function ensure_auto_full_slots()
-	for _, config in ipairs(AUTO_FULL_SLOT_CONFIGS) do
-		ensure_auto_full_slot(config.slot_idx, config.stars)
-	end
 end
 
 CSinkButton = class("CSinkButton", KImageButton)
@@ -467,7 +291,7 @@ function SlotView:delete_slot()
 end
 
 function screen:init(w, h, done_callback)
-	ensure_auto_full_slots()
+	-- Do not replace unreadable/missing slots with synthetic 2/3-star progress.
 
 	self.done_callback = done_callback
 
@@ -793,7 +617,10 @@ end
 
 function screen:handle_slot_button(slot_idx)
 	if not storage:load_slot(slot_idx) then
-		storage:create_slot(slot_idx)
+		if not storage:create_slot(slot_idx) then
+			log.error("save slot %s cannot be opened; original files preserved", slot_idx)
+			return
+		end
 	end
 
 	storage:set_active_slot(slot_idx)
@@ -816,3 +643,4 @@ function screen:handle_quit_button(button)
 end
 
 return screen
+
