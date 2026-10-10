@@ -6,6 +6,8 @@ local SU = require("script_utils")
 local V = require("klua.vector")
 local bit = require("bit")
 local M = {}
+-- Native data is read-only and shared, never deep-cloned into every hero.
+local native_by_kind = {}
 local function insert(e) require("simulation"):queue_insert_entity(e) end
 local function remove(e) require("simulation"):queue_remove_entity(e) end
 local function sound(name) if name then require("sound_db"):queue(name) end end
@@ -15,12 +17,32 @@ local function alive(e) return e and not e.pending_removal and e.health and not 
 local function owner_alive(e)
 	return alive(e) or e and e.boss_kind=="set" and e.boss_state and e.boss_state.phase==1
 end
-local function enemies(store, p, radius, ground)
-	local out = {}
-	for _, e in pairs(store.entities) do
-		if e.enemy and alive(e) and (not ground or bit.band(e.vis.flags, F_FLYING) == 0) and U.is_inside_ellipse(e.pos, p, radius) then out[#out+1] = e end
+local function entity_cache(store)
+	local cache = store._allied_enemy_cache
+	if not cache then cache = {list={},corpses={},fogs={}}; store._allied_enemy_cache = cache end
+	if cache.ts ~= store.tick_ts then
+		local n,c,f = 0,0,0
+		for _,e in pairs(store.entities) do
+			if e.enemy and alive(e) then n=n+1; cache.list[n]=e end
+			if e.enemy and e.health and e.health.dead then c=c+1; cache.corpses[c]=e end
+			if e.allied_fog_radius or e.template_name and e.template_name:match("^pirates_fog") then f=f+1; cache.fogs[f]=e end
+		end
+		for i=#cache.list,n+1,-1 do cache.list[i]=nil end
+		for i=#cache.corpses,c+1,-1 do cache.corpses[i]=nil end
+		for i=#cache.fogs,f+1,-1 do cache.fogs[i]=nil end
+		cache.ts = store.tick_ts
 	end
-	table.sort(out, function(a,b) return dist(a.pos,p) < dist(b.pos,p) end)
+	return cache
+end
+local function enemy_list(store) return entity_cache(store).list end
+local function enemies(store, p, radius, ground, unordered)
+	local out = {}
+	for _, e in ipairs(enemy_list(store)) do
+		if alive(e) and (not ground or bit.band(e.vis.flags, F_FLYING) == 0) and U.is_inside_ellipse(e.pos, p, radius) then out[#out+1] = e end
+	end
+	if not unordered then table.sort(out, function(a,b)
+		return (a.pos.x-p.x)^2+(a.pos.y-p.y)^2 < (b.pos.x-p.x)^2+(b.pos.y-p.y)^2
+	end) end
 	return out
 end
 local function damage(store, owner, e, lo, hi, kind)
@@ -78,7 +100,7 @@ local function stun(store, owner, target, duration)
 	insert(m)
 end
 local function area(store,owner,pos,radius,lo,hi,kind,duration,count,ground)
-	for i,e in ipairs(enemies(store,pos,radius,ground)) do
+	for i,e in ipairs(enemies(store,pos,radius,ground,not count)) do
 		if count and i>count then break end
 		if bit.band(e.vis.bans,F_AREA)==0 then
 			if lo and lo>0 then damage(store,owner,e,lo,hi,kind) end
@@ -156,11 +178,11 @@ local function summon(owner, source, pos, store, lifetime)
 	return e
 end
 local function living_summons(owner,store)
-	local out={}
-	for _,e in ipairs(state(owner,store).summons) do
-		if alive(e) and store.tick_ts<e.expires and not e._replaced then out[#out+1]=e end
+	local out=state(owner,store).summons
+	for i=#out,1,-1 do
+		local e=out[i]
+		if not alive(e) or store.tick_ts>=e.expires or e._replaced then table.remove(out,i) end
 	end
-	state(owner,store).summons=out
 	return out
 end
 local function group(owner,source,pos,count,store,life)
@@ -173,7 +195,7 @@ function M.raise(owner,store,source,radius,cd,cap)
 	if not ready(owner,store,"raise",cd) then return end
 	stamp(owner,store,"raise")
 	if #living_summons(owner,store)>=cap then return end
-	for _,e in pairs(store.entities) do
+	for _,e in ipairs(entity_cache(store).corpses) do
 		if e.enemy and e.health and e.health.dead and not e._allied_corpse_claimed and e.unit and bit.band(e.vis.flags,bit.bor(F_FLYING,F_BOSS,F_MINIBOSS))==0 and U.is_inside_ellipse(e.pos,owner.pos,radius) then
 			e._allied_corpse_claimed=true
 			summon(owner,source,e.pos,store,60)
@@ -274,6 +296,7 @@ end
 local function passive(this,store)
 	local id=this.boss_kind
 	local s=state(this,store)
+	if store.tick_ts-(s.cleanup_ts or s.born)>=1 then living_summons(this,store);s.cleanup_ts=store.tick_ts end
 	if id=="blackburn" then M.raise(this,store,"enemy_skeleton_big",106.383,0.5,15)
 	elseif id=="set" then
 		if ready(this,store,"fire",1) then
@@ -281,11 +304,11 @@ local function passive(this,store)
 			area(store,this,this.pos,128,s.phase==2 and 24 or 9,nil,DAMAGE_TRUE,nil,nil,true)
 		end
 		if s.phase==2 then M.raise(this,store,"enemy_fallen",200,0.5,15) end
-	elseif id=="navira" and this.health.hp<this.health.hp_max and ready(this,store,"heal",this.boss_native.corruption_kr5.cooldown) then
-		for _,e in pairs(store.entities) do
+	elseif id=="navira" and this.health.hp<this.health.hp_max and ready(this,store,"heal",native_by_kind[this.boss_kind].corruption_kr5.cooldown) then
+		for _,e in ipairs(entity_cache(store).corpses) do
 			if e.enemy and e.health and e.health.dead and not e._allied_corpse_claimed and e.template_name and e.template_name:find("specter",1,true) and dist(e.pos,this.pos)<=250 then
 				e._allied_corpse_claimed=true
-				this.health.hp=math.min(this.health.hp_max,this.health.hp+this.boss_native.corruption_kr5.hp)
+				this.health.hp=math.min(this.health.hp_max,this.health.hp+native_by_kind[this.boss_kind].corruption_kr5.hp)
 				stamp(this,store,"heal");break
 			end
 		end
@@ -337,17 +360,17 @@ end
 local function rays(this,store,count)
 	local targets=enemies(store,this.pos,450,false)
 	for i=1,math.min(count,#targets) do
-		projectile(this,this.boss_native.fire_ball_bullet_t,targets[i],targets[i].pos,store,{lo=0,hi=0,stun=5,flight=0.8,beam=true})
+		projectile(this,native_by_kind[this.boss_kind].fire_ball_bullet_t,targets[i],targets[i].pos,store,{lo=0,hi=0,stun=5,flight=0.8,beam=true})
 	end
 end
 local function navira_tornado(this,store,pos)
-	if not cast(this,store,"tornadoin",0.5,this.boss_native.sound_transform_in) then return end
+	if not cast(this,store,"tornadoin",0.5,native_by_kind[this.boss_kind].sound_transform_in) then return end
 	if pos then this.nav_rally.pos=copy(pos);this.nav_rally.center=copy(pos);this.nav_rally.new=true end
 	local last=store.tick_ts
-	local completed=move_form(this,store,this.boss_native.tornado_duration,this.boss_native.tornado_speed_mult,"tornadoloop",function()
+	local completed=move_form(this,store,native_by_kind[this.boss_kind].tornado_duration,native_by_kind[this.boss_kind].tornado_speed_mult,"tornadoloop",function()
 		if store.tick_ts-last>=0.25 then last=store.tick_ts;area(store,this,this.pos,40,15,15,DAMAGE_MAGICAL,nil,nil,false) end
 	end,false)
-	if completed and cast(this,store,"tornadoend",0.5,this.boss_native.sound_transform_out) then rays(this,store,this.boss_native.tornado_balls_count[math.min(state(this,store).threshold,#this.boss_native.tornado_balls_count)] or 3) end
+	if completed and cast(this,store,"tornadoend",0.5,native_by_kind[this.boss_kind].sound_transform_out) then rays(this,store,native_by_kind[this.boss_kind].tornado_balls_count[math.min(state(this,store).threshold,#native_by_kind[this.boss_kind].tornado_balls_count)] or 3) end
 end
 local function fog(this,pos,store)
 	local name="allied_spectro_fog"
@@ -367,7 +390,7 @@ local function fog(this,pos,store)
 			local start=st.tick_ts
 			e.touched={}
 			while alive(e.boss_owner) and st.tick_ts-start<18 do
-				for _,target in pairs(st.entities) do
+				for _,target in ipairs(enemy_list(st)) do
 					if target.enemy and alive(target) and target.unit and U.is_inside_ellipse(target.pos,e.pos,e.allied_fog_radius) then
 						e.touched[target.id]=target
 						if not target._allied_fogs then target._allied_fogs={};target.unit.damage_factor=target.unit.damage_factor*0.7 end
@@ -392,7 +415,7 @@ local function fog(this,pos,store)
 end
 local function obelisk(this,pos,store)
 	local s=state(this,store);s.obelisk=s.obelisk+1
-	local native=this.boss_native.timed_attacks.list[2]
+	local native=native_by_kind[this.boss_kind].timed_attacks.list[2]
 	local loops=native.loops[(s.obelisk-1)%#native.loops+1]
 	local name="allied_set_obelisk"
 	if not E.entities[name] then
@@ -427,13 +450,13 @@ end
 -- Public metadata is shared by the map and skill buttons.
 M.skills = {
 	blackburn={label="Đạp",cooldown=5,range=284,description="Đạp đất gây choáng. Tự gọi Skeleton Knight từ xác địch gần đó (tối đa 15 lính)."},
-	juggernaut={label="Golem",cooldown=4,range=700,description="Bắn tên lửa tự động. Ném bom gọi 7 Golem Head tại vị trí chọn."},
+	juggernaut={label="Golem",cooldown=4,range=700,description="Bắn tên lửa tự động. Ném bom gọi 7 Golem Head tại mục tiêu gần nhất."},
 	set={label="Trụ",cooldown=10,range=450,description="Dựng trụ gọi Fallen; cường hóa Fallen thành Immortal rồi Primordial. Hào quang lửa, hồi sinh và hình thái thứ hai."},
-	navira={label="Lốc",cooldown=25,range=450,description="Hóa lốc theo vị trí chọn hoặc khi mất máu. Bắn 3 tia linh hồn gây choáng; hấp thụ linh hồn Specter để hồi máu."},
+	navira={label="Lốc",cooldown=25,range=450,description="Hóa lốc theo mục tiêu gần nhất hoặc khi mất máu. Bắn 3 tia linh hồn gây choáng; hấp thụ linh hồn Specter để hồi máu."},
 	spectro={label="Sương",cooldown=18,range=500,description="Pháo linh hồn bắn loạt 7 phát. Khóa phép địch. Sương giảm 30% sát thương địch và giúp Spectro bất tử trong vùng sương."},
-	mirage={label="Ảnh",cooldown=8,range=350,description="Phi dao từ xa, tạo bản sao Nomad. Dịch chuyển đến vị trí chọn và để lại phân thân."},
-	alric={label="Cát",cooldown=16,range=350,description="Đòn Flurry diện rộng; tự hóa lốc cát tăng tốc, tránh sát thương. Gọi 3 Sand Warrior tại vị trí chọn."},
-	malik={label="Nhảy",cooldown=12,range=600,description="Ném búa sét từ xa. Đập đất gây choáng thay cho phá tháp. Nhảy tới vị trí chọn và gây sát thương khi đáp đất."}
+	mirage={label="Ảnh",cooldown=8,range=350,description="Phi dao từ xa, tạo bản sao Nomad. Dịch chuyển đến mục tiêu gần nhất và để lại phân thân."},
+	alric={label="Cát",cooldown=16,range=350,description="Đòn Flurry diện rộng; tự hóa lốc cát tăng tốc, tránh sát thương. Gọi 3 Sand Warrior tại mục tiêu gần nhất."},
+	malik={label="Nhảy",cooldown=12,range=600,description="Ném búa sét từ xa. Đập đất gây choáng thay cho phá tháp. Nhảy tới mục tiêu gần nhất và gây sát thương khi đáp đất."}
 }
 function M.kind(name) return name and name:match("^hero_allied_(.+)$") end
 function M.can_fire(hero,x,y,store)
@@ -445,7 +468,7 @@ function M.can_fire(hero,x,y,store)
 	return require("path_db"):valid_node_nearby(x,y,nil,NF_RALLY) and require("grid_db"):cell_is_only(x,y,bit.bor(TERRAIN_LAND,TERRAIN_ICE))
 end
 local function active(this,store,pos)
-	local id=this.boss_kind;local native=this.boss_native
+	local id=this.boss_kind;local native=native_by_kind[this.boss_kind]
 	if id=="blackburn" then
 		local a=native.timed_attacks.list[1]
 		-- Stomp is centered on Blackburn, like the enemy skill.
@@ -487,8 +510,35 @@ local function active(this,store,pos)
 end
 
 local function automatic(this,store)
-	local id,n,s=this.boss_kind,this.boss_native,state(this,store)
-	local targets=enemies(store,this.pos,500,false)
+	local id,n,s=this.boss_kind,native_by_kind[this.boss_kind],state(this,store)
+	if store.tick_ts < (s.next_ai or s.born + (this.id % 8) / 32) then return false end
+	s.next_ai=store.tick_ts+0.25
+	local targets=enemies(store,this.pos,math.max(500,M.skills[id].range),false)
+	if id=="navira" then
+		local threshold=n.tornado_hp_trigger[s.threshold]
+		if threshold and this.health.hp/this.health.hp_max<=threshold then
+			s.threshold=s.threshold+1; stamp(this,store,"active"); navira_tornado(this,store); return true
+		end
+	end
+	local skill=M.skills[id]
+	if #targets>0 and ready(this,store,"active",skill.cooldown) then
+		local pos
+		if id=="blackburn" then
+			local a=n.timed_attacks.list[1]
+			if #enemies(store,this.pos,a.damage_radius,true)>0 then pos=copy(this.pos) end
+		elseif id=="spectro" then
+			pos=copy(this.pos) -- Cover the ship, rather than leaving immunity behind.
+		else
+			for _,target in ipairs(targets) do
+				if dist(this.pos,target.pos)<=skill.range and bit.band(target.vis.flags,F_FLYING)==0 and
+					require("path_db"):valid_node_nearby(target.pos.x,target.pos.y,nil,NF_RALLY) and
+					require("grid_db"):cell_is_only(target.pos.x,target.pos.y,bit.bor(TERRAIN_LAND,TERRAIN_ICE)) then
+					pos=copy(target.pos); break
+				end
+			end
+		end
+		if pos then stamp(this,store,"active"); active(this,store,pos); return true end
+	end
 	if id=="navira" then
 		local threshold=n.tornado_hp_trigger[s.threshold]
 		if threshold and this.health.hp/this.health.hp_max<=threshold then
@@ -597,36 +647,34 @@ end
 
 function M.decorate(t,native,def)
 	local kind=M.kind(def.name);local skill=assert(M.skills[kind])
-	-- Special animations are copied as aliases; enemy animation entries stay intact.
-	local aliases={}
+	native_by_kind[kind] = native
+	-- Repair aliases only after animation/template reloads, not on every spawn.
+	local repair = false
 	for i,sp in ipairs(native.render.sprites) do
 		local dst=t.render.sprites[i]
-		if sp.animated and dst and sp.prefix and dst.prefix then
-			local prefix=sp.prefix.."_"
-			for key,a in pairs(A.db) do if key:sub(1,#prefix)==prefix then aliases[dst.prefix.."_"..key:sub(#prefix+1)]=a end end
-		end
+		if sp.animated and dst and sp.prefix and dst.prefix and
+			A.db[dst.prefix.."_skill_alias_ready"] ~= A.db[sp.prefix.."_idle"] then repair=true end
 	end
-	for key,a in pairs(aliases) do if not A.db[key] then A.db[key]=a end end
+	if repair then
+		local aliases={}
+		for i,sp in ipairs(native.render.sprites) do
+			local dst=t.render.sprites[i]
+			if sp.animated and dst and sp.prefix and dst.prefix then
+				local prefix=sp.prefix.."_"
+				for key,a in pairs(A.db) do
+					if key:sub(1,#prefix)==prefix then aliases[dst.prefix.."_"..key:sub(#prefix+1)]=a end
+				end
+				aliases[dst.prefix.."_skill_alias_ready"]=A.db[sp.prefix.."_idle"]
+			end
+		end
+		for key,a in pairs(aliases) do A.db[key]=a end
+	end
 	if t.boss_kind then return t end
-	t.boss_kind,t.boss_native=kind,table.deepclone(native)
-	t.hero.skills.ultimate={level=1,controller_name="controller_"..def.name.."_ultimate",cooldown=skill.cooldown}
-	local controller=E:register_t(t.hero.skills.ultimate.controller_name,"decal_scripted")
-	controller.render.sprites[1].hidden=true
-	controller.cooldown=skill.cooldown
-	controller.main_script.insert=function(this,store)
-		local owner=this.owner
-		if owner and M.can_fire(owner,this.pos.x,this.pos.y,store) then
-			owner.boss_command=copy(this.pos)
-			-- The native rally coroutine exits when a new rally request arrives.
-			-- Keep its destination so non-movement skills resume the previous order.
-			if not owner.motion.arrived then owner.nav_rally.new=true end
-		end
-		return false
-	end
-	controller.main_script.update=nil
-			if kind=="spectro" then
+	t.boss_kind=kind
+	t.hero.skills = {} -- Bosses cast themselves; regular hero skill buttons remain.
+	if kind=="spectro" then
 		t.health.on_damage=function(this,store)
-			for _,e in pairs(store.entities) do
+			for _,e in ipairs(entity_cache(store).fogs) do
 				local native_fog=e.template_name and e.template_name:match("^pirates_fog") and (e.active or e.from_skill)
 				if not e.pending_removal and (e.allied_fog_radius or native_fog) and U.is_inside_ellipse(this.pos,e.pos,e.allied_fog_radius or e.radius or 70) then return false end
 			end
@@ -653,11 +701,7 @@ function M.decorate(t,native,def)
 			elseif this.unit.is_stunned then SU.soldier_idle(store,this)
 			else
 				passive(this,store)
-				if this.boss_command then
-					local pos=this.boss_command;this.boss_command=nil;this.boss_casting=true
-					this.boss_jump_ts=store.tick_ts+0.4
-					active(this,store,pos);this.boss_casting=nil
-				elseif this.nav_rally.new then SU.y_hero_new_rally(store,this)
+				if this.nav_rally.new then SU.y_hero_new_rally(store,this)
 				else
 					this.boss_casting=true
 					local used=automatic(this,store)

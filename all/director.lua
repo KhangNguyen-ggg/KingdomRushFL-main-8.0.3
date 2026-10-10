@@ -940,8 +940,6 @@ function director:queue_load_item_named(name, force_reload)
 			for _, hero_name in ipairs(active_hero_names) do
 				local boss = infinite_heroes.get_boss(hero_name)
 				if boss then
-					append_unique(game.required_textures, "encyclopedia_creeps")
-					append_unique(game.required_textures, "rebborn_enemy_icons")
 					for _, texture in ipairs(boss.textures) do
 						append_unique(boss.scaled and game.scale_required_textures or game.required_textures, texture)
 					end
@@ -1258,6 +1256,14 @@ function director:queue_load_item_named(name, force_reload)
 		self:load_texture_groups(replace_locale(game.wave_editor_required_textures), self.params.texture_size, game.ref_res, true, "game")
 		self:load_texture_groups(replace_locale(game.store.level.required_textures), self.params.texture_size, game.ref_res, true, "game")
 		local gui_required_textures = table.deepclone(game_gui.required_textures)
+		-- Classic boss avatars are thumbnails, not the large encyclopedia portraits.
+		-- Load them at HUD scale; rebborn_enemy_icons is already a GUI dependency.
+		for _,hero_name in ipairs(active_hero_names) do
+			if infinite_heroes.get_boss(hero_name) then
+				append_unique(gui_required_textures,"encyclopedia_thumbs")
+				break
+			end
+		end
 		if not nostalgic_classic and user_data.liuhui.cheat6 == true then
 			table.insert(gui_required_textures, "kr6_hero_summon_icons")
 		end

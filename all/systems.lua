@@ -2706,7 +2706,9 @@ function sys.main_script:on_update(dt, ts, store)
 				s.co = coroutine.create(s.update)
 			end
 
-			if s.co then
+			if s.co and coroutine.status(s.co) == "dead" then
+				s.co = nil
+			elseif s.co then
 				local previous = store._dominant_entity
 
 				store._dominant_entity = e
@@ -2715,7 +2717,7 @@ function sys.main_script:on_update(dt, ts, store)
 
 				store._dominant_entity = previous
 
-				if coroutine.status(s.co) == "dead" and not success and error ~= nil or (not success and error ~= nil) then
+				if not success and error ~= nil then
 					if debug.traceback(s.co, error) ~= "cannot resume dead coroutine\nstack traceback:" then
 						
 						log.error("Error running coro: %s", debug.traceback(s.co, error))
@@ -3210,39 +3212,40 @@ function sys.tween:on_insert(entity, store)
 	return true
 end
 
+-- Shared interpolation helpers avoid per-frame function/table allocation.
+local tween_functions = {}
+
+function tween_functions.step(s)
+	return 0
+end
+
+function tween_functions.linear(s)
+	return s
+end
+
+function tween_functions.quad(s)
+	return s * s
+end
+
+function tween_functions.sine(s)
+	return 0.5 * (1 - math.cos(s * math.pi))
+end
+
+local function tween_lerp(a, b, t, fn)
+	fn = fn or "linear"
+
+	local ta = type(a)
+
+	if ta == "table" then
+		return V.v(tween_lerp(a.x, b.x, t, fn), tween_lerp(a.y, b.y, t, fn))
+	elseif ta == "boolean" then
+		return a
+	else
+		return a + (b - a) * tween_functions[fn](t)
+	end
+end
+
 function sys.tween:on_render_update(dt, ts, store)
-	local fns = {}
-
-	function fns.step(s)
-		return 0
-	end
-
-	function fns.linear(s)
-		return s
-	end
-
-	function fns.quad(s)
-		return s * s
-	end
-
-	function fns.sine(s)
-		return 0.5 * (1 - math.cos(s * math.pi))
-	end
-
-	local function lerp(a, b, t, fn)
-		fn = fn or "linear"
-
-		local ta = type(a)
-
-		if ta == "table" then
-			return V.v(lerp(a.x, b.x, t, fn), lerp(a.y, b.y, t, fn))
-		elseif ta == "boolean" then
-			return a
-		else
-			return a + (b - a) * fns[fn](t)
-		end
-	end
-
 	for _, e in E:filter_iter(store.entities, "tween") do
 		if e.tween.disabled then
 			-- block empty
@@ -3300,7 +3303,7 @@ function sys.tween:on_render_update(dt, ts, store)
 						if ka == kb then
 							value = ka[2]
 						else
-							value = lerp(ka[2], kb[2], (time - ka[1]) / (kb[1] - ka[1]), ka[3] or t.interp)
+							value = tween_lerp(ka[2], kb[2], (time - ka[1]) / (kb[1] - ka[1]), ka[3] or t.interp)
 						end
 
 						if t.multiply then
@@ -5223,3 +5226,4 @@ end
 
 
 return sys
+

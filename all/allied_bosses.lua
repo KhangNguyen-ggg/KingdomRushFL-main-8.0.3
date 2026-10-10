@@ -2,15 +2,16 @@
 local blackburn = require("allied_blackburn")
 local M = {}
 M.list = {
-	{name = blackburn.name, title = "Blackburn", source = "eb_blackburn", icon = "cheat_item_spell_summon_blackburn", textures = {"go_stage70", "go_enemies_common"}, sounds = {"BlackburnSounds"}},
+	{name = blackburn.name, title = "Blackburn", source = "eb_blackburn", icon = "encyclopedia_creep_thumbs_0169", textures = {"go_stage70", "go_enemies_common"}, sounds = {"BlackburnSounds"}},
 	{name = "hero_allied_juggernaut", title = "Juggernaut", source = "eb_juggernaut", icon = "encyclopedia_creep_thumbs_0132", textures = {"go_stage50"}},
-	{name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemies_hammerhold", "go_enemies_desert"}, sounds = {"HammerholdEnemySounds"}},
+	{name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemies_hammerhold", "go_enemies_desert", "go_stage88_rebborn"}, sounds = {"HammerholdEnemySounds"}},
 	{name = "hero_allied_navira", title = "Navira", source = "boss_navira", icon = "encyclopedia_creep_thumbs_0554", textures = {"go_stage119"}, sounds = {"stage_19"}},
 	{name = "hero_allied_spectro", title = "Spectro", source = "enemy_flying_ghost_ship", icon = "encyclopedia_creep_thumbs_0397", textures = {"go_stage190_2", "go_stage190"}, sounds = {"enemies_pirates", "stage_190"}, scaled = true, bombardment = true},
 	{name = "hero_allied_mirage", title = "Mirage", source = "enemy_mirage_path", icon = "encyclopedia_creep_thumbs_0411", textures = {"kr4_sandstorm", "kr4_sandstorm_mirage"}, scaled = true, sounds = {"branch_campaigns"}},
 	{name = "hero_allied_alric", title = "Alric", source = "enemy_alric", icon = "encyclopedia_creep_thumbs_0413", textures = {"kr4_level35_alric"}, scaled = true, sounds = {"branch_campaigns"}},
 	{name = "hero_allied_malik", title = "Malik", source = "enemy_malik", icon = "encyclopedia_creep_thumbs_0393", textures = {"go_stage186", "kr4_level36_malik"}, scaled = true, sounds = {"branch_campaigns"}}
 }
+for _,boss in ipairs(M.list) do boss.portrait = boss.icon:gsub("encyclopedia_creep_thumbs_", "encyclopedia_creeps_") end
 local by_name = {}
 for _, boss in ipairs(M.list) do by_name[boss.name] = boss end
 function M.get(name) return by_name[name] end
@@ -24,11 +25,11 @@ function M.register(name)
 	local scripts, GS = require("scripts"), require("game_settings")
 	local V, bit = require("klua.vector"), require("bit")
 	local boss = assert(E:get_template(def.source), "Boss template missing: " .. def.source)
-	local render = table.deepclone(boss.render)
+	local render = E.entities[name] and E.entities[name].render or table.deepclone(boss.render)
 	-- Normalize names per visual layer, including bosses with no walking animation.
 	for i, sprite in ipairs(render.sprites) do
 		if sprite.animated and not sprite.ignore_start then
-			local source, prefix = sprite.prefix, name .. "_layer" .. i
+			local source, prefix = boss.render.sprites[i].prefix, name .. "_layer" .. i
 			local function alias(target, candidates)
 				for _, candidate in ipairs(candidates) do
 					local animation = A.db[source .. "_" .. candidate]

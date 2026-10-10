@@ -1,4 +1,4 @@
--- chunkname: @./all/game.lua
+﻿-- chunkname: @./all/game.lua
 
 local log = require("klua.log"):new("game")
 local km = require("klua.macros")
@@ -668,7 +668,25 @@ function game:destroy()
 		adaptive_fps:destroy()
 	end
 
-	self.game_gui:destroy()
+	local gui = self.game_gui
+
+	gui:destroy()
+
+	-- The GUI module survives on the map. Drop old entities and nested HUD views.
+	gui.selected_entity = nil
+	gui.selected_entity_marker = nil
+	gui.last_tower_hover = nil
+	gui.wave_flags = nil
+	gui.boss_health_bars = nil
+	gui.boss_bar_order = nil
+	gui.boss_bar_suppressed = nil
+
+	-- simulation is a shared module; only detach the store owned by this game.
+	if self.simulation and self.simulation.store == self.store then
+		self.simulation.store = nil
+	end
+
+	self.simulation = nil
 
 	self.game_gui = nil
 
@@ -2113,3 +2131,4 @@ require("hero_enhance_mod"):init(game, game_gui)
 require("hero_auto_rally"):init(game)
 
 return game
+

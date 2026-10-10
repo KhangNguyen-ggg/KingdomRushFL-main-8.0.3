@@ -14338,6 +14338,18 @@ function HeroRoomView:hero_thumb_image_pos(i, hd, ox, oy)
 	return pos
 end
 
+function HeroRoomView:sync_allied_boss_images()
+	for _,boss in ipairs(infinite_heroes.bosses.list) do
+		local t=E:get_template(boss.source)
+		local resource=encyclopedia_enemy_resources.enemies[boss.source]
+		if t then
+			local index=encyclopedia_enemy_icon_idx(t,boss.source,resource and resource.encyclopedia_index,resource and resource.generation)
+			boss.icon=string.format(GS.encyclopedia_enemy_thumb_fmt,index)
+			boss.portrait=string.format(GS.encyclopedia_enemy_fmt,index)
+		end
+	end
+end
+
 function HeroRoomView:initialize(sw, sh)
 	PopUpView.initialize(self, V.v(sw, sh))
 	self.popup_y_offset = -55
@@ -14521,6 +14533,7 @@ function HeroRoomView:initialize(sw, sh)
 		end
 	end
 
+	self:sync_allied_boss_images()
 	-- Boss entries share the hero grid; saved normal hero indices stay unchanged.
 	for _, boss in ipairs(infinite_heroes.bosses.list) do
 		local index = #self.hero_views + 1
@@ -15748,14 +15761,25 @@ function HeroRoomView:construct_allied_boss(name)
 	self.select_but.hidden, self.selected_spr.hidden, self.locked_spr.hidden = true, true, true
 	self.skills.hidden, self.bio_view.hidden = true, false
 	self.g1_text.hidden, self.skills_intro_text.hidden, self.kr6_tree_button.hidden = true, true, true
-	self.portrait:set_image(boss.icon)
+	if not self.boss_portrait_frame then
+		self.boss_portrait_frame=KImageView:new("encyclopedia_frame")
+		self.boss_portrait_frame.anchor=v(self.boss_portrait_frame.size.x/2,self.boss_portrait_frame.size.y/2)
+		self.boss_portrait_frame.pos=v(400,510)
+		self.boss_portrait_frame.propagate_on_click=true
+		self.back:add_child(self.boss_portrait_frame)
+	end
+	self.boss_portrait_frame.hidden=false
+	self.portrait_over.hidden=true
+	self.portrait:set_image(boss.portrait)
 	self.portrait.anchor = v(self.portrait.size.x / 2, self.portrait.size.y / 2)
-	local scale = math.min(220 / self.portrait.size.x, 290 / self.portrait.size.y)
-	self.portrait.scale = v(scale, scale)
+	local frame=self.boss_portrait_frame
+	local scale=math.min(220/frame.size.x,290/frame.size.y)
+	frame.scale=v(scale,scale)
+	self.portrait.scale=v(0.7*scale,0.708*scale)
 	self.portrait_name:set_hero(boss.name, nil, boss.title)
 	local skill_module = require("allied_boss_skills")
 	local skill = skill_module.skills[skill_module.kind(name)]
-	self.bio_text.text = skill.description .. " Chiêu chủ động: " .. skill.label .. " (" .. skill.cooldown .. "s). Thêm vào đội Vô hạn hero để chơi."
+	self.bio_text.text = skill.description .. " Tất cả kỹ năng tự dùng khi đủ điều kiện. Thêm vào đội Vô hạn hero để chơi."
 	local native = E:get_template(boss.source)
 	local hp = native and native.health and native.health.hp_max
 	self.bio_class_label.text = boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến"
@@ -15772,6 +15796,8 @@ end
 
 function HeroRoomView:construct_hero(index)
 	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
+	if self.boss_portrait_frame then self.boss_portrait_frame.hidden=true end
+	self.portrait_over.hidden=false
 	if self.help_select then
 		self.back:remove_child(self.help_select)
 
