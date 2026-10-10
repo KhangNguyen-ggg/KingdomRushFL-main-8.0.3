@@ -450,7 +450,7 @@ end
 -- Public metadata is shared by the map and skill buttons.
 M.skills = {
 	blackburn={label="Đạp",cooldown=5,range=284,description="Đạp đất gây choáng. Tự gọi Skeleton Knight từ xác địch gần đó (tối đa 15 lính)."},
-	juggernaut={label="Golem",cooldown=4,range=700,description="Bắn tên lửa tự động. Ném bom gọi 7 Golem Head tại mục tiêu gần nhất."},
+	juggernaut={label="Golem",cooldown=10,range=700,description="Bắn tên lửa tự động. Ném bom gọi 7 Golem Head tại mục tiêu gần nhất, hồi chiêu 10 giây."},
 	set={label="Trụ",cooldown=10,range=450,description="Dựng trụ gọi Fallen; cường hóa Fallen thành Immortal rồi Primordial. Hào quang lửa, hồi sinh và hình thái thứ hai."},
 	navira={label="Lốc",cooldown=25,range=450,description="Hóa lốc theo mục tiêu gần nhất hoặc khi mất máu. Bắn 3 tia linh hồn gây choáng; hấp thụ linh hồn Specter để hồi máu."},
 	spectro={label="Sương",cooldown=18,range=500,description="Pháo linh hồn bắn loạt 7 phát. Khóa phép địch. Sương giảm 30% sát thương địch và giúp Spectro bất tử trong vùng sương."},
@@ -478,7 +478,10 @@ local function active(this,store,pos)
 		end
 	elseif id=="juggernaut" then
 		local a=native.timed_attacks.list[2]
-		if cast(this,store,a.animation,a.shoot_time) then projectile(this,a.bullet,nil,pos,store,{summon="enemy_golem_head",count=7,arc=100,flight=1.5}) end
+		if cast(this,store,a.animation,a.shoot_time) then
+			projectile(this,a.bullet,nil,pos,store,{summon="enemy_golem_head",count=7,arc=100,flight=1.5})
+			stamp(this,store,"active") -- Cooldown begins when the bomb is released.
+		end
 	elseif id=="set" then obelisk(this,pos,store)
 	elseif id=="navira" then navira_tornado(this,store,pos)
 	elseif id=="spectro" then if cast(this,store,"ability",0.3333) then fog(this,pos,store) end
@@ -669,6 +672,7 @@ function M.decorate(t,native,def)
 		end
 		for key,a in pairs(aliases) do A.db[key]=a end
 	end
+	if kind=="set" then require("allied_set_render").bind(t) end
 	if t.boss_kind then return t end
 	t.boss_kind=kind
 	t.hero.skills = {} -- Bosses cast themselves; regular hero skill buttons remain.
@@ -722,3 +726,4 @@ function M.decorate(t,native,def)
 	return t
 end
 return M
+

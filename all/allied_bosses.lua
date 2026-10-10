@@ -4,7 +4,7 @@ local M = {}
 M.list = {
 	{name = blackburn.name, title = "Blackburn", source = "eb_blackburn", icon = "encyclopedia_creep_thumbs_0169", textures = {"go_stage70", "go_enemies_common"}, sounds = {"BlackburnSounds"}},
 	{name = "hero_allied_juggernaut", title = "Juggernaut", source = "eb_juggernaut", icon = "encyclopedia_creep_thumbs_0132", textures = {"go_stage50"}},
-	{name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemies_hammerhold", "go_enemies_desert", "go_stage88_rebborn"}, sounds = {"HammerholdEnemySounds"}},
+	{name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemy_set", "go_enemies_hammerhold", "go_enemies_desert", "go_stages_hammerhold"}, sounds = {"HammerholdEnemySounds"}},
 	{name = "hero_allied_navira", title = "Navira", source = "boss_navira", icon = "encyclopedia_creep_thumbs_0554", textures = {"go_stage119"}, sounds = {"stage_19"}},
 	{name = "hero_allied_spectro", title = "Spectro", source = "enemy_flying_ghost_ship", icon = "encyclopedia_creep_thumbs_0397", textures = {"go_stage190_2", "go_stage190"}, sounds = {"enemies_pirates", "stage_190"}, scaled = true, bombardment = true},
 	{name = "hero_allied_mirage", title = "Mirage", source = "enemy_mirage_path", icon = "encyclopedia_creep_thumbs_0411", textures = {"kr4_sandstorm", "kr4_sandstorm_mirage"}, scaled = true, sounds = {"branch_campaigns"}},
@@ -102,3 +102,4 @@ function M.register(name)
 	return require("allied_boss_skills").decorate(t, boss, def)
 end
 return M
+
