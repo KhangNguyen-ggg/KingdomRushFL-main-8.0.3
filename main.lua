@@ -364,25 +364,82 @@ local function load_app_settings()
 	})
 end
 
+local function write_windows_crash_log(stack_msg, kind)
+	if KR_PLATFORM ~= "win" then return nil end
+	local FS = love and love.filesystem or {}
+	local name = "KRFL_crash_log.txt"
+	local paths, seen = {}, {}
+	local function add(dir)
+		if type(dir) ~= "string" or dir == "" then return end
+		local path = dir:gsub("[/\\]+$", "") .. "/" .. name
+		local key = path:gsub("\\", "/"):lower()
+		if not seen[key] then seen[key] = true; paths[#paths + 1] = path end
+	end
+	local function directory(fn)
+		if not fn then return nil end
+		local ok, dir = pcall(fn)
+		if ok and type(dir) == "string" then return dir end
+	end
+	-- Prefer the loose main.lua directory; also cover fused EXE launches.
+	local source = directory(FS.getSource)
+	if source then
+		local ok, file = pcall(io.open, source .. "/main.lua", "rb")
+		if ok and file then file:close(); add(source) end
+	end
+	add(directory(FS.getSourceBaseDirectory))
+	add(directory(FS.getWorkingDirectory))
+	local save_dir = directory(FS.getSaveDirectory)
+	add(save_dir)
+	if #paths == 0 then add(".") end
+	local sim = package.loaded.simulation
+	local store = type(sim) == "table" and sim.store
+	if type(store) ~= "table" then store = nil end
+	local heroes = store and store.infinite_hero_names
+	local hero_names = {}
+	if type(heroes) == "table" then
+		for _, hero in ipairs(heroes) do hero_names[#hero_names + 1] = tostring(hero) end
+	end
+	local report = string.format(
+		"\n===== KRFL %s %s =====\nDiagnostic: CRASHLOG_VISIBLE_20261010\nTime: %s\nGame build: %s\nPlatform: %s\nLevel: %s\nHeroes: %s\n\n%s\n",
+		tostring(KR_FL_VERSION or "unknown"), tostring(kind or "CRASH"),
+		os.date("%Y-%m-%d %H:%M:%S"), tostring(version and version.string or "unknown"),
+		tostring(KR_PLATFORM), tostring(store and store.level_idx or "unknown"),
+		#hero_names > 0 and table.concat(hero_names, ", ") or "unknown", tostring(stack_msg))
+	local written = {}
+	local saved = false
+	for _, path in ipairs(paths) do
+		local ok, result = pcall(function()
+			local file = io.open(path, "a")
+			if not file then return false end
+			local wrote = file:write(report)
+			local flushed = file:flush()
+			local closed = file:close()
+			return wrote and flushed and closed
+		end)
+		if ok and result then
+			written[#written + 1] = path
+			if save_dir and path == save_dir:gsub("[/\\]+$", "") .. "/" .. name then saved = true end
+		end
+	end
+	-- LÖVE creates its save directory on write; inspect the returned boolean too.
+	if not saved then
+		local ok, result
+		if FS.append then ok, result = pcall(FS.append, name, report)
+		elseif FS.write then
+			local old = ""
+			if FS.read then local good, text = pcall(FS.read, name); if good and text then old = text end end
+			ok, result = pcall(FS.write, name, old .. report)
+		end
+		if ok and result then written[#written + 1] = save_dir and save_dir .. "/" .. name or name end
+	end
+	if #written > 0 then return table.concat(written, "\n") end
+	return nil
+end
+
 function love.load(arg)
 	love.filesystem.setIdentity(version.identity)
 
-	if KR_PLATFORM == "win" and love.filesystem and love.filesystem.getSaveDirectory then
-		local ok, crash_save_dir = pcall(love.filesystem.getSaveDirectory)
-
-		if ok and crash_save_dir and crash_save_dir ~= "" then
-			local crash_path = crash_save_dir .. "/KRFL_crash_log.txt"
-			pcall(function()
-				local f = io.open(crash_path, "a")
-
-				if f then
-					f:write(string.format("\n===== KRFL %s SESSION START =====\nTime: %s\nCrash log: %s\n", tostring(KR_FL_VERSION or "unknown"), os.date("%Y-%m-%d %H:%M:%S"), crash_path))
-					f:flush()
-					f:close()
-				end
-			end)
-		end
-	end
+	write_windows_crash_log("Game started. This file will append the real error and stack trace on a Lua crash.", "SESSION START")
 
 	local save_dir = "fl_save"
 	if not love.filesystem.isDirectory(save_dir) then
@@ -1001,92 +1058,7 @@ local function crash_report(str)
 	end
 end
 
-local function write_windows_crash_log(stack_msg)
-	if KR_PLATFORM ~= "win" then
-		return nil
-	end
-
-	local timestamp = os.date("%Y-%m-%d %H:%M:%S")
-	local report = string.format(
-		"\n===== KRFL %s CRASH =====\nTime: %s\nGame build: %s\nPlatform: %s\n\n%s\n",
-		tostring(KR_FL_VERSION or "unknown"),
-		tostring(timestamp),
-		tostring(version and version.string or "unknown"),
-		tostring(KR_PLATFORM or "unknown"),
-		tostring(stack_msg or "unknown error")
-	)
-
-	local save_dir
-
-	if love and love.filesystem and love.filesystem.getSaveDirectory then
-		local ok, dir = pcall(love.filesystem.getSaveDirectory)
-
-		if ok and dir and dir ~= "" then
-			save_dir = dir
-		end
-	end
-
-	if save_dir then
-		local path = save_dir .. "/KRFL_crash_log.txt"
-		local ok, err = pcall(function()
-			local f, open_err = io.open(path, "a")
-
-			if not f then
-				error(open_err or "open failed")
-			end
-
-			f:write(report)
-			f:flush()
-			f:close()
-		end)
-
-		if ok then
-			return path
-		end
-
-		pcall(function()
-			io.stderr:write("Failed to write KRFL crash log to " .. tostring(path) .. ": " .. tostring(err) .. "\n")
-			io.stderr:flush()
-		end)
-	end
-
-	if love and love.filesystem then
-		local name = "KRFL_crash_log.txt"
-		local ok = false
-
-		if love.filesystem.append then
-			ok = pcall(love.filesystem.append, name, report)
-		elseif love.filesystem.write then
-			local old = ""
-
-			if love.filesystem.read then
-				local read_ok, data = pcall(love.filesystem.read, name)
-
-				if read_ok and data then
-					old = data
-				end
-			end
-
-			ok = pcall(love.filesystem.write, name, old .. report)
-		end
-
-		if ok then
-			if save_dir then
-				return save_dir .. "/" .. name
-			end
-
-			return name
-		end
-	end
-
-	return nil
-end
-
 function love.errhand(msg)
-	local error_canvas = G.newCanvas(G.getWidth(), G.getHeight())
-	local last_canvas = G.getCanvas()
-	G.setCanvas(error_canvas)
-
 	local last_log_msg = log.last_log_msgs and table.concat(log.last_log_msgs, "") or ""
 
 	msg = tostring(msg)
@@ -1095,16 +1067,16 @@ function love.errhand(msg)
 
 	stack_msg = (stack_msg or "") .. "\n" .. last_log_msg
 
-	print(stack_msg)
-	log.error("%s", stack_msg)
-
+	-- Persist the error before allocating graphics or calling other loggers.
 	local crash_log_path = write_windows_crash_log(stack_msg)
+	pcall(print, stack_msg)
+	pcall(log.error, "%s", stack_msg)
 
 	if IS_ANDROID and log.android_log_write then
 		log.android_log_write("\n===== KRFL fatal error =====\n" .. stack_msg .. "\n")
 	end
 
-	close_log()
+	pcall(close_log)
 	pcall(crash_report, stack_msg)
 
 	if not love.window or not G or not love.event then
@@ -1141,8 +1113,12 @@ function love.errhand(msg)
 
 	G.reset()
 
-	local font = G.setNewFont(math.floor(love.window.toPixels(15)))
-	local cn_font = G.setNewFont("all-desktop/assets/fonts/msyh.ttf", math.floor(love.window.toPixels(16)))
+	-- Keep the existing font if memory is exhausted or the CJK font is absent.
+	local previous_font = G.getFont()
+	local ok_font, font = pcall(G.newFont, math.floor(love.window.toPixels(15)))
+	if not ok_font then font = previous_font end
+	local ok_cn, cn_font = pcall(G.newFont, "all-desktop/assets/fonts/msyh.ttf", math.floor(love.window.toPixels(16)))
+	if not ok_cn then cn_font = font end
 
 	love.graphics.setBackgroundColor(89, 157, 220)
 	love.graphics.setColor(255, 255, 255, 255)
@@ -1540,3 +1516,4 @@ function my_data_processing()
 		end
 	end
 end
+

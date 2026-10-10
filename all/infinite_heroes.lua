@@ -1,17 +1,22 @@
--- Persistent unlimited hero loadout for FL 8.0.3. Names survive roster reordering.
+﻿-- Persistent unlimited hero loadout for FL 8.0.3. Names survive roster reordering.
 local M = {}
-local allied_blackburn = require("allied_blackburn")
-M.bosses = require("allied_bosses")
-M.get_boss = M.bosses.get
-M.boss_name = allied_blackburn.name
-M.boss_portrait = "cheat_item_spell_summon_blackburn"
-M.boss_texture = allied_blackburn.texture
 
 function M.settings(slot)
 	slot.liuhui_hero = slot.liuhui_hero or {}
 	local settings = slot.liuhui_hero
 	if type(settings.infinite_teams) ~= "table" or #settings.infinite_teams == 0 then
 		settings.infinite_teams = {{name = "Đội 1", heroes = settings.infiniteheroes or {}}}
+	end
+	-- Remove only playable boss IDs from saved teams; keep heroes and campaign progress.
+	for _, saved_team in ipairs(settings.infinite_teams) do
+		if type(saved_team) == "table" and type(saved_team.heroes) == "table" then
+			for n = #saved_team.heroes, 1, -1 do
+				local name = saved_team.heroes[n]
+				if type(name) == "string" and name:match("^hero_allied_") then
+					table.remove(saved_team.heroes, n)
+				end
+			end
+		end
 	end
 	local index = math.floor(tonumber(settings.infinite_team_index) or 1)
 	index = math.max(1, math.min(index, #settings.infinite_teams))
@@ -72,7 +77,6 @@ end
 function M.names(slot, roster)
 	local settings = slot.liuhui_hero or {}
 	local valid = {}
-	for _, boss in ipairs(M.bosses.list) do valid[boss.name] = true end
 	for _, hd in ipairs(roster) do
 		if not hd.transplanting and (hd.available_level or 0) <= #(slot.levels or {}) then valid[hd.name] = true end
 	end
@@ -97,7 +101,6 @@ function M.spawn(store, insert_hero)
 	local heroes = {}
 	local ok, err = pcall(function()
 		for _, name in ipairs(store.infinite_hero_names) do
-			if M.get_boss(name) then M.bosses.register(name) end
 			store.selected_hero = name
 			store.selected_hero_status = slot.heroes.status[name] or {xp = 0, skills = {}}
 			local hero = insert_hero(store)

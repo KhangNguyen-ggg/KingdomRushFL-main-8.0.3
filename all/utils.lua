@@ -86,38 +86,42 @@ function U.ease_value(from, to, phase, easing)
 	return from + (to - from) * U.ease_phase(phase, easing)
 end
 
--- Reuse easing functions; animation values and timing stay identical.
-local easing_functions = {
-	linear = function(s)
-		return s
-	end,
-	quad = function(s)
-		return s * s
-	end,
-	cubic = function(s)
-		return s * s * s
-	end,
-	quart = function(s)
-		return s * s * s * s
-	end,
-	quint = function(s)
-		return s * s * s * s * s
-	end,
-	sine = function(s)
-		return 1 - math.cos(s * math.pi / 2)
-	end,
-	expo = function(s)
-		return 2^(10 * (s - 1))
-	end,
-	circ = function(s)
-		return 1 - math.sqrt(1 - s * s)
-	end
-}
-
 function U.ease_phase(phase, easing)
 	phase = km.clamp(0, 1, phase)
 	easing = easing or ""
 
+	local function rotate_fn(f)
+		return function(s, ...)
+			return 1 - f(1 - s, ...)
+		end
+	end
+
+	local easing_functions = {
+		linear = function(s)
+			return s
+		end,
+		quad = function(s)
+			return s * s
+		end,
+		cubic = function(s)
+			return s * s * s
+		end,
+		quart = function(s)
+			return s * s * s * s
+		end,
+		quint = function(s)
+			return s * s * s * s * s
+		end,
+		sine = function(s)
+			return 1 - math.cos(s * math.pi / 2)
+		end,
+		expo = function(s)
+			return 2^(10 * (s - 1))
+		end,
+		circ = function(s)
+			return 1 - math.sqrt(1 - s * s)
+		end
+	}
 	local fn_name, first_ease = string.match(easing, "([^-]+)%-([^-]+)")
 	local fn = easing_functions[fn_name]
 
@@ -127,16 +131,16 @@ function U.ease_phase(phase, easing)
 		if phase <= 0.5 then
 			return fn(phase * 2) / 2
 		else
-			return 0.5 + (1 - fn(1 - (phase - 0.5) * 2)) / 2
+			return 0.5 + rotate_fn(fn)((phase - 0.5) * 2) / 2
 		end
 	elseif first_ease == "inout" then
 		if phase <= 0.5 then
-			return (1 - fn(1 - phase * 2)) / 2
+			return rotate_fn(fn)(phase * 2) / 2
 		else
 			return 0.5 + fn((phase - 0.5) * 2) / 2
 		end
 	elseif first_ease == "in" then
-		return 1 - fn(1 - phase)
+		return rotate_fn(fn)(phase)
 	else
 		return fn(phase)
 	end
