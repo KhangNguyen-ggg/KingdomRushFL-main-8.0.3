@@ -938,7 +938,14 @@ function director:queue_load_item_named(name, force_reload)
 			}
 			
 			for _, hero_name in ipairs(active_hero_names) do
-				if hero_name == "hero_alleria" or hero_game_ver(hero_name) == 6 then
+				local boss = infinite_heroes.get_boss(hero_name)
+				if boss then
+					append_unique(game.required_textures, "encyclopedia_creeps")
+					append_unique(game.required_textures, "rebborn_enemy_icons")
+					for _, texture in ipairs(boss.textures) do
+						append_unique(boss.scaled and game.scale_required_textures or game.required_textures, texture)
+					end
+				elseif hero_name == "hero_alleria" or hero_game_ver(hero_name) == 6 then
 					table.insert(game.required_textures, "go_" .. hero_name)
 				elseif hero_game_ver(hero_name) >= 4 then
 					table.insert(game.scale_required_textures, "go_" .. hero_name)
@@ -1200,7 +1207,10 @@ function director:queue_load_item_named(name, force_reload)
 			table.insert(game.required_sounds, "sc_branch_towers")
 		end
 		for _, hero_name in ipairs(active_hero_names) do
-			if hero_game_ver(hero_name) >= 4 or rebborn_hero_sounds[hero_name] then
+			local boss = infinite_heroes.get_boss(hero_name)
+			if boss then
+				for _, group in ipairs(boss.sounds or {}) do append_unique(game.required_sounds, group) end
+			elseif hero_game_ver(hero_name) >= 4 or rebborn_hero_sounds[hero_name] then
 				local sound_group = GS.heroes_required_sound_groups and GS.heroes_required_sound_groups[hero_name] or hero_name
 
 				append_unique(game.required_sounds, sound_group)
@@ -1651,3 +1661,4 @@ function director:focus(focus)
 end
 
 return director
+

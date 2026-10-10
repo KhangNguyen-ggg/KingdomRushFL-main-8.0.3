@@ -13852,10 +13852,10 @@ function HeroNameLabel:initialize(size)
 	self.hero_name_config = map_data.hero_names_config
 end
 
-function HeroNameLabel:set_hero(hero_name, hero_i18n_key)
+function HeroNameLabel:set_hero(hero_name, hero_i18n_key, display_name)
 	--label如果没有可以default
 	local conf = self.hero_name_config[hero_name] or self.hero_name_config.default
-	local text = _(string.upper(hero_i18n_key or hero_name) .. "_NAME")
+	local text = display_name or _(string.upper(hero_i18n_key or hero_name) .. "_NAME")
 
 	for _, s in pairs({
 		"・",
@@ -13868,7 +13868,7 @@ function HeroNameLabel:set_hero(hero_name, hero_i18n_key)
 		text
 	} or string.split(text, " ")
 	local labels = self.labels
-	local fs = conf.font_size or #parts > 2 and 28 or #parts > 1 and 44 or 70
+	local fs = display_name and 34 or conf.font_size or #parts > 2 and 28 or #parts > 1 and 44 or 70
 	-- if screen_map.kr1_hero then
 	-- 	fs = conf.font_size or #parts > 2 and 28 or #parts > 1 and 38 or 64
 	-- end
@@ -14495,6 +14495,7 @@ function HeroRoomView:initialize(sw, sh)
 			function portrait.on_click()
 				S:queue("GUIQuickMenuOpen")
 
+				self.selected_boss = nil
 				self.selected_index = i
 				self.over_index = i
 
@@ -14518,6 +14519,39 @@ function HeroRoomView:initialize(sw, sh)
 				portraitLock.propagate_on_click = true
 			end
 		end
+	end
+
+	-- Boss entries share the hero grid; saved normal hero indices stay unchanged.
+	for _, boss in ipairs(infinite_heroes.bosses.list) do
+		local index = #self.hero_views + 1
+		local card = KView:new(V.v(hrvt_size.x, hrvt_size.y))
+		card.pos = self:hero_thumb_cell_pos(index)
+		card.colors.background = {65, 44, 73, 220}
+		card.hidden = true
+		local portrait = KImageView:new(boss.icon)
+		local scale = math.min(82 / portrait.size.x, 78 / portrait.size.y)
+		portrait.scale = v(scale, scale)
+		portrait.anchor = v(portrait.size.x / 2, portrait.size.y / 2)
+		portrait.pos = v(50, 43)
+		portrait.propagate_on_click = true
+		card:add_child(portrait)
+		local label = GGLabel:new(v(100, 22))
+		label.text, label.font_name, label.font_size = boss.title, "body_bold", 14
+		label.text_align, label.vertical_align = "center", "middle"
+		label.colors.text = {255, 242, 211, 255}
+		label.pos = v(0, 82)
+		label.propagate_on_click = true
+		card:add_child(label)
+		function card.on_click(_, button)
+			if button and button ~= 1 then return end
+			self.selected_boss = boss.name
+			self:construct_hero(self.selected_index)
+			self.hero_select.over.pos = self:hero_thumb_cell_pos(index)
+			self.hero_select.over.hidden = false
+			S:queue("GUIQuickMenuOpen")
+		end
+		self.hero_views[index] = card
+		self.back:add_child(card)
 	end
 
 	self.hero_select.selected.propagate_on_click = true
@@ -15307,7 +15341,7 @@ function HeroRoomView:initialize(sw, sh)
 	prev_page_button.label.fit_lines = 1
 
 	function prev_page_button.on_click()
-		for jt = 1, 6 do
+		for jt = 1, math.ceil(#self.hero_views / 16) - 1 do
 			for i, v in ipairs(self.hero_views) do
 				if (i >= self.hero_viewing and i - self.hero_viewing < 16) then
 					v.hidden = false
@@ -15469,11 +15503,11 @@ function HeroRoomView:create_infinite_hero_panel()
 	self.infinite_team_info = hero_deck_label("", v(270, 28), 15)
 	self.infinite_team_info.pos = v(10, 32)
 	panel:add_child(self.infinite_team_info)
-	self:infinite_deck_button(panel, "< Đội", 285, 32, 100, function() self:change_infinite_team(-1) end)
-	self:infinite_deck_button(panel, "Đội >", 395, 32, 90, function() self:change_infinite_team(1) end)
+	self:infinite_deck_button(panel, "< Đội", 605, 32, 120, function() self:change_infinite_team(-1) end)
+	self:infinite_deck_button(panel, "Đội >", 735, 32, 115, function() self:change_infinite_team(1) end)
 	self:infinite_deck_button(panel, "Đội mới", 495, 32, 100, function() self:change_infinite_team(0, false) end)
-	self:infinite_deck_button(panel, "Nhân bản", 605, 32, 120, function() self:change_infinite_team(0, true) end)
-	self.infinite_delete_team_button = self:infinite_deck_button(panel, "Xóa đội", 735, 32, 115, function()
+	self:infinite_deck_button(panel, "Nhân bản", 285, 32, 100, function() self:change_infinite_team(0, true) end)
+	self.infinite_delete_team_button = self:infinite_deck_button(panel, "Xóa đội", 395, 32, 90, function()
 		if not infinite_heroes.delete_team(screen_map.user_data) then
 			self.infinite_team_info.text = "Cần giữ ít nhất 1 đội"
 			return
@@ -15484,9 +15518,12 @@ function HeroRoomView:create_infinite_hero_panel()
 	end)
 	self.infinite_delete_team_button.colors.background = {168, 45, 38, 255}
 	self.infinite_delete_team_button.children[1].colors.text = {255, 245, 232, 255}
-	self.infinite_info = hero_deck_label("", v(270, 28), 16)
+	self.infinite_info = hero_deck_label("", v(140, 28), 14)
 	self.infinite_info.pos = v(10, 3)
 	panel:add_child(self.infinite_info)
+	self.infinite_selection = hero_deck_label("", v(125, 28), 14)
+	self.infinite_selection.pos = v(150, 3)
+	panel:add_child(self.infinite_selection)
 	self:infinite_deck_button(panel, "+ Thêm", 285, 3, 100, function() self:change_infinite_hero(1) end)
 	self:infinite_deck_button(panel, "- Bỏ", 395, 3, 90, function() self:change_infinite_hero(-1) end)
 	self:infinite_deck_button(panel, "Bỏ hết", 495, 3, 100, function()
@@ -15536,13 +15573,17 @@ function HeroRoomView:change_infinite_team(delta, copy_current)
 end
 
 function HeroRoomView:change_infinite_hero(delta)
-	local hd = screen_map.hero_data[self.selected_index]
+	local boss = infinite_heroes.get_boss(self.selected_boss)
+	local hd = boss or screen_map.hero_data[self.selected_index]
 	if not hd or hd.transplanting or (hd.available_level or 0) > #screen_map.user_data.levels then return end
-	local list = screen_map.user_data.liuhui_hero.infiniteheroes
+	local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
 	if delta > 0 then
 		list[#list + 1] = hd.name
+		if boss and not screen_map.user_data.heroes.status[hd.name] then
+			screen_map.user_data.heroes.status[hd.name] = {xp = GS.hero_xp_thresholds[9], skills = {}}
+		end
 		local status = screen_map.user_data.heroes.status[hd.name]
-		local xp = hd.starting_level < 2 and 0 or GS.hero_xp_thresholds[hd.starting_level - 1]
+		local xp = boss and GS.hero_xp_thresholds[9] or (hd.starting_level < 2 and 0 or GS.hero_xp_thresholds[hd.starting_level - 1])
 		if status then status.xp = math.max(status.xp or 0, xp or 0) end
 		self.infinite_page = math.ceil(#list / 8)
 	else
@@ -15557,12 +15598,14 @@ function HeroRoomView:update_infinite_hero_panel()
 	local list = settings.infiniteheroes
 	local pages = math.max(1, math.ceil(#list / 8))
 	self.infinite_page = math.min(self.infinite_page, pages)
-	self.infinite_info.text = "Vô hạn: " .. #list .. " tướng | " .. self.infinite_page .. "/" .. pages
+	self.infinite_info.text = #list .. " tướng | " .. self.infinite_page .. "/" .. pages
+	local boss = infinite_heroes.get_boss(self.selected_boss)
+	self.infinite_selection.text = boss and boss.title or "Chọn hero/boss"
 	self.infinite_team_info.text = settings.infinite_teams[settings.infinite_team_index].name .. " (" .. settings.infinite_team_index .. "/" .. #settings.infinite_teams .. ")"
 	self.infinite_delete_team_button.alpha = #settings.infinite_teams > 1 and 1 or 0.5
 	for n, slot in ipairs(self.infinite_slots) do
 		local index = (self.infinite_page - 1) * 8 + n
-		local hero_index = list[index] and get_hero_index(list[index])
+		local hero_index = infinite_heroes.get_boss(list[index]) and list[index] or list[index] and get_hero_index(list[index])
 		slot.team_index = hero_index and index or nil
 		if hero_index then
 			self:set_hero_deck_slot(slot, hero_index)
@@ -15573,14 +15616,15 @@ end
 
 function HeroRoomView:set_hero_deck_slot(slot, hero_index)
 	local hd = screen_map.hero_data[hero_index]
+	local is_boss = infinite_heroes.get_boss(hero_index)
 
-	if not hd then
+	if not hd and not is_boss then
 		slot.hidden = true
 		return
 	end
 
 	slot.hidden = false
-	local image_name = hero_index <= 47 and string.format("heroroom_portraits_%04i", hd.thumb) or string.format("hero_room_portraits_small_thumb_%s_0001", hd.name)
+	local image_name = is_boss and is_boss.icon or (hero_index <= 47 and string.format("heroroom_portraits_%04i", hd.thumb) or string.format("hero_room_portraits_small_thumb_%s_0001", hd.name))
 
 	slot.portrait:set_image(image_name)
 	local scale = math.min(70 / slot.portrait.size.x, 70 / slot.portrait.size.y)
@@ -15599,6 +15643,7 @@ function HeroRoomView:assign_selected_hero_to_deck(deck_name, slot_index)
 		return
 	end
 
+	if self.selected_boss then return end
 	if deck_name == "single" then
 		self.select_but.on_click()
 		return
@@ -15694,7 +15739,39 @@ function HeroRoomView:show()
 	self:construct_hero(self.selected_index)
 end
 
+function HeroRoomView:construct_allied_boss(name)
+	local boss = infinite_heroes.get_boss(name)
+	if not boss then return end
+	if self.help_select then self.back:remove_child(self.help_select); self.help_select = nil end
+	if self.kr6_tree then self.kr6_tree:close() end
+	self.old_index = nil
+	self.select_but.hidden, self.selected_spr.hidden, self.locked_spr.hidden = true, true, true
+	self.skills.hidden, self.bio_view.hidden = true, false
+	self.g1_text.hidden, self.skills_intro_text.hidden, self.kr6_tree_button.hidden = true, true, true
+	self.portrait:set_image(boss.icon)
+	self.portrait.anchor = v(self.portrait.size.x / 2, self.portrait.size.y / 2)
+	local scale = math.min(220 / self.portrait.size.x, 290 / self.portrait.size.y)
+	self.portrait.scale = v(scale, scale)
+	self.portrait_name:set_hero(boss.name, nil, boss.title)
+	local skill_module = require("allied_boss_skills")
+	local skill = skill_module.skills[skill_module.kind(name)]
+	self.bio_text.text = skill.description .. " Chiêu chủ động: " .. skill.label .. " (" .. skill.cooldown .. "s). Thêm vào đội Vô hạn hero để chơi."
+	local native = E:get_template(boss.source)
+	local hp = native and native.health and native.health.hp_max
+	self.bio_class_label.text = boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến"
+	self.bio_time.text = "20s"
+	self.bio_armor.text = native and tostring(math.floor((native.health.armor or 0) * 100)) .. "%" or "-"
+	self.bio_health.text = tostring(type(hp) == "table" and hp[1] or hp or "-")
+	local attack = native and native.melee and native.melee.attacks[1]
+	self.bio_attack.text = attack and tostring(attack.damage_min) .. "-" .. tostring(attack.damage_max) or "11-22 x 7"
+	self.bio_attack_icon:set_image("heroroom_attackIcons_0001")
+	self.bio_level_num:set_image("heroroom_heroBadge_numbers_0010")
+	self.bio_hero_bar.hidden, self.bio_hero_bar_end.hidden, self.bio_hero_bar_init.hidden = true, true, true
+	if self.infinite_panel then self:update_infinite_hero_panel() end
+end
+
 function HeroRoomView:construct_hero(index)
+	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
 	if self.help_select then
 		self.back:remove_child(self.help_select)
 
@@ -18251,3 +18328,4 @@ end
 require("hero_enhance_mod"):hook_hero_room(HeroRoomView)
 
 return screen_map
+
