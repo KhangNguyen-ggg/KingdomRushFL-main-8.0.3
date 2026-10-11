@@ -4159,6 +4159,11 @@ function HeroPortrait:initialize(hero_entity)
 	self.hero_id = hero_entity.id
 	self.portrait_image_name = hero_entity.info.hero_portrait
 	self.portrait = KImageView:new(hero_entity.info.hero_portrait)
+	if infinite_heroes.get_boss(hero_entity.template_name) then
+		local scale = math.min(63 / self.portrait.size.x, 63 / self.portrait.size.y)
+		self.portrait.scale = V.v(scale, scale)
+		self.portrait.pos = V.v(19 + (63 - self.portrait.size.x * scale) / 2, 15 + (63 - self.portrait.size.y * scale) / 2)
+	end
 	self.portrait.propagate_on_click = true
 
 	self:add_child(self.portrait)
@@ -5861,6 +5866,16 @@ function InfiniteHeroUltimateButton:initialize(hero_entity)
 	PowerButton.initialize(self, power_hero_button_icon(ht) or "power_button_icons_0017", "power_button_mask_0001")
 	self.animations = standard_power_button_animations()
 	self.infinite_hero_id = hero_entity.id
+	local boss_skill = require("allied_boss_skills").skills[require("allied_boss_skills").kind(hero_entity.template_name)]
+	if boss_skill then
+		local label = GGLabel:new(v(self.size.x - 18, 17))
+		label.pos = v(9, self.size.y - 23)
+		label.font_name, label.font_size = "hud", 11
+		label.text, label.text_align, label.vertical_align = boss_skill.label, "center", "middle"
+		label.colors.text, label.colors.background = {255, 247, 218, 255}, {30, 23, 18, 225}
+		label.fit_size, label.propagate_on_click = true, true
+		self:add_child(label)
+	end
 	self.selected_gui_mode = GUI_MODE_POWER_S
 	local ultimate = hero_entity.hero.skills.ultimate
 	self.cooldown_time = power_hero_ultimate_cooldown(ht, hero_entity, E:get_template(ultimate.controller_name)) or 60
@@ -5880,6 +5895,7 @@ function InfiniteHeroUltimateButton:can_fire(wx, wy)
 	local hero = game_gui:entity_by_id(self.infinite_hero_id)
 	local ultimate = hero and hero.hero.skills.ultimate
 	if not ultimate or (ultimate.level or 0) < 1 or self.mode == "cooldown" or (hero.health and hero.health.dead) then return false end
+	if infinite_heroes.get_boss(hero.template_name) and not require("allied_boss_skills").can_fire(hero, wx, wy, game_gui.game.store) then return false end
 	local controller = E:get_template(ultimate.controller_name)
 	return controller and (not controller.can_fire_fn or controller.can_fire_fn(controller, wx, wy, game_gui.game.store))
 end
@@ -12670,3 +12686,4 @@ require("criket_patch")(game_gui)
 
 
 return game_gui
+

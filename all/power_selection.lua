@@ -245,7 +245,7 @@ M.options = {
 		pointer_icon = "pointer_dolia_mermaid_gift_0001",
 		pointer_style = "point",
 		kind = "mermaid_gift",
-		cooldown = 40,
+		cooldown = 30,
 		description = "Lập tức hồi tất cả chiêu cuối anh hùng đang chờ hồi, đồng thời hồi máu và hồi sinh đồng đội trên toàn bản đồ; không tác động đến các phép khác. Nếu có nhiều chiêu cuối chủ động giống nhau, chỉ hồi chiêu có thời gian chờ dài nhất. Chỉ dùng được khi có chiêu cuối anh hùng đang chờ hồi. Thời gian hồi bằng 40 giây cộng 1.6 lần tổng thời gian hồi đã rút ngắn, tối đa 200 giây."
 	},
 	yao_spirit_blessing = {
@@ -323,7 +323,7 @@ M.options = {
 		"Thả rương xuống đường đi, gây sát thương cho kẻ địch và nhận 666 vàng.", "area", nil, {gold_amount = 666}),
 	item_medical_kit = cheat_item_option("medical_kit", "Túi cứu thương", 300, 150,
 		"Nhận 5 mạng.", "point", nil, {hearts = 5}),
-	item_veznan_wrath = cheat_item_option("veznan_wrath", "Cơn thịnh nộ của Vez'nan", 990, 180,
+	item_veznan_wrath = cheat_item_option("veznan_wrath", "Cơn thịnh nộ của Vez'nan", 990, 90,
 		"Vez'nan tung phép mạnh, giáng đòn hủy diệt lên toàn bộ kẻ địch trên chiến trường.", "area", nil),
 	kro_teleport_scroll = kro_item_option("teleport_scroll", "teleport_scroll", "Cuộn dịch chuyển", 30,
 		"Dịch chuyển kẻ địch trong vùng lùi về phía sau trên đường đi.", "area"),
@@ -332,11 +332,11 @@ M.options = {
 	kro_gem_timewarp = kro_item_option("gem_timewarp", "gem_timewarp", "Cổng xoáy", 72,
 		"Gây 128 sát thương phép lên toàn bộ kẻ địch, dịch chuyển chúng lùi về phía sau và làm chậm.", "area", nil, nil,
 		"DaqiaoVortexGateCast", {"power_daqiao_vortex_gate"}),
-	kro_rod_dragon_fire = kro_item_option("rod_dragon_fire", "rod_dragon_fire", "Trượng hơi thở rồng", 120,
+	kro_rod_dragon_fire = kro_item_option("rod_dragon_fire", "rod_dragon_fire", "Trượng hơi thở rồng", 60,
 		"Đặt trượng hơi thở rồng trên đường đi, liên tục bắn cầu lửa vào kẻ địch gần đó.", "point", nil, {"go_items_rod_dragon_fire"}),
-	kro_hand_midas = kro_item_option("hand_midas", "hand_midas", "Bàn tay Midas", 120,
+	kro_hand_midas = kro_item_option("hand_midas", "hand_midas", "Bàn tay Midas", 60,
 		"Nhân đôi vàng nhận được khi tiêu diệt kẻ địch trong 35 giây.", "point", nil),
-	kro_wrath_of_elynia = kro_item_option("wrath_of_elynia", "wrath_of_elynia", "Cơn thịnh nộ của Elynie", 180,
+	kro_wrath_of_elynia = kro_item_option("wrath_of_elynia", "wrath_of_elynia", "Cơn thịnh nộ của Elynie", 90,
 		"Tiêu diệt kẻ địch thường trên chiến trường và gây 3000 sát thương chuẩn lên trùm.", "area", nil)
 }
 
