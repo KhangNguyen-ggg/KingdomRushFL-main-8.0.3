@@ -3409,6 +3409,9 @@ tt.render.sprites[1].animated = false
 tt.render.sprites[1].anchor = v(0.5, 0.34)
 tt.render.sprites[1].z = Z_OBJECTS
 tt.render.sprites[1].draw_order = 0
+-- The arena's opaque roof masks use Z_OBJECTS_COVERS in this FL port.
+-- Malik sits on that roof, so the throne scene must draw above those masks.
+tt.render.sprites[1].z = Z_OBJECTS_COVERS + 1
 for i = 1, 2 do
 	local sid = i + 1
 	tt.render.sprites[sid] = E:clone_c("sprite")
@@ -3418,6 +3421,7 @@ for i = 1, 2 do
 	tt.render.sprites[sid].anchor = v(0.5, 0.34)
 	tt.render.sprites[sid].z = Z_OBJECTS
 	tt.render.sprites[sid].draw_order = i
+	tt.render.sprites[sid].z = Z_OBJECTS_COVERS + 1
 end
 tt.idle_animation = "sitTauntLoop"
 tt.exit_animation = "sitJump"
@@ -4048,6 +4052,7 @@ E:get_template("branch_projectile_mirage").bullet.hit_blood_fx = "fx_blood_splat
 branch_enemy_projectile_decal("fx_branch_decal_mirage_kunai", "mirage_kunai_decal", false)
 branch_enemy_projectile_template("branch_projectile_malik", "malik_attack_ray_travel", true, "fx_branch_projectile_malik_hit", fts(6)).bullet.g = 0
 branch_enemy_projectile_fx("fx_branch_projectile_malik_hit", "malik_attack_ray_modifier_run", true)
+branch_enemy_projectile_decal("fx_branch_malik_jump_decal", "malik_jump_decal_run", true, fts(10))
 branch_enemy_projectile_template("branch_projectile_boss_dwarf_mecha", "boss_dwarf_mecha_travel", true, "fx_kr4_explosion_fragment", fts(30)).bullet.decal_fx = "fx_branch_decal_boss_dwarf_mecha_crater"
 branch_enemy_projectile_decal("fx_branch_decal_boss_dwarf_mecha_crater", "decal_bomb_crater", false)
 branch_enemy_projectile_template("branch_projectile_alleria", "alleria_arrow", false, nil, fts(22)).bullet.decal_fx = "fx_branch_decal_alleria_arrow"
@@ -6778,3 +6783,4 @@ zeta_animated_scene("zeta_stage87_end", "Stage_87_2", "run", Z_OBJECTS + 7, v(0.
 tt = RT("zeta_stage_event", "decal_scripted")
 tt.main_script.update = kr4_scripts.zeta_stage_event.update
 tt.render = nil
+

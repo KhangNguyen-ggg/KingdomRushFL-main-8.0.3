@@ -5552,7 +5552,6 @@ function branch_enemy_try_skill(store, this)
 		if pirate_play_full_animation(store, this, a.animation_out) then
 			local old_speed = this.motion.max_speed
 			local old_bans = this.vis.bans
-			local start_node = this.nav_path.ni
 			local target_pi, target_spi, target_node
 
 			if a.destinations and #a.destinations > 0 then
@@ -5574,34 +5573,38 @@ function branch_enemy_try_skill(store, this)
 				target_node = branch_shift_path_node(this.nav_path, a.nodes)
 			end
 
-			local direction = target_node >= start_node and 1 or -1
-
-			this.motion.max_speed = a.jump_speed or old_speed * (a.factor or 6)
-			this.vis.bans = bor(this.vis.bans, F_BLOCK)
-			U.animation_start(this, a.animation or "jumpTravel", nil, store.tick_ts, true, nil, true)
-
-			if target_pi and (target_pi ~= this.nav_path.pi or target_spi ~= this.nav_path.spi) then
-				U.y_wait(store, a.cross_path_travel_time or 0.6)
-			else
-				local jump_ts = store.tick_ts
-
-				while not this.health.dead and (this.nav_path.ni - target_node) * direction < 0 and store.tick_ts - jump_ts < (a.max_travel_time or 3) do
-					if not kr4_enemy_walk_path_step(store, this, a.animation) then
-						break
-					end
-				end
+			local start_pos = V.vclone(this.pos)
+			local landing_pos = V.vclone(P:node_pos(target_pi or this.nav_path.pi, target_spi or this.nav_path.spi, target_node))
+			local jump_ts = store.tick_ts
+			local duration = a.cross_path_travel_time or 0.6
+			local old_z = {}
+			for sid, sprite in ipairs(this.render.sprites) do
+				old_z[sid] = sprite.z
+				if sprite.animated then sprite.z = Z_OBJECTS_COVERS + 1 end
 			end
-
-			if this.health.dead then
+			this.vis.bans = bor(old_bans, F_BLOCK)
+			pirate_start_animation(this, a.animation or "jumpTravel", nil, store.tick_ts, true, nil, true)
+			local phase = 0
+			while not this.health.dead and not this.unit.is_stunned and store.tick_ts - jump_ts < duration do
+				phase = math.min(1, (store.tick_ts - jump_ts) / duration)
+				this.pos.x = start_pos.x + (landing_pos.x - start_pos.x) * phase
+				this.pos.y = start_pos.y + (landing_pos.y - start_pos.y) * phase + math.sin(math.pi * phase) * (a.jump_height or 80)
+				coroutine.yield()
+			end
+			this.motion.max_speed = old_speed
+			this.vis.bans = old_bans
+			for sid, sprite in ipairs(this.render.sprites) do sprite.z = old_z[sid] end
+			if this.health.dead or this.unit.is_stunned then
+				-- Cancel at the departure node; do not leave a corpse or stunned boss airborne.
+				this.pos = start_pos
 				return true
 			end
-
 			this.nav_path.pi = target_pi or this.nav_path.pi
 			this.nav_path.spi = target_spi or this.nav_path.spi
 			this.nav_path.ni = target_node
-			this.pos = V.vclone(P:node_pos(this.nav_path.pi, this.nav_path.spi, this.nav_path.ni))
-			this.motion.max_speed = old_speed
-			this.vis.bans = old_bans
+			this.nav_path.dir = branch_path_dir(this.nav_path.pi)
+			this.pos = landing_pos
+			branch_spawn_fx_at(store, "fx_branch_malik_jump_decal", this.pos)
 			pirate_play_full_animation(store, this, a.animation_in)
 			if a.hit_sound then S:queue(a.hit_sound) end
 			branch_damage_soldiers(store, this, this.pos, a.radius, a.damage_min, a.damage_max, DAMAGE_PHYSICAL, 8)
@@ -9415,6 +9418,13 @@ end
 scripts.stage36_malik_throne = {}
 
 function scripts.stage36_malik_throne.update(this, store)
+	-- The chair is scenery, not a moving part of Malik's exit animation.
+	local chair = E:create_entity("decal")
+	chair.pos = V.vclone(this.pos)
+	chair.render.sprites[1] = table.deepclone(this.render.sprites[1])
+	queue_insert(store, chair)
+	this.render.sprites[1].hidden = true
+
 	local function play(animation, loop, force_ts)
 		for i = 2, #this.render.sprites do
 			U.animation_start(this, animation, nil, store.tick_ts, loop, i, force_ts)
@@ -9459,9 +9469,18 @@ function scripts.stage36_malik_throne.update(this, store)
 
 	play(this.exit_animation or "sitJump", false, true)
 
-	while not U.animation_finished(this, 2) do
+	local start_pos = V.vclone(this.pos)
+	local destination = this.exit_destination or start_pos
+	local jump_ts = store.tick_ts
+	-- Vengeance sitJump has 57 frames (180..236). Movement starts after
+	-- the 28-frame seated preparation and ends at the landing frames.
+	while not U.animation_finished(this, 2) and store.tick_ts - jump_ts < fts(57) + 0.25 do
+		local phase = math.max(0, math.min(1, (store.tick_ts - jump_ts - fts(28)) / fts(19)))
+		this.pos.x = start_pos.x + (destination.x - start_pos.x) * phase
+		this.pos.y = start_pos.y + (destination.y - start_pos.y) * phase + math.sin(math.pi * phase) * 60
 		coroutine.yield()
 	end
+	this.pos = V.vclone(destination)
 
 	this.exit_done = true
 	queue_remove(store, this)
@@ -14285,15 +14304,19 @@ function scripts.branch_stage_controller.update(this, store)
 		end
 		if store.level_mode == GAME_MODE_CAMPAIGN and level == 186 and not boss_spawned and wave >= 15 then
 			boss_spawned = true
+			local malik_path = branch_kr4_path_rank(3)
+			local malik_node = branch_clamp_path_node(malik_path, 45)
 			if malik_throne and store.entities[malik_throne.id] then
+				malik_throne.exit_destination = V.vclone(P:node_pos(malik_path, 1, malik_node))
 				malik_throne.exit = true
 				while store.entities[malik_throne.id] and not malik_throne.exit_done do
 					coroutine.yield()
 				end
 			end
-			local malik_path = branch_kr4_path_rank(3)
-			if not branch_spawn_from_pos_to_path(store, "enemy_malik", V.v(117, 489), malik_path, 1, 45) then
-				branch_spawn_boss(store, "enemy_malik", malik_path, 1, 45)
+			local malik = branch_spawn_boss(store, "enemy_malik", malik_path, 1, malik_node)
+			-- The throne jump already consumed the first scripted destination.
+			if malik and malik.branch.rocket_jump then
+				malik.branch.rocket_jump.destination_index = 2
 			end
 		end
 		if store.level_mode == GAME_MODE_CAMPAIGN and not boss_spawned and store.waves_finished then
@@ -14862,3 +14885,4 @@ end
 end)()
 
 return scripts
+
