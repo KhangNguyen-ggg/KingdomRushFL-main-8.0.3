@@ -131,7 +131,7 @@ end
 function animation_db:fni(animation, time_offset, loop, fps, tick_length)
 	local a = animation
 
-	fps = fps or self.fps
+	fps = fps or a.fps or self.fps
 	tick_length = tick_length or self.tick_length
 
 	local frames = a.frames
@@ -210,7 +210,7 @@ function animation_db:duration(animation_name)
 		self:fni(a, 0, false)
 	end
 
-	return #a.frames / self.fps, #a.frames
+	return #a.frames / (a.fps or self.fps), #a.frames
 end
 
 return animation_db

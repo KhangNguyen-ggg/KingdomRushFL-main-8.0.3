@@ -19,6 +19,7 @@ local V = require("klua.vector")
 local W = require("wave_db")
 local F = require("klove.font_db")
 local I = require("klove.image_db")
+local MP = require("malik_presentation")
 local G = love.graphics
 local bit = require("bit")
 local band = bit.band
@@ -4774,6 +4775,16 @@ end
 
 function branch_enemy_try_skill(store, this)
 	local b, now = this.branch, store.tick_ts
+	if b.malik_presentation then
+		b._malik_taunt_ts = b._malik_taunt_ts or now
+		if now - b._malik_taunt_ts >= 25 and #this.enemy.blockers == 0 then
+			b._malik_taunt_ts = now
+			b._malik_taunt = (b._malik_taunt or 0) % 5 + 1
+			MP.say(this, store, "BATTLE", b._malik_taunt, 4)
+			pirate_play_full_animation(store, this, "taunt")
+			return true
+		end
+	end
 	if branch_enemy_try_transform_on_melee(store, this) then
 		return true
 	end
@@ -4887,6 +4898,7 @@ function branch_enemy_try_skill(store, this)
 					end
 					if b.reset_ranged_on_melee and b.ranged then b.ranged.ts = now end
 					if a.imprison then branch_enemy_cast_oloch_imprison(store, this, a.imprison) end
+				if b.malik_presentation then MP.finish(this, store) end
 				end
 				return true
 			end
@@ -5531,7 +5543,13 @@ function branch_enemy_try_skill(store, this)
 		if #towers > 0 then
 			b.tower_destroy.ts = now
 			if b.tower_destroy.sound then S:queue(b.tower_destroy.sound) end
-			if pirate_play_cast(store, this, b.tower_destroy.animation, b.tower_destroy.cast_time, towers[1]) and store.entities[towers[1].id] then towers[1].tower.destroy = true end
+			if pirate_play_cast(store, this, b.tower_destroy.animation, b.tower_destroy.cast_time, towers[1]) then
+				if store.entities[towers[1].id] then
+					if b.malik_presentation then MP.tower_impact(store, towers[1].pos) end
+					towers[1].tower.destroy = true
+				end
+				if b.malik_presentation then MP.finish(this, store) end
+			end
 			return true
 		end
 	end
@@ -5541,6 +5559,7 @@ function branch_enemy_try_skill(store, this)
 
 		if a.destinations and #a.destinations > 0 then
 			destination = a.destinations[a.destination_index or 1]
+			if not destination then return false end
 
 			if destination and destination.reach_node and (this.nav_path.ni or 0) < destination.reach_node then
 				return false
@@ -5557,7 +5576,6 @@ function branch_enemy_try_skill(store, this)
 			if a.destinations and #a.destinations > 0 then
 				destination = destination or a.destinations[a.destination_index or 1]
 
-				a.destination_index = math.min(#a.destinations, (a.destination_index or 1) + 1)
 				target_pi = branch_kr4_path_rank(destination.path)
 				target_spi = (destination.subpath or 0) + 1
 				target_node = destination.node
@@ -5604,10 +5622,13 @@ function branch_enemy_try_skill(store, this)
 			this.nav_path.ni = target_node
 			this.nav_path.dir = branch_path_dir(this.nav_path.pi)
 			this.pos = landing_pos
-			branch_spawn_fx_at(store, "fx_branch_malik_jump_decal", this.pos)
-			pirate_play_full_animation(store, this, a.animation_in)
-			if a.hit_sound then S:queue(a.hit_sound) end
-			branch_damage_soldiers(store, this, this.pos, a.radius, a.damage_min, a.damage_max, DAMAGE_PHYSICAL, 8)
+			if a.destinations then a.destination_index = (a.destination_index or 1) + 1 end
+			if pirate_play_cast(store, this, a.animation_in, a.land_hit_time or 0.3) then
+				branch_spawn_fx_at(store, "fx_branch_malik_jump_decal", this.pos)
+				if a.hit_sound then S:queue(a.hit_sound) end
+				branch_damage_soldiers(store, this, this.pos, a.radius, a.damage_min, a.damage_max, DAMAGE_PHYSICAL, 8)
+				MP.finish(this, store)
+			end
 		end
 		return true
 	end
@@ -5629,7 +5650,7 @@ function branch_enemy_death(store, this)
 
 		branch_damage_soldiers(store, this, this.pos, d.range, d.damage_min, d.damage_max, d.damage_type or DAMAGE_PHYSICAL, d.max_count or 99)
 	end
-	if b.end_level_on_death then
+	if b.end_level_on_death and not b.malik_presentation then
 		branch_kill_all_enemies_for_victory(store, b.stop_wave_spawns_on_death)
 	end
 	if b.end_level_on_last_of_template then
@@ -5661,6 +5682,7 @@ function branch_enemy_death(store, this)
 
 	if b.boss_death then
 		local boss_death = b.boss_death
+		if b.malik_presentation then MP.clear(this, store) end
 
 		SU.hide_shadow(this, true)
 
@@ -5695,7 +5717,15 @@ function branch_enemy_death(store, this)
 
 			if boss_death.loop_animation and (boss_death.loop_duration or 0) > 0 then
 				U.animation_start(this, boss_death.loop_animation, nil, store.tick_ts, true)
-				U.y_wait(store, boss_death.loop_duration)
+				if b.malik_presentation then
+					for i = 1, 2 do
+						MP.say(this, store, "END", i, 4)
+						U.y_wait(store, 4)
+					end
+					MP.clear(this, store)
+				else
+					U.y_wait(store, boss_death.loop_duration)
+				end
 			end
 
 			if boss_death.end_animation then
@@ -5716,6 +5746,9 @@ function branch_enemy_death(store, this)
 			end
 		end
 
+		if b.malik_presentation and b.end_level_on_death then
+			branch_kill_all_enemies_for_victory(store, b.stop_wave_spawns_on_death)
+		end
 		this.health.death_finished_ts = store.tick_ts
 		queue_remove(store, this)
 
@@ -9431,41 +9464,50 @@ function scripts.stage36_malik_throne.update(this, store)
 		end
 	end
 
-	play(this.idle_animation or "sitTauntLoop", true, true)
+	local function wait(seconds, interruptible)
+		local until_ts = store.tick_ts + seconds
+		while store.tick_ts < until_ts do
+			if interruptible and this.exit then MP.clear(this, store); return false end
+			coroutine.yield()
+		end
+		return true
+	end
+	local function talk(kind, index, interruptible)
+		play("sitTauntIn", false, true)
+		if not wait(fts(6), interruptible) then return false end
+		play("sitTauntLoop", true, true)
+		MP.say(this, store, kind, index, 4)
+		if not wait(4, interruptible) then return false end
+		MP.clear(this, store)
+		play("sitTauntEnd", false, true)
+		if not wait(fts(13), interruptible) then return false end
+		play("sitIdle", true, true)
+		return true
+	end
 
-	local next_taunt_ts = store.tick_ts + math.random(8, 14)
-
+	play("sitIdle", true, true)
+	if wait(1, true) then
+		for i = 1, 2 do if not talk("INTRO", i, true) then break end end
+	end
+	local next_taunt_ts = store.tick_ts + math.random(12, 18)
+	local taunt = 1
 	while not this.exit do
 		if store.tick_ts >= next_taunt_ts then
-			local animation, sound
-
-			if math.random() < 0.5 then
-				animation = "sitLaugh"
-				sound = "malik_sitted_taunt_laught"
-			else
-				animation = "sitAngry"
-				sound = "malik_sitted_taunt_bolt"
-			end
-
-			S:queue(sound)
-			play(animation, false, true)
-
-			while not this.exit and not U.animation_finished(this, 2) do
-				coroutine.yield()
-			end
-
-			if not this.exit then
-				play(this.idle_animation or "sitTauntLoop", true, true)
-				next_taunt_ts = store.tick_ts + math.random(8, 14)
-			end
+			if not talk("BATTLE", taunt, true) then break end
+			local laugh = taunt % 2 == 1
+			S:queue(laugh and "malik_sitted_taunt_laught" or "malik_sitted_taunt_bolt")
+			play(laugh and "sitLaugh" or "sitAngry", false, true)
+			if not wait(fts(laugh and 69 or 56), true) then break end
+			play("sitIdle", true, true)
+			taunt = taunt % 5 + 1
+			next_taunt_ts = store.tick_ts + math.random(12, 18)
 		end
-
 		coroutine.yield()
 	end
-
-	if this.exit_sound then
-		S:queue(this.exit_sound)
-	end
+	MP.clear(this, store)
+	if this.exit_sound then S:queue(this.exit_sound) end
+	for i = 1, 2 do talk("PRE_FIGHT", i, false) end
+	MP.clear(this, store)
 
 	play(this.exit_animation or "sitJump", false, true)
 

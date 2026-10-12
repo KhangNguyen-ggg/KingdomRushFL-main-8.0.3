@@ -1,4 +1,4 @@
-﻿-- chunkname: @./all/level_utils.lua
+-- chunkname: @./all/level_utils.lua
 
 local log = require("klua.log"):new("level_utils")
 
@@ -1111,7 +1111,7 @@ end
 
 function LU.has_alive_enemies(store, excluded_templates)
 	local store_enemies = table.filter(store.entities, function(_, e)
-		return e.main_script and (e.main_script.co or e.main_script.runs > 0) and (e.enemy and e.health and not e.health.dead or e.enemy and e.death_spawns or e.spawner and not e.spawner.eternal or e.picked_enemies and #e.picked_enemies > 0 or e.tunnel and #e.tunnel.picked_enemies > 0 or e.template_name == "nav_faerie") and not (e.enemy and e.enemy.ignore_victory) and (not excluded_templates or not table.contains(excluded_templates, e.template_name)) and e.template_name ~= "bullywag_spawner"
+		return e.main_script and (e.main_script.co or e.main_script.runs > 0) and (e.enemy and e.health and (not e.health.dead or e.enemy.wait_for_death_animation and not e.health.death_finished_ts) or e.enemy and e.death_spawns or e.spawner and not e.spawner.eternal or e.picked_enemies and #e.picked_enemies > 0 or e.tunnel and #e.tunnel.picked_enemies > 0 or e.template_name == "nav_faerie") and not (e.enemy and e.enemy.ignore_victory) and (not excluded_templates or not table.contains(excluded_templates, e.template_name)) and e.template_name ~= "bullywag_spawner"
 	end)
 	local pending_enemies = table.filter(store.pending_inserts, function(_, e)
 		return e.enemy and not e.enemy.ignore_victory or e.template_name == "nav_faerie"
@@ -1165,7 +1165,7 @@ end
 
 function LU.has_alive_enemies_2(store, excluded_templates)
 	local store_enemies = table.filter(store.entities, function(_, e)
-		return e.main_script and (e.main_script.co or e.main_script.runs > 0) and (e.enemy and e.health and not e.health.dead or e.enemy and e.death_spawns or e.spawner and not e.spawner.eternal or e.picked_enemies and #e.picked_enemies > 0 or e.tunnel and #e.tunnel.picked_enemies > 0 or e.template_name == "nav_faerie") and not (e.enemy and e.enemy.ignore_victory) and (not excluded_templates or not table.contains(excluded_templates, e.template_name))
+		return e.main_script and (e.main_script.co or e.main_script.runs > 0) and (e.enemy and e.health and (not e.health.dead or e.enemy.wait_for_death_animation and not e.health.death_finished_ts) or e.enemy and e.death_spawns or e.spawner and not e.spawner.eternal or e.picked_enemies and #e.picked_enemies > 0 or e.tunnel and #e.tunnel.picked_enemies > 0 or e.template_name == "nav_faerie") and not (e.enemy and e.enemy.ignore_victory) and (not excluded_templates or not table.contains(excluded_templates, e.template_name))
 	end)
 	local pending_enemies = table.filter(store.pending_inserts, function(_, e)
 		return e.enemy and not e.enemy.ignore_victory or e.template_name == "nav_faerie"

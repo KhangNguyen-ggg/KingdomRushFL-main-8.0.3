@@ -1,4 +1,4 @@
-﻿-- Allied adaptations of FL 8.0.3 boss skills. Never execute enemy boss scripts.
+-- Allied adaptations of FL 8.0.3 boss skills. Never execute enemy boss scripts.
 local E = require("entity_db")
 local A = require("animation_db")
 local U = require("utils")
@@ -215,7 +215,17 @@ local function projectile(owner, source, target, pos, store, spec)
 			local start=st.tick_ts
 			local from=copy(this.pos)
 			while st.tick_ts-start<this.flight do
-				if alive(this.target) then this.destination=copy(this.target.pos) end
+				if alive(this.target) then
+					this.destination=copy(this.target.pos)
+					if this.spec.hit_offset and this.target.unit and this.target.unit.hit_offset then
+						this.destination.x=this.destination.x+this.target.unit.hit_offset.x
+						this.destination.y=this.destination.y+this.target.unit.hit_offset.y
+					end
+				end
+				if this.spec.rotate then
+					local sprite=this.render.sprites[1]
+					sprite.r=(math.atan2 or math.atan)(this.destination.y-from.y,this.destination.x-from.x)
+				end
 				local f=math.min(1,(st.tick_ts-start)/this.flight)
 				if this.spec.beam then
 					local sprite=this.render.sprites[1]
@@ -234,7 +244,7 @@ local function projectile(owner, source, target, pos, store, spec)
 				if (this.spec.lo or 0)>0 then damage(st,this.boss_owner,this.target,this.spec.lo,this.spec.hi,this.spec.kind) end
 				if this.spec.stun then stun(st,this.boss_owner,this.target,this.spec.stun) end
 			end
-			if this.spec.fx then visual(this.spec.fx,this.destination,st,1) end
+			if this.spec.fx then visual(this.spec.fx,this.destination,st,this.spec.fx_duration or 1) end
 			if this.spec.decal then visual(this.spec.decal,this.destination,st,2) end
 			if this.spec.on_hit then this.spec.on_hit(this.boss_owner,this.destination,st) end
 			sound(this.hit_sound)

@@ -15854,6 +15854,10 @@ return {
 		to = 100,
 		from = 82
 	},
+	malik_layerX_sitIdle = {layer_from = 1, layer_to = 2, layer_prefix = "malik_layer%i", from = 1, to = 1},
+	malik_layerX_sitTauntIn = {layer_from = 1, layer_to = 2, layer_prefix = "malik_layer%i", from = 58, to = 63},
+	malik_layerX_sitTauntEnd = {layer_from = 1, layer_to = 2, layer_prefix = "malik_layer%i", from = 98, to = 110},
+	malik_layerX_allyDeath = {layer_from = 1, layer_to = 2, layer_prefix = "malik_layer%i", from = 570, to = 669},
 	-- hero_malik
 	malik_layerX_idle = {
 		layer_to = 2,
@@ -15866,21 +15870,21 @@ return {
 		layer_to = 2,
 		from = 238,
 		layer_prefix = "malik_layer%i",
-		to = 263,
+		to = 289,
 		layer_from = 1,
 	},
 	malik_layerX_walkDown = {
 		layer_to = 2,
 		from = 238,
 		layer_prefix = "malik_layer%i",
-		to = 263,
+		to = 289,
 		layer_from = 1,
 	},
 	malik_layerX_walkUp = {
 		layer_to = 2,
 		from = 238,
 		layer_prefix = "malik_layer%i",
-		to = 263,
+		to = 289,
 		layer_from = 1,
 	},
 	malik_layerX_melee = {

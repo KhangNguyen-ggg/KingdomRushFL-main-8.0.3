@@ -3416,16 +3416,39 @@ for i = 1, 2 do
 	local sid = i + 1
 	tt.render.sprites[sid] = E:clone_c("sprite")
 	tt.render.sprites[sid].prefix = "malik_layer" .. i
-	tt.render.sprites[sid].name = "sitTauntLoop"
+	tt.render.sprites[sid].name = "sitIdle"
 	tt.render.sprites[sid].animated = true
 	tt.render.sprites[sid].anchor = v(0.5, 0.34)
 	tt.render.sprites[sid].z = Z_OBJECTS
 	tt.render.sprites[sid].draw_order = i
 	tt.render.sprites[sid].z = Z_OBJECTS_COVERS + 1
 end
-tt.idle_animation = "sitTauntLoop"
+tt.idle_animation = "sitIdle"
 tt.exit_animation = "sitJump"
 tt.exit_sound = "malik_pre_fight"
+
+tt = RT("decal_malik_dialogue", "decal_scripted")
+AC(tt, "texts")
+tt.main_script.update = require("malik_presentation").update_dialogue
+tt.render.sprites[1].name = "krfl_malik_taunt_orange"
+tt.render.sprites[1].animated = false
+tt.render.sprites[1].z = Z_BULLETS
+tt.render.sprites[2] = E:clone_c("sprite")
+tt.render.sprites[2].name = "krfl_malik_taunt_orange_arrow"
+tt.render.sprites[2].animated = false
+tt.render.sprites[2].offset = v(-85, -50)
+tt.render.sprites[2].z = Z_BULLETS
+tt.render.sprites[3] = E:clone_c("sprite")
+tt.render.sprites[3].animated = false
+tt.render.sprites[3].offset = v(0, 2)
+tt.render.sprites[3].z = Z_BULLETS
+tt.texts.list[1].size = v(216, 72)
+tt.texts.list[1].font_name = "body_bold"
+tt.texts.list[1].font_size = 18
+tt.texts.list[1].color = {255, 244, 215}
+tt.texts.list[1].line_height = 1
+tt.texts.list[1].fit_height = true
+tt.texts.list[1].sprite_id = 3
 
 tt = RT("miner", "decal_scripted")
 tt.main_script.update = kr4_scripts.branch_looping_decal.update
@@ -3794,6 +3817,7 @@ branch_melee(tt, 52, 76, 0.5, 0.46, "attack")
 tt.sound_events.death = "group_sandstorm_alric_sandwarrior_death"
 
 tt = branch_enemy_template("malik", "malik", 9000, 0, 0, 7, 35, 20, 0.34, 55, "malik_shadow", {
+	malik_presentation = true,
 	boss = true, melee_slot = 15,
 	ranged = {cooldown = 4.5, min_range = 50, max_range = 490, damage_min = 390, damage_max = 480, damage_type = DAMAGE_MAGICAL, animation = "range", hit_time = 0.59, projectile = "branch_projectile_malik", flight_time = fts(6), g = 0},
 	tower_destroy = {cooldown = 13, range = 125, animation = "special", cast_time = 1.21, sound = "malik_tower_destroy_oneshot"},
@@ -3814,11 +3838,22 @@ tt = branch_enemy_template("malik", "malik", 9000, 0, 0, 7, 35, 20, 0.34, 55, "m
 	end_level_on_death = true
 })
 branch_add_layered_sprites(tt, "malik_layer", 2, v(0.5, 0.34), v(0, 0), Z_OBJECTS)
+tt.enemy.wait_for_death_animation = true
+tt.render.sprites[3] = E:clone_c("sprite")
+tt.render.sprites[3].name = "malik_shadow"
+tt.render.sprites[3].animated = false
+tt.render.sprites[3].is_shadow = true
+tt.render.sprites[3].ignore_start = true
+tt.render.sprites[3].anchor = v(0.5, 0.34)
+tt.render.sprites[3].z = Z_DECALS + 1
 local malik_melee = branch_melee(tt, 172, 216, 3, 0.85, "melee")
 malik_melee.sound = "malik_melee_attack"
 tt.branch.ranged.sound = "malik_ranged_attack"
 malik_melee.damage_radius = 60
 malik_melee.max_count = 8
+malik_melee.type = "area"
+malik_melee.count = 8
+malik_melee.hit_fx = "fx_branch_malik_attack_decal"
 
 tt = branch_enemy_template("boss_dwarf_mecha", "boss_dwarf_mecha", 7000, 0, 0, 15, 0, 20, 0.08, 100, nil, {
 	boss = true, melee_slot = 30,
@@ -4051,8 +4086,15 @@ branch_enemy_projectile_template("branch_projectile_mirage", "mirage_kunai", fal
 E:get_template("branch_projectile_mirage").bullet.hit_blood_fx = "fx_blood_splat"
 branch_enemy_projectile_decal("fx_branch_decal_mirage_kunai", "mirage_kunai_decal", false)
 branch_enemy_projectile_template("branch_projectile_malik", "malik_attack_ray_travel", true, "fx_branch_projectile_malik_hit", fts(6)).bullet.g = 0
-branch_enemy_projectile_fx("fx_branch_projectile_malik_hit", "malik_attack_ray_modifier_run", true)
-branch_enemy_projectile_decal("fx_branch_malik_jump_decal", "malik_jump_decal_run", true, fts(10))
+branch_enemy_projectile_fx("fx_branch_projectile_malik_hit", "malik_attack_ray_modifier_run", true).duration = fts(6)
+branch_enemy_projectile_decal("fx_branch_malik_jump_decal", "malik_jump_decal_run", true, fts(18))
+branch_enemy_projectile_decal("fx_branch_malik_attack_decal", "malik_attack_decal_run", true, fts(27))
+tt = branch_enemy_projectile_fx("fx_branch_malik_tower_ray", "malik_towerdestroction_ray_run", true)
+tt.duration = fts(16)
+tt.render.sprites[1].anchor = v(0.5, 0)
+tt.render.sprites[1].z = Z_BULLETS
+tt = branch_enemy_projectile_fx("fx_branch_malik_tower_explosion", "malik_tower_explotion_start", true)
+tt.duration = fts(50)
 branch_enemy_projectile_template("branch_projectile_boss_dwarf_mecha", "boss_dwarf_mecha_travel", true, "fx_kr4_explosion_fragment", fts(30)).bullet.decal_fx = "fx_branch_decal_boss_dwarf_mecha_crater"
 branch_enemy_projectile_decal("fx_branch_decal_boss_dwarf_mecha_crater", "decal_bomb_crater", false)
 branch_enemy_projectile_template("branch_projectile_alleria", "alleria_arrow", false, nil, fts(22)).bullet.decal_fx = "fx_branch_decal_alleria_arrow"
