@@ -9,8 +9,10 @@ local M={name="hero_allied_godieth",title="Godieth",kind="godieth",source="eb_ba
 
 local function release_poison(this,store)
 	this.finished=true
+	U.sprites_hide(this)
 	local target=store.entities[this.modifier.target_id]
 	if target and target._allied_godieth_poison==this then target._allied_godieth_poison=nil end
+	return true
 end
 local function register_poison()
 	if E.entities.allied_godieth_poison then return end
@@ -35,6 +37,7 @@ local function register_poison()
 			if not target or not target.enemy or target.pending_removal then break end
 			this.pos=target.pos
 			if target.health.dead then
+				U.sprites_hide(this)
 				coroutine.yield()
 				coroutine.yield()
 				-- One corpse may be used by only one allied summoner.
