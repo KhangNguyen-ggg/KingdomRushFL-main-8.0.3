@@ -1749,6 +1749,7 @@ local function y_soldier_do_single_area_attack(store, this, target, attack)
 
 	if attack.count then
 		table.sort(targets, function(e1, e2)
+			if this.melee.fn_sort_targets then return this.melee.fn_sort_targets(e1, e2, hit_pos) end
 			return V.dist(e1.pos.x, e1.pos.y, hit_pos.x, hit_pos.y) < V.dist(e2.pos.x, e2.pos.y, hit_pos.x, hit_pos.y)
 		end)
 	end
@@ -2226,7 +2227,9 @@ local function soldier_pick_melee_target(store, this)
 	local center = this.nav_rally and this.nav_rally.center or this.pos
 
 	if not target then
-		if this.hero then
+		if this.melee.fn_pick_target then
+			target = this.melee.fn_pick_target(this, store, center)
+		elseif this.hero then
 			target = U.find_nearest_enemy(store.entities, center, 0, this.melee.range, F_BLOCK, bit.bor(F_CLIFF), function(e)
 				return (not e.enemy.max_blockers or #e.enemy.blockers < e.enemy.max_blockers) and band(GR:cell_type(e.pos.x, e.pos.y), TERRAIN_NOWALK) == 0 and (not this.melee.fn_can_pick or this.melee.fn_can_pick(this, e))
 			end)
@@ -2235,7 +2238,7 @@ local function soldier_pick_melee_target(store, this)
 				return (not e.enemy.max_blockers or #e.enemy.blockers < e.enemy.max_blockers) and band(GR:cell_type(e.pos.x, e.pos.y), TERRAIN_NOWALK) == 0 and (not this.melee.fn_can_pick or this.melee.fn_can_pick(this, e))
 			end)
 		end
-	elseif U.blocker_rank(store, this) ~= 1 then
+	elseif not this.melee.fn_pick_target and U.blocker_rank(store, this) ~= 1 then
 		local alt_target = U.find_foremost_enemy(store.entities, center, 0, this.melee.range, false, F_BLOCK, bit.bor(F_FLYING, F_CLIFF), function(e)
 			return #e.enemy.blockers == 0 and band(GR:cell_type(e.pos.x, e.pos.y), TERRAIN_NOWALK) == 0
 		end)

@@ -471,6 +471,7 @@ end
 ---@return table 按优先级排序的敌人列表
 local function select_enemy_candidates(hero, hero_info, prefer_ground)
 	local limit = cfg("target_candidate_limit")
+	local boss_priority = hero.boss_kind and not get_blocked_enemy(hero) and require("allied_boss_common").target_before
 	local out = {}
 	-- local high_threat_extra = {} -- 高威胁敌人额外列表
 
@@ -516,7 +517,10 @@ local function select_enemy_candidates(hero, hero_info, prefer_ground)
 				local inserted = false
 				for i = 1, #out do
 					local slot = out[i]
-					if score < slot.score or (score == slot.score and dist2 < slot.dist2) then
+					local before
+					if boss_priority then before = boss_priority(enemy, slot.enemy, hero.pos)
+					else before = score < slot.score or (score == slot.score and dist2 < slot.dist2) end
+					if before then
 						table.insert(out, i, candidate)
 						inserted = true
 						break

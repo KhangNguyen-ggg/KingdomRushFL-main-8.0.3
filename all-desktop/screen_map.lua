@@ -2735,6 +2735,10 @@ function screen_map:start_level(level_idx, level_mode)
 
 	self.user_data.liuhui_hero = self.user_data.liuhui_hero or {}
 	self.user_data.liuhui_hero.rallylist = self.user_data.liuhui_hero.rallylist or default_rally_hero_list()
+	if infinite_heroes.allowed({campaign_variant = variant}, self.user_data, level_mode) and not self.hero_room:validate_infinite_team() then
+		if self.level_select then self.level_select:hide() end
+		return false
+	end
 	storage:save_slot(self.user_data)
 
 	self.done_callback({
@@ -15734,6 +15738,21 @@ function HeroRoomView:update_selected_hero()
 
 	self.hero_deck_instruction.text = self.hero_deck_instruction_text
 	self.hero_deck_instruction.colors.text = {245, 230, 180, 255}
+end
+
+function HeroRoomView:validate_infinite_team()
+	if infinite_heroes.enabled(screen_map.user_data) and #infinite_heroes.names(screen_map.user_data, screen_map.hero_data) == 0 then
+		if self.hidden then self:show() end
+		tower_select_show_legacy_slot_hint(self, "Đội Vô hạn đang trống", "Hãy thêm ít nhất 1 tướng vào đội hoặc chuyển sang chế độ Một tướng/Hai tướng trước khi thoát.", true)
+		return false
+	end
+	return true
+end
+
+function HeroRoomView:hide()
+	if not self:validate_infinite_team() then return false end
+	tower_select_hide_legacy_slot_hint(self)
+	return HeroRoomView.super.hide(self)
 end
 
 function HeroRoomView:show()

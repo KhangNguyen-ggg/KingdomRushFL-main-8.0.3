@@ -34,13 +34,35 @@ local function entity_cache(store)
 	return cache
 end
 local function enemy_list(store) return entity_cache(store).list end
+local function target_rank(e)
+	local flags=e.vis.flags
+	return bit.band(flags,F_BOSS)~=0 and 2 or bit.band(flags,F_MINIBOSS)~=0 and 1 or 0
+end
+local function target_before(a,b,pos)
+	local ar,br=target_rank(a),target_rank(b)
+	if ar~=br then return ar>br end
+	local ah,bh=a.health.hp_max or 0,b.health.hp_max or 0
+	if ah~=bh then return ah>bh end
+	local ad,bd=(a.pos.x-pos.x)^2+(a.pos.y-pos.y)^2,(b.pos.x-pos.x)^2+(b.pos.y-pos.y)^2
+	if ad~=bd then return ad<bd end
+	return a.id<b.id
+end
+local function pick_melee_target(this,store,center)
+	local targets=U.find_enemies_in_range(store.entities,center,0,this.melee.range,F_BLOCK,bit.bor(F_FLYING,F_CLIFF),function(e)
+		return (not e.enemy.max_blockers or #e.enemy.blockers<e.enemy.max_blockers) and
+			bit.band(require("grid_db"):cell_type(e.pos.x,e.pos.y),TERRAIN_NOWALK)==0 and
+			(not this.melee.fn_can_pick or this.melee.fn_can_pick(this,e))
+	end) or {}
+	table.sort(targets,function(a,b) return target_before(a,b,center) end)
+	return targets[1]
+end
 local function enemies(store, p, radius, ground, unordered)
 	local out = {}
 	for _, e in ipairs(enemy_list(store)) do
 		if alive(e) and (not ground or bit.band(e.vis.flags, F_FLYING) == 0) and U.is_inside_ellipse(e.pos, p, radius) then out[#out+1] = e end
 	end
 	if not unordered then table.sort(out, function(a,b)
-		return (a.pos.x-p.x)^2+(a.pos.y-p.y)^2 < (b.pos.x-p.x)^2+(b.pos.y-p.y)^2
+		return target_before(a,b,p)
 	end) end
 	return out
 end
@@ -375,6 +397,10 @@ function M.decorate(t,native,def)
 	end
 
 	if def.prepare then def.prepare(t) end
+	t.melee.fn_pick_target=pick_melee_target
+	t.melee.fn_sort_targets=target_before
+	t.health.immune_to=bit.bor(t.health.immune_to or 0,DAMAGE_INSTAKILL,DAMAGE_EAT)
+	t.vis.bans=bit.bor(t.vis.bans,F_INSTAKILL,F_EAT)
 	if t.boss_kind then return t end
 	t.boss_kind=kind
 	t.hero.skills={}
@@ -391,7 +417,8 @@ function M.decorate(t,native,def)
 			elseif this.unit.is_stunned then SU.soldier_idle(store,this)
 			else
 				passive(this,store)
-				if this.nav_rally.new then SU.y_hero_new_rally(store,this)
+				if this.nav_rally.new then
+					if def.rally then def.rally(this,store) else SU.y_hero_new_rally(store,this) end
 				else
 					this.boss_casting=true
 					local used=automatic(this,store)
@@ -484,5 +511,6 @@ M.animate,M.wait,M.cast=animate,wait,cast
 M.area,M.visual,M.projectile=area,visual,projectile
 M.summon,M.living_summons=summon,living_summons
 M.insert,M.remove=insert,remove
+M.target_before=target_before
 function M.native(this) return native_by_kind[this.boss_kind] end
 return M

@@ -2020,6 +2020,8 @@ function sys.mod_lifecycle:on_insert(entity, store)
 
 	local this = entity
 	local target_id = this.modifier.target_id
+	local target = store.entities[target_id]
+	if target and target.unit and target.unit.modifier_filter and not target.unit.modifier_filter(this, store) then return false end
 	local modifiers = table.filter(store.entities, function(k, v)
 		return v.modifier and v.modifier.target_id == target_id
 	end)
@@ -2861,7 +2863,9 @@ function sys.health:on_update(dt, ts, store)
 					end
 				end 
 
-				if h.dead or (h.immune_to and band(h.immune_to, d.damage_type) ~= 0) or h.ignore_damage or h.on_damage and not h.on_damage(e, store, d) then
+				-- Innate allied-boss immunity survives buffs that reset health.immune_to.
+				local execution_immune = e.boss_kind and band(d.damage_type, bor(DAMAGE_INSTAKILL, DAMAGE_EAT)) ~= 0
+				if h.dead or execution_immune or (h.immune_to and band(h.immune_to, d.damage_type) ~= 0) or h.ignore_damage or h.on_damage and not h.on_damage(e, store, d) then
 					log_hp.paranoid("entity: (%s) %s dead:%s - ignoring damage: \n%s", e.id, e.template_name, e.health.dead, getfulldump(d))
 				else
 					local starting_hp = h.hp

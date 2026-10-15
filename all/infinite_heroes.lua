@@ -85,7 +85,7 @@ function M.allowed(store, slot, level_mode)
 end
 
 function M.names(slot, roster)
-	local settings = slot.liuhui_hero or {}
+	local settings = M.settings(slot)
 	local valid = {}
 	for _, boss in ipairs(M.bosses.list) do valid[boss.name] = true end
 	for _, hd in ipairs(roster) do
