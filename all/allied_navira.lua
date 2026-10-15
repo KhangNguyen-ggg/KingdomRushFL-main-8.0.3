@@ -9,6 +9,14 @@ local M={
 		description="Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp đôi, gồng lâu hơn 30%, hiệu ứng đấm gốc lớn hơn 50%. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
 }
 
+function M.portrait_draw(this)
+	local G=love.graphics
+	local previous=G.getShader()
+	G.setShader(require("klove.shader_db"):get("p_navira_ember"))
+	KImageView._draw_self(this)
+	G.setShader(previous)
+end
+
 local function red(render)
 	for _,sprite in ipairs(render.sprites) do
 		if not sprite.is_shadow then

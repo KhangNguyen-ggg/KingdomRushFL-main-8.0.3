@@ -4159,7 +4159,9 @@ function HeroPortrait:initialize(hero_entity)
 	self.hero_id = hero_entity.id
 	self.portrait_image_name = hero_entity.info.hero_portrait
 	self.portrait = KImageView:new(hero_entity.info.hero_portrait)
-	if infinite_heroes.get_boss(hero_entity.template_name) then
+	local boss = infinite_heroes.get_boss(hero_entity.template_name)
+	self.portrait._draw_self = boss and boss.portrait_draw or nil
+	if boss then
 		local scale = math.min(63 / self.portrait.size.x, 63 / self.portrait.size.y)
 		self.portrait.scale = V.v(scale, scale)
 		self.portrait.pos = V.v(19 + (63 - self.portrait.size.x * scale) / 2, 15 + (63 - self.portrait.size.y * scale) / 2)

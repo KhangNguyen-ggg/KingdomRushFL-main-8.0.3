@@ -14546,6 +14546,7 @@ function HeroRoomView:initialize(sw, sh)
 		card.colors.background = {65, 44, 73, 220}
 		card.hidden = true
 		local portrait = KImageView:new(boss.icon)
+		portrait._draw_self = boss.portrait_draw
 		local scale = math.min(82 / portrait.size.x, 78 / portrait.size.y)
 		portrait.scale = v(scale, scale)
 		portrait.anchor = v(portrait.size.x / 2, portrait.size.y / 2)
@@ -15644,6 +15645,7 @@ function HeroRoomView:set_hero_deck_slot(slot, hero_index)
 	local image_name = is_boss and is_boss.icon or (hero_index <= 47 and string.format("heroroom_portraits_%04i", hd.thumb) or string.format("hero_room_portraits_small_thumb_%s_0001", hd.name))
 
 	slot.portrait:set_image(image_name)
+	slot.portrait._draw_self = is_boss and is_boss.portrait_draw or nil
 	local scale = math.min(70 / slot.portrait.size.x, 70 / slot.portrait.size.y)
 
 	slot.portrait.anchor = v(slot.portrait.size.x / 2, slot.portrait.size.y / 2)
@@ -15790,6 +15792,7 @@ function HeroRoomView:construct_allied_boss(name)
 	self.boss_portrait_frame.hidden=false
 	self.portrait_over.hidden=true
 	self.portrait:set_image(boss.portrait)
+	self.portrait._draw_self = boss.portrait_draw
 	self.portrait.anchor = v(self.portrait.size.x / 2, self.portrait.size.y / 2)
 	local frame=self.boss_portrait_frame
 	local scale=math.min(220/frame.size.x,290/frame.size.y)
@@ -15799,6 +15802,12 @@ function HeroRoomView:construct_allied_boss(name)
 	local skill_module = require("allied_boss_skills")
 	local skill = skill_module.skills[skill_module.kind(name)]
 	self.bio_text.text = skill.description .. (boss.basic_only and " Thêm vào đội Vô hạn hero để kiểm tra." or " Tất cả kỹ năng tự dùng khi đủ điều kiện. Thêm vào đội Vô hạn hero để chơi.")
+	local is_navira = boss.kind == "navira"
+	local text_height = is_navira and 220 or 145
+	self.bio_text.font_size = is_navira and 20 or 15
+	self.bio_text.size, self.bio_text.text_size = v(350, text_height), v(350, text_height)
+	self.bio_text.fit_lines = not is_navira and 6 or nil
+	self.bio_text.fit_size = is_navira
 	local native = E:get_template(boss.source)
 	local hp = native and native.health and native.health.hp_max
 	self.bio_class_label.text = boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến"
@@ -15815,6 +15824,9 @@ end
 
 function HeroRoomView:construct_hero(index)
 	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
+	self.portrait._draw_self = nil
+	self.bio_text.font_size, self.bio_text.size, self.bio_text.text_size = 15, v(350, 145), v(350, 145)
+	self.bio_text.fit_lines, self.bio_text.fit_size = 6, nil
 	if self.boss_portrait_frame then self.boss_portrait_frame.hidden=true end
 	self.portrait_over.hidden=false
 	if self.help_select then
