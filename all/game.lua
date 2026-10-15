@@ -673,6 +673,11 @@ function game:destroy()
 	self.game_gui = nil
 
 	RU.destroy()
+
+	if simulation.store == self.store then simulation.store = nil end
+	require("hero_auto_rally"):clear_state(self.store)
+	self.simulation = nil
+	self.gui_required_textures = nil
 end
 
 function game:update_debug(dt)

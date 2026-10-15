@@ -1,11 +1,12 @@
 -- Allied Navira: alternating punches, true-damage strike, terrain travel and red soul magic.
 local C,E,A,U,I,SH,SU,GR,bit,balance
+local STACK_HEAL=true
 local M={
 	name="hero_allied_navira",title="Navira",kind="navira",source="boss_navira",
 	icon="encyclopedia_creep_thumbs_0554",textures={"encyclopedia_creeps","rebborn_enemy_icons","go_stage119"},sounds={"stage_19"},
 	scaled=false,melee_damage=280,
 	skill={label="Chuẩn",cooldown=10,range=450,
-		description="Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp đôi, gồng lâu hơn 30%, hiệu ứng đấm gốc lớn hơn 50%. Giữ 3 tia choáng. Hút xác hai phe trong tầm 250, mỗi 10 giây hồi 5% HP tối đa của mục tiêu."}
+		description="Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp đôi, gồng lâu hơn 30%, hiệu ứng đấm gốc lớn hơn 50%. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
 }
 
 local function red(render)
@@ -102,6 +103,18 @@ local function register_effects()
 	if not E.entities.allied_navira_heal_fx then
 		local t=E:register_t("allied_navira_heal_fx",C.native(E.entities[M.name]).mod_heal)
 		red(t.render)
+	end
+	if not E.entities.allied_navira_absorb_aura then
+		local t=E:register_t("allied_navira_absorb_aura","decal_scripted")
+		t.render=nil
+		t.main_script.update=function(this,store)
+			while true do
+				local owner=store.entities[this.owner_id]
+				if not owner or owner.pending_removal then C.remove(this);return end
+				M.absorb(owner,store)
+				coroutine.yield()
+			end
+		end
 	end
 end
 
@@ -223,21 +236,53 @@ function M.passive(this,store)
 		state.next_damage_type=bit.bor(bit.band(last.attack.damage_type,DAMAGE_MAGICAL)~=0 and DAMAGE_PHYSICAL or DAMAGE_MAGICAL,DAMAGE_NO_DODGE)
 		state.pending_melee_ts=nil
 	end
-	local n=C.native(this)
-	if not C.alive(this) or this.health.hp>=this.health.hp_max or not C.ready(this,store,"heal",n.corruption_kr5.cooldown) then return end
-	for _,target in pairs(store.entities) do
+	if not this._navira_absorb_aura then
+		local aura=E:create_entity("allied_navira_absorb_aura")
+		aura.owner_id=this.id
+		this._navira_absorb_aura=aura.id
+		C.insert(aura)
+	end
+end
+
+local function heal(this,store,amount)
+	local hp=this.health.hp
+	this.health.hp=math.min(this.health.hp_max,hp+amount)
+	if this.health.hp>hp then
+		local fx=E:create_entity("allied_navira_heal_fx")
+		fx.modifier.source_id,fx.modifier.target_id=this.id,this.id
+		C.insert(fx)
+	end
+end
+
+function M.absorb(this,store)
+	if not C.alive(this) then
+		if this.boss_state then this.boss_state.heal_pool,this.boss_state.heal_started=nil,nil end
+		return
+	end
+	local state=C.state(this,store)
+	local cap=this.health.hp_max*0.1
+	if STACK_HEAL and state.heal_started and store.tick_ts-state.heal_started>=10 then
+		heal(this,store,math.min(state.heal_pool,cap))
+		state.heal_pool,state.heal_started=nil,nil
+	end
+	local immediate=0
+	for _,target in ipairs(C.corpses(store)) do
 		if target~=this and target.unit and target.health and target.health.dead and not target.pending_removal and
 			(target.enemy or target.soldier) and not target._allied_corpse_claimed and target.pos and
 			type(target.health.hp_max)=="number" and target.health.hp_max>0 and C.dist(target.pos,this.pos)<=250 then
 			target._allied_corpse_claimed=true
-			this.health.hp=math.min(this.health.hp_max,this.health.hp+target.health.hp_max*0.05)
-			C.stamp(this,store,"heal")
-			local fx=E:create_entity("allied_navira_heal_fx")
-			fx.modifier.source_id,fx.modifier.target_id=this.id,this.id
-			C.insert(fx)
-			return
+			local amount=target.health.hp_max*0.05
+			if STACK_HEAL then
+				state.heal_started=state.heal_started or store.tick_ts
+				state.heal_pool=(state.heal_pool or 0)+amount
+				if state.heal_pool>=cap then
+					heal(this,store,cap)
+					state.heal_pool,state.heal_started=nil,nil
+				end
+			else immediate=immediate+amount end
 		end
 	end
+	if immediate>0 then heal(this,store,immediate) end
 end
 
 function M.automatic(this,store,targets)

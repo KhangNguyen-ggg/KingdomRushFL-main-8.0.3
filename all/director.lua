@@ -352,7 +352,7 @@ function director:unload_item(item, async)
 			end
 		end
 
-		for _, group in pairs(replace_locale(game.game_gui.required_textures)) do
+		for _, group in pairs(game.gui_required_textures or replace_locale(game.game_gui.required_textures)) do
 			local scale = self:get_texture_scale("game_gui", game.game_gui.ref_res)
 
 			unload_atlas(group, scale)
@@ -1270,7 +1270,8 @@ function director:queue_load_item_named(name, force_reload)
 		if not nostalgic_classic and user_data.liuhui.cheat6 == true then
 			table.insert(gui_required_textures, "kr6_hero_summon_icons")
 		end
-		self:load_texture_groups(replace_locale(gui_required_textures), self.params.texture_size, game_gui.ref_res, true, "game_gui")
+		game.gui_required_textures = replace_locale(gui_required_textures)
+		self:load_texture_groups(game.gui_required_textures, self.params.texture_size, game_gui.ref_res, true, "game_gui")
 		self:load_sound_groups(game.required_sounds)
 		self:load_sound_groups(game.store.level.required_sounds)
 

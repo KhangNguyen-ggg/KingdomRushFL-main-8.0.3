@@ -1265,6 +1265,14 @@ function hook:on_config_change(new_cfg)
 	self.cfg = new_cfg
 end
 
+function hook:clear_state(store)
+	if self.store ~= store then return end
+	self.enabled = false
+	self.store = nil
+	self.heroes, self.hero_info, self.last_manual_rally_ts = {}, {}, {}
+	self.hero_count = 0
+end
+
 function hook:unload()
 	hook_utils.UNHOOK(PickView, "on_down", self.PickView.on_down)
 

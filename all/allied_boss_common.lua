@@ -25,7 +25,7 @@ local function entity_cache(store)
 		local n,c = 0,0
 		for _,e in pairs(store.entities) do
 			if e.enemy and alive(e) then n=n+1; cache.list[n]=e end
-			if e.enemy and e.health and e.health.dead then c=c+1; cache.corpses[c]=e end
+			if (e.enemy or e.soldier) and e.health and e.health.dead then c=c+1; cache.corpses[c]=e end
 		end
 		for i=#cache.list,n+1,-1 do cache.list[i]=nil end
 		for i=#cache.corpses,c+1,-1 do cache.corpses[i]=nil end
@@ -512,5 +512,6 @@ M.area,M.visual,M.projectile=area,visual,projectile
 M.summon,M.living_summons=summon,living_summons
 M.insert,M.remove=insert,remove
 M.target_before=target_before
+function M.corpses(store) return entity_cache(store).corpses end
 function M.native(this) return native_by_kind[this.boss_kind] end
 return M

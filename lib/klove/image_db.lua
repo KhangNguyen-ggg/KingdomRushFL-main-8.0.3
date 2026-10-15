@@ -171,7 +171,10 @@ while true do
 			key = string.gsub(key, '%.astc$', '')
 			key = string.gsub(key, '%.dds$', '')
 
-			cout:push({'OK',key,data,w,h})
+			-- Wait for upload consumption so decoded atlases cannot pile up in RAM.
+			cout:supply({'OK',key,data,w,h})
+			data = nil
+			collectgarbage()
 		end
 	end
 end

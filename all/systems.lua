@@ -3029,6 +3029,7 @@ function sys.health:on_update(dt, ts, store)
 
 		if not h.dead then
 			h.last_damage_types = 0
+			e._allied_corpse_claimed = nil
 		end
 
 		if h.dead and not e.hero and not h.ignore_delete_after and (h.delete_after and store.tick_ts > h.delete_after or h.delete_now) then
