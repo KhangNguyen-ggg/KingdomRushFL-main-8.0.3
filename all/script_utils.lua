@@ -2344,7 +2344,10 @@ local function y_soldier_melee_block_and_attacks(store, this)
 		return false, A_NO_TARGET
 	end
 
-	if soldier_move_to_slot_step(store, this, target) then
+	-- Flying targets can be hit from the ground, but must never receive a melee blocker.
+	if this.melee.can_attack_air and band(target.vis.flags, F_FLYING) ~= 0 then
+		U.unblock_target(store, this)
+	elseif soldier_move_to_slot_step(store, this, target) then
 		return true
 	end
 

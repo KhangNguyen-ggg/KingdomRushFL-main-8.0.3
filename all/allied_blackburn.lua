@@ -2,9 +2,10 @@
 local C
 local M = {name = "hero_allied_blackburn", title = "Blackburn", source = "eb_blackburn", icon = "encyclopedia_creep_thumbs_0169", textures = {"go_stage70", "go_enemies_common"}, sounds = {"BlackburnSounds"}}
 M.kind="blackburn"
+M.can_attack_air=true
 M.texture="go_stage70"
 M.portrait=M.icon:gsub("encyclopedia_creep_thumbs_","encyclopedia_creeps_")
-M.skill={label="Đạp",cooldown=5,range=284,description="Đạp đất gây choáng. Tự gọi Skeleton Knight từ xác địch gần đó (tối đa 15 lính)."}
+M.skill={label="Đạp",cooldown=5,range=284,description="Đánh được mục tiêu bay. Đạp đất gây choáng cả trên không. Tự gọi Skeleton Knight từ xác địch gần đó (tối đa 15 lính)."}
 
 function M.register()
 	C=require("allied_boss_common")
@@ -75,7 +76,7 @@ function M.passive(this,store) C.raise(this,store,"enemy_skeleton_big",106.383,0
 function M.active(this,store)
 	local a=C.native(this).timed_attacks.list[1]
 	if C.cast(this,store,a.animation,a.hit_time,a.sound) then
-		C.area(store,this,this.pos,a.damage_radius,a.damage_min,a.damage_max,a.damage_type,4,nil,true)
+		C.area(store,this,this.pos,a.damage_radius,a.damage_min,a.damage_max,a.damage_type,4,nil,false)
 		C.visual(a.fx,this.pos,store,1);C.visual(a.hit_decal,this.pos,store,2)
 	end
 end

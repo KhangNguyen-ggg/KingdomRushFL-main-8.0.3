@@ -53,6 +53,19 @@ local function pick_melee_target(this,store,center)
 			bit.band(require("grid_db"):cell_type(e.pos.x,e.pos.y),TERRAIN_NOWALK)==0 and
 			(not this.melee.fn_can_pick or this.melee.fn_can_pick(this,e))
 	end) or {}
+	if this.melee.can_attack_air then
+		local attack=this.melee.attacks[1]
+		local air=U.find_enemies_in_range(store.entities,this.pos,0,this.melee.range,F_AREA,F_CLIFF,function(e)
+			local hit=copy(this.pos)
+			if attack.hit_offset then
+				hit.x=hit.x+(e.pos.x<this.pos.x and -1 or 1)*attack.hit_offset.x
+				hit.y=hit.y+attack.hit_offset.y
+			end
+			return bit.band(e.vis.flags,F_FLYING)~=0 and U.is_inside_ellipse(e.pos,hit,attack.damage_radius) and
+				(not this.melee.fn_can_pick or this.melee.fn_can_pick(this,e))
+		end) or {}
+		for _,target in ipairs(air) do targets[#targets+1]=target end
+	end
 	table.sort(targets,function(a,b) return target_before(a,b,center) end)
 	return targets[1]
 end
@@ -355,7 +368,7 @@ local function automatic(this,store)
 	if boss.active and #targets>0 and ready(this,store,"active",skill.cooldown) then
 		local pos
 		if boss.active_radius then
-			if #enemies(store,this.pos,boss.active_radius(native_by_kind[this.boss_kind]),true)>0 then pos=copy(this.pos) end
+			if #enemies(store,this.pos,boss.active_radius(native_by_kind[this.boss_kind]),not boss.can_attack_air)>0 then pos=copy(this.pos) end
 		else
 			for _,target in ipairs(targets) do
 				if dist(this.pos,target.pos)<=skill.range and bit.band(target.vis.flags,F_FLYING)==0 and
@@ -397,6 +410,14 @@ function M.decorate(t,native,def)
 	end
 
 	if def.prepare then def.prepare(t) end
+	t.melee.can_attack_air=def.can_attack_air
+	if def.can_attack_air then
+		for _,attack in ipairs(t.melee.attacks) do
+			attack.vis_flags=bit.bor(bit.band(attack.vis_flags,bit.bnot(F_BLOCK)),F_AREA)
+			attack.vis_bans=bit.band(attack.vis_bans,bit.bnot(F_FLYING))
+			attack.damage_bans=bit.band(attack.damage_bans,bit.bnot(F_FLYING))
+		end
+	end
 	t.melee.fn_pick_target=pick_melee_target
 	t.melee.fn_sort_targets=target_before
 	t.health.immune_to=bit.bor(t.health.immune_to or 0,DAMAGE_INSTAKILL,DAMAGE_EAT)

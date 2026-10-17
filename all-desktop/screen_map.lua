@@ -15802,7 +15802,7 @@ function HeroRoomView:construct_allied_boss(name)
 	local skill_module = require("allied_boss_skills")
 	local skill = skill_module.skills[skill_module.kind(name)]
 	self.bio_text.text = skill.description .. (boss.basic_only and " Thêm vào đội Vô hạn hero để kiểm tra." or " Tất cả kỹ năng tự dùng khi đủ điều kiện. Thêm vào đội Vô hạn hero để chơi.")
-	local is_navira = boss.kind == "navira"
+	local is_navira = boss.kind == "navira" or boss.kind == "navira_blue"
 	local text_height = is_navira and 220 or 145
 	self.bio_text.font_size = is_navira and 20 or 15
 	self.bio_text.size, self.bio_text.text_size = v(350, text_height), v(350, text_height)

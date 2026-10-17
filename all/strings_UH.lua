@@ -44,8 +44,8 @@ local strings_UH = {
             HERO_BEASTMASTER_FALCONER_DESCRIPTION_2 = "Huấn luyện chim ưng đồng hành, tấn công kẻ địch trong phạm vi, gây 9–27 sát thương và chảy máu.",
             HERO_BEASTMASTER_FALCONER_DESCRIPTION_3 = "Huấn luyện chim ưng đồng hành, tấn công kẻ địch trong phạm vi, gây 18–54 sát thương và chảy máu.",
             HERO_BEASTMASTER_STAMPEDE_DESCRIPTION_1 = "Triệu hồi tê giác lao tới gây sát thương, có 50% cơ hội làm choáng kẻ địch.",
-            HERO_BEASTMASTER_STAMPEDE_DESCRIPTION_2 = "Tăng quy mô đàn tê giác và tăng 75% cơ hội làm choáng.",
-            HERO_BEASTMASTER_STAMPEDE_DESCRIPTION_3 = "Tiếp tục tăng quy mô đàn tê giác và tăng 100% cơ hội làm choáng.",
+            HERO_BEASTMASTER_STAMPEDE_DESCRIPTION_2 = "Tăng quy mô đàn tê giác và tỷ lệ làm choáng lên 75%.",
+            HERO_BEASTMASTER_STAMPEDE_DESCRIPTION_3 = "Tiếp tục tăng quy mô đàn tê giác và tỷ lệ làm choáng lên 100%.",
 
             -- 螃蟹
             HERO_CRAB_HOOKEDCLAW_DESCRIPTION_1 = "Tăng 15 sát thương đòn đánh thường.",

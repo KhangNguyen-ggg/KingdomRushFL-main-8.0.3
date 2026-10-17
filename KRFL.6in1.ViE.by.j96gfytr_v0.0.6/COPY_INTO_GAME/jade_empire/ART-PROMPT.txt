@@ -1,0 +1,1 @@
+Built-in image_gen edit: turn the Stage01 background into an Asian fantasy bamboo grove village, preserving road geometry and tower clearings; jade bamboo, tiled-roof village, river junk, lantern details; clean cartoon game art; no UI or text. Final deployment: 990x540 texture with original 1980x1080 logical atlas geometry for Lite memory use.

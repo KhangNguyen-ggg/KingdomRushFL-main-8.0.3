@@ -1,23 +1,29 @@
--- Allied Navira: alternating punches, true-damage strike, terrain travel and red soul magic.
+-- Red and native-blue allied Navira share combat, with separate visual templates.
+local function variant(blue)
 local C,E,A,U,I,SH,SU,GR,bit,balance
 local STACK_HEAL=true
+local fx=blue and "allied_navira_blue" or "allied_navira"
 local M={
-	name="hero_allied_navira",title="Navira",kind="navira",source="boss_navira",
-	icon="encyclopedia_creep_thumbs_0554",textures={"encyclopedia_creeps","rebborn_enemy_icons","go_stage119"},sounds={"stage_19"},
-	scaled=false,melee_damage=280,
+	name="hero_"..fx,title=blue and "Navira xanh" or "Navira",kind=blue and "navira_blue" or "navira",source="boss_navira",
+	icon="encyclopedia_creep_thumbs_0554",textures={"encyclopedia_creeps","rebborn_enemy_icons","go_stage119","go_hero_phoenix"},sounds={"stage_19"},
+	scaled=false,melee_damage=280,can_attack_air=true,
 	skill={label="Chuẩn",cooldown=10,range=450,
-		description="Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp đôi, gồng lâu hơn 30%, hiệu ứng đấm gốc lớn hơn 50%. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
+		description="Đánh được mục tiêu bay. Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp 3, gồng gấp 2, vòng nổ gốc lớn gấp 3. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
 }
+if blue then table.remove(M.textures) end
 
-function M.portrait_draw(this)
-	local G=love.graphics
-	local previous=G.getShader()
-	G.setShader(require("klove.shader_db"):get("p_navira_ember"))
-	KImageView._draw_self(this)
-	G.setShader(previous)
+if not blue then
+	function M.portrait_draw(this)
+		local G=love.graphics
+		local previous=G.getShader()
+		G.setShader(require("klove.shader_db"):get("p_navira_ember"))
+		KImageView._draw_self(this)
+		G.setShader(previous)
+	end
 end
 
 local function red(render)
+	if blue then return end
 	for _,sprite in ipairs(render.sprites) do
 		if not sprite.is_shadow then
 			sprite.shader="p_navira_ember"
@@ -79,10 +85,10 @@ function M.prepare(t)
 	charged.frames={}
 	local windup=math.floor(attack.hit_time*A.fps+0.5)
 	-- Stretch only the windup; both animation databases support explicit frame lists.
-	for frame=1,math.floor(windup*1.3+0.5) do charged.frames[#charged.frames+1]=native.frames[math.ceil(frame/1.3)] end
+	for frame=1,windup*2 do charged.frames[#charged.frames+1]=native.frames[math.ceil(frame/2)] end
 	for frame=windup+1,#native.frames do charged.frames[#charged.frames+1]=native.frames[frame] end
 	A.db[prefix.."_charged_attack"]=charged
-	A.db.allied_navira_punch_run={prefix="allied_navira_punch",from=201,to=213}
+	A.db.allied_navira_punch_run={prefix="allied_navira_punch",from=203,to=213}
 end
 
 function M.rally(this,store)
@@ -98,28 +104,47 @@ function M.rally(this,store)
 end
 
 local function register_effects()
-	if not E.entities.allied_navira_punch_fx then
-		local t=E:register_t("allied_navira_punch_fx","decal_scripted")
+	if not E.entities[fx.."_punch_fx"] then
+		local t=E:register_t(fx.."_punch_fx","decal_scripted")
 		t.render=table.deepclone(C.native(E.entities[M.name]).render)
 		t.render.sprites[1].prefix="allied_navira_punch"
 		t.render.sprites[1].name="run"
 		t.render.sprites[1].anchor={x=275/428,y=1-245/524}
 		t.render.sprites[1].z=Z_FLYING_HEROES+1
 		red(t.render)
-		t.render.sprites[1].shader="p_navira_punch"
+		t.render.sprites[1].shader=blue and "p_navira_punch_blue" or "p_navira_punch"
 	end
-	if not E.entities.allied_navira_heal_fx then
-		local t=E:register_t("allied_navira_heal_fx",C.native(E.entities[M.name]).mod_heal)
-		red(t.render)
-	end
-	if not E.entities.allied_navira_absorb_aura then
-		local t=E:register_t("allied_navira_absorb_aura","decal_scripted")
+	if not E.entities[fx.."_absorb_aura"] then
+		local t=E:register_t(fx.."_absorb_aura","decal_scripted")
 		t.render=nil
+		if not blue then
+			E:add_comps(t,"particle_system")
+			local p=t.particle_system
+			p.name,p.animated,p.loop="decal_flaming_path_fire",true,true
+			p.animation_fps,p.emission_rate=30,22
+			p.particle_lifetime={0.35,0.55}
+			p.emit_area_spread={x=42,y=28}
+			p.track_offset={x=0,y=24}
+			p.emit_direction,p.emit_spread=math.pi/2,0.25
+			p.emit_speed,p.emit_rotation={18,32},0
+			p.anchor={x=0.5,y=0.25}
+			p.scales_x,p.scales_y={0.25,0.45,0.25,0.05},{0.55,1,0.8,0.1}
+			p.alphas={100,200,160,0}
+		end
 		t.main_script.update=function(this,store)
 			while true do
 				local owner=store.entities[this.owner_id]
 				if not owner or owner.pending_removal then C.remove(this);return end
 				M.absorb(owner,store)
+				local p=this.particle_system
+				if p then
+					local body=owner.render.sprites[1]
+					p.emit=C.alive(owner) and not body.hidden
+					p.emission_rate=(owner._navira_heal_flare_until or 0)>store.tick_ts and 30 or 22
+					p.z=body.z-1
+					-- Snap the emitter each tick so teleporting never draws a fire line across the map.
+					this.pos.x,this.pos.y=owner.pos.x,owner.pos.y+p.track_offset.y
+				end
 				coroutine.yield()
 			end
 		end
@@ -129,8 +154,8 @@ end
 local function register_ray()
 	local native=E:get_template(C.native(E.entities[M.name]).fire_ball_bullet_t)
 	local mod=E:get_template(native.bullet.mod)
-	if not E.entities.allied_navira_soul_stun then
-		local t=E:register_t("allied_navira_soul_stun","mod_stun")
+	if not E.entities[fx.."_soul_stun"] then
+		local t=E:register_t(fx.."_soul_stun","mod_stun")
 		t.render=table.deepclone(mod.render)
 		red(t.render)
 		t.render.sprites[1].name="start"
@@ -140,8 +165,8 @@ local function register_ray()
 		t.modifier.use_mod_offset=true
 		t.sound_events=table.deepclone(mod.sound_events)
 	end
-	if E.entities.allied_navira_soulray then return end
-	local t=E:register_t("allied_navira_soulray","decal_scripted")
+	if E.entities[fx.."_soulray"] then return end
+	local t=E:register_t(fx.."_soulray","decal_scripted")
 	t.render=table.deepclone(native.render)
 	red(t.render)
 	t.render.sprites[1].name="run"
@@ -153,7 +178,7 @@ local function register_ray()
 				hit=true
 				local target=store.entities[this.target_id]
 				if C.alive(target) and target.enemy then
-					local m=E:create_entity("allied_navira_soul_stun")
+					local m=E:create_entity(fx.."_soul_stun")
 					m.modifier.source_id,m.modifier.target_id=this.source_id,target.id
 					C.insert(m)
 				end
@@ -195,12 +220,14 @@ local function punch_effect(this,store)
 			masks[#masks+1]={(quad[1]+275*sx-native.trim[1])/w,(quad[2]+245*sy-native.trim[2])/h,60*sx/w,65*sy/h}
 		end
 		-- Every punch shares these atlas masks, so batched copies need no per-unit uniforms.
-		local shader=SH:get("p_navira_punch")
-		if shader then
-			-- LÖVE 0.10.2 counts array arguments one short; duplicate the last value.
-			boxes[14],masks[14]=boxes[13],masks[13]
-			shader:send("punch_boxes",unpack(boxes))
-			shader:send("punch_masks",unpack(masks))
+		-- LÖVE 0.10.2 counts array arguments one short; duplicate the last value.
+		boxes[14],masks[14]=boxes[13],masks[13]
+		for _,name in ipairs({"p_navira_punch","p_navira_punch_blue"}) do
+			local shader=SH:get(name)
+			if shader then
+				shader:send("punch_boxes",unpack(boxes))
+				shader:send("punch_masks",unpack(masks))
+			end
 		end
 	end
 	local native=I:s("navira_navira_0201")
@@ -208,9 +235,9 @@ local function punch_effect(this,store)
 	local pos=C.copy(this.pos)
 	pos.x=pos.x+(body.flip_x and -1 or 1)*(275/428-body.anchor.x)*native.size[1]*native.ref_scale
 	pos.y=pos.y+((1-body.anchor.y)-245/524)*native.size[2]*native.ref_scale
-	local visual=C.visual("allied_navira_punch_fx",pos,store,(A:duration("allied_navira_punch_run")),"run")
+	local visual=C.visual(fx.."_punch_fx",pos,store,(A:duration("allied_navira_punch_run")),"run")
 	local sprite=visual.render.sprites[1]
-	sprite.flip_x,sprite.scale,sprite.loop=body.flip_x,{x=1.5,y=1.5},false
+	sprite.flip_x,sprite.scale,sprite.loop=body.flip_x,{x=3,y=3},false
 end
 
 local function rays(this,store)
@@ -223,7 +250,7 @@ local function rays(this,store)
 	local native=E:get_template(C.native(this).fire_ball_bullet_t)
 	for i=1,math.min(3,#valid) do
 		local target=valid[i]
-		local e=E:create_entity("allied_navira_soulray")
+		local e=E:create_entity(fx.."_soulray")
 		e.pos=C.copy(this.pos);e.pos.y=e.pos.y+80
 		e.source_id,e.target_id=this.id,target.id
 		e.hit_time=native.bullet.hit_time
@@ -245,8 +272,12 @@ function M.passive(this,store)
 		state.pending_melee_ts=nil
 	end
 	if not this._navira_absorb_aura then
-		local aura=E:create_entity("allied_navira_absorb_aura")
+		local aura=E:create_entity(fx.."_absorb_aura")
 		aura.owner_id=this.id
+		if aura.particle_system then
+			aura.particle_system.track_id=this.id
+			aura.pos={x=this.pos.x,y=this.pos.y+aura.particle_system.track_offset.y}
+		end
 		this._navira_absorb_aura=aura.id
 		C.insert(aura)
 	end
@@ -256,9 +287,7 @@ local function heal(this,store,amount)
 	local hp=this.health.hp
 	this.health.hp=math.min(this.health.hp_max,hp+amount)
 	if this.health.hp>hp then
-		local fx=E:create_entity("allied_navira_heal_fx")
-		fx.modifier.source_id,fx.modifier.target_id=this.id,this.id
-		C.insert(fx)
+		this._navira_heal_flare_until=store.tick_ts+0.6
 	end
 end
 
@@ -297,13 +326,13 @@ function M.automatic(this,store,targets)
 	if C.ready(this,store,"punch",M.skill.cooldown) then
 		local attack=this.melee.attacks[1]
 		for _,target in ipairs(targets) do
-			if C.alive(target) and C.dist(this.pos,target.pos)<=attack.damage_radius*2 and bit.band(target.vis.flags,F_FLYING)==0 then
+			if C.alive(target) and C.dist(this.pos,target.pos)<=attack.damage_radius*3 and bit.band(target.vis.bans,F_AREA)==0 then
 				local flip=target.pos.x<this.pos.x
 				this.render.sprites[1].flip_x=flip
-				if C.cast(this,store,"charged_attack",attack.hit_time*1.3) then
+				if C.cast(this,store,"charged_attack",attack.hit_time*2) then
 					local pos=C.copy(this.pos)
 					pos.x,pos.y=pos.x+(flip and -1 or 1)*attack.hit_offset.x,pos.y+attack.hit_offset.y
-					C.area(store,this,pos,attack.damage_radius*2,M.melee_damage*2,M.melee_damage*2,DAMAGE_TRUE,nil,attack.count,true)
+					C.area(store,this,pos,attack.damage_radius*3,M.melee_damage*2,M.melee_damage*2,DAMAGE_TRUE,nil,attack.count,false)
 					C.stamp(this,store,"punch")
 					punch_effect(this,store)
 					local sprite=this.render.sprites[1]
@@ -325,3 +354,7 @@ function M.automatic(this,store,targets)
 	return false
 end
 return M
+end
+local red=variant(false)
+red.blue=variant(true)
+return red

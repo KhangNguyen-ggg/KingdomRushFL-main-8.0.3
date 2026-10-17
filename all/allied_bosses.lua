@@ -7,7 +7,8 @@ local M={list={
 	(require("allied_mirage")),
 	(require("allied_alric")),
 	(require("allied_malik")),
-	(require("allied_godieth"))
+	(require("allied_godieth")),
+	(require("allied_navira").blue)
 }}
 local by_name={}
 for _,boss in ipairs(M.list) do
