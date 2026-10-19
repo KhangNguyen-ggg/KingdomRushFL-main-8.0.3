@@ -2,14 +2,26 @@
 local C,E,U,V
 local A,I
 local state,alive,copy,animate,summon,insert,remove
-local M={name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemy_set", "go_enemies_hammerhold", "go_enemies_desert", "go_stages_hammerhold"}, sounds = {"HammerholdEnemySounds"}}
+local M={name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemy_set", "go_enemies_hammerhold", "go_enemies_desert", "go_stages_hammerhold", "go_stage89_rebborn"}, sounds = {"HammerholdEnemySounds"}}
 M.kind="set"
-M.skill={label="Trụ",cooldown=10,range=450,description="Dựng trụ gọi Fallen; cường hóa Fallen thành Immortal rồi Primordial. Hào quang lửa, hồi sinh và hình thái thứ hai."}
+M.skill={label="Trụ",cooldown=10,range=450,description="Trụ gọi Fallen mỗi 10 giây. Gồng 10 giây tăng gấp đôi sát thương lính, sau đó nâng Fallen thành Immortal; hồi 30 giây. Lửa quanh Set: bán kính 128, gây 9 sát thương chuẩn/giây. Chết lần đầu hồi đầy máu sang phase 2: đánh 160–240 thay cho 100–150, lửa 24/giây, hồi xác trong tầm 200 (tối đa 15 lính); trụ gọi thêm Immortal, gồng nâng được Immortal thành Primordial, hồi 40 giây. Primordial cũng hồi xác cho đội Set."}
+local function stop_channel(this)
+	if this._set_channel_sound then
+		require("sound_db"):stop(this._set_channel_sound)
+		this._set_channel_sound=nil
+	end
+end
+function M.remove(this)
+	stop_channel(this)
+	return true
+end
 function M.register()
 	C=require("allied_boss_common");E=require("entity_db");U=require("utils");V=require("klua.vector")
 	A=require("animation_db");I=require("klove.image_db")
 	state,alive,copy,animate,summon,insert,remove=C.state,C.alive,C.copy,C.animate,C.summon,C.insert,C.remove
-	return C.create(M)
+	local t=C.create(M)
+	t.main_script.remove=M.remove
+	return t
 end
 local function normalized(name) return name:lower():gsub("[^%w]", "") end
 
@@ -117,7 +129,13 @@ function M.passive(this,store)
 	local s=state(this,store)
 	if C.ready(this,store,"fire",1) then
 		C.stamp(this,store,"fire")
-		C.area(store,this,this.pos,128,s.phase==2 and 24 or 9,nil,DAMAGE_TRUE,nil,nil,true)
+		local name=s.phase==2 and "mod_set_fire_2" or "mod_set_fire"
+		local template=E:get_template(name)
+		for _,target in ipairs(U.find_enemies_in_range(store.entities,this.pos,0,128,template.modifier.vis_flags,template.modifier.vis_bans) or {}) do
+			local mod=E:create_entity(name)
+			mod.modifier.source_id,mod.modifier.target_id=this.id,target.id
+			insert(mod)
+		end
 	end
 	if s.phase==2 then C.raise(this,store,"enemy_fallen",200,0.5,15) end
 end
@@ -128,10 +146,12 @@ function M.automatic(this,store)
 		for _,e in ipairs(units) do if e.summon_source=="enemy_fallen" or s.phase==2 and e.summon_source=="enemy_immortal" then candidates[#candidates+1]=e end end
 		if #candidates>0 then
 			C.stamp(this,store,"channel");local a=n.timed_attacks.list[1]
+			this._set_channel_sound=a.sound
 			if C.cast(this,store,a.animations[1],a.cast_time,a.sound) then
 				animate(this,a.animations[2],store,true)
 				for _,e in ipairs(candidates) do e.unit.damage_factor=e.unit.damage_factor+1 end
 				local completed=C.wait(this,store,a.cast_time_2)
+				stop_channel(this)
 				for _,e in ipairs(candidates) do e.unit.damage_factor=e.unit.damage_factor-1 end
 				if completed then
 					for _,e in ipairs(candidates) do
@@ -145,12 +165,14 @@ function M.automatic(this,store)
 					C.cast(this,store,a.animations[3],0.5,a.sound2)
 				end
 			end
+			stop_channel(this)
 			return true
 		end
 	end
 	return false
 end
 function M.dead(this,store)
+	stop_channel(this)
 	local s=state(this,store)
 	if s.phase~=1 then return false end
 	animate(this,"death",store,false)

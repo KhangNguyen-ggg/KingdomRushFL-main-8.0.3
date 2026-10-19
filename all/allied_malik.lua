@@ -7,8 +7,8 @@ local finish = MP.finish
 local M={name="hero_allied_malik",title="Malik",kind="malik",source="enemy_malik",
 	icon="encyclopedia_creep_thumbs_0393",scaled=true,textures={"go_stage186","kr4_level36_malik"},
 	unscaled_textures={"encyclopedia_creeps","rebborn_enemy_icons"},sounds={"branch_campaigns"},
-	skill={label="Nhảy",cooldown=12/SPEED,range=450,
-		description="Tự nhảy tới địch và gây sát thương khi đáp đất, hồi 8 giây. Ném búa sét, hồi 3 giây. Đập đất gây sát thương phép và choáng địch 3 giây, hồi khoảng 8,67 giây. Tốc độ ra đòn và tung chiêu tăng 50%."}}
+	skill={label="Nhảy",cooldown=12/SPEED,range=200,
+		description="Tự nhảy tới địch trong tầm 200 và gây sát thương khi đáp đất, hồi 8 giây. Ném búa sét, hồi 3 giây. Đập đất gây sát thương phép và choáng địch 3 giây, hồi khoảng 8,67 giây. Tốc độ ra đòn và tung chiêu tăng 50%."}}
 function M.prepare(t)
 	local native = require("entity_db"):get_template(M.source).melee.attacks[1]
 	t.melee.attacks[1].cooldown = native.cooldown / SPEED
@@ -28,9 +28,12 @@ function M.register()
 	return C.create(M)
 end
 function M.active(this,store,pos)
+	if C.dist(this.pos,pos)>M.skill.range then return end
+	pos=C.copy(pos)
 	local a=C.native(this).branch.rocket_jump
 	if not C.cast(this,store,a.animation_out,0.4/SPEED,a.sound) or
 		not finish(this,store) then return end
+	if C.dist(this.pos,pos)>M.skill.range then return end
 	local from,start=C.copy(this.pos),store.tick_ts
 	local old_z={}
 	for sid,sprite in ipairs(this.render.sprites) do

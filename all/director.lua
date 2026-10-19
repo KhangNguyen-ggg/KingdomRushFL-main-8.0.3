@@ -341,14 +341,14 @@ function director:unload_item(item, async)
 			if async then
 				I:queue_unload_atlas(group, scale)
 			else
-				I:unload_atlas(group, scale)
+				I:unload_atlas(group, scale, true)
 			end
 		end
 		local function unload_sound(group)
 			if async then
 				S:queue_unload_group(group)
 			else
-				S:unload_group(group)
+				S:unload_group(group, true)
 			end
 		end
 
@@ -419,6 +419,7 @@ function director:unload_item(item, async)
 			return false
 		end
 
+		I:purge_atlas()
 		finish_unload_item(item)
 
 		return true
@@ -428,14 +429,14 @@ function director:unload_item(item, async)
 			if async then
 				I:queue_unload_atlas(group, scale)
 			else
-				I:unload_atlas(group, scale)
+				I:unload_atlas(group, scale, true)
 			end
 		end
 		local function unload_sound(group)
 			if async then
 				S:queue_unload_group(group)
 			else
-				S:unload_group(group)
+				S:unload_group(group, true)
 			end
 		end
 
@@ -459,6 +460,8 @@ function director:unload_item(item, async)
 			return false
 		end
 
+		-- Release a screen's atlas/sound groups together, then collect once.
+		I:purge_atlas()
 		finish_unload_item(item)
 
 		return true
@@ -946,6 +949,9 @@ function director:queue_load_item_named(name, force_reload)
 					for _, texture in ipairs(boss.textures) do
 						append_unique(boss.scaled and game.scale_required_textures or game.required_textures, texture)
 					end
+                    if boss.kind=="blackburn" and require("blackburn_enhance").level(user_data)==3 then
+                        append_unique(game.required_textures,"go_enemies_blackburn")
+                    end
 				elseif hero_name == "hero_alleria" or hero_game_ver(hero_name) == 6 then
 					table.insert(game.required_textures, "go_" .. hero_name)
 				elseif hero_game_ver(hero_name) >= 4 then
@@ -1250,7 +1256,12 @@ function director:queue_load_item_named(name, force_reload)
 			end
 		end
 		
-		-- collectgarbage()
+        if require("blackburn_enhance").level(user_data)==3 and
+            table.contains(game.wave_editor_required_textures,"go_stage70") then
+            append_unique(game.required_textures,"go_enemies_blackburn")
+        end
+
+        -- collectgarbage()
 		self:load_texture_groups(replace_locale(game.scale_required_textures), self.params.texture_size, game.ref_res * TEXTURE_SIZE_FACTOR.kr_45, true, "game")
 		self:load_texture_groups(replace_locale(game.sc_branch_skill_textures or {}), self.params.texture_size, game.ref_res * TEXTURE_SIZE_FACTOR.kr_45 * TEXTURE_SIZE_FACTOR.kr_45, true, "game")
 		self:load_texture_groups(replace_locale(game.scale_required_textures_enemy), self.params.texture_size, game.ref_res * TEXTURE_SIZE_FACTOR.kr_45 * 2, true, "game")

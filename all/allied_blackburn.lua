@@ -1,5 +1,6 @@
 ﻿-- Playable Blackburn: a separate hero template, never an enemy boss instance.
 local C
+local enhance=require("blackburn_enhance")
 local M = {name = "hero_allied_blackburn", title = "Blackburn", source = "eb_blackburn", icon = "encyclopedia_creep_thumbs_0169", textures = {"go_stage70", "go_enemies_common"}, sounds = {"BlackburnSounds"}}
 M.kind="blackburn"
 M.can_attack_air=true
@@ -23,7 +24,11 @@ function M.register()
 		A.db[prefix .. "_" .. name] = assert(A.db["eb_blackburn_" .. name], "Blackburn animation missing: " .. name)
 	end
 	A.db[prefix .. "_respawn"] = A.db.eb_blackburn_idle
-	if E.entities[M.name] then return C.decorate(E.entities[M.name],boss,M) end
+    if E.entities[M.name] then
+        local t=C.decorate(E.entities[M.name],boss,M)
+        enhance.prepare_ally(t,enhance.level())
+        return t
+    end
 
 	local t = E:register_t(M.name, "hero")
 	E:add_comps(t, "melee")
@@ -68,15 +73,28 @@ function M.register()
 	end
 	t.main_script.insert = scripts.hero_basic.insert
 
-	return C.decorate(t,boss,M)
+    C.decorate(t,boss,M)
+    enhance.prepare_ally(t,enhance.level())
+    return t
 end
 
-function M.active_radius(native) return native.timed_attacks.list[1].damage_radius end
-function M.passive(this,store) C.raise(this,store,"enemy_skeleton_big",106.383,0.5,15) end
+function M.active_radius(native)
+    local template=require("entity_db").entities[M.name]
+    local p=enhance.profile(template and template.blackburn_level)
+    return p and p.radius or native.timed_attacks.list[1].damage_radius
+end
+function M.passive(this,store)
+    if this.blackburn_level then enhance.tick(this,store)
+    else C.raise(this,store,"enemy_skeleton_big",106.383,0.5,15) end
+end
+M.configure_summon=enhance.configure_summon
+M.hold=enhance.hold
 function M.active(this,store)
 	local a=C.native(this).timed_attacks.list[1]
-	if C.cast(this,store,a.animation,a.hit_time,a.sound) then
-		C.area(store,this,this.pos,a.damage_radius,a.damage_min,a.damage_max,a.damage_type,4,nil,false)
+    local p=enhance.profile(this.blackburn_level)
+    if C.cast(this,store,a.animation,a.hit_time,a.sound) and not this.boss_form then
+        C.area(store,this,this.pos,p and p.radius or a.damage_radius,p and p.stomp[1] or a.damage_min,
+            p and p.stomp[2] or a.damage_max,a.damage_type,4,nil,false)
 		C.visual(a.fx,this.pos,store,1);C.visual(a.hit_decal,this.pos,store,2)
 	end
 end

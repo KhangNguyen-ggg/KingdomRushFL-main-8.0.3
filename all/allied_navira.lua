@@ -5,12 +5,17 @@ local STACK_HEAL=true
 local fx=blue and "allied_navira_blue" or "allied_navira"
 local M={
 	name="hero_"..fx,title=blue and "Navira xanh" or "Navira",kind=blue and "navira_blue" or "navira",source="boss_navira",
-	icon="encyclopedia_creep_thumbs_0554",textures={"encyclopedia_creeps","rebborn_enemy_icons","go_stage119","go_hero_phoenix"},sounds={"stage_19"},
+	icon="encyclopedia_creep_thumbs_0554",textures={"encyclopedia_creeps","rebborn_enemy_icons","go_stage119","go_navira_native_aura"},sounds={"stage_19"},
 	scaled=false,melee_damage=280,can_attack_air=true,
 	skill={label="Chuẩn",cooldown=10,range=450,
-		description="Đánh được mục tiêu bay. Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép. Mỗi 10 giây đấm chuẩn 560, bán kính gấp 3, gồng gấp 2, vòng nổ gốc lớn gấp 3. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
+		description="Đánh được mục tiêu bay. Chiến đấu mặt đất, lướt nhanh gấp đôi khi vượt địa hình. Miễn khống chế và kén nhện. Đánh 280 luân phiên vật lý/phép, bán kính gấp 2. Mỗi 10 giây đấm chuẩn 560, bán kính gấp 4 so với gốc, gồng gấp 2, vòng nổ gốc lớn gấp 4. Giữ 3 tia choáng. Hút mọi xác hai phe trong tầm 250, cộng 5% HP tối đa mỗi xác trong 10 giây rồi hồi; đủ 10% HP tối đa Navira thì hồi ngay. Mỗi lần tối đa 10%, không hồi chiêu, gom tiếp ngay."}
 }
-if blue then table.remove(M.textures) end
+if blue then
+	table.remove(M.textures)
+	M.skill.label="Solo"
+	M.skill.cooldown=8
+	M.skill.description="Truy sát một địch tới chết; lệnh di chuyển hoặc mất tầm 450 xóa khóa. Chỉ đấm thường AOE 280 luân phiên vật lý/phép, bán kính x2. Đánh trúng hoặc tia hồn tích 20 dấu: mỗi dấu +15% đấm thường lên đối thủ, thêm 0,2% HP tối đa thành sát thương chuẩn và giảm 3% sát thương từ đối thủ (tối đa 60%). Hút 40% máu thực gây. Mỗi 8 giây gồng x2, đấm riêng đối thủ 840 chuẩn +12% HP tối đa. Mỗi 6 giây bắn 3 tia cùng một địch, mỗi tia 280 phép +1% HP tối đa chuẩn. Chặn 3 đòn, mỗi lần phản 2% HP tối đa chuẩn; nạp mỗi 10 giây. Không hút xác. Giữ đánh bay, lướt địa hình và miễn khống chế."
+end
 
 if not blue then
 	function M.portrait_draw(this)
@@ -52,9 +57,10 @@ function M.allow_modifier(mod)
 	return true
 end
 
-local function normal_ready(this,store,attack)
+local function normal_ready(this,store,attack,target)
 	local state=C.state(this,store)
 	if attack.damage_type~=(state.next_damage_type or bit.bor(DAMAGE_PHYSICAL,DAMAGE_NO_DODGE)) then return false end
+	if blue and not require("navira_duelist").select(this,store,target) then return false end
 	state.pending_melee_ts=attack.ts
 	return true
 end
@@ -62,8 +68,10 @@ end
 function M.prepare(t)
 	local attack=t.melee.attacks[1]
 	attack.damage_min,attack.damage_max=M.melee_damage,M.melee_damage
+	attack.damage_radius=(E:get_template(M.source).melee.attacks[1].damage_radius or 45)*2
 	attack.damage_type=bit.bor(DAMAGE_PHYSICAL,DAMAGE_NO_DODGE)
 	attack.shared_cooldown,attack.fn_can,attack.hit_fx=true,normal_ready,nil
+	if blue then attack.track_damage=true end
 	t.melee.attacks[2]=table.deepclone(attack)
 	t.melee.attacks[2].damage_type=bit.bor(DAMAGE_MAGICAL,DAMAGE_NO_DODGE)
 	t.melee.order={1,2}
@@ -79,19 +87,28 @@ function M.prepare(t)
 	t.render.sprites[1].z=Z_OBJECTS
 	red(t.render)
 	local prefix=t.render.sprites[1].prefix
+	if not blue then
+		local idle=table.clone(A.db[prefix.."_idle"])
+		idle.prefix,idle.from,idle.to,idle.frames="allied_navira_native_aura",1,32,nil
+		for _,name in ipairs({"idle","walk","walkUp","walkDown"}) do A.db[prefix.."_"..name]=idle end
+	end
 	A:duration(prefix.."_attack")
 	local native=A.db[prefix.."_attack"]
 	local charged=table.clone(native)
 	charged.frames={}
 	local windup=math.floor(attack.hit_time*A.fps+0.5)
-	-- Stretch only the windup; both animation databases support explicit frame lists.
-	for frame=1,windup*2 do charged.frames[#charged.frames+1]=native.frames[math.ceil(frame/2)] end
+	-- Pulse the charging poses at native speed instead of holding every frame twice.
+	for frame=1,windup do charged.frames[#charged.frames+1]=native.frames[frame] end
+	local pivot=math.floor(windup/2)
+	for frame=windup-2,windup-pivot-1,-1 do charged.frames[#charged.frames+1]=native.frames[frame] end
+	for frame=pivot+1,windup do charged.frames[#charged.frames+1]=native.frames[frame] end
 	for frame=windup+1,#native.frames do charged.frames[#charged.frames+1]=native.frames[frame] end
 	A.db[prefix.."_charged_attack"]=charged
 	A.db.allied_navira_punch_run={prefix="allied_navira_punch",from=203,to=213}
 end
 
 function M.rally(this,store)
+	if blue then require("navira_duelist").release(this,store) end
 	local sprite=this.render.sprites[1]
 	local speed,z=this.motion.max_speed,sprite.z
 	local ground=bit.bor(TERRAIN_LAND,TERRAIN_ICE)
@@ -117,34 +134,11 @@ local function register_effects()
 	if not E.entities[fx.."_absorb_aura"] then
 		local t=E:register_t(fx.."_absorb_aura","decal_scripted")
 		t.render=nil
-		if not blue then
-			E:add_comps(t,"particle_system")
-			local p=t.particle_system
-			p.name,p.animated,p.loop="decal_flaming_path_fire",true,true
-			p.animation_fps,p.emission_rate=30,22
-			p.particle_lifetime={0.35,0.55}
-			p.emit_area_spread={x=42,y=28}
-			p.track_offset={x=0,y=24}
-			p.emit_direction,p.emit_spread=math.pi/2,0.25
-			p.emit_speed,p.emit_rotation={18,32},0
-			p.anchor={x=0.5,y=0.25}
-			p.scales_x,p.scales_y={0.25,0.45,0.25,0.05},{0.55,1,0.8,0.1}
-			p.alphas={100,200,160,0}
-		end
 		t.main_script.update=function(this,store)
 			while true do
 				local owner=store.entities[this.owner_id]
 				if not owner or owner.pending_removal then C.remove(this);return end
 				M.absorb(owner,store)
-				local p=this.particle_system
-				if p then
-					local body=owner.render.sprites[1]
-					p.emit=C.alive(owner) and not body.hidden
-					p.emission_rate=(owner._navira_heal_flare_until or 0)>store.tick_ts and 30 or 22
-					p.z=body.z-1
-					-- Snap the emitter each tick so teleporting never draws a fire line across the map.
-					this.pos.x,this.pos.y=owner.pos.x,owner.pos.y+p.track_offset.y
-				end
 				coroutine.yield()
 			end
 		end
@@ -177,10 +171,12 @@ local function register_ray()
 			if not hit and store.tick_ts-start>=this.hit_time then
 				hit=true
 				local target=store.entities[this.target_id]
-				if C.alive(target) and target.enemy then
+				local owner=store.entities[this.source_id]
+				if C.alive(target) and target.enemy and (not blue or C.alive(owner) and require("navira_duelist").ray(owner,store,target)) then
 					local m=E:create_entity(fx.."_soul_stun")
 					m.modifier.source_id,m.modifier.target_id=this.source_id,target.id
-					C.insert(m)
+					if blue then m.modifier.duration=0.35 end
+					if bit.band(target.vis.bans,F_STUN)==0 then C.insert(m) end
 				end
 			end
 			coroutine.yield()
@@ -197,10 +193,11 @@ function M.register()
 	balance=require("balance/balance").enemies.undying_hatred.boss_navira
 	local t=C.create(M)
 	register_effects();register_ray()
+	if blue then require("navira_duelist").apply(t) end
 	return t
 end
 
-local function punch_effect(this,store)
+local function punch_effect(this,store,target)
 	if not I:s("allied_navira_punch_0201",true) then
 		local boxes,masks={},{}
 		for frame=201,213 do
@@ -236,30 +233,37 @@ local function punch_effect(this,store)
 	pos.x=pos.x+(body.flip_x and -1 or 1)*(275/428-body.anchor.x)*native.size[1]*native.ref_scale
 	pos.y=pos.y+((1-body.anchor.y)-245/524)*native.size[2]*native.ref_scale
 	local visual=C.visual(fx.."_punch_fx",pos,store,(A:duration("allied_navira_punch_run")),"run")
+	if blue and target then visual.pos=C.copy(target.pos) end
 	local sprite=visual.render.sprites[1]
-	sprite.flip_x,sprite.scale,sprite.loop=body.flip_x,{x=3,y=3},false
+	sprite.flip_x,sprite.scale,sprite.loop=body.flip_x,{x=4,y=4},false
 end
 
-local function rays(this,store)
-	local targets=U.find_enemies_in_range(store.entities,this.pos,0,M.skill.range,F_STUN,0) or {}
+local function rays(this,store,focus)
 	local valid={}
+	if blue then
+		if not C.alive(focus) then return end
+		valid={focus,focus,focus}
+	else
+	local targets=U.find_enemies_in_range(store.entities,this.pos,0,M.skill.range,F_STUN,0) or {}
 	for _,target in ipairs(targets) do
 		if target.enemy and C.alive(target) and bit.band(target.vis.bans,F_STUN)==0 then valid[#valid+1]=target end
 	end
 	table.sort(valid,function(a,b) return C.target_before(a,b,this.pos) end)
+	end
 	local native=E:get_template(C.native(this).fire_ball_bullet_t)
 	for i=1,math.min(3,#valid) do
 		local target=valid[i]
 		local e=E:create_entity(fx.."_soulray")
 		e.pos=C.copy(this.pos);e.pos.y=e.pos.y+80
 		e.source_id,e.target_id=this.id,target.id
-		e.hit_time=native.bullet.hit_time
+		local delay=blue and (i-1)*0.18 or 0
+		e.hit_time=native.bullet.hit_time+delay
 		e.life=math.max(e.hit_time+1/30,(A:duration(native.render.sprites[1].prefix.."_run")))
 		local dx,dy=target.pos.x-e.pos.x,target.pos.y-e.pos.y
 		local sprite=e.render.sprites[1]
 		sprite.r=(math.atan2 or math.atan)(dy,dx)
 		sprite.scale={x=math.sqrt(dx*dx+dy*dy)/native.image_width,y=1}
-		sprite.ts=store.tick_ts
+		sprite.ts=store.tick_ts+delay
 		C.insert(e)
 	end
 end
@@ -271,13 +275,10 @@ function M.passive(this,store)
 		state.next_damage_type=bit.bor(bit.band(last.attack.damage_type,DAMAGE_MAGICAL)~=0 and DAMAGE_PHYSICAL or DAMAGE_MAGICAL,DAMAGE_NO_DODGE)
 		state.pending_melee_ts=nil
 	end
+	if blue then require("navira_duelist").tick(this,store);return end
 	if not this._navira_absorb_aura then
 		local aura=E:create_entity(fx.."_absorb_aura")
 		aura.owner_id=this.id
-		if aura.particle_system then
-			aura.particle_system.track_id=this.id
-			aura.pos={x=this.pos.x,y=this.pos.y+aura.particle_system.track_offset.y}
-		end
 		this._navira_absorb_aura=aura.id
 		C.insert(aura)
 	end
@@ -292,6 +293,7 @@ local function heal(this,store,amount)
 end
 
 function M.absorb(this,store)
+	if blue then return end
 	if not C.alive(this) then
 		if this.boss_state then this.boss_state.heal_pool,this.boss_state.heal_started=nil,nil end
 		return
@@ -323,36 +325,67 @@ function M.absorb(this,store)
 end
 
 function M.automatic(this,store,targets)
-	if C.ready(this,store,"punch",M.skill.cooldown) then
-		local attack=this.melee.attacks[1]
-		for _,target in ipairs(targets) do
-			if C.alive(target) and C.dist(this.pos,target.pos)<=attack.damage_radius*3 and bit.band(target.vis.bans,F_AREA)==0 then
-				local flip=target.pos.x<this.pos.x
-				this.render.sprites[1].flip_x=flip
-				if C.cast(this,store,"charged_attack",attack.hit_time*2) then
-					local pos=C.copy(this.pos)
-					pos.x,pos.y=pos.x+(flip and -1 or 1)*attack.hit_offset.x,pos.y+attack.hit_offset.y
-					C.area(store,this,pos,attack.damage_radius*3,M.melee_damage*2,M.melee_damage*2,DAMAGE_TRUE,nil,attack.count,false)
-					C.stamp(this,store,"punch")
-					punch_effect(this,store)
-					local sprite=this.render.sprites[1]
-					C.wait(this,store,math.max(0,sprite.ts+A:duration(sprite.prefix.."_charged_attack")-store.tick_ts))
-				end
-				return true
-			end
-		end
-	end
-	if C.ready(this,store,"rays",balance.fire_balls.cooldown) then
-		for _,target in ipairs(targets) do
-			if C.dist(this.pos,target.pos)<=M.skill.range and bit.band(target.vis.bans,F_STUN)==0 then
-				C.stamp(this,store,"rays")
-				rays(this,store)
-				return true
-			end
-		end
-	end
-	return false
+ if this.nav_rally.new then return false end
+ local duel=blue and require("navira_duelist")
+ local current
+ if blue then current=duel.current(this,store) else current=store.entities[this.soldier.target_id] end
+ if blue and not current then return false end
+ local attack=this.melee.attacks[1]
+ local punch_radius=attack.damage_radius*2
+ if C.ready(this,store,"punch",M.skill.cooldown) then
+  local target=current
+  if not C.alive(target) or C.dist(this.pos,target.pos)>punch_radius or not blue and bit.band(target.vis.bans,F_AREA)~=0 then target=nil end
+  if not target and not blue then
+   for _,candidate in ipairs(targets) do
+    if C.alive(candidate) and C.dist(this.pos,candidate.pos)<=punch_radius and bit.band(candidate.vis.bans,F_AREA)==0 then target=candidate;break end
+   end
+  end
+  if target then
+   -- Let ordinary melee claim a nearby ground slot before beginning the charge.
+   if bit.band(target.vis.flags,F_FLYING)==0 and not U.blocker_rank(store,this) then
+    local melee_target=SU.soldier_pick_melee_target(store,this)
+    if melee_target and bit.band(melee_target.vis.flags,F_FLYING)==0 then return false end
+   end
+   local flip=target.pos.x<this.pos.x
+   this.render.sprites[1].flip_x=flip
+   if blue then C.stamp(this,store,"punch") end
+   local function interrupted()
+    return this.nav_rally.new or blue and duel.current(this,store)~=target
+   end
+   -- Charging preserves the existing blocker; C.cast would release it.
+   C.animate(this,"charged_attack",store,false)
+   if C.wait(this,store,attack.hit_time*2,interrupted) and not interrupted() then
+    local pos=C.copy(this.pos)
+    pos.x,pos.y=pos.x+(flip and -1 or 1)*attack.hit_offset.x,pos.y+attack.hit_offset.y
+    if blue then
+     if not U.is_inside_ellipse(target.pos,pos,punch_radius) or not duel.burst(this,store,target) then return true end
+    else
+     C.area(store,this,pos,punch_radius,M.melee_damage*2,M.melee_damage*2,DAMAGE_TRUE,nil,attack.count,false)
+    end
+    C.stamp(this,store,"punch")
+    punch_effect(this,store,target)
+    local sprite=this.render.sprites[1]
+    C.wait(this,store,math.max(0,sprite.ts+A:duration(sprite.prefix.."_charged_attack")-store.tick_ts),interrupted)
+   end
+   return true
+  end
+ end
+ if blue then
+  if C.ready(this,store,"rays",6) then
+   C.stamp(this,store,"rays");rays(this,store,current);return true
+  end
+  return false
+ end
+ if C.ready(this,store,"rays",balance.fire_balls.cooldown) then
+  for _,target in ipairs(targets) do
+   if C.dist(this.pos,target.pos)<=M.skill.range and bit.band(target.vis.bans,F_STUN)==0 then
+    C.stamp(this,store,"rays");rays(this,store);return true
+   end
+  end
+ end
+ return false
 end
+
 return M
 end
 local red=variant(false)

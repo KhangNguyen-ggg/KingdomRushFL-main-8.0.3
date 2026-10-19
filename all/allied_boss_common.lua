@@ -144,6 +144,10 @@ local function area(store,owner,pos,radius,lo,hi,kind,duration,count,ground)
 end
 
 -- Summons are soldiers, not enemy templates with an allegiance flag changed.
+local function pending_replacement(e,store)
+    return e.death_summon and not e._replaced and e.health.dead and
+        store.tick_ts<e.expires and owner_alive(e.boss_owner)
+end
 local function summon(owner, source, pos, store, lifetime)
 	local native = assert(E.entities[source], "Missing allied summon: "..source)
 	local name = "allied_summon_"..source
@@ -179,7 +183,10 @@ local function summon(owner, source, pos, store, lifetime)
 		t.main_script.update=function(this,st)
 			while true do
 				if this.health.dead then
-					if this.death_summon and owner_alive(this.boss_owner) then summon(this.boss_owner,this.death_summon,this.pos,st,math.max(1,this.expires-st.tick_ts)) end
+                    if pending_replacement(this,st) then
+                        this._replaced=true
+                        summon(this.boss_owner,this.death_summon,this.pos,st,this.expires-st.tick_ts)
+                    end
 					SU.y_soldier_death(st,this);remove(this);return
 				end
 				if st.tick_ts>=this.expires or not owner_alive(this.boss_owner) then
@@ -202,11 +209,13 @@ local function summon(owner, source, pos, store, lifetime)
 	e.death_summon = native.death_spawns and native.death_spawns.name
 	e.nav_rally.pos,e.nav_rally.center,e.nav_rally.new=copy(pos),copy(pos),true
 	e.health.hp=e.health.hp_max
+    local boss=boss_by_kind[owner.boss_kind]
+    if boss.configure_summon then boss.configure_summon(owner,e,store) end
 	for _,s in ipairs(e.render.sprites) do s.ts=store.tick_ts end
 	local s=state(owner,store)
 	for i=#s.summons,1,-1 do
 		local old=s.summons[i]
-		if not alive(old) or old._replaced or store.tick_ts>=old.expires then table.remove(s.summons,i) end
+        if not alive(old) and not pending_replacement(old,store) or old._replaced or store.tick_ts>=old.expires then table.remove(s.summons,i) end
 	end
 	s.summons[#s.summons+1]=e
 	insert(e)
@@ -216,7 +225,7 @@ local function living_summons(owner,store)
 	local out=state(owner,store).summons
 	for i=#out,1,-1 do
 		local e=out[i]
-		if not alive(e) or store.tick_ts>=e.expires or e._replaced then table.remove(out,i) end
+        if not alive(e) and not pending_replacement(e,store) or store.tick_ts>=e.expires or e._replaced then table.remove(out,i) end
 	end
 	return out
 end
@@ -229,12 +238,12 @@ end
 function M.raise(owner,store,source,radius,cd,cap)
 	if not ready(owner,store,"raise",cd) then return end
 	stamp(owner,store,"raise")
-	if #living_summons(owner,store)>=cap then return end
+	local boss_owner=owner.boss_owner or owner
+	if #living_summons(boss_owner,store)>=cap then return end
 	for _,e in ipairs(entity_cache(store).corpses) do
 		if e.enemy and e.health and e.health.dead and not e._allied_corpse_claimed and e.unit and bit.band(e.vis.flags,bit.bor(F_FLYING,F_BOSS,F_MINIBOSS))==0 and U.is_inside_ellipse(e.pos,owner.pos,radius) then
 			e._allied_corpse_claimed=true
-			summon(owner,source,e.pos,store,60)
-			return
+            return summon(boss_owner,source,e.pos,store,60)
 		end
 	end
 end
@@ -317,7 +326,7 @@ local function wait(this,store,duration,step)
 	while store.tick_ts-start<duration do
 		if not alive(this) or this.unit.is_stunned then return false end
 		passive(this,store)
-		if step then step() end
+		if step and step() then return alive(this) and not this.unit.is_stunned end
 		coroutine.yield()
 	end
 	return alive(this) and not this.unit.is_stunned
@@ -338,7 +347,7 @@ function M.land(this,pos)
 	this.motion.arrived=true
 	this.motion.speed.x,this.motion.speed.y=0,0
 end
-function M.move_form(this,store,duration,factor,animation,step,shield)
+function M.move_form(this,store,duration,factor,animation,step,shield,until_arrived)
 	local speed,bans,ignore=this.motion.max_speed,this.vis.bans,this.health.ignore_damage
 	this.motion.max_speed=speed*factor
 	this.vis.bans=bit.bor(bans,F_BLOCK,F_STUN)
@@ -353,6 +362,7 @@ function M.move_form(this,store,duration,factor,animation,step,shield)
 			end
 			if not this.motion.arrived and this.motion.dest then U.walk(this,store.tick_length) end
 		else step() end
+		return until_arrived and this.motion.arrived
 	end)
 	this.motion.max_speed,this.vis.bans,this.health.ignore_damage=speed,bans,ignore
 	this.boss_form=nil
@@ -435,7 +445,9 @@ function M.decorate(t,native,def)
 					this.boss_state=nil
 					if def.respawn then def.respawn(this) end
 				end
-			elseif this.unit.is_stunned then SU.soldier_idle(store,this)
+            elseif def.hold and def.hold(this,store) then
+                -- The owner is temporarily reforming; its army retains its remaining lifetime.
+            elseif this.unit.is_stunned then SU.soldier_idle(store,this)
 			else
 				passive(this,store)
 				if this.nav_rally.new then

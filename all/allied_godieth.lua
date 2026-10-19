@@ -5,7 +5,7 @@ local M={name="hero_allied_godieth",title="Godieth",kind="godieth",source="eb_ba
 	textures={"encyclopedia_creeps","rebborn_enemy_icons","go_enemies_forgotten_treasures","go_stage22"},
 	sounds={"ElvesForgottenTreasureBalrogSounds","ElvesForgottenTreasureShadowSpawnSounds"},
 	skill={label="Độc",cooldown=10,range=1e99,
-		description="Tự phun độc vào địch trên bộ. Vùng độc tồn tại 10 giây, bán kính 50; gây 10 sát thương độc mỗi 11 khung hình. Địch chết khi nhiễm độc hóa thành Shadow Spawn đồng minh. Hồi chiêu 10 giây (Impossible: 9 giây)."}}
+		description="Miễn sát thương lửa và mọi thiêu đốt, kể cả đốt sát thương chuẩn. Xuyên 50% giáp hiện có. Đánh thường đốt 1% HP tối đa/giây trong 5 giây mỗi lớp; lính và miniboss tối đa 10 lớp, boss 1 lớp. Mỗi 1% máu thiếu: +1% hút máu thực gây, +2% tốc đánh, +3% sát thương đánh/độc (không nhân đốt theo HP). Phun độc mỗi 10 giây (Impossible: 9); vùng độc 10 giây, bán kính 50, cơ bản 10 sát thương mỗi 11 khung hình. Địch nhiễm độc chết hóa Shadow Spawn đồng minh."}}
 
 local function release_poison(this,store)
 	this.finished=true
@@ -117,6 +117,7 @@ function M.register()
 	C,E,U,A,P,bit=require("allied_boss_common"),require("entity_db"),require("utils"),require("animation_db"),require("path_db"),require("bit")
 	local t=C.create(M)
 	register_poison();register_pool()
+	require("godieth_enhance").apply(t)
 	return t
 end
 function M.summon_passive(this,store)
@@ -143,7 +144,10 @@ function M.automatic(this,store,targets)
 				if s.animated and not s.ignore_start then s.flip_x=flip end
 			end
 			C.stamp(this,store,"spit")
-			if C.cast(this,store,a.animation,a.shoot_time,a.sound) then
+			-- Spitting must keep the melee blocker linked, so the enemy cannot walk through.
+			C.animate(this,a.animation,store,false)
+			require("sound_db"):queue(a.sound)
+			if C.wait(this,store,a.shoot_time) then
 				-- Reuse the native bomb for its parabola, particle trail and impact; replace its enemy pool.
 				local b=E:create_entity(a.bullet)
 				local offset=a.bullet_start_offset[1]

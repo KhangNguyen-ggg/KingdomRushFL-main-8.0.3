@@ -3383,6 +3383,7 @@ local function y_enemy_melee_attacks(store, this, target)
 								d.target_id = e.id
 								d.damage_type = ma.damage_type
 								d.value = math.ceil(this.unit.damage_factor * math.random(ma.damage_min, ma.damage_max))
+								d.track_damage = ma.track_damage
 								d.pop = ma.pop
 								d.pop_chance = ma.pop_chance
 								d.pop_conds = ma.pop_conds

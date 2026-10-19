@@ -14934,6 +14934,11 @@ function HeroRoomView:initialize(sw, sh)
 	self.select_but.label.fit_lines = 1
 
 	function self.select_but.on_click()
+		if infinite_heroes.enabled(screen_map.user_data) then
+			S:queue("GUIButtonCommon")
+			self:change_infinite_hero(1)
+			return
+		end
 		local i = self.selected_index
 		local hd = screen_map.hero_data[i]
 
@@ -15593,7 +15598,7 @@ end
 function HeroRoomView:change_infinite_hero(delta)
 	local boss = infinite_heroes.get_boss(self.selected_boss)
 	local hd = boss or screen_map.hero_data[self.selected_index]
-	if not hd or hd.transplanting or (hd.available_level or 0) > #screen_map.user_data.levels then return end
+	if not hd or hd.transplanting or hd.coming_soon or (hd.available_level or 0) > #screen_map.user_data.levels then return end
 	local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
 	if delta > 0 then
 		list[#list + 1] = hd.name
@@ -15618,7 +15623,15 @@ function HeroRoomView:update_infinite_hero_panel()
 	self.infinite_page = math.min(self.infinite_page, pages)
 	self.infinite_info.text = #list .. " tướng | " .. self.infinite_page .. "/" .. pages
 	local boss = infinite_heroes.get_boss(self.selected_boss)
-	self.infinite_selection.text = boss and boss.title or "Chọn hero/boss"
+	local hd = boss or screen_map.hero_data[self.selected_index]
+	local ht = not boss and hd and E:get_template(hd.name)
+	self.infinite_selection.text = boss and boss.title or hd and _(string.upper(ht and ht.info and ht.info.i18n_key or hd.name) .. "_NAME", hd.name) or "Chọn hero/boss"
+	local available = hd and not hd.transplanting and not hd.coming_soon and (hd.available_level or 0) <= #screen_map.user_data.levels
+	local unlimited = infinite_heroes.enabled(screen_map.user_data)
+	self.select_but.hidden = not available or not unlimited and (boss ~= nil or self.selected_index == self.real_selected)
+	self.selected_spr.hidden = unlimited or boss ~= nil or self.selected_index ~= self.real_selected
+	if unlimited and available then self.locked_spr.hidden = true end
+	if unlimited and self.help_select then self.help_select.hidden = true end
 	self.infinite_team_info.text = settings.infinite_teams[settings.infinite_team_index].name .. " (" .. settings.infinite_team_index .. "/" .. #settings.infinite_teams .. ")"
 	self.infinite_delete_team_button.alpha = #settings.infinite_teams > 1 and 1 or 0.5
 	for n, slot in ipairs(self.infinite_slots) do
@@ -15802,20 +15815,52 @@ function HeroRoomView:construct_allied_boss(name)
 	local skill_module = require("allied_boss_skills")
 	local skill = skill_module.skills[skill_module.kind(name)]
 	self.bio_text.text = skill.description .. (boss.basic_only and " Thêm vào đội Vô hạn hero để kiểm tra." or " Tất cả kỹ năng tự dùng khi đủ điều kiện. Thêm vào đội Vô hạn hero để chơi.")
-	local is_navira = boss.kind == "navira" or boss.kind == "navira_blue"
-	local text_height = is_navira and 220 or 145
-	self.bio_text.font_size = is_navira and 20 or 15
+    local is_blackburn=boss.kind=="blackburn"
+    local blackburn=require("blackburn_enhance")
+    if not self.blackburn_level_button then
+        local button=GGButton:new("heroroom_btnDone_large_0001","heroroom_btnDone_large_0002")
+        button.anchor=v(button.size.x/2,button.size.y/2)
+        button.pos=v(225,255)
+        button.scale=v(0.9,0.75)
+        button.label.size,button.label.text_size=v(132,34),v(132,34)
+        button.label.pos=v(8,19)
+        button.label.font_name,button.label.font_size="body_bold",18
+        button.label.fit_lines=1
+        function button.on_click()
+            screen_map.user_data.liuhui.blackburn_level=(blackburn.level(screen_map.user_data)+1)%4
+            storage:save_slot(screen_map.user_data)
+            S:queue("GUIButtonCommon")
+            self:show()
+        end
+        self.bio_view:add_child(button)
+        self.blackburn_level_button=button
+    end
+    self.blackburn_level_button.hidden=not is_blackburn
+    self.blackburn_level_button.label.text=blackburn.label(screen_map.user_data)
+    if is_blackburn then self.bio_text.text=blackburn.description(blackburn.level(screen_map.user_data)) end
+	local large_bio = boss.kind == "navira" or boss.kind == "navira_blue" or boss.kind == "godieth" or boss.kind == "set"
+	local text_height = large_bio and 220 or 145
+	self.bio_text.font_size = large_bio and 20 or 15
 	self.bio_text.size, self.bio_text.text_size = v(350, text_height), v(350, text_height)
-	self.bio_text.fit_lines = not is_navira and 6 or nil
-	self.bio_text.fit_size = is_navira
+	self.bio_text.fit_lines = not large_bio and 6 or nil
+	self.bio_text.fit_size = large_bio
+    if is_blackburn then
+        self.bio_text.font_size=18
+        self.bio_text.size,self.bio_text.text_size=v(350,170),v(350,170)
+        self.bio_text.fit_lines,self.bio_text.fit_size=nil,true
+    end
 	local native = E:get_template(boss.source)
+    -- Stage animations are not loaded in the hero room; read stats without registering a combat template.
+    local blackburn_profile=is_blackburn and blackburn.profile(blackburn.level(screen_map.user_data))
 	local hp = native and native.health and native.health.hp_max
+    if blackburn_profile then hp=math.floor(hp*blackburn_profile.hp+0.5) end
 	self.bio_class_label.text = boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến"
 	self.bio_time.text = "20s"
-	self.bio_armor.text = native and tostring(math.floor((native.health.armor or 0) * 100)) .. "%" or "-"
+	self.bio_armor.text = native and tostring(math.floor((blackburn_profile and blackburn_profile.armor or native.health.armor or 0) * 100)) .. "%" or "-"
 	self.bio_health.text = tostring(type(hp) == "table" and hp[1] or hp or "-")
 	local attack = native and native.melee and native.melee.attacks[1]
 	self.bio_attack.text = boss.melee_damage and tostring(boss.melee_damage) or attack and tostring(attack.damage_min) .. "-" .. tostring(attack.damage_max) or "11-22 x 7"
+    if blackburn_profile then self.bio_attack.text=blackburn_profile.damage[1].."-"..blackburn_profile.damage[2] end
 	self.bio_attack_icon:set_image("heroroom_attackIcons_0001")
 	self.bio_level_num:set_image("heroroom_heroBadge_numbers_0010")
 	self.bio_hero_bar.hidden, self.bio_hero_bar_end.hidden, self.bio_hero_bar_init.hidden = true, true, true
@@ -15824,6 +15869,7 @@ end
 
 function HeroRoomView:construct_hero(index)
 	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
+    if self.blackburn_level_button then self.blackburn_level_button.hidden=true end
 	self.portrait._draw_self = nil
 	self.bio_text.font_size, self.bio_text.size, self.bio_text.text_size = 15, v(350, 145), v(350, 145)
 	self.bio_text.fit_lines, self.bio_text.fit_size = 6, nil
@@ -15983,6 +16029,7 @@ function HeroRoomView:construct_hero(index)
 		self.kr6_tree_button.hidden = true
 		self.skills:load_hero(index)
 	end
+	if self.infinite_panel then self:update_infinite_hero_panel() end
 end
 
 HeroToolTip = class("HeroToolTip", KLabel)

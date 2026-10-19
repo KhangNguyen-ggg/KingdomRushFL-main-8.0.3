@@ -232,8 +232,6 @@ function SlotView:initialize(slot_idx)
 				if id == "l_slot" then
 					v[k] = string.gsub(v[k], "_%d_", string.format("_%s_", slot_idx))
 				end
-
-				v[k] = string.gsub(v[k], "_en$", "_" .. i18n.current_locale)
 			end
 
 			v:hide_hover()
@@ -453,13 +451,7 @@ function screen:init(w, h, done_callback)
 
 			v:on_exit()
 		elseif KR_GAME == "kr3" then
-			for _, k in pairs({
-				"default_image_name",
-				"hover_image_name"
-			}) do
-				v.children[1][k] = string.gsub(v.children[1][k], "_en$", "_" .. i18n.current_locale)
-			end
-
+			-- Keep the four title buttons in English while other screens use the selected language.
 			v.children[1]:hide_hover()
 		else
 			for _, k in pairs({

@@ -78,3 +78,6 @@ if true then
         E:add_comps(e, "nav_grid")
     end
 end
+
+require("blackburn_enhance").install_enemy()
+require("godieth_enhance").install_enemy()

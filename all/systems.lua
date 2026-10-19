@@ -2887,6 +2887,9 @@ function sys.health:on_update(dt, ts, store)
 
 						d.damage_result = bor(d.damage_result, DR_MAGICAL_ARMOR)
 					else
+						local source=store.entities[d.source_id]
+						local dealer=source and source.modifier and store.entities[source.modifier.source_id] or source
+						if dealer and dealer.unit and dealer.unit.prepare_damage then dealer.unit.prepare_damage(dealer,e,store,d) end
 						local actual_damage = U.predict_damage(e, d)
 
 						h.hp = h.hp - actual_damage
@@ -2909,6 +2912,11 @@ function sys.health:on_update(dt, ts, store)
 
 						if actual_damage > 0 then
 							d.damage_result = bor(d.damage_result, DR_DAMAGE)
+							local source=store.entities[d.source_id]
+							local dealer=source and source.modifier and store.entities[source.modifier.source_id] or source
+							if starting_hp>0 and dealer and dealer.unit and dealer.unit.on_damage_dealt then
+								dealer.unit.on_damage_dealt(dealer,e,store,d,math.min(actual_damage,starting_hp),dealer==source)
+							end
 
 							if e.regen then
 								e.regen.last_hit_ts = store.tick_ts
