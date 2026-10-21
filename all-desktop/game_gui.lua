@@ -6419,6 +6419,15 @@ function InfoBar:update_portrait()
 	if self.v_portrait_image_name ~= e.info.portrait then
 		if e.info.portrait then
 			self.v_portrait:set_image(e.info.portrait)
+			if e.sett_variant or e.boss_owner and e.boss_owner.sett_variant then
+				local portrait=self.v_portrait
+				local scale=52/math.max(portrait.size.x,portrait.size.y)
+				portrait.scale=V.v(scale,scale)
+				portrait.anchor=V.v(portrait.size.x/2,portrait.size.y/2)
+			else
+				self.v_portrait.scale=V.v(1,1)
+				self.v_portrait.anchor=V.v(34,34)
+			end
 
 			self.v_portrait.hidden = false
 			self.v_portrait_image_name = e.info.portrait
@@ -6501,6 +6510,12 @@ function InfoBar:update_stats()
 
 	local stats = e.info.fn(e)
 	local sv = stats and self.stats_views[stats.type]
+	if sv and sv._sett_layout then
+		for key,saved in pairs(sv._sett_layout) do
+			local label=sv[key]
+			label.pos.x,label.size.x,label.hidden=saved.x,saved.width,saved.hidden
+		end
+	end
 
 	if not sv then
 		local missing_key = string.format("%s:%s", tostring(e.id), tostring(stats and stats.type))
@@ -6701,6 +6716,23 @@ function InfoBar:update_stats()
 		sv.l_desc.text = _(stats.desc)
 	end
 
+	if e.sett_variant and stats.type==STATS_TYPE_SOLDIER then
+		if not sv._sett_layout then
+			sv._sett_layout={}
+			for _,key in ipairs({"l_damage","l_ranged_damage","l_armor","l_magic_armor","l_dodge","l_respawn"}) do
+				local label=sv[key]
+				sv._sett_layout[key]={x=label.pos.x,width=label.size.x,hidden=label.hidden}
+			end
+		end
+		local factor=e.unit.damage_factor*(e.sett_damage_factor and e.sett_damage_factor(e) or 1)
+		sv.l_damage.text=string.format("%i / %i",e.melee.attacks[1].damage_min*factor,e.melee.attacks[2].damage_min*factor)
+		sv.l_armor.text=string.format("%i%%",stats.armor*100)
+		sv.l_magic_armor.text=string.format("%i%%",stats.magic_armor*100)
+		sv.l_ranged_damage.hidden=true;sv.l_dodge.hidden=true
+		for _,item in ipairs({{"l_damage",120,95},{"l_armor",225,75},{"l_magic_armor",310,75},{"l_respawn",395,85}}) do
+			local label=sv[item[1]];label.pos.x,label.size.x=item[2],item[3]
+		end
+	end
 	self:update_combat_stats()
 end
 

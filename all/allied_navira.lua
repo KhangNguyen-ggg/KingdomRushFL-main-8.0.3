@@ -1,4 +1,6 @@
 -- Red and native-blue allied Navira share combat, with separate visual templates.
+local control_script_modules={"scripts","scripts_123","scripts_4","scripts_v","scripts_5","scripts_55","scripts_56","scripts_57","scripts_6","scripts_pld"}
+local control_script_names={"mod_stun","mod_freeze"}
 local function variant(blue)
 local C,E,A,U,I,SH,SU,GR,bit,balance
 local STACK_HEAL=true
@@ -38,21 +40,25 @@ local function red(render)
 end
 
 local function control_flags()
-	return bit.bor(F_STUN,F_FREEZE,F_SLOW,F_NET,F_THORN,F_TELEPORT,F_POLYMORPH,F_DRIDER_POISON)
+	return bit.bor(F_STUN,F_FREEZE,F_SLOW,F_NET,F_THORN,F_TELEPORT,F_POLYMORPH,F_DRIDER_POISON,F_LYCAN,F_SERVANT)
 end
 
 function M.allow_modifier(mod)
 	local m,script=mod.modifier,mod.main_script or {}
+	if type(m.hide_target_delay)=="number" or mod.polymorph then return false end
 	if mod.slow and mod.slow.factor and mod.slow.factor>=1 and m.type==MOD_TYPE_SLOW and
 		bit.band(m.vis_flags or 0,bit.band(control_flags(),bit.bnot(F_SLOW)))==0 then return true end
 	if bit.band(m.vis_flags or 0,control_flags())~=0 or m.type==MOD_TYPE_STUN or m.type==MOD_TYPE_FREEZE or
 		m.type==MOD_TYPE_SLOW or m.type==MOD_TYPE_TELEPORT or m.type==MOD_TYPE_POLYMORPH or m.type==MOD_TYPE_TIMELAPSE or
 		mod.slow and mod.slow.factor and mod.slow.factor<1 then return false end
-	local scripts=require("scripts")
-	-- Spider cocoons reuse stun callbacks without always declaring a stun type or flag.
-	for _,name in ipairs({"mod_stun","mod_freeze"}) do
-		local native=scripts[name]
-		if native and (native.insert and script.insert==native.insert or native.update and script.update==native.update) then return false end
+	-- Other campaigns have separate callbacks; some cocoons omit control flags/types.
+	for _,module_name in ipairs(control_script_modules) do
+		local scripts=package.loaded[module_name]
+		for _,name in ipairs(control_script_names) do
+			local native=type(scripts)=="table" and scripts[name]
+			if native and (native.insert and script.insert==native.insert or native.update and script.update==native.update or
+				native.remove and script.remove==native.remove) then return false end
+		end
 	end
 	return true
 end
@@ -352,7 +358,7 @@ function M.automatic(this,store,targets)
    local function interrupted()
     return this.nav_rally.new or blue and duel.current(this,store)~=target
    end
-   -- Charging preserves the existing blocker; C.cast would release it.
+   -- Keep the existing blocker throughout the charge and recovery.
    C.animate(this,"charged_attack",store,false)
    if C.wait(this,store,attack.hit_time*2,interrupted) and not interrupted() then
     local pos=C.copy(this.pos)

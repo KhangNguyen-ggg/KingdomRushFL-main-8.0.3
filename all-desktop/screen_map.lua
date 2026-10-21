@@ -456,6 +456,8 @@ screen_map.required_sounds = {
 	"kr6_hero_illiana"
 }
 screen_map.required_textures = {
+	"ui_lich_king",
+	"ui_sett_spirit",
 	"screen_map",
 	"generation_upgrades",
 	"legacy_generation_upgrades",
@@ -781,7 +783,7 @@ local function get_hero_stats(p)
 	return out, h
 end
 
-function screen_map:init(w, h, done_callback)
+function screen_map:init(w, h, done_callback, map_change)
 	self.done_callback = done_callback
 	self.map_shortcuts = shortcut_settings.load_context("map")
 
@@ -821,7 +823,8 @@ function screen_map:init(w, h, done_callback)
 	self.android_unscaled_sw = unscaled_sw
 	self.android_unscaled_sh = unscaled_sh
 
-	local window = KWindow:new(V.v(sw, sh))
+	local ui_hidden = self.button_hidden
+	local window = map_change and self.window or KWindow:new(V.v(sw, sh))
 
 	window.scale = v(scale, scale)
 	window.origin = origin
@@ -842,7 +845,9 @@ function screen_map:init(w, h, done_callback)
 	screen_map.tower_5_data = map_data.tower_5_data
 	screen_map.level_data = map_data.level_data
 
-	E:load()
+	if not map_change then
+		E:load()
+	end
 
 	--坐标切换.注意kr5的大小是2432*1368，放到前3代缩小到了1920*1080
 	local points_data
@@ -1035,10 +1040,22 @@ function screen_map:init(w, h, done_callback)
 		map_viewport_h = h / scale
 	end
 
+	if map_change then
+		self.window:remove_child(self.map_view)
+		self.map_view:destroy()
+		self.window._drag_view = nil
+		self.window._click_start_view = nil
+		self.window._last_enter_view = nil
+		self.window._last_mouse_pos = nil
+		self.window.focused = nil
+		self.window.responder = nil
+		self.endlessTip = nil
+	end
+
 	local map = MapView:new(authored_sw, authored_sh, map_viewport_left, map_viewport_top, map_viewport_w, map_viewport_h, android_ui_scale)
 
 	map.can_drag = false
-	self.window:add_child(map)
+	self.window:add_child(map, map_change and 1 or nil)
 
 	self.map_view = map
 	self._android_map_touches = {}
@@ -1048,6 +1065,17 @@ function screen_map:init(w, h, done_callback)
 	self._android_modal_pinch = nil
 	self._android_modal_pan = nil
 	self._android_modal_transform = nil
+
+	-- Campaign changes only rebuild the map; rooms and their assets stay in place.
+	if map_change then
+		self._set_map_switcher_open(false)
+		self:clear_map_entry_hints()
+		if not self.button_hidden then
+			self:show_map_entry_hints()
+		end
+		self:queue_map_music()
+		return
+	end
 
 	local vign = KImageView:new("map_vignette_small")
 
@@ -1149,7 +1177,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr6_map = false
 			self.kr1_map = true
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 
@@ -1182,7 +1210,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr4_map = false
 			self.kr1_map = false
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 
@@ -1217,7 +1245,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr4_map = true
 			self.kr1_map = false
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 	
@@ -1251,7 +1279,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr6_map = false
 			self.kr1_map = false
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 	
@@ -1283,7 +1311,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr5_map = false
 			self.kr6_map = true
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 
@@ -1315,7 +1343,7 @@ function screen_map:init(w, h, done_callback)
 			self.kr4_map = false
 			self.kr1_map = false
 			timer.clear()
-			screen_map:init(w, h, done_callback)
+			screen_map:init(w, h, done_callback, not self:android_map_modal_open())
 		end
 	end
 
@@ -1453,6 +1481,7 @@ function screen_map:init(w, h, done_callback)
 	self.spell_select_button = spell_select_button
 	self.window:add_child(spell_select_button)
 
+	self._set_map_switcher_open = set_map_switcher_open
 	set_map_switcher_open(false)
 	
 
@@ -1901,6 +1930,11 @@ function screen_map:init(w, h, done_callback)
 
 	self.window:add_child(self.wave_editor)
 
+	self:set_map_ui_hidden(ui_hidden)
+	self:queue_map_music()
+end
+
+function screen_map:queue_map_music()
 	if self.kr1_map then
 		S:queue("MusicMap1")
 	elseif self.kr2_map then
@@ -1921,6 +1955,7 @@ function screen_map:destroy()
 	self.window:destroy()
 
 	self.window = nil
+	self._set_map_switcher_open = nil
 
 	SU.remove_references(self, KView)
 end
@@ -1966,6 +2001,40 @@ end
 
 function screen_map:draw()
 	self.window:draw()
+end
+
+function screen_map:set_map_ui_hidden(hidden)
+	hidden = hidden and true or false
+	if hidden == self.button_hidden then return end
+
+	-- Tab only detaches map controls, never modal rooms opened by shortcuts.
+	for _, item in pairs({
+		self.tower5_room, self.spell_select_button, self.a_button,
+		self.u_button, self.o_button, self.e_button,
+		self.change_button1, self.change_button2, self.change_button3,
+		self.change_button4, self.change_button5, self.change_button6,
+		self.hero_but, self.skill_star, self.upgrade_star,
+		self.stars_banner, self.more_button
+	}) do
+		if hidden and item.parent == self.window then
+			self.window:remove_child(item)
+		elseif not hidden and not item.parent then
+			self.window:add_child(item)
+		end
+	end
+
+	if not hidden then
+		for _, popup in pairs({
+			self.upgrades, self.encyclopedia, self.hero_room, self.spell_select,
+			self.tower_room, self.hero5_room, self.more_option_panel,
+			self.difficulty_view, self.option_panel, self.developer_mode_panel,
+			self.mobile_settings_panel, self.shortcut_settings_panel,
+			self.achievements, self.wave_editor, self.level_select
+		}) do
+			if popup.parent == self.window then popup:order_to_front() end
+		end
+	end
+	self.button_hidden = hidden
 end
 
 function screen_map:keypressed(key, isrepeat)
@@ -2112,72 +2181,7 @@ function screen_map:keypressed(key, isrepeat)
 	if shortcut_settings.matches(map_shortcuts, "toggle_ui", key) then
 		self:dismiss_map_entry_hint("mapHideUITip", "map_hide_ui_tip_" .. screen_map_current_generation(self), true)
 
-		if not self.button_hidden then
-			self.window:remove_child(self.tower5_room)
-			self.window:remove_child(self.spell_select_button)
-			--self.window:remove_child(self.double_hero_room)
-			self.window:remove_child(self.a_button)
-			self.window:remove_child(self.u_button)
-			self.window:remove_child(self.o_button)
-			self.window:remove_child(self.hero_room)
-			self.window:remove_child(self.e_button)
-			self.window:remove_child(self.change_button1)
-			self.window:remove_child(self.change_button2)
-			self.window:remove_child(self.change_button3)
-			self.window:remove_child(self.change_button4)
-			self.window:remove_child(self.change_button5)
-			self.window:remove_child(self.change_button6)
-			self.window:remove_child(self.hero_but)
-			self.window:remove_child(self.skill_star)
-			self.window:remove_child(self.upgrade_star)
-			self.window:remove_child(self.stars_banner)
-			self.window:remove_child(self.more_button)
-			self.button_hidden = true
-		elseif self.button_hidden then
-			self.window:add_child(self.tower5_room)
-			self.window:add_child(self.spell_select_button)
-			--self.window:add_child(self.double_hero_room)
-			self.window:add_child(self.a_button)
-			self.window:add_child(self.u_button)
-			self.window:add_child(self.o_button)
-			self.window:add_child(self.hero_room)
-			self.window:add_child(self.e_button)
-			self.window:add_child(self.change_button1)
-			self.window:add_child(self.change_button2)
-			self.window:add_child(self.change_button3)
-			self.window:add_child(self.change_button4)
-			self.window:add_child(self.change_button5)
-			self.window:add_child(self.change_button6)
-			self.window:add_child(self.hero_but)
-			self.window:add_child(self.skill_star)
-			self.window:add_child(self.upgrade_star)
-			self.window:add_child(self.stars_banner)
-			self.window:add_child(self.more_button)
-
-			local popups = {
-				self.upgrades,
-				self.encyclopedia,
-				self.hero_room,
-				self.spell_select,
-				self.tower_room,
-				self.hero5_room,
-				self.more_option_panel,
-				self.difficulty_view,
-				self.option_panel,
-				self.developer_mode_panel,
-				IS_ANDROID and self.mobile_settings_panel or self.shortcut_settings_panel,
-				self.achievements,
-				self.wave_editor
-			}
-
-			for _, popup in ipairs(popups) do
-				if popup.parent == self.window then
-					popup:order_to_front()
-				end
-			end
-
-			self.button_hidden = false
-		end
+		self:set_map_ui_hidden(not self.button_hidden)
 	end
 
 	if DEBUG_MAP_ANI_EDITOR and self.SEL_ANI then
@@ -14346,7 +14350,7 @@ function HeroRoomView:sync_allied_boss_images()
 	for _,boss in ipairs(infinite_heroes.bosses.list) do
 		local t=E:get_template(boss.source)
 		local resource=encyclopedia_enemy_resources.enemies[boss.source]
-		if t then
+		if t and not boss.custom_portrait then
 			local index=encyclopedia_enemy_icon_idx(t,boss.source,resource and resource.encyclopedia_index,resource and resource.generation)
 			boss.icon=string.format(GS.encyclopedia_enemy_thumb_fmt,index)
 			boss.portrait=string.format(GS.encyclopedia_enemy_fmt,index)
@@ -14627,6 +14631,7 @@ function HeroRoomView:initialize(sw, sh)
 			glow_color = {0, 0, 0, 0.85}
 		}
 	}
+	self.bio_header = bio_header
 	bio_header.text = _("Introduction")  -- "介绍"
 	bio_header.fit_lines = 1
 	bio_header.pos = v(23, ISW(9, "zh-Hans", 8))
@@ -15522,7 +15527,6 @@ function HeroRoomView:create_infinite_hero_panel()
 	self.infinite_panel = panel
 	self.infinite_page = 1
 	self.infinite_slots = {}
-	local settings = infinite_heroes.settings(screen_map.user_data)
 	self.infinite_team_info = hero_deck_label("", v(270, 28), 15)
 	self.infinite_team_info.pos = v(10, 32)
 	panel:add_child(self.infinite_team_info)
@@ -15550,7 +15554,8 @@ function HeroRoomView:create_infinite_hero_panel()
 	self:infinite_deck_button(panel, "+ Thêm", 285, 3, 100, function() self:change_infinite_hero(1) end)
 	self:infinite_deck_button(panel, "- Bỏ", 395, 3, 90, function() self:change_infinite_hero(-1) end)
 	self:infinite_deck_button(panel, "Bỏ hết", 495, 3, 100, function()
-		for n = #settings.infiniteheroes, 1, -1 do table.remove(settings.infiniteheroes, n) end
+		local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
+		for n = #list, 1, -1 do table.remove(list, n) end
 		self.infinite_page = 1
 		storage:save_slot(screen_map.user_data); self:update_infinite_hero_panel()
 	end)
@@ -15558,7 +15563,8 @@ function HeroRoomView:create_infinite_hero_panel()
 		self.infinite_page = math.max(1, self.infinite_page - 1); self:update_infinite_hero_panel()
 	end)
 	self:infinite_deck_button(panel, "Trang sau", 735, 3, 115, function()
-		self.infinite_page = math.min(math.max(1, math.ceil(#settings.infiniteheroes / 8)), self.infinite_page + 1); self:update_infinite_hero_panel()
+		local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
+		self.infinite_page = math.min(math.max(1, math.ceil(#list / 8)), self.infinite_page + 1); self:update_infinite_hero_panel()
 	end)
 	for n = 1, 8 do
 		local slot = KView:new(v(76, 76))
@@ -15573,8 +15579,9 @@ function HeroRoomView:create_infinite_hero_panel()
 		slot:add_child(slot.number)
 		function slot.on_click(_, mouse_button)
 			if mouse_button ~= nil and mouse_button ~= 1 then return end
-			if slot.team_index then
-				table.remove(settings.infiniteheroes, slot.team_index)
+			local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
+			if slot.team_index and list[slot.team_index] then
+				table.remove(list, slot.team_index)
 				storage:save_slot(screen_map.user_data); self:update_infinite_hero_panel()
 			end
 		end
@@ -15596,11 +15603,11 @@ function HeroRoomView:change_infinite_team(delta, copy_current)
 end
 
 function HeroRoomView:change_infinite_hero(delta)
-	local boss = infinite_heroes.get_boss(self.selected_boss)
-	local hd = boss or screen_map.hero_data[self.selected_index]
-	if not hd or hd.transplanting or hd.coming_soon or (hd.available_level or 0) > #screen_map.user_data.levels then return end
 	local list = infinite_heroes.settings(screen_map.user_data).infiniteheroes
 	if delta > 0 then
+		local boss = infinite_heroes.get_boss(self.selected_boss)
+		local hd = boss or screen_map.hero_data[self.selected_index]
+		if not hd or hd.transplanting or hd.coming_soon or (hd.available_level or 0) > #screen_map.user_data.levels then return end
 		list[#list + 1] = hd.name
 		if boss and not screen_map.user_data.heroes.status[hd.name] then
 			screen_map.user_data.heroes.status[hd.name] = {xp = GS.hero_xp_thresholds[9], skills = {}}
@@ -15610,7 +15617,7 @@ function HeroRoomView:change_infinite_hero(delta)
 		if status then status.xp = math.max(status.xp or 0, xp or 0) end
 		self.infinite_page = math.ceil(#list / 8)
 	else
-		for n = #list, 1, -1 do if list[n] == hd.name then table.remove(list, n); break end end
+		if #list > 0 then table.remove(list) end
 	end
 	storage:save_slot(screen_map.user_data)
 	self:update_infinite_hero_panel()
@@ -15786,6 +15793,35 @@ function HeroRoomView:show()
 	self:construct_hero(self.selected_index)
 end
 
+function HeroRoomView:update_sett_skill_panel(boss)
+ local entries=boss and boss.skill_cards
+ if self.sett_skill_panel then self.sett_skill_panel.hidden=not entries end
+ self.bio_text.pos.y=entries and 68 or 0
+ if self.bio_header then self.bio_header.text=entries and "Kỹ năng" or _("Introduction") end
+ if not entries then return end
+ if not self.sett_skill_panel then
+  local panel=KView:new(v(350,64));self.sett_skill_panel=panel;panel.buttons={}
+  self.bio_text.parent:add_child(panel)
+  for index,entry in ipairs(entries) do
+   local button=KButton:new(v(64,64));button.pos=v((index-1)*70,0)
+   button.colors.background={42,31,57,210};panel:add_child(button);panel.buttons[index]=button
+   local icon=KImageView:new(entry.icon);icon.pos=v(4,4);icon.colors.tint={205,205,215,230}
+   icon.scale=v(56/icon.size.x,56/icon.size.y);icon.propagate_on_click=true;button:add_child(icon)
+   function button.on_click(_,mouse_button)
+    if mouse_button and mouse_button~=1 then return end
+    local selected=self.sett_skill_cards[index]
+    self.bio_text.text=selected.title.."\n"..selected.description
+    for i,b in ipairs(panel.buttons) do b.colors.background=i==index and {112,72,145,235} or {42,31,57,210} end
+    S:queue("GUIButtonCommon")
+   end
+  end
+ end
+ self.sett_skill_cards=entries
+ self.bio_text.font_size=20;self.bio_text.size,self.bio_text.text_size=v(350,182),v(350,182)
+ self.bio_text.fit_lines,self.bio_text.fit_size=nil,true
+ self.sett_skill_panel.buttons[1]:on_click(1)
+end
+
 function HeroRoomView:construct_allied_boss(name)
 	local boss = infinite_heroes.get_boss(name)
 	if not boss then return end
@@ -15838,7 +15874,7 @@ function HeroRoomView:construct_allied_boss(name)
     self.blackburn_level_button.hidden=not is_blackburn
     self.blackburn_level_button.label.text=blackburn.label(screen_map.user_data)
     if is_blackburn then self.bio_text.text=blackburn.description(blackburn.level(screen_map.user_data)) end
-	local large_bio = boss.kind == "navira" or boss.kind == "navira_blue" or boss.kind == "godieth" or boss.kind == "set"
+	local large_bio = boss.preview_stats ~= nil or boss.kind == "navira" or boss.kind == "navira_blue" or boss.kind == "godieth" or boss.kind == "set"
 	local text_height = large_bio and 220 or 145
 	self.bio_text.font_size = large_bio and 20 or 15
 	self.bio_text.size, self.bio_text.text_size = v(350, text_height), v(350, text_height)
@@ -15849,12 +15885,12 @@ function HeroRoomView:construct_allied_boss(name)
         self.bio_text.size,self.bio_text.text_size=v(350,170),v(350,170)
         self.bio_text.fit_lines,self.bio_text.fit_size=nil,true
     end
-	local native = E:get_template(boss.source)
+	local native = boss.preview_stats or E:get_template(boss.source)
     -- Stage animations are not loaded in the hero room; read stats without registering a combat template.
     local blackburn_profile=is_blackburn and blackburn.profile(blackburn.level(screen_map.user_data))
 	local hp = native and native.health and native.health.hp_max
     if blackburn_profile then hp=math.floor(hp*blackburn_profile.hp+0.5) end
-	self.bio_class_label.text = boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến"
+	self.bio_class_label.text = boss.hero_class or (boss.bombardment and "Boss - bắn diện rộng" or "Boss - cận chiến")
 	self.bio_time.text = "20s"
 	self.bio_armor.text = native and tostring(math.floor((blackburn_profile and blackburn_profile.armor or native.health.armor or 0) * 100)) .. "%" or "-"
 	self.bio_health.text = tostring(type(hp) == "table" and hp[1] or hp or "-")
@@ -15864,11 +15900,13 @@ function HeroRoomView:construct_allied_boss(name)
 	self.bio_attack_icon:set_image("heroroom_attackIcons_0001")
 	self.bio_level_num:set_image("heroroom_heroBadge_numbers_0010")
 	self.bio_hero_bar.hidden, self.bio_hero_bar_end.hidden, self.bio_hero_bar_init.hidden = true, true, true
+	self:update_sett_skill_panel(boss)
 	if self.infinite_panel then self:update_infinite_hero_panel() end
 end
 
 function HeroRoomView:construct_hero(index)
 	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
+	self:update_sett_skill_panel(nil)
     if self.blackburn_level_button then self.blackburn_level_button.hidden=true end
 	self.portrait._draw_self = nil
 	self.bio_text.font_size, self.bio_text.size, self.bio_text.text_size = 15, v(350, 145), v(350, 145)

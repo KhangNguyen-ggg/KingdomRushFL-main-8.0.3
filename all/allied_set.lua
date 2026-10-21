@@ -2,7 +2,7 @@
 local C,E,U,V
 local A,I
 local state,alive,copy,animate,summon,insert,remove
-local M={name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemy_set", "go_enemies_hammerhold", "go_enemies_desert", "go_stages_hammerhold", "go_stage89_rebborn"}, sounds = {"HammerholdEnemySounds"}}
+local M={name = "hero_allied_set", title = "Set", source = "enemy_set", icon = "encyclopedia_creep_thumbs_0265", textures = {"go_enemy_set", "go_enemies_hammerhold", "go_enemies_desert", "go_stages_hammerhold", "go_stage89_rebborn", "go_allied_set_visuals"}, sounds = {"HammerholdEnemySounds"}}
 M.kind="set"
 M.skill={label="Trụ",cooldown=10,range=450,description="Trụ gọi Fallen mỗi 10 giây. Gồng 10 giây tăng gấp đôi sát thương lính, sau đó nâng Fallen thành Immortal; hồi 30 giây. Lửa quanh Set: bán kính 128, gây 9 sát thương chuẩn/giây. Chết lần đầu hồi đầy máu sang phase 2: đánh 160–240 thay cho 100–150, lửa 24/giây, hồi xác trong tầm 200 (tối đa 15 lính); trụ gọi thêm Immortal, gồng nâng được Immortal thành Primordial, hồi 40 giây. Primordial cũng hồi xác cho đội Set."}
 local function stop_channel(this)
@@ -15,11 +15,38 @@ function M.remove(this)
 	stop_channel(this)
 	return true
 end
+local function duration(this,name)
+	local sprite=this.render.sprites[1]
+	-- Set plays at 15 FPS; animation_db durations otherwise assume the global 30 FPS.
+	return (A:duration(sprite.prefix.."_"..name) or 0)*A.fps/(sprite.fps or A.fps)
+end
+local function register_fire_visual()
+	if E.entities.allied_set_fire_visual then return end
+	local t=E:register_t("allied_set_fire_visual","decal_scripted")
+	t.render=table.deepclone(E:get_template("aura_set").render)
+	t.render.sprites[1].name="allied_set_ground_aura"
+	t.main_script.insert=function(e,store)
+		local owner=store.entities[e.owner_id]
+		if owner then owner._set_fire_pending=nil end
+		return alive(owner)
+	end
+	t.main_script.update=function(e,store)
+		local owner=store.entities[e.owner_id]
+		while alive(owner) do
+			e.pos=owner.pos
+			coroutine.yield()
+			owner=store.entities[e.owner_id]
+		end
+		if owner and owner._set_fire_visual==e.id then owner._set_fire_visual=nil end
+		remove(e)
+	end
+end
 function M.register()
 	C=require("allied_boss_common");E=require("entity_db");U=require("utils");V=require("klua.vector")
 	A=require("animation_db");I=require("klove.image_db")
 	state,alive,copy,animate,summon,insert,remove=C.state,C.alive,C.copy,C.animate,C.summon,C.insert,C.remove
 	local t=C.create(M)
+	register_fire_visual()
 	t.main_script.remove=M.remove
 	return t
 end
@@ -71,6 +98,7 @@ function M.prepare(template)
 			if resolved then A.db[key]=resolved end
 		end
 	end
+	A.db[prefix.."respawn"]=A.db[prefix.."raise"]
 	sprite.hidden, sprite.alpha = false, 255
 	local idle = A.db[prefix.."idle"]
 	local frame = idle and string.format("%s_%04i",idle.prefix,idle.frames and idle.frames[1] or idle.from or 1)
@@ -87,27 +115,37 @@ function M.prepare(template)
 	end
 end
 function M.active(this,store,pos)
+	if not C.cast(this,store,"skill_start",duration(this,"skill_start")) then return end
+	animate(this,"skill",store,true)
 	local s=state(this,store);s.obelisk=s.obelisk+1
 	local native=C.native(this).timed_attacks.list[2]
 	local loops=native.loops[(s.obelisk-1)%#native.loops+1]
 	local name="allied_set_obelisk"
 	if not E.entities[name] then
 		local t=E:register_t(name,"decal_scripted")
+		E:add_comps(t,"tween")
 		t.render=table.deepclone(assert(E.entities.set_obelisk).render)
+		t.tween=table.deepclone(E.entities.set_obelisk.tween)
 		t.main_script.update=function(e,st)
-			animate(e,"start",st,false)
-			local start=st.tick_ts;local next_spawn=start
+			e.tween.ts=st.tick_ts
+			U.animation_start(e,"start",nil,st.tick_ts,false,1)
+			U.animation_start(e,"fx_xerxes_obelisk",nil,st.tick_ts,true,3)
+			local start=st.tick_ts
+			while st.tick_ts-start<duration(e,"start") do coroutine.yield() end
+			U.animation_start(e,"loop",nil,st.tick_ts,true,1)
+			local next_spawn=st.tick_ts
+			start=st.tick_ts
 			while alive(e.boss_owner) and st.tick_ts-start<e.life do
 				if st.tick_ts>=next_spawn then
 					local source=e.phase==2 and next_spawn==start and "enemy_immortal" or "enemy_fallen"
 					summon(e.boss_owner,source,e.pos,st,60);next_spawn=next_spawn+1
 				end
-				if st.tick_ts-start>=0.5 and e.render.sprites[1].name~="loop" then animate(e,"loop",st,true) end
 				coroutine.yield()
 			end
-			animate(e,"end",st,false)
+			U.animation_start(e,"end",nil,st.tick_ts,false,1)
+			e.tween.ts,e.tween.reverse=st.tick_ts,true
 			local finish=st.tick_ts
-			while st.tick_ts-finish<0.5 do coroutine.yield() end
+			while st.tick_ts-finish<duration(e,"end") do coroutine.yield() end
 			remove(e)
 		end
 	end
@@ -117,7 +155,10 @@ function M.active(this,store,pos)
 		e.boss_owner,e.life,e.phase=this,native.duration,s.phase
 		for _,sp in ipairs(e.render.sprites) do sp.ts=store.tick_ts end
 		insert(e)
+		require("sound_db"):queue(E.entities.set_obelisk.sound_events.insert)
 	end
+	C.wait(this,store,A:duration("xerxes_obelisk_start"),function() return this.nav_rally.new end)
+	C.cast(this,store,"skill_end",duration(this,"skill_end"))
 end
 
 
@@ -127,6 +168,12 @@ function M.summon_passive(this,store)
 end
 function M.passive(this,store)
 	local s=state(this,store)
+	if not this._set_fire_pending and not store.entities[this._set_fire_visual] then
+		local visual=E:create_entity("allied_set_fire_visual")
+		visual.owner_id,visual.pos=this.id,copy(this.pos)
+		this._set_fire_visual,this._set_fire_pending=visual.id,true
+		insert(visual)
+	end
 	if C.ready(this,store,"fire",1) then
 		C.stamp(this,store,"fire")
 		local name=s.phase==2 and "mod_set_fire_2" or "mod_set_fire"
@@ -146,11 +193,12 @@ function M.automatic(this,store)
 		for _,e in ipairs(units) do if e.summon_source=="enemy_fallen" or s.phase==2 and e.summon_source=="enemy_immortal" then candidates[#candidates+1]=e end end
 		if #candidates>0 then
 			C.stamp(this,store,"channel");local a=n.timed_attacks.list[1]
-			this._set_channel_sound=a.sound
-			if C.cast(this,store,a.animations[1],a.cast_time,a.sound) then
+			if C.cast(this,store,a.animations[1],math.max(a.cast_time,duration(this,a.animations[1]))) then
 				animate(this,a.animations[2],store,true)
+				this._set_channel_sound=a.sound
+				require("sound_db"):queue(a.sound)
 				for _,e in ipairs(candidates) do e.unit.damage_factor=e.unit.damage_factor+1 end
-				local completed=C.wait(this,store,a.cast_time_2)
+				local completed=C.wait(this,store,a.cast_time_2,function() return this.nav_rally.new end) and not this.nav_rally.new
 				stop_channel(this)
 				for _,e in ipairs(candidates) do e.unit.damage_factor=e.unit.damage_factor-1 end
 				if completed then
@@ -162,7 +210,7 @@ function M.automatic(this,store)
 							e._replaced=true;U.unblock_target(store,e);remove(e)
 						end
 					end
-					C.cast(this,store,a.animations[3],0.5,a.sound2)
+					C.cast(this,store,a.animations[3],duration(this,a.animations[3]),a.sound2)
 				end
 			end
 			stop_channel(this)
@@ -175,12 +223,22 @@ function M.dead(this,store)
 	stop_channel(this)
 	local s=state(this,store)
 	if s.phase~=1 then return false end
+	U.unblock_target(store,this)
+	local can_click,bar_hidden=this.ui.can_click,this.health_bar.hidden
+	this.ui.can_click,this.health_bar.hidden=false,true
+	require("sound_db"):queue(C.native(this).sound_events.firstdeath)
 	animate(this,"death",store,false)
 	local start=store.tick_ts
-	while store.tick_ts-start<3 do coroutine.yield() end
+	while store.tick_ts-start<duration(this,"death")+3 do coroutine.yield() end
 	s.phase=2;this.health.dead=false;this.health.hp=this.health.hp_max
 	this.melee.attacks[1].damage_min,this.melee.attacks[1].damage_max=160,240
-	C.cast(this,store,"raise",1)
+	local ignore,bans=this.health.ignore_damage,this.vis.bans
+	this.health.ignore_damage,this.vis.bans=true,F_ALL
+	require("sound_db"):queue(C.native(this).sound_events.revive)
+	animate(this,"raise",store,false)
+	C.wait(this,store,duration(this,"raise"))
+	this.health.ignore_damage,this.vis.bans=ignore,bans
+	this.ui.can_click,this.health_bar.hidden=can_click,bar_hidden
 	return true
 end
 function M.respawn(this)

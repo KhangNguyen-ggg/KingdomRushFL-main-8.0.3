@@ -332,10 +332,10 @@ local function wait(this,store,duration,step)
 	return alive(this) and not this.unit.is_stunned
 end
 local function cast(this,store,animation,time,sound_name)
-	U.unblock_target(store,this)
+	-- Stationary skills keep their melee slot; movement releases it when leaving.
 	sound(sound_name)
 	animate(this,animation,store,false)
-	return wait(this,store,time or 0.5)
+	return wait(this,store,time or 0.5,function() return this.nav_rally.new end) and not this.nav_rally.new
 end
 
 -- Shared only by the Hammerhold adaptations. Always restore temporary flags.
@@ -348,6 +348,7 @@ function M.land(this,pos)
 	this.motion.speed.x,this.motion.speed.y=0,0
 end
 function M.move_form(this,store,duration,factor,animation,step,shield,until_arrived)
+	U.unblock_target(store,this)
 	local speed,bans,ignore=this.motion.max_speed,this.vis.bans,this.health.ignore_damage
 	this.motion.max_speed=speed*factor
 	this.vis.bans=bit.bor(bans,F_BLOCK,F_STUN)
@@ -374,6 +375,11 @@ local function automatic(this,store)
 	local skill,s=boss.skill,state(this,store)
 	if store.tick_ts < (s.next_ai or s.born + (this.id % 8) / 32) then return false end
 	s.next_ai=store.tick_ts+0.25
+	-- Claim a nearby ground enemy through normal melee before beginning a skill.
+	if not U.blocker_rank(store,this) then
+		local target=SU.soldier_pick_melee_target(store,this)
+		if target and bit.band(target.vis.flags,F_FLYING)==0 then return false end
+	end
 	local targets=enemies(store,this.pos,math.max(500,skill.range),false)
 	if boss.active and #targets>0 and ready(this,store,"active",skill.cooldown) then
 		local pos

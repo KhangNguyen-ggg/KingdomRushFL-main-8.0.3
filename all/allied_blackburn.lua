@@ -96,6 +96,9 @@ function M.active(this,store)
         C.area(store,this,this.pos,p and p.radius or a.damage_radius,p and p.stomp[1] or a.damage_min,
             p and p.stomp[2] or a.damage_max,a.damage_type,4,nil,false)
 		C.visual(a.fx,this.pos,store,1);C.visual(a.hit_decal,this.pos,store,2)
+		local sprite=this.render.sprites[1]
+		local duration=require("animation_db"):duration(sprite.prefix.."_"..a.animation)
+		C.wait(this,store,math.max(0,sprite.ts+duration-store.tick_ts),function() return this.nav_rally.new end)
 	end
 end
 return M

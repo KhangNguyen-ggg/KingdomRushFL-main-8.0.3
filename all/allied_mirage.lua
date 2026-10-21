@@ -49,6 +49,7 @@ function M.automatic(this,store,targets)
 					C.stamp(this,store,"dodge");C.stamp(this,store,"shared")
 					if C.cast(this,store,a.animation_out,0,a.sound) and finish(this,store) then
 						C.summon(this,a.leave_copy,this.pos,store,20)
+						U.unblock_target(store,this)
 						C.land(this,pos)
 						if C.cast(this,store,a.animation_in,0) then finish(this,store) end
 					end
