@@ -676,6 +676,12 @@ function game:destroy()
 
 	if simulation.store == self.store then simulation.store = nil end
 	require("hero_auto_rally"):clear_state(self.store)
+	if self.store and self.store._wait_signal_handlers then
+		for fn, sname in pairs(self.store._wait_signal_handlers) do
+			signal.remove(sname, fn)
+		end
+		self.store._wait_signal_handlers = nil
+	end
 	self.simulation = nil
 	self.gui_required_textures = nil
 end
@@ -2118,4 +2124,5 @@ require("hero_enhance_mod"):init(game, game_gui)
 require("hero_auto_rally"):init(game)
 
 return game
+
 

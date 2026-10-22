@@ -1,1 +1,0 @@
-PASS: same 1024x384 atlas / 4 purple + 12 blue frames / real alpha / purple source pixels unchanged / side-view previews

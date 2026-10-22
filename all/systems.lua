@@ -1486,6 +1486,8 @@ function sys.wave_spawn_tsv.cmd_fns.wait_signal(store, cmd)
 	if signal_name then
 		log.debug("wait_signal: registering signal %s", signal_name)
 		signal.register(signal_name, fn)
+		store._wait_signal_handlers = store._wait_signal_handlers or {}
+		store._wait_signal_handlers[fn] = signal_name
 	end
 
 	log.debug("wait_signal: waiting for signal:%s  time:%s", signal_name, cmd.wait_time)
@@ -1509,6 +1511,7 @@ function sys.wave_spawn_tsv.cmd_fns.wait_signal(store, cmd)
 
 	log.debug("wait_signal: deregistering signal %s", signal_name)
 	signal.remove(signal_name, fn)
+	if store._wait_signal_handlers then store._wait_signal_handlers[fn] = nil end
 end
 
 function sys.wave_spawn_tsv.cmd_fns.wait(store, cmd)
@@ -5236,4 +5239,5 @@ end
 
 
 return sys
+
 

@@ -1,0 +1,59 @@
+{
+  "patch_id": "FL803_GiamRAM_FixWaitSignal",
+  "date": "2026-10-22",
+  "repo": "KhangNguyen-ggg/KingdomRushFL-main-8.0.3",
+  "branch": "main",
+  "base_commit": "6e33473dd76893661d2f5034e775fb70c81587d5",
+  "issue": "RAM leak: wait_signal closures keep the whole level store alive in the global hump.signal registry when the player exits or restarts a level before the signal fires; plus weak per-frame GC step.",
+  "changes": [
+    {
+      "file": "all/systems.lua",
+      "change": "wait_signal: track each registered handler on store._wait_signal_handlers; clear the tracking entry on normal deregistration"
+    },
+    {
+      "file": "all/game.lua",
+      "change": "game:destroy(): remove all still-registered wait_signal handlers from the signal registry via signal.remove, then clear the table"
+    },
+    {
+      "file": "main.lua",
+      "change": "love.run: use collectgarbage(\"step\", 512) when heap exceeds 400 MB instead of a single step"
+    }
+  ],
+  "install": "Copy CAP_NHAT contents over the game root (folder containing main.lua and all/).",
+  "rollback": "Copy BACKUP contents over the game root.",
+  "note": "Files use TAB indentation and are byte-faithful to base_commit. Verify with KIEM_TRA_LUA.txt after any manual edit.",
+  "files": [
+    {
+      "name": "HUONG_DAN.txt",
+      "bytes": 1923
+    },
+    {
+      "name": "KIEM_TRA_LUA.txt",
+      "bytes": 627
+    },
+    {
+      "name": "BACKUP/all/systems.lua",
+      "bytes": 135729
+    },
+    {
+      "name": "BACKUP/all/game.lua",
+      "bytes": 60214
+    },
+    {
+      "name": "BACKUP/main.lua",
+      "bytes": 38207
+    },
+    {
+      "name": "CAP_NHAT/all/systems.lua",
+      "bytes": 135922
+    },
+    {
+      "name": "CAP_NHAT/all/game.lua",
+      "bytes": 60413
+    },
+    {
+      "name": "CAP_NHAT/main.lua",
+      "bytes": 38325
+    }
+  ]
+}

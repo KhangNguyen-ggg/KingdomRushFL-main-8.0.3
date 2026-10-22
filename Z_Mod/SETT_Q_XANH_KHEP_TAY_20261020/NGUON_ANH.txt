@@ -1,6 +1,0 @@
-Skill: imagegen — C:/Users/user/.codex/skills/.system/imagegen/SKILL.md
-Ảnh tham chiếu: Z_Mod/Q đấm phải 2.png; atlas Q từ bản SETT_SONG_THU_HOI_MAU_Q_20261020.
-Yêu cầu chính: bàn tay linh hồn xanh, các ngón khép sát nhau và duỗi lên trên; không xòe, không nắm đấm; đuôi tím xanh ngắn nối cổ tay, 4 trạng thái trong một hàng, nền alpha.
-Ảnh nguồn sinh tự động (giữ nguyên): C:/Users/user/.codex/generated_images/01a13b17-1fc0-7961-8761-6c60a55d1e41/exec-57b8502d-c23a-40a0-a7cf-a15d91d18bc4.png
-Ảnh cuối trong workspace: CAP_NHAT/kr3-desktop/assets/images/fullhd/go_sett_q.png.
-Chỉ ghép lại nửa xanh bằng LÖVE; nửa tím sao chép pixel nguyên vẹn. Căn lại chân chưởng và bỏ phần rìa lẫn hình khung liền kề của ảnh nguồn.

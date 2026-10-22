@@ -1,6 +1,0 @@
-Skill imagegen: C:/Users/user/.codex/skills/.system/imagegen/SKILL.md
-Tham chiếu: Z_Mod/Q đấm phải 2.png và atlas Q khép tay từ bản trước. Ảnh cắt người dùng gửi nhấn mạnh khối cẳng tay linh hồn xanh tím nối với bàn tay.
-Yêu cầu tạo hình: cẳng tay có bề dày, dài khoảng 1,3–1,6 lần bàn tay, đi từ phía trên-trái xuống cổ tay, thu nhỏ về cổ tay; bàn tay khép ngón duỗi hướng lên trên. Chất liệu linh hồn xanh tím bán trong suốt, các vệt lửa vuốt dọc cẳng tay. 4 trạng thái cùng vị trí: xuất hiện, duỗi chưởng, lóe chạm, tan. Nền alpha thật.
-Ảnh nguồn sinh bằng imagegen (giữ nguyên): C:/Users/user/.codex/generated_images/01a13b17-1fc0-7961-8761-6c60a55d1e41/exec-eee2facf-2ae2-42e0-b538-3f7283c6337f.png
-Ảnh cuối trong workspace: CAP_NHAT/kr3-desktop/assets/images/fullhd/go_sett_q.png.
-LÖVE ghép 4 ô Q xanh vào nửa dưới atlas 1024x384, căn điểm cổ tay theo tay Sett. Nửa Q tím sao chép pixel nguyên vẹn từ bản trước. Chỉ cắt phần rìa ảnh nguồn lẫn ô liền kề khi đóng gói atlas.
