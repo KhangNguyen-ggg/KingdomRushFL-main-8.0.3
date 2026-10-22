@@ -458,6 +458,7 @@ screen_map.required_sounds = {
 screen_map.required_textures = {
 	"ui_lich_king",
 	"ui_sett_spirit",
+	"ui_volibear_prestige",
 	"screen_map",
 	"generation_upgrades",
 	"legacy_generation_upgrades",
