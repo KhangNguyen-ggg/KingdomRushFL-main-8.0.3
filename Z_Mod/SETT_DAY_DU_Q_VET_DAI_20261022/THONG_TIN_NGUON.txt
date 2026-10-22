@@ -1,0 +1,4 @@
+Tích hợp dựa trên script gốc trong FL8.0.3电脑版-解压到空文件夹直玩，自动接档.rar.
+Phần hero/hiệu ứng Q lấy nguyên từ FL803_Sett_Q_VetDai_DaDuyet.zip.
+SHA256 ZIP nguồn: 7d6552248ace8aa50d55ab375571730d0ba1c56d171ff97dd8a8cb9256929979
+Q bằng nửa kích thước bản ngang cũ, opacity tối đa 55%, cẳng tay/dư ảnh dài gấp đôi; không chồng hiệu ứng đánh thường lên Q.

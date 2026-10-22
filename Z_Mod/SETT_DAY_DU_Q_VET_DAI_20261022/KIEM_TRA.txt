@@ -1,0 +1,84 @@
+KIỂM TRA BẢN ĐẦY ĐỦ — 22/10/2026
+
+Nền kiểm tra: script trích trực tiếp từ RAR KR_FL 8.0.3 gốc của tác giả, chồng đúng CAP_NHAT. Không dùng các module custom trong bản game đang chơi làm đường dẫn dự phòng.
+
+PASS: all three variants register independently and preserve original Set
+PASS: roster/save retains all three IDs together and old hero IDs
+PASS: left/right punch order and Q consume exactly two empowered hits
+PASS: Grit uses damage after armor and caps at half max HP
+PASS: Grit decays after four seconds without new damage
+PASS: W keeps blocker while charging and deals true center/physical sides
+PASS: W shield absorbs incoming points, then expires
+PASS: movement order cancels W without losing current blocker or firing damage
+PASS: E pulls both sides and applies stun when enemies straddle Sett
+PASS: E one-sided target gets slow instead of stun
+PASS: R grabs a normal target, lands and cleans temporary stun/offset
+PASS: R does damage without displacing bosses or control-immune targets
+PASS: R interruption releases held target without stun leak
+PASS: companion variant has exactly two pets and respects 12 second replacement
+PASS: duplicate companion heroes keep independent pets, and no pets on other variants
+PASS: companions follow owner and purple pet heals only its own living owner
+PASS: spirit forms alternate every ten seconds with distinct bonuses
+PASS: stun/death or respawn does not retain Grit, pets or leap offsets
+PASS: registering again restores custom animation aliases without touching native sprites
+PASS: actual game Set template and animations register all variants and level up
+PASS: all hero and pet animation frames exist in shipped atlases
+PASS: hero and companions use bottom-up anchor conventions
+PASS: new animation poses cover walk, left/right, pull, W and R
+PASS: new cosmetic entities contain no combat components and always expire
+PASS: attached shield follows owner and ends if owner dies
+PASS: one tracker per hero and no petal trail while standing still
+PASS: spirit tint updates the same color table used by renderer
+PASS: Sett HUD portrait fits and centers; switching away restores normal portrait
+PASS: Sett HUD hides false ranged column and restores other hero layout
+PASS: damage is +19 percent at 5 percent health, never +190 or +1900
+PASS: regen thresholds add four HP per second for each five percent missing
+PASS: independent tracker heals through melee, W/R animations, movement and stun
+PASS: regen is not doubled by passive, clamps at max HP and cannot revive
+PASS: R does damage only to bosses and control-immune targets without moving them
+PASS: basic fists and Q stay at the owner hand even if the target is far away
+PASS: basic hits keep round impact while Q uses only its native palm flash
+PASS: real animation names dispatch exactly one attached trail per basic/Q strike
+PASS: all 3 variants have 5 non-upgradable cards with distinct variant descriptions
+PASS: skill panel click switches text and safely hides for normal heroes
+PASS: compile kr3-desktop/assets/images/fullhd/go_sett_strikes.lua
+PASS: compile kr3-desktop/assets/images/fullhd/ui_sett_spirit.lua
+PASS: compile all/allied_sett.lua
+PASS: compile all/allied_bosses.lua
+PASS: compile all-desktop/screen_map.lua
+PASS: compile all-desktop/game_gui.lua
+PASS: compile all/sett_visuals.lua
+PASS: queue portrait removes its exact position after save reload, regardless of selected hero
+PASS: minus removes last queued hero until empty, even with invalid roster selection
+PASS: clear all and paging use current slot and current team, preserving other teams
+PASS: right click and stale/out-of-range queue cells cannot remove another entry or crash
+PASS: Sett skill cards contain only icons, leaving 182 pixels of description area
+PASS: both pets regenerate exactly two percent max HP each second through attacks and stun
+PASS: pet healing clamps at full, no healing visuals when already full, no revival or dead-owner healing
+PASS: pet heal visuals are bounded to one per second and follow moving pet
+PASS: pet trackers are unique, do not double regen in passive and disappear with their pet
+PASS: purple pet only shows owner heal effect on real HP gain, with a one second limit
+PASS: normal fists keep their size and Q palms match the approved half-size preview
+PASS: slower attack body, attached trail and hit timing stay synchronized
+PASS: all variants keep left purple and right blue for ordinary attacks and Q, including body poses
+PASS: all variants retain tinted ordinary impacts and omit those impacts during Q
+PASS: Q right retains twelve side-view frames and both palms are half the old Q size
+PASS: approved Q centers every visible palm on the hand with alpha limited to 140
+PASS: Q has its own clean body while all ordinary attack poses keep the original artwork
+PASS: Q split metadata covers the original image exactly without adding a new Q texture
+PASS: normal trails and impact stop as soon as Q begins, but healing remains visible
+PASS: all variants keep a single attached Q entity, a double-length forearm and matching alpha through both directions
+PASS: standalone registry contains exactly three Sett heroes and no other allied bosses
+PASS: standalone save preserves progress and unknown IDs without loading other mod modules
+PASS: director and native skill callers include Sett resources and unlimited roster integration
+69 checks, 0 failures
+
+PASS: 21 Lua files compile; 177 atlas entries resolve to shipped PNGs with matching image dimensions and valid crop bounds.
+
+PASS: actual staged FX + actual animation database + game draw transform; 46 hand/frame/facing cases; seam/alpha/scale verified; production image matches approved image (0 pixels above 1/255 tolerance, max error 0); all atlas images and crop bounds validated
+
+Đã kiểm tra 275 tham chiếu require tới module Lua có sẵn trong bản gốc hoặc gói cài, ngoại trừ module tích hợp sẵn của LuaJIT/LÖVE.
+Các module/ảnh Q trong CAP_NHAT giữ nguyên SHA256 so với CAP_NHAT của ZIP Q nguồn tương ứng. Hai gói chỉ khác 5 file của Q và một PNG thân Q riêng của bản vệt dài.
+Đã kiểm tra các file game đang dùng và cả hai ZIP nguồn không bị sửa.
+
+Giới hạn: đây là kiểm tra cô lập bằng Lua/LÖVE và dựng hình thật từ bộ render của game. Chưa mở/chơi trọn một trận trong một bản game đích khác; chưa kiểm thử mọi màn, độ phân giải và tổ hợp mod bên thứ ba. Gói thiết kế cho KR_FL 8.0.3 gốc.

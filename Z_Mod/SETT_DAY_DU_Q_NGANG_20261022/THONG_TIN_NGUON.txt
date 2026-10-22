@@ -1,0 +1,4 @@
+Tích hợp dựa trên script gốc trong FL8.0.3电脑版-解压到空文件夹直玩，自动接档.rar.
+Phần hero/hiệu ứng Q lấy nguyên từ FL803_Sett_Q_Ngang_TraiTim_PhaiXanh_CanViTri.zip.
+SHA256 ZIP nguồn: 7a5fafdc7dc3fa979c1c21c197c5021cb48d67b869e5c0ef9ba5fcb470b5b9f9
+Giữ hình ảnh, kích thước và độ đậm của bản Q ngang cũ; dùng vị trí bám tay đã căn riêng cho bản cũ.

@@ -1,0 +1,18 @@
+return {
+ sett_spirit_0001={a_name="go_sett_spirit.png",size={400,400},trim={40,40,40,45},a_size={1254,1254},f_quad={0,0,320,315},alias={}},
+ sett_spirit_0002={a_name="go_sett_spirit.png",size={400,400},trim={40,40,35,45},a_size={1254,1254},f_quad={320,0,325,315},alias={}},
+ sett_spirit_0003={a_name="go_sett_spirit.png",size={400,400},trim={45,40,30,45},a_size={1254,1254},f_quad={645,0,325,315},alias={}},
+ sett_spirit_0004={a_name="go_sett_spirit.png",size={400,400},trim={50,40,66,45},a_size={1254,1254},f_quad={970,0,284,315},alias={}},
+ sett_spirit_0005={a_name="go_sett_spirit.png",size={400,400},trim={40,55,40,35},a_size={1254,1254},f_quad={0,315,320,310},alias={}},
+ sett_spirit_0006={a_name="go_sett_spirit.png",size={400,400},trim={40,55,35,35},a_size={1254,1254},f_quad={320,315,325,310},alias={}},
+ sett_spirit_0007={a_name="go_sett_spirit.png",size={400,400},trim={45,55,30,35},a_size={1254,1254},f_quad={645,315,325,310},alias={}},
+ sett_spirit_0008={a_name="go_sett_spirit.png",size={400,400},trim={50,55,66,35},a_size={1254,1254},f_quad={970,315,284,310},alias={}},
+ sett_spirit_0009={a_name="go_sett_spirit.png",size={400,400},trim={40,65,40,30},a_size={1254,1254},f_quad={0,625,320,305},alias={}},
+ sett_spirit_0010={a_name="go_sett_spirit.png",size={400,400},trim={40,65,35,30},a_size={1254,1254},f_quad={320,625,325,305},alias={}},
+ sett_spirit_0011={a_name="go_sett_spirit.png",size={400,400},trim={45,65,30,30},a_size={1254,1254},f_quad={645,625,325,305},alias={}},
+ sett_spirit_0012={a_name="go_sett_spirit.png",size={400,400},trim={50,65,66,30},a_size={1254,1254},f_quad={970,625,284,305},alias={}},
+ sett_spirit_0013={a_name="go_sett_spirit.png",size={400,400},trim={40,70,10,6},a_size={1254,1254},f_quad={0,930,350,324},alias={}},
+ sett_spirit_0014={a_name="go_sett_spirit.png",size={400,400},trim={82,70,35,6},a_size={1254,1254},f_quad={362,930,283,324},alias={}},
+ sett_spirit_0015={a_name="go_sett_spirit.png",size={400,400},trim={45,70,30,6},a_size={1254,1254},f_quad={645,930,325,324},alias={}},
+ sett_spirit_0016={a_name="go_sett_spirit.png",size={400,400},trim={50,70,66,6},a_size={1254,1254},f_quad={970,930,284,324},alias={}},
+}

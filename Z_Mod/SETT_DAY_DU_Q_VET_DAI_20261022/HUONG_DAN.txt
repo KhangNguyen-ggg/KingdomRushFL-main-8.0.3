@@ -1,0 +1,25 @@
+SETT SONG HỒN HOANG THÚ — BẢN ĐẦY ĐỦ CHO KR_FL 8.0.3 GỐC
+Phiên bản: Q vệt dài đã duyệt
+
+Gói độc lập: có đủ Sett Gốc, Sett Song Thú, Sett Nhập Hồn, hai pet, bộ P/Q/W/E/R, avatar, hoạt ảnh và hiệu ứng. Không cần cài bất kỳ ZIP Sett nào trước đó.
+Q bằng nửa kích thước bản ngang cũ, opacity tối đa 55%, cẳng tay/dư ảnh dài gấp đôi; không chồng hiệu ứng đánh thường lên Q.
+
+CÁCH CÀI
+1. Dùng bản KR_FL 8.0.3 gốc của tác giả. Tắt bản game đích trước khi chép.
+2. Sao lưu thư mục game đích, đặc biệt các file sẽ ghi đè (xem DANH_SACH_FILE_SHA256.txt).
+3. Giải nén ZIP này. Chép NỘI DUNG bên trong CAP_NHAT vào thư mục gốc của game, cùng cấp all, all-desktop, kr3-desktop. Chọn ghi đè khi được hỏi. Không chép nguyên thư mục CAP_NHAT vào game.
+4. Mở game → phòng Anh hùng (H/F2). Chuyển nút Một tướng → Hai tướng → Vô hạn tướng. Tới trang cuối danh sách, chọn một trong ba Sett và bấm nút CHỌN dưới ảnh để thêm vào đội. Có thể thêm cả ba hoặc nhiều bản sao. Bấm avatar trong hàng chờ để bỏ đúng bản sao, hoặc Bỏ hết để xóa đội hình đang chọn.
+5. Các kỹ năng đã có sẵn, không cần nâng điểm. Bấm từng hình kỹ năng trong phòng hero để đọc mô tả.
+
+ĐỔI Q
+Chỉ chọn MỘT trong hai gói đầy đủ. Muốn đổi, chép CAP_NHAT của gói còn lại đè lên cùng bản game. Không cần xóa file dư của gói vệt dài; bản ngang không tham chiếu chúng.
+
+PHẠM VI
+- Tích hợp bộ chọn đội Vô hạn để chơi Sett. Không thêm Blackburn/Set/Godieth/Navira/Lich King đồng minh và không áp dụng buff cho boss địch.
+- Chỉ thêm hai font EB Garamond cho giao diện Sett/đội. Không Việt hóa toàn game và không đổi font hệ thống của bản gốc.
+- Không chứa EXE/DLL, không chứa save, không thay mạng/firewall.
+- Không chép GOC_TAC_GIA vào game trừ khi muốn phục hồi các script gốc đã ghi đè. Các tài nguyên Sett mới có thể để lại khi phục hồi vì script gốc không gọi chúng.
+- Gói dựa trên bản gốc FL8.0.3电脑版-解压到空文件夹直玩，自动接档.rar trong máy. Chép vào bản đã có các mod khác có thể ghi đè giao diện/runtime của các mod đó; hãy dùng riêng một bản KR_FL 8.0.3 gốc.
+
+KIỂM TRA
+Xem KIEM_TRA.txt. Bản game đang chơi không bị chỉnh sửa.
