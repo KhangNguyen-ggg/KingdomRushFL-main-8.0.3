@@ -1,0 +1,16 @@
+{
+  "payload": {
+    "all/allied_sett.lua": "87ee465e779e02faa03b90aa6dca0dee0eb94f45979db0820227cac2a78dd5a4",
+    "all/sett_visuals.lua": "e2c2c3827433a5d0c25247511ce1e7a493bb8e47a4b3bb073cb8a1b0529e7665",
+    "kr3-desktop/assets/images/fullhd/go_sett_q.lua": "9ae4b2fbd03e5d81ee8f2ac5785478abb123bc32726c0a1083a68672cc0820f6",
+    "kr3-desktop/assets/images/fullhd/go_sett_q.png": "be7228a697cb4304779f9574a068f2ca27633d4d740375d01e5c2884fa4c09b0"
+  },
+  "backup": {
+    "all/allied_sett.lua": "dac633273719ac35ccab64e25f9390d9461427f1860428773cd0924ace6268e9",
+    "all/sett_visuals.lua": "6a0561f4b6f25f6887822a9730a747dd5645d120f6e0c72919e58179dd0350dc",
+    "kr3-desktop/assets/images/fullhd/go_sett_q.png": "dc2dfbd7cd631f088c2d8b7cdc23e0caaebd2045d20c48baa648f7e319b4cd7e",
+    "kr3-desktop/assets/images/fullhd/go_sett_q.lua": "6ae697c41c5eb67104aecf5cb26b31c28244a2e34d248e342814e7c32cd5c9e6"
+  },
+  "tests": "91 checks, 0 failures",
+  "live_files_unchanged": true
+}

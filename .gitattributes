@@ -1,0 +1,10 @@
+# Game binary assets and mod packages share Git LFS; Lua stays in regular Git.
+kr3-desktop/assets/**/*.dds filter=lfs diff=lfs merge=lfs -text
+kr3-desktop/assets/**/*.png filter=lfs diff=lfs merge=lfs -text
+kr3-desktop/assets/**/*.ogg filter=lfs diff=lfs merge=lfs -text
+kr3-desktop/assets/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+kr3-desktop/assets/**/*.wav filter=lfs diff=lfs merge=lfs -text
+kr3-desktop/assets/**/*.ico filter=lfs diff=lfs merge=lfs -text
+Z_Mod/**/*.png filter=lfs diff=lfs merge=lfs -text
+Z_Mod/**/*.zip filter=lfs diff=lfs merge=lfs -text
+KRFL*.zip filter=lfs diff=lfs merge=lfs -text

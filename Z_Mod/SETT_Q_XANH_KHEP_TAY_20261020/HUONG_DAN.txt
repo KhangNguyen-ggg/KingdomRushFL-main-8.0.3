@@ -1,0 +1,28 @@
+FL803 — SETT Q XANH KHÉP NGÓN, DUỖI BÀN TAY LÊN TRÊN
+20/10/2026
+
+Thay chưởng Q phải đang xòe ngón thành bàn tay linh hồn xanh khép ngón và duỗi hướng lên trên, tham chiếu Q đấm phải 2.png trong Z_Mod.
+Căn gốc bàn tay vào tay Sett; không dịch hiệu ứng ra xa như một viên đạn. Đuôi sáng ngắn nối về cổ tay. Có 4 khung xuất hiện, hiện rõ, lóe chạm và tan.
+Cập nhật mô tả Q trong phòng hero để khớp hình mới. Hình là bản chuyển thể cho sprite 2D, không cam kết trùng 100% VFX 3D trong ảnh gốc.
+
+BẢN NÀY GỒM LUÔN BẢN TRƯỚC
+- Hai pet Song Thú tự hồi 2% HP tối đa/giây: 18/28 HP/s, có vòng hồi máu khi thực sự được hồi, hoạt động cả trong giao tranh.
+- Tử Hổ tiếp tục hồi cho Sett bằng 20% sát thương thực gây ra.
+- Hiệu ứng đòn thường của 3 Sett lớn gấp đôi, nhịp đánh chậm khoảng 10%, đã căn lại thời điểm sát thương và tọa độ tay.
+- Chưởng Q tím giữ nguyên từng pixel so với bản ZIP hồi máu pet trước.
+- Giữ nguyên chỉ số, sát thương và thời gian hồi chiêu Q từ bản trước.
+
+CÀI ĐẶT
+1. Thoát hẳn game.
+2. Chép NỘI DUNG thư mục CAP_NHAT vào thư mục FL 8.0.3 và thay thế 4 file.
+3. Mở lại game.
+Không cần cài ZIP hồi máu pet trước nếu dùng bản ZIP này. Cần nền game hiện tại đã có đầy đủ 3 Sett và các tài nguyên trước đó.
+
+BACKUP là 4 file trên máy lúc chuẩn bị bản vá này. Muốn hoàn tác về trạng thái đó: thoát game rồi chép nội dung BACKUP trở lại thư mục game.
+Không sửa hoặc ghi save. Chưa cài vào thư mục game đang chạy.
+
+KIỂM TRA
+91 kiểm tra Lua 5.1 đạt. Bộ vẽ LÖVE dựng 48 khung xem thử; kiểm tra đủ 8 ô atlas, alpha thật, 4 khung Q xanh đã đổi và toàn bộ pixel Q tím giữ nguyên.
+Chưa chơi thử trận thực tế. Không tăng kích thước atlas so với bản ZIP hồi máu pet trước: vẫn 1024x384.
+
+Xem XEM_TRUOC_DON_DANH_5.png để xem so sánh thường/Q.

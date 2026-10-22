@@ -1,0 +1,1 @@
+PASS: actual staged FX + actual animation database + game draw transform; 46 hand/frame/facing cases; seam/alpha/scale verified; production image matches approved image (0 pixels above 1/255 tolerance, max error 0); all atlas images and crop bounds validated

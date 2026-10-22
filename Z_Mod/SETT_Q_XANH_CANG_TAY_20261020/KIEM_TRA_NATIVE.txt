@@ -1,0 +1,1 @@
+PASS: native atlas 1024x384 / 8 frames / 4 blue frames changed / real alpha / purple pixels unchanged / attached strike previews

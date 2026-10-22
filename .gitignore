@@ -2,14 +2,7 @@
 .idea/
 /custom/
 
-# Exclude large/unwanted directories and files
-/kr3-desktop/assets/
+# Keep local editor settings and scratch files out of the backup.
 /BACKUP/
-*.docx
-/Z_FL803_VietHoa_SoupOfJustice_ToanBo
-/Z_FL803_InfiniteHero_SoupOfJustice_ThuNghiem
-/FONT_LICENSES
-[zZ]*
-*.zip
-*.rar
-*.7z
+Thumbs.db
+desktop.ini

@@ -1,0 +1,24 @@
+FL803 — SETT Q XANH: CẲNG TAY LINH HỒN NỐI LIỀN BÀN TAY
+20/10/2026
+
+Chưởng Q phải được vẽ lại có cả phần cẳng tay xanh tím nối liền cổ tay và bàn tay khép ngón, duỗi hướng lên trên, dựa trên Q đấm phải 2.png và ảnh cắt người dùng gửi.
+Phần cẳng tay có bề dày, thu nhỏ về cổ tay và mang các vệt lửa linh hồn vuốt ngược về phía Sett. Căn hiệu ứng vào động tác tay của Sett, lật theo hướng đánh.
+Giữ hoạt ảnh 4 giai đoạn của Q xanh: xuất hiện, duỗi chưởng, lóe chạm, tan. Q tím giữ nguyên từng pixel so với bản Q xanh khép tay trước.
+Cập nhật mô tả Q trong phòng hero cho khớp hình mới.
+
+Bản ZIP này chứa luôn phần hồi máu pet, đòn thường lớn gấp đôi và giảm nhịp đánh khoảng 10% của bản trước. Không cần cài chồng từng ZIP Sett vừa gửi.
+Hai pet vẫn tự hồi 2% HP tối đa/giây trong và ngoài giao tranh (Thanh Lang 18 HP/s, Tử Hổ 28 HP/s ở chỉ số gốc), có hiệu ứng khi thực sự hồi. Tử Hổ vẫn hồi cho Sett bằng 20% sát thương thực gây ra.
+
+CÀI ĐẶT
+1. Thoát hẳn game.
+2. Chép NỘI DUNG thư mục CAP_NHAT vào thư mục game FL 8.0.3, đồng ý thay thế 4 file.
+3. Mở lại game.
+Cần nền game hiện tại đã có đủ 3 Sett và các tài nguyên trước đó.
+
+BACKUP là 4 file game trên máy lúc chuẩn bị bản vá. Muốn hoàn tác: thoát game và chép nội dung BACKUP vào thư mục game.
+Không sửa save. Bản vá chưa được cài vào game đang chạy.
+
+KIỂM TRA
+Bộ kiểm tra Lua 5.1 và bộ vẽ LÖVE được chạy lại; kết quả kèm trong KIEM_TRA_LUA.txt và KIEM_TRA_NATIVE.txt.
+Có ảnh xem thử bằng bộ vẽ game trong XEM_TRUOC_DON_DANH_5.png.
+Chưa chơi thử trận thực tế. Hình là bản chuyển thể 2D theo ảnh tham chiếu, không cam kết giống 100% VFX 3D gốc.

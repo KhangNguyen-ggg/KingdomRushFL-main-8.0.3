@@ -1,0 +1,1 @@
+PASS: 88 branch/hand/frame/facing centering cases / old branch keeps original sizes and alpha / new preview: clean Q body 1254x1254, palm half size, alpha 140, rear forearm stretched x2 without widening the palm / forearm seam verified

@@ -1,0 +1,35 @@
+FL803 — SETT SONG THÚ HỒI MÁU / ĐÒN THƯỜNG x2 / Q THAM CHIẾU MỚI
+Ngày: 20/10/2026
+
+Bản vá được xuất riêng. Chưa chép vào game đang chạy và không sửa save.
+
+CÀI ĐẶT
+1. Thoát hẳn game trước khi chép.
+2. Chép NỘI DUNG thư mục CAP_NHAT vào thư mục game FL 8.0.3, đồng ý thay thế 4 file.
+3. Mở game lại. Bản này cần nền hiện tại đã có đủ 3 Sett và các bản sửa trước.
+4. Muốn hoàn tác: chép nội dung BACKUP vào cùng thư mục game khi game đã tắt.
+Không chép cả thư mục CAP_NHAT hoặc BACKUP thành thư mục con trong game.
+
+THAY ĐỔI
+- Chỉ Sett Song Thú: cả Thanh Lang và Tử Hổ tự hồi 2% HP tối đa mỗi giây, trong và ngoài giao tranh, kể cả lúc bị choáng hoặc đang ra đòn. Với chỉ số gốc: 18 và 28 HP/s.
+- Không hồi quá HP tối đa, không hồi sinh pet chết, ngừng hồi nếu chủ chết. Giữ cơ chế gọi lại pet sau 12 giây.
+- Hồi máu hiện vòng sáng xanh lục nhạt bám pet, chỉ khi có HP thực sự được hồi, tối đa một hiệu ứng/giây/pet.
+- Tử Hổ vẫn hồi cho Sett bằng 20% sát thương thực gây ra; thêm vòng sáng cho Sett khi thực sự nhận lượng hồi này, tối đa một lần/giây từ mỗi Tử Hổ.
+- Cả 3 Sett: dư ảnh nắm đấm thường trái/phải lớn gấp đôi: 60x52 / 69x59,8 đơn vị hiển thị; vẫn bám tay. Nổ tròn trên mục tiêu lớn từ 26/30 thành 52/60.
+- Cả 3 Sett: khoảng chờ đòn trái/phải từ 1/0,2s thành 1,1/0,22s; hoạt ảnh ra đòn 8 thành 9 khung, thời điểm chạm từ khung 4 thành khung 5. Nhịp đánh thực tế chậm hơn khoảng 10%.
+- Q: thay atlas theo 4 ảnh Q đấm trái/phải trong Z_Mod; chưởng tím quặp vào, chưởng xanh xòe ra, 4 khung mỗi bên. Q vẫn to hơn đòn thường; nổ trúng Q 76 đơn vị để không bé hơn nổ đòn thường.
+- Căn lại chuỗi tọa độ tay theo hoạt ảnh 9 khung. Giữ bộ kỹ năng, sát thương, thứ tự trái/phải và khả năng chặn quái hiện có.
+- Cập nhật mô tả pet trong ô nội tại của Sett Song Thú.
+
+TÀI NGUYÊN
+- Dùng lại atlas đòn đánh đang có cho vòng hồi máu; không nạp thêm bộ texture hero khác.
+- Atlas Q vẫn 8 khung, đổi từ 1024x256 thành 1024x384. Nếu texture được giải mã RGBA8, phần tăng là khoảng 0,5 MiB GPU; đây là ước tính kích thước ảnh, không phải số đo RAM game.
+- Thêm một tracker cho mỗi pet để hồi máu liên tục ngay cả khi coroutine đánh đang bận. Hiệu ứng ngắn tự hủy, không phát sinh vô hạn khi pet đầy máu.
+
+KIỂM TRA
+- 91 kiểm tra Lua 5.1 đạt: hồi máu/tracker/pet, nhịp đánh, Q, W/E/R, giữ block, hàng chờ InfiniteHero, Set và Blackburn.
+- Bộ vẽ LÖVE đã dựng 48 khung đòn đánh cùng ảnh hồi máu hai pet, kiểm tra alpha thật và 8 ô atlas Q.
+- So sánh SHA-256 của file gốc và BACKUP; kiểm tra nội dung ZIP và CRC trước khi giao.
+- Chưa chơi thử trận thực tế hoặc đo FPS/RAM trên máy đang chơi.
+
+Xem XEP_HANG_10_BOSS.md để đọc tiêu chí và bảng đánh giá sức mạnh từ mã đang cài.

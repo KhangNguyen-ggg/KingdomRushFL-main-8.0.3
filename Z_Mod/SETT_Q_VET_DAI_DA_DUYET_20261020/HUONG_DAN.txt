@@ -1,0 +1,33 @@
+FL803 — SETT Q VỆT DÀI, BẢN ĐÃ DUYỆT
+20/10/2026
+
+Áp dụng cho Sett Gốc, Sett Song Thú và Sett Nhập Hồn theo mẫu người dùng đã duyệt.
+
+THAY ĐỔI
+- Giữ bàn chưởng và chiều cao Q bằng 50% so với FL803_Sett_Q_Ngang_TraiTim_PhaiXanh.zip; opacity tối đa 140/255, khoảng 55%.
+- Kéo dài riêng phần cẳng tay/vệt năng lượng phía sau gấp đôi; bàn chưởng phía trước giữ nguyên độ lớn của mẫu 50%.
+- Căn tâm chưởng vào bàn tay theo từng tư thế, đúng cả khi đổi hướng. Trái tím, phải xanh.
+- Q dùng ảnh thân riêng đã bỏ vòng sáng và dư ảnh đánh thường. Đòn thường vẫn dùng ảnh thân cũ.
+- Khi Q bắt đầu, dừng các lớp dư ảnh/nổ trúng đòn thường đang còn chạy. Q dùng lóe chạm gốc trong hoạt ảnh chưởng, không chồng thêm nổ trúng đòn thường.
+- Hình ảnh vẫn mờ dần khi kết thúc.
+
+Sát thương Q, hồi chiêu, tốc đánh, thời điểm gây sát thương, giữ block, hồi HP và hai pet theo bản trước.
+
+CÀI ĐẶT
+1. Thoát hẳn game khi muốn cài.
+2. Chép NỘI DUNG thư mục CAP_NHAT vào thư mục KingdomRushFL-main 8.0.3, đồng ý thay thế file.
+3. Mở lại game. Không cần cài ZIP sửa vị trí bản cũ trước; bản này đã gồm phần căn vị trí.
+
+CAP_NHAT có 6 file: 5 file được thay và 1 PNG mới cho thân Q.
+BACKUP giữ các file game trước khi tạo bản vá. Muốn hoàn tác: thoát game và chép nội dung BACKUP trở lại. Nếu trước đó chưa có go_sett_combat_q_clean.png, sau hoàn tác file này không còn được game dùng; có thể xóa PNG đó để lấy lại dung lượng đĩa.
+
+Bản FL803_Sett_Q_Ngang_TraiTim_PhaiXanh_CanViTri.zip vẫn là nhánh cũ riêng, giữ nguyên kích thước và độ đậm cũ. Hai ZIP trước không bị thay đổi.
+
+KIỂM TRA
+99 kiểm tra Lua 5.1 đạt: ba Sett, bộ kỹ năng, hồi máu, giữ block, hình đòn thường/Q riêng, bỏ nổ thường khi Q, lớp hồi HP không bị mất, nối vệt ở hai hướng và alpha.
+Kiểm tra bằng bộ vẽ LÖVE thật: 46 trường hợp tay/khung/hướng quay; điểm nối, tỉ lệ và alpha đúng. Ảnh dựng từ mã trong CAP_NHAT khớp hoàn toàn với vùng nhân vật/hiệu ứng của mẫu đã duyệt: sai số màu tối đa 0.
+Kiểm tra kích thước ảnh, tọa độ cắt atlas, SHA-256 các bản sao lưu và mọi file đọc lại từ ZIP.
+
+Hai phần bàn chưởng/vệt dùng lại cùng texture Q và nằm trong một thực thể hiệu ứng. Bổ sung một texture thân Q riêng, không thay ảnh thân đòn thường.
+
+Chưa cài vào game đang chạy, không sửa save. Chưa chơi thử trận thực tế hoặc đo FPS/RAM.

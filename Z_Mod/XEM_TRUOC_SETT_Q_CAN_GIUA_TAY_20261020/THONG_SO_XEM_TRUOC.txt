@@ -1,0 +1,15 @@
+SETT Q — MẪU CĂN GIỮA TAY, CHƯA ĐƯỢC DUYỆT
+
+Ảnh được dựng từ sprite và phép vẽ thực tế của game.
+Kích thước Q: còn 50% chiều rộng và chiều cao so với FL803_Sett_Q_Ngang_TraiTim_PhaiXanh.zip.
+Q trái tím: 46,75 × 37,4. Q phải xanh: 50,15 × 40,8.
+Opacity tối đa: 140/255, khoảng 55%; giữ chuyển mờ dần cuối hoạt ảnh.
+
+Căn lại vị trí bàn tay theo từng tư thế thân người và tâm phần bàn tay của từng khung hiệu ứng. Bỏ cách hạ cố định 6 đơn vị trong mẫu trước.
+
+DUYET_Q_CAN_GIUA.png: tay vươn ra; hàng trên là sprite gốc để đối chiếu, hàng dưới có lớp Q đã căn lại.
+DUYET_Q_THU_TAY.png: tay thu về; cùng cách đối chiếu.
+DOI_CHIEU_THEO_TAY.png: chuỗi tư thế với dấu + ở điểm căn; hàng phải xanh kiểm tra quay ngược.
+
+Đây là mẫu xem trước. Chưa cập nhật mã game, thư mục CAP_NHAT hay ZIP. Chưa thử trong trận.
+Mã dựng mẫu: C:/Users/user/AppData/Local/Temp/KRFL_Sett_Q_Center_20261020/native/main.lua

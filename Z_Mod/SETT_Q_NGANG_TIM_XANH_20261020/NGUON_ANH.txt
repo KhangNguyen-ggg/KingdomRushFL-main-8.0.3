@@ -1,0 +1,7 @@
+Skill imagegen: C:/Users/user/.codex/skills/.system/imagegen/SKILL.md
+Tham chiếu chính: ảnh người dùng gửi trong lượt này, gồm góc đánh ngang trong LoL và bảng 12 khung chưởng xanh 4 cột x 3 hàng.
+Yêu cầu tạo hình: giữ cẳng tay vươn ngang từ trái sang phải, bàn tay xanh khép ngón nhìn nghiêng, chất liệu xanh tím linh hồn; đổi nền đen sang alpha, căn chuỗi xuất hiện/chạm/tan.
+Nguồn sinh bằng imagegen (giữ nguyên): C:/Users/user/.codex/generated_images/01a13b17-1fc0-7961-8761-6c60a55d1e41/exec-bc8f184a-fab5-44c9-b104-fbbce25d52d9.png
+Tài nguyên cuối trong workspace: CAP_NHAT/kr3-desktop/assets/images/fullhd/go_sett_q.png và go_sett_q.lua.
+Đóng gói bằng LÖVE: giữ nguyên 4 ô tím 256x192 ở nửa trên; 12 ô xanh 128x96 ở nửa dưới, tổng atlas vẫn 1024x384. Giữ khung lóe nhỏ thay khung nổ quá lớn của mẫu để tránh điểm lóe lệch khỏi tay.
+Hiệu ứng trái/phải thường dùng lại atlas nắm đấm đang có; đổi thứ tự hoạt ảnh và màu nổ trúng trong mã.

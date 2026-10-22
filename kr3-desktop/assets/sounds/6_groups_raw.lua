@@ -1,0 +1,1822 @@
+﻿-- chunkname: @./_assets/kr6-desktop/sounds/groups.lua
+
+return {
+	common = {
+		keep = true,
+		files = {
+			"kr_voice_geraldlightseeker_taunt01_c.ogg",
+			"kr_voice_zefira_taunt01_b.ogg",
+			"kr_voice_bolinfarslayer_taunt01_b.ogg",
+			"kr_voice_malik_taunt01_b.ogg",
+			"kr_voice_rhodes_taunt01_b.ogg",
+			"kr_voice_ashbite_taunt01_b.ogg",
+			"kr_voice_drakkan_taunt01_b.ogg",
+			"kr_gemina_taunt_d.ogg",
+			"kr_connor_taunt_b.ogg",
+			"kr_ignus_taunt01_c.ogg",
+			"kr_oni_taunt01_a.ogg",
+			"kr_illiana_taunt01_a.ogg",
+			"kr_voice_archergarrison_taunt01_b.ogg",
+			"kr_voice_scholarmage_taunt01_b.ogg",
+			"kr_voice_royalcatapult_taunt01_d.ogg",
+			"kr_voice_knightsorder_taunt01_a.ogg",
+			"kr_voice_elveneliteranger_taunt01_a.ogg",
+			"kr_voice_dwarvenculverin_taunt01_c.ogg",
+			"kr_aceprospectors_taunt02_c.ogg",
+			"kr_sunraymaster_taunt_b.ogg",
+			"kr_ironbarktreant_taunt_b.ogg",
+			"kr_lightpriestess_taunt_b.ogg",
+			"kr_wildcathuntress_taunt_e.ogg",
+			"kr_alchemistshack_taunt01_b.ogg",
+			"kr_arcaneforger_taunt01_b.ogg",
+			"kr_cursedcrossbow_taunt01_c.ogg",
+			"kr_sentrywatchtower_taunt01_c.ogg",
+			"kr6_sfx_holder_clearHolder_op3_v1.ogg",
+			"kr6_sfx_ui_victoryScreen_starClaim_1_v1.ogg",
+			"kr6_sfx_ui_victoryScreen_starClaim_2_v1.ogg",
+			"kr6_sfx_ui_victoryScreen_starClaim_3_v1.ogg",
+			"kr6_sfx_ui_endStageScreen_levelUp_xpBarUp_short_v1.ogg",
+			"kr6_sfx_ui_endStageScreen_levelUp_xpBarUp_long_v1.ogg",
+			"kr6_sfx_ui_endStageScreen_levelUp_feedback_v1.ogg",
+			"kr6_sfx_ui_victoryScreen_stinger_v1.ogg",
+			"kr6_sfx_ui_victoryDefeatScreen_cards_v1.ogg",
+			"kr6_sfx_ui_buttonHover_op3_v1.ogg",
+			"kr6_sfx_ui_buttonClick_v1.ogg",
+			"kr6_sfx_achievementPopup_v1.ogg",
+			"kr6_sfx_achievementRoom_achievementClaim_v1.ogg",
+			"kr6_sfx_towerHeroSpellRoom_equip_v1.ogg",
+			"kr6_sfx_towerHeroSpellRoom_buyUpgrade_v1.ogg",
+			"kr6_sfx_towerHeroSpellRoom_resetUpgrade_v1.ogg",
+			"kr6_sfx_towerHeroSpellRoom_buyLevel_v1.ogg",
+			"kr6_sfx_powers_royalDecree_lvl1_v4.ogg",
+			"kr6_sfx_rewardRoom_rewardUnlock_glow_v1.ogg",
+			"kr6_sfx_rewardRoom_rewardUnlock_reward_v1.ogg",
+			"kr6_sfx_notificationPopup_in_v1.ogg",
+			"kr6_sfx_notificationScreen_in_v1.ogg",
+			"kr6_sfx_map_stage4_wallBreak_v1.ogg",
+			"kr6_sfx_map_stage5_forestBurn_v1.ogg",
+			"kr6_sfx_map_stage8_fortressBreak_v1.ogg",
+			"kr6_sfx_map_stage11_rockBreak_v1.ogg",
+			"kr6_sfx_ui_defeatScreen_fullSeq_withoutCards_v2.ogg",
+			"kra_sfx_ui_gemCounter_SINGLE_v1.ogg",
+			"kr6_sfx_loadingScreen_IN_v1.ogg",
+			"kr6_sfx_loadingScreen_OUT_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_deploy_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var1_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var2_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var3_v1.ogg",
+			"kra_sfx_combat_bigChar_meleeAttack_noSword_var2_v1.ogg",
+			"kra_sfx_combat_bigChar_meleeAttack_noSword_var3_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_basicAttack_cast_var4_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_basicAttack_cast_var5_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_basicAttack_cast_var6_v1.ogg",
+			"kr5_sfx_UIgate-close.ogg",
+			"kr5_sfx_UIgate-open_op1.ogg",
+			"Level_up.ogg",
+			"Sound_ArrowHit2.ogg",
+			"Sound_ArrowHit3.ogg",
+			"Sound_ArrowRelease2.ogg",
+			"Sound_ArrowRelease3.ogg",
+			"Sound_Bomb1.ogg",
+			"Sound_Coins.ogg",
+			"Sound_CommonAreaHit.ogg",
+			"Sound_EnemyExplode1.ogg",
+			"Sound_GUIMouseOverTowerIcon.ogg",
+			"Sound_GUIOpenTowerMenu.ogg",
+			"Sound_HumanDead1.ogg",
+			"Sound_HumanDead2.ogg",
+			"Sound_HumanDead3.ogg",
+			"Sound_HumanDead4.ogg",
+			"Sound_LooseLife.ogg",
+			"Sound_MageShot.ogg",
+			"Sound_MapNewFlag.ogg",
+			"Sound_MapRoad.ogg",
+			"Sound_NextWaveReady.ogg",
+			"Sound_NotificationPaperOver.ogg",
+			"Sound_NotificationSecondLevel.ogg",
+			"Sound_RallyPointPlaced.ogg",
+			"Sound_SpellRefresh.ogg",
+			"Sound_SpellSelect.ogg",
+			"Sound_TowerBuilding.ogg",
+			"Sound_TowerSell.ogg",
+			"Sound_WaveIncoming.ogg",
+			"kr5_sfx_victorystars_3_v1.ogg",
+			"inapp_cash.ogg",
+			"inapp_chin.ogg",
+			"inapp_gems.ogg",
+			"inapp_gnome.ogg",
+			"kr5_sfx_heroselect_op2.ogg",
+			"kr5_sfx_balloon-in.ogg",
+			"kr5_sfx_balloon-out.ogg",
+			"kr5_sfx_flagfall.ogg",
+			"kr5_sfx_genericbuttonsoft_op1.ogg",
+			"kr5_sfx_genericbuttonsoft_op2.ogg",
+			"kra_sfx_ui_buttonUnavailable_v1.ogg",
+			"kr5_sfx_heroscroll_op1.ogg",
+			"kr5_sfx_heroselect_op1.ogg",
+			"kr5_sfx_heroskillconfirm.ogg",
+			"kr5_sfx_heroskillselect.ogg",
+			"kra_sfx_ui_rewards_unlock_appear-stomp_v1.ogg",
+			"kra_sfx_ui_mapDotsAppear_op2_v2.ogg",
+			"kra_sfx_ui_stageFlagAppear_v1.ogg",
+			"kra_sfx_ui_buttonOut_op2_v2.ogg",
+			"kra_sfx_ui_towerWheelDrag_tapOn_v1.ogg",
+			"kra_sfx_ui_towerWheelDrag_tapOff_v1.ogg",
+			"kra_sfx_ui_stageVictory_v1.ogg",
+			"kra_sfx_ui_stageDefeat_v1.ogg",
+			"kr4_flag_glow.ogg",
+			"kr4_map_star.ogg",
+			"Sound_SoldiersFighting-01.ogg",
+			"Sound_SoldiersFighting-02.ogg",
+			"Sound_SoldiersFighting-03.ogg",
+			"Sound_SoldiersFighting-04.ogg",
+			"Sound_SoldiersFighting-05.ogg"
+		},
+		ids = {}
+	},
+	splash = {
+		files = {
+			"Ironhide_SoundLogo_Generic.ogg",
+			"kr6_sfx_splashScreen_v1.ogg"
+		},
+		ids = {}
+	},
+	music_screen_map = {
+		sounds = {
+			"MusicMap"
+		}
+	},
+	music_screen_slots = {
+		sounds = {
+			"MusicMainMenu"
+		}
+	},
+	music_screen_credits = {
+		sounds = {
+			"MusicCredits"
+		}
+	},
+	music_screen_kr5_end = {
+		sounds = {
+			"MusicEndVictory",
+			"MusicSuspense",
+			"MusicCredits"
+		}
+	},
+	music_stage01 = {
+		sounds = {
+			"MusicBattlePrep_01",
+			"MusicBattle_01"
+		}
+	},
+	music_stage02 = {
+		sounds = {
+			"MusicBattlePrep_02",
+			"MusicBattle_02"
+		}
+	},
+	music_stage03 = {
+		sounds = {
+			"MusicBattlePrep_03",
+			"MusicBattle_03"
+		}
+	},
+	music_stage04 = {
+		sounds = {
+			"MusicBattlePrep_04",
+			"MusicBattle_04"
+		}
+	},
+	music_stage05 = {
+		sounds = {
+			"MusicBattlePrep_05",
+			"MusicBattle_05"
+		}
+	},
+	music_stage06 = {
+		sounds = {
+			"MusicBattlePrep_06",
+			"MusicBattle_06"
+		}
+	},
+	music_stage07 = {
+		sounds = {
+			"MusicBattlePrep_07",
+			"MusicBattle_07"
+		}
+	},
+	music_stage08 = {
+		sounds = {
+			"MusicBattlePrep_08",
+			"MusicBattle_08",
+			"MusicBossFight_8"
+		}
+	},
+	music_stage09 = {
+		sounds = {
+			"MusicBattlePrep_09",
+			"MusicBattle_09"
+		}
+	},
+	music_stage10 = {
+		sounds = {
+			"MusicBattlePrep_10",
+			"MusicBattle_10"
+		}
+	},
+	music_stage11 = {
+		sounds = {
+			"MusicBattlePrep_11",
+			"MusicBattle_11"
+		}
+	},
+	music_stage12 = {
+		sounds = {
+			"MusicBattlePrep_12",
+			"MusicBattle_12"
+		}
+	},
+	music_stage13 = {
+		sounds = {
+			"MusicBattlePrep_13",
+			"MusicBattle_13",
+			"MusicBossFight_13"
+		}
+	},
+	music_stage14 = {
+		sounds = {
+			"MusicBattlePrep_14",
+			"MusicBattle_14"
+		}
+	},
+	music_stage15 = {
+		sounds = {
+			"MusicBattlePrep_15",
+			"MusicBattle_15"
+		}
+	},
+	music_stage16 = {
+		sounds = {
+			"MusicBattlePrep_16",
+			"MusicBattle_16"
+		}
+	},
+	music_stage17 = {
+		sounds = {
+			"MusicBattlePrep_17",
+			"MusicBattle_17"
+		}
+	},
+	music_stage18 = {
+		sounds = {
+			"MusicBattlePrep_18",
+			"MusicBattle_18",
+			"MusicBattle_2_18",
+			"MusicBossPreFight_18",
+			"MusicBossFight_18"
+		}
+	},
+	hero_gerald = {
+		files = {
+			"kr_voice_geraldlightseeker_taunt01_c.ogg",
+			"kr_voice_geraldlightseeker_taunt02_a.ogg",
+			"kr_voice_geraldlightseeker_taunt03_b.ogg",
+			"kr_voice_geraldlightseeker_taunt04_b.ogg",
+			"kr_voice_geraldlightseeker_ultimate_a.ogg",
+			"kr_voice_geraldlightseeker_death_a.ogg",
+			"kr_voice_geraldlightseeker_levelup_c.ogg",
+			"kr6_sfx_heroes_gerald_inspireCourage_cast_v1.ogg",
+			"kr6_sfx_heroes_gerald_shieldOfRetribution_cast_v1.ogg",
+			"kr6_sfx_heroes_gerald_fatedSurvivor_cast_v1.ogg",
+			"kr6_sfx_heroes_gerald_divineBlade_cast_op1_v1.ogg",
+			"kr6_sfx_heroes_gerald_divineBlade_impact_v1.ogg"
+		}
+	},
+	hero_zefira = {
+		files = {
+			"kr_voice_zefira_taunt01_b.ogg",
+			"kr_voice_zefira_taunt02_d.ogg",
+			"kr_voice_zefira_taunt03_b.ogg",
+			"kr_voice_zefira_taunt04_c.ogg",
+			"kr_voice_zefira_ultimate_b.ogg",
+			"kr_voice_zefira_death_b.ogg",
+			"kr_voice_zefira_levelup_a.ogg",
+			"kr6_sfx_heroes_zefira_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_zefira_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_zefira_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_zefira_dazzlingHammer_cast_v1.ogg",
+			"kr6_sfx_heroes_zefira_shieldingBlades_cast_v1.ogg",
+			"kr6_sfx_heroes_zefira_astralBlink_In_v1.ogg",
+			"kr6_sfx_heroes_zefira_astralBlink_Out_v1.ogg",
+			"kr6_sfx_heroes_zefira_etherealSpears_cast_woOut_v1.ogg"
+		}
+	},
+	hero_bolin = {
+		files = {
+			"kr_voice_bolinfarslayer_taunt01_b.ogg",
+			"kr_voice_bolinfarslayer_taunt02_c.ogg",
+			"kr_voice_bolinfarslayer_taunt03_b.ogg",
+			"kr_voice_bolinfarslayer_taunt04_a.ogg",
+			"kr_voice_bolinfarslayer_ultimate_c.ogg",
+			"kr_voice_bolinfarslayer_death_a.ogg",
+			"kr_voice_bolinfarslayer_levelup_c.ogg",
+			"kr6_sfx_heroes_bolin_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_bolin_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_bolin_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_bolin_smokeMortar_cast_v1.ogg",
+			"kr6_sfx_heroes_bolin_smokeMortar_impact_tripleImpact_v1.ogg",
+			"kr6_sfx_heroes_bolin_minefield_cast_throw_v1.ogg",
+			"kr6_sfx_heroes_bolin_minefield_cast_armed_v1.ogg",
+			"kr6_sfx_heroes_bolin_minefield_cast_explosion_var1_v1.ogg",
+			"kr6_sfx_heroes_bolin_minefield_cast_explosion_var2_v1.ogg",
+			"kr6_sfx_heroes_bolin_minefield_cast_explosion_var3_v1.ogg",
+			"kr6_sfx_heroes_bolin_giantSlayer_attack_var1_v1.ogg",
+			"kr6_sfx_heroes_bolin_giantSlayer_attack_var2_v1.ogg",
+			"kr6_sfx_heroes_bolin_giantSlayer_attack_var3_v1.ogg",
+			"kr6_sfx_heroes_bolin_suppressiveFire_cast_drink_v1.ogg",
+			"kr6_sfx_heroes_bolin_suppressiveFire_cast_reload_v1.ogg"
+		}
+	},
+	hero_malik = {
+		files = {
+			"kr6_sfx_heroes_malik_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_malik_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_malik_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_malik_unbreakable_cast_v1.ogg",
+			"kr6_sfx_heroes_malik_hammernado_cast_loopStart_v1.ogg",
+			"kr6_sfx_heroes_malik_hammernado_cast_LOOP_v1.ogg",
+			"kr6_sfx_heroes_malik_hammernado_cast_loopEnd_v1.ogg",
+			"kr6_sfx_heroes_malik_earthquake_cast_v1.ogg",
+			"kr6_sfx_heroes_malik_obliterate_cast_v1.ogg",
+			"kr_voice_malik_taunt01_b.ogg",
+			"kr_voice_malik_taunt02_b.ogg",
+			"kr_voice_malik_taunt03_a.ogg",
+			"kr_voice_malik_taunt04_a.ogg",
+			"kr_voice_malik_ultimate_d.ogg",
+			"kr_voice_malik_death_a.ogg",
+			"kr_voice_malik_levelup_c.ogg"
+		}
+	},
+	hero_ashbite = {
+		files = {
+			"kr6_sfx_heroes_ashbite_basicAttack_var1_v1.ogg",
+			"kr6_sfx_heroes_ashbite_basicAttack_var2_v1.ogg",
+			"kr6_sfx_heroes_ashbite_basicAttack_var3_v1.ogg",
+			"kr6_sfx_heroes_ashbite_blazingBreath_cast_v1.ogg",
+			"kr6_sfx_heroes_ashbite_searingSneeze_cast_v1.ogg",
+			"kr6_sfx_heroes_ashbite_feedingTime_attack_var1_v1.ogg",
+			"kr6_sfx_heroes_ashbite_feedingTime_attack_var2_v1.ogg",
+			"kr6_sfx_heroes_ashbite_feedingTime_attack_var3_v1.ogg",
+			"kr6_sfx_heroes_ashbite_feedingTime_flyDown_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_impact_var1_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_impact_var2_v1.ogg",
+			"kr6_sfx_heroes_ashbite_wildfireBarrage_impact_var3_v1.ogg",
+			"kr_voice_ashbite_taunt01_b.ogg",
+			"kr_voice_ashbite_taunt02_b.ogg",
+			"kr_voice_ashbite_taunt03_c.ogg",
+			"kr_voice_ashbite_taunt04_a.ogg",
+			"kr_voice_ashbite_death_d.ogg",
+			"kr_voice_ashbite_levelup_a.ogg"
+		}
+	},
+	hero_drakkan = {
+		files = {
+			"kr6_sfx_heroes_drakkan_arcaneStorm_cast_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var1_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var2_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var3_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var4_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var5_v1.ogg",
+			"kr6_sfx_heroes_drakkan_arcaneStorm_impact_var6_v1.ogg",
+			"kr6_sfx_heroes_drakkan_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_drakkan_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_drakkan_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_drakkan_deconstruct_cast_op1_v1.ogg",
+			"kr6_sfx_heroes_drakkan_doubleDragon_cast_op1_v1.ogg",
+			"kr6_sfx_heroes_drakkan_doubleDragon_disappear_v1.ogg",
+			"kr6_sfx_heroes_drakkan_talentTeleport_in_v1.ogg",
+			"kr6_sfx_heroes_drakkan_talentTeleport_out_v1.ogg",
+			"kr6_sfx_heroes_drakkan_nullifyingPulse_cast_op1_v1.ogg",
+			"kr_voice_drakkan_taunt01_b.ogg",
+			"kr_voice_drakkan_taunt02_b.ogg",
+			"kr_voice_drakkan_taunt03_c.ogg",
+			"kr_voice_drakkan_taunt04_c.ogg",
+			"kr_voice_drakkan_ultimate_b.ogg",
+			"kr_voice_drakkan_death_c.ogg",
+			"kr_voice_drakkan_levelup_d.ogg"
+		}
+	},
+	hero_rhodes = {
+		files = {
+			"kr6_sfx_heroes_rhodes_solarFlare_cast_v1.ogg",
+			"kr6_sfx_heroes_rhodes_solarFlare_rayCast_v1.ogg",
+			"kr6_sfx_heroes_rhodes_strongCrust_cast_v1.ogg",
+			"kr6_sfx_heroes_rhodes_sunbeam_cast_op1_v1.ogg",
+			"kr6_sfx_heroes_rhodes_twistingTop_loop_v1.ogg",
+			"kr6_sfx_heroes_rhodes_twistingTop_loopEnd_v1.ogg",
+			"kr6_sfx_heroes_rhodes_twistingTop_loopStart_v1.ogg",
+			"kr_voice_rhodes_taunt01_b.ogg",
+			"kr_voice_rhodes_taunt02_a.ogg",
+			"kr_voice_rhodes_taunt03_b.ogg",
+			"kr_voice_rhodes_taunt04_c.ogg",
+			"kr_voice_rhodes_ultimate_c.ogg",
+			"kr_voice_rhodes_death_b.ogg",
+			"kr_voice_rhodes_levelup_a.ogg"
+		}
+	},
+	hero_myriath = {
+		files = {
+			"kr6_sfx_heroes_gemina_fowardIllusion_cast_v1.ogg",
+			"kr6_sfx_heroes_gemina_guardingDecoy_cast_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorSlashes_cast.ogg",
+			"kr6_sfx_heroes_gemina_mirrorSlashes_barrage_v1.ogg",
+			"kr6_sfx_heroes_gemina_iAmLegion_cast_v2.ogg",
+			"kr6_sfx_heroes_gemina_illusion_death_var1_v1.ogg",
+			"kr6_sfx_heroes_gemina_illusion_death_var2_v1.ogg",
+			"kr6_sfx_heroes_gemina_illusion_death_var3_v1.ogg",
+			"kr6_sfx_heroes_gemina_illusion_deathExplosion_var1_v1.ogg",
+			"kr6_sfx_heroes_gemina_illusion_deathExplosion_var2_v1.ogg",
+			"kr6_sfx_heroes_gemina_illusion_deathExplosion_var3_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorMissiles_impact_var1_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorMissiles_impact_var2_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorMissiles_impact_var3_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorMissiles_impact_var4_v1.ogg",
+			"kr6_sfx_heroes_gemina_mirrorMissiles_impact_var5_v1.ogg",
+			"kr_gemina_taunt_d.ogg",
+			"kr_gemina_taunt02_c.ogg",
+			"kr_gemina_taunt03_c.ogg",
+			"kr_gemina_taunt04_c.ogg",
+			"kr_gemina_ultimate_c.ogg",
+			"kr_gemina_death_d.ogg",
+			"kr_gemina_levelup_c.ogg"
+		}
+	},
+	hero_connor = {
+		files = {
+			"kr6_sfx_heroes_connor_arterialSlash_cast_v1.ogg",
+			"kr6_sfx_heroes_connor_earthshatter_jump_v2.ogg",
+			"kr6_sfx_heroes_connor_earthshatter_impact_v2.ogg",
+			"kr6_sfx_heroes_connor_templarRage_cast_v1.ogg",
+			"kr6_sfx_heroes_connor_templarRage_basicAttack_var1_v1.ogg",
+			"kr6_sfx_heroes_connor_templarRage_basicAttack_var2_v1.ogg",
+			"kr6_sfx_heroes_connor_templarRage_basicAttack_var3_v1.ogg",
+			"kr6_sfx_heroes_connor_retribution_fullSeq_v1.ogg",
+			"kr_connor_taunt_b.ogg",
+			"kr_connor_taunt02_b.ogg",
+			"kr_connor_taunt03_b.ogg",
+			"kr_connor_taunt04_b.ogg",
+			"kr_connor_ultimate_b.ogg",
+			"kr_connor_death_c.ogg",
+			"kr_connor_levelup_c.ogg"
+		}
+	},
+	hero_ignus = {
+		files = {
+			"kr_ignus_taunt01_c.ogg",
+			"kr_ignus_taunt02_a.ogg",
+			"kr_ignus_taunt03_a.ogg",
+			"kr_ignus_taunt04_c.ogg",
+			"kr_ignus_ultimate_b.ogg",
+			"kr_ignus_death_c.ogg",
+			"kr_ignus_levelup_b.ogg",
+			"kr6_sfx_heroes_ignus_fireball_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireball_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireball_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireball_impact_var1_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireball_impact_var2_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireball_impact_var3_v1.ogg",
+			"kr6_sfx_heroes_ignus_heatwave_cast_v1.ogg",
+			"kr6_sfx_heroes_ignus_flameRush_cast_v1.ogg",
+			"kr6_sfx_heroes_ignus_flameRush_bounceHit_var1_v1.ogg",
+			"kr6_sfx_heroes_ignus_flameRush_bounceHit_var2_v1.ogg",
+			"kr6_sfx_heroes_ignus_flameRush_bounceHit_var3_v1.ogg",
+			"kr6_sfx_heroes_ignus_supernova_oneShot_v1.ogg",
+			"kr6_sfx_heroes_ignus_supernova_loopStart_v1.ogg",
+			"kr6_sfx_heroes_ignus_supernova_loop.ogg",
+			"kr6_sfx_heroes_ignus_supernova_loopEnd_v1.ogg",
+			"kr6_sfx_heroes_ignus_transformation_in_v1.ogg",
+			"kr6_sfx_heroes_ignus_transformation_out_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireMovement_var1_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireMovement_var2_v1.ogg",
+			"kr6_sfx_heroes_ignus_fireMovement_var3_v1.ogg",
+			"kr6_sfx_heroes_ignus_basicAttack_cast_var1_op1_v1.ogg",
+			"kr6_sfx_heroes_ignus_basicAttack_cast_var2_op1_v1.ogg",
+			"kr6_sfx_heroes_ignus_basicAttack_cast_var3_op1_v1.ogg",
+			"kr6_sfx_heroes_ignus_basicAttack_cast_var4_op1_v1.ogg",
+			"kr6_sfx_heroes_ignus_basicAttack_cast_var5_op1_v1.ogg"
+		}
+	},
+	hero_oni = {
+		files = {
+			"kr_oni_taunt01_a.ogg",
+			"kr_oni_taunt02_a.ogg",
+			"kr_oni_taunt03_b.ogg",
+			"kr_oni_taunt04_c.ogg",
+			"kr_oni_ultimate_b.ogg",
+			"kr_oni_death_b.ogg",
+			"kr_oni_levelup_c.ogg",
+			"kr6_sfx_heroes_oni_deathStrike_cast_v1.ogg",
+			"kr6_sfx_heroes_oni_netherfocus_cast_v1.ogg",
+			"kr6_sfx_heroes_oni_hellishStrike_cast_v1.ogg",
+			"kr6_sfx_heroes_oni_hellishStrike_phaseOut_v1.ogg",
+			"kr6_sfx_heroes_oni_hellishStrike_hits_v1.ogg",
+			"kr6_sfx_heroes_oni_swordTorment_cast-swordsUp_v1.ogg"
+		}
+	},
+	hero_illiana = {
+		files = {
+			"kr_illiana_taunt01_a.ogg",
+			"kr_illiana_taunt02_a.ogg",
+			"kr_illiana_taunt03_b.ogg",
+			"kr_illiana_taunt04_c.ogg",
+			"kr_illiana_taunt01_a.ogg",
+			"kr_illiana_taunt01_a.ogg",
+			"kr_illiana_death_b.ogg",
+			"kr_illiana_ultimate_b.ogg",
+			"kr_illiana_levelup_a.ogg",
+			"kr6_sfx_heroes_illiana_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_illiana_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_illiana_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_heroes_illiana_sparkyBasicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_heroes_illiana_sparkyBasicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_illiana_sparkyBasicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_heroes_illiana_tag_cast_v1.ogg",
+			"kr6_sfx_heroes_illiana_tag_bounce_var1_v1.ogg",
+			"kr6_sfx_heroes_illiana_tag_bounce_var2_v1.ogg",
+			"kr6_sfx_heroes_illiana_tag_bounce_var3_v1.ogg",
+			"kr6_sfx_heroes_illiana_glitterBomb_impact_v1.ogg",
+			"kr6_sfx_heroes_illiana_easyPrey_impact_v1.ogg",
+			"kr6_sfx_heroes_illiana_sparkyIncinerate_cast_op1_v1.ogg",
+			"kr6_sfx_heroes_illiana_sparkyIncinerate_fire_op2_v1.ogg"
+		}
+	},
+	tower_archers = {
+		files = {
+			"kr_voice_archergarrison_taunt01_b.ogg",
+			"kr_voice_archergarrison_taunt02_c.ogg",
+			"kr_voice_archergarrison_taunt03_b.ogg",
+			"kr_voice_archergarrison_taunt04_d.ogg",
+			"kr_voice_archergarrison_skill-a_c.ogg",
+			"kr_voice_archergarrison_skill-b_c.ogg",
+			"kr_voice_archergarrison_skill-c_b.ogg",
+			"kr6_sfx_towers_archerGarrison_tendonPierce_cast_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_eyeInTheSky_cast_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_markOfTheEagle_cast_v1.ogg",
+			"kr6_sfx_towers_archerGarrison_arrowFrenzy_v1.ogg"
+		}
+	},
+	tower_wizard = {
+		files = {
+			"kr_voice_scholarmage_taunt01_b.ogg",
+			"kr_voice_scholarmage_taunt02_b.ogg",
+			"kr_voice_scholarmage_taunt03_c.ogg",
+			"kr_voice_scholarmage_taunt04_b.ogg",
+			"kr_voice_scholarmage_skill-a_b.ogg",
+			"kr_voice_scholarmage_skill-b_a.ogg",
+			"kr_voice_scholarmage_skill-c_a.ogg",
+			"kr6_sfx_towers_scholarMage_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_scholarMage_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_scholarMage_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_scholarMage_tomeOfFlames_cast_v1.ogg",
+			"kr6_sfx_towers_scholarMage_tomeOfFlames_impact_v1.ogg",
+			"kr6_sfx_towers_scholarMage_scrollOfKnowledge_cast_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_cast_var1_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_cast_var2_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_cast_var3_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_impact_var1_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_impact_var2_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_impact_var3_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_bolts_var1_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_bolts_var2_v1.ogg",
+			"kr6_sfx_towers_scholarMage_spareCopies_bolts_var3_v1.ogg",
+			"kr6_sfx_towers_scholarMage_arcaneMeteor_cast_v1.ogg",
+			"kr6_sfx_towers_scholarMage_arcaneMeteor_impact_v1.ogg"
+		}
+	},
+	tower_catapult = {
+		files = {
+			"kr_voice_royalcatapult_taunt01_d.ogg",
+			"kr_voice_royalcatapult_taunt02_c.ogg",
+			"kr_voice_royalcatapult_taunt03_c.ogg",
+			"kr_voice_royalcatapult_taunt04_b.ogg",
+			"kr_voice_royalcatapult_skill-a_c.ogg",
+			"kr_voice_royalcatapult_skill-b_a.ogg",
+			"kr_voice_royalcatapult_skill-c_a.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var2_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var3_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_tarredZone_impact_var1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_powerball_explosion_var1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_powerball_explosion_var2_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_powerball_explosion_var3_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_secureTheArea_cast_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_secureTheArea_trigger_op1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_blazingBall_cast_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_blazingBall_impact_roll_v1.ogg"
+		}
+	},
+	tower_knights = {
+		files = {
+			"kr_voice_knightsorder_taunt01_a.ogg",
+			"kr_voice_knightsorder_taunt02_c.ogg",
+			"kr_voice_knightsorder_taunt03_a.ogg",
+			"kr_voice_knightsorder_taunt04_a.ogg",
+			"kr_voice_knightsorder_skill-a_c.ogg",
+			"kr_voice_knightsorder_skill-b_d.ogg",
+			"kr_voice_knightsorder_skill-c_c.ogg",
+			"kr6_sfx_towers_knightsOrder_resilience_cast_op2_v1.ogg",
+			"kr6_sfx_towers_knightsOrder_lastStand_cast_var1_v1.ogg",
+			"kr6_sfx_towers_knightsOrder_lastStand_cast_var2_v1.ogg",
+			"kr6_sfx_towers_knightsOrder_lastStand_cast_var3_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var1_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var2_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_unitDeath_var3_v1.ogg",
+			"kra_sfx_tower_paladinCovenant_deploy_v1.ogg"
+		}
+	},
+	tower_ranger = {
+		files = {
+			"kr_voice_elveneliteranger_taunt01_a.ogg",
+			"kr_voice_elveneliteranger_taunt02_b.ogg",
+			"kr_voice_elveneliteranger_taunt03_c.ogg",
+			"kr_voice_elveneliteranger_taunt04_a.ogg",
+			"kr_voice_elveneliteranger_skill-a_a.ogg",
+			"kr_voice_elveneliteranger_skill-b_c.ogg",
+			"kr_voice_elveneliteranger_skill-c_a.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_poisonTipArrow_impact_var1_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_poisonTipArrow_impact_var2_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_poisonTipArrow_impact_var3_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_brambleShot_rootsGrowth_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_woodlandTrick_impact_var1_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_woodlandTrick_impact_var2_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_woodlandTrick_impact_var3_v1.ogg",
+			"kr6_sfx_towers_elvenEliteRangers_mercilessAim_cast_v1.ogg"
+		}
+	},
+	tower_culverine = {
+		files = {
+			"kr6_sfx_towers_dwarvenCulverin_basicAttack_var1_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_basicAttack_var2_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_basicAttack_var3_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_sulfurBlast_cannonUpwards_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_sulfurBlast_cast_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_sulfurBlast_impact_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_fullThrottle_cast_v1.ogg",
+			"kr_voice_dwarvenculverin_taunt01_c.ogg",
+			"kr_voice_dwarvenculverin_taunt02_a.ogg",
+			"kr_voice_dwarvenculverin_taunt03_c.ogg",
+			"kr_voice_dwarvenculverin_taunt04_c.ogg",
+			"kr_voice_dwarvenculverin_skill_a_c.ogg",
+			"kr_voice_dwarvenculverin_skill_b_a.ogg",
+			"kr_voice_dwarvenculverin_skill_c_c.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_redHotLead_cast_var1_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_redHotLead_cast_var2_v1.ogg",
+			"kr6_sfx_towers_dwarvenCulverin_redHotLead_cast_var3_v1.ogg"
+		}
+	},
+	tower_sunray_master = {
+		files = {
+			"kr6_sfx_towers_sunrayMaster_basicAttack_rapidFire_var1_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_rapidFire_var2_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_rapidFire_var3_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_rapidFire_var4_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_ray_loopStart_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_ray_cast_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_basicAttack_ray_loopEnd_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_exoburst_cast_var1_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_exoburst_cast_var2_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_exoburst_cast_var3_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_exoburst_cast_var4_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_overcharge_cast_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_minorElementals_cast_op1_v1.ogg",
+			"kr_sunraymaster_taunt_b.ogg",
+			"kr_sunraymaster_taunt02_a.ogg",
+			"kr_sunraymaster_taunt03_a.ogg",
+			"kr_sunraymaster_taunt04_b.ogg",
+			"kr_sunraymaster_skill-a_b.ogg",
+			"kr_sunraymaster_skill-b_a.ogg",
+			"kr_sunraymaster_skill-c_a.ogg",
+			"kr6_sfx_towers_sunrayMaster_changeMode_rapidFire_op2_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_changeMode_ray_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_radiantSmite_charge_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_radiantSmite_impact_var1_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_radiantSmite_impact_var2_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_radiantSmite_impact_var3_v1.ogg",
+			"kr6_sfx_towers_sunrayMaster_radiantSmite_impact_var4_v1.ogg"
+		}
+	},
+	tower_tree = {
+		files = {
+			"kr_ironbarktreant_taunt_b.ogg",
+			"kr_ironbarktreant_taunt02_a.ogg",
+			"kr_ironbarktreant_taunt03_b.ogg",
+			"kr_ironbarktreant_taunt04_b.ogg",
+			"kr_ironbarktreant_skill-a_c.ogg",
+			"kr_ironbarktreant_skill-b_c.ogg",
+			"kr_ironbarktreant_skill-c_a.ogg",
+			"kr6_sfx_towers_ironbarkTreant_basicAttack_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_uproot_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_plant_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_death_op1_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_hayFever_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_naturesHand_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_gnarlyRoots_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_cast_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_impact_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_explosion_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_death_var1_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_death_var2_v1.ogg",
+			"kr6_sfx_towers_ironbarkTreant_crankySeedlings_death_var3_v1.ogg"
+		}
+	},
+	tower_light_priestess = {
+		files = {
+			"kr_lightpriestess_taunt_b.ogg",
+			"kr_lightpriestess_taunt02_a.ogg",
+			"kr_lightpriestess_taunt03_c.ogg",
+			"kr_lightpriestess_taunt04_c.ogg",
+			"kr_lightpriestess_skill-a_b.ogg",
+			"kr_lightpriestess_skill-b_e.ogg",
+			"kr_lightpriestess_skill-c_b.ogg",
+			"kr6_sfx_towers_lightPriestess_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_basicBuff_active_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_sanctuary_cast_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_circleOfSilence_cast_op1_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_panacea_cast_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_avatarOfLight_cast.ogg",
+			"kr6_sfx_towers_lightPriestess_avatarOfLight_ray_var1_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_avatarOfLight_ray_var2_v1.ogg",
+			"kr6_sfx_towers_lightPriestess_avatarOfLight_ray_var3_v1.ogg"
+		}
+	},
+	tower_wildcat = {
+		files = {
+			"kr_wildcathuntress_taunt_e.ogg",
+			"kr_wildcathuntress_taunt02_c.ogg",
+			"kr_wildcathuntress_taunt03_a.ogg",
+			"kr_wildcathuntress_taunt04_d.ogg",
+			"kr_wildcathuntress_skill-a_e.ogg",
+			"kr_wildcathuntress_skill-b_c.ogg",
+			"kr_wildcathuntress_skill-c_a.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_cast_var1_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_cast_var2_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_cast_var3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_bounce_var1_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_bounce_var2_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_silverGlaives_bounce_var3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_grievousBite_cast_var1_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_grievousBite_cast_var2_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_grievousBite_cast_var3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_cast_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var1_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var2_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var4_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var5_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_rainingArrows_arrow_var6_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_sneakyClaws_cast_op3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_sneakyClaws_pantherHit_var1_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_sneakyClaws_pantherHit_var2_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_sneakyClaws_pantherHit_var3_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_sneakyClaws_pantherHit_var4_v1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_death_var1_op1.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_death_var2_op2.ogg",
+			"kr6_sfx_towers_wildcatHuntresses_death_var3_op2.ogg"
+		}
+	},
+	tower_alchemist = {
+		files = {
+			"kr_alchemistshack_taunt01_b.ogg",
+			"kr_alchemistshack_taunt02_a.ogg",
+			"kr_alchemistshack_taunt03_b.ogg",
+			"kr_alchemistshack_taunt04_a.ogg",
+			"kr_alchemistshack_skill-a_c.ogg",
+			"kr_alchemistshack_skill-b_a.ogg",
+			"kr_alchemistshack_skill-c_b.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_impact_var1_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_impact_var2_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_basicAttack_impact_var3_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_stickySpillage_cast_var1_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_stickySpillage_cast_var2_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_stickySpillage_cast_var3_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_stickySpillage_cast_var4_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_testSubject_summon_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_testSubject_drink_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_testSubject_poof_IN_op3_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_testSubject_poof_OUT_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_perfectedFormula_prepare_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_perfectedFormula_impact_var1_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_perfectedFormula_impact_var2_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_perfectedFormula_impact_var3_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_magnumOpus_cast_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_magnumOpus_transform_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_magnumOpus_pigBreak_op1_v1.ogg",
+			"kr6_sfx_towers_alchemistShack_magnumOpus_pigBreak_op2_v1.ogg"
+		}
+	},
+	tower_miners = {
+		files = {
+			"kr_aceprospectors_taunt02_c.ogg",
+			"kr_aceprospectors_taunt01_a.ogg",
+			"kr_aceprospectors_taunt03_a.ogg",
+			"kr_aceprospectors_taunt04_c.ogg",
+			"kr_aceprospectors_skill-a_c.ogg",
+			"kr_aceprospectors_skill-b_b.ogg",
+			"kr_aceprospectors_skill-c_c.ogg",
+			"kr6_sfx_towers_goldProspectors_block_cast_var1_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_block_cast_var2_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_block_cast_var3_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_emergingBlast_impact_var1_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_emergingBlast_impact_var2_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_emergingBlast_impact_var3_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_madSpelunkers_cast_op1_v1.ogg",
+			"kr6_sfx_towers_goldProspectors_madSpelunkers_impact_v1.ogg"
+		}
+	},
+	tower_forger = {
+		files = {
+			"kr_arcaneforger_taunt01_b.ogg",
+			"kr_arcaneforger_taunt02_c.ogg",
+			"kr_arcaneforger_taunt03_c.ogg",
+			"kr_arcaneforger_taunt04_a.ogg",
+			"kr_arcaneforger_skill-a_c.ogg",
+			"kr_arcaneforger_skill-b_a.ogg",
+			"kr_arcaneforger_skill-c_a.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_impact_var1_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_impact_var2_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_impact_var3_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_charge_var1_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_charge_var2_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_basicAttack_charge_var3_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_sliveringDiscs_cast_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_sliveringDiscs_spin_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_prismaticSentries_cast_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_prismaticSentries_ray_oneShot_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_prismaticSentries_ray_LOOP_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_prismaticSentries_ray_loopEND_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_hardlightPrison_cast_v1.ogg",
+			"kr6_sfx_towers_arcaneForger_arcaneMaw_cast_v1.ogg"
+		}
+	},
+	tower_crossbows = {
+		files = {
+			"kr_cursedcrossbow_taunt01_c.ogg",
+			"kr_cursedcrossbow_taunt02_a.ogg",
+			"kr_cursedcrossbow_taunt03_b.ogg",
+			"kr_cursedcrossbow_taunt04_a.ogg",
+			"kr_cursedcrossbow_skill-a_c.ogg",
+			"kr_cursedcrossbow_skill-b_c.ogg",
+			"kr_cursedcrossbow_skill-c_e.ogg",
+			"kr6_sfx_towers_cursedCrossbows_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_basicAttack_cast_var4_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_basicAttack_cast_var5_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_cast_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_attack_var1_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_attack_var2_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_attack_var3_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_attack_var4_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_corruptFrenzy_attack_var5_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_fearFactor_cast_var1_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_fearFactor_cast_var2_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_fearFactor_cast_var3_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_cursedBolt_cast_v1.ogg",
+			"kr6_sfx_towers_cursedCrossbows_fallenKnight_cast_v1.ogg"
+		}
+	},
+	tower_sniper = {
+		files = {
+			"kr6_sfx_towers_sentryWatchtower_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_basicAttack_cast_var3_v1.ogg",
+			"kr_sentrywatchtower_taunt01_c.ogg",
+			"kr_sentrywatchtower_taunt02_b.ogg",
+			"kr_sentrywatchtower_taunt03_c.ogg",
+			"kr_sentrywatchtower_taunt04_c.ogg",
+			"kr_sentrywatchtower_skill-a_b.ogg",
+			"kr_sentrywatchtower_skill-b_c.ogg",
+			"kr_sentrywatchtower_skill-c_b.ogg",
+			"kr6_sfx_towers_sentryWatchtower_battleMomentum_cast_op1_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_mortalWound_cast_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_guardianHound_cast_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_guardianHound_attack_oneShot_v1.ogg",
+			"kr6_sfx_towers_sentryWatchtower_tripleTap_cast_v1.ogg"
+		}
+	},
+	tower_archer_kr1 = {
+		files = {
+			"Archer_Ready.ogg",
+			"Archer_Taunt1.ogg",
+			"Archer_Taunt2.ogg",
+			"Ranger_Ready.ogg",
+			"Ranger_Taunt1.ogg",
+			"Ranger_Taunt2.ogg",
+			"Sound_Thorn.ogg",
+			"Muskateer_Event1.ogg",
+			"Muskateer_Event2.ogg",
+			"Muskateer_Ready.ogg",
+			"Muskateer_Snipe.ogg",
+			"Sound_Sniper.ogg",
+			"Sound_Shootgun.ogg",
+			"Sound_Shrapnel.ogg"
+		}
+	},
+	tower_mage_kr1 = {
+		files = {
+			"Mage_Ready.ogg",
+			"Mage_Taunt1.ogg",
+			"Mage_Taunt2.ogg",
+			"Sound_MageShot.ogg",
+			"Arcane_Ready.ogg",
+			"Arcane_Taunt1.ogg",
+			"Arcane_Taunt2.ogg",
+			"Sound_ArcaneDesintegrate.ogg",
+			"Sound_RayArcane.ogg",
+			"Sorcerer_Ready.ogg",
+			"Sorcerer_Taunt1.ogg",
+			"Sorcerer_Taunt2.ogg",
+			"Sound_RockElementalDeath.ogg",
+			"Sound_RockElementalRally.ogg",
+			"Sound_Polimorph.ogg",
+			"Sound_Sheep.ogg",
+			"Sound_Sorcerer.ogg",
+			"Sound_Teleport.ogg"
+		}
+	},
+	tower_barrack_kr1 = {
+		files = {
+			"Barrack_Move.ogg",
+			"Barrack_Ready.ogg",
+			"Barrack_Taunt1.ogg",
+			"Barrack_Taunt2.ogg",
+			"Paladin_Move.ogg",
+			"Paladin_Ready.ogg",
+			"Paladin_Taunt1.ogg",
+			"Paladin_Taunt2.ogg",
+			"Sound_PaladinHeal.ogg",
+			"Sound_BattleAxe.ogg",
+			"Barbarian_Move.ogg",
+			"Barbarian_Ready.ogg",
+			"Barbarian_Taunt1.ogg",
+			"Barbarian_Taunt2.ogg",
+			"Sound_BattleAxe.ogg"
+		}
+	},
+	tower_engineer_kr1 = {
+		files = {
+			"Artillery_Ready.ogg",
+			"Artillery_Taunt1.ogg",
+			"Artillery_Taunt2.ogg",
+			"Sound_Bomb1.ogg",
+			"Sound_EngineerShot.ogg",
+			"Sound_EnemyExplode1.ogg",
+			"BFG_Ready.ogg",
+			"BFG_Taunt1.ogg",
+			"BFG_Taunt2.ogg",
+			"Sound_Bomb1.ogg",
+			"Sound_RocketLaunt.ogg",
+			"Sound_EnemyExplode1.ogg",
+			"Tesla_Ready.ogg",
+			"Tesla_Taunt1.ogg",
+			"Tesla_Taunt2a.ogg",
+			"Tesla_Taunt2b.ogg",
+			"Tesla_Taunt2c.ogg",
+			"Sound_Tesla_attack_1.ogg",
+			"Sound_Tesla_attack_2.ogg",
+			"Sound_EnemyExplode1.ogg"
+		}
+	},
+	powers_reinforcements = {
+		files = {
+			"kr_voice_reinforcements_taunt01_a.ogg",
+			"kr_voice_reinforcements_taunt01_f.ogg",
+			"kr_voice_reinforcements_taunt02_c.ogg",
+			"kr_voice_reinforcements_taunt02_e.ogg",
+			"kr_voice_reinforcements_taunt03_a.ogg",
+			"kr_voice_reinforcements_taunt03_f.ogg"
+		}
+	},
+	powers_rain_of_fire = {
+		files = {
+			"kr6_sfx_powers_rainOfFire_cast_var1_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_cast_var2_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_cast_var3_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_cast_var4_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_impact_var1_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_impact_var2_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_impact_var3_v1.ogg",
+			"kr6_sfx_powers_rainOfFire_impact_var4_v1.ogg"
+		}
+	},
+	powers_royal_edict = {
+		files = {
+			"kr6_sfx_powers_royalDecree_lvl1_v4.ogg",
+			"kr6_sfx_powers_royalDecree_lvl3_v3.ogg"
+		}
+	},
+	powers_teleportation_sigil = {
+		files = {
+			"kr6_sfx_powers_teleportSigil_teleport_in-out_v1.ogg",
+			"kr6_sfx_powers_teleportSigil_instakill_cast_v1.ogg"
+		}
+	},
+	powers_aspect_of_sol = {
+		files = {
+			"kr6_sfx_powers_aspectOfSol_entrance_cast_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_warcry_cast_op1_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_epicEntrance_cast_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_epicEntrance_out_v1.ogg",
+			"kr6_sfx_powers_aspectOfSol_chargedAttack_v1.ogg",
+			"kr_aspectofsol_taunt01_a.ogg",
+			"kr_aspectofsol_taunt02_c.ogg"
+		}
+	},
+	powers_soaring_shop = {
+		files = {
+			"kr6_sfx_powers_soaringShop_basicAttack_var1_v1.ogg",
+			"kr6_sfx_powers_soaringShop_basicAttack_var2_v1.ogg",
+			"kr6_sfx_powers_soaringShop_basicAttack_var3_v1.ogg",
+			"kr6_sfx_powers_soaringShop_frozotov_var1_v1.ogg",
+			"kr6_sfx_powers_soaringShop_frozotov_var2_v1.ogg",
+			"kr6_sfx_powers_soaringShop_frozotov_var3_v1.ogg",
+			"kr6_sfx_powers_soaringShop_fatBoy_v1.ogg",
+			"kr6_sfx_powers_soaringShop_fatBoy_v1.ogg",
+			"kr6_sfx_powers_soaringShop_summon_op2_v1.ogg",
+			"kr_gnomeshop_taunt01_a.ogg",
+			"kr_gnomeshop_taunt02_a.ogg",
+			"kr_gnomeshop_taunt02_b.ogg"
+		}
+	},
+	powers_thunder_zapper = {
+		files = {
+			"kr_thunderzapper_taunt01_a.ogg",
+			"kr_thunderzapper_taunt01_b.ogg",
+			"kr_thunderzapper_taunt01_c.ogg",
+			"kr6_sfx_powers_thunderZapper_base_cast_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_base_out_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_ricochet_cast_var1_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_ricochet_cast_var2_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_ricochet_cast_var3_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_lightningStrike_cast_var1_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_lightningStrike_cast_var2_v1.ogg",
+			"kr6_sfx_powers_thunderZapper_lightningStrike_cast_var3_v1.ogg"
+		}
+	},
+	powers_wintersongs_wrath = {
+		files = {
+			"kr_elorawintersong_taunt01_e.ogg",
+			"kr6_sfx_powers_wintersongsWrath_base_cast_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_base_loop_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_base_loopEnd_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_spikes_cast_var1_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_spikes_cast_var2_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_spikes_cast_var3_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_spikes_cast_var4_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_global_cast_loopStart_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_global_cast_LOOP_v1.ogg",
+			"kr6_sfx_powers_wintersongsWrath_global_cast_loopEnd_v1.ogg"
+		}
+	},
+	powers_musketeers = {
+		files = {
+			"kr_acemusketeers_taunt01_a.ogg",
+			"kr_acemusketeers_taunt02_a.ogg",
+			"kr6_sfx_powers_musketeers_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_powers_musketeers_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_powers_musketeers_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_powers_musketeers_shrapnelRounds_cast_var1_v1.ogg",
+			"kr6_sfx_powers_musketeers_shrapnelRounds_cast_var2_v1.ogg",
+			"kr6_sfx_powers_musketeers_shrapnelRounds_cast_var2_v1.ogg"
+		}
+	},
+	enemies_T1 = {
+		files = {
+			"kr6_sfx_enemy_bandit_death_var1_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var2_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var3_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var4_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var5_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var6_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var1_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var2_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var3_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var4_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var1_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var2_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var3_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var1_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var2_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var3_v1.ogg",
+			"kr6_sfx_enemy_headhunter_death_var2_v1.ogg",
+			"kr6_sfx_enemy_headhunter_death_var3_v1.ogg",
+			"kr6_sfx_enemy_headhunter_death_var4_v1.ogg",
+			"kr6_sfx_enemy_goblin_death_var1_v1.ogg",
+			"kr6_sfx_enemy_goblin_death_var2_v1.ogg",
+			"kr6_sfx_enemy_goblin_death_var3_v1.ogg",
+			"kr6_sfx_enemy_orcWarrior_death_var1_v1.ogg",
+			"kr6_sfx_enemy_orcWarrior_death_var4_v1.ogg",
+			"kr6_sfx_enemy_orcWarrior_death_var5_v1.ogg",
+			"kr6_sfx_enemy_wulf_death_var1_v1.ogg",
+			"kr6_sfx_enemy_wulf_death_var2_v1.ogg",
+			"kr6_sfx_enemy_wulf_death_var3_v1.ogg",
+			"kr6_sfx_enemy_riderGoblin_death_var1_op1.ogg",
+			"kr6_sfx_enemy_riderGoblin_death_var2_op1.ogg",
+			"kr6_sfx_enemy_riderGoblin_death_var3_op1_v1.ogg",
+			"kr6_sfx_enemy_ogre_death_var1_v1.ogg",
+			"kr6_sfx_enemy_ogre_death_var3_v1.ogg",
+			"kr6_sfx_enemy_ogre_death_var4_v1.ogg",
+			"kr6_sfx_enemy_shadowBlades_smokebomb_var1_v1.ogg",
+			"kr6_sfx_enemy_shadowBlades_smokebomb_var2_v1.ogg",
+			"kr6_sfx_enemy_shadowBlades_smokebomb_var3_v1.ogg",
+			"kr6_sfx_enemy_headhunter_instakill_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var1_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var2_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var3_v1.ogg",
+			"kr6_sfx_enemy_orcWarrior_rage_op2_v1.ogg",
+			"kr6_sfx_enemy_orcShaman_healing_v1.ogg",
+			"kr6_sfx_enemy_orcWildling_triggerRun_var1_v1.ogg",
+			"kr6_sfx_enemy_orcWildling_triggerRun_var3_v1.ogg",
+			"kr6_sfx_enemy_orcWildling_triggerRun_var4_v1.ogg"
+		}
+	},
+	enemies_T2 = {
+		files = {
+			"kr6_sfx_enemy_trollMedium_death_var1.ogg",
+			"kr6_sfx_enemy_trollMedium_death_var2.ogg",
+			"kr6_sfx_enemy_trollMedium_death_var3.ogg",
+			"kr6_sfx_enemy_trollLarge_death_var_001.ogg",
+			"kr6_sfx_enemy_trollLarge_death_var_003.ogg",
+			"kr6_sfx_enemy_trollLarge_death_var_004.ogg",
+			"kr6_sfx_enemy_frostBrute_death_wvoice.ogg",
+			"kr6_sfx_enemy_trollGlider_death_var1.ogg",
+			"kr6_sfx_enemy_trollGlider_death_var2.ogg",
+			"kr6_sfx_enemy_trollGlider_death_var3.ogg",
+			"kr6_sfx_enemy_frostHerald_death_op1_v1.ogg",
+			"kr6_sfx_enemy_frostHerald_basicAttack_var1_v1.ogg",
+			"kr6_sfx_enemy_frostHerald_basicAttack_var2_v1.ogg",
+			"kr6_sfx_enemy_frostHerald_basicAttack_var3_v1.ogg",
+			"kr6_sfx_enemy_frostHerald_stalactite_op3_channelOnly_v1.ogg",
+			"kr6_sfx_enemy_frostHerald_stalactite_op3_stalactites_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_cloneJump_var2_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_cloneJump_var4_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_cloneJump_var5_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_death_var1_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_death_var2_v1.ogg",
+			"kr6_sfx_enemy_frostBaiter_death_var4_v1.ogg",
+			"kr6_sfx_enemy_iceClone_death_var1_v1.ogg",
+			"kr6_sfx_enemy_iceClone_death_var2_v1.ogg",
+			"kr6_sfx_enemy_iceClone_death_var3_v1.ogg",
+			"kr6_sfx_enemy_frostBrute_breath_v1.ogg",
+			"kr6_sfx_enemy_trollCrusher_towerBlock_impact_op1_v1.ogg",
+			"kr6_sfx_enemy_trollCrusher_towerBlock_block_var1_v1.ogg",
+			"kr6_sfx_enemy_trollCrusher_towerBlock_block_var2_v1.ogg",
+			"kr6_sfx_enemy_trollCrusher_towerBlock_block_var3_v1.ogg",
+			"kr6_sfx_enemy_trollChieftain_drumbeat_v1.ogg"
+		}
+	},
+	enemies_spiders = {
+		files = {
+			"kr6_sfx_enemy_spiderSmall_death_var1_v1.ogg",
+			"kr6_sfx_enemy_spiderSmall_death_var2_v1.ogg",
+			"kr6_sfx_enemy_spiderSmall_death_var3_v1.ogg",
+			"kr6_sfx_enemy_spiderBig_death_var1_v1.ogg",
+			"kr6_sfx_enemy_spiderBig_death_var2_v1.ogg",
+			"kr6_sfx_enemy_spiderBig_death_var3_v1.ogg",
+			"kr6_sfx_enemy_spiderMatriarch_layEgg_var1_v1.ogg",
+			"kr6_sfx_enemy_spiderMatriarch_layEgg_var2_v1.ogg",
+			"kr6_sfx_enemy_spiderMatriarch_layEgg_var3_v1.ogg",
+			"kr6_sfx_enemy_sonOfSarelgaz_cocoonUnit_v1.ogg",
+			"kr6_sfx_enemy_egg_hatch_v1.ogg",
+			"kr6_sfx_enemy_giantSpider_climbDown_op2_v1.ogg"
+		}
+	},
+	enemies_T3 = {
+		files = {
+			"kr6_sfx_stage08_enemy_crowFlock_transform_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var1_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var2_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var3_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var4_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var5_v1.ogg",
+			"kr6_sfx_enemy_bandit_death_var6_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var1_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var2_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var3_v1.ogg",
+			"kr6_sfx_enemy_shadowblades_death_var4_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var1_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var2_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_crowSummon_var3_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var1_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var2_v1.ogg",
+			"kr6_sfx_enemy_crowcaller_death_var3_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var1_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var2_v1.ogg",
+			"kr6_sfx_enemy_crow_death_var3_v1.ogg",
+			"kr6_sfx_enemy_skeleton_death_var1_v1.ogg",
+			"kr6_sfx_enemy_skeleton_death_var2_v1.ogg",
+			"kr6_sfx_enemy_skeleton_death_var3_v1.ogg",
+			"kr6_sfx_enemy_exaltedShadowBlade_smokeBomb_var1_v1.ogg",
+			"kr6_sfx_enemy_exaltedShadowBlade_smokeBomb_var2_v1.ogg",
+			"kr6_sfx_enemy_exaltedShadowBlade_smokeBomb_var3_v1.ogg",
+			"kr6_sfx_enemy_gargoyle_death_var1_v1.ogg",
+			"kr6_sfx_enemy_gargoyle_death_var2_v1.ogg",
+			"kr6_sfx_enemy_gargoyle_death_var3_v1.ogg",
+			"kr6_sfx_enemy_gargoyle_stoneForm_in_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_death_var1_op2_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_death_var2_op2_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_death_var3_op2_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_towerTether_summon_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_towerTether_cast_lock_v1.ogg",
+			"kr6_sfx_enemy_darkDisciple_towerTether_cast_unlock_v1.ogg",
+			"kr6_sfx_enemy_necromancer_death_var1_v1.ogg",
+			"kr6_sfx_enemy_necromancer_death_var2_v1.ogg",
+			"kr6_sfx_enemy_necromancer_death_var3_v1.ogg",
+			"kr6_sfx_enemy_necromancer_raiseDead_cast_v1.ogg",
+			"kr6_sfx_enemy_darkKnight_death_var1_v1.ogg",
+			"kr6_sfx_enemy_darkKnight_death_var2_v1.ogg",
+			"kr6_sfx_enemy_darkKnight_death_var3_v1.ogg",
+			"kr6_sfx_enemy_darkKnight_transform_v1.ogg",
+			"kr6_sfx_enemy_deathRider_death_v1.ogg",
+			"kr6_sfx_enemy_darkConstruct_death_v1.ogg",
+			"kr6_sfx_enemy_darklings_death_var1_v1.ogg",
+			"kr6_sfx_enemy_darklings_death_var2_v1.ogg",
+			"kr6_sfx_enemy_darklings_death_var3_v1.ogg",
+			"kr6_sfx_enemy_darklings_death_var4_v1.ogg",
+			"kr6_sfx_enemy_darklings_death_var5_v1.ogg",
+			"kr6_sfx_enemies_swampThing_death_var3_v1.ogg",
+			"kr6_sfx_stage16_deathRider_laugh.ogg",
+			"kr6_sfx_enemy_wulf_death_var1_v1.ogg",
+			"kr6_sfx_enemy_wulf_death_var2_v1.ogg",
+			"kr6_sfx_enemy_wulf_death_var3_v1.ogg",
+			"kr6_sfx_enemy_darkSapper_death_v1.ogg",
+			"kr6_sfx_enemy_darkSapper_basicAttack_impact_var1_v1.ogg",
+			"kr6_sfx_enemy_darkSapper_basicAttack_impact_var2_v1.ogg",
+			"kr6_sfx_enemy_darkSapper_basicAttack_impact_var3_v1.ogg"
+		}
+	},
+	terrain_1_common = {
+		files = {
+			"kr6_sfx_ambiance_terrain1_birds_var1_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_birds_var2_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_birds_var3_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_birds_var4_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_cicadas_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_windgust_var1_v1.ogg",
+			"kr6_sfx_ambiance_terrain1_windgust_var2_v1.ogg"
+		}
+	},
+	terrain_2_common = {
+		files = {
+			"kr6_sfx_ambiance_terrain2_var1_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var2_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var3_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var4_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var5_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var6_v1.ogg",
+			"kr6_sfx_ambiance_terrain2_var7_v1.ogg"
+		}
+	},
+	terrain_3_common = {
+		files = {
+			"kr6_sfx_ambiance_terrain3_var1_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var2_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var3_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var4_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var5_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var6_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var7_v1.ogg",
+			"kr6_sfx_ambiance_terrain3_var8_v1.ogg"
+		}
+	},
+	stage_01 = {
+		files = {
+			"kr6_sfx_stage01_constructionWorker_tap1-2_v1.ogg",
+			"kr6_sfx_stage01_constructionWorker_tap3_wShout_v1.ogg",
+			"kr6_sfx_stage01_cowSpies_reveal_v1.ogg",
+			"kr6_sfx_stage01_statue_change_op1_v1.ogg",
+			"kr6_sfx_stage01_oldKing_gibberish_throw_v1.ogg",
+			"kr6_sfx_stage01_oldKing_gibberish_laugh_v1.ogg",
+			"kr6_sfx_stage03_sheep_explosion_v1.ogg",
+			"kr6_sfx_stage01_gerald_enter_v1.ogg"
+		}
+	},
+	stage_02 = {
+		files = {
+			"kr6_sfx_stage02_bookFountain_tap_v1.ogg",
+			"kr6_sfx_stage02_wizardStudents_tap1.ogg",
+			"kr6_sfx_stage02_wizardStudents_tap2_v1.ogg",
+			"kr6_sfx_stage02_wizardStudents_tap2_cheer_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_merlin_part-1_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_merlin_part-2_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_battleChess_pieceSelect_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_battleChess_validMove_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_battleChess_invalidMove_op2_v1.ogg",
+			"kr6_sfx_easterEgg_stage02_battleChess_explosion_v1.ogg",
+			"kr6_sfx_lamp_break_var1_v1.ogg",
+			"kr6_sfx_lamp_break_var2_v1.ogg",
+			"kr6_sfx_lamp_break_var3_v1.ogg",
+			"kr6_sfx_stage02_statue_teleport_v1.ogg",
+			"kr6_sfx_stage02_statue_teleport_recharge_v1.ogg",
+			"kr6_sfx_stage06_nivus_disintegrate_cast_v1.ogg"
+		}
+	},
+	stage_03 = {
+		files = {
+			"kr6_sfx_stage03_sheep_explosion_v1.ogg",
+			"kr6_sfx_stage03_babyJenkins_cast_part1_v1.ogg",
+			"kr6_sfx_stage03_babyJenkins_cast_part2_v1.ogg",
+			"kr6_sfx_stage03_cowAbduction_v1.ogg",
+			"kr6_sfx_stage03_fisherman_single_v1.ogg",
+			"kr6_sfx_stage03_fisherman_pile_v1.ogg",
+			"kr6_sfx_combat_basicImpact_v1.ogg",
+			"kr6_sfx_combat_basicImpact_v2.ogg",
+			"kr6_sfx_combat_basicImpact_v3.ogg",
+			"kr6_sfx_stage03_fisherman_catchFishFeedback_v1.ogg"
+		}
+	},
+	stage_04 = {
+		files = {
+			"kr6_sfx_stage04_wallExplosion_part1_v1.ogg",
+			"kr6_sfx_stage04_wallExplosion_part2_v2.ogg",
+			"kr6_sfx_stage04_wallExplosion_part3_v1.ogg",
+			"kr6_sfx_stage04_dwarvenCrane_activation_op1_v1.ogg",
+			"kr6_sfx_stage04_dwarvenCrane_basicAttack_cast_var1_v1.ogg",
+			"kr6_sfx_stage04_dwarvenCrane_basicAttack_cast_var2_v1.ogg",
+			"kr6_sfx_stage04_dwarvenCrane_basicAttack_cast_var3_v1.ogg",
+			"kr6_sfx_stage04_dwarvenCrane_basicAttack_impact_v1.ogg",
+			"kr6_sfx_stage04_minecraft_tap_op3_v1.ogg",
+			"kr6_sfx_stage04_minecraft_tap3_v1.ogg",
+			"kr6_sfx_stage04_minecraft_lap_v1.ogg",
+			"kr6_sfx_stage04_minecraft_crashExplosion_v1.ogg"
+		}
+	},
+	stage_05 = {
+		files = {
+			"kr6_sfx_stage05_silveroakTree_recoverCast_v1.ogg",
+			"kr6_sfx_stage05_forestBurn_prep_v1.ogg",
+			"kr6_sfx_stage05_forestBurn_explosion_part1-throwTorch_v1.ogg",
+			"kr6_sfx_stage05_forestBurn_explosion_part2_v1.ogg",
+			"kr6_sfx_stage05_silveroakTree_activationCast_v1.ogg",
+			"kr6_sfx_easterEgg_stage05_bushGoblin_tap_v1.ogg",
+			"kr_voice_alleriaswiftwind_taunt01_d.ogg",
+			"kr_voice_alleriaswiftwind_taunt02_a.ogg",
+			"kr_voice_alleriaswiftwind_death_b.ogg",
+			"kr6_sfx_lamp_break_var1_v1.ogg",
+			"kr6_sfx_lamp_break_var2_v1.ogg",
+			"kr6_sfx_lamp_break_var3_v1.ogg",
+			"kr6_sfx_oldManElf_shout_var2_v1.ogg",
+			"kr6_sfx_elvenMusician_play_v1.ogg",
+			"kr6_sfx_stage05_alleria_multishot_var1_v2.ogg",
+			"kr6_sfx_stage05_alleria_multishot_var2_v2.ogg",
+			"kr6_sfx_stage05_alleria_multishot_var3_v2.ogg",
+			"kr6_sfx_stage05_alleria_summonCast_op1_v1.ogg"
+		}
+	},
+	stage_06 = {
+		files = {
+			"kr6_sfx_stage06_nivus_magicMissile_cast_var1_v1.ogg",
+			"kr6_sfx_stage06_nivus_magicMissile_cast_var2_v1.ogg",
+			"kr6_sfx_stage06_nivus_magicMissile_cast_var3_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_summon_var1_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_summon_var2_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_summon_var3_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_cast_var1_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_cast_var2_v1.ogg",
+			"kr6_sfx_stage06_nivus_spawnBooks_cast_var3_v1.ogg",
+			"kr6_sfx_stage06_nivus_disintegrate_teleport_cast_v1.ogg",
+			"kr6_sfx_stage06_nivus_disintegrate_cast_v1.ogg",
+			"kr6_sfx_stage06_nivus_polymorph_cast_v1.ogg",
+			"kr6_sfx_stage06_wizardMushroom_yawn_v1.ogg",
+			"kr6_sfx_stage06_wizardMushroom_eat_v1.ogg",
+			"kr6_sfx_stage06_wizardMushroom_hit-sigh_v1.ogg",
+			"kr6_sfx_stage06_lakeWizard_tap_v1.ogg"
+		}
+	},
+	stage_07 = {
+		files = {
+			"kr6_sfx_stage07_bush_bladesSpawn_bushMov1_v1.ogg",
+			"kr6_sfx_stage07_bush_bladesSpawn_bushMov2_v1.ogg",
+			"kr6_sfx_stage07_bush_bladesSpawn_bushMov3_v1.ogg",
+			"kr6_sfx_stage07_bush_bladesSpawn_spawn_v1.ogg",
+			"kr6_sfx_stage07_stable_knightSpawn_op1_v1.ogg",
+			"kr6_sfx_stage07_stable_knightSpawn_op2_v1.ogg",
+			"kr6_sfx_stage07_stable_knightSpawn_op3_v1.ogg",
+			"kr6_sfx_stage07_stable_knightArrive_v1.ogg",
+			"kr6_sfx_stage07_campfire_extinguish_op2_v1.ogg",
+			"kr6_sfx_combat_basicImpact_v1.ogg",
+			"kr6_sfx_combat_basicImpact_v2.ogg",
+			"kr6_sfx_combat_basicImpact_v3.ogg",
+			"kr6_sfx_stage07_horseTapFeedback_var1_v1.ogg",
+			"kr6_sfx_stage07_horseTapFeedback_var2_v1.ogg",
+			"kr6_sfx_stage07_horseTapFeedback_var3_v1.ogg",
+			"kr_stage07Rider_v1.ogg"
+		}
+	},
+	stage_08 = {
+		files = {
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_v1.ogg",
+			"kr6_sfx_stage08_defenderWall_explosion_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_travel_var1_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_travel_var2_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_travel_var3_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_explosion_var1_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_explosion_var2_v1.ogg",
+			"kr6_sfx_stage08_stageStart_fieryProjectiles_explosion_var3_v1.ogg",
+			"kr6_sfx_stage08_stagePhase3_run_op2_v1.ogg",
+			"kr6_sfx_stage08_stagePhase3_cartExplosion_v1.ogg",
+			"kr6_sfx_stage8_catapult_load_v1.ogg",
+			"kr6_sfx_stage08_defenderCatapult_fire_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var1_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var2_v1.ogg",
+			"kr6_sfx_towers_royalCatapult_basicAttack_impact_var3_v1.ogg",
+			"kr6_sfx_stage08_enemy_crowFlock_transform_v1.ogg",
+			"kr6_sfx_stage08_enemy_orcSiegeEngine_moveIn_v1.ogg",
+			"kr6_sfx_stage08_enemy_orcSiegeEngine_moveOut_v1.ogg",
+			"kr6_sfx_stage08_enemy_orcSiegeEngine_fire_v1.ogg",
+			"kr6_boss_orcChieftain_death_v1.ogg",
+			"kr6_boss_orcChieftain_basicAttack_var1_v1.ogg",
+			"kr6_boss_orcChieftain_basicAttack_var2_v1.ogg",
+			"kr6_boss_orcChieftain_basicAttack_var3_v1.ogg",
+			"kr6_boss_orcChieftain_moveCart_walk_LOOP_v2.ogg",
+			"kr6_sfx_stage08_enemy_orcSiegeEngine_tap_v1.ogg",
+			"kr6_sfx_stage08_enemy_orcSiegeEngine_death_v1.ogg",
+			"kr6_sfx_stage08_towerRepairment_v1.ogg",
+			"kr6_sfx_stage08_scaredCrowd_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var1_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var2_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var3_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var4_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var5_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var6_v1.ogg"
+		}
+	},
+	stage_09 = {
+		files = {
+			"kr6_sfx_easterEgg_stage9_mortalKombat_hit_v1.ogg",
+			"kr6_sfx_easterEgg_stage9_mortalKombat_finisher_v1.ogg",
+			"kr6_sfx_stage09_pillar_tap_var1_v1.ogg",
+			"kr6_sfx_stage09_pillar_tap_var2_v1.ogg",
+			"kr6_sfx_stage09_pillar_tap_var3_v1.ogg",
+			"kr6_sfx_stage09_pillar_crumble_v1.ogg",
+			"kr6_sfx_easterEgg_stage09_mortalKombat_fullSeq_v1.ogg"
+		}
+	},
+	stage_10 = {
+		files = {
+			"kr6_sfx_stage10_waterSplash_in_var1_v1.ogg",
+			"kr6_sfx_stage10_waterSplash_in_var2_v1.ogg",
+			"kr6_sfx_stage10_waterSplash_in_var3_v1.ogg",
+			"kr6_sfx_stage10_waterSplash_out_var1_v1.ogg",
+			"kr6_sfx_stage10_waterSplash_out_var2_v1.ogg",
+			"kr6_sfx_stage10_waterSplash_out_var3_v1.ogg",
+			"kr6_sfx_stage10_bellUnfreeze_v1.ogg",
+			"kr6_sfx_stage10_bellFreeze_v1.ogg",
+			"kr6_sfx_stage10_bellRing_v1.ogg",
+			"kr6_sfx_stage10_doorOpen_op1_v1.ogg",
+			"kr6_sfx_stage10_doorOpen_op2_v1.ogg",
+			"kr6_sfx_stage10_doorClose_v1.ogg",
+			"kr6_sfx_stage10_stalactitesFall_var1_v2.ogg",
+			"kr6_sfx_stage10_stalactitesFall_var2_v2.ogg",
+			"kr6_sfx_stage10_stalactitesFall_var3_v2.ogg",
+			"kr6_sfx_stage10_freeTower_v1.ogg",
+			"kr6_sfx_boss_jt_Devour_v1.ogg",
+			"kr6_sfx_boss_jt_roar_v1.ogg",
+			"kr6_sfx_boss_jt_towerFreeze_v1.ogg",
+			"kr6_sfx_boss_jt_chestTaunt_v1.ogg",
+			"kr6_sfx_boss_jt_caveRumble_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_tap1_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_tap2_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_tapBreak_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_shoot_var1_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_shoot_var2_v1.ogg",
+			"kr6_sfx_easterEgg_stage10_atat_shoot_var3_v1.ogg"
+		}
+	},
+	stage_11 = {
+		files = {
+			"kr6_sfx_stage11_encampment_damaged_var1_v1.ogg",
+			"kr6_sfx_stage11_encampment_damaged_var2_v1.ogg",
+			"kr6_sfx_stage11_encampment_damaged_var3_v1.ogg",
+			"kr6_sfx_stage11_encampment_damaged_var4_v1.ogg",
+			"kr6_sfx_stage11_encampment_fireArrow_v1.ogg",
+			"kr6_sfx_stage11_encampment_levelUp_1_v1.ogg",
+			"kr6_sfx_stage11_encampment_levelUp_2_v1.ogg",
+			"kr6_sfx_stage11_encampment_destroyed_init_v2.ogg",
+			"kr6_sfx_stage11_encampment_destroyed_end_v2.ogg",
+			"kr6_sfx_stage11_eggNest_destroyed_v1.ogg",
+			"kr6_sfx_enemy_egg_hatch_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_bite_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_death_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_climbDown_v1.ogg",
+			"kr6_sfx_enemy_giantSpider_climbUp_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_webbing_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_cocoonTower_v1.ogg",
+			"kr6_sfx_boss_sarelgaz_interrupt_v1.ogg",
+			"kr_voice_linireanencampment_taunt01_a.ogg",
+			"kr_voice_linireanencampment_taunt02_b.ogg",
+			"kr_voice_linireanencampment_attack_c.ogg"
+		}
+	},
+	stage_12 = {
+		files = {
+			"kr6_sfx_easterEgg_stage12_vaseBreak_var1_v1.ogg",
+			"kr6_sfx_easterEgg_stage12_vaseBreak_var2_v1.ogg",
+			"kr6_sfx_easterEgg_stage12_vaseBreak_var3_v1.ogg",
+			"kr6_sfx_stage12_elevator_in_creak1_v1.ogg",
+			"kr6_sfx_stage12_elevator_in_creak2_v1.ogg",
+			"kr6_sfx_stage12_elevator_in_creak3_v1.ogg",
+			"kr6_sfx_stage12_elevator_in_creak4_v1.ogg",
+			"kr6_sfx_stage12_elevator_in_fall_v1.ogg",
+			"kr6_sfx_stage12_elevator_out_op1_v1.ogg",
+			"kr6_sfx_stage12_troll_rappel_var1_v1.ogg",
+			"kr6_sfx_stage12_troll_rappel_var2_v1.ogg",
+			"kr6_sfx_stage12_troll_rappel_var3_v1.ogg"
+		}
+	},
+	stage_13 = {
+		files = {
+			"kr6_sfx_sorcerer_death_var1_v1.ogg",
+			"kr6_sfx_sorcerer_death_var2_v1.ogg",
+			"kr6_sfx_sorcerer_death_var3_v1.ogg",
+			"kr6_sfx_kamikazeGlider_preparation_var1_v1.ogg",
+			"kr6_sfx_kamikazeGlider_preparation_var2_v1.ogg",
+			"kr6_sfx_kamikazeGlider_preparation_var3_v1.ogg",
+			"kr6_sfx_kamikazeGlider_preparation_var4_v1.ogg",
+			"kr6_sfx_kamikazeGlider_preparation_var5_v1.ogg",
+			"kr6_sfx_kamikazeGlider_deathImpact_var1_v1.ogg",
+			"kr6_sfx_kamikazeGlider_deathImpact_var2_v1.ogg",
+			"kr6_sfx_kamikazeGlider_deathImpact_var3_v1.ogg",
+			"kr6_sfx_sunrayTower_activation_v1.ogg",
+			"kr6_sfx_sunrayTower_powerUp_v1.ogg",
+			"kr6_sfx_sunrayTower_powerDown_v1.ogg",
+			"kr6_sfx_sunrayTower_rayCast_v1.ogg",
+			"kr6_sfx_sunrayTower_loop_v1.ogg",
+			"kr6_sfx_sunrayObelisk_activation_v1.ogg",
+			"kr6_sfx_sunrayObelisk_powerUp_glareOnly_v1.ogg",
+			"kr6_sfx_sunrayObelisk_powerDown_v1.ogg",
+			"kr6_sfx_sunrayObelisk_fire_var1_v1.ogg",
+			"kr6_sfx_sunrayObelisk_fire_var2_v1.ogg",
+			"kr6_sfx_sunrayObelisk_fire_var3_v1.ogg",
+			"kr6_sfx_sunrayObelisk_fire_var4_v1.ogg",
+			"kr6_sfx_trollKing_entrance_slide_v1.ogg",
+			"kr6_sfx_trollKing_entrance_jump_v1.ogg",
+			"kr6_sfx_trollKing_entrance_land_v1.ogg",
+			"kr6_sfx_trollKing_shieldbreak_v1.ogg",
+			"kr6_sfx_trollKing_shieldbreak_shieldDrop_op2_v1.ogg",
+			"kr6_sfx_trollKing_towerHit_hit1_v1.ogg",
+			"kr6_sfx_trollKing_towerHit_hit2_v1.ogg",
+			"kr6_sfx_trollKing_towerBreak_v1.ogg",
+			"kr6_sfx_trollKing_basicAttack_op2_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var1_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var2_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var3_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var4_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var5_v1.ogg",
+			"kr6_sfx_enemy_boss_giantFootsteps_var6_v1.ogg"
+		}
+	},
+	stage_14 = {
+		files = {
+			"kr6_sfx_stage14_buildingRepaired.ogg",
+			"kr6_sfx_stage14_blacksmith_work_var1_v1.ogg",
+			"kr6_sfx_stage14_blacksmith_work_var1_v1.ogg",
+			"kr6_sfx_stage14_blacksmith_work_var2_v1.ogg",
+			"kr6_sfx_stage14_blacksmith_work_var3_v1.ogg",
+			"kr6_sfx_stage14_blacksmith_work_var4_v1.ogg",
+			"kr6_sfx_stage14_tavernBeer_cast_var1_v1.ogg",
+			"kr6_sfx_stage14_tavernBeer_cast_var2_v1.ogg",
+			"kr6_sfx_stage14_tavernBeer_cast_var3_v1.ogg",
+			"kr6_sfx_stage14_tavernBeer_impact_v1.ogg",
+			"kr_brightwickarmory_build_c.ogg",
+			"kr_brightwickblacksmith_build_c.ogg",
+			"kr_brightwicktavern_build_c.ogg",
+			"kr6_sfx_stage03_sheep_explosion_v1.ogg",
+			"kr6_sfx_easterEgg_stage14_delorean_turnOn_v1.ogg",
+			"kr6_sfx_easterEgg_stage14_delorean_powerDown_v1.ogg",
+			"kr6_sfx_easterEgg_stage14_ceilingGoat_tap1_v1.ogg",
+			"kr6_sfx_easterEgg_stage14_ceilingGoat_tap2_v1.ogg"
+		}
+	},
+	stage_15 = {
+		files = {
+			"kr6_sfx_easterEgg_stage15_drinkPotion_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_powerUp_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_witch_conjurePotion_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_witch_movement_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_witch_laughter_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_explosion_op1_v1.ogg",
+			"kr_lordblackburn_taunt01_b.ogg",
+			"kr_lordblackburn_taunt02_a.ogg",
+			"kr_lordblackburn_taunt03_b.ogg",
+			"kr_lordblackburn_taunt05_b.ogg",
+			"kr6_sfx_stage03_sheep_explosion_v1.ogg",
+			"kr6_sfx_stage15_witch_cauldronBoil_v1.ogg",
+			"kr6_sfx_stage15_witch_kickCauldron_kick_v1.ogg",
+			"kr6_sfx_stage15_witch_kickCauldron_splash_v1.ogg",
+			"kr6_sfx_stage15_boss_blackburn_blockTower_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var1_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var2_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var3_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var4_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var5_v1.ogg",
+			"kr6_sfx_stage15_swampOut_bigCreep_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var1_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var2_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var3_v1.ogg",
+			"kr6_sfx_stage15_midCinematic_darkEnergy_v1.ogg",
+			"kr6_sfx_stage15_blackburn_jump_in_v1.ogg",
+			"kr6_sfx_stage15_blackburn_jump_out_v1.ogg",
+			"kr6_sfx_stage15_boss_blackburn_basicAttack_var1_v1.ogg",
+			"kr6_sfx_stage15_boss_blackburn_basicAttack_var2_v1.ogg",
+			"kr6_sfx_stage15_boss_blackburn_basicAttack_var3_v1.ogg",
+			"kr6_sfx_stage15_boss_blackburn_defeat_op1_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_theRing_lidOpen_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_theRing_samaraGlitch_1_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_theRing_samaraGlitch_2_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_theRing_samaraGlitch_3_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_threeEyedFish_tap1_v1.ogg",
+			"kr6_sfx_easterEgg_stage15_threeEyedFish_tap2_v1.ogg",
+			"kr6_sfx_stage15_blackburn_death.ogg"
+		}
+	},
+	stage_16 = {
+		files = {
+			"kr6_sfx_stage15_swampBubbling_var1_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var2_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var3_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var4_v1.ogg",
+			"kr6_sfx_stage15_swampBubbling_var5_v1.ogg",
+			"kr6_sfx_stage15_swampOut_bigCreep_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var1_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var2_v1.ogg",
+			"kr6_sfx_stage15_swampOut_smallCreep_var3_v1.ogg",
+			"kr6_sfx_enemy_rottenTreant_death_var1_v1.ogg",
+			"kr6_sfx_enemy_rottenTreant_death_var2_v1.ogg",
+			"kr6_sfx_enemy_rottenTreant_death_var3_v1.ogg",
+			"kr6_sfx_stage16_goldenGrove_corruption1_v1.ogg",
+			"kr6_sfx_stage16_goldenGrove_corruption2_v1.ogg",
+			"kr6_sfx_stage16_goldenGrove_corruptionTree_v1.ogg",
+			"kr6_sfx_stage16_corruptedTreant_launch_v1.ogg",
+			"kr6_sfx_stage16_corruptedTreant_impact_var1_v1.ogg",
+			"kr6_sfx_stage16_corruptedTreant_impact_var2_v1.ogg",
+			"kr6_sfx_stage16_corruptedTreant_impact_var3_v1.ogg",
+			"kr6_sfx_stage16_deathRider_laugh.ogg",
+			"kr6_sfx_stage16_goldenTreant_eat_v1.ogg",
+			"kr6_sfx_stage16_goldenTreant_eat_tongue_v1.ogg",
+			"kr6_sfx_easterEgg_stage16_dekuSprout_tap_IN_v1.ogg",
+			"kr6_sfx_easterEgg_stage16_dekuSprout_tap_OUT_v1.ogg"
+		}
+	},
+	stage_17 = {
+		files = {
+			"kr6_sfx_stage17_joust_horseGallop_v1.ogg",
+			"kr6_sfx_stage17_joust_battleCry_op1_v1.ogg",
+			"kr6_sfx_stage17_joust_start_v1.ogg",
+			"kr6_sfx_stage17_joust_clash_v1.ogg",
+			"kr6_sfx_stage17_joust_knockedOut_op1_v1.ogg",
+			"kr6_sfx_stage17_joust_ladyCheer_op1_v1.ogg",
+			"kr6_sfx_stage17_joust_playerWin_v1.ogg",
+			"kr6_sfx_stage17_joust_playerLose_horns_v1.ogg",
+			"kr6_sfx_stage17_joust_playerLose_ladyCry_v1.ogg",
+			"kr6_sfx_stage17_knightClash_trigger_1.ogg",
+			"kr6_sfx_stage17_knightClash_combat_var1_v1.ogg",
+			"kr6_sfx_stage17_knightClash_combat_var2_v1.ogg",
+			"kr6_sfx_stage17_knightClash_combat_var3_v1.ogg",
+			"kr6_sfx_stage17_knightClash_evilWin_finalStrike_op1_v1.ogg",
+			"kr6_sfx_stage17_knightClash_goodWin_op1_v1.ogg"
+		}
+	},
+	stage_18 = {
+		files = {
+			"kr6_sfx_stage18_veznan_towerDoor_open_v1.ogg",
+			"kr6_sfx_stage18_veznan_towerDoor_close_v1.ogg",
+			"kr6_sfx_lightning_op1.ogg",
+			"kr6_sfx_lightning_op2.ogg",
+			"kr6_sfx_lightning_op3.ogg",
+			"kr6_sfx_enemy_demonSpawn_death_var1_v1.ogg",
+			"kr6_sfx_enemy_demonSpawn_death_var2_v1.ogg",
+			"kr6_sfx_enemy_demonSpawn_death_var3_v1.ogg",
+			"kr6_sfx_enemy_demonFlareon_attack_var1_v1.ogg",
+			"kr6_sfx_enemy_demonFlareon_attack_var2_v1.ogg",
+			"kr6_sfx_enemy_demonFlareon_attack_var3_v1.ogg",
+			"kr6_sfx_enemy_demonHound_death_var1_v1.ogg",
+			"kr6_sfx_enemy_demonHound_death_var2_v1.ogg",
+			"kr6_sfx_enemy_demonHound_death_var3_v1.ogg",
+			"kr6_sfx_enemy_demonLord_shield_cast_v1.ogg",
+			"kr6_sfx_enemy_demonLord_death_var1_v1.ogg",
+			"kr6_sfx_enemy_demonLord_death_var2_v1.ogg",
+			"kr6_sfx_enemy_demonLord_death_var3_v1.ogg",
+			"kr6_sfx_enemy_magmaElemental_death_v1.ogg",
+			"kr6_sfx_enemy_demonImp_death_var1_v1.ogg",
+			"kr6_sfx_enemy_demonImp_death_var2_v1.ogg",
+			"kr6_sfx_enemy_demonImp_death_var3_v1.ogg",
+			"kr6_stage18_moloch_entrance_bellToll_singleton_op3_v1.ogg",
+			"kr6_stage18_moloch_entrance_bellToll_reveal_IN_v1.ogg",
+			"kr6_stage18_moloch_entrance_bellToll_reveal_OUT_v1.ogg",
+			"kr6_moloch_big_bell.ogg",
+			"kr6_sfx_stage18_veznan_laugh_var3_v1.ogg",
+			"kr_princedenas_death_a.ogg",
+			"kr_princedenas_taunt01_b.ogg",
+			"kr_princedenas_taunt02_a.ogg",
+			"kr_princedenas_taunt03_a.ogg",
+			"kr6_stage18_portal_open_v1.ogg",
+			"kr6_stage18_portal_creepPassage_var1_v1.ogg",
+			"kr6_stage18_portal_creepPassage_var2_v1.ogg",
+			"kr6_stage18_portal_creepPassage_var3_v1.ogg",
+			"kr6_stage18_portal_close_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_charge_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_release_var1_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_release_var2_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_release_var3_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_impact_var1_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_impact_var2_v1.ogg",
+			"kr6_stage18_towerVeznan_bolt_impact_var3_v1.ogg",
+			"kr6_stage18_towerVeznan_disableTowers_cast_v1.ogg",
+			"kr6_stage18_towerVeznan_disableTowers_disable_v1.ogg",
+			"kr6_stage18_towerVeznan_disableTowers_interrupt_v1.ogg",
+			"kr6_stage18_towerVeznan_statueBreak_cast_v1.ogg",
+			"kr6_stage18_towerVeznan_statueBreak_bolt_v1.ogg",
+			"kr6_stage18_towerVeznan_statueBreak_break_v1.ogg",
+			"kr6_stage18_introCinematic_veznanEyes_appear_op1_v1.ogg",
+			"kr6_stage18_midCinematic_portalBreak_v1.ogg",
+			"kr6_stage18_midCinematic_denas_gallop_v1.ogg",
+			"kr6_stage18_midCinematic_denas_horseNeigh_v1.ogg",
+			"kr6_stage18_midCinematic_towerVeznan_snap_v2.ogg",
+			"kr6_stage18_midCinematic_towerVeznan_reveal_v1.ogg",
+			"kr6_stage18_midCinematic_levelIllusion_reveal_v1.ogg",
+			"kr6_stage18_denas_empoweredAttack_cast_op1_v1.ogg",
+			"kr6_stage18_denas_bombardment_cast_v1.ogg",
+			"kr6_stage18_denas_bombardment_impact_v1.ogg",
+			"kr6_stage18_demons_pentagram_appear_v1.ogg",
+			"kr6_stage18_demons_pentagram_in_var1_v1.ogg",
+			"kr6_stage18_demons_pentagram_in_var2_v1.ogg",
+			"kr6_stage18_demons_pentagram_in_var3_v1.ogg",
+			"kr6_stage18_demons_pentagram_in_var4_v1.ogg",
+			"kr6_stage18_moloch_entrance_lightningStrike_1_v1.ogg",
+			"kr6_stage18_moloch_entrance_lightningStrike_2_v1.ogg",
+			"kr6_stage18_moloch_entrance_lightningStrike_3_v1.ogg",
+			"kr6_stage18_moloch_entrance_v1.ogg",
+			"kr6_stage18_moloch_roar_op1_v1.ogg",
+			"kr6_stage18_moloch_slam_v1.ogg",
+			"kr6_stage18_moloch_moltenRock_cast_v1.ogg",
+			"kr6_stage18_moloch_moltenRock_throw_v1.ogg",
+			"kr6_stage18_moloch_moltenRock_impact_v1.ogg",
+			"kr6_stage18_boss_veznan_bolt_cast_v1.ogg",
+			"kr6_stage18_boss_veznan_bolt_release_v2.ogg",
+			"kr6_stage18_boss_veznan_bolt_impact_v2.ogg",
+			"kr6_stage18_boss_veznan_illusion_death_v1.ogg",
+			"kr6_stage18_boss_veznan_soulSiphon_cast_v1.ogg",
+			"kr6_stage18_boss_veznan_basicAttack_cast_var1_v1.ogg",
+			"kr6_stage18_boss_veznan_basicAttack_cast_var2_v1.ogg",
+			"kr6_stage18_boss_veznan_basicAttack_cast_var3_v1.ogg",
+			"kr6_stage18_boss_midCinematic_teleportIn_v1.ogg",
+			"kr6_stage18_boss_midCinematic_explosion_v1.ogg",
+			"kr6_stage18_boss_veznan_death_fullSEQ_v1.ogg",
+			"kr6_stage18_moloch_defeat_fullSEQ_v1.ogg",
+			"kr6_sfx_stage18_veznan_towerDoor_open_v1.ogg",
+			"kr6_sfx_stage18_veznan_towerDoor_close_v1.ogg"
+		}
+	},
+	item_hearts = {
+		files = {
+			"kr6_sfx_items_heartbox_cast_op1_v2.ogg"
+		}
+	},
+	item_bomb = {
+		files = {
+			"kr6_sfx_items_fatBoy_bellows_var1_v1.ogg",
+			"kr6_sfx_items_fatBoy_bellows_var2_v1.ogg",
+			"kr6_sfx_items_fatBoy_bellows_var3_v1.ogg",
+			"kr6_sfx_items_fatBoy_cast_oneShot_v1.ogg",
+			"kr6_sfx_items_fatBoy_cast_smallExplosions_var1_v1.ogg",
+			"kr6_sfx_items_fatBoy_cast_smallExplosions_var2_v1.ogg",
+			"kr6_sfx_items_fatBoy_cast_smallExplosions_var3_v1.ogg",
+			"kr6_sfx_items_fatBoy_cast_smallExplosions_var4_v1.ogg"
+		}
+	},
+	item_gold = {
+		files = {
+			"kr6_sfx_items_goldBag_cast_op1_v1.ogg"
+		}
+	}
+}

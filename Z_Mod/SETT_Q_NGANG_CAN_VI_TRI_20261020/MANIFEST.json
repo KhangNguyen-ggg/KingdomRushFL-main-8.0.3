@@ -1,0 +1,25 @@
+{
+    "base":  "FL803_Sett_Q_Ngang_TraiTim_PhaiXanh.zip",
+    "branch":  "old-position-only",
+    "changed_files":  [
+                          "all/sett_visuals.lua"
+                      ],
+    "payload":  {
+                    "all/allied_sett.lua":  "56ACDAE365F8FA10D7056B8CF1DE43203ED1171F28EEB7955A00274C109EC2D4",
+                    "all/sett_visuals.lua":  "77A8F73A211E57EB6C6C5DA53CE38444BF94D018CC9980A5203839CD0495C564",
+                    "kr3-desktop/assets/images/fullhd/go_sett_motion_v2.lua":  "37718284D5A4D52309E46C0B1EA435699E7C3FAB91F4F5DBEE0698B5BA01389E",
+                    "kr3-desktop/assets/images/fullhd/go_sett_q.lua":  "A6700450761E4C351493F2AE341AA1970DDF97C7BFF2D5E5AC2EED0001270385",
+                    "kr3-desktop/assets/images/fullhd/go_sett_q.png":  "E7DE0DD52C14059A4C2A5DD5184C39E43123A7E56DA4387A8A150C758DD0DEFD"
+                },
+    "backup":  {
+                   "all/allied_sett.lua":  "56ACDAE365F8FA10D7056B8CF1DE43203ED1171F28EEB7955A00274C109EC2D4",
+                   "all/sett_visuals.lua":  "2B25614DD615E7699332DAC259460C0AFF9A6A2DD99A2DDCF3E83FA94E1A9B9E",
+                   "kr3-desktop/assets/images/fullhd/go_sett_motion_v2.lua":  "37718284D5A4D52309E46C0B1EA435699E7C3FAB91F4F5DBEE0698B5BA01389E",
+                   "kr3-desktop/assets/images/fullhd/go_sett_q.lua":  "A6700450761E4C351493F2AE341AA1970DDF97C7BFF2D5E5AC2EED0001270385",
+                   "kr3-desktop/assets/images/fullhd/go_sett_q.png":  "E7DE0DD52C14059A4C2A5DD5184C39E43123A7E56DA4387A8A150C758DD0DEFD"
+               },
+    "tests":  "95 checks, 0 failures",
+    "live_files_unchanged":  true,
+    "original_zip_unchanged":  true,
+    "new_preview_included":  false
+}

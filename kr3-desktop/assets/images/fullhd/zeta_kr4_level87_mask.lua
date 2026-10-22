@@ -1,0 +1,38 @@
+return {
+	["Stage_87_mask"] = {
+		a_name = "zeta_kr4_level87_mask.png",
+		size = {2729, 1536},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1536},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_mask_0001"] = {
+		a_name = "zeta_kr4_level87_mask.png",
+		size = {272, 153},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {2740, 1539, 272, 153},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_mask_0002"] = {
+		a_name = "zeta_kr4_level87_mask.png",
+		size = {2729, 1536},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1536},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_mask_0003"] = {
+		a_name = "zeta_kr4_level87_mask.png",
+		size = {2729, 1536},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1536},
+		alias = {},
+		textureRotated = false,
+	},
+}

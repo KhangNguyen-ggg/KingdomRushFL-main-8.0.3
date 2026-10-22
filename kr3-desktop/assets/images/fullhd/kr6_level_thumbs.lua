@@ -1,0 +1,21 @@
+return {
+	["stage_thumbs_0251"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {0,0,342,246}, alias = {} },
+	["stage_thumbs_0252"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {342,0,342,246}, alias = {} },
+	["stage_thumbs_0253"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {684,0,342,246}, alias = {} },
+	["stage_thumbs_0254"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1026,0,342,246}, alias = {} },
+	["stage_thumbs_0255"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1368,0,342,246}, alias = {} },
+	["stage_thumbs_0256"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {0,246,342,246}, alias = {} },
+	["stage_thumbs_0257"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {342,246,342,246}, alias = {} },
+	["stage_thumbs_0258"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {684,246,342,246}, alias = {} },
+	["stage_thumbs_0259"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1026,246,342,246}, alias = {} },
+	["stage_thumbs_0260"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1368,246,342,246}, alias = {} },
+	["stage_thumbs_0261"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {0,492,342,246}, alias = {} },
+	["stage_thumbs_0262"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {342,492,342,246}, alias = {} },
+	["stage_thumbs_0263"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {684,492,342,246}, alias = {} },
+	["stage_thumbs_0264"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1026,492,342,246}, alias = {} },
+	["stage_thumbs_0265"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1368,492,342,246}, alias = {} },
+	["stage_thumbs_0266"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {0,738,342,246}, alias = {} },
+	["stage_thumbs_0267"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {342,738,342,246}, alias = {} },
+	["stage_thumbs_0268"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {684,738,342,246}, alias = {} },
+	["stage_thumbs_0269"] = { a_name = "kr6_level_thumbs.png", size = {342,246}, trim = {0,0,0,0}, a_size = {1710,984}, f_quad = {1026,738,342,246}, alias = {} }
+}

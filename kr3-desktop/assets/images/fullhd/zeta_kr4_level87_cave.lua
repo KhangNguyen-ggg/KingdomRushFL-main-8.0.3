@@ -1,0 +1,38 @@
+return {
+	["Stage_87_cave"] = {
+		a_name = "zeta_kr4_level87_cave.png",
+		size = {2729, 1236},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1236},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_cave_0001"] = {
+		a_name = "zeta_kr4_level87_cave.png",
+		size = {2729, 1236},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1236},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_cave_0002"] = {
+		a_name = "zeta_kr4_level87_cave.png",
+		size = {2729, 1236},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1236},
+		alias = {},
+		textureRotated = false,
+	},
+	["Stage_87_cave_0003"] = {
+		a_name = "zeta_kr4_level87_cave.png",
+		size = {2729, 1236},
+		trim = {0, 0, 0, 0},
+		a_size = {3933, 3047},
+		f_quad = {1, 1, 2729, 1236},
+		alias = {},
+		textureRotated = false,
+	},
+}

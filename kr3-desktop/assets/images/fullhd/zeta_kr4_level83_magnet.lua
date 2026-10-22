@@ -1,0 +1,38 @@
+return {
+	["Stage_86_magnet"] = {
+		a_name = "zeta_kr4_level83_magnet.png",
+		size = {85, 102},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 85, 102},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_magnet_0001"] = {
+		a_name = "zeta_kr4_level83_magnet.png",
+		size = {85, 102},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 85, 102},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_magnet_0002"] = {
+		a_name = "zeta_kr4_level83_magnet.png",
+		size = {85, 102},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 85, 102},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_magnet_0003"] = {
+		a_name = "zeta_kr4_level83_magnet.png",
+		size = {85, 102},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1000, 1, 85, 102},
+		alias = {},
+		textureRotated = true,
+	},
+}

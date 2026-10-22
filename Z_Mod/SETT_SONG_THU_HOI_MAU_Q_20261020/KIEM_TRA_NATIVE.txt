@@ -1,0 +1,1 @@
+PASS: native Q atlas / real alpha / 8 frames / attached strike previews

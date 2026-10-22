@@ -1,0 +1,6226 @@
+﻿-- chunkname: @./kr3-desktop/assets/images/fullhd/screen_slots.lua
+
+return {
+	homeMenu_confirm_menu_0001 = {
+		a_name = "screen_slots-1.png",
+		size = {
+			720,
+			260
+		},
+		trim = {
+			25,
+			20,
+			24,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1463,
+			671,
+			218
+		},
+		alias = {}
+	},
+	main_menu_banner_bg = {
+		a_name = "screen_slots-1.png",
+		size = {
+			672,
+			543
+		},
+		trim = {
+			0,
+			25,
+			187,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			684,
+			1092,
+			485,
+			487
+		},
+		alias = {}
+	},
+	main_menu_bg = {
+		a_name = "screen_slots-1.png",
+		size = {
+			1920,
+			1080
+		},
+		trim = {
+			0,
+			0,
+			0,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			6,
+			1920,
+			1080
+		},
+		alias = {}
+	},
+	main_menu_credits_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			1,
+			5,
+			4,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1676,
+			191,
+			80
+		},
+		alias = {}
+	},
+	main_menu_credits_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			0,
+			0,
+			0,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1585,
+			196,
+			85
+		},
+		alias = {}
+	},
+	main_menu_icon_heroic = {
+		a_name = "screen_slots-1.png",
+		size = {
+			24,
+			24
+		},
+		trim = {
+			0,
+			1,
+			0,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1995,
+			1481,
+			24,
+			22
+		},
+		alias = {}
+	},
+	main_menu_icon_iron = {
+		a_name = "screen_slots-1.png",
+		size = {
+			24,
+			24
+		},
+		trim = {
+			3,
+			1,
+			2,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			439,
+			1972,
+			19,
+			23
+		},
+		alias = {}
+	},
+	main_menu_icon_star = {
+		a_name = "screen_slots-1.png",
+		size = {
+			24,
+			24
+		},
+		trim = {
+			1,
+			1,
+			1,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			203,
+			2027,
+			22,
+			21
+		},
+		alias = {}
+	},
+	main_menu_options_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			5,
+			9,
+			5,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			243,
+			1866,
+			217,
+			100
+		},
+		alias = {}
+	},
+	main_menu_options_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			4,
+			2,
+			4,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			243,
+			1753,
+			219,
+			107
+		},
+		alias = {}
+	},
+	main_menu_quit_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			3,
+			8,
+			3,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1532,
+			169,
+			63
+		},
+		alias = {}
+	},
+	main_menu_quit_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			3,
+			1,
+			1,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1456,
+			171,
+			70
+		},
+		alias = {}
+	},
+	main_menu_slot_close_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			36,
+			33
+		},
+		trim = {
+			3,
+			6,
+			7,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1993,
+			1443,
+			26,
+			25
+		},
+		alias = {}
+	},
+	main_menu_slot_close_hover = {
+		a_name = "screen_slots-1.png",
+		size = {
+			36,
+			33
+		},
+		trim = {
+			2,
+			0,
+			2,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			203,
+			1989,
+			32,
+			32
+		},
+		alias = {}
+	},
+	main_menu_slot_close_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			36,
+			33
+		},
+		trim = {
+			5,
+			3,
+			5,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			2022,
+			1389,
+			26,
+			26
+		},
+		alias = {}
+	},
+	main_menu_slot_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			204,
+			109
+		},
+		trim = {
+			3,
+			7,
+			5,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			468,
+			1864,
+			196,
+			100
+		},
+		alias = {}
+	},
+	main_menu_slot_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			204,
+			109
+		},
+		trim = {
+			3,
+			2,
+			1,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			468,
+			1753,
+			200,
+			105
+		},
+		alias = {}
+	},
+	main_menu_slots_bg = {
+		a_name = "screen_slots-1.png",
+		size = {
+			672,
+			543
+		},
+		trim = {
+			380,
+			59,
+			14,
+			99
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			684,
+			1585,
+			278,
+			385
+		},
+		alias = {}
+	},
+	main_menu_start_down = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			3,
+			6,
+			6,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1874,
+			228,
+			109
+		},
+		alias = {}
+	},
+	main_menu_start_normal = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			3,
+			0,
+			3,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1753,
+			231,
+			115
+		},
+		alias = {}
+	},
+	main_menu_subtitle_cn = {
+		a_name = "screen_slots-1.png",
+		size = {
+			1920,
+			1080
+		},
+		trim = {
+			287,
+			331,
+			1262,
+			689
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1687,
+			371,
+			60
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			22,
+			29,
+			16,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1681,
+			158,
+			37
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			31,
+			27,
+			35,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			51,
+			130,
+			40
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			24,
+			26,
+			19,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1481,
+			153,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			33,
+			26,
+			28,
+			15
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1892,
+			135,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			21,
+			27,
+			18,
+			16
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1767,
+			157,
+			43
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			48,
+			29,
+			42,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			652,
+			106,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			21,
+			27,
+			16,
+			14
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1534,
+			159,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_down_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			21,
+			28,
+			16,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1636,
+			159,
+			39
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_down_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			26,
+			23,
+			25,
+			16
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1738,
+			145,
+			47
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_down_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			30,
+			23,
+			27,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1693,
+			139,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			24,
+			20,
+			9,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1522,
+			1336,
+			163,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			32,
+			18,
+			28,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1911,
+			1207,
+			136,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			25,
+			17,
+			12,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1481,
+			159,
+			47
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			34,
+			17,
+			21,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1637,
+			141,
+			50
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			23,
+			18,
+			11,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1389,
+			162,
+			48
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			49,
+			20,
+			35,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			416,
+			112,
+			43
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			22,
+			17,
+			9,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1881,
+			165,
+			51
+		},
+		alias = {}
+	},
+	main_menu_t_credits_hover_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			22,
+			18,
+			9,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1938,
+			165,
+			45
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_hover_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			28,
+			14,
+			18,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1674,
+			1529,
+			150,
+			52
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			33,
+			16,
+			19,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1908,
+			144,
+			50
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			26,
+			23,
+			13,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1864,
+			157,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			34,
+			22,
+			31,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			6,
+			131,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			27,
+			20,
+			16,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1677,
+			1481,
+			153,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			36,
+			20,
+			25,
+			21
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1943,
+			135,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			25,
+			21,
+			15,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1947,
+			156,
+			43
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			51,
+			23,
+			38,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			925,
+			107,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			24,
+			21,
+			13,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1585,
+			159,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_credits_normal_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			24,
+			22,
+			12,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1856,
+			1389,
+			160,
+			39
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_normal_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			29,
+			18,
+			22,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1791,
+			145,
+			46
+		},
+		alias = {}
+	},
+	["main_menu_t_credits_normal_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			196,
+			86
+		},
+		trim = {
+			35,
+			19,
+			23,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1815,
+			1693,
+			138,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			12,
+			21,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1637,
+			146,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			6,
+			17,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1830,
+			1529,
+			150,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			10,
+			7,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1443,
+			160,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			11,
+			13,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1519,
+			1443,
+			154,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			1,
+			11,
+			15,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1679,
+			1443,
+			151,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			20,
+			11,
+			40,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			615,
+			107,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			12,
+			34,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			1824,
+			133,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_down_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			11,
+			21,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1826,
+			1599,
+			146,
+			31
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_down_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			22,
+			10,
+			38,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			1011,
+			107,
+			32
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			21,
+			7,
+			43,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1206,
+			103,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			4,
+			14,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1836,
+			1481,
+			153,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			0,
+			10,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1816,
+			157,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			3,
+			0,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1837,
+			167,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			3,
+			5,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1521,
+			1389,
+			162,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			4,
+			7,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1724,
+			158,
+			37
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			22,
+			4,
+			32,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			296,
+			113,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			4,
+			27,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1817,
+			1637,
+			140,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_hover_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			0,
+			3,
+			13,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1996,
+			154,
+			39
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_hover_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			23,
+			2,
+			30,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			128,
+			114,
+			40
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			22,
+			0,
+			35,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			627,
+			110,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			7,
+			17,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1599,
+			148,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			4,
+			14,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1896,
+			1271,
+			151,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			3,
+			6,
+			3,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1689,
+			1389,
+			161,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			6,
+			8,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1908,
+			157,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			5,
+			7,
+			11,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1836,
+			1443,
+			151,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			25,
+			7,
+			36,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			738,
+			106,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			8,
+			30,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			1787,
+			135,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_new_game_normal_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			2,
+			7,
+			17,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1672,
+			1599,
+			148,
+			32
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_normal_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			26,
+			6,
+			34,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			969,
+			107,
+			36
+		},
+		alias = {}
+	},
+	["main_menu_t_new_game_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			167,
+			42
+		},
+		trim = {
+			25,
+			3,
+			39,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1120,
+			103,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			26,
+			40,
+			20,
+			33
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1362,
+			1153,
+			181,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			33,
+			36,
+			32,
+			29
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1691,
+			1336,
+			162,
+			47
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			26,
+			34,
+			20,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1153,
+			181,
+			48
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			35,
+			35,
+			29,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1989,
+			163,
+			47
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			27,
+			40,
+			21,
+			28
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1360,
+			1207,
+			179,
+			44
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			73,
+			36,
+			65,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1784,
+			89,
+			50
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			44,
+			30,
+			38,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1673,
+			145,
+			59
+		},
+		alias = {}
+	},
+	main_menu_t_options_down_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			28,
+			39,
+			22,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1545,
+			1207,
+			177,
+			43
+		},
+		alias = {}
+	},
+	["main_menu_t_options_down_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			65,
+			35,
+			59,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1004,
+			103,
+			52
+		},
+		alias = {}
+	},
+	["main_menu_t_options_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			65,
+			32,
+			59,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			884,
+			103,
+			54
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			27,
+			31,
+			13,
+			37
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1762,
+			187,
+			44
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			34,
+			26,
+			25,
+			33
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1660,
+			168,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			28,
+			25,
+			13,
+			33
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1812,
+			186,
+			54
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			36,
+			25,
+			22,
+			34
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1601,
+			169,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			28,
+			31,
+			14,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1984,
+			185,
+			50
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			75,
+			26,
+			58,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			584,
+			1687,
+			94,
+			56
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			46,
+			21,
+			31,
+			27
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1529,
+			150,
+			64
+		},
+		alias = {}
+	},
+	main_menu_t_options_hover_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			30,
+			30,
+			15,
+			34
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1553,
+			1092,
+			182,
+			48
+		},
+		alias = {}
+	},
+	["main_menu_t_options_hover_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			66,
+			26,
+			52,
+			29
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			675,
+			109,
+			57
+		},
+		alias = {}
+	},
+	["main_menu_t_options_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			67,
+			24,
+			52,
+			29
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			776,
+			108,
+			59
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			29,
+			34,
+			16,
+			39
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1741,
+			1092,
+			182,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			36,
+			30,
+			28,
+			35
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1353,
+			1336,
+			163,
+			47
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			30,
+			28,
+			17,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1549,
+			1153,
+			180,
+			48
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			39,
+			29,
+			26,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1859,
+			1336,
+			162,
+			47
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			30,
+			34,
+			18,
+			33
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1735,
+			1153,
+			179,
+			45
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			76,
+			30,
+			62,
+			32
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1840,
+			89,
+			50
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			48,
+			24,
+			35,
+			29
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1843,
+			144,
+			59
+		},
+		alias = {}
+	},
+	main_menu_t_options_normal_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			32,
+			34,
+			18,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1728,
+			1207,
+			177,
+			42
+		},
+		alias = {}
+	},
+	["main_menu_t_options_normal_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			68,
+			29,
+			56,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1062,
+			103,
+			52
+		},
+		alias = {}
+	},
+	["main_menu_t_options_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			227,
+			112
+		},
+		trim = {
+			69,
+			28,
+			55,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			944,
+			103,
+			54
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			32,
+			22,
+			32,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			549,
+			111,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			48,
+			20,
+			53,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			491,
+			132,
+			74,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			44,
+			21,
+			43,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			233,
+			132,
+			88,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			28,
+			20,
+			27,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1816,
+			51,
+			120,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			56,
+			22,
+			58,
+			17
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1099,
+			132,
+			61,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			40,
+			22,
+			40,
+			21
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1953,
+			1824,
+			95,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			53,
+			22,
+			52,
+			19
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1978,
+			1599,
+			70,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_quit_down_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			38,
+			20,
+			37,
+			18
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1390,
+			100,
+			35
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_down_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			53,
+			20,
+			54,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			880,
+			132,
+			68,
+			33
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			53,
+			16,
+			55,
+			20
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			307,
+			172,
+			67,
+			37
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			34,
+			12,
+			25,
+			21
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			6,
+			116,
+			40
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			49,
+			11,
+			46,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			172,
+			80,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			46,
+			11,
+			36,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1738,
+			93,
+			40
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			30,
+			10,
+			20,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			380,
+			125,
+			41
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			57,
+			13,
+			51,
+			21
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			309,
+			67,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			42,
+			13,
+			33,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1431,
+			100,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			54,
+			12,
+			45,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			225,
+			172,
+			76,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_quit_hover_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			39,
+			11,
+			30,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1942,
+			51,
+			106,
+			40
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_hover_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			54,
+			10,
+			48,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			216,
+			73,
+			39
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_hover_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			56,
+			8,
+			47,
+			23
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			261,
+			72,
+			42
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			36,
+			16,
+			28,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			588,
+			111,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			51,
+			14,
+			49,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			410,
+			132,
+			75,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			48,
+			15,
+			39,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			132,
+			88,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			32,
+			14,
+			24,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			500,
+			119,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			59,
+			16,
+			54,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1986,
+			1529,
+			62,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			43,
+			17,
+			36,
+			27
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1951,
+			2011,
+			96,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			56,
+			16,
+			48,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			649,
+			132,
+			71,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_quit_normal_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			41,
+			14,
+			34,
+			24
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1472,
+			100,
+			35
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_normal_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			56,
+			14,
+			51,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			954,
+			132,
+			68,
+			33
+		},
+		alias = {}
+	},
+	["main_menu_t_quit_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			175,
+			73
+		},
+		trim = {
+			58,
+			12,
+			51,
+			25
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			380,
+			172,
+			66,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			39,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1584,
+			99,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			10,
+			31,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			1049,
+			107,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			12,
+			16,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1308,
+			51,
+			122,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			43,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1703,
+			95,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			15,
+			12,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			662,
+			51,
+			124,
+			27
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			16,
+			72,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			757,
+			97,
+			65,
+			26
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			12,
+			23,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			92,
+			115,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_down_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			12,
+			20,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			579,
+			118,
+			30
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_down_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			14,
+			53,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			424,
+			97,
+			84,
+			28
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			14,
+			53,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			514,
+			97,
+			84,
+			28
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			6,
+			32,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			696,
+			106,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			3,
+			23,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			174,
+			114,
+			39
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			4,
+			8,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			143,
+			6,
+			130,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			6,
+			35,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1164,
+			103,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			7,
+			5,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			415,
+			6,
+			130,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			8,
+			64,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			571,
+			132,
+			72,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			4,
+			15,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			792,
+			51,
+			123,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_hover_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			4,
+			12,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1489,
+			6,
+			124,
+			38
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_hover_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			45,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1955,
+			1744,
+			90,
+			36
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			6,
+			47,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1959,
+			1693,
+			89,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			9,
+			35,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1513,
+			100,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			7,
+			26,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			738,
+			109,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			12,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			921,
+			51,
+			123,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			9,
+			38,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1951,
+			1933,
+			97,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			6,
+			10,
+			8,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			142,
+			51,
+			124,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			12,
+			68,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1028,
+			132,
+			65,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			19,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			52,
+			116,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_slot_1_normal_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			4,
+			8,
+			15,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			541,
+			119,
+			32
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_normal_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			10,
+			49,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1963,
+			1637,
+			84,
+			31
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_1_normal_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			10,
+			51,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			879,
+			1976,
+			82,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			34,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			849,
+			104,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			9,
+			25,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			338,
+			113,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			11,
+			11,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1223,
+			6,
+			127,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			37,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1355,
+			101,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			14,
+			12,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			532,
+			51,
+			124,
+			28
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			16,
+			66,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			604,
+			97,
+			71,
+			26
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			12,
+			18,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			464,
+			120,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_down_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			11,
+			14,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1879,
+			6,
+			124,
+			31
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_down_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			14,
+			48,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			234,
+			97,
+			89,
+			28
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			14,
+			48,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			329,
+			97,
+			89,
+			28
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			5,
+			26,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			465,
+			112,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_en = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			3,
+			17,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1690,
+			51,
+			120,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			4,
+			3,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			1744,
+			135,
+			37
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			5,
+			30,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			841,
+			108,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			4,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			2012,
+			131,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			8,
+			58,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			879,
+			2013,
+			78,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			4,
+			10,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1920,
+			1153,
+			128,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_hover_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			4,
+			7,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			551,
+			6,
+			129,
+			38
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_hover_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			40,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1619,
+			95,
+			36
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			6,
+			40,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1952,
+			1860,
+			96,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			30,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			775,
+			105,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			21,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			219,
+			114,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			7,
+			7,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			955,
+			6,
+			128,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			9,
+			33,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1319,
+			102,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			6,
+			10,
+			8,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			272,
+			51,
+			124,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			12,
+			62,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			726,
+			132,
+			71,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			14,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1563,
+			51,
+			121,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_slot_2_normal_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			4,
+			7,
+			10,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1619,
+			6,
+			124,
+			33
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_normal_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			9,
+			44,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1896,
+			89,
+			32
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_2_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			9,
+			44,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1972,
+			89,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			35,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1247,
+			103,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			9,
+			25,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			377,
+			113,
+			33
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			11,
+			11,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1356,
+			6,
+			127,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			38,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1549,
+			100,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			14,
+			13,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1179,
+			51,
+			123,
+			28
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			16,
+			67,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			681,
+			97,
+			70,
+			26
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			11,
+			18,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			427,
+			120,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_down_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			11,
+			15,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1050,
+			51,
+			123,
+			31
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_down_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			13,
+			48,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			139,
+			97,
+			89,
+			29
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_down_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			13,
+			48,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1955,
+			1787,
+			90,
+			29
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			5,
+			27,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			507,
+			111,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			1,
+			3,
+			18,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1929,
+			1092,
+			119,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			3,
+			3,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1994,
+			135,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			5,
+			30,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			883,
+			108,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			5,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			279,
+			6,
+			130,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			8,
+			59,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			327,
+			132,
+			77,
+			34
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			0,
+			4,
+			10,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			821,
+			6,
+			128,
+			38
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_hover_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			4,
+			7,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			686,
+			6,
+			129,
+			38
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_hover_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			40,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1661,
+			95,
+			36
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			2,
+			6,
+			40,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1951,
+			1969,
+			96,
+			36
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_de = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			31,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			812,
+			104,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_en = {
+		a_name = "screen_slots-1.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			6,
+			21,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1932,
+			258,
+			114,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_es = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			7,
+			7,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1089,
+			6,
+			128,
+			32
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_fr = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			8,
+			33,
+			3
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1282,
+			102,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_ja = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			6,
+			10,
+			8,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			402,
+			51,
+			124,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			12,
+			62,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			803,
+			132,
+			71,
+			30
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_pt = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			3,
+			7,
+			14,
+			0
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1436,
+			51,
+			121,
+			35
+		},
+		alias = {}
+	},
+	main_menu_t_slot_3_normal_ru = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			4,
+			7,
+			10,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1749,
+			6,
+			124,
+			33
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_normal_zh-Hans"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			9,
+			44,
+			1
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1934,
+			89,
+			32
+		},
+		alias = {}
+	},
+	["main_menu_t_slot_3_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			138,
+			42
+		},
+		trim = {
+			5,
+			9,
+			44,
+			2
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			2009,
+			89,
+			31
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			33,
+			30,
+			32,
+			33
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1336,
+			172,
+			54
+		},
+		alias = {
+			"main_menu_t_start_down_en"
+		}
+	},
+	main_menu_t_start_down_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			33,
+			32,
+			31,
+			32
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1538,
+			1271,
+			173,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			36,
+			32,
+			34,
+			32
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1719,
+			167,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			23,
+			37,
+			24,
+			28
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			243,
+			1972,
+			190,
+			52
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			58,
+			29,
+			52,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			166,
+			127,
+			62
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			28,
+			31,
+			26,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1092,
+			183,
+			55
+		},
+		alias = {}
+	},
+	main_menu_t_start_down_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			26,
+			36,
+			25,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1872,
+			186,
+			50
+		},
+		alias = {}
+	},
+	["main_menu_t_start_down_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			52,
+			27,
+			47,
+			22
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1744,
+			138,
+			68
+		},
+		alias = {}
+	},
+	["main_menu_t_start_down_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			57,
+			22,
+			54,
+			28
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			234,
+			126,
+			67
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			34,
+			21,
+			25,
+			37
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1271,
+			178,
+			59
+		},
+		alias = {
+			"main_menu_t_start_hover_en"
+		}
+	},
+	main_menu_t_start_hover_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			34,
+			23,
+			24,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1207,
+			179,
+			58
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			37,
+			22,
+			27,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1359,
+			1271,
+			173,
+			59
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			25,
+			28,
+			17,
+			32
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			383,
+			1687,
+			195,
+			57
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_ko = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			60,
+			20,
+			45,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			1860,
+			132,
+			67
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			29,
+			22,
+			19,
+			35
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			684,
+			1976,
+			189,
+			60
+		},
+		alias = {}
+	},
+	main_menu_t_start_hover_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			28,
+			27,
+			18,
+			35
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1989,
+			191,
+			55
+		},
+		alias = {}
+	},
+	["main_menu_t_start_hover_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			54,
+			18,
+			40,
+			26
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1518,
+			1964,
+			143,
+			73
+		},
+		alias = {}
+	},
+	["main_menu_t_start_hover_zh-Hant"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			59,
+			14,
+			47,
+			30
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1814,
+			1933,
+			131,
+			73
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_de = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			36,
+			24,
+			29,
+			39
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1396,
+			172,
+			54
+		},
+		alias = {
+			"main_menu_t_start_normal_en"
+		}
+	},
+	main_menu_t_start_normal_es = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			36,
+			26,
+			28,
+			38
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1717,
+			1271,
+			173,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_fr = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			39,
+			26,
+			31,
+			38
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1175,
+			1778,
+			167,
+			53
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_ja = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			26,
+			31,
+			21,
+			34
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			468,
+			1970,
+			190,
+			52
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_ko = {
+		a_name = "screen_slots-2.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			61,
+			23,
+			49,
+			31
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			97,
+			127,
+			63
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_pt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			31,
+			26,
+			23,
+			37
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1364,
+			1092,
+			183,
+			54
+		},
+		alias = {}
+	},
+	main_menu_t_start_normal_ru = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			30,
+			31,
+			21,
+			36
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			968,
+			1928,
+			186,
+			50
+		},
+		alias = {}
+	},
+	["main_menu_t_start_normal_zh-Hans"] = {
+		a_name = "screen_slots-1.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			56,
+			21,
+			43,
+			28
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			1670,
+			1818,
+			138,
+			68
+		},
+		alias = {}
+	},
+	["main_menu_t_start_normal_zh-Hant"] = {
+		a_name = "screen_slots-2.png",
+		size = {
+			237,
+			117
+		},
+		trim = {
+			61,
+			18,
+			50,
+			32
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			307,
+			126,
+			67
+		},
+		alias = {}
+	},
+	main_options_bg_notxt = {
+		a_name = "screen_slots-1.png",
+		size = {
+			700,
+			370
+		},
+		trim = {
+			14,
+			1,
+			14,
+			4
+		},
+		a_size = {
+			2048,
+			2048
+		},
+		f_quad = {
+			6,
+			1092,
+			672,
+			365
+		},
+		alias = {}
+	}
+}

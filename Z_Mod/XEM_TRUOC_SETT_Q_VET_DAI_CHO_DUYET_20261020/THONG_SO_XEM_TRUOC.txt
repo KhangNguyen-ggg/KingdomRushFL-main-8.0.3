@@ -1,0 +1,20 @@
+SETT Q — MẪU MỚI VỆT DÀI, CHƯA DUYỆT
+20/10/2026
+
+- Kế thừa mẫu mới: bàn chưởng và chiều cao Q bằng 50% so với ZIP Q ngang gốc, opacity tối đa 140/255 (khoảng 55%).
+- Chỉ phần cẳng tay/vệt phía sau được kéo dài gấp đôi; bàn chưởng phía trước không bị kéo ngang to ra.
+- Tâm bàn chưởng được căn theo bàn tay thật của từng tư thế.
+- Bỏ các vòng sáng/dư ảnh đòn thường nằm sẵn trong ảnh thân khi dựng Q: dùng bản ảnh thân sạch dành riêng cho Q. Không thay ảnh thân của đòn đánh thường.
+- Ảnh mẫu chỉ hiển thị hiệu ứng Q, không chồng nổ trúng hay dư ảnh riêng của đòn đánh thường.
+- Trái luôn tím, phải luôn xanh.
+
+MAU_MOI_Q_VET_DAI.png: mẫu mới.
+SO_SANH_Q_VET_DAI.png: trên là mẫu trước, dưới là mẫu mới, cùng thời điểm vươn tay.
+SO_SANH_Q_THU_TAY.png: so sánh khi thu tay.
+CHUOI_Q_VET_DAI.png: theo tay ở các tư thế, có kiểm tra khi quay ngược.
+
+Đây chỉ là mẫu xem trước, chưa đưa vào CAP_NHAT hoặc ZIP, chưa cài vào game. Chờ người dùng duyệt ngoại hình trước khi hoàn thiện bản mod mới.
+ZIP FL803_Sett_Q_Ngang_TraiTim_PhaiXanh_CanViTri.zip là nhánh cũ riêng, chỉ căn lại vị trí; không chứa những thay đổi hình ảnh của mẫu này.
+
+Ảnh thân Q sạch được tạo bằng công cụ imagegen tích hợp; prompt và nguồn trong NGUON_ANH.txt. Phép vẽ, tọa độ và phần kéo dài vệt được dựng bằng bộ vẽ LÖVE dùng cho game.
+Chưa chơi thử trong trận.

@@ -1,0 +1,25 @@
+FL803 — SETT Q NGANG, BẢN CŨ CHỈ CĂN LẠI VỊ TRÍ
+20/10/2026
+
+Dựa đúng trên FL803_Sett_Q_Ngang_TraiTim_PhaiXanh.zip.
+
+THAY ĐỔI
+- Căn tâm phần bàn tay của chưởng Q về tâm bàn tay thật của Sett theo từng khung hình thân người và từng khung hiệu ứng.
+- Sửa các điểm bám khi vươn tay và thu tay; đổi hướng vẫn bám đúng tay.
+- Áp dụng cho cả Sett Gốc, Song Thú và Nhập Hồn.
+
+Đây là nhánh BẢN CŨ. Giữ kích thước Q trái 93,5 × 74,8; Q phải 100,3 × 81,6; alpha tối đa 235/255. Không áp dụng kích thước 50%, opacity 55%, vệt dài hay ảnh thân Q bỏ aura của mẫu mới.
+
+Trong 5 file CAP_NHAT, chỉ all/sett_visuals.lua thay đổi so với ZIP gốc; 4 file còn lại giống hệt ZIP đó để tiện cài đủ bộ.
+Sát thương, hồi chiêu, đánh thường, ảnh kỹ năng, hai pet và cơ chế giữ block theo ZIP gốc.
+
+CÀI ĐẶT
+1. Thoát game khi muốn cài.
+2. Chép NỘI DUNG của CAP_NHAT vào thư mục FL 8.0.3, đồng ý thay thế 5 file.
+3. Mở lại game.
+
+BACKUP chứa đúng 5 file của ZIP gốc nêu trên. Muốn trở lại bản đó: thoát game, chép nội dung BACKUP vào thư mục game.
+
+95 kiểm tra Lua 5.1 đạt, bao gồm ba Sett và vị trí Q qua các tư thế ở hai hướng. Dựng ảnh bằng phép vẽ LÖVE thực tế. SHA-256 xác nhận 4 file không liên quan không đổi, game đang chạy và ZIP gốc không bị sửa; mọi mục trong ZIP được đọc lại kiểm tra.
+
+Bản vá được tạo riêng trong Z_Mod, chưa cài vào game và không sửa save. Chưa chơi thử trong trận hoặc đo FPS/RAM.

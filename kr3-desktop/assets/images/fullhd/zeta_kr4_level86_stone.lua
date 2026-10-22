@@ -1,0 +1,38 @@
+return {
+	["Stage_86_stone"] = {
+		a_name = "zeta_kr4_level86_stone.png",
+		size = {268, 244},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 268, 244},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_stone_0001"] = {
+		a_name = "zeta_kr4_level86_stone.png",
+		size = {268, 244},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 268, 244},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_stone_0002"] = {
+		a_name = "zeta_kr4_level86_stone.png",
+		size = {268, 244},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1, 1, 268, 244},
+		alias = {},
+		textureRotated = true,
+	},
+	["Stage_86_stone_0003"] = {
+		a_name = "zeta_kr4_level86_stone.png",
+		size = {268, 244},
+		trim = {0, 0, 0, 0},
+		a_size = {1948, 3226},
+		f_quad = {1000, 1, 268, 244},
+		alias = {},
+		textureRotated = true,
+	},
+}

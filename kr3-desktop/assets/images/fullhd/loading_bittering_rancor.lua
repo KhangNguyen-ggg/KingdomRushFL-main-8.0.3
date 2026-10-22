@@ -1,0 +1,28 @@
+﻿-- chunkname: @./kr3-desktop/assets/images/fullhd/loading_bittering_rancor.lua
+
+return {
+	loading_bittering_rancor = {
+		a_name = "loading_bittering_rancor-1.png",
+		size = {
+			1920,
+			1080
+		},
+		trim = {
+			0,
+			0,
+			0,
+			0
+		},
+		a_size = {
+			1920,
+			1080
+		},
+		f_quad = {
+			0,
+			0,
+			1920,
+			1080
+		},
+		alias = {}
+	}
+}

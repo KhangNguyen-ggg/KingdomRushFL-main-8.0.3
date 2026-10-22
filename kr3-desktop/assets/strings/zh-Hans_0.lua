@@ -1,0 +1,23 @@
+-- chunkname: @./_assets/kr1-desktop/strings/zh-Hans.lua
+
+return {
+	HERO_SPIDER_CLASS = "Nữ hoàng nhện độc",
+	HERO_VESPER_ATTACKRATE = "Nhanh",
+	--HERO_VELANN_ATTACKRATE = "",
+	HERO_SPACE_ELF_ATTACKRATE = "Trung bình",
+	HERO_MUYRN_ATTACKRATE = "Trung bình",
+	HERO_LUMENIR_ATTACKRATE = "Chậm",
+	HERO_RAELYN_ATTACKRATE = "Chậm",
+	HERO_BUILDER_ATTACKRATE = "Chậm",
+	HERO_MECHA_ATTACKRATE = "Chậm",
+	HERO_VENOM_ATTACKRATE = "Nhanh",
+	HERO_ROBOT_ATTACKRATE = "Nhanh",
+	HERO_HUNTER_ATTACKRATE = "Nhanh",
+	HERO_DRAGON_GEM_ATTACKRATE = "Chậm",
+	HERO_BIRD_ATTACKRATE = "Trung bình",
+	HERO_LAVA_ATTACKRATE = "Trung bình",
+	HERO_WITCH_ATTACKRATE = "Trung bình",
+	HERO_DRAGON_ARB_ATTACKRATE = "Chậm",
+	HERO_DRAGON_BONE_ATTACKRATE = "Chậm",
+	HERO_SPIDER_ATTACKRATE = "Trung bình",
+}
