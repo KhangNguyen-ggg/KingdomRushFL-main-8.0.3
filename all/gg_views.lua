@@ -1573,6 +1573,10 @@ end
 
 function GGExo:destroy()
 	EXO:unload(self.exo_name)
+	self.batch = nil
+	self._exo_frame = nil
+	self.animations = nil
+	GGExo.super.destroy(self)
 end
 
 function GGExo:load_exo()

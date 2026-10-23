@@ -112,9 +112,7 @@ function font_db:f(alias, size)
 	local name = self.font_subst[alias] or alias
 	local real_size = tonumber(self.font_adj[alias] and self.font_adj[alias].size * size or size)
 
-	if real_size > 6 then
-		real_size = math.floor(real_size + 0.5)
-	end
+	real_size = math.max(1, math.floor(real_size + 0.5))
 
 	local name_size = name .. "-" .. real_size
 	local tf = self.fonts[name_size]

@@ -3223,6 +3223,14 @@ function KR5MapExo:initialize(size, exo_name, exo_animation, exo_scale_factor)
 	self:load_exo()
 end
 
+function KR5MapExo:destroy()
+	KR5_MAP_EXO:unload(self.exo_name)
+	self.batch = nil
+	self._exo_frame = nil
+	self.animations = nil
+	KR5MapExo.super.destroy(self)
+end
+
 function KR5MapExo:load_exo()
 	local anis, max_parts = KR5_MAP_EXO:load_kui(self.exo_name, true)
 

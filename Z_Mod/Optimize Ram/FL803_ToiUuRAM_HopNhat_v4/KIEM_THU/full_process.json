@@ -1,0 +1,8 @@
+{
+    "probe":  "full",
+    "exit_code":  null,
+    "seconds":  282.79,
+    "peak_private_MiB":  3052.9,
+    "peak_working_MiB":  3080.5,
+    "stop_reason":  null
+}

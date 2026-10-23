@@ -41,36 +41,6 @@ end
 
 local image_db = {}
 
-local persistent_textures = {}
-
-for _, name in ipairs({
-	-- These atlases are needed by almost every in-game load and always use the
-	-- same game/game_gui scale in this project. Keep them resident like Dove
-	-- does, so restarting/changing levels does not re-parse and re-upload them.
-	"go_decals",
-	"go_enemies_common",
-	"go_towers",
-	"go_towers_1",
-	"go_towers_2",
-	"go_towers_44",
-	"go_towers_1-galaxy",
-	"go_towers_special",
-	"go_barrack_pirates",
-	"gui_common_123mod",
-	"kr4_sapos",
-	"kr4_hero_power",
-	"kr5_hero_power",
-	"gui_common_v",
-	"gui_portraits_v",
-	"go_towers_v",
-	"terrains_5",
-	"terrains_4",
-	"terrains_6",
-	"go_commons"
-}) do
-	persistent_textures[name] = true
-end
-
 image_db.db_images = {}
 image_db.db_atlas = {}
 image_db.db_atlas_shadow = {}
@@ -339,6 +309,7 @@ function image_db:queue_load_done()
 
 	-- Keep this boundary defensive as old/mobile save settings may also contain
 	-- a missing or non-numeric max_threads value.
+	-- Respect the loader thread count selected in the menu.
 	local queue_max_threads = tonumber(_MAX_THREADS) or calculate_image_thread_count()
 
 	if #self.threads == 0 then
@@ -435,11 +406,15 @@ function image_db:queue_load_done()
 									h
 								}
 							else
+								G.push("all")
 								G.setCanvas(c)
+								G.origin()
+								G.setScissor()
+								G.setShader()
+								G.setColor(255, 255, 255, 255)
 								G.setBlendMode("replace", "premultiplied")
 								G.draw(im)
-								G.setBlendMode("alpha", "alphamultiply")
-								G.setCanvas()
+								G.pop()
 
 								self.db_images[key] = {
 									c,
@@ -463,6 +438,14 @@ function image_db:queue_load_done()
 						end
 
 						self.queue_load_done_images = self.queue_load_done_images + 1
+					end
+
+					-- Decoded pixels and temporary textures live outside the Lua heap budget.
+					result[3], r3, data, im = nil, nil, nil, nil
+					if w * h >= 4194304 then
+						collectgarbage()
+					else
+						collectgarbage("step", math.ceil(w * h / 256))
 					end
 				end
 			end
@@ -495,14 +478,6 @@ end
 function image_db:queue_load_atlas(ref_scale, path, name)
 	ref_scale = ref_scale or 1
 
-	local name_scale = string.format("%s-%.6f", name, ref_scale)
-
-	if persistent_textures[name] and self.atlas_uses[name_scale] then
-		log.debug("persistent atlas %s already loaded", name_scale)
-
-		return
-	end
-
 	log.debug("queued %s/%s-%.6f", path, name, ref_scale)
 	table.insert(self.load_queue, {
 		ref_scale,
@@ -520,12 +495,6 @@ end
 
 function image_db:unload_atlas(name, ref_scale, defer_purge)
 	ref_scale = ref_scale or 1
-
-	if persistent_textures[name] then
-		log.debug("persistent atlas %s-%.6f kept loaded", name, ref_scale)
-
-		return
-	end
 
 	local name_scale = string.format("%s-%.6f", name, ref_scale)
 

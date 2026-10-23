@@ -863,6 +863,14 @@ function sound_db:stop_all()
 	LA.stop()
 
 	self.ref_counters = {}
+	self.request_queue = {}
+	self.stop_queue = {}
+	for group in pairs(self.active_sources) do self.active_sources[group] = {} end
+
+	-- Keep each master source; discard stopped clones left over from the battle.
+	for _, pool in pairs(self.sources) do
+		for i = #pool, 2, -1 do pool[i] = nil end
+	end
 end
 
 function sound_db:pause()

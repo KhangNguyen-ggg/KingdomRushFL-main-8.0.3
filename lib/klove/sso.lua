@@ -1,6 +1,7 @@
 ﻿-- chunkname: @./lib/klove/sso.lua
 
 local log = require("klua.log"):new("sso")
+local clear = require("table.clear")
 local SSO = {}
 
 SSO.persistent_lists = {}
@@ -30,8 +31,19 @@ if SSO.bb_mode then
 	SSO.bb_step = 128
 
 	function SSO:reset(entities)
+		if entities and entities == self.bb_all_entities then
+			-- Reuse cell arrays within this stage, but release every previous target.
+			for _, g in pairs(self.bb_grids) do
+				for _, column in pairs(g.grid) do
+					for _, cell in pairs(column) do
+						clear(cell)
+					end
+				end
+			end
+		else
+			self.bb_grids = {}
+		end
 		self.bb_all_entities = entities
-		self.bb_grids = {}
 	end
 
 	function SSO:is_all_entities(entities)
@@ -43,7 +55,7 @@ if SSO.bb_mode then
 	end
 
 	function SSO:create(name, x, y, w, h)
-		local g = {}
+		local g = self.bb_grids[name] or {}
 
 		g.x = x
 		g.y = y
@@ -53,7 +65,7 @@ if SSO.bb_mode then
 		g.max_ix = 0
 		g.min_iy = 0
 		g.max_iy = 0
-		g.grid = {}
+		g.grid = g.grid or {}
 		g.name = name
 		self.bb_grids[name] = g
 

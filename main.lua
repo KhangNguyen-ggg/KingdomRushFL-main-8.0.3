@@ -1001,11 +1001,6 @@ function love.run()
 			end
 
 			collectgarbage("step")
-			if collectgarbage("count") > 409600 then
-				collectgarbage("step", 512)
-			else
-				collectgarbage("step")
-			end
 
 			if main.draw_stats then
 				presi = love.timer.getTime()
@@ -1521,5 +1516,4 @@ function my_data_processing()
 		end
 	end
 end
-
 

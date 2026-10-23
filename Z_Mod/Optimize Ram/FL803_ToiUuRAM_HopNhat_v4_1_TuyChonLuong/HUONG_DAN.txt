@@ -1,0 +1,67 @@
+V4.1: DÙNG ĐÚNG SỐ LUỒNG ĐÃ CHỌN TRONG MENU (2/4/6/8).
+Không còn giới hạn cứng 2 luồng. Giữ các tối ưu dọn RAM khác của v4.
+Đây là gói đầy đủ: chỉ chép nội dung CAP_NHAT, không cần cài v4 trước.
+Chưa tự cài vào game. Không thay đổi thiết lập 8 luồng đang lưu của bạn.
+Các kết quả đo trong KIEM_THU là của v4 giới hạn 2 luồng, không phải phép đo v4.1.
+
+FL803_ToiUuRAM_HopNhat_v4_1_TuyChonLuong — 23/10/2026
+
+CÀI ĐẶT
+1. Tắt hẳn game.
+2. Giải nén ZIP này ra một thư mục riêng.
+3. Chép các thư mục all, all-desktop, lib BÊN TRONG CAP_NHAT vào thư mục
+   chứa file EXE của KRFL 8.0.3; đồng ý ghi đè.
+4. Mở game lại.
+
+Chỉ cần cài MỘT gói v4.1 này. Đã hợp nhất các sửa chữa v2, v3 và phần hữu ích
+của MemoryOpt. Không chép đè lại các gói cũ P1/P2/v2/v3/MemoryOpt sau v4.
+Không chép cả thư mục BACKUP_TRUOC_VA hoặc KIEM_THU vào game.
+Không cần chạy Lua, BAT hoặc các script trong KIEM_THU.
+
+Gói được tạo từ bản KRFL 8.0.3 hiện tại của bạn, có các mod đang có.
+Không phải bản cài chung cho mọi bản KRFL khác; các bản đó cần đối chiếu mã.
+Chưa tự chép v4 vào game đang dùng. Không đổi save, đội hình, F1, số quái,
+số hero, độ phân giải, hình ảnh, sát thương hay kỹ năng.
+
+THAY ĐỔI
+- Giữ cơ chế v2 dọn dữ liệu trận, listener, exoskeleton, GUI và lưới mục tiêu
+  khi thoát/chơi lại. MemoryOpt đã ghi đè mất một số bước này; v4 khôi phục.
+- Giữ cơ chế v3 bỏ bản sao pixel CPU không cần thiết sau khi tải ảnh.
+- Bỏ việc giữ vĩnh viễn 20 nhóm atlas chiến đấu. Nhóm ảnh dùng chung vẫn được
+  đếm tham chiếu; chỉ giải phóng khi không màn hình nào dùng.
+- Dùng số luồng giải mã được chọn trong menu; dọn bộ đệm tạm sau các ảnh
+  từ 2048x2048 pixel trở lên. Chỉ ảnh hưởng quá trình tải tài nguyên.
+- Tái sử dụng các ô lưới tìm mục tiêu trong cùng trận; xóa tham chiếu mục tiêu
+  cũ mỗi cập nhật, trả cả lưới khi rời trận.
+- Gom cỡ font nhỏ về cỡ pixel nguyên, tránh cache vô số cỡ gần nhau.
+- Tái sử dụng ảnh chữ cùng nội dung và kiểu hiển thị. Cache tối đa 128 mục,
+  ngân sách 8 MiB dữ liệu pixel texture; ảnh chữ đang dùng không bị đuổi.
+  Chữ vượt ngân sách vẫn hiển thị bình thường và được giải phóng khi hết dùng.
+  Đây là ngân sách texture, không phải toàn bộ RAM của font/driver/ảnh CPU.
+
+VỀ MEMORYOPT
+Đã giữ và sửa ý tưởng cache chữ: khóa theo giá trị màu, giữ ảnh còn đang dùng,
+không làm biến đổi kích thước chữ của entity, dọn cache khi thoát/chơi lại.
+Dùng đường dọn EXO đã kiểm thử của v2 thay cho đường dọn riêng của MemoryOpt.
+Không dùng memory_guard và các phím F9/F10 mới của gói đó; vòng lặp game đã có
+GC tăng dần. File dove_modules/perf/memory_guard.lua hiện có có thể để nguyên,
+v4 không nạp nó. Không cần xóa thư mục hay tài nguyên khác.
+
+GIỚI HẠN
+Quái, đạn, hiệu ứng đang hoạt động cần RAM và thời gian CPU/GPU thực sự.
+V4 giảm giữ tài nguyên thừa và cấp phát lặp; không đảm bảo FPS luôn giữ nguyên
+khi tăng số quái/hero. Mức RAM sau trận đầu có thể cao hơn lúc vừa mở game
+do cache dùng lần đầu và vùng nhớ engine/driver giữ để tái sử dụng.
+Việc bỏ cache atlas vĩnh viễn có thể làm tải màn
+lâu hơn. Không giảm chất lượng ảnh để đổi lấy RAM.
+Đội 9 boss cộng TẤT CẢ nhóm F1 vẫn có thể hết bộ nhớ cấp phát trên máy hiện tại.
+Xem KIEM_TRA.txt: không coi thử nghiệm thiếu RAM là đã sửa hết mọi crash.
+
+KHÔI PHỤC
+Nếu cần quay về trạng thái ngay trước v4, tắt game và chép nội dung
+BACKUP_TRUOC_VA vào thư mục game. Đây là bản trước v4 CÓ MemoryOpt đã được bạn
+chép thêm, không phải bản gốc tác giả. Giữ lại file memory_guard.lua đã có
+để bản sao lưu director.lua vẫn dùng được khi khôi phục.
+
+KIEM_THU chứa bằng chứng và mã phép thử dành cho kỹ thuật; đường dẫn trong đó
+trỏ tới môi trường kiểm thử riêng ở D:\CodexTemp, không phải bộ cài tự chạy.

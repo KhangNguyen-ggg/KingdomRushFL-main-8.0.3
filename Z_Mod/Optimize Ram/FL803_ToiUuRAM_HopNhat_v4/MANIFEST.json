@@ -1,0 +1,91 @@
+{
+  "name": "FL803_ToiUuRAM_HopNhat_v4",
+  "date": "2026-10-23",
+  "target": "Current KRFL 8.0.3 workspace with v2/v3 and MemoryOpt merged; no live installation performed",
+  "files": [
+    {
+      "path": "all/director.lua",
+      "bytes": 53885,
+      "sha256": "cd86f0d7af37f4281c97e1eff0c389291584e1f57170b8464a2adae8a57f51cb",
+      "backup_sha256": "4bf6aea4fe53123eaad054126018ceae7736c6c0758b80b492338aa5559f64eb"
+    },
+    {
+      "path": "all/exoskeleton.lua",
+      "bytes": 14822,
+      "sha256": "c45febecd52ab9aba76bc70513c517b988dcb51db017bdd1622994413504a753",
+      "backup_sha256": "55ec52fe2088c5f883123da08fa425f2174fd1efd727cdec4a4a7811ba45055a"
+    },
+    {
+      "path": "all/game.lua",
+      "bytes": 60562,
+      "sha256": "93bd65cc0ed39923e0a22c5812327a5c7a04bb2b46f574e38c02cc7f52fd0a1c",
+      "backup_sha256": "fcbb8760ef77d78a0762c3aa923a0d7826d020a3adc38c66a60b4d6804bebbe9"
+    },
+    {
+      "path": "all/gg_views.lua",
+      "bytes": 43341,
+      "sha256": "a4bb83748c0092ca9c39f42da1a9673dfdc2ecafda3a4efb29354d8be47a7b45",
+      "backup_sha256": "a4bb83748c0092ca9c39f42da1a9673dfdc2ecafda3a4efb29354d8be47a7b45"
+    },
+    {
+      "path": "all/main_utils.lua",
+      "bytes": 20624,
+      "sha256": "7ea05d55cb38e5d0a8b767c7935630b8ad66c4f28d13ae408637c5b0660a7858",
+      "backup_sha256": "7ea05d55cb38e5d0a8b767c7935630b8ad66c4f28d13ae408637c5b0660a7858"
+    },
+    {
+      "path": "all/sound_db.lua",
+      "bytes": 26190,
+      "sha256": "d0c6a5d6ea7b408f46a089ebff292805327645bb3109cb53f7851de953994707",
+      "backup_sha256": "d0c6a5d6ea7b408f46a089ebff292805327645bb3109cb53f7851de953994707"
+    },
+    {
+      "path": "all/systems.lua",
+      "bytes": 137654,
+      "sha256": "3f9980707378fd0c16d2a8619776ac3decbeddfd5021a07f572eefee8d533b48",
+      "backup_sha256": "1d9ba64062097b5ea554cb5596b688dc58a95388931d02ab2f09b702622d4761"
+    },
+    {
+      "path": "all-desktop/game_gui.lua",
+      "bytes": 331801,
+      "sha256": "a5ecd02f2e887c8e0f286b7bf9068d2e1a50506575c6d56ea4f4be51c7c04923",
+      "backup_sha256": "a5ecd02f2e887c8e0f286b7bf9068d2e1a50506575c6d56ea4f4be51c7c04923"
+    },
+    {
+      "path": "all-desktop/screen_map.lua",
+      "bytes": 541964,
+      "sha256": "cd1a67e206ead9006347c5db0c9d550e58339b79557c1d7418ea3b353f2ced6d",
+      "backup_sha256": "cd1a67e206ead9006347c5db0c9d550e58339b79557c1d7418ea3b353f2ced6d"
+    },
+    {
+      "path": "lib/hump/signal.lua",
+      "bytes": 2011,
+      "sha256": "3cb4ec18950a02fbe2666443bca69f6cbc36828bc7e5726920bc3cf9d626934c",
+      "backup_sha256": "3cb4ec18950a02fbe2666443bca69f6cbc36828bc7e5726920bc3cf9d626934c"
+    },
+    {
+      "path": "lib/klove/font_db.lua",
+      "bytes": 9838,
+      "sha256": "d8bed0ef35c4ebccfa3a04dc8253e4b058c7e74ab29ecce4eac47a14dbe1da6c",
+      "backup_sha256": "8471aef40b8729402763b2530b5865dbdec4ed14af1773321c423accb2041ac2"
+    },
+    {
+      "path": "lib/klove/image_db.lua",
+      "bytes": 25774,
+      "sha256": "16d3223f2fab251d75e9c7ad5759c45af19b44300890ea58661cdd296e1b7f68",
+      "backup_sha256": "9128932370fa649d94c7918a2c192a223f16e7ba900ced8a9617b866dbf03df3"
+    },
+    {
+      "path": "lib/klove/kui.lua",
+      "bytes": 49271,
+      "sha256": "5775f60c300f5fc5a592d29769f5a2249976e5c2a9fd5f9ab59201d094d3df47",
+      "backup_sha256": "5775f60c300f5fc5a592d29769f5a2249976e5c2a9fd5f9ab59201d094d3df47"
+    },
+    {
+      "path": "lib/klove/sso.lua",
+      "bytes": 5291,
+      "sha256": "f2b7cf7ef08e695acc1883556df038154bbf460ae97b6b530ad9235ee63b17c5",
+      "backup_sha256": "f49fb3bcf9b06654b6714226904eb5a73568e7a1d875972403f7b0f7a6bbf44f"
+    }
+  ]
+}

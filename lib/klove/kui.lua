@@ -707,7 +707,7 @@ function KView:destroy()
 	self.hit_rect = nil
 
 	for k, v in pairs(self) do
-		if v and type(v) == "table" and v.isInstanceOf and v:isInstanceOf(klass) then
+		if v and type(v) == "table" and v.class and v.isInstanceOf and v:isInstanceOf(KView) then
 			self[k] = nil
 		end
 	end

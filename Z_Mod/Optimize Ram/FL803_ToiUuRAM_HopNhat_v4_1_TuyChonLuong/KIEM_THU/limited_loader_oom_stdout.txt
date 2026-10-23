@@ -1,0 +1,2 @@
+C:/Users/user/AppData/Roaming/LOVE/KRFL_ram_v4_isolated
+[65345.8869] image_db.ERROR    queue_load_done() - Thread 2 error:string:34: bad allocation

@@ -93,6 +93,33 @@ for k in pairs(Registry) do
 	end
 end
 
+-- Only listeners added by the running stage are removed; account/platform listeners survive.
+local stage_listeners
+
+function module.begin_stage()
+	module.end_stage()
+	stage_listeners = {}
+
+	for name, listeners in pairs(default) do
+		local previous = {}
+		for fn in pairs(listeners) do previous[fn] = true end
+		stage_listeners[name] = previous
+	end
+end
+
+function module.end_stage()
+	if not stage_listeners then return end
+
+	for name, listeners in pairs(default) do
+		local previous = stage_listeners[name]
+		for fn in pairs(listeners) do
+			if not previous or not previous[fn] then listeners[fn] = nil end
+		end
+	end
+
+	stage_listeners = nil
+end
+
 return setmetatable(module, {
 	__call = Registry.new
 })

@@ -2420,6 +2420,14 @@ function game_gui:destroy()
 
 	self.heroes = nil
 	self.text_balloon_views = nil
+	self.boss_health_bars = nil
+	self.boss_bar_order = nil
+	self.boss_bar_suppressed = nil
+	self.wave_flags = nil
+	self.selected_entity = nil
+	self.last_tower_hover = nil
+	self.path_direction = nil
+	self.marching_ants = nil
 
 	self.window:destroy()
 

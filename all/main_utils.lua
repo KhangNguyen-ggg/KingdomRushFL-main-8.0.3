@@ -389,7 +389,7 @@ function mu.default_params(params, game_name, game_target, game_platform)
 		d("volume_fx", 1)
 		d("highdpi", false)
 		d("pause_on_switch", false)
-		d("image_db_uses_canvas", false)
+		d("image_db_uses_canvas", true)
 		d("colorspace", love.system.getOS() == "OS X" and "srgb" or nil)
 
 		if KR_OS == "GDK Desktop" or KR_OS == "OS X" and jit.arch == "arm64" then

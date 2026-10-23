@@ -73,7 +73,7 @@ function EXO:load_kui(name)
 		return anis, max_parts
 	end
 
-	local exo = self:load_lua(name)
+	local exo = self.exos[name] or self:load_lua(name)
 
 	exo.is_kui = true
 	self.exos[name] = exo
@@ -118,14 +118,23 @@ function EXO:load(exo_list, group, group_path)
 	for _, exo_name in ipairs(exo_list) do
 		log.paranoid("loading exo %s", exo_name)
 
-		local exo = self:load_lua(exo_name, exo_path)
+		local exo = self.exos[exo_name]
 
-		exo.group = group
+		if exo and exo.group ~= group then
+			-- Equal basenames in different groups keep the original last-loaded result.
+			self.exos_count[exo_name] = 1
+			self:unload(exo_name)
+			exo = nil
+		end
 
-		self:load_fake_sprites_to_db(exo)
+		if not exo then
+			exo = self:load_lua(exo_name, exo_path)
+			exo.group = group
+			self:load_fake_sprites_to_db(exo)
+			self.exos[exo_name] = exo
+		end
+
 		self:load_animations_to_animation_db(exo)
-
-		self.exos[exo_name] = exo
 		self.exos_count[exo_name] = (self.exos_count[exo_name] or 0) + 1
 	end
 
@@ -199,7 +208,7 @@ function EXO:unload(exo_name)
 		return
 	end
 
-	if exo.is_kui and A.db then
+	if A.db then
 		for _, animation in ipairs(exo.animations) do
 			local name = exo.name .. "_" .. animation.name
 
@@ -217,7 +226,12 @@ function EXO:unload(exo_name)
 		end
 	end
 
+	for alias in pairs(animation_aliases[exo_name] or {}) do
+		A.db[exo_name .. "_" .. alias] = nil
+	end
+
 	self.exos[exo_name] = nil
+	self.exos_count[exo_name] = nil
 end
 
 function EXO:unload_group(group)
@@ -237,10 +251,13 @@ end
 function EXO:unload_all()
 	if KRN then
 		KRN.exo_db_unload_all()
+		return
 	end
 
 	for k, exo in pairs(self.exos) do
 		if not exo.is_kui then
+			-- Every gameplay owner leaves together; UI skeletons keep their own lifetime.
+			self.exos_count[k] = 1
 			self:unload(k)
 		end
 	end

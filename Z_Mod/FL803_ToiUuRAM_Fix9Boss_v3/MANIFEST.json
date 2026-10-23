@@ -1,0 +1,30 @@
+{
+  "name": "FL803_ToiUuRAM_Fix9Boss_v3",
+  "date": "2026-10-23",
+  "type": "add-on for installed RAM stage cleanup v2",
+  "runtime": "Windows LÖVE 0.10.2, existing LuaJIT",
+  "files": [
+    {
+      "file": "lib/klove/image_db.lua",
+      "before_sha256": "8c58a1c9805f30fda99070d0df411663d7fa57826309a77c01498f740705b4f2",
+      "after_sha256": "9128932370fa649d94c7918a2c192a223f16e7ba900ced8a9617b866dbf03df3"
+    },
+    {
+      "file": "all/main_utils.lua",
+      "before_sha256": "621574435728dfa8eff1e1bc94d80ee414b40564163849738b4ea0daaf7b0f98",
+      "after_sha256": "7ea05d55cb38e5d0a8b767c7935630b8ad66c4f28d13ae408637c5b0660a7858"
+    }
+  ],
+  "tests": {
+    "full_stage": 87,
+    "display_stage": "2-27",
+    "bosses": 9,
+    "entries": 3,
+    "updates_per_entry": 120,
+    "user_save_writes": false,
+    "completed_full_match": false,
+    "patched_peak_private_MiB": 5358.1,
+    "baseline_stopped_before_stage_at_private_MiB": 5478.9
+  },
+  "live_payload_not_installed": true
+}

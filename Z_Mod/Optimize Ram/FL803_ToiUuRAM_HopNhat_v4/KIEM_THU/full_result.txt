@@ -1,0 +1,15 @@
+PASS 6 real entries into level 87 with 9 distinct bosses, 120 updates/draws and a forced victory path per entry, returning to map between entries. Isolated slot 2 copy: first-three-generation tower cheat enabled; extra generation 5/6 and extra hero/dragon cheats disabled for this test only. No user save changed.
+map after 0 stages: Lua=113.4 MiB texture=1042.7 MiB old_stores=0 private=2224.6 MiB
+crowd: 160 live enemy entities rendered/updated with 9 bosses
+stage 1: Lua=276.7 MiB texture=1023.8 MiB heroes=9
+map after 1 stages: Lua=174.2 MiB texture=1042.9 MiB old_stores=0 private=2625.5 MiB
+stage 2: Lua=209.4 MiB texture=1011.8 MiB heroes=9
+map after 2 stages: Lua=175.7 MiB texture=1042.9 MiB old_stores=0 private=2622.6 MiB
+stage 3: Lua=211.1 MiB texture=1011.8 MiB heroes=9
+map after 3 stages: Lua=175.8 MiB texture=1042.9 MiB old_stores=0 private=2600.3 MiB
+stage 4: Lua=211.3 MiB texture=1017.8 MiB heroes=9
+map after 4 stages: Lua=176.6 MiB texture=1042.9 MiB old_stores=0 private=2599.9 MiB
+stage 5: Lua=211.6 MiB texture=1023.8 MiB heroes=9
+map after 5 stages: Lua=176.3 MiB texture=1042.9 MiB old_stores=0 private=2746.0 MiB
+stage 6: Lua=210.7 MiB texture=1023.8 MiB heroes=9
+map after 6 stages: Lua=175.7 MiB texture=1042.9 MiB old_stores=0 private=2723.2 MiB

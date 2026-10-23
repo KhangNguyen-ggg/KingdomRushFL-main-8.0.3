@@ -1,0 +1,130 @@
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 21:55:17
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 22:04:40
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 22:12:10
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 22:21:16
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 22:27:55
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-22 22:40:32
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 07:17:41
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 07:27:55
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 10:23:48
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 10:31:12
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 15:33:26
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 15:38:13
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.
+
+===== KRFL 8.0.3 SESSION START =====
+Diagnostic: CRASHLOG_VISIBLE_20261010
+Time: 2026-10-23 15:49:51
+Game build: kr3-desktop-4.2.10
+Platform: win
+Level: unknown
+Heroes: unknown
+
+Game started. This file will append the real error and stack trace on a Lua crash.

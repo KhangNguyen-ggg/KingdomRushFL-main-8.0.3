@@ -1,0 +1,5 @@
+PASS All 14 cumulative payload files compile in bundled LuaJIT
+PASS 1000 equal text events use one texture; different colors stay separate; render scaling does not mutate entity size
+PASS 128-entry limit preserves all active textures, evicts only unused entries, bypasses oversized text and clears on exit
+PASS 8 MiB pixel-data budget evicts unused large text before reaching the count limit
+PASS 100 combined game teardown cycles release stores, text textures, target grids and stage listeners; global listener survives
