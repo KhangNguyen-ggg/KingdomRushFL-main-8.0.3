@@ -1,0 +1,33 @@
+VOLIBEAR NO MANA + ALL PREVIOUS BUFFS: native LuaJIT/LOVE 0.10.2 isolated tests
+PASS Combat/preview armor 65%, magic resistance 40%, R cooldown 50 seconds
+PASS Q/W/E/R work with absent, zero or negative legacy mana; no mana creation/regen/consumption; R still respects stun
+PASS One hundred consecutive W casts retain the four-second cooldown without resource exhaustion
+PASS No mana stats or energy costs in R metadata and all five skill descriptions
+PASS Sett multiplier matches: full HP +0%, half HP +10%, 5% HP +19%; normal attacks use it
+PASS Q becomes ready at eight seconds; stun refund uses the new cooldown
+PASS W cooldown four seconds; W1/W2 use 6% total max HP: 414/621 at full health
+PASS E becomes ready at thirteen seconds
+PASS E: troops/minibosses uncapped; boss capped at 610 after missing-HP/external damage factors x1
+PASS E: troops/minibosses uncapped; boss capped at 610 after missing-HP/external damage factors x2
+PASS Below five stacks or expired stacks: normal hits do not reduce cooldowns
+PASS The normal hit reaching five stacks immediately reduces Q/W/E/R by one second
+PASS Both hands: one reduction per normal hit despite five lightning targets; all four cooldowns clamp at ready, no banking
+PASS Q, W, E, R and their passive lightning do not trigger normal-attack cooldown reduction
+PASS Cooldown reduction belongs to each Volibear copy; automatic R readiness uses the reduced timestamp
+PASS Five stacks set 180 attacks/minute and speed up animation; expiry restores normal speed
+PASS Actual hero coroutine + native renderer: one normal hit every ten ticks (3/second at 30 FPS), both hands alternate
+PASS Native damage system lifesteal: 33% after armor, overkill capped at remaining enemy HP, no overflow or healing while dead
+
+HERO ROOM: native rendered UI
+PASS Staged Lua compiles; native UI textures load with eight workers
+PASS Volibear has five icons and no permanent description; selected name is short
+PASS Volibear, Navira and all three Setts use short names that fit their cards; Lich King keeps its full name
+PASS Native hover/click/exit selects correct tooltip; all five descriptions fit within screen bounds
+PASS Switching to Sett restores existing description layout; ordinary heroes hide the custom panel and popup
+
+PASS 57 runtime files; only allied_volibear.lua differs from the prior released package
+PASS No mana stat, regeneration, spending, gate, exported value or energy-cost descriptions remain
+PASS Existing buffs, cooldown reduction, VFX, eight directions, top-row popups and Navira avatar retained
+PASS Backup matches the currently installed five-stack cooldown-reduction version
+PASS Live game, saves and prior release ZIP unchanged
+NOT RUN: full stage gameplay or high-density FPS benchmark

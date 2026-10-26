@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+const old='D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3';
+const newer='E:/BaiduNetdiskDownload/FL8.0.5电脑版-解压到空文件夹直玩，自动接档';
+const out='D:/CodexTemp/KRFL_RAM_803_805_20261025';
+const files=['love.dll','lua51.dll','SDL2.dll','all/main_utils.lua','all/entity_db.lua','all/director.lua','all/game.lua','all/systems.lua','all/exoskeleton.lua','all/sound_db.lua','lib/klove/image_db.lua','lib/klove/font_db.lua','all/render_utils.lua','kr3/game_templates.lua','kr3/game_templates-5.lua','kr3/game_templates-6.lua'];
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const rows=files.map(file=>{const a=fs.existsSync(old+'/'+file)?fs.readFileSync(old+'/'+file):null;const b=fs.existsSync(newer+'/'+file)?fs.readFileSync(newer+'/'+file):null;return {file,oldBytes:a?.length,newBytes:b?.length,same:a&&b&&hash(a)===hash(b)};});
+const scan=root=>fs.readdirSync(root+'/kr3-desktop/assets/images/fullhd').filter(n=>/^go_volibear.*\.(png|dds)$/.test(n)).map(name=>{const b=fs.readFileSync(root+'/kr3-desktop/assets/images/fullhd/'+name);return {name,bytes:b.length,pixelMiB:b.subarray(1,4).toString()==='PNG'?b.readUInt32BE(16)*b.readUInt32BE(20)*4/2**20:null};});
+const extra=scan(old);
+fs.writeFileSync(out+'/static.json',JSON.stringify({files:rows,volibearImages:extra,volibearRGBA_MiB:extra.reduce((n,x)=>n+(x.pixelMiB||0),0)},null,2));
+console.log(JSON.stringify({files:rows,volibearFiles:extra.length,volibearRGBA_MiB:extra.reduce((n,x)=>n+(x.pixelMiB||0),0)},null,2));

@@ -736,9 +736,10 @@ function scripts.enemy_alien_breeder.update(this, store, script)
 						goto label_19_0
 					end
 
-					this.vis.bans = bor(this.vis.bans, F_TWISTER, F_BLOCK)
+					local boss_host = blocker.allied_boss_parasite_guard == true
+					this.vis.bans = bor(this.vis.bans, F_TWISTER, boss_host and 0 or F_BLOCK)
 
-					SU.stun_inc(blocker)
+					if not boss_host then SU.stun_inc(blocker) end
 
 					this.health_bar.hidden = true
 					hugging = true
@@ -778,7 +779,7 @@ function scripts.enemy_alien_breeder.update(this, store, script)
 
 					while not this.motion.arrived do
 						if this.health.dead then
-							SU.stun_dec(blocker)
+							if not boss_host then SU.stun_dec(blocker) end
 
 							goto label_19_0
 						end
@@ -789,11 +790,12 @@ function scripts.enemy_alien_breeder.update(this, store, script)
 
 					this.tween.disabled = true
 
+					this.parasite_host_id = boss_host and blocker.id or nil
 					U.animation_start(this, "face_hug", nil, store.tick_ts, true)
 
 					while not blocker.health.dead do
 						if this.health.dead then
-							SU.stun_dec(blocker)
+							if not boss_host then SU.stun_dec(blocker) end
 
 							dead_when_hugging = true
 
@@ -808,16 +810,19 @@ function scripts.enemy_alien_breeder.update(this, store, script)
 						d.damage_type = bor(DAMAGE_HOST, DAMAGE_TRUE)
 						d.track_kills = this.track_kills ~= nil
 
-						queue_damage(store, d)
+						if not boss_host then queue_damage(store, d) end
 
 						local ts = store.tick_ts
 
 						while store.tick_ts - ts < 1 and not blocker.health.dead and not this.health.dead do
+							if boss_host then
+								this.pos.x, this.pos.y = blocker.pos.x, blocker.pos.y - 1
+							end
 							coroutine.yield()
 						end
 					end
 
-					SU.stun_dec(blocker)
+					if not boss_host then SU.stun_dec(blocker) end
 
 					if #this.track_kills.killed > 0 and this.track_kills.killed[1] == blocker.id then
 						queue_remove(store, this)
@@ -838,6 +843,7 @@ function scripts.enemy_alien_breeder.update(this, store, script)
 						return
 					end
 
+					this.parasite_host_id = nil
 					this.vis.bans = band(this.vis.bans, bnot(F_TWISTER))
 					this.vis.bans = band(this.vis.bans, bnot(F_BLOCK))
 					this.health_bar.hidden = true

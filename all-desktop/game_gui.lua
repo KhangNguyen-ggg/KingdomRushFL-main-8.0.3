@@ -6424,6 +6424,9 @@ function InfoBar:update_portrait()
 		return
 	end
 
+	local boss = infinite_heroes.get_boss(e.template_name)
+	self.v_portrait._draw_self = boss and boss.portrait_draw or nil
+
 	if self.v_portrait_image_name ~= e.info.portrait then
 		if e.info.portrait then
 			self.v_portrait:set_image(e.info.portrait)

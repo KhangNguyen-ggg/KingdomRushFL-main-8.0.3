@@ -1,0 +1,4 @@
+map0 lua=113.8 texture=1044.5 private=3238.0 working=3271.4 images=113 canvases=0 seconds=6.46
+stage-entry lua=312.8 texture=1684.6 private=5555.8 working=5577.9 images=221 canvases=0 seconds=49.26
+stage-steady lua=313.0 texture=1684.6 private=5467.1 working=5489.4 images=221 canvases=0 seconds=53.20
+map1 lua=180.7 texture=1044.6 private=3457.2 working=3477.4 images=113 canvases=0 seconds=69.26

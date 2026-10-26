@@ -1,0 +1,11 @@
+FL803 RAM v5 — F1 tải khi dùng — 25/10/2026
+
+ĐÃ ÁP DỤNG vào thư mục game 8.0.3 hiện tại sau khi kiểm thử. Mở lại game để nhận đủ ba file.
+
+Cài trên bản sao cùng nền hiện tại: thoát game, chép nội dung CAP_NHAT vào thư mục có EXE; ghi đè 3 file theo đúng thư mục con. Không chép BACKUP_TRUOC_VA để cài bản mới.
+
+F1, save, đội, ảnh, âm thanh và chỉ số không bị thay đổi. Giảm nạp sẵn các ảnh F1 bổ sung. Lần đầu mua/mở mục F1 sẽ chờ tải với thanh tiến trình; sau đó RAM có thể tăng lại gần trước vá. Không phải bản giới hạn RAM ở 3 GB.
+
+Hoàn tác: thoát game và chép nội dung BACKUP_TRUOC_VA vào thư mục game, ghi đè đúng 3 file. Backup là mã live ngay trước lần vá này.
+
+Xem PHAN_TICH.md và KIEM_THU để biết phép thử, số đo và giới hạn.

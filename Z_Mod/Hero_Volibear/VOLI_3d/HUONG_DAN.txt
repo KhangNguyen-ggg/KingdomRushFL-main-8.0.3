@@ -1,0 +1,19 @@
+VOLIBEAR KHADA 3D - KR FL 8.0.3 (THU NGHIEM)
+
+1. SAO LUU GAME VA SAVE trước khi cài.
+2. Copy TOAN BO hai thu muc all va kr3-desktop trong goi nay vao thu muc goc FL 8.0.3.
+3. Cho phep ghi de CHI HAI FILE DA TON TAI:
+   - all/allied_bosses.lua
+   - kr3-desktop/assets/images/fullhd/ui_sett_spirit.lua
+4. Cac file lua/png Volibear con lai duoc them moi.
+5. Mo Hero Room, tim Volibear, chon trong che do Infinite Hero va kiem tra gameplay.
+
+Da tich hop 18 atlas/clip animation xuat tu model 3D co xương va animation,
+khong su dung sprite AI noi suy cua ban V2. Script sua frame 0000 => 0001
+de trung voi bang phat A.db trong KR FL. Chi so P/Q/W/E/R la chuyen the KR FL.
+Riot skill VFX hat / sét ngoai model KHONG co trong gói GLB nay.
+
+CHUA THE TEST TRUC TIEP EXE KINGDOM RUSH FL TREN WINDOWS.
+Atlas dung luong cao, co the tang VRAM nhat la khi su dung Infinite Hero.
+Khong ghi de nguyen thu muc tro choi hay thay doi file save.
+Neu repo/game da tu chinh sua hai file tren, hay merge thu cong de tranh mat thay doi rieng.

@@ -1,0 +1,9 @@
+﻿{
+    "testing":  "Native missing-atlas reproduction and 3 load/draw/unload cycles; no full map or combat",
+    "name":  "FL803_Volibear_LoL20_FixMoSlot_20261024",
+    "requires":  "FL803_Volibear_LoL20_Real3D_20261023",
+    "installed_live":  false,
+    "change":  "Add ui_volibear_lol20 to map.required_textures",
+    "sha256":  "73E593FE2BC1BD47EB428932674B00EF866868E462B89CDD6E688CD5394C5F88",
+    "file":  "all-desktop/screen_map.lua"
+}

@@ -1,0 +1,982 @@
+[
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "在这里选择防御塔",
+    "to": "Chọn tháp tại đây"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "在这里选择英雄",
+    "to": "Chọn anh hùng tại đây"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "按Tab隐藏UI\\n（按Tab隐藏本对话框）",
+    "to": "Nhấn Tab để ẩn giao diện\\n(và ẩn hướng dẫn này)"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "驻扎专属士兵拦截敌人，同时由塔体提供远程或特殊攻击支援。",
+    "to": "Triển khai lính chặn địch, đồng thời dùng hỏa lực tầm xa hoặc đòn đánh đặc biệt để hỗ trợ."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "驻扎或雇佣专属士兵，在集结点附近拦截并攻击敌人。",
+    "to": "Triển khai hoặc thuê lính để chặn và tấn công địch quanh điểm tập kết."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "攻击范围内的敌人，并可通过专属技能进一步强化作战能力。",
+    "to": "Tấn công địch trong tầm. Nâng cấp kỹ năng để tăng sức chiến đấu của tháp."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "自动攻击范围内的敌人，为当前关卡提供特殊火力支援。",
+    "to": "Tự động tấn công địch trong tầm, hỗ trợ hỏa lực cho màn chơi."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "花费金币可呼叫该场景设施的专属攻击或支援效果。",
+    "to": "Dùng vàng để kích hoạt đòn tấn công hoặc hiệu ứng hỗ trợ của công trình trong màn."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "通过专属技能为战场提供特殊支援。",
+    "to": "Dùng kỹ năng riêng để hỗ trợ chiến đấu."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "在对应关卡或建造菜单中提供专属的战场支援效果。",
+    "to": "Cung cấp hỗ trợ đặc biệt trong màn tương ứng hoặc qua menu xây dựng."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "攻击方式",
+    "to": "Cách tấn công"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "改动说明",
+    "to": "Thay đổi cân bằng"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "移植说明",
+    "to": "Ghi chú chuyển thể"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "机制与说明",
+    "to": "Cơ chế tháp"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "建造说明",
+    "to": "Cách xây tháp"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "建造方式",
+    "to": "Cách xây"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "法术配置提示",
+    "to": "Chọn phép"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "天灾类法术最多只能装备1个",
+    "to": "Chỉ được chọn tối đa một phép thuộc nhóm Thiên tai."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "防御塔卡组提示",
+    "to": "Chọn đội tháp"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "该卡组需至少保留1个。如不想使用前3代塔，请将设置按钮切换为【后三代】",
+    "to": "Phải giữ ít nhất một tháp trong nhóm này. Để chỉ dùng tháp KR4-6, chuyển tùy chọn sang Ba phần sau."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "英雄卡组提示",
+    "to": "Chọn đội anh hùng"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "相同的英雄最多只能装备2个",
+    "to": "Ở chế độ này, chỉ được chọn tối đa hai bản sao của cùng một anh hùng."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "开发者功能",
+    "to": "Công cụ phát triển"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "确定要让英雄满级吗？此过程不可逆。",
+    "to": "Đưa anh hùng lên cấp tối đa? Thao tác này không thể hoàn tác."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "英雄升级失败，存档未修改。",
+    "to": "Không thể nâng cấp anh hùng. Save chưa bị thay đổi."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "存档保存失败，英雄未修改。",
+    "to": "Không thể ghi save. Anh hùng chưa bị thay đổi."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "手机版设置",
+    "to": "Cài đặt di động"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "字体大小：%.1f倍",
+    "to": "Cỡ chữ: %.1f lần"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "UI大小：%.1f倍",
+    "to": "Cỡ giao diện: %.1f lần"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "快捷键设置",
+    "to": "Cài đặt phím tắt"
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "Esc、F1至F8为固定快捷键，不能修改",
+    "to": "Esc và F1-F8 là phím cố định, không thể đổi."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "无法使用这个按键",
+    "to": "Không thể dùng phím này."
+  },
+  {
+    "file": "all-desktop/screen_map.lua",
+    "from": "本页已恢复默认",
+    "to": "Đã khôi phục mặc định cho trang này."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "主线%d",
+    "to": "Tuyến chính %d"
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "支线%d",
+    "to": "Tuyến phụ %d"
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "该关卡没有此模式的源波次文件",
+    "to": "Màn này không có dữ liệu đợt quái gốc cho chế độ đã chọn."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "官方出怪为只读；请先点击“从源模板新建”",
+    "to": "Không thể sửa trực tiếp đợt quái gốc. Hãy chọn Tạo từ mẫu gốc trước."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "当前关卡/模式没有源模板",
+    "to": "Màn hoặc chế độ hiện tại không có mẫu gốc."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "已新建并启用自定义出怪列表 %d",
+    "to": "Đã tạo và bật danh sách đợt quái tùy chỉnh %d."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "保存失败",
+    "to": "Không thể lưu."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "当前没有可删除的自定义出怪模板",
+    "to": "Không có mẫu đợt quái tùy chỉnh nào để xóa."
+  },
+  {
+    "file": "all-desktop/wave_editor_view.lua",
+    "from": "自定义出怪列表 %d 已删除",
+    "to": "Đã xóa danh sách đợt quái tùy chỉnh %d."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_sniper",
+    "to": "Chọn Cung thủ bóng tối (Shadow Archers, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Sniper Tower."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_plague_hospital",
+    "to": "Chọn Nghĩa địa u ám (Grim Cemetery, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Plague Hospital."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_command_center",
+    "to": "Chọn Lò nung (Melting Furnace, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Command Center."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_ice_cooler",
+    "to": "Chọn Shaman Orc (Orc Shaman, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Ice Cooler."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_machine_gunner",
+    "to": "Chọn Goblin ném boomerang (Goblirangs, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Machine Gunner."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_blastin_bullriders",
+    "to": "Chọn Tàu đắm Ogre (Ogre Shipwreck, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Blastin' Bullriders."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_wifi_babies",
+    "to": "Chọn Lăng mộ u linh (Spirit Mausoleum, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Wifi Babies."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "key": "tower_wicked_sisters_stregi",
+    "to": "Chọn Chị em phù thủy (Wicked Sisters, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Wicked Sisters - Stregi."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Nhấp mũi tên '↑' phía trên menu xây tháp của các phần 3 đầu 4 lần để mở menu tháp cơ bản phần 4.",
+    "to": "Nhấn mũi tên lên bốn lần trong menu xây tháp KR1-3 để mở nhóm tháp cơ bản KR4."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Xây từ nhánh thứ hai của Ném xương phần 4.",
+    "to": "Chọn nhánh nâng cấp thứ hai của Bone Flingers (KR4)."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Xây từ nhánh thứ hai của Chiến binh Quấy rối Tinh nhuệ phần 4.",
+    "to": "Chọn nhánh nâng cấp thứ hai của Elite Harassers (KR4)."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Xây từ nhánh thứ hai của Rừng mục nát phần 4.",
+    "to": "Chọn nhánh nâng cấp thứ hai của Rotten Forest (KR4)."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "theo nhánh Trận địa Du kích",
+    "to": "theo nhánh chốt Ranger"
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Bật tháp đặc biệt phần bốn và năm, rồi xây bằng công cụ gian lận của hai phần đó.",
+    "to": "Bật Tháp đặc biệt KR4-5 trong F1, rồi xây qua công cụ Goldfinger KR4-5."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Bắn lưỡi dao liên tục cắt qua kẻ địch, gây sát thương.",
+    "to": "Bắn các lưỡi dao gây sát thương liên tục lên kẻ địch."
+  },
+  {
+    "file": "kr3/data/special_tower_encyclopedia.lua",
+    "from": "Ashbite lúc nhỏ đã điều khiển được ngọn lửa mạnh mẽ. Nhưng tài năng thuở bé chưa chắc bảo đảm sự vĩ đại khi trưởng thành.",
+    "to": "Ashbite từ nhỏ đã sở hữu sức mạnh lửa đáng nể. Liệu chú rồng non này có trở nên vĩ đại khi trưởng thành?"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_DESCRIPTION",
+    "from": "Các nghệ sĩ đấu bò biến bò máy thành tên lửa có độ chính xác cao. Gia nhập quân đội vương quốc, họ dùng tài năng để tiêu diệt địch bằng những đòn đánh chính xác.",
+    "to": "Những tay cưỡi bò biểu diễn đã biến bò máy thành tên lửa chính xác cao. Nay gia nhập quân đội vương quốc, họ dùng tài nghệ của mình để tiêu diệt địch."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_SPECIAL",
+    "from": "Chọn điểm đánh thủ công",
+    "to": "Tự chọn điểm bắn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_DOUBLE_TROUBLE_DESCRIPTION_1",
+    "from": "Triển khai máy bay không người lái trên tháp để bắn địch đến gần, gây 38-72 sát thương súng mỗi phát.",
+    "to": "Triển khai máy bay không người lái trên tháp, bắn địch đến gần và gây 38-72 sát thương vật lý mỗi phát."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_DESCRIPTION",
+    "from": "Sở chỉ huy cơ động làm tê liệt địch bằng lựu đạn choáng và dùng hào quang chỉ huy để phối hợp toàn quân.",
+    "to": "Sở chỉ huy cơ động dùng lựu đạn choáng để vô hiệu hóa địch, đồng thời tăng sức mạnh cho các tháp bằng hào quang chỉ huy."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_DESCRIPTION",
+    "from": "Những chiến binh nhặt phế liệu điên cuồng nhưng đáng tin ngồi trong pháo đài làm từ xe cũ. Họ không ngừng trút mưa đạn. Đòn thường gây sát thương vật lý trong bán kính 25.",
+    "to": "Những chiến binh ve chai liều lĩnh nhưng đáng tin trấn giữ pháo đài dựng từ một chiếc xe cũ. Họ liên tục trút mưa đạn, gây sát thương vật lý trong bán kính 25."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_STORM_NAME_1",
+    "from": "Pháo hoa biển Hoàng hôn",
+    "to": "Pháo hoa Biển Hoàng Hôn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_MEDAL_DESCRIPTION_1",
+    "from": "Nâng cấp vũ khí: mỗi lần bắn 1 viên, sát thương tăng lên 10-22 và hồi bắn giảm còn 0,2 giây. Trong Pháo hoa biển Hoàng hôn, mỗi viên gây sát thương chuẩn bằng 2 lần đòn thường, hồi bắn còn 0,1 giây.",
+    "to": "Nâng cấp vũ khí: mỗi lần bắn một viên gây 10-22 sát thương, khoảng cách giữa các phát còn 0,2 giây. Khi Pháo hoa Biển Hoàng Hôn hoạt động, mỗi viên gây sát thương chuẩn bằng 2 lần đòn thường, khoảng cách giữa các phát còn 0,1 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_STORM_DESCRIPTION_1",
+    "from": "Mỗi 18 giây, trút mưa đạn trong 3 giây. Mỗi viên gây sát thương chuẩn bằng 1,5 lần đòn thường; hồi bắn còn 0,3 giây trong thời gian này.",
+    "to": "Cứ 18 giây, trút mưa đạn trong 3 giây. Mỗi viên gây sát thương chuẩn bằng 1,5 lần đòn thường, khoảng cách giữa các loạt bắn còn 0,3 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_DESCRIPTION",
+    "from": "Nữ xạ thủ dày dạn nhưng cô độc trinh sát từ đỉnh tháp nước cũ. Đạn gây sát thương vật lý và bỏ qua 25 điểm giáp.",
+    "to": "Nữ xạ thủ dày dạn kinh nghiệm trinh sát từ đỉnh tháp nước cũ. Đạn gây sát thương vật lý, tính giáp mục tiêu thấp hơn 25 điểm phần trăm."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_SPECIAL",
+    "from": "Tầm xa, ưu tiên pháp sư, có cơ hội kết liễu; đạn bỏ qua 25 điểm giáp",
+    "to": "Tầm xa, ưu tiên pháp sư; có cơ hội kết liễu và bỏ qua 25 điểm phần trăm giáp"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_KILL_DESCRIPTION_1",
+    "from": "Đòn thường có 5% cơ hội kết liễu hoặc gây sát thương vật lý bằng 50% máu tối đa, bỏ qua 25 điểm giáp. Với boss, gây sát thương bằng 8 lần đòn thường. Mỗi lần không kích hoạt, cơ hội lần sau tăng 1%, tối đa 100%; kích hoạt sẽ đặt lại.",
+    "to": "Đòn thường có 5% cơ hội kết liễu. Với mục tiêu miễn kết liễu, gây sát thương vật lý bằng 50% máu tối đa; với boss, gây 8 lần sát thương đòn thường. Đạn bỏ qua 25 điểm phần trăm giáp. Mỗi lần không kích hoạt, cơ hội tăng thêm 1 điểm phần trăm, tối đa 100%; kích hoạt thì trở về 5%."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_SPECIAL",
+    "from": "Đổi chế độ thuốc; đòn thường trúng đích rút ngắn hồi kỹ năng.",
+    "to": "Đổi loại thuốc; đánh thường trúng đích giúp giảm thời gian hồi kỹ năng."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_MODE0_DESCRIPTION",
+    "from": "Ném thuốc gây 100 sát thương chuẩn trong tầm 80. Thuốc còn gây 10 sát thương chuẩn mỗi 0,1 giây trong 7 giây.",
+    "to": "Ném thuốc gây 100 sát thương chuẩn trong bán kính 80. Vùng thuốc tồn tại 7 giây, gây thêm 10 sát thương chuẩn mỗi 0,1 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_MODE1_DESCRIPTION",
+    "from": "Đẩy lùi tối đa 7 địch trong tầm bắn 50 nút đường đi và ru ngủ chúng 5 giây.",
+    "to": "Chọn tối đa 7 địch trong tầm bắn, đẩy lùi mỗi mục tiêu 50 nút dọc đường đi và ru ngủ chúng trong 5 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_DESCRIPTION",
+    "from": "Những em bé biến đổi gen có năng lực tâm linh, được giải cứu khỏi quân địch và gia nhập phe ta. Chúng có thể điều khiển tâm trí địch để chúng chiến đấu bên ta!",
+    "to": "Những em bé được tạo ra bằng công nghệ gen sở hữu siêu năng lực tâm trí. Sau khi được giải cứu khỏi quân địch, chúng gia nhập phe ta và điều khiển tâm trí kẻ thù để biến chúng thành đồng minh."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_SPECIAL",
+    "from": "Đòn thường thu phục địch",
+    "to": "Đánh thường có thể biến địch thành đồng minh"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_DARK_ARMY_BARRACK_LEVEL4_MERCILESS_DESCRIPTION",
+    "from": "Mỗi đòn đánh có xác suất nhỏ hạ gục kẻ địch ngay lập tức.",
+    "to": "Mỗi đòn đánh trúng có một cơ hội nhỏ kết liễu địch ngay lập tức."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_NECROMANCER_RIDER_DESCRIPTION",
+    "from": "Triệu hồi Death Rider đáng sợ, có hào quang cường hóa bộ xương gần đó.",
+    "to": "Triệu hồi Death Rider đáng sợ với hào quang cường hóa các lính xương gần đó."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_NECROMANCER_RIDER_DESCRIPTION_1",
+    "from": "Triệu hồi Death Rider đáng sợ, có hào quang cường hóa bộ xương gần đó.",
+    "to": "Triệu hồi Death Rider đáng sợ với hào quang cường hóa các lính xương gần đó."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ELVES_BARRACK_LEVEL4_BACKSTAB_DESCRIPTION_1",
+    "from": "Có 40% xác suất né đòn cận chiến và phản công ở đòn đánh tiếp theo, gây 10 - 15 sát thương vật lý.",
+    "to": "Có 40% cơ hội né đòn cận chiến. Sau khi né, phản công ở lần bị tấn công tiếp theo, gây 10-15 sát thương vật lý."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ELVES_BARRACK_LEVEL4_BACKSTAB_DESCRIPTION_2",
+    "from": "Có 50% xác suất né đòn cận chiến và phản công ở đòn đánh tiếp theo, gây 20 - 30 sát thương vật lý.",
+    "to": "Có 50% cơ hội né đòn cận chiến. Sau khi né, phản công ở lần bị tấn công tiếp theo, gây 20-30 sát thương vật lý."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G1_TOWER_ENGINEER_1_NAME",
+    "from": "Tháp thợ săn",
+    "to": "Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G1_TOWER_ENGINEER_2_NAME",
+    "from": "Bắn thả bước",
+    "to": "Pháo Binh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G1_TOWER_ENGINEER_3_NAME",
+    "from": "Bắn súng con rắn",
+    "to": "Lựu Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEERS_NAME",
+    "from": "Tháp thợ săn",
+    "to": "Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEERS_UPGRADE_LEVEL2_NAME",
+    "from": "Bắn thả bước",
+    "to": "Pháo Binh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEERS_UPGRADE_LEVEL3_NAME",
+    "from": "Bắn súng con rắn",
+    "to": "Lựu Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEER_1_NAME",
+    "from": "Tháp thợ săn",
+    "to": "Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEER_2_NAME",
+    "from": "Bắn thả bước",
+    "to": "Pháo Binh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "G2_TOWER_ENGINEER_3_NAME",
+    "from": "Bắn súng con rắn",
+    "to": "Lựu Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "HERO_RIFLEMAN_CLASS",
+    "from": "Bắn súng con rắn",
+    "to": "Bolin Farslayer"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "SPECIAL_DWARFSHOOTER_HALL_NAME",
+    "from": "Bàn thợ săn (Bạn)",
+    "to": "Sảnh Xạ Thủ Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "SPECIAL_DWARF_BASTION_NAME",
+    "from": "Lâu đài con rắn",
+    "to": "Pháo đài Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "SPECIAL_DWARF_HALL_NAME",
+    "from": "Phòng thỏ",
+    "to": "Sảnh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "SPECIAL_MERCENARY_NAME",
+    "from": "Trại Nữ Thợ",
+    "to": "Trại Lính Đánh Thuê"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "SPECIAL_PIRATE_NAME",
+    "from": "Cá mập quán rượu",
+    "to": "Quán rượu SCUMM"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "STONE DRUIDS",
+    "from": "Đôi vòng đá",
+    "to": "Druid Đá"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_FALLEN_ONES_BONE_FLINGERS_MENU_TITLE",
+    "from": "Ném xương",
+    "to": "Tháp Ném Xương"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_TREMOR_MENU_TITLE",
+    "from": "Hang sâu cát",
+    "to": "Hang Sâu Cát"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "g2_tower_engineer_1",
+    "from": "Tháp thợ săn",
+    "to": "Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "g2_tower_engineer_2",
+    "from": "Bắn thả bước",
+    "to": "Pháo Binh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "g2_tower_engineer_3",
+    "from": "Bắn súng con rắn",
+    "to": "Lựu Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_archer_1",
+    "from": "Cây săn",
+    "to": "Tháp Thợ Săn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_archer_2",
+    "from": "Cây của người chăm sóc",
+    "to": "Tháp Canh"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_archer_3",
+    "from": "Cây Cảnh Sát",
+    "to": "Tháp Vệ Binh"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_archer_dwarf",
+    "from": "Lâu đài con rắn",
+    "to": "Pháo đài Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_archmage",
+    "from": "Tháp Thầy",
+    "to": "Tháp Đại Pháp Sư"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_1",
+    "from": "Trại Bảo vệ",
+    "to": "Doanh trại Vệ Binh"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_2",
+    "from": "Trại Cảnh Sát",
+    "to": "Doanh trại Hộ Vệ"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_3",
+    "from": "Doanh trại nhân",
+    "to": "Doanh trại Ranger"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_dwarf",
+    "from": "Phòng thỏ",
+    "to": "Sảnh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_dwarfshooter",
+    "from": "Bàn thợ săn (Bạn)",
+    "to": "Sảnh Xạ Thủ Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_mercenaries",
+    "from": "Trại Nữ Thợ",
+    "to": "Trại Lính Đánh Thuê"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_pirates_w_anchor",
+    "from": "Cá mập quán rượu",
+    "to": "Quán rượu SCUMM"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_barrack_pirates_w_flamer",
+    "from": "Cá mập quán rượu",
+    "to": "Quán rượu SCUMM"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_crossbow",
+    "from": "Lâu đài quân đội",
+    "to": "Pháo đài Nỏ"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_dwaarp",
+    "from": "Hệ thống vũ khí tự động",
+    "to": "DWAARP"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_engineer_1",
+    "from": "Tháp thợ săn",
+    "to": "Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_engineer_2",
+    "from": "Bắn thả bước",
+    "to": "Pháo Binh Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_engineer_3",
+    "from": "Bắn súng con rắn",
+    "to": "Lựu Pháo Người Lùn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_mage_1",
+    "from": "Bí mật cao",
+    "to": "Đài Pháp Sư"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_mage_2",
+    "from": "Vị trí cao của nghệ sĩ",
+    "to": "Đài Pháp Sư Cao Cấp"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_mage_3",
+    "from": "Khác ơi",
+    "to": "Đài Huyền Thuật"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_mecha",
+    "from": "T200 loại máy bay chiến đấu",
+    "to": "Robot Chiến Đấu T200"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_necromancer",
+    "from": "Tháp Thần Tử",
+    "to": "Tháp Pháp Sư Gọi Hồn"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_rock_thrower_1",
+    "from": "Vòng đá",
+    "to": "Vòng Tròn Đá"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_rock_thrower_2",
+    "from": "Đôi vòng đá",
+    "to": "Vòng Đá Tảng"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_rock_thrower_3",
+    "from": "Thung lũng đá",
+    "to": "Vòng Cự Thạch"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_templar",
+    "from": "Đền thờ Knights",
+    "to": "Hiệp Sĩ Dòng Đền"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "tower_totem",
+    "from": "Cây ném bẫy",
+    "to": "Bộ Lạc Ném Rìu"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_NAME_1",
+    "from": "Lựu đạn hỏa lực",
+    "to": "Flame Chompers"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_DESCRIPTION_1",
+    "from": "Mỗi 16 giây, bắn 1 tên lửa truy đuổi được cả địch mặt đất và trên không. Mỗi quả gây 40-200 sát thương pháo trong bán kính 47,5 (đường kính 95).",
+    "to": "Cứ 16 giây, phóng 1 tên lửa tự dẫn vào địch mặt đất hoặc trên không. Mỗi quả gây 40-200 sát thương nổ trong bán kính 47,5."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_NAME_1",
+    "from": "Đánh chính xác",
+    "to": "Đòn đánh chuẩn xác"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_DESCRIPTION_1",
+    "from": "Mỗi 20 giây, bắn tên lửa công nghệ cao bỏ qua giáp vào địch có lượng máu hiện tại cao nhất, gây 110-183 sát thương chuẩn cho địch trong tầm 50.",
+    "to": "Cứ 20 giây, phóng tên lửa vào địch có lượng máu hiện tại cao nhất, gây 110-183 sát thương chuẩn trong bán kính 50."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_REAPER_DESCRIPTION_1",
+    "from": "Mỗi 24 giây, máy bay ném 6 tên lửa, mỗi quả gây 26-57 sát thương pháo. Sau khi tính sát thương, kết liễu địch còn dưới 4% máu.",
+    "to": "Cứ 24 giây, máy bay ném 6 tên lửa, mỗi quả gây 26-57 sát thương nổ. Sau khi nhận sát thương, địch còn dưới 4% máu tối đa sẽ bị kết liễu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ICE_COOLER_FLAVORS_DESCRIPTION_1",
+    "from": "Khi sóng băng đóng băng địch, có 24% cơ hội biến chúng thành người tuyết trong 2,3 giây, giữ lại 90% lượng máu hiện tại.",
+    "to": "Khi sóng băng đóng băng địch, có 24% cơ hội biến mục tiêu thành người tuyết trong 2,3 giây; máu của dạng người tuyết bằng 90% lượng máu còn lại của mục tiêu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_ARROW_DESCRIPTION_1",
+    "from": "Mỗi 10 giây, bắn 1 tên nổ. Đòn trúng gây 13-26 sát thương vật lý và 37-69 sát thương nổ cho địch trong tầm 55.",
+    "to": "Cứ 10 giây, bắn 1 mũi tên nổ. Mỗi mũi gây 13-26 sát thương vật lý khi trúng và 37-69 sát thương nổ trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_PRACTICE_DESCRIPTION_1",
+    "from": "Triển khai quan sát viên: mỗi 18 giây khóa tối đa 2 mục tiêu và bắn 2 loạt. Mỗi phát gây 1,8 lần sát thương đòn thường, bỏ qua 25 điểm giáp.",
+    "to": "Triển khai lính quan sát. Cứ 18 giây, khóa tối đa 2 mục tiêu và bắn 2 loạt. Mỗi phát gây 1,8 lần sát thương đòn thường và bỏ qua 25 điểm phần trăm giáp."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_NAME_1",
+    "from": "Phóng chiếu tâm trí",
+    "to": "Ảo ảnh tâm trí"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_DESCRIPTION_1",
+    "from": "Mỗi 12 giây, tạo hóa thân trên đường đi, gây 40-60 sát thương nổ phép lên địch trong tầm 55.",
+    "to": "Cứ 12 giây, tạo một ảo ảnh Wifi Babies trên đường đi. Ảo ảnh phát nổ, gây 40-60 sát thương phép trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_NAME_1",
+    "from": "Chủ nghĩa ăn chay",
+    "to": "Phép hóa rau"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_DESCRIPTION_1",
+    "from": "Biến một địch thành cừu hoặc bí ngô, đặt máu tối đa mới bằng 80% lượng máu còn lại.",
+    "to": "Biến một địch thành cừu hoặc bí ngô. Dạng biến hình có máu tối đa bằng 80% lượng máu còn lại của mục tiêu trước khi biến hình."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_NAME_2",
+    "from": "Lựu đạn hỏa lực II",
+    "to": "Flame Chompers II"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_DESCRIPTION_2",
+    "from": "Mỗi 16 giây, bắn 2 tên lửa truy đuổi được cả địch mặt đất và trên không. Mỗi quả gây 40-200 sát thương pháo trong bán kính 47,5 (đường kính 95).",
+    "to": "Cứ 16 giây, phóng 2 tên lửa tự dẫn vào địch mặt đất hoặc trên không. Mỗi quả gây 40-200 sát thương nổ trong bán kính 47,5."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_NAME_2",
+    "from": "Đánh chính xác II",
+    "to": "Đòn đánh chuẩn xác II"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_DESCRIPTION_2",
+    "from": "Mỗi 18 giây, bắn tên lửa công nghệ cao bỏ qua giáp vào địch có lượng máu hiện tại cao nhất, gây 160-258 sát thương chuẩn cho địch trong tầm 50.",
+    "to": "Cứ 18 giây, phóng tên lửa vào địch có lượng máu hiện tại cao nhất, gây 160-258 sát thương chuẩn trong bán kính 50."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_REAPER_DESCRIPTION_2",
+    "from": "Mỗi 22 giây, máy bay ném 7 tên lửa, mỗi quả gây 36-78 sát thương pháo. Sau khi tính sát thương, kết liễu địch còn dưới 12% máu.",
+    "to": "Cứ 22 giây, máy bay ném 7 tên lửa, mỗi quả gây 36-78 sát thương nổ. Sau khi nhận sát thương, địch còn dưới 12% máu tối đa sẽ bị kết liễu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ICE_COOLER_FLAVORS_DESCRIPTION_2",
+    "from": "Khi sóng băng đóng băng địch, có 32% cơ hội biến chúng thành người tuyết trong 2,3 giây, giữ lại 80% lượng máu hiện tại.",
+    "to": "Khi sóng băng đóng băng địch, có 32% cơ hội biến mục tiêu thành người tuyết trong 2,3 giây; máu của dạng người tuyết bằng 80% lượng máu còn lại của mục tiêu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_ARROW_DESCRIPTION_2",
+    "from": "Mỗi 9 giây, bắn 2 tên nổ. Đòn trúng gây 13-26 sát thương vật lý và 39-72 sát thương nổ cho địch trong tầm 55.",
+    "to": "Cứ 9 giây, bắn 2 mũi tên nổ. Mỗi mũi gây 13-26 sát thương vật lý khi trúng và 39-72 sát thương nổ trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_PRACTICE_DESCRIPTION_2",
+    "from": "Triển khai quan sát viên: mỗi 16,5 giây khóa tối đa 3 mục tiêu và bắn 2 loạt. Mỗi phát gây 2,1 lần sát thương đòn thường, bỏ qua 25 điểm giáp.",
+    "to": "Triển khai lính quan sát. Cứ 16,5 giây, khóa tối đa 3 mục tiêu và bắn 2 loạt. Mỗi phát gây 2,1 lần sát thương đòn thường và bỏ qua 25 điểm phần trăm giáp."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_NAME_2",
+    "from": "Phóng chiếu tâm trí II",
+    "to": "Ảo ảnh tâm trí II"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_DESCRIPTION_2",
+    "from": "Mỗi 10 giây, tạo hóa thân trên đường đi, gây 60-90 sát thương nổ phép lên địch trong tầm 55.",
+    "to": "Cứ 10 giây, tạo một ảo ảnh Wifi Babies trên đường đi. Ảo ảnh phát nổ, gây 60-90 sát thương phép trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_NAME_2",
+    "from": "Chủ nghĩa ăn chay II",
+    "to": "Phép hóa rau II"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_DESCRIPTION_2",
+    "from": "Biến một địch thành cừu hoặc bí ngô, đặt máu tối đa mới bằng 65% lượng máu còn lại.",
+    "to": "Biến một địch thành cừu hoặc bí ngô. Dạng biến hình có máu tối đa bằng 65% lượng máu còn lại của mục tiêu trước khi biến hình."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_NAME_3",
+    "from": "Lựu đạn hỏa lực III",
+    "to": "Flame Chompers III"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_AIRSTRIKE_DESCRIPTION_3",
+    "from": "Mỗi 16 giây, bắn 3 tên lửa truy đuổi được cả địch mặt đất và trên không. Mỗi quả gây 40-200 sát thương pháo trong bán kính 47,5 (đường kính 95).",
+    "to": "Cứ 16 giây, phóng 3 tên lửa tự dẫn vào địch mặt đất hoặc trên không. Mỗi quả gây 40-200 sát thương nổ trong bán kính 47,5."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_NAME_3",
+    "from": "Đánh chính xác III",
+    "to": "Đòn đánh chuẩn xác III"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_PRECISION_DESCRIPTION_3",
+    "from": "Mỗi 15 giây, bắn tên lửa công nghệ cao bỏ qua giáp vào địch có lượng máu hiện tại cao nhất, gây 210-333 sát thương chuẩn cho địch trong tầm 50.",
+    "to": "Cứ 15 giây, phóng tên lửa vào địch có lượng máu hiện tại cao nhất, gây 210-333 sát thương chuẩn trong bán kính 50."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_REAPER_DESCRIPTION_3",
+    "from": "Mỗi 20 giây, máy bay ném 8 tên lửa, mỗi quả gây 46-99 sát thương pháo. Sau khi tính sát thương, kết liễu địch còn dưới 20% máu.",
+    "to": "Cứ 20 giây, máy bay ném 8 tên lửa, mỗi quả gây 46-99 sát thương nổ. Sau khi nhận sát thương, địch còn dưới 20% máu tối đa sẽ bị kết liễu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ICE_COOLER_FLAVORS_DESCRIPTION_3",
+    "from": "Khi sóng băng đóng băng địch, có 40% cơ hội biến chúng thành người tuyết trong 2,3 giây, giữ lại 70% lượng máu hiện tại.",
+    "to": "Khi sóng băng đóng băng địch, có 40% cơ hội biến mục tiêu thành người tuyết trong 2,3 giây; máu của dạng người tuyết bằng 70% lượng máu còn lại của mục tiêu."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_MACHINE_GUNNER_ARROW_DESCRIPTION_3",
+    "from": "Mỗi 8 giây, bắn 3 tên nổ. Đòn trúng gây 13-26 sát thương vật lý và 40-74 sát thương nổ cho địch trong tầm 55.",
+    "to": "Cứ 8 giây, bắn 3 mũi tên nổ. Mỗi mũi gây 13-26 sát thương vật lý khi trúng và 40-74 sát thương nổ trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_SNIPER_PRACTICE_DESCRIPTION_3",
+    "from": "Triển khai quan sát viên: mỗi 14 giây khóa tối đa 3 mục tiêu và bắn 3 loạt. Mỗi phát gây 2,4 lần sát thương đòn thường, bỏ qua 25 điểm giáp.",
+    "to": "Triển khai lính quan sát. Cứ 14 giây, khóa tối đa 3 mục tiêu và bắn 3 loạt. Mỗi phát gây 2,4 lần sát thương đòn thường và bỏ qua 25 điểm phần trăm giáp."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_NAME_3",
+    "from": "Phóng chiếu tâm trí III",
+    "to": "Ảo ảnh tâm trí III"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_PROJECTION_DESCRIPTION_3",
+    "from": "Mỗi 8 giây, tạo hóa thân trên đường đi, gây 80-120 sát thương nổ phép lên địch trong tầm 55.",
+    "to": "Cứ 8 giây, tạo một ảo ảnh Wifi Babies trên đường đi. Ảo ảnh phát nổ, gây 80-120 sát thương phép trong bán kính 55."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_NAME_3",
+    "from": "Chủ nghĩa ăn chay III",
+    "to": "Phép hóa rau III"
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WICKED_SISTERS_STREGI_VEGGIE_DESCRIPTION_3",
+    "from": "Biến một địch thành cừu hoặc bí ngô, đặt máu tối đa mới bằng 50% lượng máu còn lại.",
+    "to": "Biến một địch thành cừu hoặc bí ngô. Dạng biến hình có máu tối đa bằng 50% lượng máu còn lại của mục tiêu trước khi biến hình."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_INTRANET_DESCRIPTION_1",
+    "from": "Mỗi 40 giây, phát xung năng lượng tới các tháp khác trong tầm, lập tức đặt lại hồi kỹ năng. Nội tại: tăng 24% tầm bắn của tháp xung quanh.",
+    "to": "Cứ 40 giây, phát xung năng lượng giúp kỹ năng của các tháp khác trong tầm hồi lại ngay lập tức. Nội tại: tăng 24% tầm bắn cho các tháp xung quanh."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_BUYING_TIME_DESCRIPTION_1",
+    "from": "Dấu chọn mục tiêu được tích điện, làm chậm 15% tốc độ di chuyển của địch đi gần đó.",
+    "to": "Điểm đánh dấu mục tiêu phát điện, làm chậm 15% địch đi qua gần đó."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_PLAGUE_HOSPITAL_MIKE_DESCRIPTION_1",
+    "from": "Mỗi 30 giây, triệu hồi Mike kinh hoàng, tối đa 3. Mike có 320 máu, 20% giáp và gây 18-28 sát thương chuẩn cận chiến.",
+    "to": "Cứ 30 giây, triệu hồi Mike kinh hoàng, tối đa 3 đơn vị. Mike có 300 máu, 20% giáp và gây 18-28 sát thương chuẩn cận chiến."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_TANTRUM_DESCRIPTION_1",
+    "from": "Mỗi 18 giây, tiếng khóc làm quá tải tâm trí tối đa 5 địch trong tầm 150 và làm choáng chúng 5 giây.",
+    "to": "Cứ 18 giây, tiếng khóc gây quá tải tâm trí, làm choáng tối đa 5 địch trong bán kính 150 trong 5 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_COMMAND_CENTER_INTRANET_DESCRIPTION_2",
+    "from": "Mỗi 36 giây, phát xung năng lượng tới các tháp khác trong tầm, lập tức đặt lại hồi kỹ năng. Nội tại: tăng 36% tầm bắn của tháp xung quanh.",
+    "to": "Cứ 36 giây, phát xung năng lượng giúp kỹ năng của các tháp khác trong tầm hồi lại ngay lập tức. Nội tại: tăng 36% tầm bắn cho các tháp xung quanh."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_BLASTIN_BULLRIDERS_BUYING_TIME_DESCRIPTION_2",
+    "from": "Dấu chọn mục tiêu được tích điện, làm chậm 30% tốc độ di chuyển của địch đi gần đó.",
+    "to": "Điểm đánh dấu mục tiêu phát điện, làm chậm 30% địch đi qua gần đó."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_PLAGUE_HOSPITAL_MIKE_DESCRIPTION_2",
+    "from": "Mỗi 25 giây, triệu hồi Mike kinh hoàng, tối đa 3. Mike có 360 máu, 20% giáp và gây 22-34 sát thương chuẩn cận chiến.",
+    "to": "Cứ 25 giây, triệu hồi Mike kinh hoàng, tối đa 3 đơn vị. Mike có 400 máu, 20% giáp và gây 22-34 sát thương chuẩn cận chiến."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_WIFI_BABIES_TANTRUM_DESCRIPTION_2",
+    "from": "Mỗi 16 giây, tiếng khóc làm quá tải tâm trí tối đa 5 địch trong tầm 150 và làm choáng chúng 6 giây.",
+    "to": "Cứ 16 giây, tiếng khóc gây quá tải tâm trí, làm choáng tối đa 5 địch trong bán kính 150 trong 6 giây."
+  },
+  {
+    "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+    "key": "TOWER_ICE_COOLER_PARTY_DESCRIPTION_1",
+    "from": "Mỗi 25 giây, ném liên tiếp 20 cây kem. Mỗi cây gây 8-12 sát thương nổ phép cho địch trong tầm 45.",
+    "to": "Cứ 25 giây, ném liên tiếp 20 cây kem ốc quế. Mỗi cây gây 8-12 sát thương phép trong bán kính 45."
+  }
+]

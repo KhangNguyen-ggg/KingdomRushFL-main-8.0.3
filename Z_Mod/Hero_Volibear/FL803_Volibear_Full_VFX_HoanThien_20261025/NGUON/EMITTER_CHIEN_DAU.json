@@ -1,0 +1,5843 @@
+[
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_R_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_R_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_R_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_R_ShoulderVFX02",
+    "emitters": [
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.6509804129600525,
+          0.41960784792900085,
+          1
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.6235294342041016,
+          0.40392157435417175,
+          0.6941176652908325,
+          0.729411780834198
+        ]
+      },
+      {
+        "name": "prestige_SmolFlames1",
+        "lifetime": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.5700007677078247,
+          0.6399939060211182,
+          0.45000380277633667
+        ]
+      },
+      {
+        "name": "XY_Ringlight2",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shouder_Mesh01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.7600061297416687,
+          0.4899977147579193,
+          1
+        ]
+      },
+      {
+        "name": "XY_Ringlight3",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shouder_Mesh01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.3607843220233917,
+          0.239215686917305,
+          0.11764705926179886,
+          0.9529411792755127
+        ]
+      },
+      {
+        "name": "prestige_Basic",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.18039216101169586,
+          0,
+          0.1764705926179886,
+          0.9411764740943909
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_ult_paws_L",
+    "emitters": [
+      {
+        "name": "flatSpark1",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_BA_Outer_Flare.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "flatSpark2",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.7254902124404907,
+          0.7686274647712708,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "flatBlend2",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "flaAdd",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.8901960849761963,
+          0.7960784435272217,
+          0.6000000238418579,
+          1
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin07_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_ShoulderVFX01",
+    "emitters": [
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.7137255072593689,
+          0.3607843220233917,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.6235294342041016,
+          0.40392157435417175,
+          0.6941176652908325,
+          0.729411780834198
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.4000000059604645,
+          0.12156862765550613,
+          0.22745098173618317,
+          1
+        ]
+      },
+      {
+        "name": "prestige_SmolFlames2",
+        "lifetime": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.572549045085907,
+          0.6352941393852234,
+          0.658823549747467
+        ]
+      },
+      {
+        "name": "XY_Ringlight2",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shouder_Mesh01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.7607843279838562,
+          0.48627451062202454,
+          0.6313725709915161
+        ]
+      },
+      {
+        "name": "XY_Ringlight3",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shouder_Mesh01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.36000609397888184,
+          0.1600061058998108,
+          0.22000457346439362,
+          0.7499961853027344
+        ]
+      },
+      {
+        "name": "prestige_Basic",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.18039216101169586,
+          0,
+          0.1764705926179886,
+          0.9411764740943909
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_hitFlash_Crit",
+    "emitters": [
+      {
+        "name": "flash3",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "color": [
+          0.38823530077934265,
+          0.24705882370471954,
+          0.22745098173618317,
+          1
+        ]
+      },
+      {
+        "name": "Bloom_Impact",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowSoft.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.6823529601097107,
+          0.47058823704719543,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/LeeSin_Skin31_E_clouds.dds",
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.729411780834198,
+          0.3803921639919281,
+          0.5137255191802979,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Brand_Skin08_Particles_1_0.dds",
+        "color": [
+          1,
+          0.6352941393852234,
+          0.3764705955982208,
+          1
+        ]
+      },
+      {
+        "name": "spiral_light",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Kassadin_Skin14_common_Vlad_BloodKing_Torus.sco",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_Aura_01",
+    "emitters": [
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5300068855285645
+        ],
+        "color": [
+          1,
+          0.48627451062202454,
+          0.3137255012989044,
+          0.8117647171020508
+        ]
+      },
+      {
+        "name": "Shoulder01",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.4800030589103699
+        ],
+        "color": [
+          1,
+          0.48627451062202454,
+          0.3137255012989044,
+          0.7921568751335144
+        ]
+      },
+      {
+        "name": "Shoulder02",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.4800030589103699
+        ],
+        "color": [
+          1,
+          0.5254902243614197,
+          0.29019609093666077,
+          1
+        ]
+      },
+      {
+        "name": "BackPieceGlow1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          1,
+          0.8470588326454163,
+          0.5411764979362488,
+          0.501960813999176
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.6000000238418579
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_Breath",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_E_DragonChild",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_BA_Hit_Right_Child",
+    "emitters": [
+      {
+        "name": "BitsAdd",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Impact01.dds",
+        "birthColor": [
+          1,
+          0.9529411792755127,
+          0.5803921818733215,
+          1
+        ]
+      },
+      {
+        "name": "Sparkles",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkles01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          1,
+          0.843137264251709,
+          0.5921568870544434,
+          1
+        ]
+      },
+      {
+        "name": "Sparkles1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkles01.dds",
+        "birthColor": [
+          0.9921568632125854,
+          1,
+          0.5137255191802979,
+          1
+        ]
+      },
+      {
+        "name": "flash",
+        "lifetime": 0.18700000643730164,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_BasicAttack_FlareDiamond.dds",
+        "birthColor": [
+          1,
+          0.9254902005195618,
+          0.7019608020782471,
+          1
+        ]
+      },
+      {
+        "name": "BitsAdd1",
+        "lifetime": 0.550000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Smoke02.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7019608020782471
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_AOE_Warning",
+    "emitters": [
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1.2999999523162842,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.609994649887085
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 1.5,
+        "delay": 0.05000000074505806,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.4000000059604645,
+          0.22000457346439362,
+          0.31000229716300964,
+          0.6500037908554077
+        ]
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Particles_1_0.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.43999388813972473
+        ],
+        "color": [
+          1,
+          0.658823549747467,
+          0.4117647111415863,
+          1
+        ]
+      },
+      {
+        "name": "Dark_BGDecal",
+        "lifetime": 3.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal03.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.13725490868091583,
+          0.18431372940540314,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 0.5,
+        "delay": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "XY_DarkPlane",
+        "lifetime": 2.5,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.13725490868091583,
+          0.19607843458652496,
+          1
+        ]
+      },
+      {
+        "name": "VerticalBeam",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Beamtexture01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.2862745225429535,
+          0.16078431904315948,
+          0.2078431397676468,
+          0.2705882489681244
+        ]
+      },
+      {
+        "name": "GlowRay",
+        "lifetime": 1,
+        "delay": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.7843137383460999,
+          0.43529412150382996,
+          0.501960813999176
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.5
+        ]
+      },
+      {
+        "name": "DarkBG_Ray",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.12941177189350128,
+          0.1725490242242813,
+          0.501960813999176
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.5
+        ]
+      },
+      {
+        "name": "Flash6",
+        "lifetime": 0.699999988079071,
+        "delay": 1.399999976158142,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.7137255072593689,
+          0.3607843220233917,
+          1
+        ]
+      },
+      {
+        "name": "GlowRay1",
+        "lifetime": 0.699999988079071,
+        "delay": 1.7000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.6313725709915161,
+          0.40392157435417175,
+          1
+        ]
+      },
+      {
+        "name": "Mesh1",
+        "lifetime": 1.7000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_P_Screen_Flames_Soft.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_VFX_Cone_MD.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7000076174736023
+        ]
+      },
+      {
+        "name": "Mesh2",
+        "lifetime": 1.7000000476837158,
+        "delay": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_P_Screen_Flames_Soft.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_VFX_Cone_MD.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.8196078538894653,
+          0.6078431606292725,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "mesh_ground",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Trail03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "Flash7",
+        "lifetime": 1.5,
+        "delay": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          1,
+          0.7254902124404907,
+          0.4470588266849518,
+          1
+        ]
+      },
+      {
+        "name": "DragonBlend01",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon01.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.3607843220233917,
+          0.16862745583057404,
+          0.250980406999588,
+          1
+        ]
+      },
+      {
+        "name": "RibbonMesh01",
+        "lifetime": 2,
+        "delay": 0.44999998807907104,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ribbon02_Head.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_MeshTrail.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.29019609093666077,
+          0.15294118225574493,
+          0.23137255012989044,
+          1
+        ]
+      },
+      {
+        "name": "Ring_",
+        "lifetime": 1.2000000476837158,
+        "delay": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_Global_TeamRing_Mesh.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Ring01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "WarningAddC",
+        "lifetime": 2.299999952316284,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7199969291687012
+        ]
+      },
+      {
+        "name": "WarningAddC3",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal04.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "mesh_ground1",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.9450980424880981,
+          0.7803921699523926,
+          0.29019609093666077
+        ]
+      },
+      {
+        "name": "WarningAddC4",
+        "lifetime": 1,
+        "delay": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Main_Shape_Clouds1",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9600061178207397
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke1",
+        "lifetime": 1,
+        "delay": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          1,
+          0.5600060820579529,
+          0.6399939060211182,
+          0.6500037908554077
+        ]
+      },
+      {
+        "name": "DragonAdd01",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon02.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.7568627595901489,
+          0.42352941632270813,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "DragonAdd02",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon02.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.843137264251709,
+          0.43529412150382996,
+          1
+        ]
+      },
+      {
+        "name": "RibbonMesh02",
+        "lifetime": 2,
+        "delay": 0.44999998807907104,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ribbon02_Head.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_MeshTrail.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "DragonBlend2",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon02.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.6431372761726379,
+          0.3490196168422699,
+          1
+        ]
+      },
+      {
+        "name": "DragonAdd4",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon02.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.8784313797950745,
+          0.5647059082984924,
+          1
+        ]
+      },
+      {
+        "name": "RibbonMesh3",
+        "lifetime": 2,
+        "delay": 0.44999998807907104,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ribbon02_Head.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_MeshTrail.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.6117647290229797,
+          0.3921568691730499,
+          0.26274511218070984,
+          1
+        ]
+      },
+      {
+        "name": "RibbonMesh4",
+        "lifetime": 2,
+        "delay": 0.44999998807907104,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ribbon02_Head.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_MeshTrail.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.4470588266849518,
+          0.4470588266849518,
+          0.4470588266849518,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Mesh3",
+        "lifetime": 1.7000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Beamtexture01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_VFX_Cone_MD.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7000076174736023
+        ]
+      },
+      {
+        "name": "prestige_DragonBlend3",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Dragon01.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_DragonModelAnim01.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.4627451002597809,
+          0.2705882489681244,
+          0.32156863808631897,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_BackVFX01",
+    "emitters": [
+      {
+        "name": "XY_Ringlight",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Ringlight.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8235294222831726,
+          0.5764706134796143,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.929411768913269,
+          0.6705882549285889,
+          1
+        ]
+      },
+      {
+        "name": "XY_Ringlight1",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.9176470637321472,
+          0.6196078658103943,
+          0.2980392277240753
+        ]
+      },
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.7372549176216125,
+          0.47058823704719543,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          0.5764706134796143,
+          0.33725491166114807,
+          0.6078431606292725,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.2862745225429535,
+          0.1764705926179886,
+          0.18039216101169586,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon2",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Temp_Trail",
+        "lifetime": 0.11999999731779099,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 80,
+            "mBirthTilingSize": {
+              "constantValue": [
+                800,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Basic1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          1,
+          0.7019608020782471,
+          0.48627451062202454,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.239215686917305,
+          0.003921568859368563,
+          0.14509804546833038,
+          0.5098039507865906
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Death_02",
+    "emitters": [
+      {
+        "name": "Flash",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Star_Flash.dds",
+        "birthColor": [
+          1,
+          0.7647058963775635,
+          0.43529412150382996,
+          1
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.800000011920929
+        ]
+      },
+      {
+        "name": "SnowFlash1",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.9400015473365784,
+          0.8699931502342224,
+          1
+        ]
+      },
+      {
+        "name": "WipeOutAdd",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture_DeathRespawn.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDrawAlways": [
+              "BODY",
+              "Ponytail",
+              "ice_legs",
+              "BodyNew",
+              "Wings"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.7647058963775635,
+          0.5254902243614197,
+          0.4431372582912445,
+          1
+        ]
+      },
+      {
+        "name": "wipeOutBlend",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture_DeathRespawn.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDrawAlways": [
+              "BODY",
+              "Ponytail",
+              "ice_legs",
+              "BodyNew",
+              "Wings"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.8392156958580017,
+          0.6000000238418579,
+          0.5215686559677124,
+          1
+        ]
+      },
+      {
+        "name": "SphereDissolve",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ash.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.15294118225574493,
+          0.1921568661928177,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "prestige_SphereDissolve1",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Ash.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.9764705896377563,
+          0.8039215803146362,
+          0.501960813999176,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_pawsFront",
+    "emitters": [
+      {
+        "name": "flatSpark",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_BA_Outer_Flare.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8549019694328308,
+          0.6196078658103943,
+          1
+        ]
+      },
+      {
+        "name": "flatBlend",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "flaAdd",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.8901960849761963,
+          0.7960784435272217,
+          0.6000000238418579,
+          1
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin07_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.3499961793422699
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "flatSpark1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.5921568870544434,
+          0.7372549176216125,
+          0.47058823704719543
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Death_01",
+    "emitters": [
+      {
+        "name": "SkinWipeInAdd",
+        "lifetime": 4,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture_DeathRespawn.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.18039216101169586,
+          0.18039216101169586,
+          0.09803921729326248
+        ]
+      },
+      {
+        "name": "SkinWipeInBlend",
+        "lifetime": 4,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_AvatarTexture_DeathRespawn.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.9803921580314636,
+          0.7372549176216125,
+          0.9686274528503418,
+          1
+        ],
+        "color": [
+          0.4941176474094391,
+          0.32156863808631897,
+          0.37254902720451355,
+          1
+        ]
+      },
+      {
+        "name": "Avatar",
+        "lifetime": 1.7000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.9607843160629272,
+          0.7098039388656616,
+          0.6470588445663452,
+          0.2980392277240753
+        ]
+      },
+      {
+        "name": "LANDINGfLASH",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.4313725531101227,
+          0.32549020648002625,
+          0.42352941632270813,
+          0.6509804129600525
+        ]
+      },
+      {
+        "name": "AV_ChromaticAbberation_B",
+        "lifetime": 0.20000000298023224,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Draven_Base_W_Color-hold.DDS",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "Unbound"
+            ],
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.10000763088464737
+        ]
+      },
+      {
+        "name": "AV_ChromaticAbberation_B1",
+        "lifetime": 0.20000000298023224,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Draven_Base_W_Color-hold.DDS",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "Unbound"
+            ],
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.10000763088464737
+        ]
+      },
+      {
+        "name": "Avatar1",
+        "lifetime": 1.7000000476837158,
+        "delay": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_AOE_Warning",
+    "emitters": [
+      {
+        "name": "tempInnerWarningAdd1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          1,
+          0.4745098054409027,
+          0.5960784554481506,
+          0.20000000298023224
+        ]
+      },
+      {
+        "name": "tempOuterWarningBlend",
+        "lifetime": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_AOE_Warning.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.30980393290519714,
+          0.16862745583057404,
+          0.2235294133424759,
+          0.4000000059604645
+        ]
+      },
+      {
+        "name": "WarningAddC",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shield02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8156862854957581,
+          0.6313725709915161,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Dark_BGDecal",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal09_01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.12941177189350128,
+          0.1764705926179886,
+          1
+        ]
+      },
+      {
+        "name": "WarningAddC1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shield02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "mesh_ground",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.800000011920929,
+          0.5215686559677124,
+          1
+        ]
+      },
+      {
+        "name": "XY_DarkPlane",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.32156863808631897,
+          0.1921568661928177,
+          0.23137255012989044,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.7647058963775635,
+          0.4117647111415863,
+          0.5960784554481506,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "Ring_",
+        "lifetime": 0.3499999940395355,
+        "delay": 0.6499999761581421,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_Global_TeamRing_Mesh.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_global_teamring_mesh.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.8200045824050903
+        ]
+      },
+      {
+        "name": "mesh_ground2",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Trail03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9900053143501282
+        ]
+      },
+      {
+        "name": "Dark_BGDecal1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Ringlight.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.13725490868091583,
+          0.18431372940540314,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "prestige_Blend1",
+        "lifetime": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_AOE_Warning.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.4000000059604645
+        ],
+        "color": [
+          0.9254902005195618,
+          0.6666666865348816,
+          0.364705890417099,
+          0.4000000059604645
+        ]
+      },
+      {
+        "name": "Prstige_bright5",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece05.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.21568627655506134,
+          0.5960784554481506,
+          0.9058823585510254,
+          1
+        ]
+      },
+      {
+        "name": "Prstige_bright6",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          1,
+          0.8699931502342224,
+          0.609994649887085,
+          0.5400015115737915
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_hit",
+    "emitters": [
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Basic",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.8392156958580017,
+          0.4588235318660736,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          1,
+          0.8941176533699036,
+          0.8980392217636108,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.6078431606292725,
+          0.5137255191802979,
+          1
+        ]
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.6196078658103943,
+          0.5137255191802979,
+          0.3607843220233917
+        ]
+      },
+      {
+        "name": "Decal",
+        "lifetime": 2.5,
+        "delay": 0.07999999821186066,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Scorched_FLASH",
+        "lifetime": 0.07000000029802322,
+        "delay": 0.07999999821186066,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.9215686321258545,
+          0.6313725709915161,
+          1
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7000076174736023
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.7300068736076355,
+          0.4000000059604645,
+          0.6000000238418579,
+          0.9799954295158386
+        ]
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "color": [
+          0.7764706015586853,
+          0.4901960790157318,
+          0.2862745225429535,
+          1
+        ]
+      },
+      {
+        "name": "Fire_Sphere",
+        "lifetime": 0.75,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Fire_Sphere1",
+        "lifetime": 0.75,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9900053143501282
+        ]
+      },
+      {
+        "name": "mesh_ground",
+        "lifetime": 0.30000001192092896,
+        "delay": 0.05999999865889549,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Trail03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Distort",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "prestige_Pillar_bk",
+        "lifetime": 0.23999999463558197,
+        "delay": 0.05000000074505806,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_SmokeTip.dds",
+        "birthColor": [
+          1,
+          0.6941176652908325,
+          0.5490196347236633,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Pillar_bk1",
+        "lifetime": 0.30000001192092896,
+        "delay": 0.05000000074505806,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_SmokeTip.dds",
+        "birthColor": [
+          0.364705890417099,
+          0.22745098173618317,
+          0.2549019753932953,
+          1
+        ]
+      },
+      {
+        "name": "GlowRay2",
+        "lifetime": 0.15000000596046448,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.3499961793422699,
+          0.17999541759490967,
+          0.2399939000606537,
+          1
+        ]
+      },
+      {
+        "name": "GlowRay3",
+        "lifetime": 0.15000000596046448,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.7900053262710571,
+          0.4299992322921753,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Downward1",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_pawSpark_02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        }
+      },
+      {
+        "name": "prestige_Downward2",
+        "lifetime": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_skyBolt_Hit_01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.886274516582489,
+          0.6196078658103943,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_BasicAttack_Swipe_R_01",
+    "emitters": [
+      {
+        "name": "Temp_Mesh12",
+        "lifetime": 0.5,
+        "delay": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_Q_Muzzle_Flash.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Attack_Swipe_R_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Temp_Mesh13",
+        "lifetime": 0.5,
+        "delay": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_Q_Muzzle_Flash.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Attack_Swipe_R_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.8823529481887817,
+          0.7411764860153198,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_DragonChild_03",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_E_DragonChild_02",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_E_AOE",
+    "emitters": [
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9700007438659668
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.7400014996528625,
+          0.34000152349472046,
+          0.4000000059604645,
+          0.9300068616867065
+        ]
+      },
+      {
+        "name": "Pillar_bk",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_SmokeTip.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Fire_Sphere",
+        "lifetime": 0.75,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.4588235318660736,
+          0.46666666865348816,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "mesh_ground",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Trail03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Distort",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Subtractive",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_ball32_02.dds",
+        "color": [
+          0.19607843458652496,
+          0.09019608050584793,
+          0.1411764770746231,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "flash3",
+        "lifetime": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds",
+        "birthColor": [
+          0.5900053381919861,
+          0.45000380277633667,
+          0.2399939000606537,
+          1
+        ]
+      },
+      {
+        "name": "Decal",
+        "lifetime": 2.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Scorched_FLASH",
+        "lifetime": 0.07000000029802322,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8352941274642944,
+          0.7568627595901489,
+          1
+        ]
+      },
+      {
+        "name": "GlowRay1",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.2500038146972656,
+          0.14999619126319885,
+          0.20999465882778168,
+          0.9900053143501282
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.9900053143501282
+        ]
+      },
+      {
+        "name": "GlowRay2",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.6899977326393127,
+          0.43999388813972473,
+          1
+        ]
+      },
+      {
+        "name": "flash5",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowFlare_Grey.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9900053143501282
+        ]
+      },
+      {
+        "name": "Subtractive2",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_ball32_02.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.7568627595901489,
+          0.4901960790157318,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Lightning_Downward",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_skyBolt_01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        }
+      },
+      {
+        "name": "Lightning_erode_",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "color": [
+          1,
+          1,
+          1,
+          0.3000076413154602
+        ]
+      },
+      {
+        "name": "Lightning_erode_1",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        }
+      },
+      {
+        "name": "up_glow",
+        "lifetime": 0.4000000059604645,
+        "delay": 0.05999999865889549,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_up_cylinder.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_expo_cylinder.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "readuswipe",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_SoftEnergy_Ver.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_cas_circle_mesh.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Decal1",
+        "lifetime": 3.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal04.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "mesh_ground1",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.800000011920929,
+          0.4000000059604645,
+          1
+        ]
+      },
+      {
+        "name": "Fire_Sphere3",
+        "lifetime": 0.75,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.7215686440467834,
+          0.4000000059604645,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "prestige_flash6",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowFlare_Grey.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9900053143501282
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_landingImpact_01",
+    "emitters": [
+      {
+        "name": "AddFill_",
+        "lifetime": 0.30000001192092896,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve_02.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_landingBolt_Vert_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "color": [
+          1,
+          0.6431372761726379,
+          0.43529412150382996,
+          1
+        ]
+      },
+      {
+        "name": "Staticblendback",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_landingBolt_Vert_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "blowBackAdd",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_landingBlowback_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.9254902005195618,
+          0.6980392336845398,
+          1
+        ],
+        "color": [
+          0.9607843160629272,
+          0.9607843160629272,
+          0.9607843160629272,
+          1
+        ]
+      },
+      {
+        "name": "blowBackBlend",
+        "lifetime": 0.5,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_landingBlowback_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "color": [
+          0.3019607961177826,
+          0.16078431904315948,
+          0.21176470816135406,
+          1
+        ]
+      },
+      {
+        "name": "startBlastFront",
+        "lifetime": 1.5,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "color": [
+          0.7600061297416687,
+          0.7600061297416687,
+          0.7600061297416687,
+          0.9900053143501282
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "delay": 0.11999999731779099,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          0.8299992084503174,
+          0.42000457644462585,
+          0.5799953937530518,
+          1
+        ]
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 0.699999988079071,
+        "delay": 0.11999999731779099,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Particles_1_0.dds",
+        "color": [
+          1,
+          0.7176470756530762,
+          0.46666666865348816,
+          1
+        ]
+      },
+      {
+        "name": "Crater_Impact",
+        "lifetime": 0.20000000298023224,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Crater_Cracks_1.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Crater_01_02.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.6313725709915161
+        ]
+      },
+      {
+        "name": "Crater_Impact1",
+        "lifetime": 1.100000023841858,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Crater_Cracks_1.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Crater_01_02.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.16862745583057404,
+          0.10588235408067703,
+          0.12941177189350128,
+          1
+        ]
+      },
+      {
+        "name": "Distort1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Fire_Sphere",
+        "lifetime": 0.75,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.9960784316062927,
+          0.45490196347236633,
+          0.5372549295425415,
+          1
+        ]
+      },
+      {
+        "name": "mesh_ground",
+        "lifetime": 0.30000001192092896,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Trail03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Subtractive",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_ball32_02.dds",
+        "color": [
+          0.2980392277240753,
+          0.15294118225574493,
+          0.21960784494876862,
+          1
+        ]
+      },
+      {
+        "name": "mesh_ground1",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_weaponswipe6.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.6352941393852234,
+          0.2705882489681244,
+          1
+        ]
+      },
+      {
+        "name": "Fire_Sphere1",
+        "lifetime": 0.3499999940395355,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_FlameEnergy01_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_FlameSphere.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.7199969291687012,
+          0.25999847054481506,
+          0.7700007557868958
+        ]
+      },
+      {
+        "name": "Prstige_BGDecal",
+        "lifetime": 0.800000011920929,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece04.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Prstige_BGDecal2",
+        "lifetime": 1.5700000524520874,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Groud01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Prstige_BGDecal3",
+        "lifetime": 1.2100000381469727,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Groud02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.8500038385391235
+        ]
+      },
+      {
+        "name": "prestige_Staticblendback1",
+        "lifetime": 0.30000001192092896,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_Recall_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Gragon01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_Shield_01",
+    "emitters": [
+      {
+        "name": "Avatar",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          0.8699931502342224,
+          0.6500037908554077,
+          0.6000000238418579
+        ]
+      },
+      {
+        "name": "LANDINGfLASH",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.9300068616867065
+        ]
+      },
+      {
+        "name": "StartWipe",
+        "lifetime": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Viego_Base_edgeSkirt_Noise.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_E_Shield_Sphere_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "darkBubbleBack",
+        "lifetime": 2.799999952316284,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/common_alpha_03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_E_Shield_Sphere_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "color": [
+          0,
+          0.16078431904315948,
+          0.06666667014360428,
+          1
+        ]
+      },
+      {
+        "name": "edgeGlow",
+        "lifetime": 2.6500000953674316,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_GroundDecal09.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.6399939060211182
+        ]
+      },
+      {
+        "name": "etheralWaves",
+        "lifetime": 2.799999952316284,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_P_Screen_Flames_Soft.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_E_Shield_Sphere_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.24705882370471954,
+          0.12156862765550613,
+          0.1725490242242813,
+          1
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "flash1",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "color": [
+          0.8901960849761963,
+          0.6000000238418579,
+          0.4313725531101227,
+          1
+        ]
+      },
+      {
+        "name": "ground_sub",
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.29019609093666077,
+          0.18431372940540314,
+          0.12156862765550613,
+          1
+        ]
+      },
+      {
+        "name": "StartWipe2",
+        "lifetime": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Viego_Base_passive_cloudRing_edge.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_E_Shield_Sphere_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.9647058844566345,
+          0.8588235378265381,
+          1
+        ]
+      },
+      {
+        "name": "edgeGlow1",
+        "lifetime": 2.6500000953674316,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shield02.dds",
+        "birthColor": [
+          1,
+          0.5843137502670288,
+          0.7647058963775635,
+          1
+        ]
+      },
+      {
+        "name": "edgeGlow3",
+        "lifetime": 2.6500000953674316,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Shield02.dds",
+        "birthColor": [
+          0.250980406999588,
+          0.1411764770746231,
+          0.1568627506494522,
+          1
+        ]
+      },
+      {
+        "name": "VoidOrbGlow",
+        "lifetime": 2.799999952316284,
+        "texture": "ASSETS/Shared/Particles/Banshee_Veil_template_shield.dds",
+        "birthColor": [
+          1,
+          0.6899977326393127,
+          0.6500037908554077,
+          0.7700007557868958
+        ]
+      },
+      {
+        "name": "readuswipe",
+        "lifetime": 2.799999952316284,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_SoftEnergy_Ver.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Kassadin_Skin14_Q_cas_circle_mesh.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.6117647290229797,
+          0.5607843399047852,
+          1
+        ]
+      },
+      {
+        "name": "VoidOrbGlow1",
+        "lifetime": 2.799999952316284,
+        "texture": "ASSETS/Shared/Particles/Banshee_Veil_template_shield.dds"
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_thunderFist_Bolt",
+    "emitters": [
+      {
+        "name": "StaticAddFront",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Static_01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_thunderFist_Mesh_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Staticblendback",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve_02.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_thunderFist_Mesh_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "color": [
+          0.3960784375667572,
+          0.2549019753932953,
+          0.2823529541492462,
+          0.501960813999176
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_Slow",
+    "emitters": [
+      {
+        "name": "Avatar",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "color": [
+          0.8901960849761963,
+          0.8235294222831726,
+          0.48627451062202454,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_R_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Q_aura",
+    "emitters": [
+      {
+        "name": "black",
+        "lifetime": 4.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "color": [
+          0.2862745225429535,
+          0.18431372940540314,
+          0.22745098173618317,
+          1
+        ]
+      },
+      {
+        "name": "Trail_VertAdd2",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        },
+        "birthColor": [
+          0.3960784375667572,
+          0.2078431397676468,
+          0.2823529541492462,
+          1
+        ]
+      },
+      {
+        "name": "blast",
+        "lifetime": 0.5,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Gwen_2x2_Smoke_Soft.dds",
+        "color": [
+          0.7607843279838562,
+          0.7607843279838562,
+          0.7607843279838562,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Mesh",
+        "lifetime": 0.6499999761581421,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/DrMundo_Q_Spear_Impact_Diust_burst.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/DrMundo_Base_E_Minion_WindMesh.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.6899977326393127
+        ],
+        "color": [
+          0.9176470637321472,
+          0.9450980424880981,
+          0.8117647171020508,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Mesh1",
+        "lifetime": 0.6499999761581421,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_SoftEnergy_Ver.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/DrMundo_Base_E_Minion_WindMesh.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "color": [
+          0.9176470637321472,
+          0.9450980424880981,
+          0.8117647171020508,
+          1
+        ]
+      },
+      {
+        "name": "black1",
+        "lifetime": 4.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "color": [
+          0.6000000238418579,
+          0.4156862795352936,
+          0.29019609093666077,
+          1
+        ]
+      },
+      {
+        "name": "Trail_VertAdd3",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Trail6.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.6666666865348816,
+          0.40784314274787903,
+          1
+        ]
+      },
+      {
+        "name": "Trail_VertAdd5",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        },
+        "birthColor": [
+          0.4156862795352936,
+          0.21568627655506134,
+          0.27843138575553894,
+          1
+        ]
+      },
+      {
+        "name": "Trail_VertAdd6",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Trail6.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.7176470756530762,
+          0.42352941632270813,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_R_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_R_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_BasicAttack_Swipe_L_01",
+    "emitters": [
+      {
+        "name": "Temp_Mesh8",
+        "lifetime": 0.5,
+        "delay": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_Q_Muzzle_Flash.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Attack_Swipe_L_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Temp_Mesh9",
+        "lifetime": 0.5,
+        "delay": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_Q_Muzzle_Flash.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Attack_Swipe_L_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.8235294222831726,
+          0.7019608020782471,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_L_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_L_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_midStacks_L_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_BasicAttack_Hit_Right",
+    "emitters": [
+      {
+        "name": "flash2",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.2862745225429535,
+          0.09803921729326248,
+          0.1568627506494522,
+          1
+        ]
+      },
+      {
+        "name": "Bloom_Impact",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowSoft.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.6705882549285889,
+          0.4156862795352936,
+          1
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "Spikes1",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        }
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          0.7098039388656616,
+          0.45098039507865906,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds"
+      },
+      {
+        "name": "GroundGlow",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Bubble_06.dds",
+        "color": [
+          0.8901960849761963,
+          0.5843137502670288,
+          0.4627451002597809,
+          1
+        ]
+      },
+      {
+        "name": "Flash3",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds",
+        "color": [
+          1,
+          1,
+          1,
+          0.800000011920929
+        ]
+      },
+      {
+        "name": "burst",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds",
+        "birthColor": [
+          0.9019607901573181,
+          0.6313725709915161,
+          0.2980392277240753,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_DragonChild_Negative",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_W_Marked_Scratch",
+    "emitters": [
+      {
+        "name": "XY_Icon",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Debufficon_Dissolve.dds",
+        "birthColor": [
+          0.3490196168422699,
+          0.1725490242242813,
+          0.4745098054409027,
+          1
+        ]
+      },
+      {
+        "name": "XY_Ringlight1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Debufficon_Dissolve.dds",
+        "birthColor": [
+          1,
+          0.6899977326393127,
+          0.43999388813972473,
+          0.25999847054481506
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.6800030469894409
+        ]
+      },
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.6313725709915161,
+          0.4588235318660736,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.3803921639919281,
+          0.30588236451148987,
+          0.3019607961177826,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Ringlight3",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Debufficon01.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.8899977207183838
+        ]
+      },
+      {
+        "name": "XY_Ringlight4",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Debufficon_Dissolve.dds",
+        "birthColor": [
+          1,
+          0.7882353067398071,
+          0.6431372761726379,
+          1
+        ]
+      },
+      {
+        "name": "prestige_Ringlight5",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_W_Debufficon_Dissolve.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.8299992084503174
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_Sparks",
+    "emitters": [
+      {
+        "name": "Bokeh_Dots_Top",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Bokeh_Dots_Top1",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Temp_Avatar",
+        "lifetime": -1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Noise05.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "HipBuff"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.2078431397676468,
+          0.05882352963089943,
+          0.13725490868091583,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Avatar1",
+        "lifetime": -1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Noise06.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "HipBuff"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          0.7568627595901489,
+          0.3607843220233917,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Avatar2",
+        "lifetime": -1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Mist.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY",
+              "HipBuff",
+              "Wings"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.9803921580314636,
+          0.34117648005485535,
+          0.14509804546833038,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Avatar6",
+        "lifetime": -1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Mist.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "HipBuff"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.9803921580314636,
+          0.34117648005485535,
+          0.14509804546833038,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_chainLightning_01",
+    "emitters": [
+      {
+        "name": "lightning3",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve_02.dds",
+        "primitive": {
+          "mBeam": {
+            "mBirthTilingSize": {
+              "constantValue": [
+                0,
+                110,
+                0
+              ],
+              "dynamics": {
+                "probabilityTables": [
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "keyTimes": [
+                      0,
+                      0.8999999761581421,
+                      1
+                    ],
+                    "keyValues": [
+                      2.5,
+                      3,
+                      3.5
+                    ],
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  }
+                ],
+                "times": [
+                  0
+                ],
+                "values": [
+                  [
+                    0,
+                    110,
+                    0
+                  ]
+                ],
+                "__type": "VfxAnimatedVector3fVariableData"
+              },
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxBeamDefinitionData"
+          },
+          "__type": "VfxPrimitiveBeam"
+        }
+      },
+      {
+        "name": "lightning5",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_color_bellcurve_02.dds",
+        "primitive": {
+          "mBeam": {
+            "mBirthTilingSize": {
+              "constantValue": [
+                0,
+                110,
+                0
+              ],
+              "dynamics": {
+                "probabilityTables": [
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "keyTimes": [
+                      0,
+                      0.8999999761581421,
+                      1
+                    ],
+                    "keyValues": [
+                      2.5,
+                      3,
+                      3.5
+                    ],
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  }
+                ],
+                "times": [
+                  0
+                ],
+                "values": [
+                  [
+                    0,
+                    110,
+                    0
+                  ]
+                ],
+                "__type": "VfxAnimatedVector3fVariableData"
+              },
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxBeamDefinitionData"
+          },
+          "__type": "VfxPrimitiveBeam"
+        },
+        "birthColor": [
+          1,
+          0.7176470756530762,
+          0.572549045085907,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "lightning6",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_Flare_Ray.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveBeam"
+        },
+        "birthColor": [
+          1,
+          0.8784313797950745,
+          0.7058823704719543,
+          1
+        ]
+      },
+      {
+        "name": "lightning8",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_Cracks_Mult.dds",
+        "primitive": {
+          "mBeam": {
+            "mBirthTilingSize": {
+              "constantValue": [
+                0,
+                110,
+                0
+              ],
+              "dynamics": {
+                "probabilityTables": [
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "keyTimes": [
+                      0,
+                      0.8999999761581421,
+                      1
+                    ],
+                    "keyValues": [
+                      2.5,
+                      3,
+                      3.5
+                    ],
+                    "__type": "VfxProbabilityTableData"
+                  },
+                  {
+                    "__type": "VfxProbabilityTableData"
+                  }
+                ],
+                "times": [
+                  0
+                ],
+                "values": [
+                  [
+                    0,
+                    110,
+                    0
+                  ]
+                ],
+                "__type": "VfxAnimatedVector3fVariableData"
+              },
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxBeamDefinitionData"
+          },
+          "__type": "VfxPrimitiveBeam"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.4000000059604645,
+          0.2549019753932953,
+          0.20392157137393951,
+          1
+        ]
+      },
+      {
+        "name": "prestige_lightning9",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_P_Flare_Ray01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveBeam"
+        },
+        "birthColor": [
+          1,
+          0.9921568632125854,
+          0.9686274528503418,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_Spirit_Child02",
+    "emitters": [
+      {
+        "name": "Temp_Trail2",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Temp_Trail3",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/LeeSin_Skin31_E_clouds.dds",
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Embers",
+        "lifetime": 1,
+        "delay": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Brand_Skin08_Q_StardustMoteAlpha.dds"
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "flash",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Flare_Omnimax.DDS"
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_E_Spirit_Child01",
+    "emitters": [
+      {
+        "name": "Hand_GlowBloom",
+        "lifetime": 1.5
+      },
+      {
+        "name": "Hand_GlowBloom1",
+        "lifetime": 1.5
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_W_Chomp",
+    "emitters": [
+      {
+        "name": "bearHeadBlend",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin9_W2_BearHead01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin9_W2_BearHead01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Spell2.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.6823529601097107,
+          0.5882353186607361,
+          0.5803921818733215,
+          1
+        ]
+      },
+      {
+        "name": "flash1",
+        "lifetime": 0.3499999940395355,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "color": [
+          0.8627451062202454,
+          0.5843137502670288,
+          0.4470588266849518,
+          1
+        ]
+      },
+      {
+        "name": "TeethAdd",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_TX_Mask01.dds",
+        "primitive": {
+          "mMesh": {
+            "mMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin9_W2_BearHead01.skn",
+            "mMeshSkeletonName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin9_W2_BearHead01.skl",
+            "mAnimationName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Spell2.anm",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.6117647290229797,
+          0.3843137323856354,
+          1
+        ]
+      },
+      {
+        "name": "Avatar",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_Ult_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.11000228673219681,
+          0.05999847501516342,
+          0.06999313086271286,
+          0.6500037908554077
+        ]
+      },
+      {
+        "name": "LANDINGfLASH",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0.7058823704719543,
+          0.4745098054409027,
+          0.5803921818733215,
+          0.501960813999176
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.7499961853027344
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_hitFlash_01",
+    "emitters": [
+      {
+        "name": "flash2",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "color": [
+          0.3490196168422699,
+          0.23529411852359772,
+          0.20000000298023224,
+          1
+        ]
+      },
+      {
+        "name": "Bloom_Impact",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowSoft.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.7372549176216125,
+          0.4274509847164154,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "color": [
+          0.7607843279838562,
+          0.6196078658103943,
+          0.6352941393852234,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          1,
+          0.9372549057006836,
+          0.8039215803146362,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "Spikes",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        }
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Particles_1_0.dds",
+        "color": [
+          1,
+          0.6705882549285889,
+          0.3843137323856354,
+          1
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds"
+      },
+      {
+        "name": "spiral_light",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_Vlad_BloodKing_Torus.sco",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      },
+      {
+        "name": "Distort",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "prestige_burst",
+        "lifetime": 0.6000000238418579,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds",
+        "birthColor": [
+          0.9803921580314636,
+          0.8352941274642944,
+          0.4627451002597809,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_Buf_Max",
+    "emitters": [
+      {
+        "name": "EndFlash",
+        "lifetime": 0.5,
+        "delay": 12,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY",
+              "Mane"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      },
+      {
+        "name": "Stencil_Mask",
+        "lifetime": 12,
+        "delay": 1.149999976158142,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "Mane",
+              "BODY",
+              "UltGear",
+              "Wings"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "bodyBlend_A",
+        "lifetime": 12,
+        "delay": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_Ult_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY",
+              "Mane",
+              "Wings"
+            ],
+            "mSubmeshesToDrawAlways": [
+              "UltGear"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      },
+      {
+        "name": "bodyFresnel_A",
+        "lifetime": 11.449999809265137,
+        "delay": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY",
+              "Mane"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "midMid",
+        "lifetime": 0.800000011920929,
+        "delay": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.2862745225429535,
+          0.1568627506494522,
+          0.20392157137393951,
+          1
+        ]
+      },
+      {
+        "name": "Avatar",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "AV_ChromaticAbberation_B",
+        "lifetime": 0.10000000149011612,
+        "delay": 0.6499999761581421,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY"
+            ],
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.2500038146972656
+        ]
+      },
+      {
+        "name": "Avatar1",
+        "lifetime": 0.25,
+        "delay": 0.75,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          0,
+          0,
+          0,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.4000000059604645
+        ],
+        "color": [
+          0.3960784375667572,
+          0.25882354378700256,
+          0.23529411852359772,
+          1
+        ]
+      },
+      {
+        "name": "Ground_Glow",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.6699931621551514
+        ],
+        "color": [
+          0.3450980484485626,
+          0.1921568661928177,
+          0.2823529541492462,
+          1
+        ]
+      },
+      {
+        "name": "bodyBlend_A4",
+        "lifetime": 12,
+        "delay": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_TX_Mask03.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY",
+              "Mane"
+            ],
+            "mSubmeshesToDrawAlways": [
+              "UltGear",
+              "Wings"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      },
+      {
+        "name": "AV_ChromaticAbberation_B1",
+        "lifetime": 0.20000000298023224,
+        "delay": 0.6499999761581421,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "BODY"
+            ],
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          0.9000076055526733,
+          0.8599984645843506,
+          0.28000304102897644
+        ],
+        "color": [
+          1,
+          1,
+          1,
+          0.9100022912025452
+        ]
+      },
+      {
+        "name": "bodyBlend_A5",
+        "lifetime": 12,
+        "delay": 0.800000011920929,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_Recall_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "Dragon"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      },
+      {
+        "name": "bodyBlend_A6",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Volibear_Skin09_Ult_TX_CM.dds",
+        "primitive": {
+          "mMesh": {
+            "mSubmeshesToDraw": [
+              "UltGear"
+            ],
+            "mSubmeshesToDrawAlways": [
+              "UltGear"
+            ],
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_BackVFX01",
+    "emitters": [
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.6200045943260193,
+          0.5300068855285645,
+          0.880003035068512
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "delay": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Basic2",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.9300068616867065,
+          0.9300068616867065,
+          0.9300068616867065,
+          0.5199969410896301
+        ]
+      },
+      {
+        "name": "Trail_VertAdd",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "Trail_VertAdd1",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Trail6.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.7098039388656616,
+          0.45490196347236633,
+          1
+        ]
+      },
+      {
+        "name": "Trail_VertAdd3",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 800,
+            "mBirthTilingSize": {
+              "constantValue": [
+                300,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 20,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "prestige_Ringlight2",
+        "lifetime": 1.399999976158142,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_BackPiece06.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.7450980544090271,
+          0.3843137323856354,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_W_Marked",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_W_hit_01",
+    "emitters": [
+      {
+        "name": "Avatar",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "color": [
+          1,
+          0.7411764860153198,
+          0.43921568989753723,
+          1
+        ]
+      },
+      {
+        "name": "Spikes",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.9799954295158386,
+          0.7900053262710571,
+          0.6399939060211182
+        ]
+      },
+      {
+        "name": "Spikes1",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          1,
+          0.9799954295158386,
+          0.7900053262710571,
+          0.6399939060211182
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.2500038146972656
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "Main_Shape_Clouds1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.2500038146972656
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "SmallStarTrail1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "prestige_Spikes2",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.572549045085907,
+          0.45490196347236633,
+          0.47058823704719543,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "prestige_Spikes4",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_BlastShapes.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveRay"
+        },
+        "birthColor": [
+          0.5647059082984924,
+          0.45098039507865906,
+          0.48235294222831726,
+          0.501960813999176
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_ShoulderVFX01",
+    "emitters": [
+      {
+        "name": "XY_Ringlight",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Ringlight.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8470588326454163,
+          0.6313725709915161,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Icon01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8549019694328308,
+          0.5137255191802979,
+          0.43921568989753723
+        ]
+      },
+      {
+        "name": "XY_Ringlight1",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Icon01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8901960849761963,
+          0.5490196347236633,
+          0.5921568870544434
+        ]
+      },
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.658823549747467,
+          0.4313725531101227,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.45490196347236633,
+          0.239215686917305,
+          0.32156863808631897,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon2",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Temp_Trail",
+        "lifetime": 0.12999999523162842,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 80,
+            "mBirthTilingSize": {
+              "constantValue": [
+                800,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "prestige_Basic1",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.2399939000606537,
+          0,
+          0.14999619126319885,
+          0.9400015473365784
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_ShoulderVFX02",
+    "emitters": [
+      {
+        "name": "XY_Ringlight",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Ringlight.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8470588326454163,
+          0.6313725709915161,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Icon01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8666666746139526,
+          0.5254902243614197,
+          1
+        ]
+      },
+      {
+        "name": "XY_Ringlight1",
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_Icon01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.8588235378265381,
+          0.5254902243614197,
+          0.5921568870544434
+        ]
+      },
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.7372549176216125,
+          0.3686274588108063,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.2862745225429535,
+          0.1764705926179886,
+          0.2078431397676468,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon2",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "Temp_Trail",
+        "lifetime": 0.12999999523162842,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 80,
+            "mBirthTilingSize": {
+              "constantValue": [
+                800,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "prestige_Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.2399939000606537,
+          0,
+          0.14999619126319885,
+          0.9799954295158386
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_BasicAttack_Hit_Tower",
+    "emitters": [
+      {
+        "name": "flash3",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "color": [
+          0.2862745225429535,
+          0.16862745583057404,
+          0.21568627655506134,
+          1
+        ]
+      },
+      {
+        "name": "Bloom_Impact",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowSoft.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.686274528503418,
+          0.5098039507865906,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/LeeSin_Skin31_E_clouds.dds",
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "Filler_Smoke",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sl_Dust_01.dds",
+        "birthColor": [
+          1,
+          0.4156862795352936,
+          0.6980392336845398,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "SmokeUp",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Brand_Skin08_Particles_1_0.dds",
+        "color": [
+          1,
+          0.7098039388656616,
+          0.41960784792900085,
+          1
+        ]
+      },
+      {
+        "name": "spiral_light",
+        "lifetime": 0.4000000059604645,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Kassadin_Skin14_common_Vlad_BloodKing_Torus.sco",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_Aura_01",
+    "emitters": [
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_dash_sub01.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.880003035068512
+        ]
+      },
+      {
+        "name": "Shoulder",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          1,
+          0.5647059082984924,
+          0.3490196168422699,
+          1
+        ]
+      },
+      {
+        "name": "Shoulder1",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          1,
+          0.5647059082984924,
+          0.3450980484485626,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.4000000059604645,
+          0.1921568661928177,
+          0.35686275362968445,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "Ground_Glow",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.35686275362968445,
+          0.2235294133424759,
+          0.2078431397676468,
+          1
+        ]
+      },
+      {
+        "name": "Line_Ribbon",
+        "lifetime": -1
+      },
+      {
+        "name": "BackPieceGlow1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "birthColor": [
+          1,
+          0.9499961733818054,
+          0.7700007557868958,
+          1
+        ]
+      },
+      {
+        "name": "BackPieceGlow2",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds"
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_thunderFist",
+    "emitters": [
+      {
+        "name": "fistBolts1",
+        "lifetime": 0.699999988079071,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "color": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "name": "flatBlend",
+        "lifetime": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "birthColor": [
+          1,
+          0.8666666746139526,
+          0.5490196347236633,
+          1
+        ]
+      },
+      {
+        "name": "flatBlend1",
+        "lifetime": 1.2000000476837158,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/common_Aura_Self.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "color": [
+          0.2862745225429535,
+          0.18039216101169586,
+          0.1725490242242813,
+          1
+        ]
+      },
+      {
+        "name": "flash",
+        "lifetime": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Karma_Skin08_Q_Mis_Sparkles.dds",
+        "birthColor": [
+          0.7803921699523926,
+          0.7450980544090271,
+          0.5372549295425415,
+          1
+        ]
+      },
+      {
+        "name": "flash1",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowFlare_Grey.dds"
+      },
+      {
+        "name": "flash2",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          1,
+          0.8196078538894653,
+          0.38823530077934265,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.7764706015586853,
+          0.7529411911964417,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon2",
+        "lifetime": 1.5,
+        "delay": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          0.8901960849761963,
+          0.8745098114013672,
+          0.7686274647712708,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_cast",
+    "emitters": [
+      {
+        "name": "Temp_Mesh",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Q_Swipe_A.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Q_Swipe_A.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.250980406999588,
+          0.15294118225574493,
+          0.20392157137393951,
+          1
+        ]
+      },
+      {
+        "name": "Temp_Mesh2",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_Q_Muzzle_Flash.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_Q_Swipe_A.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.7254902124404907,
+          0.5647059082984924,
+          0.2823529541492462,
+          1
+        ]
+      },
+      {
+        "name": "Main_Shape_Clouds",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/LeeSin_Skin31_E_clouds.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.3960784375667572,
+          0.3960784375667572,
+          0.3960784375667572,
+          1
+        ]
+      },
+      {
+        "name": "flash",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_GlowFlare_Grey.dds",
+        "birthColor": [
+          1,
+          0.800000011920929,
+          0.5568627715110779,
+          1
+        ]
+      },
+      {
+        "name": "flash1",
+        "lifetime": 0.10000000149011612,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Karma_Skin08_Q_Mis_Sparkles.dds",
+        "birthColor": [
+          0.5921568870544434,
+          0.364705890417099,
+          0.2980392277240753,
+          1
+        ]
+      },
+      {
+        "name": "flash2",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Aura_Self.dds",
+        "birthColor": [
+          0.8117647171020508,
+          0.4941176474094391,
+          0.3960784375667572,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_BuffBreak",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_L_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_L_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_L_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_MaxStacks_Swirl_Child",
+    "emitters": [
+      {
+        "name": "Line_Ribbon1",
+        "lifetime": -1
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Idle_pawSpark",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_L_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_L_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_L_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_E_Hit_01",
+    "emitters": [
+      {
+        "name": "Avatar",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/color-hold.dds",
+        "primitive": {
+          "mMesh": {
+            "mLockMeshToAttachment": true,
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveAttachedMesh"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.20000000298023224
+        ]
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.7300068736076355,
+          0.46999314427375793,
+          0.42000457644462585,
+          0.6000000238418579
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_R_SpikeB",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_R_SpikeC",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_maxStacks_R_SpikeA",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_Passive_zeroStacks_Aura_01",
+    "emitters": []
+  },
+  {
+    "name": "Volibear_Skin09_R_attack_buf_R",
+    "emitters": [
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.7411764860153198,
+          0.43921568989753723,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          1,
+          0.7607843279838562,
+          0.6980392336845398,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7100023031234741
+        ]
+      },
+      {
+        "name": "Trail_FG_Horizontal",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_egosoftTrail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 150,
+            "mBirthTilingSize": {
+              "constantValue": [
+                250,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "Trail_FG_Vertical",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_egosoftTrail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 150,
+            "mBirthTilingSize": {
+              "constantValue": [
+                250,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "Trail_darkBG_Horizontal",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 200,
+            "mBirthTilingSize": {
+              "constantValue": [
+                500,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "birthColor": [
+          0.4588235318660736,
+          0.2823529541492462,
+          0.25882354378700256,
+          0.5215686559677124
+        ]
+      },
+      {
+        "name": "Single_White_Strand",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_HolyStrings_SharpBlur.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_EnergyRush.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.800000011920929,
+          0.7300068736076355,
+          0.6699931621551514
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.9960784316062927,
+          0.8666666746139526,
+          0.6078431606292725,
+          1
+        ]
+      },
+      {
+        "name": "prestige_SmolFlames1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          1,
+          0.7607843279838562,
+          0.6980392336845398,
+          0.7019608020782471
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_W_Slash",
+    "emitters": [
+      {
+        "name": "scratchBlend",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Indicator_StraightLine01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_W_Slash_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          0.2666666805744171,
+          0.07450980693101883,
+          0.18431372940540314,
+          1
+        ]
+      },
+      {
+        "name": "scratchBlend1",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Indicator_StraightLine01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_W_Slash_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.7490196228027344,
+          0.7019608020782471,
+          1
+        ]
+      },
+      {
+        "name": "scratchBlend2",
+        "lifetime": 0.6000000238418579,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Indicator_StraightLine01.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_W_Slash_01.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.9333333373069763,
+          0.7333333492279053,
+          1
+        ]
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.15000000596046448,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds"
+      },
+      {
+        "name": "BackPieceGlow1",
+        "lifetime": 0.10000000149011612,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds"
+      },
+      {
+        "name": "BackPieceGlow2",
+        "lifetime": 0.15000000596046448,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds"
+      },
+      {
+        "name": "BackPieceGlow3",
+        "lifetime": 0.10000000149011612,
+        "delay": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds"
+      },
+      {
+        "name": "Subtractive",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_ball32_02.dds",
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.2235294133424759,
+          0.09803921729326248,
+          0.14901961386203766,
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_pawPrints",
+    "emitters": [
+      {
+        "name": "FootPrintRight",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin07_PawPrints02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.2862745225429535,
+          0.1568627506494522,
+          0.21176470816135406,
+          1
+        ]
+      },
+      {
+        "name": "FootPrintRight1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_PawPrints01_Dissolve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "FootPrintRight2",
+        "lifetime": 1,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin07_PawPrints02.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ],
+        "color": [
+          0.2862745225429535,
+          0.16470588743686676,
+          0.21960784494876862,
+          1
+        ]
+      },
+      {
+        "name": "FootPrintRight3",
+        "lifetime": 1,
+        "delay": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_PawPrints01_Dissolve.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_R_attack_buf_L",
+    "emitters": [
+      {
+        "name": "Basic",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Z_Glow.dds",
+        "color": [
+          1,
+          0.48627451062202454,
+          0.41960784792900085,
+          0.5098039507865906
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          0.6431372761726379,
+          0.09803921729326248,
+          0.40784314274787903,
+          0.7019608020782471
+        ]
+      },
+      {
+        "name": "XY_Icon",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          1,
+          0.8941176533699036,
+          0.9803921580314636,
+          1
+        ]
+      },
+      {
+        "name": "Trail_FG_Horizontal",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_egosoftTrail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 150,
+            "mBirthTilingSize": {
+              "constantValue": [
+                250,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "Trail_FG_Vertical",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_egosoftTrail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 150,
+            "mBirthTilingSize": {
+              "constantValue": [
+                250,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "Trail_darkBG_Horizontal",
+        "lifetime": 0.3499999940395355,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_R_Smoke_Trail.dds",
+        "primitive": {
+          "mTrail": {
+            "mMode": 1,
+            "mCutoff": 80,
+            "mBirthTilingSize": {
+              "constantValue": [
+                500,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "mSmoothingMode": 1,
+            "mMaxAddedPerFrame": 2,
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveArbitraryTrail"
+        }
+      },
+      {
+        "name": "BackPieceGlow",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_common_ball32_02.dds",
+        "birthColor": [
+          0.47843137383461,
+          0.3137255012989044,
+          0.2823529541492462,
+          1
+        ]
+      },
+      {
+        "name": "XY_Icon1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "birthColor": [
+          0.8901960849761963,
+          0.7921568751335144,
+          0.5960784554481506,
+          1
+        ]
+      },
+      {
+        "name": "Single_White_Strand",
+        "lifetime": 2,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Generic_HolyStrings_SharpBlur.dds",
+        "primitive": {
+          "mMesh": {
+            "mSimpleMeshName": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_E_EnergyRush.scb",
+            "__type": "VfxMeshDefinitionData"
+          },
+          "__type": "VfxPrimitiveMesh"
+        },
+        "birthColor": [
+          1,
+          0.8039215803146362,
+          0.7098039388656616,
+          0.6823529601097107
+        ]
+      },
+      {
+        "name": "prestige_SmolFlames1",
+        "lifetime": 1.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Idle_FlameFB_4x2.dds",
+        "birthColor": [
+          1,
+          0.18039216101169586,
+          0.4274509847164154,
+          0.7019608020782471
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Q_ult_paws_R",
+    "emitters": [
+      {
+        "name": "flatSpark1",
+        "lifetime": 0.25,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Samira_Base_BA_Outer_Flare.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.5000076293945312
+        ]
+      },
+      {
+        "name": "flatSpark2",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_RR_dash_sub.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          0.686274528503418,
+          0.8078431487083435,
+          0.501960813999176
+        ]
+      },
+      {
+        "name": "flatBlend2",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "flaAdd",
+        "lifetime": 0.15000000596046448,
+        "texture": "ASSETS/Characters/Volibear/Skins/Base/Particles/Volibear_Base_R_Background.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        },
+        "birthColor": [
+          1,
+          1,
+          1,
+          0.7199969291687012
+        ],
+        "color": [
+          0.8901960849761963,
+          0.7960784435272217,
+          0.6000000238418579,
+          1
+        ]
+      },
+      {
+        "name": "SmolFlames",
+        "lifetime": 0.5,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin07_Idle_FlameFB_4x2.dds",
+        "primitive": {
+          "__type": "VfxPrimitiveArbitraryQuad"
+        }
+      },
+      {
+        "name": "SmallStarTrail",
+        "lifetime": 1,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Sparkle01.dds"
+      }
+    ]
+  },
+  {
+    "name": "Volibear_Skin09_Passive_MaxStacks_Swirl_Child02",
+    "emitters": [
+      {
+        "name": "Temp_Trail",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 125,
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Temp_Trail1",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Indicator_StraightLine01.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 125,
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Temp_Trail2",
+        "lifetime": 0.20000000298023224,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Volibear_Skin09_Q_WispTrail_Add.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 125,
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      },
+      {
+        "name": "Temp_Trail3",
+        "lifetime": 0.30000001192092896,
+        "texture": "ASSETS/Characters/Volibear/Skins/Skin09/Particles/Indicator_StraightLine01.dds",
+        "primitive": {
+          "mTrail": {
+            "mCutoff": 125,
+            "mBirthTilingSize": {
+              "constantValue": [
+                450,
+                0,
+                0
+              ],
+              "__type": "ValueVector3"
+            },
+            "__type": "VfxTrailDefinitionData"
+          },
+          "__type": "VfxPrimitiveCameraTrail"
+        }
+      }
+    ]
+  }
+]

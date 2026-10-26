@@ -1,0 +1,8 @@
+{
+    "variant":  "canvas805",
+    "exit_code":  null,
+    "seconds":  11.88,
+    "peak_private_MiB":  5724.5,
+    "peak_working_MiB":  5713.2,
+    "stop_reason":  "Probe memory/time budget reached"
+}

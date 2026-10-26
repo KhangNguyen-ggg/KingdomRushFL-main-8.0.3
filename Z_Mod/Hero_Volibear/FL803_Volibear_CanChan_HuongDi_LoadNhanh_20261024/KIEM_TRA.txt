@@ -1,0 +1,13 @@
+﻿KẾT QUẢ KIỂM THỬ — 24/10/2026
+
+1. Volibear: LuaJIT nạp template thật; xác nhận chân neo đúng, thân cao ~150 px so với Set 150 px, lật sprite đúng hai hướng, tầm mới và phục hồi sau R/hồi sinh. 341 frame Real3D tìm thấy đầy đủ.
+2. Ảnh xem trước dùng trực tiếp atlas và công thức render của game; Set đặt chung đường chân để so chiều cao.
+3. Gỡ tài nguyên mô phỏng 80 nhóm / 24.000 frame: bản cũ 80 lượt cập nhật, 0,068 giây CPU; bản mới 10 lượt, 0,022 giây CPU. Ở 60 FPS, số lượt chờ tương ứng khoảng 1,33 giây so với 0,17 giây, chưa gồm phần công việc khác.
+4. Tải 18 nhóm Volibear + Set/Blackburn/UI Sett/UI Lich, 8 luồng, 3 chu kỳ: tất cả tải/gỡ sạch, texture khoảng 115,6 MiB khi đã tải. Trung vị thời gian tải riêng: cũ 0,424 giây, mới 0,455 giây. Phép thử này KHÔNG chứng minh giải mã PNG nhanh hơn; cải thiện chính là gỡ tài nguyên và bỏ tải trùng.
+5. Cùng PNG được yêu cầu ở hai tỷ lệ: chỉ upload một lần; gỡ nhóm này vẫn giữ đúng nhóm còn dùng.
+6. Kiểm thử frame trùng tên, atlas chia sẻ, khôi phục frame cũ: PASS.
+7. Hàng đợi âm thanh xử lý theo lô và gỡ hết: PASS.
+8. Màn loading được present trước hàng đợi đích; chọn đúng số màn sắp vào; phục hồi trạng thái đồ họa: PASS.
+9. Đường game:destroy hiện tại giải phóng 3 store cũ (weak reference), bảng hero/tháp và listener theo trận: PASS. Chưa thấy bằng chứng cần viết lại teardown.
+
+Không đo tổng thời gian vào màn/F1, không chạy trận đầy đủ, không ghi save. RAM hệ điều hành/driver và tải hàng nghìn quái chưa được đánh giá trong phép thử này. Không kết luận hình trận cũ lóe lên đồng nghĩa rò rỉ dữ liệu trận.

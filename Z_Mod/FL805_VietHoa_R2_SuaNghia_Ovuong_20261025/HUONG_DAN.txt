@@ -1,0 +1,34 @@
+FL 8.0.5 — VIỆT HÓA R2, SỬA NGHĨA VÀ Ô VUÔNG
+Ngày: 25/10/2026
+
+Đây là bản vá 4 file cho FL 8.0.5 ĐÃ CÀI gói tổng hợp mod từ 8.0.3.
+Không dùng riêng gói này trên game 8.0.5 nguyên bản vì nó phụ thuộc các mod đã ghép.
+
+Thư mục game hiện tại đã được sửa trực tiếp sau kiểm thử:
+E:\BaiduNetdiskDownload\FL8.0.5 Kingdom Rush -FL
+Nếu game đang mở, thoát và mở lại để nạp câu chữ mới.
+
+CÀI TRÊN BẢN SAO KHÁC ĐÃ CÓ GÓI MOD
+1. Thoát game.
+2. Chép NỘI DUNG BÊN TRONG CAP_NHAT vào thư mục game 8.0.5, cùng cấp với exe.
+3. Chọn thay thế file. Đường dẫn đúng phải là <game>/all-desktop/screen_map.lua,
+   không phải <game>/CAP_NHAT/all-desktop/screen_map.lua.
+4. Chọn ngôn ngữ Tiếng Việt trong game nếu cần.
+
+HOÀN TÁC RIÊNG R2
+Thoát game, chép nội dung BACKUP_TRUOC_R2 vào thư mục game, chọn thay thế.
+Backup là 4 file của gói tổng hợp trước R2; không phải bản 8.0.5 nguyên gốc.
+
+CHI TIẾT
+- Sửa nhãn Cách xây tháp, Cách xây, Cơ chế tháp và các chữ còn tiếng Trung trong
+  hướng dẫn/chọn tháp. Thay ngoặc toàn chiều rộng ở tiêu đề bằng ngoặc thường.
+- Dịch đủ 8 hướng dẫn tháp mới; Wifi Babies đi từ Spirit Mausoleum KR4 theo menu
+  thực tế, thay cho ghi chú gốc nhầm nhánh KR2.
+- Sửa 115 khóa từ điển: tên tháp cũ dịch sai, mô tả kỹ năng mới, xuyên giáp,
+  hồi kỹ năng, vùng nổ, mục tiêu miễn kết liễu và một số nhãn liên quan.
+- Dịch các thông báo còn sót trong tùy chọn, phím tắt và trình sửa đợt quái.
+- Giữ 15.557 khóa locale và các bảng tên lính. Không kèm save.
+
+Đã kiểm tra trong giao diện Windows: 8 cửa sổ Cách xây, 24 cửa sổ kỹ năng,
+một cửa sổ Cơ chế tháp; font đủ ký tự cho các nội dung được kiểm tra.
+Chưa rà soát hết toàn bộ lời thoại, nhiệm vụ và mô tả của game.

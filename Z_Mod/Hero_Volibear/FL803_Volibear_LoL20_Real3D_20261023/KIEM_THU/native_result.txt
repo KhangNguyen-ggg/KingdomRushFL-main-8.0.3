@@ -1,0 +1,1 @@
+PASS real game animation/entity/component databases; Navira blue + Sett + new Volibear registration/creation; no duplicate tick wrapper; native slow insert/remove; regen and R expiry; Infinite scripted insertion with 3 names; all Volibear atlas groups loaded at 8 workers and all frames resolved. No stage, F1 bulk load or user-save writes. Lua 82 MiB.

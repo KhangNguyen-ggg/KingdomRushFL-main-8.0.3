@@ -1,0 +1,16 @@
+PASS 5 payload files compile
+PASS Duplicate frame restoration and shared texture lifetime
+PASS Same PNG queued at two scales uploads once; unloading either group preserves the other
+UNLOAD BACKUP_TRUOC_VA: 80 groups/24000 frames, 0.068s CPU, 80 update calls
+UNLOAD CAP_NHAT: 80 groups/24000 frames, 0.022s CPU, 10 update calls
+LOAD BACKUP_TRUOC_VA cycle 1: 0.432s, full GC=3, steps=21, Lua=31.8MiB, texture=115.6MiB
+LOAD CAP_NHAT cycle 1: 0.513s, full GC=3, steps=21, Lua=31.9MiB, texture=115.6MiB
+LOAD BACKUP_TRUOC_VA cycle 2: 0.424s, full GC=3, steps=21, Lua=32.0MiB, texture=115.6MiB
+LOAD CAP_NHAT cycle 2: 0.455s, full GC=3, steps=21, Lua=32.0MiB, texture=115.6MiB
+LOAD BACKUP_TRUOC_VA cycle 3: 0.408s, full GC=3, steps=21, Lua=32.1MiB, texture=115.6MiB
+LOAD CAP_NHAT cycle 3: 0.390s, full GC=3, steps=21, Lua=32.2MiB, texture=115.6MiB
+PASS 18 Real3D groups + Set/Blackburn/Sett UI/Lich UI loaded and fully removed on 3 cycles, 8 workers
+PASS Destination stage artwork selected; loading presented before destination resource queue
+PASS Sound unload queue processes batches and drains fully
+PASS Loading presentation uses default framebuffer and restores previous graphics state
+PASS Existing game teardown frees 3 old stores, hero/tower tables and stage listeners; no teardown rewrite needed

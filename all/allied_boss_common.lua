@@ -6,6 +6,7 @@ local SU = require("script_utils")
 local V = require("klua.vector")
 local bit = require("bit")
 local M = {}
+local parasite_guard_kinds = {blackburn=true,juggernaut=true,set=true,navira=true,navira_blue=true,mirage=true,alric=true,malik=true,godieth=true}
 -- Native data is read-only and shared, never deep-cloned into every hero.
 local native_by_kind, boss_by_kind = {}, {}
 local function insert(e) require("simulation"):queue_insert_entity(e) end
@@ -381,7 +382,7 @@ local function automatic(this,store)
 		if target and bit.band(target.vis.flags,F_FLYING)==0 then return false end
 	end
 	local targets=enemies(store,this.pos,math.max(500,skill.range),false)
-	if boss.active and #targets>0 and ready(this,store,"active",skill.cooldown) then
+	if boss.active and #targets>0 and ready(this,store,"active",skill.cooldown) and (not boss.can_cast_active or boss.can_cast_active(this,store)) then
 		local pos
 		if boss.active_radius then
 			if #enemies(store,this.pos,boss.active_radius(native_by_kind[this.boss_kind]),not boss.can_attack_air)>0 then pos=copy(this.pos) end
@@ -438,6 +439,8 @@ function M.decorate(t,native,def)
 	t.melee.fn_sort_targets=target_before
 	t.health.immune_to=bit.bor(t.health.immune_to or 0,DAMAGE_INSTAKILL,DAMAGE_EAT)
 	t.vis.bans=bit.bor(t.vis.bans,F_INSTAKILL,F_EAT)
+	-- Custom heroes also use this adapter; only the nine allied boss forms resist facehugging.
+	t.allied_boss_parasite_guard = parasite_guard_kinds[kind] or nil
 	if t.boss_kind then return t end
 	t.boss_kind=kind
 	t.hero.skills={}

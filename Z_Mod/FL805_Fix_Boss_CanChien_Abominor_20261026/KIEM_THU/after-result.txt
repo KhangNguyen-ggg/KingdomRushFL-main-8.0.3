@@ -1,0 +1,12 @@
+PASS after native AOE attacks against Abominor 1-4: tested=288, missed=0; 10 regression checks.
+PASS ordinary soldier geometry unchanged
+PASS no hit if target moves away during contact
+PASS AOE immunity preserved
+PASS flying damage ban preserved
+PASS cliff attack selection ban preserved
+PASS bystander outside original AOE is not hit
+PASS original AOE collateral damage preserved
+PASS anti-parasite contact rule preserved
+PASS looped AOE path hits body contact
+PASS phase5 remains unblockable and takes damage
+PASS geometry probe: 600 melee layouts; read-only save copy

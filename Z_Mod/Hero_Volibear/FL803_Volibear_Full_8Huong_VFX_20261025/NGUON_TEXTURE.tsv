@@ -1,0 +1,21 @@
+key	source	size_per_frame	conversion
+claw	samira_base_ba_outer_flare.png	160x160	luminance to alpha; preserve hue
+trail	volibear_skin09_egosofttrail.png	224x112	luminance to alpha; preserve hue
+flare	volibear_skin09_basicattack_flarediamond.png	96x96	luminance to alpha; preserve hue
+chain	volibear_skin09_q_wisptrail_add.png	256x64	luminance to alpha; preserve hue
+paw	volibear_skin07_pawprints01.png	96x96	luminance to alpha; preserve hue
+mark	volibear_skin09_w_debufficon01.png	96x96	luminance to alpha; preserve hue
+w_bite	volibear_skin09_w_debufficon_dissolve.png	128x128	luminance to alpha; preserve hue
+e_ring	volibear_skin09_grounddecal01.png	192x192	luminance to alpha; preserve hue
+e_bolt	volibear_skin09_e_skybolt_01.png	96x384	luminance to alpha; preserve hue
+e_hit	volibear_skin09_e_skybolt_hit_01.png	64x256	luminance to alpha; preserve hue
+shield	volibear_skin09_e_shieldring.png	192x192	luminance to alpha; preserve hue
+r_warning	volibear_skin09_r_aoe_warning.png	192x192	luminance to alpha; preserve hue
+r_crater	volibear_skin09_r_groud01.png	192x192	original RGBA
+r_cracks	volibear_skin09_r_groud02.png	192x192	luminance to alpha; preserve hue
+r_trail	volibear_skin09_r_smoke_trail.png	192x96	luminance to alpha; preserve hue
+r_ring	volibear_skin09_grounddecal09_01.png	192x192	luminance to alpha; preserve hue
+spark	volibear_skin09_star_flash.png	64x64	luminance to alpha; preserve hue
+impact	volibear_skin09_impact01.png	80x80	luminance to alpha; preserve hue
+flame	volibear_skin09_idle_flamefb_4x2.png	64x64	luminance to alpha; preserve hue
+cloud	volibear_skin09_e_clouds.png	80x80	original RGBA

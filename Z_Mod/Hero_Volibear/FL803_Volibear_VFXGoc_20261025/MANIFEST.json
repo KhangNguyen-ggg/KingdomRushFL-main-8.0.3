@@ -1,0 +1,30 @@
+﻿{
+    "name":  "FL803_Volibear_VFXGoc_20261025",
+    "date":  "2026-10-25",
+    "installed":  false,
+    "original_textures":  20,
+    "atlas_frames":  33,
+    "atlas_rgba_bytes":  4194304,
+    "files":  [
+                  {
+                      "file":  "all/allied_volibear.lua",
+                      "before_sha256":  "9c6521cc93ec51823e5b1d02c9092f05a18d1528bfedb3fd2183c625d0df1f3f",
+                      "after_sha256":  "3f3892445fa4bd0f02fa26af6f0694907ae512328011efaa98aa2e36a4c72583"
+                  },
+                  {
+                      "file":  "all/volibear_original_vfx.lua",
+                      "before_sha256":  null,
+                      "after_sha256":  "ce041cbb82732c53a32e023ea9a4eca81bf06039c4e72fa01a327e743a7024f8"
+                  },
+                  {
+                      "file":  "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.lua",
+                      "before_sha256":  null,
+                      "after_sha256":  "6d1a2db0450aee32d8201e9bd8e38c68739cf0999aeb57cba0ce83ac8688ae70"
+                  },
+                  {
+                      "file":  "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.png",
+                      "before_sha256":  null,
+                      "after_sha256":  "6a1f89116d62b3cefd3bf42e5a7f662d50198bf0cbc889e4f03198070a7fd65d"
+                  }
+              ]
+}

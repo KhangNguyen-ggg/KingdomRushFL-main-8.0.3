@@ -1,11 +1,12 @@
 -- Godieth (eb_balrog): allied melee, toxic spit, pools and Shadow Spawn conversion.
 local C,E,U,A,P,bit
+local enhance=require("godieth_enhance")
 local M={name="hero_allied_godieth",title="Godieth",kind="godieth",source="eb_balrog",
 	icon="encyclopedia_creep_thumbs_0048",scaled=false,
 	textures={"encyclopedia_creeps","rebborn_enemy_icons","go_enemies_forgotten_treasures","go_stage22"},
 	sounds={"ElvesForgottenTreasureBalrogSounds","ElvesForgottenTreasureShadowSpawnSounds"},
 	skill={label="Độc",cooldown=10,range=1e99,
-		description="Miễn sát thương lửa và mọi thiêu đốt, kể cả đốt sát thương chuẩn. Xuyên 50% giáp hiện có. Đánh thường đốt 1% HP tối đa/giây trong 5 giây mỗi lớp; lính và miniboss tối đa 10 lớp, boss 1 lớp. Mỗi 1% máu thiếu: +1% hút máu thực gây, +2% tốc đánh, +3% sát thương đánh/độc (không nhân đốt theo HP). Phun độc mỗi 10 giây (Impossible: 9); vùng độc 10 giây, bán kính 50, cơ bản 10 sát thương mỗi 11 khung hình. Địch nhiễm độc chết hóa Shadow Spawn đồng minh."}}
+		description=enhance.description(1)}}
 
 local function release_poison(this,store)
 	this.finished=true
@@ -115,9 +116,10 @@ local function pool(owner,pos)
 end
 function M.register()
 	C,E,U,A,P,bit=require("allied_boss_common"),require("entity_db"),require("utils"),require("animation_db"),require("path_db"),require("bit")
+	M.skill.description=enhance.description(enhance.level())
 	local t=C.create(M)
 	register_poison();register_pool()
-	require("godieth_enhance").apply(t)
+	enhance.apply(t)
 	return t
 end
 function M.summon_passive(this,store)

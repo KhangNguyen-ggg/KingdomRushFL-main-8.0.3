@@ -1,0 +1,17 @@
+﻿FL803 VOLIBEAR LOL20 - VA LOI MAN HINH XANH KHI MO SLOT
+
+CACH CAI
+1. Tat game.
+2. Mo CAP_NHAT, chep thu muc all-desktop vao goc game (cung cap main.lua), dong y ghi de.
+3. Mo lai game va chon slot.
+Can cai ban FL803_Volibear_LoL20_Real3D_20261023 truoc. Khong chep BACKUP_TRUOC_VA hoac KIEM_THU vao game.
+
+NGUYEN NHAN
+screen_map.required_textures thieu ui_volibear_lol20. Khi mo slot, HeroRoomView tao o hero Volibear truoc khi anh duoc tai; KView:set_image truy cap ss.atlas voi ss=nil.
+Sua duy nhat: them ui_volibear_lol20 vao danh sach anh giao dien ban do. Khong tai 18 atlas hoat anh chien dau o map.
+
+KIEM THU
+Da tai hien loi ss=nil bang KImageView that cua game truoc ban va.
+Sau va: tao/ve avatar, portrait, HUD va P/Q/W/E/R, tai/go atlas 3 lan bang runtime LOVE cua game, 8 luong: PASS.
+Chua chay toan bo map/chien dau. Khong ghi save. Chua cai ban va vao game dang choi.
+Ban day du 20261023 cu chua co dong sua nay: neu cai lai ban do, can chep ban va nay sau cung.

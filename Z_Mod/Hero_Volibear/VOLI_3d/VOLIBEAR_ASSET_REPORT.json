@@ -1,0 +1,28 @@
+{
+  "source": "Prestige Duality Dragon Volibear GLB render export",
+  "unique_frames": 341,
+  "atlas_groups": 18,
+  "atlases": {
+    "attack1": 22,
+    "attack2": 22,
+    "death": 32,
+    "e_channel": 24,
+    "e_idle": 24,
+    "e_windup": 7,
+    "idle": 36,
+    "knockup": 15,
+    "q_attack": 8,
+    "q_intro": 16,
+    "q_outro": 25,
+    "r_cast": 2,
+    "r_impact": 17,
+    "r_outro": 6,
+    "r_run": 19,
+    "respawn": 26,
+    "run": 19,
+    "w_slash": 21
+  },
+  "repo_base": "KRFL 8.0.3 main, Oct 23 2026",
+  "integration_id": "hero_allied_volibear_prestige",
+  "ui_group": "ui_sett_spirit"
+}

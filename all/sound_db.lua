@@ -40,7 +40,7 @@ sound_db.sounds_uses = {}
 sound_db.unload_queue = {}
 sound_db.unload_queue_total = 0
 sound_db.unload_queue_done = 0
-sound_db.queue_unload_groups_per_frame = 1
+sound_db.queue_unload_groups_per_frame = 8
 
 local _THREADS_ENABLED = true
 
@@ -768,7 +768,8 @@ function sound_db:queue_unload_done()
 		self.unload_queue_start_time = love.timer.getTime()
 	end
 
-	local batch_count = math.min(#self.unload_queue, self.queue_unload_groups_per_frame or 1)
+	local batch_count = math.min(#self.unload_queue, self.queue_unload_groups_per_frame or 8)
+	local deadline = love.timer.getTime() + 0.004
 
 	for i = 1, batch_count do
 		local name = table.remove(self.unload_queue, 1)
@@ -776,6 +777,7 @@ function sound_db:queue_unload_done()
 		self:unload_group(name, true)
 
 		self.unload_queue_done = self.unload_queue_done + 1
+		if love.timer.getTime() >= deadline then break end
 	end
 
 	if #self.unload_queue > 0 then

@@ -1,0 +1,91 @@
+VOLIBEAR FULL — REAL3D 8 HƯỚNG + VFX GỐC / KR_FL 8.0.3
+Ngày: 25/10/2026
+
+Bản đầy đủ riêng cho Volibear trong hệ mod boss/hero đồng minh hiện tại.
+Gồm model/hoạt ảnh đã xuất, avatar Avatar3, icon kỹ năng, chỉ số LoL cấp 20,
+8 hướng chuyển động mới và toàn bộ bộ VFX P/Q/W/E/R vừa làm.
+CHƯA tự cài vào game đang dùng. Không cần chép nối thêm các ZIP Volibear cũ.
+
+CÀI ĐẶT
+1. Tắt hẳn game.
+2. Giải nén ZIP này. Chép toàn bộ nội dung BÊN TRONG CAP_NHAT vào gốc game,
+   cùng cấp main.lua. Đồng ý ghi đè các file Volibear tương ứng.
+3. Mở game, chọn Volibear như trước.
+
+Không cần chạy Blender, script, CMD hoặc các file kiểm thử để cài.
+Gói này dùng bộ boss đồng minh/Infinite Hero đang có trong game của bạn.
+Không phải gói dựng lại hệ boss đồng minh cho bản tác giả chưa từng mod.
+Không chép file engine/registry/UI cũ từ các ZIP khác đè lên sau bản này.
+
+8 HƯỚNG ĐÃ THÊM
+- Phải, chéo phải lên, lên, chéo trái lên, trái, chéo trái xuống, xuống,
+  chéo phải xuống. Tất cả được render thành góc 3D riêng từ model gốc.
+- Chạy thường: 24 tư thế x 8 hướng = 192 frame.
+- Chạy Q bằng bốn chân: 20 tư thế x 8 hướng = 160 frame.
+- Chạy dạng R: 24 tư thế x 8 hướng = 192 frame.
+- Đứng yên: 24 tư thế x 8 hướng = 192 frame.
+- Tổng: 736 frame mới. R + Q dùng bộ chạy Q và kích cỡ dạng R.
+
+Chọn hướng theo vector đến đích di chuyển thực tế, không chỉ lật ngang
+một góc chéo. Đổi hướng giữ nhịp chân; dừng lại giữ hướng vừa đi. Sau đòn
+đánh, hướng đứng khớp hướng đánh. Chân dùng mốc mặt đất cố định (128,222)
+trong canvas 256px; việc cắt atlas không tự căn giữa từng tư thế.
+
+Khi chuyển sang đánh/kỹ năng/chết/hồi sinh, khôi phục anchor, kích cỡ và
+hoạt ảnh chiến đấu đã hiệu chỉnh của bản trước. Bộ đòn đánh và cast vẫn
+dùng các clip chiến đấu hiện có; yêu cầu 8 hướng áp dụng cho di chuyển/đứng.
+
+HIỆU ỨNG ĐÃ TÍCH HỢP
+- Đánh thường: vệt vuốt và lóe khi trúng.
+- Nội tại: lửa khi đủ cộng dồn, điện nối theo các mục tiêu bị đánh lan.
+- Q: lửa/vệt năng lượng và dấu chân; vệt chạy xoay theo đủ 8 hướng. Hiệu
+  ứng ra đòn bám tâm bàn tay trong từng pose Q chiến đấu.
+- W: vết cắn/cào, dấu mục tiêu, hiệu ứng hồi máu ở lần dùng lại.
+- E: vòng báo trước, sét từ trên xuống, tác động mặt đất và khiên theo người.
+- R: vòng báo điểm đáp, hiệu ứng nhảy, chấn động và đất nứt lúc đáp.
+
+Các hình hiệu ứng dùng 20 texture gốc đã chọn trong thư mục particles bạn
+cung cấp, ghép thành atlas 1024x1024. Thời gian phát/màu/ghép lớp được chuyển
+thể cho KR; không phải toàn bộ bộ phát hạt/material của renderer LoL.
+Không đưa mesh rồng/đầu gấu SKN/OBJ vào gói VFX 2D này. Không đổi sát thương,
+HP, mana, hồi chiêu, tầm đánh hoặc cơ chế kỹ năng hiện tại.
+
+ẢNH XEM TRƯỚC
+XEM_TRUOC_8_HUONG.png: các hướng chạy thường / Q / R / đứng yên.
+XEM_TRUOC_VFX.png: các lớp hiệu ứng đánh thường, nội tại và Q/W/E/R.
+Ảnh được dựng bằng atlas và phép biến đổi renderer KR thật trong phép thử
+riêng; không phải ảnh chụp một trận đã chơi đầy đủ.
+
+BỘ NHỚ VÀ TẢI ẢNH
+- Bốn atlas chuyển động mới: tổng 64 MiB RGBA khi giải mã.
+- Atlas hiệu ứng: 4 MiB RGBA, đã có trong bản VFX trước.
+- Đây là bộ nhớ ảnh, chưa bao gồm buffer tải, entity tạm thời hoặc driver.
+- Các Volibear dùng chung atlas; không tạo một bộ ảnh riêng cho mỗi bản sao.
+  Tài nguyên đi theo cơ chế tải/gỡ theo stage sẵn có của game.
+- Đã kiểm tra gỡ cả bốn atlas chuyển động và atlas VFX qua 3 vòng với 8 worker.
+  Không thay lựa chọn số luồng, file tối ưu RAM, F1 hoặc lưu đội hình.
+- 8 hướng cần thêm ảnh nên lượt tải có Volibear sẽ phải giải mã thêm tài
+  nguyên. Không cam kết tốc độ tải hoặc FPS không đổi trên mọi đội hình.
+
+KIỂM TRA
+KIEM_TRA.txt chứa kết quả thử nhẹ bằng LÖVE 0.10.2/LuaJIT:
+- Tất cả 736 pose đều có hình, không bị cắt ở biên và đúng metadata atlas.
+- Renderer native chọn đủ 8 hướng ở thường/Q/R/R+Q, giữ pha bước khi rẽ,
+  đổi về đúng sprite chiến đấu, cập nhật khung hình ngay khi đổi hướng.
+- Coroutine di chuyển hero thật đi đến đủ 8 đích, dừng đúng và giữ hướng.
+- P/Q/W/E/R, chết giữa R, reset/hồi sinh, dấu W, khiên và bám hiệu ứng.
+- So sánh trước/sau: HP, mana, sát thương và vị trí trong các tình huống
+  kỹ năng thử giống nhau. 20 store/hero/quái thử cũ được thu gom.
+- Tải/gỡ atlas mới qua 3 vòng với 8 worker.
+Chưa chơi trọn màn hoặc đo FPS với nhiều Volibear và các mục F1 thực tế.
+
+HOÀN TÁC
+Tắt game, chép nội dung BACKUP_TRUOC_VA vào gốc game. Thư mục này chỉ có hai
+file Lua vốn bị thay đổi, không chứa lại các ảnh cũ không đổi.
+Sau khi hoàn tác, các file mới sau không còn được gọi, có thể xóa riêng:
+- all/volibear_movement.lua
+- kr3-desktop/assets/images/fullhd/go_volibear_walk8.lua/.png
+- kr3-desktop/assets/images/fullhd/go_volibear_qrun8.lua/.png
+- kr3-desktop/assets/images/fullhd/go_volibear_rrun8.lua/.png
+- kr3-desktop/assets/images/fullhd/go_volibear_idle8.lua/.png
+Không chép trả cả thư mục game hoặc sửa save.

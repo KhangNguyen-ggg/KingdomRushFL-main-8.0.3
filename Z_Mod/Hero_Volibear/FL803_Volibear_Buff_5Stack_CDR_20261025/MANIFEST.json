@@ -1,0 +1,374 @@
+{
+  "package": "FL803_Volibear_Buff_5Stack_CDR_20261025",
+  "staged_only": true,
+  "full_stack_attacks_per_second": 3,
+  "cooldowns": {
+    "q": 8,
+    "w": 4,
+    "e": 13,
+    "r": 50
+  },
+  "e_boss_cap_before_resistance": 610,
+  "lifesteal": 0.33,
+  "armor": 0.65,
+  "magic_resistance": 0.4,
+  "skill_icons_position": "original_top_row",
+  "files": [
+    {
+      "path": "all/allied_volibear.lua",
+      "bytes": 19454,
+      "sha256": "77D2019EFF58FBD33584258B764776602BDFF2717DCE6F4905B0EFFCF47336DD",
+      "state": "changed"
+    },
+    {
+      "path": "all/volibear_animation_map.lua",
+      "bytes": 3933,
+      "sha256": "433B35D896071ABBC770C12433D8E715C5D75484CADECFF8C4A57DA65F3521F3",
+      "state": "unchanged"
+    },
+    {
+      "path": "all/volibear_movement.lua",
+      "bytes": 2124,
+      "sha256": "95B756965A1FB12235E0AADD305E39E0E0BB1D070C1300F9DE8429BCA358F569",
+      "state": "unchanged"
+    },
+    {
+      "path": "all/volibear_original_vfx.lua",
+      "bytes": 16568,
+      "sha256": "CA6E9AB65B96CF0DD87DF27E96BBAE2D173C5257F8B17E6C81077E983D7487D3",
+      "state": "changed"
+    },
+    {
+      "path": "all/volibear_vfx_anchors.lua",
+      "bytes": 84963,
+      "sha256": "DF4C10ABFE921526AE4C12BA1BC9B9D0B1A6BA5A39495DC32868EC7616D424F5",
+      "state": "added"
+    },
+    {
+      "path": "all-desktop/game_gui.lua",
+      "bytes": 331923,
+      "sha256": "079EDE853F74FAEC9AE2E46013AE64E4FB8B731F53B4CB185E21B29642BE0B1A",
+      "state": "changed"
+    },
+    {
+      "path": "all-desktop/screen_map.lua",
+      "bytes": 543627,
+      "sha256": "A1D2AC8AD8D9555FB273A533D70B394773A57100CC514F9307C5FED1651F518A",
+      "state": "changed"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_attack1.lua",
+      "bytes": 3442,
+      "sha256": "60EEA47E8B22103D3C8046BE7BD0D878101142E85BB881EE83BDEAE74C606316",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_attack1.png",
+      "bytes": 1017636,
+      "sha256": "0F0A4DA63E9B0753FECDA56C91338DD840A9A2E913DB23B61C1DB6E852AB49D1",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_attack2.lua",
+      "bytes": 3445,
+      "sha256": "20D57DDA0B7E52C649F0FE31130708D796CF5150CDC434B6E67C5E3F368268DA",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_attack2.png",
+      "bytes": 1156103,
+      "sha256": "2F382A1F81C443006D19B6BB8BD64D80492326BDB0757451690EDD99A2C20698",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_death.lua",
+      "bytes": 4795,
+      "sha256": "87E133D15AB035D1140DE7EB7CB55E9A8FD6CBDF9B04356C779B0A139FEC08E8",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_death.png",
+      "bytes": 1446394,
+      "sha256": "A4261EC5C66DC3BA112B5DC673DA887A683D3714C5CEA1B881ED560FA5C2FE82",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_channel.lua",
+      "bytes": 3859,
+      "sha256": "EA3A2E6CBE4BAA71D8715B2CE1D5F99182D0F5C4FFC0EA81A4D76634A90DA84E",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_channel.png",
+      "bytes": 1272184,
+      "sha256": "D19E3FCF5E12DE0071637571C00347A60E8B647F48D5D096770CF8D1CB2CE3D9",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_idle.lua",
+      "bytes": 3688,
+      "sha256": "4790A48ED7A8B55EF2CC21945EC221F910FD9EC3E736AD6EC504CDA3A2C3CC08",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_idle.png",
+      "bytes": 1166374,
+      "sha256": "45ADEA8D421F8D73D3926B93D6F4DA94D38F0D4398B8A58CE91A9B459DC2280E",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_windup.lua",
+      "bytes": 1211,
+      "sha256": "ADAE1873A662F23BCDFD656B7CE305443BFB2BDE268A4CF8CB95D1D45AC0DB71",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_e_windup.png",
+      "bytes": 385479,
+      "sha256": "7FC68CB134B1ED35E6FE6F685B63884034C489C6F48206D0F2443E9734AA0272",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_idle.lua",
+      "bytes": 5333,
+      "sha256": "970C55863687DC48499F05B7DB524C8FE6513627D73226AC99B6C2446BFBC71F",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_idle.png",
+      "bytes": 1624550,
+      "sha256": "5E320875D910332D58C38FD39444DCA5D7E5B49D7DA0A3A7CB93B6914608AF02",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_idle8.lua",
+      "bytes": 27883,
+      "sha256": "193CD63CDFDA2C010DBB33FE022BC9C8A40A068555A9533F37FCF037A84A5FC3",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_idle8.png",
+      "bytes": 4223457,
+      "sha256": "3DF5CDF57888672A640CB6ABFBE92C1E49356D1FEC6CEE9FA99FD48DD49CF430",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_knockup.lua",
+      "bytes": 2390,
+      "sha256": "37EC5A4D0F450581B3E503FCF261D406D083A10C6E8BDEA072A78CFFBDC7ECC2",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_knockup.png",
+      "bytes": 816726,
+      "sha256": "0D622C00665C481AEAD359FAD1D9BEF0C91304C19DABD2636DD1835EE2BCC8B7",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.lua",
+      "bytes": 4947,
+      "sha256": "6D1A2DB0450AEE32D8201E9BD8E38C68739CF0999AEB57CBA0CE83AC8688AE70",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.png",
+      "bytes": 477234,
+      "sha256": "6A1F89116D62B3CEFD3BF42E5A7F662D50198BF0CBC889E4F03198070A7FD65D",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_qrun8.lua",
+      "bytes": 23297,
+      "sha256": "93B6AE0EAF8AC4260C366551EB52BA1AF9CE542882B48B9766A061A9C6EB30D5",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_qrun8.png",
+      "bytes": 3238797,
+      "sha256": "44044606A94A1EA0201FAA857CD6F8599D553DB5FA3589204A719DDD30DB0B15",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_attack.lua",
+      "bytes": 1354,
+      "sha256": "E202155AAEF3DD778257BADEAB797AD3BF1CE0952EEF04D8D20FE72217CA9E08",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_attack.png",
+      "bytes": 503696,
+      "sha256": "8D30473958C2A4593E41BE4D92E8CA2F65040084EC955190BA1CD8E8E4CFCFAB",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_intro.lua",
+      "bytes": 2541,
+      "sha256": "0D254341AC356BABBDBBAC36605AEB5B842FFA24FDF40C6D63824174F0C32D65",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_intro.png",
+      "bytes": 800929,
+      "sha256": "D7C81BD280CC33816B79C10EBD890522F510B867BB6DBCAA1A93071C41D7DD88",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_outro.lua",
+      "bytes": 3895,
+      "sha256": "BFF7B8339629A3128B20A288A0DBE9738EC2A7901B8FD30367CF8605BDA18989",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_q_outro.png",
+      "bytes": 1152841,
+      "sha256": "D256923A23A2E2C77E59A9F2CCB5AA30E06121A5BCE110960B03650767B5B5A0",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_respawn.lua",
+      "bytes": 3981,
+      "sha256": "0CA023B53D6511E974C027AC1C5A52F18356E9034ACAD6074CCC3D0F67096AC8",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_respawn.png",
+      "bytes": 982821,
+      "sha256": "B19D822975F2EF6AEDA3109FE757C33F663FFEDC461ED37933E92A20448D76A7",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_rrun8.lua",
+      "bytes": 27879,
+      "sha256": "2E92B907C5FF5DDDC5DE3CCC4D19404CC5EB5671546686E4C3C45F8A7F9BA76D",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_rrun8.png",
+      "bytes": 4203844,
+      "sha256": "A8F6337E4D9DBFDE38404D914571BFE063B513E82A73C65B766509D6AFDC1D92",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_run.lua",
+      "bytes": 2838,
+      "sha256": "6EC33C8546613BB56040F2C892B570D3F4B277D27ECBC0C4162A3DB969D8FFC9",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_run.png",
+      "bytes": 903585,
+      "sha256": "ACA34B15E7B41214D754AEB4FED03EF732395DED1C5B2A798310F8A1B354D8F3",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_cast.lua",
+      "bytes": 447,
+      "sha256": "34B83AC257F5BF5DBFB1730B22CA7B46C014878245C97F3878B3F75B6ED3492B",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_cast.png",
+      "bytes": 78542,
+      "sha256": "56A2F077499E6565B3B3A10A5D6BAA40D5069A1BB7D3EBB9A0E404FA4874668F",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_impact.lua",
+      "bytes": 2705,
+      "sha256": "D1458A5095912AF061B4F9341A0F536F7BFC2A8B25AD41D28150D9170A40327E",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_impact.png",
+      "bytes": 771545,
+      "sha256": "78290DC4C79798589C4BE8BDEEBB2D61B4EAD7594F8F8293B6D1CF4719B87255",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_outro.lua",
+      "bytes": 1041,
+      "sha256": "03D324F2417072AF176C3BAA2360D36C9EFE3D0134A269D4CC329A4E6DD77512",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_outro.png",
+      "bytes": 223268,
+      "sha256": "8647778CDE1AF7A07E7A7859A1357D8A34B8C4190E30AE229195103293CB4DCA",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_run.lua",
+      "bytes": 2914,
+      "sha256": "E8A4E8BB7F58DB2B41D55F6980F444BACEEABD38306F391E75AAD3A4FFFDC824",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_r_run.png",
+      "bytes": 939281,
+      "sha256": "D3718B31CA2F2E12297872E5A5C5A3E4317C04488D2890CDE96B95493D032EB4",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_vfx_complete.lua",
+      "bytes": 6638,
+      "sha256": "F694B990AB649B2F51723CA0ABC2DCBB3E89A135275BE3A5C8BB3BBAF59F00EF",
+      "state": "added"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_vfx_complete.png",
+      "bytes": 491183,
+      "sha256": "17FB610814397CD794CC6C54202928196FE6CF668F02A137CF8D7887A35DC0D7",
+      "state": "added"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_walk8.lua",
+      "bytes": 27918,
+      "sha256": "9263DEF0265BD75DC0A6E657B39CD0F8D7A543ABA46BA8BEC55AE21A014DBB23",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_walk8.png",
+      "bytes": 4271945,
+      "sha256": "7E341897789A05728269A9249B77847AE6ECF202806E8A087F949D2223F86FFA",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_w_slash.lua",
+      "bytes": 3292,
+      "sha256": "916A6FDD1F6A674E8CF8D219A9081B994B4F7042E07E80EFF01E11C64C6F07D7",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/go_volibear_w_slash.png",
+      "bytes": 1143928,
+      "sha256": "5DF568109C8A7328E1E26592D3E7B5292997B4711E2BD5D0AE4E84A43DB0BC3C",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/ui_volibear_lol20.lua",
+      "bytes": 1094,
+      "sha256": "34551BEB7AEFAE87CB6DC2EEA635E0D6494004DAE7A6305288550E49AA8908F8",
+      "state": "unchanged"
+    },
+    {
+      "path": "kr3-desktop/assets/images/fullhd/ui_volibear_lol20.png",
+      "bytes": 218120,
+      "sha256": "BA2414D58CD22E3522A9BA5603A1765975BEEEEB76A30F4A0A03E4203F69B3A6",
+      "state": "unchanged"
+    }
+  ],
+  "navira_red_infobar_avatar": "existing variant portrait renderer; reset on variant/hero switch",
+  "full_stack_normal_hit_cooldown_reduction_seconds": 1,
+  "cooldown_reduction": {
+    "skills": [
+      "Q",
+      "W",
+      "E",
+      "R"
+    ],
+    "includes_hit_reaching_five_stacks": true,
+    "lightning_or_skill_hits": false,
+    "clamps_at_ready": true,
+    "per_copy": true
+  }
+}

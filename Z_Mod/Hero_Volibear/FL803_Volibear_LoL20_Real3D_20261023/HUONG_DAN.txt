@@ -1,0 +1,73 @@
+﻿FL803 VOLIBEAR LoL CẤP 20 — REAL3D
+Bắt đầu 23/10/2026, hoàn tất 24/10/2026. CHƯA CÀI VÀO GAME ĐANG CHƠI.
+
+CÀI ĐẶT
+1. Tắt game, sao lưu các file sẽ ghi đè trên bản game đích.
+2. Mở thư mục CAP_NHAT, chép các thư mục all, all-desktop và kr3-desktop vào gốc game, cho phép ghi đè.
+3. Mở phòng hero, chọn Volibear Long Trảo - Cấp 20 trong Vô hạn tướng.
+4. Không cần cài Part1/Part2 hoặc ZIP Real3D cũ. Không chép BACKUP_TRUOC_VA, KIEM_THU hay NGUON_SO_LIEU vào game.
+5. Không phải chạy các script kiểm thử. Chúng chỉ lưu bằng chứng, có đường dẫn riêng trên máy này.
+
+NỀN TƯƠNG THÍCH
+Gói đầy đủ RIÊNG Volibear, dùng trên nền FL803 hiện tại đã có boss đồng minh, Navira, Sett và Lich King.
+Không phải bộ cài cho KR_FL tác giả hoàn toàn chưa có các module boss đồng minh đó.
+File chung được lấy từ bản hiện tại sau gỡ Volibear lỗi; giữ các sửa RAM và lựa chọn số luồng.
+Nếu dùng với nền đã sửa thêm file chung sau ngày này, cần ghép thay đổi thay vì chép đè mù.
+
+CHỈ SỐ
+LoL mùa 2026 đã có cấp 20 sau nhiệm vụ đường trên; dùng bộ chỉ số không trang bị/ngọc, patch 26.21.
+Hệ số tăng cấp: (20-1) * (0.7025 + 0.0175*(20-1)) = 19.665. Làm tròn từng chỉ số cuối.
+HP 2695; AD 134; giáp LoL 137; kháng phép LoL 72; hồi 5 HP/s cả giao tranh/choáng.
+Giáp đổi sang 58% giảm sát thương vật lý của KR; kháng phép đổi sang 42% giảm sát thương phép.
+Năng lượng 1727, hồi 3/s; quản lý nội bộ vì HUD KR không có thanh năng lượng.
+Tốc đánh 54 đòn/phút; tối đa 65 đòn/phút ở 5 cộng dồn nội tại. Khoảng cách và tốc chạy quy đổi 1/4 cho bản đồ KR.
+Data Dragon có trường tăng AD bằng 0; đã đối chiếu dữ liệu client thật là +3.5/cấp, dùng dữ liệu client.
+Engine/badge KR vẫn cấp 10 để tương thích các bảng/UI hiện tại; bộ chỉ số LoL là cấp 20, hiển thị ở tên/lớp hero.
+
+BỘ KỸ NĂNG
+P: tối đa 5 cộng dồn, mỗi cộng dồn +5% tốc đánh, 6 giây. Đủ 5, đánh thường gây thêm 68 phép và lan tối đa 5 mục tiêu.
+Q: tăng chạy 26% trong 4 giây, 52% hướng tới boss/mini boss; đòn kế 184 vật lý, choáng đúng mục tiêu 1 giây.
+   Hồi 10 giây, 50 năng lượng. Bị choáng trước đòn Q hoàn lại hồi chiêu.
+W: 252 vật lý, dấu 8 giây. Tái dùng đúng mục tiêu: 379 vật lý, hồi 80 + 20% HP đã mất.
+   Thêm 6% máu cộng thêm vào sát thương W (ví dụ R tăng máu). Hồi 5 giây, 40 năng lượng.
+E: sau 2 giây gây 200 + 15% HP tối đa mục tiêu thành phép; tối đa 610 với quái thường/mini boss, boss tính như tướng LoL.
+   Chậm 40% trong 2 giây. Voli ở trong vùng sét nhận khiên 14% HP tối đa trong 3 giây, hấp thụ sau giáp.
+   Hồi 16 giây, 50 năng lượng; bỏ hồi HP trực tiếp của E bản cũ.
+R: nhảy 1 giây; tâm gây 700 vật lý, vòng ngoài chậm 50% giảm dần trong 1 giây.
+   Tăng 525 HP, tầm đánh và 25% kích cỡ trong 12 giây; không buff tốc đánh, không choáng hay miễn sát thương.
+   Chặn dịch chuyển trong lúc nhảy nhưng không cho miễn mọi khống chế. Hồi 110 giây, 100 năng lượng.
+   KR không có trụ địch tương ứng, nên phần vô hiệu hóa trụ địch không áp dụng; không tắt tháp của người chơi.
+Q/W/E/R tiếp tục tự dùng theo AI KR. Các chỉ số AP và AD trang bị bằng 0 vì KR không có hệ trang bị LoL.
+
+HOẠT ẢNH / GIAO DIỆN
+- Giữ 18 atlas, 341 tư thế xuất từ GLB. Bỏ compact() làm mất tư thế; dùng tốc độ phát sprite để khớp đòn đánh/chiêu.
+- Đòn đánh trái/phải luân phiên, tốc độ/hit time theo nội tại. Q có intro, đánh và outro.
+- E dùng Spell3_Idle, bỏ động tác Channel chung không phải E.
+- R dùng đoạn nhảy và dậm của Spell4_Ground_Pound, chia trước/sau tiếp đất; không chạy giữa không trung.
+- R dùng clip chạy biến hình khi di chuyển. Không render thêm góc nhìn: đi lên/xuống vẫn dùng góc export hiện có.
+- W2 dùng lại clip W Slash có trong export; chưa có clip cắn riêng phù hợp trong bộ export này.
+- Avatar lấy đúng Avatar3.png; cắt vào khuôn mặt và khung nhân vật, bỏ chữ chân ảnh khi thu nhỏ.
+- Atlas UI riêng, tên portrait riêng tránh va chạm UI Sett/Voli cũ; có 5 icon P/Q/W/E/R gốc LoL.
+- Phòng hero dựng lại hàng icon khi đổi từ Sett sang Voli để không giữ nhầm icon của hero trước.
+- Chưa làm VFX sét, hạt hoặc âm thanh mới theo yêu cầu. Những cơ chế khiên/chậm/sát thương đã chạy logic, chưa có bộ VFX mới.
+
+FILE CHUNG
+all/allied_bosses.lua: thêm đăng ký Voli; không xóa các hero hiện tại.
+all/allied_boss_common.lua: thêm kiểm tra điều kiện tài nguyên cho R của hero có can_cast_active; hero khác giữ nhánh cũ.
+all/infinite_heroes.lua: giữ bản sửa gọi đủ đội khi màn KR3 tự chèn hero theo kịch bản, giữ ID Voli khi module có mặt.
+all-desktop/screen_map.lua: làm mới hàng icon kỹ năng khi chuyển hero.
+Các file khác đều riêng Voli. Không thay save, F1, số luồng, OS/pagefile hay RAM guard.
+
+KIỂM THỬ
+Đạt self-check trên LÖVE 0.10.2: chỉ số làm tròn, frame, Q, W, E, P, R, mana, hồi máu, khiên sau giáp,
+ngắt Q, chết giữa R, trả vị trí/flags, hết R, hồi sinh và đổi icon Sett/Voli.
+Đạt kiểm tra với database animation/entity/component THẬT: tạo Navira xanh + Sett + Voli, nạp đủ atlas Voli với 8 luồng,
+đối chiếu toàn bộ frame/portrait; native slow insert/remove trả đúng tốc chạy; không bọc tick trùng khi đăng ký lại.
+CHƯA chạy vào màn hoặc chơi trọn trận với bản mới, theo lựa chọn kiểm tra nhẹ của bạn.
+Không cam kết hết mọi native crash/thiếu bộ nhớ khi bật nhiều nhóm F1 hoặc mang nhiều boss.
+
+GỠ
+BACKUP_TRUOC_VA chứa 4 file chung và 2 file mã Volibear cũ theo máy này trước gói. Chỉ chép trả nếu chúng vẫn khớp nền bạn muốn phục hồi.
+Các file thêm mới nằm trong DANH_SACH_FILE_MOI.txt. Sao lưu bản game đích trước khi xóa; không xóa thư mục chung.
+
+Đọc CHI_SO.json, MANIFEST.json, NGUON_SO_LIEU và KIEM_THU để đối chiếu.

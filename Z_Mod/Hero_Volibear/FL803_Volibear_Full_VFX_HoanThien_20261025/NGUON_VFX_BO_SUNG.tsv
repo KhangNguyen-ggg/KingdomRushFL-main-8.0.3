@@ -1,0 +1,20 @@
+key	source	conversion
+orb	volibear_skin09_aura_self.png	black additive -> straight alpha; hue preserved
+spiral	volibear_skin09_idle_backpiece06.png	black additive -> straight alpha; hue preserved
+ring_flame	volibear_skin09_grounddecal03.png	black additive -> straight alpha; hue preserved
+ring_fine	volibear_skin09_grounddecal04.png	black additive -> straight alpha; hue preserved
+energy	volibear_skin09_flameenergy01_01.png	black additive -> straight alpha; hue preserved
+energy_gold	volibear_skin09_flameenergy01.png	black additive -> straight alpha; hue preserved
+smoke_lick	volibear_skin09_idle_smokeylicks.png	black additive -> straight alpha; hue preserved
+vbeam	volibear_skin09_beamtexture01.png	black additive -> straight alpha; hue preserved
+crack_ring	volibear_skin09_z_crater_cracks_1.png	black additive -> straight alpha; hue preserved
+ground_hole	volibear_skin09_e_ground_hole.png	RGBA
+shield_edge	volibear_skin09_shield02.png	black additive -> straight alpha; hue preserved
+blowback	volibear_skin09_r_landing_blowback.png	black additive -> straight alpha; hue preserved
+cylinder	volibear_skin09_r_up_cylinder.png	black additive -> straight alpha; hue preserved
+ray	volibear_skin09_r_energy_ray.png	black additive -> straight alpha; hue preserved
+smoke	volibear_skin09_sl_dust_01.png	black additive -> straight alpha; hue preserved
+blast	volibear_skin09_e_blastshapes.png	black additive -> straight alpha; hue preserved
+paw_spark	volibear_skin09_pawspark_02.png	black additive -> straight alpha; hue preserved
+bolt	volibear_skin09_e_skybolt_hit_01.png	black additive -> straight alpha; hue preserved
+scratch	indicator_straightline01.png	black additive -> straight alpha; hue preserved

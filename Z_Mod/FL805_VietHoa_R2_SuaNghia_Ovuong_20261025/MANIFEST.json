@@ -1,0 +1,30 @@
+{
+  "base": "FL 8.0.5 + installed mod bundle 2026-10-25",
+  "revision": "Vietnamese R2",
+  "files": [
+    {
+      "file": "all-desktop/screen_map.lua",
+      "size": 543329,
+      "sha256": "752d41e6c9c329c70065e742eabcad9de6d7b1b74d034c72f75182d189282114",
+      "before_r2_sha256": "7d587a39cc6bf7b8a86168b3f16ed27836f9fc8ceb38f943906e6d1c2be465cc"
+    },
+    {
+      "file": "all-desktop/wave_editor_view.lua",
+      "size": 36136,
+      "sha256": "911ff3699548b83720c921cb8e54a7810cd1255b5a908e40446fc80f736b894f",
+      "before_r2_sha256": "ce4acc888bf6cc32a2754bd30c147984684531bd8654bbb056fc6a74ef9e159f"
+    },
+    {
+      "file": "kr3/data/special_tower_encyclopedia.lua",
+      "size": 9972,
+      "sha256": "126c57c33bbcfbb183b2a1093c39b01e4354f67a3b941590c050037cee361092",
+      "before_r2_sha256": "c685237dd25c2e7da68aeed3c0ce90cfc150b1a1409e625757f434a4f4657c59"
+    },
+    {
+      "file": "kr3-desktop/assets/strings/zh-Hans.lua",
+      "size": 1618391,
+      "sha256": "8db88f3da64315a3afd63d41923619a198956efc8a02ae06ac27c6a0ec1228a2",
+      "before_r2_sha256": "f55de3b500d4391bd31dd6dfb5d883afda98bcfd31608634e59eab9748dd4271"
+    }
+  ]
+}

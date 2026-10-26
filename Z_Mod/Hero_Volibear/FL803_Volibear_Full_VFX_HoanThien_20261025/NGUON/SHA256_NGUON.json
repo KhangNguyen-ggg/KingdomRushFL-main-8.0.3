@@ -1,0 +1,232 @@
+[
+  {
+    "path": "D:/CodexTemp/KRFL_Voli_FullVFX_20261025/skin9.bin.json",
+    "bytes": 1312876,
+    "sha256": "EBA16904532E8FEF5A7D829008E83827516738EE806EB1A46E1428D6B79774F0"
+  },
+  {
+    "path": "D:/CodexTemp/KRFL_Voli_FullVFX_20261025/volibear_skin09_tx_cm.png",
+    "bytes": 780161,
+    "sha256": "B6E4191C7923ECB1382F24019618E31699A137E52FCC101DE54DDD7752F48407"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Untitled.blend",
+    "bytes": 36115818,
+    "sha256": "2A8BDB39B1D6F6121501ECE772A29F7FF484F9133239F1E20E3BA0F2A6D98EA4"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/indicator_straightline01.png",
+    "bytes": 508,
+    "sha256": "30482431B499C7D8D247D7C351C6B464BF13BEB29FFAAA8A247F4D67295CCBB0"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/samira_base_ba_outer_flare.png",
+    "bytes": 15055,
+    "sha256": "BCC78962172DDE9A6031ADEFF52ECB7B5DC9CEA9F5B79F921B91B6892402DA9C"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin07_pawprints01.png",
+    "bytes": 16780,
+    "sha256": "A1CC5DFE2F057866D7B7FA89EDF75D8F80775157CD2F6A9A5676481468039527"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_aura_self.png",
+    "bytes": 4941,
+    "sha256": "151061B823EDFE8061ED1458AD7375034F191D3C02F3716EF13DE54C1722F762"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_basicattack_flarediamond.png",
+    "bytes": 17145,
+    "sha256": "E88737A333EA7C82CF1023AF0847F959731648B419AA554FA3AA11B1CB8CB4EB"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_beamtexture01.png",
+    "bytes": 25401,
+    "sha256": "1950513EF917A883B22CCAC3683FB0618203449C5F4839431B10F196B7BA855B"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_dragonbody.png",
+    "bytes": 31811,
+    "sha256": "6B099687E79B5EEBF8D958549370318C35880CB2C35A9D418F4D99AE8A674E82"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_dragonmodelanim01/Dragon.obj",
+    "bytes": 2017731,
+    "sha256": "8CA5585F82E3A5B7ED450ECDAC76BE91D975765576FDF5F0C1FC1D95CD32FB4E"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_blastshapes.png",
+    "bytes": 9351,
+    "sha256": "5BE51DAA0C5A5984FFF6E15E2813AC05F11080A5293D3D43729E9138F2D89F8E"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_clouds.png",
+    "bytes": 37822,
+    "sha256": "62224B803568A2A0E69AF44A63C0AC46D0D37FA9DBD7306B6C8165C8304A2C81"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_ground_hole.png",
+    "bytes": 51622,
+    "sha256": "4FF1C9C679C3B1DB4BB516CB61FB4FD69F0E7C6B336E1F5FB447205690B7819C"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_shieldring.png",
+    "bytes": 23604,
+    "sha256": "CDD00CFEBBE3A960071336904F972F62E0E7C40C1E35B4B346F56EDD439EEF97"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_skybolt_01.png",
+    "bytes": 46130,
+    "sha256": "A03B754D7A1741A6EBA56F5E9F257603AF37895706F777D0F2924A45739D9335"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_e_skybolt_hit_01.png",
+    "bytes": 29397,
+    "sha256": "60B0293B445BEFDF45ED3D2D805BDB0DA77629F70F94D66F1E06CBBB14F762FB"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_egosofttrail.png",
+    "bytes": 26893,
+    "sha256": "08AF19D0EADE88578D873A6E1044882125A1EBBD14DB06B10A33A0682224F39F"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_flameenergy01.png",
+    "bytes": 58712,
+    "sha256": "31040D9688FA027705098364DEFB1C6DFFCCBF8564E822AE6C8E6482323EAA95"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_flameenergy01_01.png",
+    "bytes": 64163,
+    "sha256": "87EA3FE7D954D88C549004621041D8C3B5E6D83A0B03385E50F6175337C56581"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_grounddecal01.png",
+    "bytes": 79213,
+    "sha256": "90E46AD48ECCD6A52DF41418659AF9E860EAF3FECD41CE9BE4E5A706171FCD41"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_grounddecal03.png",
+    "bytes": 36245,
+    "sha256": "8DF3546CB2E79C24E5AF5A2EFE2898E82DF32EE83EF44713DCB4F644B4BD7A8A"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_grounddecal04.png",
+    "bytes": 24907,
+    "sha256": "EB7DFAC0B774332B3A7EECB914180E8FF857B7513CD1C02A329166BBD94B651E"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_grounddecal09_01.png",
+    "bytes": 74535,
+    "sha256": "B44D7B1117AF8D0C9A9E633324F98317670D0185986448594BB2DF38A7B2C991"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_idle_backpiece06.png",
+    "bytes": 22152,
+    "sha256": "3AB535AF070EC43894F23FEF83093A1EF9CA0290BA2786E48B5F80303102DA2B"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_idle_flamefb_4x2.png",
+    "bytes": 32597,
+    "sha256": "42E2B48B987CE421061A0B4AD324C4593D247BDF541B107FF99DC64635B784E3"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_idle_smokeylicks.png",
+    "bytes": 30455,
+    "sha256": "CC50D1987E8AA1BBD05375293679BD040BE608D066FD9278CB8A686BB2AC2B5C"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_impact01.png",
+    "bytes": 32152,
+    "sha256": "E03291B27D4FEF0329A5ACB1D6E768295CBEE38053AD9B114114A2CA4DDB61CB"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_pawspark_02.png",
+    "bytes": 7621,
+    "sha256": "4CDC272AB0DF02B0F4E9BDE87D21238C044AEC828F3000528C826ECC1A0522CA"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_q_wisptrail_add.png",
+    "bytes": 54200,
+    "sha256": "8CE4E3C21044DD0F8BDC9FBB085D2A8A2D25B85D7D16A2A24460DA6F8498D6B9"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_aoe_warning.png",
+    "bytes": 43455,
+    "sha256": "54F9D326BFE4190D1E9A67B46CB559D1382758DDF0939654F394C4E26AD4C6DF"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_energy_ray.png",
+    "bytes": 15057,
+    "sha256": "EB7370B6926ACE83E1E921CE67EDB7F6C23F5135F200A28BB34F39A9ED8A3E1B"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_groud01.png",
+    "bytes": 54169,
+    "sha256": "EF26F66A0A5C295010A8321769F5C1DCDA81E455AFF74FE8F1369E5E647101A8"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_groud02.png",
+    "bytes": 32983,
+    "sha256": "0DDFBFBB7999E9B37C5B8B84F7BD27A4B8BA2076FE8522AD2FF2893C9E6111E6"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_landing_blowback.png",
+    "bytes": 5312,
+    "sha256": "C9B623D9AF7D3FAC5EE1D368D934B174C7ED4C64C14D7E2C8E86CFF0A7CA6387"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_smoke_trail.png",
+    "bytes": 15737,
+    "sha256": "C9D735F6C294C1C0BD9E82C4B526CC4B1CD8B9514BF66FC1E3E2D8B4C8ED59D5"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_r_up_cylinder.png",
+    "bytes": 54898,
+    "sha256": "53E4CEC11D0E5B7AFAD3692130EDD4907EB67CB94C4A425603EDFA37F9A4DE33"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_shield02.png",
+    "bytes": 33319,
+    "sha256": "748E804BDC1BB5631E382D492EC368FF202F2EC2C2734DEF432C69E13BC62B44"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_sl_dust_01.png",
+    "bytes": 57171,
+    "sha256": "30DB02ECF9A03C02416D9179AEF2B69E63813BABE785EC53FE4D09888B863857"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_star_flash.png",
+    "bytes": 4026,
+    "sha256": "C64B3C2F4C186431D3BF9460E6783F232F4744725C83DA651CA57D04B3FC95F7"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_tx_mask01.png",
+    "bytes": 1239,
+    "sha256": "429EF74B6791C47DAEBD0588155552CC89DBE6DFE4D548ADB30F9C6521A47210"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_w_debufficon01.png",
+    "bytes": 4650,
+    "sha256": "2D39048DB7314A4967D4596CE547792B4C945FF526EB3FD4FFC05FCAA15533FD"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_w_debufficon_dissolve.png",
+    "bytes": 16447,
+    "sha256": "6FBC3C77ACC1FE71BC120B13C979DE108179A9CFA13DBFD7E52F6ECC46A96A9E"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin09_z_crater_cracks_1.png",
+    "bytes": 36862,
+    "sha256": "894C61A35F79543FD0C095CB8CB547124691119333F43DF5035D90057CF93E4D"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/Volibear_Original_VFX_Download_1_Click/Volibear_Skin09_Original/particles/volibear_skin9_w2_bearhead01/lambert1.obj",
+    "bytes": 578836,
+    "sha256": "906FD9A3552B0612DEE40851AB2E9A065383B1CCBECF6C42D6F1D1A01E390E50"
+  },
+  {
+    "path": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3/Z_Mod/Volibear/prestige_duality_dragon_volibear.glb",
+    "bytes": 18204880,
+    "sha256": "619D02BF6D4046636794016088844FAF9FBFC8C8979D412740033CB6CCD81B08"
+  }
+]

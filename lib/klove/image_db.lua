@@ -62,7 +62,7 @@ image_db.queue_preload_groups_per_frame = 9999
 image_db.unload_queue = {}
 image_db.unload_queue_total = 0
 image_db.unload_queue_done = 0
-image_db.queue_unload_groups_per_frame = 1
+image_db.queue_unload_groups_per_frame = 8
 image_db.supportedformats = krflapk_supported_image_formats()
 
 local function calculate_image_thread_count()
@@ -265,6 +265,9 @@ function image_db:queue_load_done()
 
 	if #self.load_queue > 0 and #self.threads == 0 then
 		local batch_count = math.min(#self.load_queue, self.queue_preload_groups_per_frame or #self.load_queue)
+		-- Different atlas scales can share the same PNG; decode/upload it once per queue.
+		local queued_files = {}
+		for _, image in ipairs(self.image_name_queue) do queued_files[image[2] .. "/" .. image[1]] = true end
 
 		for i = 1, batch_count do
 			local item = table.remove(self.load_queue, 1)
@@ -275,12 +278,16 @@ function image_db:queue_load_done()
 
 			if image_names then
 				for n in pairs(image_names) do
-					table.insert(self.image_name_queue, {
-						n,
-						path
-					})
-
-					self.queue_load_total_images = self.queue_load_total_images + 1
+					local file = path .. "/" .. n
+					if not queued_files[file] then
+						queued_files[file] = true
+						table.insert(self.image_name_queue, {
+							n,
+							path
+						})
+	
+						self.queue_load_total_images = self.queue_load_total_images + 1
+					end
 				end
 			end
 		end
@@ -363,6 +370,8 @@ function image_db:queue_load_done()
 		return false
 	end
 
+	local uploaded_pixels, large_image_uploaded = 0, false
+
 	for i = #self.threads, 1, -1 do
 		local th, cin, cout = unpack(self.threads[i])
 
@@ -381,8 +390,7 @@ function image_db:queue_load_done()
 
 					break
 				elseif r1 == "ERROR" then
-					log.error("Failed to load image file: %s. Error: %s", r3, r2)
-					self.queue_load_done_images = self.queue_load_done_images + 1
+					error(string.format("Failed to load image file: %s. Error: %s", r3, r2))
 				elseif r1 == "OK" then
 					local key, data, w, h = r2, r3, r4, r5
 					local im = G.newImage(data)
@@ -442,17 +450,21 @@ function image_db:queue_load_done()
 
 					-- Decoded pixels and temporary textures live outside the Lua heap budget.
 					result[3], r3, data, im = nil, nil, nil, nil
-					if w * h >= 4194304 then
-						collectgarbage()
-					else
-						collectgarbage("step", math.ceil(w * h / 256))
-					end
+					uploaded_pixels = uploaded_pixels + w * h
+					large_image_uploaded = large_image_uploaded or w * h >= 4194304
+					-- Consume one image per worker before collecting the shared Lua heap.
+					break
 				end
 			end
 		else
-			log.error("Thread %s error:%s", i, th:getError())
-			table.remove(self.threads, i)
+			error(string.format("Image loader thread %s stopped before completion: %s", i, tostring(th:getError())))
 		end
+	end
+
+	if large_image_uploaded then
+		collectgarbage()
+	elseif uploaded_pixels > 0 then
+		collectgarbage("step", math.ceil(uploaded_pixels / 256))
 	end
 
 	if #self.threads > 0 then
@@ -460,6 +472,8 @@ function image_db:queue_load_done()
 
 		return false
 	end
+
+	assert(self.queue_load_done_images == self.queue_load_total_images, "Atlas loading incomplete; refusing to enter the stage with missing textures")
 
 	log.info("Done loading atlas queue. | time: %s", love.timer.getTime() - self.queue_load_start_time)
 
@@ -570,34 +584,13 @@ function image_db:unload_atlas(name, ref_scale, defer_purge)
 
 	-- Atlas groups may share one texture file. Remove this group's frames first,
 	-- then release only textures that no remaining frame still references.
-	for image_name, _ in pairs(remove_images) do
-		local still_used = false
-
-		for _, frame in pairs(self.db_atlas) do
-			if frame.atlas == image_name then
-				still_used = true
-
-				break
-			end
-		end
-
-		if not still_used then
-			for _, stack in pairs(self.db_atlas_shadow) do
-				for _, frame in pairs(stack) do
-					if frame.atlas == image_name then
-						still_used = true
-
-						break
-					end
-				end
-
-				if still_used then
-					break
-				end
-			end
-		end
-
-		if not still_used then
+	local used_images = {}
+	for _, frame in pairs(self.db_atlas) do used_images[frame.atlas] = true end
+	for _, stack in pairs(self.db_atlas_shadow) do
+		for _, frame in ipairs(stack) do used_images[frame.atlas] = true end
+	end
+	for image_name in pairs(remove_images) do
+		if not used_images[image_name] then
 			self.db_images[image_name] = nil
 			removed_images_count = removed_images_count + 1
 		end
@@ -639,7 +632,8 @@ function image_db:queue_unload_done()
 		self.unload_queue_start_time = love.timer.getTime()
 	end
 
-	local batch_count = math.min(#self.unload_queue, self.queue_unload_groups_per_frame or 1)
+	local batch_count = math.min(#self.unload_queue, self.queue_unload_groups_per_frame or 8)
+	local deadline = love.timer.getTime() + 0.004
 
 	for i = 1, batch_count do
 		local item = table.remove(self.unload_queue, 1)
@@ -648,6 +642,7 @@ function image_db:queue_unload_done()
 		self:unload_atlas(name, ref_scale, true)
 
 		self.unload_queue_done = self.unload_queue_done + 1
+		if love.timer.getTime() >= deadline then break end
 	end
 
 	if #self.unload_queue > 0 then

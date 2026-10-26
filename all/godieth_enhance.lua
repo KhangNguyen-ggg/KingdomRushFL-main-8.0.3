@@ -1,6 +1,26 @@
 -- One burn modifier per target, shared by allied and enemy Godieth.
 local M={}
 local E,A,bit
+function M.level(slot)
+	if slot==nil then
+		local storage=require("storage")
+		slot=storage.slot
+		if not slot and storage.active_slot_idx then slot=storage:load_slot(nil,true) end
+	end
+	local value=slot and slot.liuhui and slot.liuhui.godieth_level
+	-- Existing slots keep the enhanced Godieth until the player chooses otherwise.
+	if type(value)~="number" or value~=value then return 1 end
+	return math.max(0,math.min(1,math.floor(value)))
+end
+function M.label(slot)
+	return M.level(slot)==0 and "Godieth: Gốc" or "Godieth: Cường hóa"
+end
+function M.description(level)
+	if level==0 then
+		return "Bản gốc: cận chiến, phun độc mỗi 10 giây (Impossible: 9). Vùng độc 10 giây, bán kính 50, cơ bản 10 sát thương mỗi 11 khung hình; nạn nhân phù hợp chết hóa Shadow Spawn. Không có nội tại cường hóa. Lựa chọn áp dụng cho cả đồng minh và boss địch."
+	end
+	return "Bản cường hóa: miễn sát thương lửa và mọi thiêu đốt, kể cả đốt sát thương chuẩn. Xuyên 50% giáp hiện có. Đánh thường đốt 1% HP tối đa/giây trong 5 giây mỗi lớp; lính và miniboss tối đa 10 lớp, boss 1 lớp. Mỗi 1% máu thiếu: +1% hút máu thực gây, +2% tốc đánh, +3% sát thương đánh/độc (không nhân đốt theo HP). Giữ phun độc và Shadow Spawn của bản gốc. Áp dụng cho cả đồng minh và boss địch."
+end
 local function bind()
 	E,A,bit=require("entity_db"),require("animation_db"),require("bit")
 end
@@ -137,7 +157,7 @@ function M.tick(this,store)
 	this.melee.attacks[1].cooldown=s.cooldown/(1+2*missing(this))
 end
 function M.apply(t)
-	if t.godieth_power then return t end
+	if M.level()==0 or t.godieth_power then return t end
 	bind();register_burn()
 	local attack=t.melee.attacks[1]
 	t.godieth_power={cooldown=attack.cooldown,hit_time=attack.hit_time,previous_can=attack.fn_can,sprite_fps={}}
@@ -171,6 +191,7 @@ function M.apply(t)
 	return t
 end
 function M.install_enemy()
+	if M.level()==0 then return end
 	bind()
 	M.apply(E:get_template("eb_balrog"))
 end

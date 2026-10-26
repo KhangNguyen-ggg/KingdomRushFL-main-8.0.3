@@ -1744,7 +1744,7 @@ local function y_soldier_do_single_area_attack(store, this, target, attack)
 	end
 
 	targets = table.filter(store.entities, function(k, v)
-		return v.enemy and v.vis and v.health and not v.health.dead and band(v.vis.flags, attack.damage_bans) == 0 and band(v.vis.bans, attack.damage_flags) == 0 and U.is_inside_ellipse(v.pos, hit_pos, attack.damage_radius)
+		return v.enemy and v.vis and v.health and not v.health.dead and band(v.vis.flags, attack.damage_bans) == 0 and band(v.vis.bans, attack.damage_flags) == 0 and (this.allied_boss_parasite_guard and v.parasite_host_id == this.id or U.is_inside_ellipse(v.pos, hit_pos, attack.damage_radius))
 	end)
 
 	if attack.count then
@@ -1920,7 +1920,7 @@ local function y_soldier_do_loopable_melee_attack(store, this, target, attack)
 				end
 
 				local targets = table.filter(store.entities, function(k, v)
-					return v.enemy and v.vis and v.health and not v.health.dead and band(v.vis.flags, attack.damage_bans) == 0 and band(v.vis.bans, attack.damage_flags) == 0 and U.is_inside_ellipse(v.pos, hit_pos, attack.damage_radius)
+					return v.enemy and v.vis and v.health and not v.health.dead and band(v.vis.flags, attack.damage_bans) == 0 and band(v.vis.bans, attack.damage_flags) == 0 and (this.allied_boss_parasite_guard and v.parasite_host_id == this.id or U.is_inside_ellipse(v.pos, hit_pos, attack.damage_radius))
 				end)
 
 				for _, e in pairs(targets) do
@@ -2345,7 +2345,10 @@ local function y_soldier_melee_block_and_attacks(store, this)
 	end
 
 	-- Flying targets can be hit from the ground, but must never receive a melee blocker.
-	if this.melee.can_attack_air and band(target.vis.flags, F_FLYING) ~= 0 then
+	if this.allied_boss_parasite_guard and target.parasite_host_id == this.id then
+		-- A parasite on this unit has no separate melee slot to walk toward.
+		this.motion.arrived = true
+	elseif this.melee.can_attack_air and band(target.vis.flags, F_FLYING) ~= 0 then
 		U.unblock_target(store, this)
 	elseif soldier_move_to_slot_step(store, this, target) then
 		return true

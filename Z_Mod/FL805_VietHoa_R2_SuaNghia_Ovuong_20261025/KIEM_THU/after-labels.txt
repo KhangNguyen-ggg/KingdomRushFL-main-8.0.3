@@ -1,0 +1,39 @@
+tower_sniper
+Sniper Tower: cách xây dựng
+Cách xây
+Chọn Cung thủ bóng tối (Shadow Archers, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Sniper Tower.
+
+tower_plague_hospital
+Plague Hospital: cách xây dựng
+Cách xây
+Chọn Nghĩa địa u ám (Grim Cemetery, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Plague Hospital.
+
+tower_command_center
+Command Center: cách xây dựng
+Cách xây
+Chọn Lò nung (Melting Furnace, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Command Center.
+
+tower_ice_cooler
+Ice Cooler: cách xây dựng
+Cách xây
+Chọn Shaman Orc (Orc Shaman, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Ice Cooler.
+
+tower_machine_gunner
+Machine Gunner: cách xây dựng
+Cách xây
+Chọn Goblin ném boomerang (Goblirangs, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Machine Gunner.
+
+tower_blastin_bullriders
+Blastin' Bullriders: cách xây dựng
+Cách xây
+Chọn Tàu đắm Ogre (Ogre Shipwreck, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Blastin' Bullriders.
+
+tower_wifi_babies
+Wifi Babies: cách xây dựng
+Cách xây
+Chọn Lăng mộ u linh (Spirit Mausoleum, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Wifi Babies.
+
+tower_wicked_sisters_stregi
+Wicked Sisters - Stregi: cách xây dựng
+Cách xây
+Chọn Chị em phù thủy (Wicked Sisters, KR4), nâng lên cấp 3, rồi chọn nhánh nâng cấp thứ hai để xây Wicked Sisters - Stregi.

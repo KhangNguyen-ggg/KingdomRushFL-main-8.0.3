@@ -1,0 +1,38 @@
+FL803 RAM v4.2 — sửa tải ảnh và khung hình sai (24/10/2026)
+
+ĐÂY LÀ BẢN VÁ BỔ SUNG 2 FILE CHO GAME HIỆN TẠI.
+Không phải bộ cài RAM đầy đủ cho một game FL803 chưa có v4.1.
+Chưa tự cài vào game. Không cần chạy Lua/Python/BAT hoặc file trong KIEM_THU.
+
+CÀI
+1. Tắt hẳn game.
+2. Chép 2 thư mục all và lib BÊN TRONG CAP_NHAT vào thư mục chứa EXE game.
+3. Đồng ý ghi đè rồi mở lại game; giữ số luồng 8 trong menu như đang dùng.
+Không chép BACKUP_TRUOC_VA hoặc KIEM_THU vào game.
+
+THAY ĐỔI
+- Mỗi lượt cập nhật nhận tối đa một ảnh từ từng luồng giải mã rồi mới dọn
+  bộ nhớ chung một lần. Trước đó full GC chạy sau từng ảnh lớn; việc này
+  còn khiến vòng lặp chờ/nhận ảnh ưu tiên một luồng trong thời gian dài.
+- Vẫn dùng đúng số luồng đã chọn, vẫn có bước chặn ảnh giải mã xếp hàng,
+  vẫn chuyển ảnh PNG sang Canvas và giải phóng bộ đệm CPU.
+- Luồng giải mã chết hoặc trả lỗi sẽ báo lỗi tải, thay vì cho vào màn
+  với dữ liệu ảnh thiếu. Đây là chặn lỗi bị bỏ qua, KHÔNG phải tự sửa OOM.
+- Khi thiếu texture lúc vẽ, dùng texture trong suốt đã có thay cho việc
+  lấy nhầm atlas trước đó. Ghi lỗi thiếu atlas trên desktop như trên Android.
+
+KẾT QUẢ ĐO RIÊNG PHẦN NẠP 8 NHÓM ẢNH, 8 LUỒNG
+Trung vị 3 lượt: hiện tại 13.286 giây; bản vá 3.374 giây.
+Đây KHÔNG phải thời gian tải toàn màn. Xem KIEM_TRA.txt và PHAN_TICH.md.
+
+GIỚI HẠN
+Chưa tái hiện được nguyên nhân làm thiếu ảnh trong đúng đội hình/cấu hình
+F1 nặng của ảnh bạn gửi. Đã tái hiện bộ vẽ dùng nhầm ảnh khi cố ý thiếu
+texture và bộ nạp cho vào màn khi một worker lỗi; bản vá xử lý hai đường này.
+Nếu gặp thiếu RAM thực sự, bản vá báo lỗi tải chứ không đảm bảo vẫn vào màn.
+Gom dọn theo lượt có thể giữ thêm bộ đệm tạm so với dọn ngay từng ảnh;
+không khôi phục việc giữ vĩnh viễn 20 nhóm atlas chiến đấu để đổi lấy tốc độ.
+
+KHÔI PHỤC
+Tắt game, chép nội dung BACKUP_TRUOC_VA vào gốc game. Đây là 2 file đang
+dùng ngay trước v4.2, giữ các thay đổi Volibear/load nhanh trước đó của bạn.

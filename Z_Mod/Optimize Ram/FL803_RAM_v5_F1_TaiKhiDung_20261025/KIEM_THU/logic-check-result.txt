@@ -1,0 +1,6 @@
+﻿PASS stopped worker fails before stage entry
+PASS reported decode error propagates
+PASS incomplete upload count is rejected
+PASS successful worker completes exactly once
+PASS deferred groups join normal unload ownership; second call queues nothing
+PASS all 3 payload Lua files compile with the installed LuaJIT

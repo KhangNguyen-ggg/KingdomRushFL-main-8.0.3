@@ -1,4 +1,4 @@
-﻿-- chunkname: @./all-desktop/screen_map.lua
+-- chunkname: @./all-desktop/screen_map.lua
 
 local log = require("klua.log"):new("screen_map")
 local class = require("middleclass")
@@ -456,6 +456,7 @@ screen_map.required_sounds = {
 	"kr6_hero_illiana"
 }
 screen_map.required_textures = {
+	"ui_volibear_lol20",
 	"ui_lich_king",
 	"ui_sett_spirit",
 	"screen_map",
@@ -14354,6 +14355,13 @@ function HeroRoomView:hero_thumb_image_pos(i, hd, ox, oy)
 	return pos
 end
 
+function HeroRoomView:allied_room_name(boss)
+	if boss.kind=="volibear_prestige" then return "Volibear" end
+	if boss.kind=="navira_blue" then return "Navira" end
+	if boss.kind:match("^sett") then return "Sett" end
+	return boss.title
+end
+
 function HeroRoomView:sync_allied_boss_images()
 	for _,boss in ipairs(infinite_heroes.bosses.list) do
 		local t=E:get_template(boss.source)
@@ -14565,11 +14573,11 @@ function HeroRoomView:initialize(sw, sh)
 		portrait.pos = v(50, 43)
 		portrait.propagate_on_click = true
 		card:add_child(portrait)
-		local label = GGLabel:new(v(100, 22))
-		label.text, label.font_name, label.font_size = boss.title, "body_bold", 14
+		local label = GGLabel:new(v(100, 20))
+		label.text, label.font_name, label.font_size = self:allied_room_name(boss), "body_bold", 14
 		label.text_align, label.vertical_align = "center", "middle"
 		label.colors.text = {255, 242, 211, 255}
-		label.pos = v(0, 82)
+		label.pos = v(0, 80)
 		label.propagate_on_click = true
 		card:add_child(label)
 		function card.on_click(_, button)
@@ -15640,7 +15648,7 @@ function HeroRoomView:update_infinite_hero_panel()
 	local boss = infinite_heroes.get_boss(self.selected_boss)
 	local hd = boss or screen_map.hero_data[self.selected_index]
 	local ht = not boss and hd and E:get_template(hd.name)
-	self.infinite_selection.text = boss and boss.title or hd and _(string.upper(ht and ht.info and ht.info.i18n_key or hd.name) .. "_NAME", hd.name) or "Chọn hero/boss"
+	self.infinite_selection.text = boss and self:allied_room_name(boss) or hd and _(string.upper(ht and ht.info and ht.info.i18n_key or hd.name) .. "_NAME", hd.name) or "Chọn hero/boss"
 	local available = hd and not hd.transplanting and not hd.coming_soon and (hd.available_level or 0) <= #screen_map.user_data.levels
 	local unlimited = infinite_heroes.enabled(screen_map.user_data)
 	self.select_but.hidden = not available or not unlimited and (boss ~= nil or self.selected_index == self.real_selected)
@@ -15803,20 +15811,38 @@ end
 
 function HeroRoomView:update_sett_skill_panel(boss)
  local entries=boss and boss.skill_cards
+ local popup=boss and boss.kind=="volibear_prestige"
+ self.tip_panel.hidden=true;self.tip_panel.volibear_popup=nil
+ self.bio_text.hidden=popup or false
+ if entries and self.sett_skill_panel and self.sett_skill_panel.boss_name~=boss.name then
+  self.sett_skill_panel.parent:remove_child(self.sett_skill_panel);self.sett_skill_panel=nil
+ end
  if self.sett_skill_panel then self.sett_skill_panel.hidden=not entries end
  self.bio_text.pos.y=entries and 68 or 0
  if self.bio_header then self.bio_header.text=entries and "Kỹ năng" or _("Introduction") end
  if not entries then return end
  if not self.sett_skill_panel then
-  local panel=KView:new(v(350,64));self.sett_skill_panel=panel;panel.buttons={}
+  local panel=KView:new(v(350,64));self.sett_skill_panel=panel;panel.buttons={};panel.boss_name=boss.name
   self.bio_text.parent:add_child(panel)
   for index,entry in ipairs(entries) do
    local button=KButton:new(v(64,64));button.pos=v((index-1)*70,0)
    button.colors.background={42,31,57,210};panel:add_child(button);panel.buttons[index]=button
    local icon=KImageView:new(entry.icon);icon.pos=v(4,4);icon.colors.tint={205,205,215,230}
    icon.scale=v(56/icon.size.x,56/icon.size.y);icon.propagate_on_click=true;button:add_child(icon)
+   local function show_popup()
+    local selected=self.sett_skill_cards[index]
+    local tip=self.tip_panel;tip.volibear_popup=true;tip.price.hidden=true;tip.bullet.hidden=true
+    if tip.star then tip.star.hidden=true end
+    self.skills:set_panel_height(selected.title,selected.description,"")
+    self.skills:update_tooltip_position()
+   end
+   if popup then
+    button.on_enter=show_popup
+    button.on_exit=function()self.skills:hide_tooltip()end
+   end
    function button.on_click(_,mouse_button)
     if mouse_button and mouse_button~=1 then return end
+    if popup then show_popup();S:queue("GUIButtonCommon");return end
     local selected=self.sett_skill_cards[index]
     self.bio_text.text=selected.title.."\n"..selected.description
     for i,b in ipairs(panel.buttons) do b.colors.background=i==index and {112,72,145,235} or {42,31,57,210} end
@@ -15825,6 +15851,7 @@ function HeroRoomView:update_sett_skill_panel(boss)
   end
  end
  self.sett_skill_cards=entries
+ if popup then self.bio_text.text="";return end
  self.bio_text.font_size=20;self.bio_text.size,self.bio_text.text_size=v(350,182),v(350,182)
  self.bio_text.fit_lines,self.bio_text.fit_size=nil,true
  self.sett_skill_panel.buttons[1]:on_click(1)
@@ -15855,13 +15882,14 @@ function HeroRoomView:construct_allied_boss(name)
 	local scale=math.min(220/frame.size.x,290/frame.size.y)
 	frame.scale=v(scale,scale)
 	self.portrait.scale=v(0.7*scale,0.708*scale)
-	self.portrait_name:set_hero(boss.name, nil, boss.title)
+	self.portrait_name:set_hero(boss.name, nil, self:allied_room_name(boss))
 	local skill_module = require("allied_boss_skills")
 	local skill = skill_module.skills[skill_module.kind(name)]
 	self.bio_text.text = skill.description .. (boss.basic_only and " Thêm vào đội Vô hạn hero để kiểm tra." or " Tất cả kỹ năng tự dùng khi đủ điều kiện. Thêm vào đội Vô hạn hero để chơi.")
     local is_blackburn=boss.kind=="blackburn"
     local blackburn=require("blackburn_enhance")
-    if not self.blackburn_level_button then
+    local version=is_blackburn and blackburn or boss.kind=="godieth" and require("godieth_enhance")
+    if not self.boss_version_button then
         local button=GGButton:new("heroroom_btnDone_large_0001","heroroom_btnDone_large_0002")
         button.anchor=v(button.size.x/2,button.size.y/2)
         button.pos=v(225,255)
@@ -15870,25 +15898,29 @@ function HeroRoomView:construct_allied_boss(name)
         button.label.pos=v(8,19)
         button.label.font_name,button.label.font_size="body_bold",18
         button.label.fit_lines=1
-        function button.on_click()
-            screen_map.user_data.liuhui.blackburn_level=(blackburn.level(screen_map.user_data)+1)%4
-            storage:save_slot(screen_map.user_data)
+        self.bio_view:add_child(button)
+        self.boss_version_button=button
+    end
+    self.boss_version_button.hidden=not version
+    if version then
+        self.boss_version_button.label.text=version.label(screen_map.user_data)
+        self.boss_version_button.on_click=function()
+            local slot=screen_map.user_data
+            slot.liuhui=slot.liuhui or {}
+            slot.liuhui[boss.kind.."_level"]=(version.level(slot)+1)%(is_blackburn and 4 or 2)
+            storage:save_slot(slot)
             S:queue("GUIButtonCommon")
             self:show()
         end
-        self.bio_view:add_child(button)
-        self.blackburn_level_button=button
+        self.bio_text.text=version.description(version.level(screen_map.user_data))
     end
-    self.blackburn_level_button.hidden=not is_blackburn
-    self.blackburn_level_button.label.text=blackburn.label(screen_map.user_data)
-    if is_blackburn then self.bio_text.text=blackburn.description(blackburn.level(screen_map.user_data)) end
 	local large_bio = boss.preview_stats ~= nil or boss.kind == "navira" or boss.kind == "navira_blue" or boss.kind == "godieth" or boss.kind == "set"
 	local text_height = large_bio and 220 or 145
 	self.bio_text.font_size = large_bio and 20 or 15
 	self.bio_text.size, self.bio_text.text_size = v(350, text_height), v(350, text_height)
 	self.bio_text.fit_lines = not large_bio and 6 or nil
 	self.bio_text.fit_size = large_bio
-    if is_blackburn then
+    if version then
         self.bio_text.font_size=18
         self.bio_text.size,self.bio_text.text_size=v(350,170),v(350,170)
         self.bio_text.fit_lines,self.bio_text.fit_size=nil,true
@@ -15915,7 +15947,7 @@ end
 function HeroRoomView:construct_hero(index)
 	if self.selected_boss then return self:construct_allied_boss(self.selected_boss) end
 	self:update_sett_skill_panel(nil)
-    if self.blackburn_level_button then self.blackburn_level_button.hidden=true end
+    if self.boss_version_button then self.boss_version_button.hidden=true end
 	self.portrait._draw_self = nil
 	self.bio_text.font_size, self.bio_text.size, self.bio_text.text_size = 15, v(350, 145), v(350, 145)
 	self.bio_text.fit_lines, self.bio_text.fit_size = 6, nil
@@ -16679,6 +16711,11 @@ function HeroSkills:update_tooltip_position()
 
 		my = my + 30
 		self.tip_panel.pos = v(mx / screen_map.window.scale.x, my / screen_map.window.scale.y)
+		if self.tip_panel.volibear_popup then
+			local tip=self.tip_panel;local bounds=tip.parent.size
+			tip.pos.x=km.clamp(tip.rect_w/2+8,bounds.x-tip.rect_w/2-8,tip.pos.x)
+			tip.pos.y=km.clamp(8,math.max(8,bounds.y-tip.size.y-tip.tip_h-8),tip.pos.y)
+		end
 	end
 end
 

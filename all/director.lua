@@ -499,10 +499,10 @@ function director:queue_load_item_named(name, force_reload)
 		local loading = _require("screen_loading")
 		local level_idx
 
-		if game and game.store and game.store.level_idx then
-			level_idx = game.store.level_idx
-		elseif self.next_item_args then
+		if self.next_item_args and self.next_item_args.level_idx then
 			level_idx = self.next_item_args.level_idx
+		elseif game and game.store then
+			level_idx = game.store.level_idx
 		end
 
 		if loading.update_required_textures then
@@ -520,6 +520,17 @@ function director:queue_load_item_named(name, force_reload)
 
 		self.queue_unload_item = self.active_item
 		self.active_item = loading
+		-- Present the loading screen before synchronous atlas metadata/template work.
+		if G.isActive() then
+			G.push("all")
+			G.setCanvas()
+			G.origin()
+			G.setScissor()
+			G.clear()
+			loading:draw()
+			G.present()
+			G.pop()
+		end
 	end
 
 	if props.type == "screen" then
@@ -884,6 +895,9 @@ function director:queue_load_item_named(name, force_reload)
 
 		
 
+		game.deferred_cheat_textures = {}
+		game.deferred_cheat_scale_textures = {}
+
 		local sc_branch_loaded = false
 		local sc_frost_gem_skill_icons_loaded = false
 
@@ -961,17 +975,17 @@ function director:queue_load_item_named(name, force_reload)
 				end
 			end
 			if not nostalgic_classic and user_data.liuhui.cheathero then
-				table.insert(game.required_textures, "go_hero_all_1")
-				table.insert(game.required_textures, "go_hero_all_2")
-				table.insert(game.required_textures, "go_hero_all_3-1")
-				table.insert(game.required_textures, "go_hero_all_3-2")
-				table.insert(game.required_textures, "go_hero_voltaire")
-				table.insert(game.required_textures, "go_hero_viper")
-				table.insert(game.required_textures, "go_hero_munra")
+				table.insert(game.deferred_cheat_textures, "go_hero_all_1")
+				table.insert(game.deferred_cheat_textures, "go_hero_all_2")
+				table.insert(game.deferred_cheat_textures, "go_hero_all_3-1")
+				table.insert(game.deferred_cheat_textures, "go_hero_all_3-2")
+				table.insert(game.deferred_cheat_textures, "go_hero_voltaire")
+				table.insert(game.deferred_cheat_textures, "go_hero_viper")
+				table.insert(game.deferred_cheat_textures, "go_hero_munra")
 				table.insert(game.required_textures, "rebborn_hero_summon_icons")
 
 				for _, hero_name in ipairs(rebborn_summon_heroes) do
-					append_unique(game.required_textures, "go_" .. hero_name)
+					append_unique(game.deferred_cheat_textures, "go_" .. hero_name)
 				end
 			end
 
@@ -1064,48 +1078,48 @@ function director:queue_load_item_named(name, force_reload)
 				for i = HERO_5_START, #map_data.hero_data do
 					if map_data.hero_data[i].transplanting == nil and hero_game_ver(map_data.hero_data[i].name) ~= 6 then
 						local hero_name = map_data.hero_data[i].name
-						append_unique(game.scale_required_textures, "go_" .. hero_name)
+						append_unique(game.deferred_cheat_scale_textures, "go_" .. hero_name)
 					end
 				end
 			end
 			if not nostalgic_classic and user_data.liuhui.cheat6 == true then
 				for _, hero in ipairs(hero_summon_6) do
-					append_unique(game.required_textures, "go_" .. hero.name)
+					append_unique(game.deferred_cheat_textures, "go_" .. hero.name)
 				end
 			end
 
 			if not nostalgic_classic and user_data.liuhui.cheat5_special == true then
-				table.insert(game.required_textures, "go_stage104")
-				table.insert(game.required_textures, "go_stage113")
-				table.insert(game.required_textures, "go_stage117")
-				table.insert(game.required_textures, "go_stage118")
-				table.insert(game.required_textures, "go_stage120")
-				table.insert(game.required_textures, "go_stage122")
-				table.insert(game.scale_required_textures, "go_g5_stage528")
-				table.insert(game.scale_required_textures, "go_stage137")
+				table.insert(game.deferred_cheat_textures, "go_stage104")
+				table.insert(game.deferred_cheat_textures, "go_stage113")
+				table.insert(game.deferred_cheat_textures, "go_stage117")
+				table.insert(game.deferred_cheat_textures, "go_stage118")
+				table.insert(game.deferred_cheat_textures, "go_stage120")
+				table.insert(game.deferred_cheat_textures, "go_stage122")
+				table.insert(game.deferred_cheat_scale_textures, "go_g5_stage528")
+				table.insert(game.deferred_cheat_scale_textures, "go_stage137")
 				
 				table.insert(game.required_textures, "gui_common_5_D")
 
-				table.insert(game.scale_required_textures, "go_stage157")
-				table.insert(game.scale_required_textures, "kr4_frozen_north")
-				table.insert(game.scale_required_textures, "kr4_mercenary_troll_hut")
-				table.insert(game.scale_required_textures, "kr4_hielo")
-				table.insert(game.scale_required_textures, "go_stage163")
-				table.insert(game.scale_required_textures, "kr4_linirea")
-				table.insert(game.scale_required_textures, "kr4_spider_nest")
-				table.insert(game.scale_required_textures, "kr4_spider_icons")
-				table.insert(game.scale_required_textures, "go_stage165")
-				table.insert(game.scale_required_textures, "kr4_chino")
-				table.insert(game.scale_required_textures, "go_stage184")
-				table.insert(game.scale_required_textures, "kr4_sandstorm")
-				table.insert(game.scale_required_textures, "kr4_sandstorm_aux")
-				table.insert(game.scale_required_textures, "kr4_power_reinforcements")
-				table.insert(game.scale_required_textures, "go_hero_isfet")
+				table.insert(game.deferred_cheat_scale_textures, "go_stage157")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_frozen_north")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_mercenary_troll_hut")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_hielo")
+				table.insert(game.deferred_cheat_scale_textures, "go_stage163")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_linirea")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_spider_nest")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_spider_icons")
+				table.insert(game.deferred_cheat_scale_textures, "go_stage165")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_chino")
+				table.insert(game.deferred_cheat_scale_textures, "go_stage184")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_sandstorm")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_sandstorm_aux")
+				table.insert(game.deferred_cheat_scale_textures, "kr4_power_reinforcements")
+				table.insert(game.deferred_cheat_scale_textures, "go_hero_isfet")
 			end
 
 			if not nostalgic_classic and user_data.liuhui.cheat5_dragon == true then
-				table.insert(game.required_textures, "go_stage135")
-				table.insert(game.required_textures, "go_wukong_elemental_holders")
+				table.insert(game.deferred_cheat_textures, "go_stage135")
+				table.insert(game.deferred_cheat_textures, "go_wukong_elemental_holders")
 			end
 			
 			if args.level_idx == 5 then
@@ -1312,6 +1326,40 @@ function director:queue_load_item_named(name, force_reload)
 	end
 
 	log.debug("queued item: %s", self.queued_item.item_name)
+end
+
+function director:load_deferred_cheat_textures(game)
+	local normal = game.deferred_cheat_textures or {}
+	local scaled = game.deferred_cheat_scale_textures or {}
+	if #normal == 0 and #scaled == 0 then return end
+
+	-- shortcut: load F1 art together on first purchase; split by menu if this load stays too large.
+	self:load_texture_groups(replace_locale(normal), self.params.texture_size, game.ref_res, true, "game")
+	self:load_texture_groups(replace_locale(scaled), self.params.texture_size, game.ref_res * TEXTURE_SIZE_FACTOR.kr_45, true, "game")
+	G.push("all")
+	while not I:queue_load_done() do
+		love.event.pump()
+		G.setCanvas()
+		G.origin()
+		G.setScissor()
+		G.clear()
+		game:draw()
+		local w, h = G.getWidth(), G.getHeight()
+		G.origin()
+		G.setScissor()
+		G.setColor(0, 0, 0, 220)
+		G.rectangle("fill", 0, h - 60, w, 60)
+		G.setColor(255, 255, 255, 255)
+		G.rectangle("fill", 20, h - 25, (w - 40) * I.progress, 8)
+		G.present()
+		love.timer.sleep(0.001)
+	end
+	G.pop()
+	love.timer.step()
+	table.append(game.required_textures, normal)
+	table.append(game.scale_required_textures, scaled)
+	game.deferred_cheat_textures = nil
+	game.deferred_cheat_scale_textures = nil
 end
 
 function director:load_texture_groups(groups, texture_size, ref_height, queue, item_name)

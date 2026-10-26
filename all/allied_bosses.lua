@@ -1,4 +1,4 @@
-﻿-- Independent allied boss modules; metadata remains safe to load before the game.
+-- Independent allied boss modules; metadata remains safe to load before the game.
 local M={list={
 	(require("allied_blackburn")),
 	(require("allied_juggernaut")),

@@ -1,0 +1,2 @@
+REPRODUCED before fix: ...fense v5.4.07/KingdomRushFL-main 8.0.3/lib/klove\kui.lua:673: attempt to index local 'ss' (a nil value)
+PASS: one-line map preload fix; actual KImageView creation/drawing for thumbnail, portrait, HUD and P/Q/W/E/R; 3 native atlas load/unload cycles at 8 workers. No game save writes. Full map and combat not tested.

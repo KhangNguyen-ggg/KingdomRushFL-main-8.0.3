@@ -1,0 +1,33 @@
+﻿FL803 — VOLIBEAR CAN CHAN / HUONG DI / TOI UU CHUYEN MAN
+24/10/2026. Ban va bo sung cho Volibear LoL20 Real3D dang cai.
+
+CAI DAT
+1. Tat game.
+2. Mo CAP_NHAT; chep all, all-desktop, lib vao goc game (cung cap main.lua), cho phep ghi de.
+3. Khong chep BACKUP_TRUOC_VA, KIEM_THU vao game. Khong can chay script.
+Da kem sua loi mo slot (ui_volibear_lol20). Can tai nguyen Real3D cua ban LoL20 da cai truoc.
+Chua tu cai vao game. Khong doi save, F1 hoac lua chon so luong tai anh.
+
+VOLIBEAR
+- Than idle cao khoang 150 px o ty le atlas 1, ngang than Set (truoc khoang 81 px).
+- Diem neo chan (266,331) tren khung 512x512: het loi lo lung do neo vao vung trong suot.
+- Lat artwork theo truc X; giu quy uoc huong di/huong danh cua engine. Di phai quay phai, di trai quay trai.
+- Can lai thanh HP, vung bam, vi tri nhan don va khoang cach dung can chien.
+- Danh thuong: tam 58 -> 107; khi R: 71 -> 131.
+- Tam cham Q: 75 -> 138. W: 81 -> 149; khi R: 88 -> 162.
+- R van phong to 25%; het R/hoi sinh tra dung kich thuoc va tam moi.
+- Khong thay sat thuong, hoi chieu, chi so HP hay them hieu ung.
+
+CHUYEN MAN / RAM
+- Go toi da 8 nhom anh/am thanh moi lan cap nhat, dung som sau ngan sach 4 ms thay vi ep moi khung chi 1 nhom. Mot nhom lon van co the vuot ngan sach.
+- Quet anh con duoc tham chieu mot lan moi nhom; van giu anh dung chung va khoi phuc frame bi de dung cach.
+- Cung file PNG trong hang doi chi giai ma/upload mot lan, ke ca nhieu atlas/ty le cung dung.
+- Ve/present loading truoc phan xu ly dong bo tai nguyen; anh loading uu tien man SAP VAO.
+- Van don anh chien dau khi ra map. Khong preload them anh, khong giu atlas chien dau vinh vien.
+- Giu nhip GC hien tai: thu nghiem doi nhip GC chua cho ket qua tot hon nen khong dua vao goi.
+
+KIEM THU / GIOI HAN
+Xem KIEM_TRA.txt va KIEM_THU. Test nhe tren LOVE cua game, khong sua save.
+Chua chay lai tron ven stage/F1 tren doi hinh cua ban; chua xac nhan bang video hien tuong loe hinh cu da het hoan toan.
+Ket qua tang toc la phan GO tai nguyen; khong cam ket toan bo thoi gian load giam theo cung ti le.
+Ban sao luu la 5 file ngay truoc ban va nay, khong phai goc tac gia. Chi dung de hoan tac ban va nay tren cung nen game.

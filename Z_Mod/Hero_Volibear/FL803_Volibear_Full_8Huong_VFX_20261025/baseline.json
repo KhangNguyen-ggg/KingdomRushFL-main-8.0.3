@@ -1,0 +1,174 @@
+﻿[
+    {
+        "file":  "all/allied_volibear.lua",
+        "sha256":  "3f3892445fa4bd0f02fa26af6f0694907ae512328011efaa98aa2e36a4c72583"
+    },
+    {
+        "file":  "all/volibear_animation_map.lua",
+        "sha256":  "433b35d896071abbc770c12433d8e715c5d75484cadecff8c4a57da65f3521f3"
+    },
+    {
+        "file":  "all/volibear_original_vfx.lua",
+        "sha256":  "ce041cbb82732c53a32e023ea9a4eca81bf06039c4e72fa01a327e743a7024f8"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_attack1.lua",
+        "sha256":  "60eea47e8b22103d3c8046be7bd0d878101142e85bb881ee83bdeae74c606316"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_attack1.png",
+        "sha256":  "0f0a4da63e9b0753fecda56c91338dd840a9a2e913db23b61c1db6e852ab49d1"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_attack2.lua",
+        "sha256":  "20d57dda0b7e52c649f0fe31130708d796cf5150cdc434b6e67c5e3f368268da"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_attack2.png",
+        "sha256":  "2f382a1f81c443006d19b6bb8bd64d80492326bdb0757451690edd99a2c20698"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_death.lua",
+        "sha256":  "87e133d15ab035d1140de7eb7cb55e9a8fd6cbdf9b04356c779b0a139fec08e8"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_death.png",
+        "sha256":  "a4261ec5c66dc3ba112b5dc673da887a683d3714c5cea1b881ed560fa5c2fe82"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_channel.lua",
+        "sha256":  "ea3a2e6cbe4baa71d8715b2ce1d5f99182d0f5c4ffc0ea81a4d76634a90da84e"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_channel.png",
+        "sha256":  "d19e3fcf5e12de0071637571c00347a60e8b647f48d5d096770cf8d1cb2ce3d9"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_idle.lua",
+        "sha256":  "4790a48ed7a8b55ef2cc21945ec221f910fd9ec3e736ad6ec504cda3a2c3cc08"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_idle.png",
+        "sha256":  "45adea8d421f8d73d3926b93d6f4da94d38f0d4398b8a58ce91a9b459dc2280e"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_windup.lua",
+        "sha256":  "adae1873a662f23bcdfd656b7ce305443bfb2bde268a4cf8cb95d1d45ac0db71"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_e_windup.png",
+        "sha256":  "7fc68cb134b1ed35e6fe6f685b63884034c489c6f48206d0f2443e9734aa0272"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_idle.lua",
+        "sha256":  "970c55863687dc48499f05b7db524c8fe6513627d73226ac99b6c2446bfbc71f"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_idle.png",
+        "sha256":  "5e320875d910332d58c38fd39444dca5d7e5b49d7da0a3a7cb93b6914608af02"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_knockup.lua",
+        "sha256":  "37ec5a4d0f450581b3e503fcf261d406d083a10c6e8bdea072a78cffbdc7ecc2"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_knockup.png",
+        "sha256":  "0d622c00665c481aead359fad1d9bef0c91304c19dabd2636dd1835ee2bcc8b7"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.lua",
+        "sha256":  "6d1a2db0450aee32d8201e9bd8e38c68739cf0999aeb57cba0ce83ac8688ae70"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_original_vfx.png",
+        "sha256":  "6a1f89116d62b3cefd3bf42e5a7f662d50198bf0cbc889e4f03198070a7fd65d"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_attack.lua",
+        "sha256":  "e202155aaef3dd778257badeab797ad3bf1ce0952eef04d8d20fe72217ca9e08"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_attack.png",
+        "sha256":  "8d30473958c2a4593e41be4d92e8ca2f65040084ec955190ba1cd8e8e4cfcfab"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_intro.lua",
+        "sha256":  "0d254341ac356babbdbbac36605aeb5b842ffa24fdf40c6d63824174f0c32d65"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_intro.png",
+        "sha256":  "d7c81bd280cc33816b79c10ebd890522f510b867bb6dbcaa1a93071c41d7dd88"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_outro.lua",
+        "sha256":  "bff7b8339629a3128b20a288a0dbe9738ec2a7901b8fd30367cf8605bda18989"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_q_outro.png",
+        "sha256":  "d256923a23a2e2c77e59a9f2ccb5aa30e06121a5bce110960b03650767b5b5a0"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_respawn.lua",
+        "sha256":  "0ca023b53d6511e974c027ac1c5a52f18356e9034acad6074ccc3d0f67096ac8"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_respawn.png",
+        "sha256":  "b19d822975f2ef6aeda3109fe757c33f663ffedc461ed37933e92a20448d76a7"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_run.lua",
+        "sha256":  "6ec33c8546613bb56040f2c892b570d3f4b277d27ecbc0c4162a3db969d8ffc9"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_run.png",
+        "sha256":  "aca34b15e7b41214d754aeb4fed03ef732395ded1c5b2a798310f8a1b354d8f3"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_cast.lua",
+        "sha256":  "34b83ac257f5bf5dbfb1730b22ca7b46c014878245c97f3878b3f75b6ed3492b"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_cast.png",
+        "sha256":  "56a2f077499e6565b3b3a10a5d6baa40d5069a1bb7d3ebb9a0e404fa4874668f"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_impact.lua",
+        "sha256":  "d1458a5095912af061b4f9341a0f536f7bfc2a8b25ad41d28150d9170a40327e"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_impact.png",
+        "sha256":  "78290dc4c79798589c4be8bdeebb2d61b4ead7594f8f8293b6d1cf4719b87255"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_outro.lua",
+        "sha256":  "03d324f2417072af176c3baa2360d36c9efe3d0134a269d4cc329a4e6dd77512"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_outro.png",
+        "sha256":  "8647778cde1af7a07e7a7859a1357d8a34b8c4190e30ae229195103293cb4dca"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_run.lua",
+        "sha256":  "e8a4e8bb7f58db2b41d55f6980f444baceeabd38306f391e75aad3a4fffdc824"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_r_run.png",
+        "sha256":  "d3718b31ca2f2e12297872e5a5c5a3e4317c04488d2890cde96b95493d032eb4"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_w_slash.lua",
+        "sha256":  "916a6fdd1f6a674e8cf8d219a9081b994b4f7042e07e80eff01e11c64c6f07d7"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/go_volibear_w_slash.png",
+        "sha256":  "5df568109c8a7328e1e26592d3e7b5292997b4711e2bd5d0ae4e84a43db0bc3c"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/ui_volibear_lol20.lua",
+        "sha256":  "34551beb7aefae87cb6dc2eea635e0d6494004dae7a6305288550e49aa8908f8"
+    },
+    {
+        "file":  "kr3-desktop/assets/images/fullhd/ui_volibear_lol20.png",
+        "sha256":  "ba2414d58cd22e3522a9ba5603a1765975beeeeb76a30f4a0a03e4203f69b3a6"
+    }
+]

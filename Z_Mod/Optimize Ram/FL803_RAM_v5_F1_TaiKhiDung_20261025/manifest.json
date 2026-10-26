@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-25",
+  "game_root": "D:/Kingdom Rush Frontiers Tower Defense v5.4.07/KingdomRushFL-main 8.0.3",
+  "files": [
+    {
+      "file": "all/director.lua",
+      "before_sha256": "ae6750738e77fbf0d1642004c8ed419e61f89100dec91cdbc9ccce654ffca7e6",
+      "after_sha256": "e604cc0c8833dd0b4bddf1fa787463ab1482f5d2e923cb91048dd95679f84cfe"
+    },
+    {
+      "file": "all-desktop/game_gui.lua",
+      "before_sha256": "079ede853f74faec9ae2e46013ae64e4fb8b731f53b4cb185e21b29642be0b1a",
+      "after_sha256": "a8e028bf66dee87e513cfda9b7510adc348f605f7b41db81e0851a0c112d3167"
+    },
+    {
+      "file": "lib/klove/image_db.lua",
+      "before_sha256": "80ae2abc6e82c77950cb292621d0fc6f82abd92506734b7d2e2c5d362aec81fa",
+      "after_sha256": "c80102765aad3a7020b91bc9869bab082ddc0fec7cdccb082451598ebae21ae9"
+    }
+  ]
+}

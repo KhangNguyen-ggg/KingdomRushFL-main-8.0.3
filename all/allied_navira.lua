@@ -17,6 +17,9 @@ if blue then
 	M.skill.label="Solo"
 	M.skill.cooldown=8
 	M.skill.description="Truy sát một địch tới chết; lệnh di chuyển hoặc mất tầm 450 xóa khóa. Chỉ đấm thường AOE 280 luân phiên vật lý/phép, bán kính x2. Đánh trúng hoặc tia hồn tích 20 dấu: mỗi dấu +15% đấm thường lên đối thủ, thêm 0,2% HP tối đa thành sát thương chuẩn và giảm 3% sát thương từ đối thủ (tối đa 60%). Hút 40% máu thực gây. Mỗi 8 giây gồng x2, đấm riêng đối thủ 840 chuẩn +12% HP tối đa. Mỗi 6 giây bắn 3 tia cùng một địch, mỗi tia 280 phép +1% HP tối đa chuẩn. Chặn 3 đòn, mỗi lần phản 2% HP tối đa chuẩn; nạp mỗi 10 giây. Không hút xác. Giữ đánh bay, lướt địa hình và miễn khống chế."
+else
+	M.skill.label="Quét"
+	M.skill.description=require("navira_horde").description
 end
 
 if not blue then
@@ -68,6 +71,7 @@ local function normal_ready(this,store,attack,target)
 	if attack.damage_type~=(state.next_damage_type or bit.bor(DAMAGE_PHYSICAL,DAMAGE_NO_DODGE)) then return false end
 	if blue and not require("navira_duelist").select(this,store,target) then return false end
 	state.pending_melee_ts=attack.ts
+	if not blue then require("navira_horde").attack_start(this,store,attack) end
 	return true
 end
 
@@ -178,6 +182,7 @@ local function register_ray()
 				hit=true
 				local target=store.entities[this.target_id]
 				local owner=store.entities[this.source_id]
+				if not blue and C.alive(target) and C.alive(owner) then require("navira_horde").ray(owner,target,store) end
 				if C.alive(target) and target.enemy and (not blue or C.alive(owner) and require("navira_duelist").ray(owner,store,target)) then
 					local m=E:create_entity(fx.."_soul_stun")
 					m.modifier.source_id,m.modifier.target_id=this.source_id,target.id
@@ -199,7 +204,7 @@ function M.register()
 	balance=require("balance/balance").enemies.undying_hatred.boss_navira
 	local t=C.create(M)
 	register_effects();register_ray()
-	if blue then require("navira_duelist").apply(t) end
+	if blue then require("navira_duelist").apply(t) else require("navira_horde").apply(t) end
 	return t
 end
 
@@ -257,7 +262,8 @@ local function rays(this,store,focus)
 	table.sort(valid,function(a,b) return C.target_before(a,b,this.pos) end)
 	end
 	local native=E:get_template(C.native(this).fire_ball_bullet_t)
-	for i=1,math.min(3,#valid) do
+	local count=blue and 3 or require("navira_horde").ray_count(this,store)
+	for i=1,math.min(count,#valid) do
 		local target=valid[i]
 		local e=E:create_entity(fx.."_soulray")
 		e.pos=C.copy(this.pos);e.pos.y=e.pos.y+80
@@ -282,6 +288,7 @@ function M.passive(this,store)
 		state.pending_melee_ts=nil
 	end
 	if blue then require("navira_duelist").tick(this,store);return end
+	require("navira_horde").tick(this,store)
 	if not this._navira_absorb_aura then
 		local aura=E:create_entity(fx.."_absorb_aura")
 		aura.owner_id=this.id
@@ -300,6 +307,7 @@ end
 
 function M.absorb(this,store)
 	if blue then return end
+	require("navira_horde").tick(this,store)
 	if not C.alive(this) then
 		if this.boss_state then this.boss_state.heal_pool,this.boss_state.heal_started=nil,nil end
 		return
@@ -338,7 +346,8 @@ function M.automatic(this,store,targets)
  if blue and not current then return false end
  local attack=this.melee.attacks[1]
  local punch_radius=attack.damage_radius*2
- if C.ready(this,store,"punch",M.skill.cooldown) then
+ local punch_cd=blue and M.skill.cooldown or require("navira_horde").punch_cooldown(this,store)
+ if C.ready(this,store,"punch",punch_cd) then
   local target=current
   if not C.alive(target) or C.dist(this.pos,target.pos)>punch_radius or not blue and bit.band(target.vis.bans,F_AREA)~=0 then target=nil end
   if not target and not blue then
@@ -359,6 +368,7 @@ function M.automatic(this,store,targets)
     return this.nav_rally.new or blue and duel.current(this,store)~=target
    end
    -- Keep the existing blocker throughout the charge and recovery.
+   if not blue then require("navira_horde").attack_start(this,store,attack) end
    C.animate(this,"charged_attack",store,false)
    if C.wait(this,store,attack.hit_time*2,interrupted) and not interrupted() then
     local pos=C.copy(this.pos)
@@ -371,7 +381,8 @@ function M.automatic(this,store,targets)
     C.stamp(this,store,"punch")
     punch_effect(this,store,target)
     local sprite=this.render.sprites[1]
-    C.wait(this,store,math.max(0,sprite.ts+A:duration(sprite.prefix.."_charged_attack")-store.tick_ts),interrupted)
+    local speed=blue and 1 or require("navira_horde").animation_speed(this,store)
+    C.wait(this,store,math.max(0,sprite.ts+A:duration(sprite.prefix.."_charged_attack")/speed-store.tick_ts),interrupted)
    end
    return true
   end
@@ -382,7 +393,8 @@ function M.automatic(this,store,targets)
   end
   return false
  end
- if C.ready(this,store,"rays",balance.fire_balls.cooldown) then
+ local ray_cd=require("navira_horde").ray_cooldown(this,store,balance.fire_balls.cooldown)
+ if C.ready(this,store,"rays",ray_cd) then
   for _,target in ipairs(targets) do
    if C.dist(this.pos,target.pos)<=M.skill.range and bit.band(target.vis.bans,F_STUN)==0 then
     C.stamp(this,store,"rays");rays(this,store);return true
