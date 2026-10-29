@@ -1,2 +1,0 @@
-kr3-desktop/assets/images/fullhd/ui_volibear_lol20.lua
-kr3-desktop/assets/images/fullhd/ui_volibear_lol20.png

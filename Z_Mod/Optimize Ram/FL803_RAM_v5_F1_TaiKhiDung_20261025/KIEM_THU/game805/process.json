@@ -1,8 +1,0 @@
-{
-    "variant":  "game805",
-    "exit_code":  null,
-    "seconds":  62.45,
-    "peak_private_MiB":  5853.7,
-    "peak_working_MiB":  5876,
-    "stop_reason":  "Probe memory/time budget reached"
-}

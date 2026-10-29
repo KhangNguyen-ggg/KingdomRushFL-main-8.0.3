@@ -1,1 +1,0 @@
-map0 lua=112.6 texture=1052.1 private=2495.8 working=2537.6 images=111 canvases=95 seconds=5.93

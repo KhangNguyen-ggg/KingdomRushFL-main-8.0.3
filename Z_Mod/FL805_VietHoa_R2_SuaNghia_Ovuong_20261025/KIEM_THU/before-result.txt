@@ -1,1 +1,0 @@
-PASS before: opened all 8 build popups through tower selector; missing glyphs=54; save writes stubbed.

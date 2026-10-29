@@ -1,3 +1,0 @@
-PASS before native AOE attacks against Abominor 1-4: tested=288, missed=174; 0 regression checks.
-
-PASS geometry probe: 600 melee layouts; read-only save copy

@@ -1,1 +1,0 @@
-PASS after: opened all 8 build popups through tower selector; skill popups=24; missing glyphs=0; save writes stubbed.

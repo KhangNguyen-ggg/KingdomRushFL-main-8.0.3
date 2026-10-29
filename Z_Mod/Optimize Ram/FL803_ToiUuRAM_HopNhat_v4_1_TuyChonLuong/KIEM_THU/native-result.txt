@@ -1,6 +1,0 @@
-PASS 3 changed Lua modules compile
-PASS 1200 target queries match original IDs and order, including moving units, negative coordinates and filters
-PASS Reuse within stage, release removed targets and clear complete grid on teardown
-PASS 5 paired native SSO allocation/time benchmarks completed
-PASS Fractional tiny sizes share 6 valid font sizes rather than creating one cache entry per request
-PASS 12 real 2048x2048 upload/unload cycles: formerly permanent groups release last texture, preserve shared and duplicate owners, texture memory returns to baseline

@@ -1,7 +1,0 @@
-map after 0 stages: Lua=113.4 MiB texture=1042.7 MiB old_stores=0 private=2195.4 MiB
-stage 1: Lua=342.5 MiB texture=2019.8 MiB heroes=9
-map after 1 stages: Lua=181.1 MiB texture=1042.9 MiB old_stores=0 private=2526.9 MiB
-stage 2: Lua=344.8 MiB texture=2025.8 MiB heroes=9
-map after 2 stages: Lua=183.1 MiB texture=1042.9 MiB old_stores=0 private=2704.5 MiB
-stage 3: Lua=344.7 MiB texture=2007.8 MiB heroes=9
-map after 3 stages: Lua=180.7 MiB texture=1042.9 MiB old_stores=0 private=2838.7 MiB

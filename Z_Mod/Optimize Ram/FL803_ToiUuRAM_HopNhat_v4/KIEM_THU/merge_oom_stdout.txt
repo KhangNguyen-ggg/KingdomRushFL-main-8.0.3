@@ -1,2 +1,0 @@
-C:/Users/user/AppData/Roaming/LOVE/KRFL_ram_v4_isolated
-[64863.4998] image_db.ERROR    queue_load_done() - Thread 4 error:string:36: Could not decode PNG image (memory allocation failed)
